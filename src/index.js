@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+
+import 'bulma/css/bulma.min.css'
 
 import App from './components/App'
 
@@ -40,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 function Root () {
   return (
     <React.Fragment>
-      <GlobalStyle/>
+      <GlobalStyle />
       <App />
     </React.Fragment>
   )

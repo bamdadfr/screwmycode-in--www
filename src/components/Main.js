@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export default function () {
 
   const [speed, setSpeed] = React.useState(1)
-  const [youtubeId, setYoutubeId] = React.useState('7qtrv6KU9MA')
+  const [id, setId] = React.useState(null)
   const [rawUrl, setRawUrl] = React.useState(null)
 
   // attach to DOM
@@ -13,9 +13,6 @@ export default function () {
 
   const getUrl = (Id) => {
     const url = 'http://localhost:5000/' + Id
-
-    console.log(url)
-
     axios.get(url).then(r => {
       setRawUrl(r.data.res)
     })
@@ -30,12 +27,15 @@ export default function () {
     } else {
       return 'error'
     }
-
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setYoutubeId(getId(e.target[0].value))
+    if (getId(e.target[0].value) !== 'error') {
+      setId(getId(e.target[0].value))
+    } else {
+      console.log("Error: Input URL incorrect.")
+    }
   }
 
   // Mounting audio el
@@ -43,7 +43,6 @@ export default function () {
     const audio = audioRef.current
     audio.mozPreservesPitch = false
     audio.webkitPreservesPitch = false // Does not work
-    audio.playbackRate = speed
   }, [])
 
   // when speed changes
@@ -54,10 +53,12 @@ export default function () {
 
   // when id change, generate raw audio url calling express server running youtube-dl
   React.useEffect(() => {
-    getUrl(youtubeId)
-  }, [youtubeId])
+    if (id !== null) {
+      getUrl(id)
+    }
+  }, [id])
 
-  // when raw url is fetched, update the DOM
+  // when rawUrl is fetched, update the DOM
   React.useEffect(() => {
     if (rawUrl !== null) {
       const audio = audioRef.current
@@ -90,7 +91,7 @@ export default function () {
       </div>
 
       <div>
-        id: {youtubeId}
+        id: {id}
       </div>
 
       <div>
