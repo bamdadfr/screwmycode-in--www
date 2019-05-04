@@ -69,7 +69,7 @@ export default function (props) {
             <Input
               ref={percentRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
-              type="text"
+              type="number"
               min="-50"
               max="50"
             />
@@ -80,7 +80,9 @@ export default function (props) {
             <Input
               ref={toneRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
-              type="text"
+              type="number"
+              min="-6"
+              max="6"
             />
           </form>
         </div>
