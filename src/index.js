@@ -2,40 +2,45 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
 
-import 'bulma/css/bulma.min.css'
+import 'tachyons'
 
 import App from './components/App'
 
 const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,800,900');
+  
+  html {
+    //overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   
-  body {
-    color: white;
+  .mybg1 {
+    background-color: #c999d5;
+    --mybg-pink: #c999d5;
   }
   
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  element {
+    --main-bg-color: white;
   }
   
-  .wrapper > * {
-    padding: 20px;
+  .myYellow {
+    background-color: #efcb68;
+    --mybg-yellow: #efcb68;
   }
   
-  .page-header {
-    background: #592E83;
+  .myBlue {
+    background-color: #160c28;
+    --mybg-blue: #160c28;
   }
   
-  .page-main {
-    flex-grow: 1;
-    background: #331E4D;
+  .myWhite {
+    background-color: #e1efe6;
+    --mybg-white: #e1efe6;
   }
   
-  .page-footer {
-    background: #9984D4;
+  .myBlack {
+    background-color: #000411;
+    --myb-black: #000411;
   }
 `
 
