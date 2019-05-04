@@ -66,8 +66,6 @@ const Logo = styled.h1`
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #000411;
   
-  filter: blur(1px);
-  
   // Scaling
   transform: scale(1, 1.1);
   -webkit-transform: scale(1, 1.1); /* Safari and Chrome */

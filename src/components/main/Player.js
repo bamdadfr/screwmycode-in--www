@@ -13,14 +13,23 @@ export default function (props) {
     audio.load()
     audio.playbackRate = player.speed
     audio.play()
+    audio.ontimeupdate = () => updateProgress()
   }
 
-  // when rawUrl is fetched, update the DOM
+  const updateProgress = () => {
+    const audio = audioRef.current
+
+    console.log('currentTime', audio.currentTime)
+    // console.log('duration', audio.duration)
+  }
+
+  // when playing state changes or url changes, update the DOM
   React.useEffect(() => {
     if (player.isPlaying) {
       startPlayer()
     }
-  }, [player.isPlaying])
+  }, [player.isPlaying, player.url])
+
 
   // when speed changes
   React.useEffect(() => {
@@ -39,6 +48,25 @@ export default function (props) {
   return (
     <React.Fragment>
       <Audio className="w-100" ref={audioRef} controls />
+
+      <div className="player">
+        <img />
+        <div className="info">
+          <div className="title">
+            title
+          </div>
+          <div className="artist">
+            artist
+          </div>
+        </div>
+        <div className="buttons">
+          <FaRegPlayCircle />
+          <FaRegStopCircle />
+        </div>
+        <div className="progress">
+
+        </div>
+      </div>
 
       <ProgressWrapper>
         <ProgressBar />

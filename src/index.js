@@ -1,24 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-import { createStore, applyMiddleware } from 'redux'
-import { createLogger } from 'redux-logger'
 import { Provider } from 'react-redux'
-
 import 'tachyons'
 
-import reducers from './reducers/index'
+import store from './store'
 import App from './components/app/_App'
-
-// Redux stuff
-const logger = createLogger({
-  collapsed: (getState, action, logEntry) => !logEntry.error,
-})
-
-const store = createStore(
-  reducers,
-  applyMiddleware(logger),
-)
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,800,900');
