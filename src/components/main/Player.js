@@ -63,9 +63,7 @@ export default function (props) {
           <FaRegPlayCircle />
           <FaRegStopCircle />
         </div>
-        <div className="progress">
-
-        </div>
+        <div className="progress" />
       </div>
 
       <ProgressWrapper>
