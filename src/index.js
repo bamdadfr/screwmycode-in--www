@@ -65,8 +65,8 @@ function Root () {
     <React.Fragment>
       <Provider store={store}>
         <GlobalStyle />
-        {/*<App />*/}
-        <Three/>
+        {/* <App /> */}
+        <Three />
       </Provider>
     </React.Fragment>
   )
