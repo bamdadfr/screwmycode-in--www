@@ -1,5 +1,4 @@
 let container
-let stats
 let camera
 let scene
 let raycaster
@@ -13,22 +12,22 @@ init()
 animate()
 
 function init () {
+
   container = document.createElement('div')
   document.body.appendChild(container)
-  const info = document.createElement('div')
-  info.style.position = 'absolute'
-  info.style.top = '10px'
-  info.style.width = '100%'
-  info.style.textAlign = 'center'
-  info.innerHTML = '<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> webgl - interactive cubes'
-  container.appendChild(info)
-  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000)
+
+  console.log("texte:", container)
+
+  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 200, 10000000)
   scene = new THREE.Scene()
+
+  console.log('scene instanciation', scene)
+
   scene.background = new THREE.Color(0xf0f0f0)
   const light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(1, 1, 1).normalize()
   scene.add(light)
-  const geometry = new THREE.BoxBufferGeometry(20, 20, 20)
+  const geometry = new THREE.BoxGeometry(20, 20, 20)
   for (let i = 0; i < 2000; i++) {
     const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
     object.position.x = Math.random() * 800 - 400
@@ -66,6 +65,17 @@ function onDocumentMouseMove (event) {
 
 //
 function animate () {
+
+
+  scene.traverse(node => {
+    if (node instanceof THREE.Mesh) {
+      node.rotation.x += 0.005
+      node.rotation.y += 0.005
+      node.rotation.z += 0.005
+    }
+  })
+
+
   requestAnimationFrame(animate)
   render()
 }
