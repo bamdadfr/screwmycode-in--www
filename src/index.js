@@ -6,6 +6,7 @@ import 'tachyons'
 
 import store from './store'
 import App from './components/app/_App'
+import Three from './components/Three'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,800,900');
@@ -64,7 +65,8 @@ function Root () {
     <React.Fragment>
       <Provider store={store}>
         <GlobalStyle />
-        <App />
+        {/*<App />*/}
+        <Three/>
       </Provider>
     </React.Fragment>
   )
