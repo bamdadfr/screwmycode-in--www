@@ -2,11 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function (props) {
-
   const { player, setSpeed } = props
 
   const percentRef = React.createRef()
   const toneRef = React.createRef()
+
+  const percentToSpeed = percent => (Number(percent) + 100) / 100
+  const toneToSpeed = tones => Number(tones) / 12 + 1
+  const speedToPercent = speed => (Number(speed) * 100 - 100).toFixed(1)
+  const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
 
   const dispatchSpeed = (s) => {
     if (s >= 0.5 && s <= 1.5) {
@@ -29,30 +33,12 @@ export default function (props) {
     dispatchSpeed(s)
   }
 
-  const speedToPercent = (speed) => {
-    return (Number(speed) * 100 - 100).toFixed(1)
-  }
-
-
-  const speedToTone = (speed) => {
-    return ((Number(speed) - 1) * 12).toFixed(1)
-  }
-
-  const toneToSpeed = (tones) => {
-    return Number(tones) / 12 + 1
-  }
-
-  const percentToSpeed = (percent) => {
-    return (Number(percent) + 100) / 100
-  }
-
   // Refresh DOM
   React.useEffect(() => {
     if (percentRef.current.value !== player.speed) {
       percentRef.current.value = speedToPercent(player.speed)
       toneRef.current.value = speedToTone(player.speed)
     }
-
   }, [player.speed])
 
   return (
@@ -68,18 +54,18 @@ export default function (props) {
 
       <div className="flex justify-around w-80">
         <div className="w-40 ma0 pa0">
-          <form onSubmit={(e) => dispatchPercent(e)}>
+          <form onSubmit={e => dispatchPercent(e)}>
             <Input
               ref={percentRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
               type="text"
-              min={'-50'}
-              max={'50'}
+              min="-50"
+              max="50"
             />
           </form>
         </div>
         <div className="w-40 ma0 pa0">
-          <form onSubmit={(e) => dispatchTone(e)}>
+          <form onSubmit={e => dispatchTone(e)}>
             <Input
               ref={toneRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"

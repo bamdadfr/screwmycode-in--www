@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 export default function (props) {
-
   const { setUrl } = props
 
   const parseId = (url) => {
@@ -23,7 +22,7 @@ export default function (props) {
     })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (parseId(e.target[0].value) !== 'error') {
       askUrl(parseId(e.target[0].value))
@@ -34,7 +33,7 @@ export default function (props) {
 
   return (
     <React.Fragment>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={e => handleSubmit(e)}>
         <div className="flex ma0 pa0 bg-transparent">
 
           <div className="w-50 ml2 ma0 pa0">

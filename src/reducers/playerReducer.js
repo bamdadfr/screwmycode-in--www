@@ -21,7 +21,7 @@ export const actions = {
   setTitle: title => ({
     type: types.SET_TITLE,
     payload: title,
-  })
+  }),
 }
 
 export const initState = {

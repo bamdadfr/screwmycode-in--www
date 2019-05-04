@@ -38,7 +38,7 @@ export default function (props) {
   return (
     <React.Fragment>
       <PlayingTrack className="normal ma0 lh-title">
-        IAM - Demain c'est loin
+        Artiste - Titre
       </PlayingTrack>
 
       {/* <div className="pv" /> */}
