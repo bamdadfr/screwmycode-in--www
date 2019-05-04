@@ -46,7 +46,7 @@ function init () {
   for (let i = 0; i < 100; i++) {
     // const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
     // const object = repeatMe
-    loader.load( './models/ply/binary/Lucy100k.ply', function ( geometry ) {
+    loader.load( '../plyGeo/Calcaneus2.ply', function ( geometry ) {
       geometry.computeVertexNormals();
       var material = new THREE.MeshStandardMaterial( { color: 0x0055ff, flatShading: true } );
       var object = new THREE.Mesh( geometry, material )
