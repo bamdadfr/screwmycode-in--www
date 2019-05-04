@@ -101,6 +101,8 @@ const InputLabel = styled.div`
 const Input = styled.input`
   //background-color: palegoldenrod;
   font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
   
   :hover, :focus {
     color: #efcb68;

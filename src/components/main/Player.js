@@ -92,6 +92,6 @@ const AudioButton = styled.span`
   padding-top: 0;
   
   :hover {
-    color: white;
+    color: red;
   }
 `
