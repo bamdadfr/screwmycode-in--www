@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 export default function (props) {
-  const { player, setUrl, setId, setTitle } = props
+  const {
+    player, setUrl, setId, setTitle,
+  } = props
 
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -39,7 +41,7 @@ export default function (props) {
     }
   }, [player.id])
 
-  console.log("Form render")
+  console.log('Form render')
   return (
     <React.Fragment>
       <form onSubmit={e => handleSubmit(e)}>

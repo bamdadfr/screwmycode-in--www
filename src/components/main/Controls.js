@@ -11,9 +11,7 @@ export default function (props) {
   const speedToPercent = speed => (Number(speed) * 100 - 100).toFixed(1)
   // const toneToSpeed = tones => Number(tones) / 12 + 1
 
-  const toneToSpeed = tone => {
-    return Math.pow(2, (tone / 12))
-  }
+  const toneToSpeed = tone => 2 ** (tone / 12)
 
   const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
 
@@ -22,11 +20,11 @@ export default function (props) {
   // }
 
   const dispatchSpeed = (s) => {
-    console.log("a", s)
+    console.log('a', s)
     if (s >= 0.5 && s <= 1.5) {
-      console.log("b")
+      console.log('b')
       if (s !== player.speed) {
-        console.log("c")
+        console.log('c')
         percentRef.current.blur()
         setSpeed(s)
       }

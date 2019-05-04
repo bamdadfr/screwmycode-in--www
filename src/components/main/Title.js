@@ -8,14 +8,14 @@ export default function (props) {
     //
   }, [player.title])
 
-  console.log("Title render")
+  console.log('Title render')
   return (
     <React.Fragment>
       <PlayingTrack className="normal ma0 lh-title">
         {player.title ? player.title : ' .'}
       </PlayingTrack>
 
-       <div className="pv2" />
+      <div className="pv2" />
     </React.Fragment>
   )
 }

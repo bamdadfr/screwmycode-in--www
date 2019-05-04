@@ -35,7 +35,7 @@ export default function (props) {
     audio.webkitPreservesPitch = false // Does not work
   }, [])
 
-  console.log("Player render")
+  console.log('Player render')
   return (
     <React.Fragment>
       <Audio className="w-100" ref={audioRef} controls />
