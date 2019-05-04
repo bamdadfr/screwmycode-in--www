@@ -58,10 +58,10 @@ function init () {
   }
 
   let loader = new THREE.PLYLoader()
-  loader.load('../plyGeo/Calcaneus2.ply', function (geometry) {
+  loader.load('../plyGeo/FullFeet_Reduced.ply', function (geometry) {
 
     // Instancier 100 fois notre cube
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 500; i++) {
       scene.add(cube(geometry))
     }
 
@@ -93,9 +93,9 @@ function onDocumentMouseMove (event) {
 function animate () {
   scene.traverse((node) => {
     if (node instanceof THREE.Mesh) {
-      // node.rotation.x += 0.05
-      // node.rotation.y += 0.05
-      // node.rotation.z += 0.05
+      node.rotation.x += 0.005
+      node.rotation.y += 0.005
+      node.rotation.z += 0.005
       // node.position.x += 0.5
       // node.position.y += 0.5
       // node.position.z += 0.5
