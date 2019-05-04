@@ -34,7 +34,9 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
     
-    background: linear-gradient(76deg, #c999d5, #efcb68);
+    filter: blur(10px);
+    
+    background: linear-gradient(76deg, #333, #cfab48);
     //background-size: 400% 400%;
     //
     //-webkit-animation: AnimationName 4s ease infinite;

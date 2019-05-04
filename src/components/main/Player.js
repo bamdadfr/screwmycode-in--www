@@ -19,7 +19,7 @@ export default function (props) {
   const updateProgress = () => {
     const audio = audioRef.current
 
-    console.log('currentTime', audio.currentTime)
+    // console.log('currentTime', audio.currentTime)
     // console.log('duration', audio.duration)
   }
 
