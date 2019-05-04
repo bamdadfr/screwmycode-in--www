@@ -3,7 +3,6 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 export default function () {
-
   const [speed, setSpeed] = React.useState(1)
   const [id, setId] = React.useState(null)
   const [rawUrl, setRawUrl] = React.useState(null)
@@ -12,8 +11,8 @@ export default function () {
   const audioRef = React.createRef()
 
   const getUrl = (Id) => {
-    const url = 'http://localhost:5000/' + Id
-    axios.get(url).then(r => {
+    const url = `http://localhost:5000/${Id}`
+    axios.get(url).then((r) => {
       setRawUrl(r.data.res)
     })
   }
@@ -24,9 +23,8 @@ export default function () {
 
     if (match && match[2].length === 11) {
       return match[2]
-    } else {
-      return 'error'
     }
+    return 'error'
   }
 
   const handleSubmit = (e) => {
@@ -34,7 +32,7 @@ export default function () {
     if (getId(e.target[0].value) !== 'error') {
       setId(getId(e.target[0].value))
     } else {
-      console.log("Error: Input URL incorrect.")
+      console.log('Error: Input URL incorrect.')
     }
   }
 
@@ -85,13 +83,15 @@ export default function () {
         input:
       </div>
       <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" name={'url'} />
+        <form onSubmit={e => handleSubmit(e)}>
+          <input type="text" name="url" />
         </form>
       </div>
 
       <div>
-        id: {id}
+        id:
+        {' '}
+        {id}
       </div>
 
       <div>
@@ -103,7 +103,7 @@ export default function () {
           min="0.5"
           max="1.5"
           step="0.01"
-          onChange={(e) => setSpeed(e.target.value)}
+          onChange={e => setSpeed(e.target.value)}
         />
       </div>
 

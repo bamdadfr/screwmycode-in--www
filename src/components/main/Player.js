@@ -3,22 +3,20 @@ import styled from 'styled-components'
 import { FaRegPauseCircle, FaRegPlayCircle, FaRegStopCircle } from 'react-icons/fa'
 
 export default function () {
-
-
   return (
     <React.Fragment>
       <PlayingTrack className="normal ma0 lh-title">
         IAM - Demain c'est loin
       </PlayingTrack>
 
-      {/*<div className="pv" />*/}
-      <Audio className="w-100" controls />
+      {/* <div className="pv" /> */}
+      {/* <Audio className="w-100" controls /> */}
 
       <ProgressWrapper>
         <ProgressBar />
       </ProgressWrapper>
 
-      {/*<div className="pv2" />*/}
+      {/* <div className="pv2" /> */}
 
       <AudioButton className="pr2">
         <FaRegPlayCircle />
@@ -33,15 +31,15 @@ export default function () {
   )
 }
 
-const PlayingTrack = styled.h2`
-  color: #000411;
-  font-size: 1.33rem;
-`
-
 const Audio = styled.audio`
   //background-color: white;
   //color: white;
   //margin: 100px;
+`
+
+const PlayingTrack = styled.h2`
+  color: #000411;
+  font-size: 1.33rem;
 `
 
 const ProgressWrapper = styled.div`

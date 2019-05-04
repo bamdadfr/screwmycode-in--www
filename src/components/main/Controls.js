@@ -19,7 +19,7 @@ export default function () {
           <Input
             className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
             type="text"
-            value={'-18,3'}
+            value="-18,3"
           />
         </div>
         <div className="w-40 ma0 pa0">
@@ -52,4 +52,3 @@ const Input = styled.input`
     background-color: #160c28;
   }
 `
-
