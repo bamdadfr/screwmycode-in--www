@@ -43,7 +43,7 @@ function init () {
 
   // console.log('repeatMe',repeatMe)
 
-  let cube = g => {
+  const cube = (g) => {
     const object = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
     object.position.x = Math.random() * 800 - 400
     object.position.y = Math.random() * 800 - 400
@@ -57,14 +57,12 @@ function init () {
     return object
   }
 
-  let loader = new THREE.PLYLoader()
-  loader.load('../plyGeo/FullFeet_Reduced.ply', function (geometry) {
-
+  const loader = new THREE.PLYLoader()
+  loader.load('../plyGeo/FullFeet_Reduced.ply', (geometry) => {
     // Instancier 100 fois notre cube
     for (let i = 0; i < 500; i++) {
       scene.add(cube(geometry))
     }
-
   })
 
   raycaster = new THREE.Raycaster()
