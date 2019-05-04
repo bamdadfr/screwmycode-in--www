@@ -12,11 +12,10 @@ init()
 animate()
 
 function init () {
-
   container = document.createElement('div')
   document.body.appendChild(container)
 
-  console.log("texte:", container)
+  console.log('texte:', container)
 
   camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 200, 10000000)
   scene = new THREE.Scene()
@@ -65,13 +64,11 @@ function onDocumentMouseMove (event) {
 
 //
 function animate () {
-
-
-  scene.traverse(node => {
+  scene.traverse((node) => {
     if (node instanceof THREE.Mesh) {
-      node.rotation.x += 0.005
-      node.rotation.y += 0.005
-      node.rotation.z += 0.005
+      node.rotation.x += 0.05
+      node.rotation.y += 0.05
+      node.rotation.z += 0.05
     }
   })
 
