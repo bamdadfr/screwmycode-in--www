@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 export default function (props) {
-  const { setUrl } = props
+  const { player, setUrl, setId } = props
 
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -16,7 +16,7 @@ export default function (props) {
   }
 
   const askUrl = (Id) => {
-    const url = `http://localhost:5000/${Id}`
+    const url = `http://localhost:5000/youtube/${Id}`
     axios.get(url).then((r) => {
       setUrl(r.data.res)
     })
@@ -24,12 +24,19 @@ export default function (props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (parseId(e.target[0].value) !== 'error') {
-      askUrl(parseId(e.target[0].value))
+    if (parseId(e.target[0].value) !== 'error' && parseId(e.target[0].value) !== player.id) {
+      e.target[0].blur()
+      setId(parseId(e.target[0].value))
     } else {
       console.log('Error: Input URL incorrect.')
     }
   }
+
+  React.useEffect(() => {
+    if (player.id !== null) {
+      askUrl(player.id)
+    }
+  }, [player.id])
 
   return (
     <React.Fragment>
@@ -39,7 +46,6 @@ export default function (props) {
           <div className="w-50 ml2 ma0 pa0">
             <InputYoutube
               type="text"
-              value="https://www.youtube.com/watch?v=7qtrv6KU9MA"
               className="w-100 ma0 pa0 b--transparent bg-transparent"
             />
           </div>
@@ -47,7 +53,7 @@ export default function (props) {
           <div className="w-10 ma0 pa0 ml2">
             <InputSubmit
               type="submit"
-              value="process"
+              value="screw"
               className="w-100 normal input-reset ba b--black-80 bg-transparent pointer f6 dib"
             />
           </div>
@@ -75,7 +81,7 @@ const InputYoutube = styled.input`
 const InputSubmit = styled.input`
   font-size: 1rem;
   font-weight: 400;
-  width: 100px;
+  width: 80px;
   padding: 5px 10px 7px 10px;
   border-radius: 2px;
 

@@ -23,38 +23,52 @@ const store = createStore(
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,800,900');
   
-  html {
-    overflow: hidden;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-  
   .mybg1 {
     background-color: #c999d5;
-    --mybg-pink: #c999d5;
-  }
-  
-  element {
-    --main-bg-color: white;
   }
   
   .myYellow {
     background-color: #efcb68;
-    --mybg-yellow: #efcb68;
   }
   
   .myBlue {
     background-color: #160c28;
-    --mybg-blue: #160c28;
   }
   
   .myWhite {
     background-color: #e1efe6;
-    --mybg-white: #e1efe6;
   }
   
   .myBlack {
     background-color: #000411;
-    --myb-black: #000411;
+  }
+  
+  html {
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    background: linear-gradient(76deg, #c999d5, #efcb68);
+    background-size: 400% 400%;
+    
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+    
+    @-webkit-keyframes AnimationName {
+        0%{background-position:84% 0%}
+        50%{background-position:17% 100%}
+        100%{background-position:84% 0%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:84% 0%}
+        50%{background-position:17% 100%}
+        100%{background-position:84% 0%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:84% 0%}
+        50%{background-position:17% 100%}
+        100%{background-position:84% 0%}
+    }    
   }
 `
 

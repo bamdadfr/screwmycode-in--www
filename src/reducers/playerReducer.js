@@ -1,6 +1,7 @@
 export const types = {
   SET_IS_PLAYING: 'SET_IS_PLAYING',
   SET_SPEED: 'SET_SPEED',
+  SET_ID: 'SET_ID',
   SET_URL: 'SET_URL',
   SET_TITLE: 'SET_TITLE',
 }
@@ -13,6 +14,10 @@ export const actions = {
   setSpeed: speed => ({
     type: types.SET_SPEED,
     payload: speed,
+  }),
+  setId: id => ({
+    type: types.SET_ID,
+    payload: id,
   }),
   setUrl: url => ({
     type: types.SET_URL,
@@ -27,6 +32,7 @@ export const actions = {
 export const initState = {
   isPlaying: false, // former 'state'
   speed: 1,
+  id: null,
   url: null, // will contain string
   title: null,
 }
@@ -42,6 +48,11 @@ export default (state = initState, action) => {
       return {
         ...state,
         speed: action.payload,
+      }
+    case types.SET_ID:
+      return {
+        ...state,
+        id: action.payload,
       }
     case types.SET_URL:
       return {

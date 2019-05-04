@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// import Main from './Main'
 import Form from '../main/_Form'
 import Player from '../main/_Player'
 import Controls from '../main/_Controls'
@@ -10,12 +9,12 @@ export default () => (
   <React.Fragment>
 
     <article className="pb5">
-      <header className="vh-100 mybg1 ph6 dt w-100">
+      <header className="vh-100 ph6 dt w-100">
         <div className="dtc v-mid cover">
 
           <div className="flex">
 
-            <div className="w-60 ph0 ph2-m ph3-l mybg1">
+            <div className="w-60 ph0 ph2-m ph3-l">
               <div className="w-100 vh-75 bg-transparent">
 
                 <div className="pv4" />
@@ -52,17 +51,6 @@ export default () => (
       </header>
     </article>
 
-    {/* <div className="wrapper"> */}
-    {/*  <header className="page-header"> */}
-    {/*    screwmycode.in */}
-    {/*  </header> */}
-    {/*  <main className="page-main"> */}
-    {/*    <Main /> */}
-    {/*  </main> */}
-    {/*  <footer className="page-footer"> */}
-    {/*    Footer */}
-    {/*  </footer> */}
-    {/* </div> */}
   </React.Fragment>
 )
 
