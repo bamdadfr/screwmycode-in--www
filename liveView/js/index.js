@@ -1,9 +1,9 @@
-var camera
-var scene
-var renderer
-var geometry
-var material
-var mesh
+let camera
+let scene
+let renderer
+let geometry
+let material
+let mesh
 
 function init () {
   camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10)
