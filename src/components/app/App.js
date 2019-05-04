@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import WordArt from 'react-wordart'
 
 import { FaRegPauseCircle, FaRegPlayCircle, FaRegStopCircle } from 'react-icons/fa'
-import Main from './Main'
+// import Main from './Main'
 import Form from '../main/_Form'
 import Player from '../main/_Player'
 import Controls from '../main/_Controls'

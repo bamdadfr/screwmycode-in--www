@@ -1,26 +1,60 @@
 import React from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 
-export default function () {
+export default function (props) {
+
+  const { setUrl } = props
+
+  const parseId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
+    const match = url.match(regExp)
+
+    if (match && match[2].length === 11) {
+      return match[2]
+    }
+    return 'error'
+  }
+
+  const askUrl = (Id) => {
+    const url = `http://localhost:5000/${Id}`
+    axios.get(url).then((r) => {
+      setUrl(r.data.res)
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (parseId(e.target[0].value) !== 'error') {
+      askUrl(parseId(e.target[0].value))
+    } else {
+      console.log('Error: Input URL incorrect.')
+    }
+  }
+
   return (
     <React.Fragment>
-      <div className="flex ma0 pa0 bg-transparent">
-        <div className="w-50 ml2 ma0 pa0">
-          <InputYoutube
-            type="text"
-            value="https://www.youtube.com/watch?v=1000"
-            className="w-100 ma0 pa0 b--transparent bg-transparent"
-          />
-        </div>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="flex ma0 pa0 bg-transparent">
 
-        <div className="w-10 ma0 pa0 ml2">
-          <InputSubmit
-            type="submit"
-            value="process"
-            className="w-100 normal input-reset ba b--black-80 bg-transparent pointer f6 dib"
-          />
+          <div className="w-50 ml2 ma0 pa0">
+            <InputYoutube
+              type="text"
+              value="https://www.youtube.com/watch?v=7qtrv6KU9MA"
+              className="w-100 ma0 pa0 b--transparent bg-transparent"
+            />
+          </div>
+
+          <div className="w-10 ma0 pa0 ml2">
+            <InputSubmit
+              type="submit"
+              value="process"
+              className="w-100 normal input-reset ba b--black-80 bg-transparent pointer f6 dib"
+            />
+          </div>
+
         </div>
-      </div>
+      </form>
     </React.Fragment>
   )
 }

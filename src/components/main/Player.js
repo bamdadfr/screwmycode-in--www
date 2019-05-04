@@ -2,7 +2,39 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaRegPauseCircle, FaRegPlayCircle, FaRegStopCircle } from 'react-icons/fa'
 
-export default function () {
+export default function (props) {
+  const { player } = props
+
+  const audioRef = React.createRef()
+
+  const startPlayer = () => {
+    const audio = audioRef.current
+    audio.src = player.url
+    audio.load()
+    audio.playbackRate = player.speed
+    audio.play()
+  }
+
+  // when rawUrl is fetched, update the DOM
+  React.useEffect(() => {
+    if (player.isPlaying) {
+      startPlayer()
+    }
+  }, [player.isPlaying])
+
+  // when speed changes
+  React.useEffect(() => {
+    const audio = audioRef.current
+    audio.playbackRate = player.speed
+  }, [player.speed])
+
+  // Mounting audio el
+  React.useEffect(() => {
+    const audio = audioRef.current
+    audio.mozPreservesPitch = false
+    audio.webkitPreservesPitch = false // Does not work
+  }, [])
+
   return (
     <React.Fragment>
       <PlayingTrack className="normal ma0 lh-title">
@@ -10,7 +42,7 @@ export default function () {
       </PlayingTrack>
 
       {/* <div className="pv" /> */}
-      {/* <Audio className="w-100" controls /> */}
+      <Audio className="w-100" ref={audioRef} controls />
 
       <ProgressWrapper>
         <ProgressBar />
