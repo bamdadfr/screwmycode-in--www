@@ -8,13 +8,25 @@ export default function (props) {
   const toneRef = React.createRef()
 
   const percentToSpeed = percent => (Number(percent) + 100) / 100
-  const toneToSpeed = tones => Number(tones) / 12 + 1
   const speedToPercent = speed => (Number(speed) * 100 - 100).toFixed(1)
+  // const toneToSpeed = tones => Number(tones) / 12 + 1
+
+  const toneToSpeed = tone => {
+    return Math.pow(2, (tone / 12))
+  }
+
   const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
 
+  // const speedToTone = speed => {
+  //   return null
+  // }
+
   const dispatchSpeed = (s) => {
+    console.log("a", s)
     if (s >= 0.5 && s <= 1.5) {
+      console.log("b")
       if (s !== player.speed) {
+        console.log("c")
         percentRef.current.blur()
         setSpeed(s)
       }
@@ -41,6 +53,7 @@ export default function (props) {
     }
   }, [player.speed])
 
+  console.log('Controls render')
   return (
     <React.Fragment>
       <div className="flex justify-around w-80">

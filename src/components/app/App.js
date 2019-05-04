@@ -4,57 +4,64 @@ import styled from 'styled-components'
 import Form from '../main/_Form'
 import Player from '../main/_Player'
 import Controls from '../main/_Controls'
+import Title from '../main/_Title'
 
-export default () => (
-  <React.Fragment>
+export default () => {
+  console.log('App render')
 
-    <article className="pb5">
-      <header className="vh-100 ph6 dt w-100">
-        <div className="dtc v-mid cover">
+  return (
+    <React.Fragment>
 
-          <div className="flex">
+      <article className="pb5">
+        <header className="vh-100 ph6 dt w-100">
+          <div className="dtc v-mid cover">
 
-            <div className="w-60 ph0 ph2-m ph3-l">
-              <div className="w-100 vh-75 bg-transparent">
+            <div className="flex">
 
-                <div className="pv4" />
+              <div className="w-60 ph0 ph2-m ph3-l">
+                <div className="w-100 vh-75 bg-transparent">
 
-                <Title className="pl2 ma0 pa0">
+                  <div className="pv4" />
+
+                  <Logo className="pl2 ma0 pa0">
                     screwmycode.in
-                </Title>
+                  </Logo>
 
-                <div className="pv4" />
+                  <div className="pv4" />
 
-                <Form />
+                  <Form />
 
+                </div>
               </div>
-            </div>
 
-            <div className="w-40 ph0 ph2-m ph3-l bg-transparent">
-              <div className="w-100 vh-75 bg-transparent">
+              <div className="w-40 ph0 ph2-m ph3-l bg-transparent">
+                <div className="w-100 vh-75 bg-transparent">
 
-                <div className="pv5" />
+                  <div className="pv5" />
 
-                <Player />
+                  <Title />
 
-                <div className="pv4" />
+                  <Player />
 
-                <Controls />
+                  <div className="pv4" />
 
+                  <Controls />
+
+                </div>
               </div>
+
             </div>
 
           </div>
 
-        </div>
+        </header>
+      </article>
 
-      </header>
-    </article>
+    </React.Fragment>
+  )
+}
 
-  </React.Fragment>
-)
-
-const Title = styled.h1`
+const Logo = styled.h1`
   font-size: 5rem;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #000411;

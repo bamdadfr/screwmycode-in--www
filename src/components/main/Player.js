@@ -35,13 +35,9 @@ export default function (props) {
     audio.webkitPreservesPitch = false // Does not work
   }, [])
 
+  console.log("Player render")
   return (
     <React.Fragment>
-      <PlayingTrack className="normal ma0 lh-title">
-        Artiste - Titre
-      </PlayingTrack>
-
-      {/* <div className="pv" /> */}
       <Audio className="w-100" ref={audioRef} controls />
 
       <ProgressWrapper>
@@ -69,11 +65,6 @@ const Audio = styled.audio`
   //margin: 100px;
 `
 
-const PlayingTrack = styled.h2`
-  color: #000411;
-  font-size: 1.33rem;
-`
-
 const ProgressWrapper = styled.div`
   width: 100%;
   height: 10px;
@@ -95,11 +86,12 @@ const ProgressBar = styled.div`
 `
 
 const AudioButton = styled.span`
-  //background-color: #000411;
+  background-color: white;
   font-size: 2rem;
   //color: #efcb68;
   padding-top: 0;
   
-  //:hover {
-  //}
+  :hover {
+    color: white;
+  }
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 export default function (props) {
-  const { player, setUrl, setId } = props
+  const { player, setUrl, setId, setTitle } = props
 
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -18,7 +18,8 @@ export default function (props) {
   const askUrl = (Id) => {
     const url = `http://localhost:5000/youtube/${Id}`
     axios.get(url).then((r) => {
-      setUrl(r.data.res)
+      setTitle(r.data.title)
+      setUrl(r.data.url)
     })
   }
 
@@ -38,6 +39,7 @@ export default function (props) {
     }
   }, [player.id])
 
+  console.log("Form render")
   return (
     <React.Fragment>
       <form onSubmit={e => handleSubmit(e)}>
