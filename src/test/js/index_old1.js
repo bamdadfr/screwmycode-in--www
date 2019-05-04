@@ -26,41 +26,19 @@ function init () {
   const light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(1, 1, 1).normalize()
   scene.add(light)
-  // const geometry = new THREE.BoxGeometry(20, 20, 20)
-
-  // PLY file
-  // var loader = new THREE.PLYLoader();
-  // console.log('loader', loader)
-
-  // const repeatMe = loader.load( '../plyGeo/Calcaneus.ply', function ( g ) {
-
-  //   console.log('g',g)
-  //   const geometry = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
-
-  //   console.log('geometry',geometry)
-  //   return geometry
-  // } );
-
-  // console.log('repeatMe',repeatMe)
-
-  for (let i = 0; i < 100; i++) {
-    // const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
-    // const object = repeatMe
-    loader.load( './models/ply/binary/Lucy100k.ply', function ( geometry ) {
-      geometry.computeVertexNormals();
-      var material = new THREE.MeshStandardMaterial( { color: 0x0055ff, flatShading: true } );
-      var object = new THREE.Mesh( geometry, material )
-      object.position.x = Math.random() * 800 - 400
-      object.position.y = Math.random() * 800 - 400
-      object.position.z = Math.random() * 800 - 400
-      object.rotation.x = Math.random() * 2 * Math.PI
-      object.rotation.y = Math.random() * 2 * Math.PI
-      object.rotation.z = Math.random() * 2 * Math.PI
-      object.scale.x = Math.random() + 0.5
-      object.scale.y = Math.random() + 0.5
-      object.scale.z = Math.random() + 0.5
-      scene.add(object)
-    } );
+  const geometry = new THREE.BoxGeometry(20, 20, 20)
+  for (let i = 0; i < 2000; i++) {
+    const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
+    object.position.x = Math.random() * 800 - 400
+    object.position.y = Math.random() * 800 - 400
+    object.position.z = Math.random() * 800 - 400
+    object.rotation.x = Math.random() * 2 * Math.PI
+    object.rotation.y = Math.random() * 2 * Math.PI
+    object.rotation.z = Math.random() * 2 * Math.PI
+    object.scale.x = Math.random() + 0.5
+    object.scale.y = Math.random() + 0.5
+    object.scale.z = Math.random() + 0.5
+    scene.add(object)
   }
   raycaster = new THREE.Raycaster()
   renderer = new THREE.WebGLRenderer()
@@ -91,9 +69,6 @@ function animate () {
       node.rotation.x += 0.05
       node.rotation.y += 0.05
       node.rotation.z += 0.05
-      // node.position.x += 0.5
-      // node.position.y += 0.5
-      // node.position.z += 0.5
     }
   })
 
