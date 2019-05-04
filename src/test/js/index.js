@@ -1,7 +1,13 @@
-var container, stats
-var camera, scene, raycaster, renderer
-var mouse = new THREE.Vector2(), INTERSECTED
-var radius = 100, theta = 0
+let container
+let stats
+let camera
+let scene
+let raycaster
+let renderer
+const mouse = new THREE.Vector2()
+let INTERSECTED
+const radius = 100
+let theta = 0
 
 init()
 animate()
@@ -9,7 +15,7 @@ animate()
 function init () {
   container = document.createElement('div')
   document.body.appendChild(container)
-  var info = document.createElement('div')
+  const info = document.createElement('div')
   info.style.position = 'absolute'
   info.style.top = '10px'
   info.style.width = '100%'
@@ -19,12 +25,12 @@ function init () {
   camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000)
   scene = new THREE.Scene()
   scene.background = new THREE.Color(0xf0f0f0)
-  var light = new THREE.DirectionalLight(0xffffff, 1)
+  const light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(1, 1, 1).normalize()
   scene.add(light)
-  var geometry = new THREE.BoxBufferGeometry(20, 20, 20)
-  for (var i = 0; i < 2000; i++) {
-    var object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
+  const geometry = new THREE.BoxBufferGeometry(20, 20, 20)
+  for (let i = 0; i < 2000; i++) {
+    const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
     object.position.x = Math.random() * 800 - 400
     object.position.y = Math.random() * 800 - 400
     object.position.z = Math.random() * 800 - 400
@@ -73,7 +79,7 @@ function render () {
   camera.updateMatrixWorld()
   // find intersections
   raycaster.setFromCamera(mouse, camera)
-  var intersects = raycaster.intersectObjects(scene.children)
+  const intersects = raycaster.intersectObjects(scene.children)
   if (intersects.length > 0) {
     if (INTERSECTED != intersects[0].object) {
       if (INTERSECTED) INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex)
