@@ -2,6 +2,15 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 
 export default () => {
+  const isFirefox = typeof InstallTrigger !== 'undefined'
+
+  if (!isFirefox) {
+    console.log('i am not firefox')
+    return (
+      <Redirect to="/firefox" />
+    )
+  }
+
   const [route, setRoute] = React.useState(null)
 
   const inputRef = React.useRef(null)

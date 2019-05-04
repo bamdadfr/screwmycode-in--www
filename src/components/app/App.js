@@ -5,6 +5,7 @@ import {
 
 import './app.css'
 
+import Firefox from '../firefox/Firefox'
 import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
 import Three from '../three/Three'
@@ -41,6 +42,7 @@ export default () => {
               <div className="main-item">
                 <Switch>
                   <Route exact path="/" component={Form} />
+                  <Route path="/firefox" component={Firefox} />
                   <Route path="/youtube/:id" component={Youtube} />
                   <Route path="*" component={redirectToHome} />
                 </Switch>
