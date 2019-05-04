@@ -30,8 +30,9 @@ export default function () {
   function animate () {
     requestAnimationFrame(animate)
 
-    mesh.rotation.x += 0.01
-    mesh.rotation.y += 0.02
+    mesh.rotation.x += 0.1
+    mesh.rotation.y += 0.2
+    mesh.translation.x += 1.00
 
     renderer.render(scene, camera)
   }
