@@ -17,7 +17,7 @@ function init () {
 
   console.log('texte:', container)
 
-  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 200, 10000000)
+  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000)
   scene = new THREE.Scene()
 
   console.log('scene instanciation', scene)
@@ -43,25 +43,30 @@ function init () {
 
   // console.log('repeatMe',repeatMe)
 
-  for (let i = 0; i < 100; i++) {
-    // const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
-    // const object = repeatMe
-    loader.load( '../plyGeo/Calcaneus2.ply', function ( geometry ) {
-      geometry.computeVertexNormals();
-      var material = new THREE.MeshStandardMaterial( { color: 0x0055ff, flatShading: true } );
-      var object = new THREE.Mesh( geometry, material )
-      object.position.x = Math.random() * 800 - 400
-      object.position.y = Math.random() * 800 - 400
-      object.position.z = Math.random() * 800 - 400
-      object.rotation.x = Math.random() * 2 * Math.PI
-      object.rotation.y = Math.random() * 2 * Math.PI
-      object.rotation.z = Math.random() * 2 * Math.PI
-      object.scale.x = Math.random() + 0.5
-      object.scale.y = Math.random() + 0.5
-      object.scale.z = Math.random() + 0.5
-      scene.add(object)
-    } );
+  let cube = g => {
+    const object = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
+    object.position.x = Math.random() * 800 - 400
+    object.position.y = Math.random() * 800 - 400
+    object.position.z = Math.random() * 800 - 400
+    object.rotation.x = Math.random() * 2 * Math.PI
+    object.rotation.y = Math.random() * 2 * Math.PI
+    object.rotation.z = Math.random() * 2 * Math.PI
+    object.scale.x = Math.random() + 0.5
+    object.scale.y = Math.random() + 0.5
+    object.scale.z = Math.random() + 0.5
+    return object
   }
+
+  let loader = new THREE.PLYLoader()
+  loader.load('../plyGeo/Calcaneus2.ply', function (geometry) {
+
+    // Instancier 100 fois notre cube
+    for (let i = 0; i < 100; i++) {
+      scene.add(cube(geometry))
+    }
+
+  })
+
   raycaster = new THREE.Raycaster()
   renderer = new THREE.WebGLRenderer()
   renderer.setPixelRatio(window.devicePixelRatio)
@@ -88,15 +93,14 @@ function onDocumentMouseMove (event) {
 function animate () {
   scene.traverse((node) => {
     if (node instanceof THREE.Mesh) {
-      node.rotation.x += 0.05
-      node.rotation.y += 0.05
-      node.rotation.z += 0.05
+      // node.rotation.x += 0.05
+      // node.rotation.y += 0.05
+      // node.rotation.z += 0.05
       // node.position.x += 0.5
       // node.position.y += 0.5
       // node.position.z += 0.5
     }
   })
-
 
   requestAnimationFrame(animate)
   render()
