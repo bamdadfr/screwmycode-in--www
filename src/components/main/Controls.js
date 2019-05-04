@@ -13,8 +13,12 @@ export default function (props) {
 
   const toneToSpeed = tone => 2 ** (tone / 12)
 
+  // 12 * ( log ( speed ) / log ( 2 ) )
+
+  const speedToTone = speed => (12 * (Math.log(speed) / Math.log(2)).toFixed(1))
+
   // Wrong!!
-  const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
+  // const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
 
   // const speedToTone = speed => {
   //   return null
