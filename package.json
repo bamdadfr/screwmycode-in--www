@@ -23,7 +23,7 @@
     "lint": "node_modules/.bin/eslint src --ext .js",
     "fix": "node_modules/.bin/eslint src --ext .js --fix",
     "git": "hooks/git.sh",
-    "serve": "serve -s ./liveView"
+    "serve": "serve -s ./src/test"
   },
   "eslintConfig": {
     "extends": "react-app"
