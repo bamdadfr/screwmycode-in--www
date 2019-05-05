@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import store from './store'
 import Flex from './components/app/Flex'
 
-
 function Root () {
   return (
     <React.Fragment>
