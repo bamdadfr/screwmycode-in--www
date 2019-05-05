@@ -94,7 +94,7 @@ const Audio = styled.audio`
 const ProgressWrapper = styled.div`
   width: 100%;
   height: 10px;
-  background: white;
+  background: black;
   margin: 20px 0;
   overflow: hidden;
   position: relative;
@@ -104,7 +104,7 @@ const ProgressWrapper = styled.div`
 const ProgressBar = styled.div`
   width: 100%;
   height: 10px;
-  background: #000411;
+  background: white;
   left: 0;
   position: absolute;
   top: 0;

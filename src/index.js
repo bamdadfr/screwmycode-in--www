@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,800,900');
   
   .mybg1 {
-    background-color: #c999d5;
+    background-color: white;
   }
   
   .myYellow {
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .myBlue {
-    background-color: #160c28;
+    background-color: white;
   }
   
   .myWhite {
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .myBlack {
-    background-color: #000411;
+    background-color: white;
   }
   
   html {

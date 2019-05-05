@@ -71,14 +71,16 @@ export default function (props) {
 const InputYoutube = styled.input`
   font-size: 1rem;
   padding: 5px 0 5px 2px;
-  border-bottom: 1px solid #000411;
+  border-bottom: 1px solid white;
   
-  color: #000411;
+  //color: #000411;
+  color: white;
   background-color: inherit;
 
   :hover, :focus {
     background-color: #160c28;
-    color: #efcb68;
+    //color: #efcb68;
+    color: white;
   }
 `
 
@@ -89,13 +91,15 @@ const InputSubmit = styled.input`
   padding: 5px 10px 7px 10px;
   border-radius: 2px;
 
-  border-color: #000411;
-  color: #000411;
+  border-color: white;
+  //color: #000411;
+  color: white;
   background-color: inherit;
 
   :hover {
     background-color: #160c28;
     border-color: #efcb68;
-    color: #efcb68;
+    //color: #efcb68;
+    color: white;
   }
 `

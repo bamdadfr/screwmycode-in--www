@@ -105,6 +105,7 @@ const Input = styled.input`
   font-weight: 400;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+  color: white;
   
   :hover, :focus {
     color: #efcb68;
