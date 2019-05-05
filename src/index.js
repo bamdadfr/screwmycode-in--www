@@ -75,7 +75,7 @@ function Root () {
 }
 
 const BackgroundImage = styled.div`
-  background-image: url("https://i.imgur.com/NILLJCB.jpg");
+  background-image: url("https://i.imgur.com/gKVShYr.jpg");
   filter: brightness(100%) blur(2px);
   -webkit-filter: brightness(100%) blur(2px);
   
