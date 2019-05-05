@@ -13,50 +13,50 @@ export default () => {
     <React.Fragment>
       <Div>
 
-      <article className="pb5">
-        <header className="vh-100 ph6 dt w-100">
-          <div className="dtc v-mid cover">
+        <article className="pb5">
+          <header className="vh-100 ph6 dt w-100">
+            <div className="dtc v-mid cover">
 
-            <div className="flex">
+              <div className="flex">
 
-              <div className="w-60 ph0 ph2-m ph3-l">
-                <div className="w-100 vh-75 bg-transparent">
+                <div className="w-60 ph0 ph2-m ph3-l">
+                  <div className="w-100 vh-75 bg-transparent">
 
-                  <div className="pv4" />
+                    <div className="pv4" />
 
-                  <Logo className="pl2 ma0 pa0">
+                    <Logo className="pl2 ma0 pa0">
                     screwmycode.in
-                  </Logo>
+                    </Logo>
 
-                  <div className="pv4" />
+                    <div className="pv4" />
 
-                  <Form />
+                    <Form />
 
+                  </div>
                 </div>
-              </div>
 
-              <div className="w-40 ph0 ph2-m ph3-l bg-transparent">
-                <div className="w-100 vh-75 bg-transparent">
+                <div className="w-40 ph0 ph2-m ph3-l bg-transparent">
+                  <div className="w-100 vh-75 bg-transparent">
 
-                  <div className="pv5" />
+                    <div className="pv5" />
 
-                  <Title />
+                    <Title />
 
-                  <Player />
+                    <Player />
 
-                  <div className="pv4" />
+                    <div className="pv4" />
 
-                  <Controls />
+                    <Controls />
 
+                  </div>
                 </div>
+
               </div>
 
             </div>
 
-          </div>
-
-        </header>
-      </article>
+          </header>
+        </article>
 
       </Div>
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { Provider } from 'react-redux'
 import 'tachyons'
-import styled from 'styled-components'
+
 
 import store from './store'
 import App from './components/app/_App'
