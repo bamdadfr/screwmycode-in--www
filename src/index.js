@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
 import { Provider } from 'react-redux'
 import 'tachyons'
+import styled from 'styled-components'
 
 import store from './store'
 import App from './components/app/_App'
@@ -31,10 +32,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   html {
-    overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
-        
-    background: linear-gradient(76deg, #333, #cfab48);
+    
+    overflow: hidden;
+    background: #000;
+    //background: linear-gradient(76deg, #333, #cfab48);
+    
     //background-size: 400% 400%;
     //
     //-webkit-animation: AnimationName 4s ease infinite;
@@ -63,12 +66,28 @@ function Root () {
   return (
     <React.Fragment>
       <Provider store={store}>
+        <BackgroundImage />
         <GlobalStyle />
         <App />
       </Provider>
     </React.Fragment>
   )
 }
+
+const BackgroundImage = styled.div`
+  background-image: url("https://i.imgur.com/NILLJCB.jpg");
+  filter: brightness(100%) blur(2px);
+  -webkit-filter: brightness(100%) blur(2px);
+  
+  height: 100vh;
+  
+  position: relative;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
 
 ReactDOM.render(
   <Root />,

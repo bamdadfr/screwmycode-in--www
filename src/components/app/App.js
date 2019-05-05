@@ -11,6 +11,7 @@ export default () => {
 
   return (
     <React.Fragment>
+      <Div>
 
       <article className="pb5">
         <header className="vh-100 ph6 dt w-100">
@@ -57,14 +58,22 @@ export default () => {
         </header>
       </article>
 
+      </Div>
+
     </React.Fragment>
   )
 }
 
+const Div = styled.div`
+  margin-top: -100vh;
+  position: relative;
+  color: white;
+`
+
 const Logo = styled.h1`
   font-size: 5rem;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #000411;
+  -webkit-text-stroke: 2px white;
   
   // Scaling
   transform: scale(1, 1.1);
