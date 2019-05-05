@@ -13,8 +13,12 @@ export default function (props) {
 
   const toneToSpeed = tone => 2 ** (tone / 12)
 
+  // 12 * ( log ( speed ) / log ( 2 ) )
+
+  const speedToTone = speed => (12 * (Math.log(speed) / Math.log(2)).toFixed(1))
+
   // Wrong!!
-  const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
+  // const speedToTone = speed => ((Number(speed) - 1) * 12).toFixed(1)
 
   // const speedToTone = speed => {
   //   return null
@@ -29,13 +33,13 @@ export default function (props) {
     }
   }
 
-  const dispatchPercent = (e) => {
+  const submitPercent = (e) => {
     e.preventDefault()
     const s = percentToSpeed(e.target[0].value)
     dispatchSpeed(s)
   }
 
-  const dispatchTone = (e) => {
+  const submitTone = (e) => {
     e.preventDefault()
     const s = toneToSpeed(e.target[0].value)
     dispatchSpeed(s)
@@ -63,7 +67,7 @@ export default function (props) {
 
       <div className="flex justify-around w-80">
         <div className="w-40 ma0 pa0">
-          <form onSubmit={e => dispatchPercent(e)}>
+          <form onSubmit={e => submitPercent(e)}>
             <Input
               ref={percentRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
@@ -74,7 +78,7 @@ export default function (props) {
           </form>
         </div>
         <div className="w-40 ma0 pa0">
-          <form onSubmit={e => dispatchTone(e)}>
+          <form onSubmit={e => submitTone(e)}>
             <Input
               ref={toneRef}
               className="input-reset b w-100 ba tc f1 b--transparent bg-transparent"
@@ -101,6 +105,7 @@ const Input = styled.input`
   font-weight: 400;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+  color: white;
   
   :hover, :focus {
     color: #efcb68;
