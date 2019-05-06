@@ -1,4 +1,5 @@
 export const types = {
+  SET_LOADING: 'SET_LOADING',
   SET_IS_PLAYING: 'SET_IS_PLAYING',
   SET_SPEED: 'SET_SPEED',
   SET_ID: 'SET_ID',
@@ -7,6 +8,10 @@ export const types = {
 }
 
 export const actions = {
+  setLoading: status => ({
+    type: types.SET_LOADING,
+    payload: status,
+  }),
   setIsPlaying: status => ({
     type: types.SET_PLAYING,
     payload: status,
@@ -30,6 +35,7 @@ export const actions = {
 }
 
 export const initState = {
+  loading: false,
   isPlaying: false, // former 'state'
   speed: 1,
   id: null,
@@ -39,6 +45,11 @@ export const initState = {
 
 export default (state = initState, action) => {
   switch (action.type) {
+    case types.SET_LOADING:
+      return {
+        ...state,
+        loading: action.payload,
+      }
     case types.SET_IS_PLAYING:
       return {
         ...state,

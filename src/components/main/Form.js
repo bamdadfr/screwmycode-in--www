@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export default ({
-  player, setUrl, setId, setTitle,
+  player, setUrl, setId, setTitle, setLoading,
 }) => {
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -13,12 +14,13 @@ export default ({
     }
     return 'error'
   }
-
   const askUrl = (Id) => {
+    setLoading(true)
     const url = `http://localhost:5000/youtube/${Id}`
     axios.get(url).then((r) => {
       setTitle(r.data.title)
       setUrl(r.data.url)
+      setLoading(false)
     })
   }
 
@@ -32,11 +34,29 @@ export default ({
     }
   }
 
+  // console.log("Loading", player.loading)
+
   React.useEffect(() => {
     if (player.id !== null) {
       askUrl(player.id)
     }
   }, [player.id])
+
+  if (player.loading) {
+    return (
+      <React.Fragment>
+        <div className="form">
+          loading...
+        </div>
+      </React.Fragment>
+    )
+  }
+
+  if (!player.loading && player.url !== null) {
+    return (
+      <Redirect to="/player" />
+    )
+  }
 
   console.log('Form render')
   return (

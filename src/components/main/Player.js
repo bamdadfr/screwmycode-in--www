@@ -1,5 +1,8 @@
 import React from 'react'
 
+import PlayerTitle from './_PlayerTitle'
+import PlayerControls from './_PlayerControls'
+
 export default function ({ player }) {
   const audioRef = React.createRef()
 
@@ -35,11 +38,16 @@ export default function ({ player }) {
   console.log('Player render')
   return (
     <React.Fragment>
+
+      <PlayerTitle />
+
       <div className="player">
         <audio className="w-100" ref={audioRef} controls>
           <track kind="captions" />
         </audio>
       </div>
+
+      <PlayerControls />
     </React.Fragment>
   )
 }

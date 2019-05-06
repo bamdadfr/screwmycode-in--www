@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 
 import { actions as playerActions } from '../../reducers/playerReducer'
 
-import Controls from './Controls'
+import PlayerControls from './PlayerControls'
 
 const mapStateToProps = state => ({
   ...state,
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Controls)
+)(PlayerControls)
