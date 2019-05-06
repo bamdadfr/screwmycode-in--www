@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 // import { actions as playerActions } from '../../reducers/playerReducer'
 
-import Title from './Title'
+import PlayerTitle from './PlayerTitle'
 
 const mapStateToProps = state => ({
   ...state,
@@ -18,4 +18,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   // mapDispatchToProps,
-)(Title)
+)(PlayerTitle)

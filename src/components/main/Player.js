@@ -1,10 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { FaRegPauseCircle, FaRegPlayCircle, FaRegStopCircle } from 'react-icons/fa'
 
-export default function (props) {
-  const { player } = props
-
+export default function ({ player }) {
   const audioRef = React.createRef()
 
   const startPlayer = () => {
@@ -13,14 +9,7 @@ export default function (props) {
     audio.load()
     audio.playbackRate = player.speed
     audio.play()
-    audio.ontimeupdate = () => updateProgress()
-  }
-
-  const updateProgress = () => {
-    const audio = audioRef.current
-
-    // console.log('currentTime', audio.currentTime)
-    // console.log('duration', audio.duration)
+    audio.ontimeupdate = () => console.log(audio.currentTime)
   }
 
   // when playing state changes or url changes, update the DOM
@@ -29,7 +18,6 @@ export default function (props) {
       startPlayer()
     }
   }, [player.isPlaying, player.url])
-
 
   // when speed changes
   React.useEffect(() => {
@@ -47,77 +35,11 @@ export default function (props) {
   console.log('Player render')
   return (
     <React.Fragment>
-      <Audio className="w-100" ref={audioRef} controls />
-
       <div className="player">
-        <img />
-        <div className="info">
-          <div className="title">
-            title
-          </div>
-          <div className="artist">
-            artist
-          </div>
-        </div>
-        <div className="buttons">
-          <FaRegPlayCircle />
-          <FaRegStopCircle />
-        </div>
-        <div className="progress" />
+        <audio className="w-100" ref={audioRef} controls>
+          <track kind="captions" />
+        </audio>
       </div>
-
-      <ProgressWrapper>
-        <ProgressBar />
-      </ProgressWrapper>
-
-      {/* <div className="pv2" /> */}
-
-      <AudioButton className="pr2">
-        <FaRegPlayCircle />
-      </AudioButton>
-      <AudioButton className="pr2">
-        <FaRegPauseCircle />
-      </AudioButton>
-      <AudioButton>
-        <FaRegStopCircle />
-      </AudioButton>
     </React.Fragment>
   )
 }
-
-const Audio = styled.audio`
-  //background-color: white;
-  //color: white;
-  //margin: 100px;
-`
-
-const ProgressWrapper = styled.div`
-  width: 100%;
-  height: 10px;
-  background: black;
-  margin: 20px 0;
-  overflow: hidden;
-  position: relative;
-  border-radius: 2px;
-`
-
-const ProgressBar = styled.div`
-  width: 100%;
-  height: 10px;
-  background: white;
-  left: 0;
-  position: absolute;
-  top: 0;
-  border-radius: 2px;
-`
-
-const AudioButton = styled.span`
-  background-color: white;
-  font-size: 2rem;
-  //color: #efcb68;
-  padding-top: 0;
-  
-  :hover {
-    color: red;
-  }
-`

@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    height: 100vh;
+
+    background: transparent;
+}
+
+.backgroundImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background: palegoldenrod;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+
+    margin: 0 10px 0 10px;
+    height: 90%;
+
+    background: #8dffcd;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 150px;
+
+    background: #d3cda0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    height: 55%;
+    margin: 10px;
+
+    background: #ec3456;
+}
+
+.main-item {
+    margin: 10px 10px 0 10px;
+
+    background: #87a7bd;
+}
+
+.main-item:last-child {
+    margin-bottom: 10px;
+}
+
+.main-spacer {
+    flex-grow: 1;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+
+    margin: 5px;
+
+    /*background: #fff27f;*/
+}
+
+.form:first-child input {
+    width: 300px;
+
+    text-align: center;
+}
+
+.player-title {
+    display: flex;
+    justify-content: center;
+
+    margin: 5px;
+
+    /*background: #8cffd6;*/
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+
+    margin: 5px;
+
+    /*background: #ffe1c1;*/
+}
+
+.player audio {
+    width: 500px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px;
+
+    /*background: #ffbbce;*/
+}
+
+.controls-item {
+    width: 100px;
+
+    text-align: center;
+    /*background: #8fff7d;*/
+}
+
+.controls-item:first-child {
+    margin-right: 5px;
+}
+
+.controls-item input {
+    margin-top: 5px;
+    width: 40px;
+    height: 30px;
+
+    text-align: center;
+}
+
+.controls-item input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
