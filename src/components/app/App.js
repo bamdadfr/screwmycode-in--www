@@ -3,20 +3,10 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import './app.css'
 
-import Form from '../main/_Form'
-import Player from '../main/_Player'
+import Form from '../form/Form'
+import Youtube from '../routes/Youtube'
 
-export default function ({
-  player, setUrl, setId, setTitle,
-}) {
-  const redirectToHome = () => {
-    if (player.url !== null && player.id !== null) {
-      setTitle(null)
-      setId(null)
-      setUrl(null)
-    }
-  }
-
+export default function () {
   console.log('App render')
   return (
     <React.Fragment>
@@ -26,7 +16,7 @@ export default function ({
 
           <div className="container">
             <div className="title">
-              <NavLink to="/" onClick={() => redirectToHome()}>
+              <NavLink to="/">
                 screwmycode.in
               </NavLink>
             </div>
@@ -37,7 +27,7 @@ export default function ({
 
               <div className="main-item">
                 <Route exact path="/" component={Form} />
-                <Route path="/player" component={Player} />
+                <Route path="/youtube/:id" component={Youtube} />
               </div>
 
             </div>

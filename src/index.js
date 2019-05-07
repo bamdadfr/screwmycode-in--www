@@ -1,16 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
 
-import store from './store'
-import App from './components/app/_App'
+import App from './components/app/App'
 
 function Root () {
   return (
     <React.Fragment>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </React.Fragment>
   )
 }

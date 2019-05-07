@@ -1,10 +1,15 @@
 import React from 'react'
 
 export default function (props) {
-  const { player, setSpeed } = props
+  const { speedCB } = props
 
-  const percentRef = React.createRef()
-  const toneRef = React.createRef()
+  const percentRef = React.useRef(null)
+  const toneRef = React.useRef(null)
+  const [speed, setSpeed] = React.useState(1)
+
+  React.useEffect(() => {
+    speedCB(speed)
+  }, [speed, speedCB])
 
   console.log('Controls render')
   return (
@@ -17,7 +22,7 @@ export default function (props) {
               disabled
               ref={percentRef}
               type="text"
-              value={(player.speed * 100 - 100).toFixed(1)}
+              value={(speed * 100 - 100).toFixed(1)}
             />
           </form>
         </div>
@@ -28,7 +33,7 @@ export default function (props) {
               disabled
               ref={toneRef}
               type="text"
-              value={(12 * (Math.log(player.speed) / Math.log(2))).toFixed(1)}
+              value={(12 * (Math.log(speed) / Math.log(2))).toFixed(1)}
             />
           </form>
         </div>
@@ -39,7 +44,7 @@ export default function (props) {
           min="0.5"
           max="1.5"
           step="0.001"
-          value={player.speed}
+          value={speed}
           onChange={e => setSpeed(e.target.value)}
         />
       </div>
