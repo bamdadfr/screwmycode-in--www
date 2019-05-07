@@ -113,14 +113,14 @@ body {
 
     margin: 5px;
 
-    /*background: #ffbbce;*/
+    background: #ffbbce;
 }
 
 .controls-item {
     width: 100px;
 
     text-align: center;
-    /*background: #8fff7d;*/
+    background: #8fff7d;
 }
 
 .controls-item:first-child {
@@ -140,6 +140,21 @@ body {
     -webkit-appearance: none;
 }
 
-input[type="number"] {
+.controls-item input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.controls-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px;
+
+    background: #afff9d;
+
+}
+
+.controls-slider input[type="range"] {
+    width: 500px;
 }

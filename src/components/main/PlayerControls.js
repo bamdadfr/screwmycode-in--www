@@ -6,69 +6,42 @@ export default function (props) {
   const percentRef = React.createRef()
   const toneRef = React.createRef()
 
-  const percentToSpeed = percent => (Number(percent) + 100) / 100
-  const speedToPercent = speed => (Number(speed) * 100 - 100).toFixed(1)
-  const toneToSpeed = tone => 2 ** (tone / 12)
-  const speedToTone = speed => (12 * (Math.log(speed) / Math.log(2)).toFixed(1))
-
-  // handling state updates
-  const dispatchSpeed = (s) => {
-    if (s >= 0.5 && s <= 1.5) {
-      if (s !== player.speed) {
-        percentRef.current.blur()
-        setSpeed(s)
-      }
-    }
-  }
-
-  // handling percent submission
-  const submitPercent = (e) => {
-    e.preventDefault()
-    const s = percentToSpeed(e.target[0].value)
-    dispatchSpeed(s)
-  }
-
-  // handling tone submission
-  const submitTone = (e) => {
-    e.preventDefault()
-    const s = toneToSpeed(e.target[0].value)
-    dispatchSpeed(s)
-  }
-
-  // Refresh DOM
-  React.useEffect(() => {
-    if (percentRef.current.value !== player.speed) {
-      percentRef.current.value = speedToPercent(player.speed)
-      toneRef.current.value = speedToTone(player.speed)
-    }
-  }, [player.speed, percentRef, toneRef])
-
   console.log('Controls render')
   return (
     <React.Fragment>
       <div className="controls">
         <div className="controls-item">
           percent
-          <form onSubmit={e => submitPercent(e)}>
+          <form onSubmit={e => console.log(e)}>
             <input
+              disabled
               ref={percentRef}
-              type="number"
-              min="-50"
-              max="50"
+              type="text"
+              value={(player.speed * 100 - 100).toFixed(1)}
             />
           </form>
         </div>
         <div className="controls-item">
           semitone
-          <form onSubmit={e => submitTone(e)}>
+          <form onSubmit={e => console.log(e)}>
             <input
+              disabled
               ref={toneRef}
-              type="number"
-              min="-6"
-              max="6"
+              type="text"
+              value={(12 * (Math.log(player.speed) / Math.log(2))).toFixed(0)}
             />
           </form>
         </div>
+      </div>
+      <div className="controls-slider">
+        <input
+          type="range"
+          min="0.5"
+          max="1.5"
+          step="0.01"
+          value={player.speed}
+          onChange={e => setSpeed(e.target.value)}
+        />
       </div>
     </React.Fragment>
   )

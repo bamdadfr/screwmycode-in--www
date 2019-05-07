@@ -25,7 +25,7 @@ export default function ({ player }) {
     audio.src = player.url
     audio.load()
     audio.play()
-    audio.ontimeupdate = () => console.log(audio.currentTime)
+    // audio.ontimeupdate = () => console.log(audio.currentTime)
   }, [player.url])
 
   console.log('Player render')
