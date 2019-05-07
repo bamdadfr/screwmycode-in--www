@@ -28,7 +28,7 @@ export default function (props) {
               disabled
               ref={toneRef}
               type="text"
-              value={(12 * (Math.log(player.speed) / Math.log(2))).toFixed(0)}
+              value={(12 * (Math.log(player.speed) / Math.log(2))).toFixed(1)}
             />
           </form>
         </div>
@@ -38,7 +38,7 @@ export default function (props) {
           type="range"
           min="0.5"
           max="1.5"
-          step="0.01"
+          step="0.001"
           value={player.speed}
           onChange={e => setSpeed(e.target.value)}
         />

@@ -158,3 +158,23 @@ body {
 .controls-slider input[type="range"] {
     width: 500px;
 }
+
+@media (max-width: 768px) {
+    .player audio {
+        width: 500px;
+    }
+
+    .controls-slider input[type="range"] {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .player audio {
+        width: 300px;
+    }
+
+    .controls-slider input[type="range"] {
+        width: 300px;
+    }
+}
