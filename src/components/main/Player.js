@@ -5,7 +5,6 @@ import PlayerTitle from './_PlayerTitle'
 import PlayerControls from './_PlayerControls'
 
 export default function ({ player }) {
-
   if (player.url === null) {
     return <Redirect to="/" />
   }

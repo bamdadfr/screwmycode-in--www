@@ -3,9 +3,8 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 export default ({
-                  player, setUrl, setId, setTitle, setLoading,
-                }) => {
-
+  player, setUrl, setId, setTitle, setLoading,
+}) => {
   // parse the youtube ID from full URL
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -31,7 +30,6 @@ export default ({
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
     if (player.id !== null) {
-
       setLoading(true)
 
       // async call to API
