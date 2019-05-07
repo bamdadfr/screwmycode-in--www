@@ -7,8 +7,8 @@ import YoutubeParser from './components/test/youtube_parser'
 function Root () {
   return (
     <React.Fragment>
-      <App />
-      {/* <YoutubeParser /> */}
+      {/* <App /> */}
+      <YoutubeParser />
     </React.Fragment>
   )
 }
