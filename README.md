@@ -2,6 +2,12 @@
 
 _dependent on custom api running youtube-dl package_
 
+used code in youtube-dl package:
+* https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L360
+* https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L1198
+
+Rewriting this module in JS would remove the api dependency !!
+
 ---
 
 ### threejs examples
