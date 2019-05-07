@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import {
+  BrowserRouter as Router, Route, Link, Switch, Redirect,
+} from 'react-router-dom'
 
 import './app.css'
 
@@ -8,6 +10,9 @@ import Youtube from '../routes/Youtube'
 
 export default function () {
   console.log('App render')
+
+  const MyRedirect = () => <Redirect to="/" />
+
   return (
     <React.Fragment>
       <Router>
@@ -16,9 +21,9 @@ export default function () {
 
           <div className="container">
             <div className="title">
-              <NavLink to="/">
+              <Link to="/">
                 screwmycode.in
-              </NavLink>
+              </Link>
             </div>
 
             <div className="main">
@@ -26,8 +31,11 @@ export default function () {
               <div className="main-item main-spacer" />
 
               <div className="main-item">
-                <Route exact path="/" component={Form} />
-                <Route path="/youtube/:id" component={Youtube} />
+                <Switch>
+                  <Route exact path="/" component={Form} />
+                  <Route path="/youtube/:id" component={Youtube} />
+                  <Route path="*" component={MyRedirect} />
+                </Switch>
               </div>
 
             </div>
