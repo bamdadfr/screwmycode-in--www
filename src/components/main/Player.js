@@ -1,26 +1,16 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 import PlayerTitle from './_PlayerTitle'
 import PlayerControls from './_PlayerControls'
 
 export default function ({ player }) {
-  const audioRef = React.createRef()
 
-  const startPlayer = () => {
-    const audio = audioRef.current
-    audio.src = player.url
-    audio.load()
-    audio.playbackRate = player.speed
-    audio.play()
-    audio.ontimeupdate = () => console.log(audio.currentTime)
+  if (player.url === null) {
+    return <Redirect to="/" />
   }
 
-  // when playing state changes or url changes, update the DOM
-  React.useEffect(() => {
-    if (player.isPlaying) {
-      startPlayer()
-    }
-  }, [player.isPlaying, player.url])
+  const audioRef = React.useRef(null)
 
   // when speed changes
   React.useEffect(() => {
@@ -33,7 +23,11 @@ export default function ({ player }) {
     const audio = audioRef.current
     audio.mozPreservesPitch = false
     audio.webkitPreservesPitch = false // Does not work
-  }, [])
+    audio.src = player.url
+    audio.load()
+    audio.play()
+    audio.ontimeupdate = () => console.log(audio.currentTime)
+  }, [player.url])
 
   console.log('Player render')
   return (

@@ -11,6 +11,7 @@ export default function (props) {
   const toneToSpeed = tone => 2 ** (tone / 12)
   const speedToTone = speed => (12 * (Math.log(speed) / Math.log(2)).toFixed(1))
 
+  // handling state updates
   const dispatchSpeed = (s) => {
     if (s >= 0.5 && s <= 1.5) {
       if (s !== player.speed) {
@@ -20,12 +21,14 @@ export default function (props) {
     }
   }
 
+  // handling percent submission
   const submitPercent = (e) => {
     e.preventDefault()
     const s = percentToSpeed(e.target[0].value)
     dispatchSpeed(s)
   }
 
+  // handling tone submission
   const submitTone = (e) => {
     e.preventDefault()
     const s = toneToSpeed(e.target[0].value)
@@ -38,7 +41,7 @@ export default function (props) {
       percentRef.current.value = speedToPercent(player.speed)
       toneRef.current.value = speedToTone(player.speed)
     }
-  }, [player.speed])
+  }, [player.speed, percentRef, toneRef])
 
   console.log('Controls render')
   return (

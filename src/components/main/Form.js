@@ -3,8 +3,10 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 export default ({
-  player, setUrl, setId, setTitle, setLoading,
-}) => {
+                  player, setUrl, setId, setTitle, setLoading,
+                }) => {
+
+  // parse the youtube ID from full URL
   const parseId = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
     const match = url.match(regExp)
@@ -14,16 +16,8 @@ export default ({
     }
     return 'error'
   }
-  const askUrl = (Id) => {
-    setLoading(true)
-    const url = `http://localhost:5000/youtube/${Id}`
-    axios.get(url).then((r) => {
-      setTitle(r.data.title)
-      setUrl(r.data.url)
-      setLoading(false)
-    })
-  }
 
+  // handling form submission
   const handleSubmit = (e) => {
     e.preventDefault()
     if (parseId(e.target[0].value) !== 'error' && parseId(e.target[0].value) !== player.id) {
@@ -34,13 +28,21 @@ export default ({
     }
   }
 
-  // console.log("Loading", player.loading)
-
+  // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
     if (player.id !== null) {
-      askUrl(player.id)
+
+      setLoading(true)
+
+      // async call to API
+      const url = `http://localhost:5000/youtube/${player.id}`
+      axios.get(url).then((r) => {
+        setTitle(r.data.title)
+        setUrl(r.data.url)
+        setLoading(false)
+      })
     }
-  }, [player.id])
+  }, [player.id, setLoading, setUrl, setTitle])
 
   if (player.loading) {
     return (
