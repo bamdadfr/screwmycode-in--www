@@ -9,10 +9,9 @@ import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
 
 export default function () {
-  console.log('App render')
-
   const MyRedirect = () => <Redirect to="/" />
 
+  console.log('App render')
   return (
     <React.Fragment>
       <Router>
