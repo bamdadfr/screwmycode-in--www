@@ -12,6 +12,7 @@ export default function (props) {
 
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
+    setIsLoading(true)
     const url = `http://localhost:5000/youtube/${match.params.id}`
     axios.get(url).then((r) => {
       setPlayerTitle(r.data.title)
@@ -19,6 +20,8 @@ export default function (props) {
       setIsLoading(false)
     })
   }, [match.params.id])
+
+  console.log('isLoading', isLoading)
 
   if (isLoading) {
     return (
