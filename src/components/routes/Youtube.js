@@ -12,8 +12,8 @@ export default function (props) {
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
     setIsLoading(true)
-    const url = `http://localhost:5000/youtube/${match.params.id}`
-    // const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+    // const url = `http://localhost:5000/youtube/${match.params.id}`
+    const url = `https://api.screwmycode.in/youtube/${match.params.id}`
 
     fetch(url)
       .then(r => r.text())
