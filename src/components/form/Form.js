@@ -6,8 +6,8 @@ export default () => {
 
   // parse the youtube ID from full URL
   const parseId = (url) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
-    const match = url.match(regExp)
+    const youtubeRegEx = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
+    const match = url.match(youtubeRegEx)
 
     if (match && match[2].length === 11) {
       return match[2]

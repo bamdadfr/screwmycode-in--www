@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter as Router, Route, Link, Switch, Redirect,
+  BrowserRouter, Route, Link, Switch, Redirect,
 } from 'react-router-dom'
 
 import './app.css'
@@ -9,12 +9,12 @@ import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
 
 export default function () {
-  const MyRedirect = () => <Redirect to="/" />
+  const redirectToHome = () => <Redirect to="/" />
 
   console.log('App render')
   return (
     <React.Fragment>
-      <Router>
+      <BrowserRouter>
         <div className="backgroundImage" />
         <div className="page">
 
@@ -33,7 +33,7 @@ export default function () {
                 <Switch>
                   <Route exact path="/" component={Form} />
                   <Route path="/youtube/:id" component={Youtube} />
-                  <Route path="*" component={MyRedirect} />
+                  <Route path="*" component={redirectToHome} />
                 </Switch>
               </div>
 
@@ -41,7 +41,7 @@ export default function () {
           </div>
 
         </div>
-      </Router>
+      </BrowserRouter>
     </React.Fragment>
   )
 }

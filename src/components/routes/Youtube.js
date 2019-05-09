@@ -1,29 +1,45 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 import Player from '../player/Player'
 
 export default function (props) {
   const { match } = props
 
+  const [redirectToHome, setRedirectToHome] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(true)
   const [playerTitle, setPlayerTitle] = React.useState(null)
   const [playerSrc, setPlayerSrc] = React.useState(null)
 
+  // is the source reachable ? (http status === 200)
+
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
-    setIsLoading(true)
-    // const url = `http://localhost:5000/youtube/${match.params.id}`
-    const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+    const regEx = /^([0-9A-Za-z_-]{11})$/
 
-    fetch(url)
-      .then(r => r.text())
-      .then((data) => {
-        const json = JSON.parse(data)
-        setPlayerTitle(json.title)
-        setPlayerSrc(json.url)
-        setIsLoading(false)
-      })
+    if (regEx.test(match.params.id)) {
+      setIsLoading(true)
+      const url = `http://localhost:5000/youtube/${match.params.id}`
+      // const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+
+      fetch(url)
+        .then(r => r.json())
+        .then((data) => {
+          setPlayerTitle(data.title)
+          setPlayerSrc(data.url)
+
+          setIsLoading(false)
+        })
+    } else {
+      setRedirectToHome(true)
+    }
   }, [match.params.id])
+
+  if (redirectToHome) {
+    return (
+      <Redirect to="/" />
+    )
+  }
 
   if (isLoading) {
     return (
