@@ -47,11 +47,11 @@ export default function (props) {
 
       <div
         className="player-title"
-        onClick={() => copyToClipboard()}
-        role="button"
-        tabIndex="-1"
       >
-        <button type="button">
+        <button
+          type="button"
+          onClick={() => copyToClipboard()}
+        >
           copy
         </button>
       </div>
