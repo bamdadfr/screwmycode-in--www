@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import Player from '../player/Player'
 
 export default function (props) {
-  const { match, location, history } = props
+  const { match, location } = props
 
   const [redirectToHome, setRedirectToHome] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(true)
@@ -21,8 +21,8 @@ export default function (props) {
 
     if (regEx.test(match.params.id)) {
       setIsLoading(true)
-      // const url = `http://localhost:5000/youtube/${match.params.id}`
-      const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+      const url = `http://localhost:5000/youtube/${match.params.id}`
+      // const url = `https://api.screwmycode.in/youtube/${match.params.id}`
 
       fetch(url)
         .then(r => r.json())

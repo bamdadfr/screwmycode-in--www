@@ -35,7 +35,7 @@ export default function (props) {
     handleSpeed(speed)
     audio.play()
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
-  }, [src])
+  }, [src, speed])
 
   console.log('Player render')
   return (
@@ -45,7 +45,12 @@ export default function (props) {
         {title}
       </div>
 
-      <div className="player-title" onClick={() => copyToClipboard()}>
+      <div
+        className="player-title"
+        onClick={() => copyToClipboard()}
+        role="button"
+        tabIndex="-1"
+      >
         <button type="button">
           copy
         </button>
