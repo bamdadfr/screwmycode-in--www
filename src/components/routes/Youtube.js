@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom'
 import Player from '../player/Player'
 
 export default function (props) {
-  const { match } = props
+  const { match, location } = props
+  const params = new URLSearchParams(location.search)
 
   const [redirectToHome, setRedirectToHome] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(true)
@@ -51,11 +52,14 @@ export default function (props) {
     )
   }
 
+  console.log('speed', params.get('speed') ? params.get('speed') : 1)
+
   return (
     <React.Fragment>
       <Player
         title={playerTitle}
         src={playerSrc}
+        speed={params.get('speed') ? params.get('speed') : 1}
       />
     </React.Fragment>
   )

@@ -3,7 +3,7 @@ import React from 'react'
 import Controls from './Controls'
 
 export default function (props) {
-  const { src, title } = props
+  const { src, title, speed } = props
 
   const audioRef = React.useRef(null)
 
@@ -19,6 +19,9 @@ export default function (props) {
     audio.webkitPreservesPitch = false // Does not work
     audio.src = src
     audio.load()
+
+    handleSpeed(speed)
+
     audio.play()
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
   }, [src])
@@ -37,7 +40,10 @@ export default function (props) {
         </audio>
       </div>
 
-      <Controls speedCB={s => handleSpeed(s)} />
+      <Controls
+        init={speed}
+        speedCB={s => handleSpeed(s)}
+      />
     </React.Fragment>
   )
 }

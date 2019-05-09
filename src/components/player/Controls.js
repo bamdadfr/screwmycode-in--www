@@ -1,11 +1,11 @@
 import React from 'react'
 
 export default function (props) {
-  const { speedCB } = props
+  const { speedCB, init } = props
 
   const percentRef = React.useRef(null)
   const toneRef = React.useRef(null)
-  const [speed, setSpeed] = React.useState(1)
+  const [speed, setSpeed] = React.useState(init)
 
   React.useEffect(() => {
     speedCB(speed)
