@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 
 import Player from '../player/Player'
 
@@ -13,15 +12,17 @@ export default function (props) {
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
     setIsLoading(true)
-    const url = `http://localhost:5000/youtube/${match.params.id}`
-    axios.get(url).then((r) => {
-      setPlayerTitle(r.data.title)
-      setPlayerSrc(r.data.url)
-      setIsLoading(false)
-    })
-  }, [match.params.id])
+    const url = `https://api.screwmycode.in/youtube/${match.params.id}`
 
-  console.log('isLoading', isLoading)
+    fetch(url)
+      .then(r => r.text())
+      .then((data) => {
+        const json = JSON.parse(data)
+        setPlayerTitle(json.title)
+        setPlayerSrc(json.url)
+        setIsLoading(false)
+      })
+  }, [match.params.id])
 
   if (isLoading) {
     return (

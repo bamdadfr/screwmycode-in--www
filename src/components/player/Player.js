@@ -19,7 +19,7 @@ export default function (props) {
     audio.webkitPreservesPitch = false // Does not work
     audio.src = src
     audio.load()
-    audio.play()
+    // audio.play()
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
   }, [src])
 
