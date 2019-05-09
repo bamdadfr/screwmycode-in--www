@@ -7,6 +7,19 @@ export default function (props) {
 
   const audioRef = React.useRef(null)
 
+  // copy to clipboard
+  const copyToClipboard = () => {
+    const audio = audioRef.current
+    const el = document.createElement('textarea')
+
+    el.value = `http://${window.location.host}${window.location.pathname}?speed=${audio.playbackRate}`
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+  }
+
+  // handle speed changes
   const handleSpeed = (s) => {
     const audio = audioRef.current
     audio.playbackRate = s
@@ -19,9 +32,7 @@ export default function (props) {
     audio.webkitPreservesPitch = false // Does not work
     audio.src = src
     audio.load()
-
     handleSpeed(speed)
-
     audio.play()
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
   }, [src])
@@ -32,6 +43,12 @@ export default function (props) {
 
       <div className="player-title">
         {title}
+      </div>
+
+      <div className="player-title" onClick={() => copyToClipboard()}>
+        <button type="button">
+          copy
+        </button>
       </div>
 
       <div className="player">

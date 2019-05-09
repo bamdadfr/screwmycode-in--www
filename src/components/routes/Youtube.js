@@ -4,13 +4,14 @@ import { Redirect } from 'react-router-dom'
 import Player from '../player/Player'
 
 export default function (props) {
-  const { match, location } = props
-  const params = new URLSearchParams(location.search)
+  const { match, location, history } = props
 
   const [redirectToHome, setRedirectToHome] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(true)
   const [playerTitle, setPlayerTitle] = React.useState(null)
   const [playerSrc, setPlayerSrc] = React.useState(null)
+
+  const queryParams = new URLSearchParams(location.search)
 
   // is the source reachable ? (http status === 200)
 
@@ -20,8 +21,8 @@ export default function (props) {
 
     if (regEx.test(match.params.id)) {
       setIsLoading(true)
-      const url = `http://localhost:5000/youtube/${match.params.id}`
-      // const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+      // const url = `http://localhost:5000/youtube/${match.params.id}`
+      const url = `https://api.screwmycode.in/youtube/${match.params.id}`
 
       fetch(url)
         .then(r => r.json())
@@ -52,14 +53,12 @@ export default function (props) {
     )
   }
 
-  console.log('speed', params.get('speed') ? params.get('speed') : 1)
-
   return (
     <React.Fragment>
       <Player
         title={playerTitle}
         src={playerSrc}
-        speed={params.get('speed') ? params.get('speed') : 1}
+        speed={queryParams.get('speed') ? queryParams.get('speed') : 1}
       />
     </React.Fragment>
   )
