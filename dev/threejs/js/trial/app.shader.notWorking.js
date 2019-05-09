@@ -73,7 +73,7 @@ function createControls() {
 	C'est maxi casse couille et ça signifie qu'il faut bien maitriser ses mouvements de caméras 
 	*/
 
-    // controls = new THREE.OrbitControls( camera, container )
+    controls = new THREE.OrbitControls( camera, container )
 	// controls = new THREE.TrackballControls( camera, container )
 
 }
@@ -93,8 +93,8 @@ function createLights() {
 
 function createGeometries() {
 
-    const planet = new THREE.SphereGeometry( 1*scale, 64, 64 )
-    // var planet = new THREE.PlaneBufferGeometry( 20, 20 );
+    // const planet = new THREE.SphereGeometry( 1*scale, 64, 64 )
+    var planet = new THREE.PlaneBufferGeometry( 20, 20 );
     return {
 
         planet,
@@ -103,6 +103,74 @@ function createGeometries() {
 
 }
 
+
+
+function vertexShader() {
+    return `
+        varying vec2 vUv;
+        varying vec3 vecPos;
+        varying vec3 vecNormal;
+         
+        void main() {
+          vUv = uv;
+          // Since the light is in camera coordinates,
+          // I'll need the vertex position in camera coords too
+          vecPos = (modelViewMatrix * vec4(position, 1.0)).xyz;
+          // That's NOT exacly how you should transform your
+          // normals but this will work fine, since my model
+          // matrix is pretty basic
+          vecNormal = (modelViewMatrix * vec4(normal, 0.0)).xyz;
+          gl_Position = projectionMatrix *
+                        vec4(vecPos, 1.0);
+        }
+    `  
+}
+
+function fragmentShader() {
+    return `
+        precision highp float;
+         
+        varying vec2 vUv;
+        varying vec3 vecPos;
+        varying vec3 vecNormal;
+         
+        uniform float lightIntensity;
+        uniform sampler2D textureSampler;
+         
+        struct PointLight {
+          vec3 color;
+          vec3 position; // light position, in camera coordinates
+          float distance; // used for attenuation purposes. Since
+                          // we're writing our own shader, it can
+                          // really be anything we want (as long as
+                          // we assign it to our light in its
+                          // "distance" field
+        };
+ 
+    uniform PointLight pointLights[NUM_POINT_LIGHTS];
+     
+    void main(void) {
+      // Pretty basic lambertian lighting...
+      vec4 addedLights = vec4(0.0,
+                              0.0,
+                              0.0,
+                              1.0);
+      for(int l = 0; l < NUM_POINT_LIGHTS; l++) {
+          vec3 lightDirection = normalize(vecPos
+                                - pointLights[l].position);
+          addedLights.rgb += clamp(dot(-lightDirection,
+                                   vecNormal), 0.0, 1.0)
+                             * pointLights[l].color
+                             * lightIntensity;
+      }
+      
+      gl_FragColor = texture2D(textureSampler, vUv)
+                     * addedLights;
+
+
+    `
+  
+} 
 
 
 function createMaterials() {
@@ -115,12 +183,17 @@ function createMaterials() {
     //     gapSize: 0.1
     // })
 
-    // const planet = new THREE.MeshNormalMaterial() 
-    // const planet = new THREE.MeshLambertMaterial( { color: 0xdddddd } )  // Does not work
-    const planet = new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: true, blending: THREE.AdditiveBlending } ) 
-    // const planet = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, flatShading: true } ) // Does not work
-    // const planet = new THREE.MeshDepthMaterial()
-    // const planet = new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: false, blending: THREE.AdditiveBlending } ) 
+    var planet = new THREE.ShaderMaterial( {
+
+        uniforms: {
+            "time": { value: 1.0 }            
+        },
+
+        fragmentShader: fragmentShader(),
+        vertexShader: vertexShader()
+
+    } )
+
     return {
 
         planet,
@@ -272,7 +345,7 @@ function animate() {
 
     const time = Date.now() - time_0
 
-    cameraMotion(time)
+    // cameraMotion(time)
 
     // controls.update() // For Trackball only
     render()
