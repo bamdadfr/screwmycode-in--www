@@ -2,6 +2,12 @@
 
 _dependent on custom api running youtube-dl package_
 
+pass:
+youtube-dl -f 140 -g --verbose https://www.youtube.com/watch?v=6sv4suk1Me8
+
+error:
+youtube-dl -f 140 -g --verbose https://www.youtube.com/watch?v=A89RhzNwTBY
+
 used code in youtube-dl package:
 * https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L360
 * https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L1198
