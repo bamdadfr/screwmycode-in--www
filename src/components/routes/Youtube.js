@@ -13,7 +13,13 @@ export default function (props) {
 
   const queryParams = new URLSearchParams(location.search)
 
-  // is the source reachable ? (http status === 200)
+  const getSpeed = () => {
+    const querySpeed = queryParams.get('speed')
+    if (querySpeed >= 0.5 && querySpeed <= 1.5) {
+      return querySpeed
+    }
+    return 1
+  }
 
   // ask the raw URL to API whenever player.id changes
   React.useEffect(() => {
@@ -53,12 +59,14 @@ export default function (props) {
     )
   }
 
+  console.log(getSpeed())
+
   return (
     <React.Fragment>
       <Player
         title={playerTitle}
         src={playerSrc}
-        speed={queryParams.get('speed') ? queryParams.get('speed') : 1}
+        speed={getSpeed()}
       />
     </React.Fragment>
   )
