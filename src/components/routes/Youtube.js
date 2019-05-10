@@ -33,10 +33,14 @@ export default function (props) {
       fetch(url)
         .then(r => r.json())
         .then((data) => {
-          setPlayerTitle(data.title)
-          setPlayerSrc(data.url)
+          if (data.success) {
+            setPlayerTitle(data.title)
+            setPlayerSrc(data.url)
 
-          setIsLoading(false)
+            setIsLoading(false)
+          } else {
+            setRedirectToHome(true)
+          }
         })
     } else {
       setRedirectToHome(true)
