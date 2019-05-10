@@ -21,8 +21,6 @@ const xAxis = new THREE.Vector3( 1, 0, 0 )
 const yAxis = new THREE.Vector3( 0, 1, 0 )
 const zAxis = new THREE.Vector3( 0, 0, 1 )
 
- 
-
 
 
 function init() {
@@ -31,7 +29,6 @@ function init() {
 
     scene = new THREE.Scene()
     scene.background = new THREE.Color( 0x00000 )
-
 
     createCameras()
     createControls()
@@ -73,7 +70,7 @@ function createControls() {
 	C'est maxi casse couille et ça signifie qu'il faut bien maitriser ses mouvements de caméras 
 	*/
 
-    // controls = new THREE.OrbitControls( camera, container )
+    controls = new THREE.OrbitControls( camera, container )
 	// controls = new THREE.TrackballControls( camera, container )
 
 }
@@ -107,7 +104,6 @@ function createGeometries() {
 
 function createMaterials() {
 
-
     //const planet = new THREE.LineBasicMaterial()
 
     // const planet = new THREE.LineDashedMaterial({
@@ -121,6 +117,7 @@ function createMaterials() {
     // const planet = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, flatShading: true } ) // Does not work
     // const planet = new THREE.MeshDepthMaterial()
     // const planet = new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: false, blending: THREE.AdditiveBlending } ) 
+
     return {
 
         planet,
@@ -132,15 +129,18 @@ function createMaterials() {
 
 function createMeshes() {
 
-    // .. Planet ..............................................................
-
     const Group_1 = new THREE.Group()
     scene.add( Group_1 )
 
     const materials = createMaterials()
     const geometries = createGeometries()
 
-    const planet = new THREE.Mesh( geometries.planet, materials.planet )
+    console.log("geometries",geometries)
+    
+    // .. Planet ..............................................................
+
+    var planet = new THREE.Mesh( geometries.planet, materials.planet )
+
     // const planet = new THREE.Line( geometries.planet, materials.planet )
     // planet.computeLineDistances()
 
@@ -236,10 +236,54 @@ function update() {
 }
 
 
+
+var delta = 0
 function render() {
 
+    // SHADERS [BEGIN]
+
+    // .. Shaders .............................................................
+
+    var customUniforms = {
+        delta: {value: 0}
+    }
+
+    var material = new THREE.ShaderMaterial({
+        uniforms: customUniforms,
+        vertexShader: document.getElementById('vertexShader2').textContent,
+        fragmentShader: document.getElementById('fragmentShader2').textContent
+    })
+
+    var geometry = new THREE.BoxBufferGeometry(5, 5, 5, 0, 0, 0)
+    var mesh = new THREE.Mesh(geometry, material)
+    scene.add(mesh)
+
+    //attribute
+    var vertexDisplacement = new Float32Array(geometry.attributes.position.count)
+
+    for (var i = 0; i < vertexDisplacement.length; i ++) {
+        vertexDisplacement[i] = Math.sin(i)
+    }
+
+    geometry.addAttribute('vertexDisplacement', new THREE.BufferAttribute(vertexDisplacement, 1))
+
+    // SHADERS [END]
+
+    delta += 0.1
+
+    //uniform
+    mesh.material.uniforms.delta.value = 0.5 + Math.sin(delta) * 0.5
+
+    //attribute
+    for (var i = 0; i < vertexDisplacement.length; i ++) {
+        vertexDisplacement[i] = 0.5 + Math.sin(i + delta) * 0.25
+    }
+    mesh.geometry.attributes.vertexDisplacement.needsUpdate = true
+
+
     renderer.render( scene, camera )
-    
+
+    requestAnimationFrame(render)
 
 }
 
@@ -272,7 +316,7 @@ function animate() {
 
     const time = Date.now() - time_0
 
-    cameraMotion(time)
+    // cameraMotion(time)
 
     // controls.update() // For Trackball only
     render()
