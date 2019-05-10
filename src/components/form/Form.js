@@ -22,7 +22,8 @@ export default () => {
       e.target[0].blur()
       setRoute(`youtube/${parseId(e.target[0].value)}`)
     } else {
-      console.log('Error: Input URL incorrect.')
+      e.target[0].value = ''
+      console.warn('Error: Input URL incorrect.')
     }
   }
 
