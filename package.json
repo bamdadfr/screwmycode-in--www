@@ -22,7 +22,8 @@
     "lint": "node_modules/.bin/eslint src --ext .js",
     "fix": "node_modules/.bin/eslint src --ext .js --fix",
     "git": "hooks/git.sh",
-    "serve": "serve -s ./dev/threejs"
+    "serve": "serve -s ./dev/threejs",
+    "bam": "serve -s ./dev/bam"
   },
   "eslintConfig": {
     "extends": "react-app"
