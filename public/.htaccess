@@ -1,6 +1,4 @@
 Options -Indexes
-#ErrorDocument 403 https://www.emkanrecords.com
-#ErrorDocument 404 https://www.emkanrecords.com
 
 RewriteEngine On
 
