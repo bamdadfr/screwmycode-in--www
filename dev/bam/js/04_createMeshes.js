@@ -46,6 +46,7 @@ function createGeometries () {
 
 }
 
+/*
 function createMeshes () {
 
   // create a Group to hold the pieces of the train
@@ -86,6 +87,37 @@ function createMeshes () {
     smallWheelCenter,
     smallWheelFront,
     bigWheel,
+  )
+
+}
+*/
+
+const createMeshes = () => {
+
+  const group = new THREE.Group()
+  scene.add(group)
+
+  let material = new THREE.LineBasicMaterial({ color: 0x551155 })
+  let material2 = new THREE.LineBasicMaterial({ color: 0x555511 })
+
+  let geometry = new THREE.Geometry()
+
+  geometry.vertices.push(
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 2, 0),
+    new THREE.Vector3(2, 0, 0),
+    new THREE.Vector3(0,0,0)
+    )
+
+  let line = new THREE.Line(geometry, material)
+
+  let geometry2 = new THREE.ConeGeometry(2, 2, 7)
+
+  let cone = new THREE.Mesh(geometry2, material2)
+
+  group.add(
+    line,
+    cone,
   )
 
 }
