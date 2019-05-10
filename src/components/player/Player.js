@@ -1,11 +1,18 @@
 import React from 'react'
+import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Controls from './Controls'
 
 export default function (props) {
   const { src, title, speed } = props
 
+  const [isPlaying, setIsPlaying] = React.useState(false)
   const audioRef = React.useRef(null)
+
+  const switchPlayPause = () => {
+    const audio = audioRef.current
+    isPlaying ? audio.pause() : audio.play()
+  }
 
   // copy to clipboard
   const copyToClipboard = () => {
@@ -33,6 +40,9 @@ export default function (props) {
     audio.src = src
     audio.load()
     handleSpeed(speed)
+    audio.onplay = () => setIsPlaying(true)
+    audio.onpause = () => setIsPlaying(false)
+
     audio.play()
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
   }, [src, speed])
@@ -40,6 +50,11 @@ export default function (props) {
   console.log('Player render')
   return (
     <React.Fragment>
+
+      <KeyboardEventHandler
+        handleKeys={['Space']}
+        onKeyEvent={() => switchPlayPause()}
+      />
 
       <div className="player-title">
         {title}
