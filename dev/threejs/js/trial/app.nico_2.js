@@ -8,13 +8,13 @@ let shaders
 let delta 
 
 // User variables
-const scale = 5
-const camera_scale = scale + 1
+const scale = 500
+const camera_scale = scale + 50
 
 const angle_Slope = 0.0000001
 
 let camera_positionAngle = 0
-let camera_rotationAngle = 60 * Math.PI / 180
+let camera_rotationAngle = 75 * Math.PI / 180
 
 const xAxis = new THREE.Vector3( 1, 0, 0 )
 const yAxis = new THREE.Vector3( 0, 1, 0 )
@@ -35,12 +35,8 @@ function init() {
     scene = new THREE.Scene()
     scene.background = new THREE.Color( 0x00000 )
 
-    delta = 0
-    shaders = createShaders()
-    console.log("shaders", shaders)
-
     createRenderer()
-    // createLights()
+    createLights()
     createCameras()
     createControls()
     createMeshes()
@@ -87,7 +83,7 @@ function createLights() {
 function createGeometries() {
 
     // const planet = new THREE.SphereGeometry( 1*scale, 64, 64 )
-    const planet = new THREE.SphereBufferGeometry( 1*scale, 64, 64 )
+    const planet = new THREE.SphereBufferGeometry( 1*scale, 100, 100 )
 
     return {
 
@@ -97,13 +93,48 @@ function createGeometries() {
 
 }
 
+function loadImage() {
+
+    var manager = new THREE.LoadingManager()
+    var image = new THREE.ImageLoader(manager)
+    var texture = new THREE.Texture()
+    var TEXTURE_PATH 
+    TEXTURE_PATH = 'js/trial/Img_Assets/mip-low-res-enlarged.png'
+    image.load(TEXTURE_PATH, function(image) {
+        texture.image = image
+        texture.needsUpdate = true
+    })
+
+    return {
+
+        image,
+
+    }
+
+}
+
 function createMaterials() {
 
     const planet = new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: true, blending: THREE.AdditiveBlending } ) 
+    const normal = new THREE.MeshStandardMaterial() 
+
+    var TEXTURE_PATH 
+    var texture
+
+    TEXTURE_PATH = 'js/trial/Img_Assets/darker.jpg'    
+    texture = new THREE.TextureLoader().load(TEXTURE_PATH)
+    const codein = new THREE.MeshBasicMaterial( { map: texture } ) 
+
+    TEXTURE_PATH = 'js/trial/Img_Assets/mip-low-res-enlarged.png'
+    texture = new THREE.TextureLoader().load(TEXTURE_PATH)
+    const low = new THREE.MeshBasicMaterial( { map: texture , side: THREE.DoubleSide} ) 
     
     return {
 
         planet,
+        codein,
+        normal,
+        low,
 
     }
 
@@ -116,11 +147,11 @@ function createMeshes() {
 
     const materials = createMaterials()
     const geometries = createGeometries()
-
+    const images = loadImage()
    
     // .. Planet ..............................................................
 
-    var planet = new THREE.Mesh( geometries.planet, materials.planet )
+    var planet = new THREE.Mesh( geometries.planet, materials.low )
 
     // var planet = new THREE.Mesh( geometries.planet, shaders.material)
 
@@ -130,20 +161,29 @@ function createMeshes() {
 
     const CORONA_PATH = 'js/trial/3D_Assets/Corona.obj'
     
-    var loader = new THREE.OBJLoader() // work only with discrete geometry ? Yes only discrete is recognize, work well with blender description
+    var loader = new THREE.ObjectLoader()    
     loader.load(
     // resource URL
-    CORONA_PATH,
-    // called when resource is loaded
+    "js/trial/3D_Assets/model.json",
+
+    // var loader = new THREE.OBJLoader() // work only with discrete geometry ? Yes only discrete is recognize, work well with blender description
+    // loader.load(
+    // // resource URL
+    // CORONA_PATH,
+    // // called when resource is loaded
+
     function ( LoadedCorona ) {
 
         LoadedCorona.traverse( function( child ) {
             if ( child instanceof THREE.Mesh ) {
-                child.material = new THREE.MeshNormalMaterial() 
+                child.material = materials.codein
+                // child.material.map = images.image
+
+                
             }
         } )
 
-        for ( var i = 0; i < 25; i ++ ) {
+        for ( var i = 0; i < 50; i ++ ) {
 
             const angle_x = getRandomArbitrary(-1, 1) * Math.PI
             const angle_y = getRandomArbitrary(-1, 1) * Math.PI
@@ -162,7 +202,7 @@ function createMeshes() {
 
             corona = LoadedCorona.clone() 
             
-            corona.scale.set(0.01,0.01,0.01)           
+            corona.scale.set(10,10,10)           
 
             corona.rotateOnWorldAxis( xAxis, angle_x ) 
             corona.rotateOnWorldAxis( yAxis, angle_y )
@@ -208,20 +248,7 @@ function update() {
 
 function render() {
 
-    delta += 0.01
-
-    //uniform
-    shaders.mesh.material.uniforms.delta.value = 0.5 + Math.sin(delta) * 0.5
-
-    //attribute
-    for (var i = 0; i < shaders.vertexDisplacement.length; i ++) {
-        shaders.vertexDisplacement[i] = 0.5 + Math.sin(i + delta) * 0.25
-    }
-
-    shaders.mesh.geometry.attributes.vertexDisplacement.needsUpdate = true
-
     renderer.render( scene, camera )
-
 
 }
 
@@ -236,53 +263,6 @@ function onWindowResize() {
 
 }
 window.addEventListener( 'resize', onWindowResize )
-
-// ------------------------------------------------------------------------- //
-
-function createShaders(){
-    
-    var customUniforms = {
-        delta: {value: 0}
-    }
-
-    var material = new THREE.ShaderMaterial({
-        uniforms: customUniforms,
-        vertexShader: document.getElementById('vertexShader2').textContent,
-        fragmentShader: document.getElementById('fragmentShader2').textContent
-    })
-
-    var geometry = new THREE.BoxBufferGeometry(100, 100, 100, 10, 10, 10);
-    // var geometry = new THREE.SphereBufferGeometry( 0.75, 0.75, 0.75)
-    // var geometry =  new THREE.PlaneBufferGeometry( 5, 5 , 20, 32 )
-    var mesh = new THREE.Mesh(geometry, material)
-    mesh.position.x = 0 
-    mesh.position.y = 0  
-    mesh.position.z = 0  
-    console.log("mesh", mesh)
-    // mesh.position.x = 0
-    // mesh.position.y = 0
-    // mesh.position.z = 0
-    scene.add(mesh)
-
-    //attribute
-    var vertexDisplacement = new Float32Array(geometry.attributes.position.count);
-
-    for (var i = 0; i < vertexDisplacement.length; i ++) {
-        vertexDisplacement[i] = Math.sin(i);
-    }
-
-    geometry.addAttribute('vertexDisplacement', new THREE.BufferAttribute(vertexDisplacement, 1))
-
-    return {
-
-        mesh,
-        material,
-        vertexDisplacement,
-
-    }
-
-
-}
 
 // ------------------------------------------------------------------------- //
 
