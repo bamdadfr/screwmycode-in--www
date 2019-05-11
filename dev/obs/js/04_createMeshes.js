@@ -3,6 +3,7 @@
  */
 
 let backgroundGroup
+let intermediateGroup
 let frontGroup
 
 /**
@@ -22,10 +23,12 @@ const createMeshController = () => {
    */
 
   backgroundGroup = new THREE.Group()
+  intermediateGroup = new THREE.Group()
   frontGroup = new THREE.Group()
 
   scene.add(
     backgroundGroup,
+    intermediateGroup,
     frontGroup,
   )
 
@@ -41,23 +44,69 @@ const createMeshController = () => {
   )
 
   /**
+   * creating background materials
+   * Different material 
+   */
+
+  // const backgroundMaterial = new THREE.MeshLambertMaterial( { color: 0x0c0119, side: THREE.DoubleSide, flatShading: true, } )
+  const backgroundMaterial = new THREE.MeshBasicMaterial( { side: THREE.DoubleSide, flatShading: true, } )
+  var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x210123,  wireframe: true, transparent: true } )
+  var lineDashMaterial = new THREE.LineDashedMaterial({ color: 0x210123, dashSize: 1, gapSize: 1 })
+
+  /**
    * creating meshes
    * geometry + material
    * @type {Mesh}
    */
 
-  const backgroundSphereMesh = new THREE.Mesh(
-    backgroundSphere,
-    new THREE.MeshBasicMaterial({
-      wireframe: true,
-    })
-  )
+  const backgroundSphereMesh = new THREE.Mesh( backgroundSphere, backgroundMaterial )
+  var wireframe = new THREE.Mesh( backgroundSphere, wireframeMaterial )
+  var lineDash = new THREE.Line( backgroundSphere, lineDashMaterial )
+  lineDash.computeLineDistances()
+
+  // backgroundSphereMesh.add(wireframe)
+  // backgroundSphereMesh.add(lineDash)
 
   /**
    * adding meshes to background group
    */
 
   backgroundGroup.add(backgroundSphereMesh)
+
+  /**
+   * creating intermediate geometries
+   * @type {SphereBufferGeometry}
+   */
+
+  const intermediateSphere = new THREE.SphereBufferGeometry(
+    _scale.intermediate,
+    10,
+    10,
+  )
+
+  /**
+   * creating intermediate materials
+   * Wireframe + Solide
+   */
+
+  const intermediateMaterial = new THREE.MeshBasicMaterial( { color: 0x0c0119, side: THREE.DoubleSide, transparent: true, opacity: 0.5 } )
+  wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000,  wireframe: true, transparent: true } )
+
+  /**
+   * creating meshes
+   * geometry + material
+   * @type {Mesh}
+   */
+
+  const intermediateSphereMesh = new THREE.Mesh( intermediateSphere, intermediateMaterial) 
+  wireframe = new THREE.Mesh( intermediateSphere, wireframeMaterial )
+  intermediateSphereMesh.add(wireframe)
+
+  /**
+   * adding meshes to background group
+   */
+
+  // intermediateGroup.add(intermediateSphereMesh)
 
   /**
    * creating front geometries

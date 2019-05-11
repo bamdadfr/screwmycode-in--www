@@ -3,6 +3,8 @@ function update () {
 
   animateBackground()
   animateCamera()
+  // animateIntermediateSphere()
+
 
   // console.log(_camera)
 

@@ -7,7 +7,7 @@ const createCamera = () => {
     100
   )
 
-  camera.position.set(0, 0, 0)
+  camera.position.set(_camera.initPosition.x, _camera.initPosition.y, _camera.initPosition.z)
 
   camera.lookAt(0, 0, 0,)
 
