@@ -5,6 +5,16 @@ let controls
 let renderer
 let scene
 
+/*
+  GLOBAL VARIABLES
+  format:
+  _camelCase
+ */
+
+let _scale = 1
+let _scaleFront = 0.07
+let _sphereSegments = 21
+
 function init () {
 
   container = document.querySelector('#threejs-container')
@@ -16,7 +26,7 @@ function init () {
   createCamera()
   createControls()
   createLights()
-  createMeshes() // Meshes = Materials + Geometries
+  createMeshController() // Meshes = Materials + Geometries
   createRenderer()
 
   renderer.setAnimationLoop(() => {

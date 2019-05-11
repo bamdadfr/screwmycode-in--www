@@ -92,36 +92,117 @@ function createMeshes () {
 }
 */
 
-const createMeshes = () => {
+const createMeshController = () => {
 
-  const group = new THREE.Group()
-  scene.add(group)
+  /**
+   * START
+   */
 
-  let material = new THREE.LineBasicMaterial({ color: 0x551155 })
-  let material2 = new THREE.LineBasicMaterial({ color: 0x555511 })
-  const material3 = new THREE.MeshStandardMaterial({
-    color: 0x555511,
-    flatShading: true,
-  })
+  /**
+   * creating groups
+   * @type {Group}
+   */
 
-  let geometry = new THREE.Geometry()
+  const backgroundGroup = new THREE.Group()
+  const frontGroup = new THREE.Group()
 
-  geometry.vertices.push(
-    new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, 2, 0),
-    new THREE.Vector3(2, 0, 0),
-    new THREE.Vector3(0,0,0)
-    )
-
-  let line = new THREE.Line(geometry, material)
-
-  let geometry2 = new THREE.ConeGeometry(2, 2, 17)
-
-  let cone = new THREE.Mesh(geometry2, material3)
-
-  group.add(
-    line,
-    cone,
+  scene.add(
+    backgroundGroup,
+    frontGroup,
   )
+
+  /**
+   * creating background geometries
+   * @type {SphereBufferGeometry}
+   */
+
+  const backgroundSphere = new THREE.SphereBufferGeometry(
+    _scale,
+    21,
+    21,
+  )
+
+  /**
+   * creating meshes
+   * geometry + material
+   * @type {Mesh}
+   */
+
+  const backgroundSphereMesh = new THREE.Mesh(
+    backgroundSphere,
+    new THREE.MeshBasicMaterial({
+      wireframe: true,
+    })
+  )
+
+  /**
+   * adding meshes to background group
+   */
+
+  backgroundGroup.add(backgroundSphereMesh)
+
+  /**
+   * creating front geometries
+   * @type {BoxBufferGeometry}
+   */
+
+  const frontCube = new THREE.BoxBufferGeometry(
+    _scale * _scaleFront,
+    _scale * _scaleFront,
+    _scale * _scaleFront,
+  )
+
+  /**
+   * creating meshes
+   * geometry + material
+   * @type {Mesh}
+   */
+
+  const frontCubeMesh = new THREE.Mesh(
+    frontCube,
+    new THREE.MeshBasicMaterial({
+      'color': 0xff0000,
+    })
+  )
+
+  /**
+   * adding meshes to front group
+   */
+
+  frontGroup.add(frontCubeMesh)
+
+  /**
+   * END
+   */
+
+  // const group = new THREE.Group()
+  // scene.add(group)
+  //
+  // let material = new THREE.LineBasicMaterial({ color: 0x551155 })
+  // let material2 = new THREE.LineBasicMaterial({ color: 0x555511 })
+  // const material3 = new THREE.MeshStandardMaterial({
+  //   color: 0x555511,
+  //   flatShading: true,
+  // })
+  //
+  // let geometry = new THREE.Geometry()
+  //
+  // geometry.vertices.push(
+  //   new THREE.Vector3(0, 0, 0),
+  //   new THREE.Vector3(0, 2, 0),
+  //   new THREE.Vector3(2, 0, 0),
+  //   new THREE.Vector3(0, 0, 0)
+  // )
+  //
+  // let line = new THREE.Line(geometry, material)
+  //
+  // let geometry2 = new THREE.ConeGeometry(2, 2, 17)
+  //
+  // let cone = new THREE.Mesh(geometry2, material3)
+  //
+  // group.add(
+  //   line,
+  //   cone,
+  // )
 
 }
