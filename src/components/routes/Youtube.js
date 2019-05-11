@@ -27,8 +27,8 @@ export default function (props) {
 
     if (regEx.test(match.params.id)) {
       setIsLoading(true)
-      // const url = `http://localhost:5000/youtube/${match.params.id}`
-      const url = `https://api.screwmycode.in/youtube/${match.params.id}`
+      const url = `http://localhost:5000/youtube/${match.params.id}`
+      // const url = `https://api.screwmycode.in/youtube/${match.params.id}`
 
       fetch(url)
         .then(r => r.json())
@@ -54,6 +54,8 @@ export default function (props) {
   }
 
   if (isLoading) {
+    document.title = 'screwmycode.in'
+
     return (
       <React.Fragment>
         <div className="player">
