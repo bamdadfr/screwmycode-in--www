@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 import Player from '../player/Player'
 
-export default function (props) {
+export default (props) => {
   const { match, location } = props
 
   const [redirectToHome, setRedirectToHome] = React.useState(false)

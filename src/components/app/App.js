@@ -8,7 +8,7 @@ import './app.css'
 import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
 
-export default function () {
+export default () => {
   const redirectToHome = () => <Redirect to="/" />
 
   console.log('App render')

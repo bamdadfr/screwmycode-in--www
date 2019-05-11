@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function (props) {
+export default (props) => {
   const { speedCB, init } = props
 
   const percentRef = React.useRef(null)

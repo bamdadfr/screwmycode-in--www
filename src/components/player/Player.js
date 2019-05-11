@@ -3,7 +3,7 @@ import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Controls from './Controls'
 
-export default function (props) {
+export default (props) => {
   const { src, title, speed } = props
 
   const [isPlaying, setIsPlaying] = React.useState(false)
@@ -52,9 +52,10 @@ export default function (props) {
     audio.onplay = () => setIsPlaying(true)
     audio.onpause = () => setIsPlaying(false)
 
-    audio.play()
+    // audio.play()
+
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
-  }, [src, speed])
+  }, [src, speed, title])
 
   console.log('Player render')
   return (

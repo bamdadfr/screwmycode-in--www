@@ -1,6 +1,7 @@
-const createRenderer = () => {
+const THREE = require('three')
 
-  renderer = new THREE.WebGLRenderer({ antialias: true })
+export default (container) => {
+  const renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(container.clientWidth, container.clientHeight)
 
   renderer.setPixelRatio(window.devicePixelRatio)
@@ -12,10 +13,5 @@ const createRenderer = () => {
 
   container.appendChild(renderer.domElement)
 
-}
-
-function render () {
-
-  renderer.render(scene, camera)
-
+  return renderer
 }
