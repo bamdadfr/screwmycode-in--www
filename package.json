@@ -23,7 +23,8 @@
     "fix": "node_modules/.bin/eslint src --ext .js --fix",
     "git": "hooks/git.sh",
     "serve": "serve -s ./dev/threejs",
-    "bam": "serve -s ./dev/bam"
+    "bam": "serve -s ./dev/bam",
+    "obs": "serve -s ./dev/obs"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,0 +1,11 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+  color: white;
+}
+
+#threejs-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
