@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 export default () => {
   const [route, setRoute] = React.useState(null)
 
+  const inputRef = React.useRef(null)
+
   // parse the youtube ID from full URL
   const parseId = (url) => {
     const youtubeRegEx = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
@@ -27,6 +29,12 @@ export default () => {
     }
   }
 
+  React.useEffect(() => {
+    // resetting document title
+    document.title = 'screwmycode.in'
+    inputRef.current.focus()
+  }, [])
+
   if (route !== null) {
     return (
       <Redirect to={`/${route}`} />
@@ -39,7 +47,7 @@ export default () => {
       <form onSubmit={e => handleSubmit(e)}>
 
         <div className="form">
-          <input type="text" />
+          <input ref={inputRef} type="text" />
         </div>
 
         <div className="form">

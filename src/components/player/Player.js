@@ -32,8 +32,17 @@ export default function (props) {
     audio.playbackRate = s
   }
 
-  // Mounting audio el
+  /**
+   * init:
+   * changing document title (meta)
+   * mounting audio element
+   */
+
   React.useEffect(() => {
+    // document title
+    document.title = `screwmycode.in - ${title}`
+
+    // audio element
     const audio = audioRef.current
     audio.mozPreservesPitch = false
     audio.webkitPreservesPitch = false // Does not work

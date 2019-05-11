@@ -63,7 +63,7 @@ export default function (props) {
     )
   }
 
-  console.log(getSpeed())
+  // console.log(getSpeed())
 
   return (
     <React.Fragment>
