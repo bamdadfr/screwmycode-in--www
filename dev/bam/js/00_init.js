@@ -13,9 +13,16 @@ let scene
 
 let _scale = 1
 let _scaleFront = 0.07
-let _sphereSegments = 21
+let _mouse = {}
 
-function init () {
+/**
+ * scene elements
+ */
+
+let backgroundGroup
+let frontGroup
+
+const init = () => {
 
   container = document.querySelector('#threejs-container')
 
