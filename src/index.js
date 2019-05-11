@@ -10,13 +10,13 @@ import App from './components/app/App'
 // import YoutubeParser from './components/test/youtube_parser'
 
 const Root = () => {
-  const ref = React.useRef(null)
+  const threeRef = React.useRef(null)
 
   return (
     <React.Fragment>
 
-      <div ref={ref} className="three-container" />
-      <Three domRef={ref} />
+      <div ref={threeRef} className="three-container" />
+      <Three domRef={threeRef} />
 
       <App />
 
