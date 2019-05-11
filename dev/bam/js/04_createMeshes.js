@@ -99,6 +99,10 @@ const createMeshes = () => {
 
   let material = new THREE.LineBasicMaterial({ color: 0x551155 })
   let material2 = new THREE.LineBasicMaterial({ color: 0x555511 })
+  const material3 = new THREE.MeshStandardMaterial({
+    color: 0x555511,
+    flatShading: true,
+  })
 
   let geometry = new THREE.Geometry()
 
@@ -111,9 +115,9 @@ const createMeshes = () => {
 
   let line = new THREE.Line(geometry, material)
 
-  let geometry2 = new THREE.ConeGeometry(2, 2, 7)
+  let geometry2 = new THREE.ConeGeometry(2, 2, 17)
 
-  let cone = new THREE.Mesh(geometry2, material2)
+  let cone = new THREE.Mesh(geometry2, material3)
 
   group.add(
     line,
