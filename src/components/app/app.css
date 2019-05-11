@@ -11,17 +11,6 @@
     height: 100vh;
 
     color: white;
-
-    /*background: transparent;*/
-}
-
-.backgroundImage {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-
-    /*background: palegoldenrod;*/
-    /*background: black;*/
 }
 
 .container {
@@ -34,7 +23,6 @@
     height: 90%;
 
     /*background: #8dffcd;*/
-    background: transparent;
 }
 
 .title {
@@ -46,26 +34,38 @@
     margin-right: 10px;
     height: 150px;
 
+    text-decoration: none;
+
     /*background: #d3cda0;*/
-    background: transparent;
+}
+
+.title a {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+}
+
+.title-spacer {
+    /*height: 30%;*/
+    height: 15%;
+    /*background: rgba(0, 200, 0, 0.2);*/
 }
 
 .main {
     display: flex;
     flex-direction: column;
 
-    height: 35%;
+    height: 45%;
     margin: 10px;
 
     /*background: #ec3456;*/
-    background: transparent;
 }
 
 .main-item {
     margin: 10px 10px 0 10px;
 
     /*background: #87a7bd;*/
-    background: transparent;
 }
 
 .main-item:last-child {
@@ -74,6 +74,7 @@
 
 .main-spacer {
     height: 30%;
+    /*background: rgba(0, 200, 0, 0.2);*/
 }
 
 .form {
@@ -83,7 +84,6 @@
     margin: 5px;
 
     /*background: #fff27f;*/
-    background: transparent;
 }
 
 .form:first-child input {
@@ -99,7 +99,6 @@
     margin: 5px;
 
     /*background: #8cffd6;*/
-    background: transparent;
 }
 
 .player {
@@ -109,7 +108,6 @@
     margin: 5px;
 
     /*background: #ffe1c1;*/
-    background: transparent;
 }
 
 .player audio {
@@ -124,7 +122,6 @@
     margin: 5px;
 
     /*background: #ffbbce;*/
-    background: transparent;
 }
 
 .controls-item {
@@ -132,7 +129,6 @@
 
     text-align: center;
     /*background: #8fff7d;*/
-    background: transparent;
 }
 
 .controls-item:first-child {

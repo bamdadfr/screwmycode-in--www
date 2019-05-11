@@ -19,6 +19,9 @@ export default function () {
         <div className="page">
 
           <div className="container">
+
+            <div className="title-spacer" />
+
             <div className="title">
               <Link to="/">
                 screwmycode.in
