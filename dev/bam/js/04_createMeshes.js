@@ -1,3 +1,15 @@
+/**
+ * scene elements
+ */
+
+let backgroundGroup
+let frontGroup
+
+/**
+ * Mesh Controller
+ * @type {Function}
+ */
+
 const createMeshController = () => {
 
   /**
@@ -23,9 +35,9 @@ const createMeshController = () => {
    */
 
   const backgroundSphere = new THREE.SphereBufferGeometry(
-    _scale,
-    123,
-    123,
+    _scale.default,
+    10,
+    10,
   )
 
   /**
@@ -53,9 +65,9 @@ const createMeshController = () => {
    */
 
   const frontCube = new THREE.BoxBufferGeometry(
-    _scale * _scaleFront,
-    _scale * _scaleFront,
-    _scale * _scaleFront,
+    _scale.default * _scale.front,
+    _scale.default * _scale.front,
+    _scale.default * _scale.front,
   )
 
   /**

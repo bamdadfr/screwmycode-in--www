@@ -19,6 +19,7 @@ const onDocumentMouseMove = (e) => {
    */
 
   _mouse = {
+    ..._mouse,
     xPos: e.clientX - window.innerWidth * 0.5,
     yPos: e.clientY - window.innerHeight * 0.5,
   }

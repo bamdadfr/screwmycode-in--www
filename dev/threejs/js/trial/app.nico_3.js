@@ -5,7 +5,7 @@ let controls
 let renderer
 let scene
 let shaders
-let delta 
+let delta
 let planet
 
 var mouseX = 0, mouseY = 0
@@ -43,7 +43,7 @@ function init() {
     createCameras()
     createControls()
     createMeshes()
-    
+
 
     renderer.setAnimationLoop( () => {
         update()
@@ -55,10 +55,10 @@ function init() {
 function createCameras() {
 
     camera = new THREE.PerspectiveCamera( 35, container.clientWidth / container.clientHeight, 0.001, 10000 )
-    
-    camera.position.set( 0, 0, -camera_scale)  
+
+    camera.position.set( 0, 0, -camera_scale)
     camera.lookAt(0,0, 0)
-    // camera.position.set( 0, 0, 0 )  
+    // camera.position.set( 0, 0, 0 )
 
 }
 
@@ -101,13 +101,13 @@ function createMaterials() {
 
         // color: 0xff0000,
         wireframe: true
-    
+
     })
 
     const cube = new THREE.MeshBasicMaterial({
-    
+
     })
-    
+
     return {
 
         planet,
@@ -123,7 +123,7 @@ function createMeshes() {
 
     const materials = createMaterials()
     const geometries = createGeometries()
-   
+
     // .. Planet ..............................................................
 
     planet = new THREE.Mesh( geometries.planet, materials.planet )
@@ -153,7 +153,7 @@ function createRenderer() {
 
 function update() {
 
-    // console.log('camera', camera.rotation.x) 
+    // console.log('camera', camera.rotation.x)
 
 }
 
@@ -176,8 +176,8 @@ function render() {
     camera.position.z = camera_zPosition
 
     camera.lookAt(0,0,0)
- 
-    console.log("mouseX",mouseX)
+
+    // console.log("mouseX",mouseX)
     // camera.position.y = THREE.Math.clamp( camera.position.y + ( - ( mouseY - 200 ) - camera.position.y ) * mouseSpring, -1, 1 );
     // camera.lookAt( scene.position );
 
@@ -224,8 +224,8 @@ function oscillation(pitch) {
     var tmp_Scale = scale + 6*Math.sin(time_)
 
     planet.scale.set(tmp_Scale,tmp_Scale,tmp_Scale)
-    console.log("tmp_Scale",tmp_Scale)
-    
+    // console.log("tmp_Scale",tmp_Scale)
+
 }
 
 

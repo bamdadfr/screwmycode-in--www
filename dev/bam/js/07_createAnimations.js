@@ -23,3 +23,16 @@ const animateBackground = () => {
     osc,
   )
 }
+
+const animateCamera = () => {
+
+  _camera.angle1 += _mouse.xPos * _mouse.spring * Math.PI
+  _camera.angle2 -= _mouse.yPos * _mouse.spring * Math.PI
+
+  camera.position.x = _camera.scale * (Math.sin(_camera.angle1) + Math.cos(_camera.angle2))
+  camera.position.y = _camera.scale * Math.sin(_camera.angle2)
+  camera.position.z = _camera.scale * Math.cos(_camera.angle2)
+
+  camera.lookAt(0,0,0)
+
+}

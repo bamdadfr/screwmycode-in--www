@@ -11,16 +11,22 @@ let scene
   _camelCase
  */
 
-let _scale = 1
-let _scaleFront = 0.07
-let _mouse = {}
+let _scale = {
+  default: 1,
+  front: 0.01,
+}
 
-/**
- * scene elements
- */
+let _mouse = {
+  xPos: 0,
+  yPos: 0,
+  spring: 0.000002,
+}
 
-let backgroundGroup
-let frontGroup
+let _camera = {
+  angle1: 0,
+  angle2: 0,
+  scale: 0.5,
+}
 
 const init = () => {
 
@@ -31,7 +37,7 @@ const init = () => {
   scene.background = new THREE.Color(0x000000)
 
   createCamera()
-  createControls()
+  // createControls()
   createLights()
   createMeshController() // Meshes = Materials + Geometries
   createRenderer()
