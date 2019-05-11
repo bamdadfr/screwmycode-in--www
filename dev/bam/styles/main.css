@@ -2,22 +2,7 @@ body {
   margin: 0px;
   overflow: hidden;
   color: white;
-  text-align: center;
 }
-
-/*h1 {*/
-/*  position: absolute;*/
-/*  width: 100%;*/
-/*  z-index: 1;*/
-/*  font-size: 1.5rem;*/
-/*}*/
-
-/*a {*/
-/*  color: white;*/
-/*}*/
-/*a:hover{*/
-/*  color: purple;*/
-/*}*/
 
 #threejs-container {
   position: absolute;

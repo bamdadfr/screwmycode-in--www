@@ -1,6 +1,6 @@
-body {
-    margin: 0;
-}
+/*body {*/
+/*    margin: 0;*/
+/*}*/
 
 .page {
     display: flex;
@@ -10,7 +10,9 @@ body {
     position: relative;
     height: 100vh;
 
-    background: transparent;
+    color: white;
+
+    /*background: transparent;*/
 }
 
 .backgroundImage {
@@ -18,7 +20,8 @@ body {
     height: 100%;
     width: 100%;
 
-    background: palegoldenrod;
+    /*background: palegoldenrod;*/
+    /*background: black;*/
 }
 
 .container {
@@ -30,7 +33,8 @@ body {
     margin: 0 10px 0 10px;
     height: 90%;
 
-    background: #8dffcd;
+    /*background: #8dffcd;*/
+    background: transparent;
 }
 
 .title {
@@ -42,7 +46,8 @@ body {
     margin-right: 10px;
     height: 150px;
 
-    background: #d3cda0;
+    /*background: #d3cda0;*/
+    background: transparent;
 }
 
 .main {
@@ -52,13 +57,15 @@ body {
     height: 35%;
     margin: 10px;
 
-    background: #ec3456;
+    /*background: #ec3456;*/
+    background: transparent;
 }
 
 .main-item {
     margin: 10px 10px 0 10px;
 
-    background: #87a7bd;
+    /*background: #87a7bd;*/
+    background: transparent;
 }
 
 .main-item:last-child {
@@ -76,6 +83,7 @@ body {
     margin: 5px;
 
     /*background: #fff27f;*/
+    background: transparent;
 }
 
 .form:first-child input {
@@ -91,6 +99,7 @@ body {
     margin: 5px;
 
     /*background: #8cffd6;*/
+    background: transparent;
 }
 
 .player {
@@ -100,6 +109,7 @@ body {
     margin: 5px;
 
     /*background: #ffe1c1;*/
+    background: transparent;
 }
 
 .player audio {
@@ -113,14 +123,16 @@ body {
 
     margin: 5px;
 
-    background: #ffbbce;
+    /*background: #ffbbce;*/
+    background: transparent;
 }
 
 .controls-item {
     width: 100px;
 
     text-align: center;
-    background: #8fff7d;
+    /*background: #8fff7d;*/
+    background: transparent;
 }
 
 .controls-item:first-child {
@@ -151,7 +163,8 @@ body {
 
     margin: 5px;
 
-    background: #afff9d;
+    /*background: #afff9d;*/
+    background: transparent;
 
 }
 

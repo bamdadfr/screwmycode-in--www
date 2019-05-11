@@ -15,7 +15,7 @@ export default function () {
   return (
     <React.Fragment>
       <BrowserRouter>
-        <div className="backgroundImage" />
+
         <div className="page">
 
           <div className="container">
