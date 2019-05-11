@@ -88,9 +88,8 @@ export default (props) => {
   React.useEffect(() => {
     window.addEventListener('resize', onWindowResize)
     document.addEventListener('mousemove', onDocumentMouseMove, false)
-
     init()
-  })
+  }, [])
 
   console.log('render: three')
   return (
