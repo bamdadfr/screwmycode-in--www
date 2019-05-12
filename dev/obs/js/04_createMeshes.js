@@ -48,9 +48,9 @@ const createMeshController = () => {
    * Different material 
    */
 
-  // const backgroundMaterial = new THREE.MeshLambertMaterial( { color: 0x0c0119, side: THREE.DoubleSide, flatShading: true, } )
-  const backgroundMaterial = new THREE.MeshBasicMaterial( { side: THREE.DoubleSide, flatShading: true, } )
-  var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x210123,  wireframe: true, transparent: true } )
+  // const backgroundMaterial = new THREE.MeshLambertMaterial( { color: _grad.color[0], side: THREE.DoubleSide, flatShading: true, } )
+  const backgroundMaterial = new THREE.MeshBasicMaterial( { color: _grad.color[0], side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.25} )
+  var wireframeMaterial = new THREE.MeshBasicMaterial( { color: _grad.color[0],  wireframe: true, transparent: false, opacity: 1 } )
   var lineDashMaterial = new THREE.LineDashedMaterial({ color: 0x210123, dashSize: 1, gapSize: 1 })
 
   /**
@@ -59,7 +59,7 @@ const createMeshController = () => {
    * @type {Mesh}
    */
 
-  const backgroundSphereMesh = new THREE.Mesh( backgroundSphere, backgroundMaterial )
+  const backgroundSphereMesh = new THREE.Mesh( backgroundSphere, wireframeMaterial )
   var wireframe = new THREE.Mesh( backgroundSphere, wireframeMaterial )
   var lineDash = new THREE.Line( backgroundSphere, lineDashMaterial )
   lineDash.computeLineDistances()

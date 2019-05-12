@@ -43,12 +43,21 @@ const animateBackground = () => {
    * col: color
    * @type {HEX color}
    */
-  if ( Number.isInteger(_time/_grad.color.length) ) {
+
+  if ( _frame >= _grad.color.length)  {
     _loop += 1
     _frame = 0
   }
+
+  var hex 
+  if (_loop%2 == 0) {
+    hex_ = '#' + _grad.color[_frame]
+  }  else {
+    hex_ = '#' + _grad.colorReversed[_frame]
+  }
   
-  backgroundGroup.children[0].material.color.setHex = ('0x' + _grad.color[_frame])
+  var color_ = new THREE.Color( hex_ )
+  backgroundGroup.children[0].material.color.set(color_)
 
 }
 
@@ -59,18 +68,39 @@ const animateBackground = () => {
 
 const animateCamera = () => {
 
-  _camera.angle1 += _mouse.xPos * _mouse.spring * Math.PI
-  _camera.angle2 -= _mouse.yPos * _mouse.spring * Math.PI
+  // _camera.angle1 += _mouse.xPos * _mouse.spring * 2*Math.PI
+  // _camera.angle2 -= _mouse.yPos * _mouse.spring * 2*Math.PI
 
-  _camera.xPos_fromAngle1 = Math.sin(_camera.angle1 )
-  _camera.zPos_fromAngle1 = Math.cos(_camera.angle1 )
+  // _camera.xPos_fromAngle1 = Math.sin(_camera.angle1 )
+  // _camera.zPos_fromAngle1 = Math.cos(_camera.angle1 )
 
-  _camera.zPos_fromAngle2 = Math.cos(_camera.angle2)
-  _camera.yPos_fromAngle2 = Math.sin(_camera.angle2)
+  // _camera.zPos_fromAngle2 = Math.cos(_camera.angle2)
+  // _camera.yPos_fromAngle2 = Math.sin(_camera.angle2)
 
-  camera.position.x = _camera.scale * _camera.xPos_fromAngle1
-  camera.position.y = _camera.scale * _camera.yPos_fromAngle2
-  camera.position.z = _camera.scale * (_camera.zPos_fromAngle1 + _camera.zPos_fromAngle2)
+  // console.log("_mouse.xPos",_mouse.xPos)
+  // console.log("_mouse.yPos",_mouse.yPos)
+
+  // camera.position.x = _camera.scale * _camera.xPos_fromAngle1
+  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle1)
+  // camera.position.y = _camera.scale * _camera.yPos_fromAngle2
+  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle2)
+
+  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle1 + _camera.zPos_fromAngle2)
+  // camera.position.z = _camera.scale * _camera.zPos_fromAngle1 * _camera.zPos_fromAngle2
+
+
+  _camera.angle1 += _mouse.xPos * _mouse.spring * 2*Math.PI
+  _camera.angle2 += _mouse.xPos * _mouse.spring * Math.PI
+
+  a = 10
+  c = 5
+
+  x = a * Math.cos(_camera.angle1 ) * Math.sin(_camera.angle2)
+  camera.position.x = _camera.scale * x 
+
+  z = c * Math.cos(_camera.angle2)
+
+  camera.position.z = _camera.scale * z 
 
   camera.lookAt(0,0,0)
 

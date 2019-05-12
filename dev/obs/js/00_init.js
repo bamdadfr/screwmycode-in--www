@@ -47,6 +47,8 @@ let _axis = {
 let _grad = {
   color: generateColor("0000ff", "ff3300", 1000)
 }
+_grad.colorReversed =  _grad.color.slice().reverse()
+
 
 
 const init = () => {
