@@ -10,11 +10,11 @@ const THREE = require('three')
 export default (props) => {
   const { domRef } = props
 
-  let camera; let scene; let renderer; let
-    container
-
+  let camera
+  let scene
+  let renderer
+  let container
   let groups
-
   let time = 0
 
   const scale = {

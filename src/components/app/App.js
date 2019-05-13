@@ -7,13 +7,19 @@ import './app.css'
 
 import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
+import Three from '../three/Three'
 
 export default () => {
+  const threeRef = React.useRef(null)
   const redirectToHome = () => <Redirect to="/" />
 
   console.log('App render')
   return (
     <React.Fragment>
+
+      <div ref={threeRef} className="three-container" />
+      <Three domRef={threeRef} />
+
       <BrowserRouter>
 
         <div className="page">
