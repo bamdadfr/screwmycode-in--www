@@ -73,7 +73,7 @@ export default (props) => {
 
     camera = ThreeCamera(container)
     ThreeLights(scene)
-    groups = ThreeMeshes(scene, scale)
+    groups = ThreeMeshes(scene, { scale })
     renderer = ThreeRenderer(container)
 
     renderer.setAnimationLoop(() => {

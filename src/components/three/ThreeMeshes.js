@@ -1,6 +1,8 @@
 const THREE = require('three')
 
-export default (scene, scale) => {
+export default (scene, params) => {
+  const { scale } = params
+
   /**
    * creating groups
    * @type {Group}
