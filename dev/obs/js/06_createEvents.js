@@ -20,7 +20,9 @@ const onDocumentMouseMove = (e) => {
 
   _mouse = {
     ..._mouse,
-    xPos: e.clientX - window.innerWidth * 0.5,
-    yPos: e.clientY - window.innerHeight * 0.5,
+    xPos: e.clientX - _screen.xMax,
+    yPos: e.clientY - _screen.yMax,
   }
+  _mouse.xMove = Math.sign(_mouse.xPos) * (Math.abs(_mouse.xPos) / _screen.xMax)
+  _mouse.yMove = Math.sign(_mouse.yPos) * (Math.abs(_mouse.yPos) / _screen.yMax)
 }

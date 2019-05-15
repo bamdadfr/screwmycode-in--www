@@ -1,8 +1,3 @@
-let _time = 0
-let _frame = 0
-let _loop = 0
-
-
 /**
  * animate background
  * @type {Animation}
@@ -10,13 +5,6 @@ let _loop = 0
 
 const animateBackground = () => {
 
-  /**
-   * incrementing _time
-   * @type {number}
-   * @private
-   */
-
-  _time += 0.025
 
   /**
    * osc: oscillator
@@ -30,24 +18,6 @@ const animateBackground = () => {
     osc,
     osc,
   )
-
-  /**
-   * incrementing _frame
-   * @type {int}
-   * @private
-   */
-
-  _frame += 1
-
-  /**
-   * col: color
-   * @type {HEX color}
-   */
-
-  if ( _frame >= _grad.color.length)  {
-    _loop += 1
-    _frame = 0
-  }
 
   var hex 
   if (_loop%2 == 0) {
@@ -68,39 +38,30 @@ const animateBackground = () => {
 
 const animateCamera = () => {
 
-  // _camera.angle1 += _mouse.xPos * _mouse.spring * 2*Math.PI
-  // _camera.angle2 -= _mouse.yPos * _mouse.spring * 2*Math.PI
 
-  // _camera.xPos_fromAngle1 = Math.sin(_camera.angle1 )
-  // _camera.zPos_fromAngle1 = Math.cos(_camera.angle1 )
-
-  // _camera.zPos_fromAngle2 = Math.cos(_camera.angle2)
-  // _camera.yPos_fromAngle2 = Math.sin(_camera.angle2)
-
-  // console.log("_mouse.xPos",_mouse.xPos)
-  // console.log("_mouse.yPos",_mouse.yPos)
-
-  // camera.position.x = _camera.scale * _camera.xPos_fromAngle1
-  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle1)
-  // camera.position.y = _camera.scale * _camera.yPos_fromAngle2
-  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle2)
-
-  // // camera.position.z = _camera.scale * (_camera.zPos_fromAngle1 + _camera.zPos_fromAngle2)
-  // camera.position.z = _camera.scale * _camera.zPos_fromAngle1 * _camera.zPos_fromAngle2
+  // var scale 
+  // if (_loop%2 == 0) {
+  //   _camera.a += 0.01
+  //   _camera.b += 0.001
+  //   _camera.c += 0.005
+  // }  else {
+  //   _camera.a -= 0.01
+  //   _camera.b -= 0.001
+  //   _camera.c -= 0.005
+  // }
 
 
-  _camera.angle1 += _mouse.xPos * _mouse.spring * 2*Math.PI
-  _camera.angle2 += _mouse.xPos * _mouse.spring * Math.PI
 
-  a = 10
-  c = 5
+  _camera.theta -= _mouse.xMove * _mouse.spring * Math.PI
+  _camera.phi -= _mouse.yMove * _mouse.spring * Math.PI
+  
+  _camera.xPos = _camera.scale * _camera.a * Math.cos(_camera.phi) * Math.cos(_camera.theta)
+  _camera.yPos = _camera.scale * _camera.b * Math.sin(_camera.phi) 
+  _camera.zPos = _camera.scale * _camera.c * Math.cos(_camera.phi) * Math.sin(_camera.theta)
 
-  x = a * Math.cos(_camera.angle1 ) * Math.sin(_camera.angle2)
-  camera.position.x = _camera.scale * x 
-
-  z = c * Math.cos(_camera.angle2)
-
-  camera.position.z = _camera.scale * z 
+  camera.position.x = _camera.xPos
+  camera.position.y = _camera.yPos
+  camera.position.z = _camera.zPos
 
   camera.lookAt(0,0,0)
 
@@ -119,11 +80,11 @@ const animateIntermediateSphere = () => {
 
   intermediateGroup.children[0].position.set(xDiff, yDiff, zDiff)
 
-  // intermediateGroup.children[0].translateOnAxis(_axis.xAxis,xDiff)
-  // intermediateGroup.children[0].translateOnAxis(_axis.yAxis,yDiff)
-  // intermediateGroup.children[0].translateOnAxis(_axis.zAxis,zDiff)
+  intermediateGroup.children[0].translateOnAxis(_axis.xAxis,xDiff)
+  intermediateGroup.children[0].translateOnAxis(_axis.yAxis,yDiff)
+  intermediateGroup.children[0].translateOnAxis(_axis.zAxis,zDiff)
 
-  // intermediateGroup.children[0].translate(xDiff, yDiff, zDiff)
+  intermediateGroup.children[0].translate(xDiff, yDiff, zDiff)
 
 }
 

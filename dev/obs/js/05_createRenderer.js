@@ -16,6 +16,11 @@ const createRenderer = () => {
 
 function render () {
 
-  renderer.render(scene, camera)
+	// controls.update()
+	// shaderMaterial.uniforms[ 'time' ].value = .00025 * ( Date.now() - _start );
+	var delta = 5 * clock.getDelta();
+	uniforms[ "time" ].value += 0.2 * delta;
+	
+  	renderer.render(scene, camera)
 
 }

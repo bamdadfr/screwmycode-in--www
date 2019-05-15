@@ -33,6 +33,41 @@ const createMeshController = () => {
   )
 
   /**
+   * creating materials
+   * @type {material}
+   */
+
+  // let uniforms = {
+  //       colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
+  //       colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
+  //   }
+
+  // let uniforms = {
+  //       time: {type: "f", value: 0.0},
+  //   }
+
+  var textureLoader = new THREE.TextureLoader()
+
+  uniforms = {
+          "fogDensity": { value: 0.45 },
+          "fogColor": { value: new THREE.Vector3( 0, 0, 0 ) },
+          "time": { value: 1.0 },
+          "uvScale": { value: new THREE.Vector2( 3.0, 1.0 ) },
+          "texture1": { value: textureLoader.load( 'js/vendor/texture/cloud.png' ) },
+          "texture2": { value: textureLoader.load( 'js/vendor/texture/lavatile.jpg' ) }
+        };
+
+  uniforms[ "texture1" ].value.wrapS = uniforms[ "texture1" ].value.wrapT = THREE.RepeatWrapping;
+  uniforms[ "texture2" ].value.wrapS = uniforms[ "texture2" ].value.wrapT = THREE.RepeatWrapping;
+
+  shaderMaterial =  new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    fragmentShader: fragmentShader(),
+    vertexShader: vertexShader(),
+  })
+
+
+  /**
    * creating background geometries
    * @type {SphereBufferGeometry}
    */
@@ -90,7 +125,7 @@ const createMeshController = () => {
    */
 
   const intermediateMaterial = new THREE.MeshBasicMaterial( { color: 0x0c0119, side: THREE.DoubleSide, transparent: true, opacity: 0.5 } )
-  wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000,  wireframe: true, transparent: true } )
+  wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0xdfd0e0,  wireframe: true, transparent: true } )
 
   /**
    * creating meshes
@@ -98,26 +133,40 @@ const createMeshController = () => {
    * @type {Mesh}
    */
 
-  const intermediateSphereMesh = new THREE.Mesh( intermediateSphere, intermediateMaterial) 
-  wireframe = new THREE.Mesh( intermediateSphere, wireframeMaterial )
-  intermediateSphereMesh.add(wireframe)
+  const intermediateSphereMesh = new THREE.Mesh( intermediateSphere, wireframeMaterial) 
+  // wireframe = new THREE.Mesh( intermediateSphere, wireframeMaterial )
+  // intermediateSphereMesh.add(wireframe)
 
   /**
    * adding meshes to background group
    */
 
-  // intermediateGroup.add(intermediateSphereMesh)
+  intermediateGroup.add(intermediateSphereMesh)
 
   /**
    * creating front geometries
    * @type {BoxBufferGeometry}
    */
+  
+  // const frontCube = new THREE.BoxBufferGeometry(
+  //   _scale.default * _scale.front,
+  //   _scale.default * _scale.front,
+  //   _scale.default * _scale.front,
+  // )
+  const frontCube = new THREE.TorusBufferGeometry( 0.65, 0.3, 30, 30 )
+  // const frontCube = new THREE.SphereBufferGeometry(
+  //    _scale.default * _scale.front,
+  //   10,
+  //   10,
+  // )
 
-  const frontCube = new THREE.BoxBufferGeometry(
-    _scale.default * _scale.front,
-    _scale.default * _scale.front,
-    _scale.default * _scale.front,
-  )
+  /**
+   * creating fromt material
+   * material
+   * @type {Standard materail}
+   */
+
+  const frontCubeMaterial =  new THREE.MeshStandardMaterial({ 'color': 0x110000, flatShading: true, })
 
   /**
    * creating meshes
@@ -125,13 +174,7 @@ const createMeshController = () => {
    * @type {Mesh}
    */
 
-  const frontCubeMesh = new THREE.Mesh(
-    frontCube,
-    new THREE.MeshStandardMaterial({
-      'color': 0x110000,
-      flatShading: true,
-    })
-  )
+  const frontCubeMesh = new THREE.Mesh(frontCube,shaderMaterial)
 
   /**
    * adding meshes to front group
