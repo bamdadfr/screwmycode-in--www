@@ -1,6 +1,6 @@
 {
   "name": "screwmycode.in",
-  "version": "0.1.0",
+  "version": "0.1.0-canary.0",
   "private": true,
   "dependencies": {
     "normalize.css": "^8.0.1",
