@@ -10,6 +10,7 @@ const Root = () => {
   const isFirefox = typeof InstallTrigger !== 'undefined'
 
   if (!isFirefox && window.location.pathname !== '/firefox') {
+    window.location.search = ''
     window.location.pathname = '/firefox'
   }
 
