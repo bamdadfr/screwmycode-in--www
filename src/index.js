@@ -6,11 +6,19 @@ import 'normalize.css'
 
 import App from './components/app/App'
 
-const Root = () => (
-  <React.Fragment>
-    <App />
-  </React.Fragment>
-)
+const Root = () => {
+  const isFirefox = typeof InstallTrigger !== 'undefined'
+
+  if (!isFirefox && window.location.pathname !== '/firefox') {
+    window.location.pathname = '/firefox'
+  }
+
+  return (
+    <React.Fragment>
+      <App />
+    </React.Fragment>
+  )
+}
 
 ReactDOM.render(
   <Root />,
