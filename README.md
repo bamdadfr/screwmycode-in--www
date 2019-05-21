@@ -11,8 +11,13 @@ youtube-dl -f 140 -g --verbose https://www.youtube.com/watch?v=A89RhzNwTBY
 used code in youtube-dl package:
 * https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L360
 * https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/youtube.py#L1198
-
+---
 Rewriting this module in JS would remove the api dependency !!
+
+topic about reversing youtube metadata:
+https://tyrrrz.me/Blog/Reverse-engineering-YouTube
+
+snipper from stack overflow:
 
 ```javascript
 var vid = "3r_Z5AYJJd4",
