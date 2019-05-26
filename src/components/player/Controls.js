@@ -46,6 +46,7 @@ export default (props) => {
           step="0.001"
           value={speed}
           onChange={e => setSpeed(e.target.value)}
+          onClick={e => e.target.blur()}
         />
       </div>
     </React.Fragment>

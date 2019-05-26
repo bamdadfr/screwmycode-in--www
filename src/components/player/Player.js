@@ -1,10 +1,13 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Controls from './Controls'
 
 export default (props) => {
   const { src, title, speed } = props
+
+  const [redirectToHome, setRedirectToHome] = React.useState(false)
 
   const [isPlaying, setIsPlaying] = React.useState(false)
   const audioRef = React.useRef(null)
@@ -57,6 +60,12 @@ export default (props) => {
     // audio.ontimeupdate = () => console.log('time', audio.currentTime)
   }, [src, speed, title])
 
+  if (redirectToHome) {
+    return (
+      <Redirect to="/" />
+    )
+  }
+
   console.log('Player render')
   return (
     <React.Fragment>
@@ -64,6 +73,11 @@ export default (props) => {
       <KeyboardEventHandler
         handleKeys={['Space']}
         onKeyEvent={() => switchPlayPause()}
+      />
+
+      <KeyboardEventHandler
+        handleKeys={['esc']}
+        onKeyEvent={() => setRedirectToHome(true)}
       />
 
       <div className="player-title">
