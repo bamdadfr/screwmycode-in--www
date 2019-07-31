@@ -10,8 +10,8 @@ const Root = () => {
   const isFirefox = typeof InstallTrigger !== 'undefined'
 
   if (!isFirefox && window.location.pathname !== '/firefox') {
-    // window.location.href = `${window.location.origin}/firefox`
-    window.location.href = 'https://www.mozilla.org/en-US/firefox/new/'
+    window.location.href = `${window.location.origin}/firefox`
+    // window.location.href = 'https://www.mozilla.org/en-US/firefox/new/'
   }
 
   return (
