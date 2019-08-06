@@ -65,8 +65,6 @@ export default (props) => {
     )
   }
 
-  // console.log(getSpeed())
-
   return (
     <React.Fragment>
       <Player
