@@ -35,7 +35,8 @@ export default (props) => {
         .then((data) => {
           if (data.success) {
             setPlayerTitle(data.title)
-            setPlayerSrc(data.url)
+
+            data.type === 'dash' ? setPlayerSrc(data.dashUrl) : setPlayerSrc(data.url)
 
             setIsLoading(false)
           } else {
