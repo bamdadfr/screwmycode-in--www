@@ -47,7 +47,7 @@ export default () => {
       <form onSubmit={e => handleSubmit(e)}>
 
         <div className="form">
-          <input ref={inputRef} type="text" />
+          <input ref={inputRef} placeholder="insert youtube link here" type="text" />
         </div>
 
         <div className="form">

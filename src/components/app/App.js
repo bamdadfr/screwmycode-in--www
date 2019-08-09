@@ -3,6 +3,8 @@ import {
   BrowserRouter, Route, Link, Switch, Redirect,
 } from 'react-router-dom'
 
+import { FaQuestion } from 'react-icons/fa'
+
 import './app.css'
 
 import Firefox from '../firefox/Firefox'
@@ -30,6 +32,9 @@ export default () => {
             <div className="title-spacer" />
 
             <div className="title">
+
+              {/* <FaQuestion /> */}
+
               <Link to="/">
                 screwmycode.in
               </Link>

@@ -18,7 +18,7 @@ body {
     position: relative;
     height: 100vh;
 
-    color: white;
+    color: #EFEFEF;
 }
 
 .container {
@@ -48,9 +48,9 @@ body {
 }
 
 .title a {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
-    color: white;
+    color: #EFEFEF;
     text-decoration: none;
 }
 
@@ -72,6 +72,7 @@ body {
 
 .main-item {
     margin: 10px 10px 0 10px;
+    /*margin-top: -20px;*/
 
     /*background: #87a7bd;*/
 }
@@ -81,7 +82,7 @@ body {
 }
 
 .main-spacer {
-    height: 30%;
+    height: 20%;
     /*background: rgba(0, 200, 0, 0.2);*/
 }
 
@@ -95,32 +96,48 @@ body {
 }
 
 .form:first-child input {
-    width: 300px;
+    width: 500px;
 
     text-align: left;
 
-    font-size: 0.8rem;
+    font-size: 1.32rem;
 
-    border: 0;
-    border-bottom: 1px solid white;
+    /*border: 0;*/
+    border: 1px solid #606060;
 
-    color: white;
-    background: transparent;
+    padding: 3px 0 0 5px;
+
+    color: #EFEFEF;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.form:first-child input::placeholder {
+    color: #959595;
+    font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .form:first-child input {
+        width: 280px;
+    }
 }
 
 .form:last-child input {
+    margin: 10px;
+    padding: 3px 6px 3px 6px;
 
-    margin: 5px;
+    font-size: 1.1rem;
 
-    border: 0;
-    border-bottom: 1px solid white;
+    /*border: 0;*/
+    border: 1px solid #606060;
 
-    color: white;
-    background: black;
+    color: #959595;
+    background: rgba(0, 0, 0, 0.6);
 }
 
-.form:last-child:hover input {
+.form:last-child input:hover {
     cursor: pointer;
+    color: #EFEFEF;
 }
 
 .player-title {
@@ -129,15 +146,39 @@ body {
 
     margin: 5px;
 
+    font-size: 1.25rem;
+
     /*background: #8cffd6;*/
+}
+
+.player-icons {
+    display:flex;
+    justify-content:center;
+    font-size: 1.45rem;
+    color:#EFEFEF;
+}
+
+.player-icon-copy {
+    margin-right: 0.5rem;
+}
+
+.player-icon-copy:active {
+    color: #606060;
+}
+
+.player-icon-share:active {
+    color: #606060;
 }
 
 .player {
     display: flex;
     justify-content: center;
 
+    color: #EFEFEF;
+    font-size: 1.32rem;
+
     /*margin: 5px;*/
-    margin: 15px;
+    margin: 10px 15px 5px 15px;
 
     /*background: #ffe1c1;*/
 }
@@ -151,7 +192,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    margin: 5px;
+    margin: 10px 5px -15px 5px;
 
     /*background: #ffbbce;*/
 }
@@ -174,10 +215,10 @@ body {
 
     text-align: center;
     border: 0;
-    border-bottom: 1px solid white;
+    /*border-bottom: 1px solid white;*/
     font-size: 1.2rem;
     font-weight: 900;
-    color: white;
+    color: #EFEFEF;
     background: transparent;
 }
 

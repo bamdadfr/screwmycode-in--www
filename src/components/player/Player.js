@@ -1,5 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import { FaRegCopy, FaCocktail } from 'react-icons/fa'
+
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Controls from './Controls'
@@ -84,15 +86,20 @@ export default (props) => {
         {title}
       </div>
 
-      <div
-        className="player-title"
-      >
-        <button
-          type="button"
-          onClick={() => copyToClipboard()}
-        >
-          copy
-        </button>
+      {/* <div */}
+      {/*  className="player-copy" */}
+      {/* > */}
+      {/* <button */}
+      {/*  type="button" */}
+      {/*  onClick={() => copyToClipboard()} */}
+      {/* > */}
+      {/*  copy */}
+      {/* </button> */}
+      {/* </div> */}
+
+      <div className="player-icons">
+        <FaRegCopy className="player-icon-copy" onClick={() => copyToClipboard()} />
+        <FaCocktail className="player-icon-share" onClick={() => copyToClipboard()} />
       </div>
 
       <div className="player">
