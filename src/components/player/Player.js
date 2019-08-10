@@ -90,7 +90,7 @@ export default (props) => {
 
       <div className="player-icons">
         <FaRegCopy className="player-icon-copy" onClick={() => copyToClipboard()} />
-        <img src={ButtonShare} className="player-icon-share" onClick={() => copyToClipboard()} />
+        <img alt="share button" src={ButtonShare} className="player-icon-share" onClick={() => copyToClipboard()} />
       </div>
 
       <div className="player">
