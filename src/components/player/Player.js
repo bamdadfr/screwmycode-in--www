@@ -1,10 +1,12 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { FaRegCopy, FaCocktail } from 'react-icons/fa'
+import { FaRegCopy } from 'react-icons/fa'
 
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Controls from './Controls'
+
+import ButtonShare from '../../assets/svg/buttonShare.svg'
 
 export default (props) => {
   const { src, title, speed } = props
@@ -86,20 +88,9 @@ export default (props) => {
         {title}
       </div>
 
-      {/* <div */}
-      {/*  className="player-copy" */}
-      {/* > */}
-      {/* <button */}
-      {/*  type="button" */}
-      {/*  onClick={() => copyToClipboard()} */}
-      {/* > */}
-      {/*  copy */}
-      {/* </button> */}
-      {/* </div> */}
-
       <div className="player-icons">
         <FaRegCopy className="player-icon-copy" onClick={() => copyToClipboard()} />
-        <FaCocktail className="player-icon-share" onClick={() => copyToClipboard()} />
+        <img src={ButtonShare} className="player-icon-share" onClick={() => copyToClipboard()} />
       </div>
 
       <div className="player">

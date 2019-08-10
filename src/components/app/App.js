@@ -37,8 +37,6 @@ export default () => {
 
             <div className="title">
 
-              <img src="icons/button_share.svg" loop="0" width="80px" />
-
               <Link to="/">
                 screwmycode.in
               </Link>

@@ -172,6 +172,10 @@ body {
     color: #EFEFEF;
 }
 
+.player-icons svg:hover {
+    cursor: pointer;
+}
+
 .player-icon-copy {
     margin-right: 0.5rem;
 }
@@ -180,12 +184,12 @@ body {
     color: #606060;
 }
 
-.player-icons svg:hover {
-    cursor: pointer;
+.player-icon-share {
+    width: 50px;
 }
 
-.player-icon-share:active {
-    color: #606060;
+.player-icon-share:hover {
+    cursor:pointer;
 }
 
 .player {
