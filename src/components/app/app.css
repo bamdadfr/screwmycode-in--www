@@ -21,6 +21,20 @@ body {
     color: #EFEFEF;
 }
 
+.corner-help {
+    position: absolute;
+    margin: 7px 0;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    color: #606060;
+}
+
+.corner-help svg:hover {
+    color: #EFEFEF;
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -152,10 +166,10 @@ body {
 }
 
 .player-icons {
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     font-size: 1.45rem;
-    color:#EFEFEF;
+    color: #EFEFEF;
 }
 
 .player-icon-copy {
@@ -164,6 +178,10 @@ body {
 
 .player-icon-copy:active {
     color: #606060;
+}
+
+.player-icons svg:hover {
+    cursor: pointer;
 }
 
 .player-icon-share:active {

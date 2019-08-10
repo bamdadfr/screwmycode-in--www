@@ -27,13 +27,17 @@ export default () => {
 
         <div className="page">
 
+          <div className="corner-help">
+            <FaQuestion />
+          </div>
+
           <div className="container">
 
             <div className="title-spacer" />
 
             <div className="title">
 
-              {/* <FaQuestion /> */}
+              <img src="icons/button_share.svg" loop="0" width="80px" />
 
               <Link to="/">
                 screwmycode.in
