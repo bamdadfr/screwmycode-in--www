@@ -1,6 +1,6 @@
 {
   "name": "screwmycode.in",
-  "version": "0.1.0-canary.0",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -10,7 +10,7 @@
     "react-keyboard-event-handler": "^1.4.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "styled-components": "^4.2.0",
+    "styled-components": "^4.3.2",
     "three": "^0.104.0",
     "three-orbitcontrols": "^2.102.1"
   },

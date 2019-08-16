@@ -11,6 +11,7 @@ import Firefox from '../firefox/Firefox'
 import Form from '../form/Form'
 import Youtube from '../routes/Youtube'
 import Three from '../three/Three'
+import Icons from '../icons/Icons'
 
 export default () => {
   const threeRef = React.useRef(null)
@@ -29,6 +30,7 @@ export default () => {
 
           <div className="corner-help">
             <FaQuestion />
+            <Icons />
           </div>
 
           <div className="container">
