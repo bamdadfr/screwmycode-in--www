@@ -1,5 +1,10 @@
 ﻿# screwmycode.in
 
+## repositories
+
+- [gitlab](https://gitlab.com/screwmycodein/screwmycode-www) main
+- [github](#)
+
 ---
 
 ## threejs examples
