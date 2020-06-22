@@ -3,7 +3,7 @@
 ## repositories
 
 - [gitlab](https://gitlab.com/screwmycodein/screwmycode-www) main
-- [github](#)
+- [github](https://github.com/screwmycode/screwmycode-www)
 
 ---
 
