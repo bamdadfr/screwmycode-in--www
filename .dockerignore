@@ -1,0 +1,11 @@
+*
+
+!package.json
+!yarn.lock
+!.snyk
+
+!src/
+!public/
+!docker/
+
+tsconfig.json
