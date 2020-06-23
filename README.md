@@ -1,9 +1,15 @@
-﻿# screwmycode.in
+# [screwmycode-www](https://screwmycode.in/)
 
 ## repositories
 
 - [gitlab](https://gitlab.com/screwmycodein/screwmycode-www) main
 - [github](https://github.com/screwmycode/screwmycode-www)
+
+## run
+
+```bash
+docker run -d --name screwmycode-www --restart=always -p 5005:80 registry.screwmycode.in/screwmycodein/screwmycode-www
+```
 
 ---
 
