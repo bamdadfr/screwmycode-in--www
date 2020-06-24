@@ -2,13 +2,13 @@
 
 ## repositories
 
-- [gitlab](https://gitlab.com/screwmycodein/screwmycode-www) main
-- [github](https://github.com/screwmycode/screwmycode-www)
+- [gitlab](https://gitlab.com/screwmycode/screwmycode-www) main
+- [github](https://github.com/screwmycode/screwmycode-www) read only
 
 ## run
 
 ```bash
-docker run -d --name screwmycode-www --restart=always -p 5005:80 registry.screwmycode.in/screwmycodein/screwmycode-www
+docker run -d --name screwmycode-www --restart=always -p 5005:80 registry.screwmycode.in/screwmycode/screwmycode-www
 ```
 
 ---
