@@ -1,0 +1,25 @@
+name: published-docker-build-push-gpr
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  # docker build and push to GPR
+  docker-build-push-gpr:
+    runs-on: ubuntu-latest 
+    steps:
+
+    - run: echo ::set-env name=REPO::$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")
+      shell: bash
+
+    - uses: actions/checkout@master
+
+    - uses: docker/build-push-action@v1
+      with:
+        registry: docker.pkg.github.com
+        username: ${{ github.repository_owner }}
+        password: ${{ github.token }}
+        repository: ${{ github.repository }}/${{ env.REPO }}
+        tag_with_ref: true
+        tags: latest

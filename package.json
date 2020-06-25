@@ -24,7 +24,7 @@
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .js --fix",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
@@ -44,6 +44,7 @@
     "@bamdadsabbagh/eslint-config": "^1.1.6",
     "@bamdadsabbagh/stylelint-config": "^1.0.7",
     "@types/react-router-dom": "^5.1.5",
+    "eslint-plugin-prettier": "^3.1.4",
     "react-scripts": "3.4.1"
   },
   "snyk": true

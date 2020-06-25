@@ -1,0 +1,30 @@
+name: hourly-yarn-upgrade
+
+on:
+  schedule:
+    - cron: '0 * * * *' # UTC
+
+jobs:
+  # yarn upgrade --latest
+  yarn-upgrade:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - run: yarn upgrade --latest
+
+      - run: |
+          git config --global user.email "asfalte@bamdadsabbagh.com"
+          git config --global user.name "asfalte"
+
+      - run: |
+          git add .
+          git diff-index --quiet HEAD || git commit -m "fix: auto upgrade to latest"
+
+      - run: git push
+      
