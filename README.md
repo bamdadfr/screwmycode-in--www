@@ -1,21 +1,16 @@
 # [screwmycode-www](https://screwmycode.in/)
 
-## repositories
-
-- [gitlab](https://gitlab.com/screwmycode/screwmycode-www) main
-- [github](https://github.com/screwmycode/screwmycode-www) read only
-
 ## run
 
 ```bash
-docker run -d --name screwmycode-www --restart=always -p 5005:80 registry.screwmycode.in/screwmycode/screwmycode-www
+docker run -d --name screwmycode-www --restart=always -p 5005:80 docker.pkg.github.com/screwmycode/screwmycode-www/screwmycode-www:latest
 ```
 
 ---
 
 ## threejs examples
 
-* https://codesandbox.io/s/github/looeee/discoverthree.com-examples/tree/master/1-first-steps/6-shapes-transformations
+* <https://codesandbox.io/s/github/looeee/discoverthree.com-examples/tree/master/1-first-steps/6-shapes-transformations>
 
 ---
 
