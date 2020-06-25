@@ -1,11 +1,8 @@
 name: 0430-semantic-release
 
 on:
-  # schedule:
-    # - cron: '30 4 * * *' # UTC
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: '30 4 * * *' # UTC
 
 jobs:
   # semantic-release
