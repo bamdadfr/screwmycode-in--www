@@ -49,7 +49,7 @@ export default (props: any): ReactElement => {
             'y': y - window.innerHeight * 0.5,
         }    
     
-    },[])
+    }, [])
 
     const onDocumentMouseMove = useCallback ((e: any): void => {
 

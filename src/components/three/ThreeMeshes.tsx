@@ -14,7 +14,7 @@ export default (scene: any, params: IPropsScale): IMeshes => {
 
     scene.add (
         backgroundGroup,
-        frontGroup
+        frontGroup,
     )
 
     /**
@@ -29,14 +29,14 @@ export default (scene: any, params: IPropsScale): IMeshes => {
     const backgroundSphere = new THREE.SphereBufferGeometry (
         scale.default,
         10,
-        10
+        10,
     )
 
     const backgroundSphereMesh = new THREE.Mesh (
         backgroundSphere,
         new THREE.MeshBasicMaterial ({
             'wireframe': true,
-        })
+        }),
     )
 
     backgroundGroup.add (backgroundSphereMesh)
@@ -53,12 +53,12 @@ export default (scene: any, params: IPropsScale): IMeshes => {
     const frontCube = new THREE.BoxBufferGeometry (
         scale.default * scale.front,
         scale.default * scale.front,
-        scale.default * scale.front
+        scale.default * scale.front,
     )
 
     const frontCubeMesh = new THREE.Mesh (
         frontCube,
-        new THREE.MeshNormalMaterial ()
+        new THREE.MeshNormalMaterial (),
     )
 
     frontGroup.add (frontCubeMesh)

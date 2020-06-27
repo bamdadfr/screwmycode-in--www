@@ -8,7 +8,7 @@ export default (container: IContainer): void => {
         35,
         container.clientWidth / container.clientHeight,
         0.1,
-        100
+        100,
     )
 
     camera.position.set (0, 0, 0)
