@@ -27,4 +27,4 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "fix: auto upgrade to latest"
 
       - run: git push
-      
+

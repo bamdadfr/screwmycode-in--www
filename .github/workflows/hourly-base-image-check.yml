@@ -1,0 +1,41 @@
+name: hourly-base-image-check
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - run: echo ::set-env name=BASE_IMAGE::$(cat Dockerfile | awk '{ if ($1=="FROM") print $2 }' | tail -n 1)
+      - run: echo ::set-env name=IMAGE::$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")
+
+      - run: docker login -u ${{ github.repository_owner }} -p ${{ github.token }} docker.pkg.github.com
+
+      - run: |
+          wget https://raw.githubusercontent.com/bamdadsabbagh/docker-base-image-check/master/src/check.sh
+          chmod +x check.sh
+
+      - run: |
+          if ./check.sh ${{ env.BASE_IMAGE }} docker.pkg.github.com/${{ github.repository }}/${{ env.IMAGE }}:latest; then
+            echo ::set-env name=IS_UP_TO_DATE::'true'
+          else
+            echo ::set-env name=IS_UP_TO_DATE::'false'
+          fi
+
+      - if: env.IS_UP_TO_DATE != 'true'
+        run: |
+          git config --global user.email "asfalte@bamdadsabbagh.com"
+          git config --global user.name "asfalte"
+          git commit --allow-empty -m "fix: auto base-image-check"
+          git push
+
+      - if: env.IS_UP_TO_DATE != 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          event-type: base-image-check

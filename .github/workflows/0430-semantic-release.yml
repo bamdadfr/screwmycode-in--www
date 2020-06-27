@@ -3,12 +3,10 @@ name: 0430-semantic-release
 on:
   schedule:
     - cron: '30 4 * * *' # UTC
-  # push:
-    # branches:
-      # - master
+  repository_dispatch:
+    types: [base-image-check]
 
 jobs:
-  # semantic-release
   semantic-release:
     runs-on: ubuntu-latest
     steps:
@@ -19,12 +17,9 @@ jobs:
         with:
           node-version: '12'
 
-      - run: yarn install --pure-lockfile --no-progress    
-        
       - run: npm install -g semantic-release @semantic-release/github @semantic-release/git
 
       - run: semantic-release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN_TRIGGERING }} # custom GH_TOKEN so we can trigger events
-          # GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT }} # repo scoped token
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
