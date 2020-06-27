@@ -16,7 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-toastify": "^6.0.6",
     "snyk": "^1.349.0",
-    "three": "^0.118.1",
+    "three": "^0.118.3",
     "three-orbitcontrols": "^2.102.1"
   },
   "scripts": {
