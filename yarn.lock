@@ -1131,10 +1131,10 @@
     snyk "^1.349.0"
     typescript "^3.9.3"
 
-"@bamdadsabbagh/stylelint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.0.tgz#35e86b75a607b9e147ab10d003125be6b8f1ccbe"
-  integrity sha512-sTC/liTN4hZEAl//IEpYmA6pehUXpKNhfUdwqywkY/FCGvCmwToG1QQoDE9GF1yT8Gx7uBh1VXChzn68DpOfCA==
+"@bamdadsabbagh/stylelint-config@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.1.tgz#859fbd89ae54cd0870ac693d3fb925aac4c491bf"
+  integrity sha512-osynnDk76okihMqU84A8xWZfJXVrLkfuSjuRUJhd29nd1I0EW51PEp+dhbfaxe5xr+6N/s/T2uuoC76xuNtUyg==
   dependencies:
     snyk "^1.349.0"
     stylelint "^13.5.0"
