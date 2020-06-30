@@ -1109,34 +1109,34 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.3.tgz#e5fe89dcaf0747a53c4973c9011a6a4bfc9b3788"
-  integrity sha512-u/tfx4GQIK1cnJ8jnm5CJcQAlag+J91W5I6P3s5bdpBQzzHAvgnNKMejM7TSaMBfx4j1mDwgkE+qBIWna7A+CA==
+"@bamdadsabbagh/eslint-config@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.4.tgz#6c3a545f7977b32f269c703999bfc88e435e2cd6"
+  integrity sha512-T/PtJ6Omajpf5OzdYxiwnAXxv5lifeHcPCt1UmHXo0+idEDnpltMFBggDVXiwW4j/LQXp1yPoO+Fdp+A4IEylQ==
   dependencies:
     "@types/node" "^14.0.14"
     "@types/react" "^16.9.41"
     "@types/react-dom" "^16.9.8"
-    "@typescript-eslint/eslint-plugin" "^3.4.0"
-    "@typescript-eslint/parser" "^3.4.0"
+    "@typescript-eslint/eslint-plugin" "^3.5.0"
+    "@typescript-eslint/parser" "^3.5.0"
     eslint "^7.3.1"
     eslint-config-airbnb "^18.2.0"
     eslint-config-prettier "^6.10.0"
     eslint-plugin-import "^2.22.0"
     eslint-plugin-jsx-a11y "^6.3.1"
     eslint-plugin-prettier "^3.1.2"
-    eslint-plugin-react "^7.20.1"
+    eslint-plugin-react "^7.20.2"
     eslint-plugin-react-hooks "^4.0.4"
     prettier "^2.0.5"
-    snyk "^1.349.0"
+    snyk "^1.352.1"
     typescript "^3.9.3"
 
-"@bamdadsabbagh/stylelint-config@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.1.tgz#859fbd89ae54cd0870ac693d3fb925aac4c491bf"
-  integrity sha512-osynnDk76okihMqU84A8xWZfJXVrLkfuSjuRUJhd29nd1I0EW51PEp+dhbfaxe5xr+6N/s/T2uuoC76xuNtUyg==
+"@bamdadsabbagh/stylelint-config@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.2.tgz#aeed5706bed37f24b735eeb9e37f6a37aae04b95"
+  integrity sha512-U64bJK2PgSCPYcnXVw60xUn1QcASbNby6NIAXWkQgEQfWemDghXLNez1kUJgh5rfy6pE3cQCxR1KhMOiemGa1g==
   dependencies:
-    snyk "^1.349.0"
+    snyk "^1.352.1"
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
     stylelint-config-recommended "^3.0.0"
@@ -1948,7 +1948,7 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
-"@typescript-eslint/eslint-plugin@^3.4.0":
+"@typescript-eslint/eslint-plugin@^3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-3.5.0.tgz#e7736e0808b5fb947a5f9dd949ae6736a7226b84"
   integrity sha512-m4erZ8AkSjoIUOf8s4k2V1xdL2c1Vy0D3dN6/jC9d7+nEqjY3gxXCkgi3gW/GAxPaA4hV8biaCoTVdQmfAeTCQ==
@@ -1991,7 +1991,7 @@
     "@typescript-eslint/typescript-estree" "2.34.0"
     eslint-visitor-keys "^1.1.0"
 
-"@typescript-eslint/parser@^3.4.0":
+"@typescript-eslint/parser@^3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-3.5.0.tgz#9ff8c11877c48df24e10e19d7bf542ee0359500d"
   integrity sha512-sU07VbYB70WZHtgOjH/qfAp1+OwaWgrvD1Km1VXqRpcVxt971PMTU7gJtlrCje0M+Sdz7xKAbtiyIu+Y6QdnVA==
@@ -4960,7 +4960,7 @@ eslint-plugin-react@7.19.0:
     string.prototype.matchall "^4.0.2"
     xregexp "^4.3.0"
 
-eslint-plugin-react@^7.20.1:
+eslint-plugin-react@^7.20.2:
   version "7.20.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.20.2.tgz#b0d72abcd94c59c842338aa09c800808219ea77d"
   integrity sha512-J3BdtsPNbcF/CG9HdyLx7jEtC7tuODODGldkS9P1zU2WMoHPdcsN2enUopgIaec5f9eYhSFI5zQAaWA/dgv2zw==
@@ -11778,7 +11778,7 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.349.0, snyk@^1.352.1:
+snyk@^1.352.1:
   version "1.352.1"
   resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.352.1.tgz#ba75bc7c8f5a4cce6f38d01c5b3dfe843d2a1f75"
   integrity sha512-POeDo6rcTTeWgGNdWcSluzGnvpPc6/4tiZezyMNCFsxhIozL+0uvUkBJ2HFYwm+F+6UyiJB5JK8q4zoZoUWVQg==
