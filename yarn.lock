@@ -1109,10 +1109,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.4.tgz#6c3a545f7977b32f269c703999bfc88e435e2cd6"
-  integrity sha512-T/PtJ6Omajpf5OzdYxiwnAXxv5lifeHcPCt1UmHXo0+idEDnpltMFBggDVXiwW4j/LQXp1yPoO+Fdp+A4IEylQ==
+"@bamdadsabbagh/eslint-config@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.5.tgz#6f2dfd19d0cfb2a0ffb4e21ff54335932c6ee614"
+  integrity sha512-JAdt+GQ33N6TIWCz5HZSDg/1jGbklVmgMeOhkXIL9cg26EdKGnIOyaqWwFXmfUeKNMOGY+KzOAha7EY6Rt0btA==
   dependencies:
     "@types/node" "^14.0.14"
     "@types/react" "^16.9.41"
@@ -1125,18 +1125,18 @@
     eslint-plugin-import "^2.22.0"
     eslint-plugin-jsx-a11y "^6.3.1"
     eslint-plugin-prettier "^3.1.2"
-    eslint-plugin-react "^7.20.2"
-    eslint-plugin-react-hooks "^4.0.4"
+    eslint-plugin-react "^7.20.3"
+    eslint-plugin-react-hooks "^4.0.5"
     prettier "^2.0.5"
-    snyk "^1.352.1"
+    snyk "^1.355.0"
     typescript "^3.9.3"
 
-"@bamdadsabbagh/stylelint-config@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.2.tgz#aeed5706bed37f24b735eeb9e37f6a37aae04b95"
-  integrity sha512-U64bJK2PgSCPYcnXVw60xUn1QcASbNby6NIAXWkQgEQfWemDghXLNez1kUJgh5rfy6pE3cQCxR1KhMOiemGa1g==
+"@bamdadsabbagh/stylelint-config@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.3.tgz#b55b28424749a1df7771e750f52d6494ed36ab2b"
+  integrity sha512-VEBhvW1//KqXD8QHFFkTUws/6XKCB1STuriusIN0FmejM1hXjS897jXyO6HN169t0ZVzD8/4SlZ4K5I88lGJbA==
   dependencies:
-    snyk "^1.352.1"
+    snyk "^1.355.0"
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
     stylelint-config-recommended "^3.0.0"
@@ -4937,7 +4937,7 @@ eslint-plugin-react-hooks@^1.6.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.7.0.tgz#6210b6d5a37205f0b92858f895a4e827020a7d04"
   integrity sha512-iXTCFcOmlWvw4+TOE8CLWj6yX1GwzT0Y6cUfHHZqWnSk144VmVIRcVGtUAzrLES7C798lmvnt02C7rxaOX1HNA==
 
-eslint-plugin-react-hooks@^4.0.4:
+eslint-plugin-react-hooks@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.0.5.tgz#4879003aa38e5d05d0312175beb6e4a1f617bfcf"
   integrity sha512-3YLSjoArsE2rUwL8li4Yxx1SUg3DQWp+78N3bcJQGWVZckcp+yeQGsap/MSq05+thJk57o+Ww4PtZukXGL02TQ==
@@ -4960,7 +4960,7 @@ eslint-plugin-react@7.19.0:
     string.prototype.matchall "^4.0.2"
     xregexp "^4.3.0"
 
-eslint-plugin-react@^7.20.2:
+eslint-plugin-react@^7.20.3:
   version "7.20.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.20.3.tgz#0590525e7eb83890ce71f73c2cf836284ad8c2f1"
   integrity sha512-txbo090buDeyV0ugF3YMWrzLIUqpYTsWSDZV9xLSmExE1P/Kmgg9++PD931r+KEWS66O1c9R4srLVVHmeHpoAg==
@@ -11772,7 +11772,7 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.352.1, snyk@^1.355.0:
+snyk@^1.355.0:
   version "1.355.0"
   resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.355.0.tgz#a59f9f346616137b4019672e565ad8cc87bd8cfc"
   integrity sha512-U/SiFq2QisMmKAn/zYHbx1aZNyJpc0160gU8ywlqkcAOsVDCQkGxiCU89f3bl9Bzx3wg8HAnXz0OVmYoYxVCYg==
