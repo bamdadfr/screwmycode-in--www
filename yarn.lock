@@ -1203,10 +1203,10 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-bi/-/icons-bi-1.0.6.tgz#e4c788d81767fa7d9a1959cfdcba3f0925e529f0"
   integrity sha512-0I/qawqj68W7T80srg0KxxsjgFnmAXsc2Y5lCJnz4y/tHCWFS0qy3q/habBfQtrmiXVKNul98nd2/fXy87iSww==
 
-"@iconify/icons-mdi@^1.0.113":
-  version "1.0.113"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.113.tgz#2064d86f6cdd94db5c3c80c036eb9ec8cff46a6d"
-  integrity sha512-ewmhtiPRwoAGfk7WHzQOeZ3GWVpXmNneHQr35n8UzNX8KRGWG36ufS0h9sJnNDM4Hwj4IAZ2D2B5bKNYn8S4TQ==
+"@iconify/icons-mdi@^1.0.114":
+  version "1.0.114"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.114.tgz#74184e2a36e155f4f697a7878d245c33afef766c"
+  integrity sha512-lcsvgQSnTWvp/LLVIhwylJmAR+FijYWrEsJH2GTSzMXMTsvEMOJGUDsoIyUgwZfCOb4DYym1lP0LpQqMoIkGpw==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -4777,9 +4777,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.483:
-  version "1.3.485"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.485.tgz#ee67ba44fbe0dddc9dd439af532e593f6c8baaa6"
-  integrity sha512-Qclz/MFjp6H1oMd1U1AWCWqT8DW/SaN7lUb6ejh03bD6lBoN2X8W2xhXfsU4rdjf7TWReb0ZOGxo6MjsFiEgzQ==
+  version "1.3.486"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.486.tgz#90856e6c9f488079225cf5a0b4d4af6c241e0965"
+  integrity sha512-fmnACh6Jiuagm9tAfEZNe6QrwvOYAC5y0BwzoEOGCsbqriKOCaafXf3lsIvL55xa75Jmg4oboI7f5tMuoXrjNg==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
   version "6.5.3"
