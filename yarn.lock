@@ -1109,10 +1109,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.6.tgz#158876442fa41d5ee725a51d6b3fcad17b71ae31"
-  integrity sha512-5E6nLRGBjMSfu2d6VTBQDRetpxp5S8p//Fpzw6NWqB9L/+O9cKxYwoMO+R3Gb1bt7mXuQEDXktndkTsjipEMVg==
+"@bamdadsabbagh/eslint-config@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.7.tgz#30b44699040e883f7eb1021634401621fe682e82"
+  integrity sha512-j8gYn/aghBu/yg43kPjhtTzAa44gWlq1Gc9jS4iL5fqvhWYui8WV5rsV6NuaB3jMPoaCPUiGsc86ot30eolnjw==
   dependencies:
     "@types/node" "^14.0.14"
     "@types/react" "^16.9.41"
@@ -1128,15 +1128,15 @@
     eslint-plugin-react "^7.20.3"
     eslint-plugin-react-hooks "^4.0.5"
     prettier "^2.0.5"
-    snyk "^1.359.0"
+    snyk "^1.359.1"
     typescript "^3.9.6"
 
-"@bamdadsabbagh/stylelint-config@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.4.tgz#3bc838f169de4679a393ce34be6e9f61d86dd202"
-  integrity sha512-SbDQkUKxy0jRipO4FA7IQUFtpKLcgV7TVKr2dMD82Zr5ndQpxv1+9iUr7iCIPAanP0wYKgRyWr6i1fpkyu2nRg==
+"@bamdadsabbagh/stylelint-config@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.5.tgz#30114128e906c36c3d9450551c91b507e34b524d"
+  integrity sha512-RekjsaO8VLg9jmqoijD9KVEYy1paRUGjS3nXjSL1RldzmlJMXCjmi/DeAjj0l46E4cI5147WJKMmPA5GnzTBdQ==
   dependencies:
-    snyk "^1.359.0"
+    snyk "^1.359.1"
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
     stylelint-config-recommended "^3.0.0"
@@ -12150,7 +12150,7 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.359.0, snyk@^1.359.1:
+snyk@^1.359.1:
   version "1.359.1"
   resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.359.1.tgz#5c7c285bc3a12055d49818417209789e10ed2e4e"
   integrity sha512-BSoDyJkkyN1OUzgVR3V6xgfyRTheEPgE7fPQCa3AfQs6JBKpy+7gDVmi8Puc49c3HCXLHJUOCyDzVj3ANw0ihQ==
