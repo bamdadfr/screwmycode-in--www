@@ -1109,17 +1109,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.7.tgz#30b44699040e883f7eb1021634401621fe682e82"
-  integrity sha512-j8gYn/aghBu/yg43kPjhtTzAa44gWlq1Gc9jS4iL5fqvhWYui8WV5rsV6NuaB3jMPoaCPUiGsc86ot30eolnjw==
+"@bamdadsabbagh/eslint-config@^1.2.8":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.2.8.tgz#b01f562809ceaa1dcc77b0504792581dc86d7616"
+  integrity sha512-9UgpXupzZKttHbyO5hZ41ZrZuO5hg3YQpcsd6FJBYaN1MfvHMnyhdgRmsNkDKoRTxesA88nmD6gatifiNuqWgg==
   dependencies:
     "@types/node" "^14.0.14"
     "@types/react" "^16.9.41"
     "@types/react-dom" "^16.9.8"
     "@typescript-eslint/eslint-plugin" "^3.5.0"
     "@typescript-eslint/parser" "^3.5.0"
-    eslint "^7.3.1"
+    eslint "^7.4.0"
     eslint-config-airbnb "^18.2.0"
     eslint-config-prettier "^6.10.0"
     eslint-plugin-import "^2.22.0"
@@ -1128,15 +1128,15 @@
     eslint-plugin-react "^7.20.3"
     eslint-plugin-react-hooks "^4.0.5"
     prettier "^2.0.5"
-    snyk "^1.359.1"
+    snyk "^1.360.0"
     typescript "^3.9.6"
 
-"@bamdadsabbagh/stylelint-config@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.5.tgz#30114128e906c36c3d9450551c91b507e34b524d"
-  integrity sha512-RekjsaO8VLg9jmqoijD9KVEYy1paRUGjS3nXjSL1RldzmlJMXCjmi/DeAjj0l46E4cI5147WJKMmPA5GnzTBdQ==
+"@bamdadsabbagh/stylelint-config@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.6.tgz#ec0026c005a22206709a669326634c0b94e0269d"
+  integrity sha512-o9DFQ2DZUlUWy6Hdaxxz87xAhnpywDo7Ihk8tC7j6CUv4DY2Y+qtDpOhmRa1M2ZhbvSD66xxe5qLGz4fp5TOrA==
   dependencies:
-    snyk "^1.359.1"
+    snyk "^1.360.0"
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
     stylelint-config-recommended "^3.0.0"
@@ -5273,7 +5273,7 @@ eslint@^6.6.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^7.3.1:
+eslint@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.4.0.tgz#4e35a2697e6c1972f9d6ef2b690ad319f80f206f"
   integrity sha512-gU+lxhlPHu45H3JkEGgYhWhkR9wLHHEXC9FbWFnTlEkbKyZKWgWRLgf61E8zWmBuI6g5xKBph9ltg3NtZMVF8g==
@@ -12183,7 +12183,7 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.359.1, snyk@^1.360.0:
+snyk@^1.360.0:
   version "1.360.0"
   resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.360.0.tgz#7b0ff4c7ef80a8b8cc684283e36fd8b2669a3ef7"
   integrity sha512-Q0eqLOTGvXxSWhQCiOcasSJq8LyYkhnQa/MxxeULjy8VK06uWru9ytvTwan3lKMDDwCFExS3dXQHFUWVNzoxjw==
