@@ -1131,10 +1131,10 @@
     snyk "^1.360.0"
     typescript "^3.9.6"
 
-"@bamdadsabbagh/stylelint-config@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.7.tgz#cbb63574fead226788b27b238c962354ef32e250"
-  integrity sha512-J/tZoSxA9fNzwQNnW9gYRyWRqN2GtZdkUjW5WAJa7WmuNml/8d9Yw1crDyd+GbMMnMOggcFVkpBgy8LQrDZhnQ==
+"@bamdadsabbagh/stylelint-config@^1.2.8":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.8.tgz#99234301ec76c521a51ac97da73ea523bb3db209"
+  integrity sha512-llHmS+pRAiOQY3vJIuO+VYF8th2D/U6gpmE5/043VEqGYjvKGxgNRT9v6Q4J9oahbYjxcN3doPjLx50dJx4M/Q==
   dependencies:
     snyk "^1.360.0"
     stylelint "^13.5.0"
@@ -6565,11 +6565,11 @@ http-signature@~1.2.0:
     sshpk "^1.7.0"
 
 http2-wrapper@^1.0.0-beta.4.5:
-  version "1.0.0-beta.4.6"
-  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.6.tgz#9438f0fceb946c8cbd365076c228a4d3bd4d0143"
-  integrity sha512-9oB4BiGDTI1FmIBlOF9OJ5hwJvcBEmPCqk/hy314Uhy2uq5TjekUZM8w8SPLLlUEM+mxNhXdPAXfrJN2Zbb/GQ==
+  version "1.0.0-beta.4.7"
+  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.7.tgz#f51885d21f0838348bdf656fb5443e6be49df666"
+  integrity sha512-Lps+Stww4OdXyoQaHRiD1UG5v+iiM/QutahJrTw/0f3aGl52/lA5JZ7oVKwshln9SFUE54eT2denWhbEBFMcvQ==
   dependencies:
-    quick-lru "^5.0.0"
+    quick-lru "^5.1.1"
     resolve-alpn "^1.0.0"
 
 https-browserify@^1.0.0:
@@ -10749,7 +10749,7 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-quick-lru@^5.0.0:
+quick-lru@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
