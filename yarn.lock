@@ -6565,9 +6565,9 @@ http-signature@~1.2.0:
     sshpk "^1.7.0"
 
 http2-wrapper@^1.0.0-beta.4.5:
-  version "1.0.0-beta.4.7"
-  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.7.tgz#f51885d21f0838348bdf656fb5443e6be49df666"
-  integrity sha512-Lps+Stww4OdXyoQaHRiD1UG5v+iiM/QutahJrTw/0f3aGl52/lA5JZ7oVKwshln9SFUE54eT2denWhbEBFMcvQ==
+  version "1.0.0-beta.4.8"
+  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.8.tgz#d3285f7421d7795f9dbcd4b57d92a2f73c0d958d"
+  integrity sha512-3XyRMia2QMy59nbxvXNX+57opqcy7/GlkJEaB7uRNw+TZw6mOiK3936IO83mVy7mzCttE66Cy9QEZ/xPXYmoCQ==
   dependencies:
     quick-lru "^5.1.1"
     resolve-alpn "^1.0.0"
