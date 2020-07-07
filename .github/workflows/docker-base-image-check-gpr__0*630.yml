@@ -1,15 +1,15 @@
-name: hourly-base-image-check
+name: docker-base-image-check-gpr__0*630
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '30 */6 * * *'
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - run: echo ::set-env name=BASE_IMAGE::$(cat Dockerfile | awk '{ if ($1=="FROM") print $2 }' | tail -n 1)
       - run: echo ::set-env name=IMAGE::$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")
@@ -31,11 +31,11 @@ jobs:
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
-          git commit --allow-empty -m "fix: auto base-image-check"
+          git commit --allow-empty -m "🐳 fix: asfalte: docker-base-image-check-gpr__0*630"
           git push
 
       - if: env.IS_UP_TO_DATE != 'true'
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@master
         with:
           token: ${{ secrets.PAT }}
-          event-type: base-image-check
+          event-type: docker-base-image-check

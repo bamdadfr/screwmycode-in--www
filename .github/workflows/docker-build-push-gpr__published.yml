@@ -1,11 +1,11 @@
-name: published-docker-build-push-gpr
+name: docker-build-push-gpr__published
 
 on:
   release:
-    types: [published]
+    types:
+      - published
 
 jobs:
-  # docker build and push to GPR
   docker-build-push-gpr:
     runs-on: ubuntu-latest 
     steps:
@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/checkout@master
 
-      - uses: docker/build-push-action@v1
+      - uses: docker/build-push-action@master
         with:
           registry: docker.pkg.github.com
           username: ${{ github.repository_owner }}
