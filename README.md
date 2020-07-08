@@ -2,6 +2,8 @@
 
 <img width="30px" src="src/assets/icons/SCRW_KSET.svg"> Variable speed pitch control for YouTube
 
+![test](https://github.com/favicon.ico =24x48)
+
 Website available [here](https://screwmycode.in/)
 
 ## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg"> Presentation
