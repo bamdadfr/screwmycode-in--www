@@ -1,55 +1,22 @@
-# [screwmycode-www](https://screwmycode.in/)
+# [@screwmycode/screwmycode-www](https://github.com/screwmycode/screwmycode-www)
 
-## run
+<img width="30px" src="src/assets/icons/SCRW_KSET.svg"> Variable speed pitch control for YouTube
+
+Website available [here](https://screwmycode.in/)
+
+## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg"> Presentation
+
+In tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw), inventor of the [chopped and screwed](https://en.wikipedia.org/wiki/Chopped_and_screwed) mixing style.
+
+May he rest in peace.
+
+![DJ_Screw](https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg)
+
+## <img height="15px" src="src/assets/icons/SCRW_SHARE_TXT.svg"> dev
 
 ```bash
-docker run -d --name screwmycode-www --restart=always -p 5005:80 docker.pkg.github.com/screwmycode/screwmycode-www/screwmycode-www:latest
+git clone https://github.com/screwmycode/screwmycode-www
+cd screwmycode-www
+yarn
+yarn start
 ```
-
----
-
-## threejs examples
-
-* <https://codesandbox.io/s/github/looeee/discoverthree.com-examples/tree/master/1-first-steps/6-shapes-transformations>
-
----
-
-## various designs for inspiration
-
-police pas mal
-
-* <https://tympanus.net/Development/SVGImageHover/>
-
-effect water distortion:
-
-* <https://tympanus.net/codrops/2017/10/10/liquid-distortion-effects/>
-
----
-
-## various fixes to implement
-
-* <https://stackoverflow.com/questions/53058421/local-variable-audio-in-object-method-not-playing>
-
----
-
-## fixes 20190809
-
-insert youtube link dans le champ
-ok
-
-how to? (icone point d'interrogation qui se transforme en croix pour fermeture, informations en plein écran ou pas?)
-
-grossir le site (~175%)
-ok
-
-redessiner les deux sliders
-
-## Nouvelle fonction: historique / favoris
-
-un bouton qui permette de poster un favori (envoi dans la base de données)
-
-bouton share avec une liste (classée récente > tardive)
-
-idée animation: volet latéral avec affichage dynamique et websocket pour les add dans la base de données
-
-effet tiroir
