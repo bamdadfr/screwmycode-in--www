@@ -7,7 +7,7 @@ Website available [here](https://screwmycode.in/)
 
 ## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg" /> Presentation
 
-In tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw),
+This project is a tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw),
 inventor of the
 [chopped and screwed](https://en.wikipedia.org/wiki/Chopped_and_screwed) mixing style.
 
