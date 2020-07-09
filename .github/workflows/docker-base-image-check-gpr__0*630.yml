@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
-          git commit --allow-empty -m "🐳 fix: asfalte: docker-base-image-check-gpr__0*630"
+          git commit --allow-empty -m "fix: asfalte: 🐳 docker-base-image-check-gpr__0*630"
           git push
 
       - if: env.IS_UP_TO_DATE != 'true'
