@@ -15,7 +15,7 @@
     "react-keyboard-event-handler": "^1.5.4",
     "react-router-dom": "^5.2.0",
     "react-toastify": "^6.0.8",
-    "snyk": "^1.360.0",
+    "snyk": "^1.361.3",
     "three": "^0.118.3",
     "three-orbitcontrols": "^2.102.1"
   },
@@ -41,8 +41,8 @@
     ]
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.2.12",
-    "@bamdadsabbagh/stylelint-config": "^1.2.10",
+    "@bamdadsabbagh/eslint-config": "^1.2.13",
+    "@bamdadsabbagh/stylelint-config": "^1.2.11",
     "@types/react-router-dom": "^5.1.5",
     "eslint-plugin-prettier": "^3.1.4",
     "react-scripts": "3.4.1"
