@@ -1,6 +1,7 @@
 import React from 'react'
+import './firefox.styles.css'
 
-export default (): React.ReactElement => (
+export const Firefox = (): React.ReactElement => (
     <>
         <div className="controls">
             <div>

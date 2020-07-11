@@ -1,4 +1,4 @@
-import { IMouse, ICameraSettings, ICamera } from './types'
+import { IMouse, ICameraSettings, ICamera } from './three.types'
 
 export const animateBackground = (t: number, element: any): number => {
 

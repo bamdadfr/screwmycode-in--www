@@ -1,10 +1,10 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
-import IconChampSvg from '../../assets/icons/SCRW_CHAMP.svg'
-import Player from '../player/Player'
-import envService from '../../services/env'
+import { IconChamp } from './icons'
+import { Player } from './player'
+import { getApiBaseUrl } from './app.env'
+import { AppUtilsRedirectHome } from './app.utils'
 
-export default (props: any): React.ReactElement => {
+export const Youtube = (props: any): React.ReactElement => {
 
     const { match, location } = props
     const [redirectToHome, setRedirectToHome] = React.useState (false)
@@ -64,7 +64,7 @@ export default (props: any): React.ReactElement => {
 
             setIsLoading (true)
 
-            const url: string = envService.getApiBaseUrl () + 'youtube/' + inputId
+            const url: string = getApiBaseUrl () + 'youtube/' + inputId
 
             fetchUrl (url)
         
@@ -95,9 +95,7 @@ export default (props: any): React.ReactElement => {
 
     if (redirectToHome) {
 
-        return (
-            <Redirect to="/" />
-        )
+        AppUtilsRedirectHome ()
     
     }
 
@@ -115,7 +113,7 @@ export default (props: any): React.ReactElement => {
             <>
                 <div className="player">
                     <img
-                        src={IconChampSvg}
+                        src={IconChamp}
                         alt="icon-loading"
                         height={150}
                     />

@@ -1,11 +1,8 @@
 import React, { useRef, useState, useEffect, ReactElement } from 'react'
+import { IPlayerControlsProps } from './player.controls.types'
+import './player.controls.styles.css'
 
-interface IProps {
-    init: number,
-    speedCB: any,
-}
-
-export default (props: IProps): React.ReactElement => {
+export const PlayerControls = (props: IPlayerControlsProps): React.ReactElement => {
 
     const { speedCB, init } = props
     const [speedState, setSpeedState] = useState<any> (init)

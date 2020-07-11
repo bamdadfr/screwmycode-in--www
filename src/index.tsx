@@ -1,22 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import ReactDOM from 'react-dom'
-import 'normalize.css'
-import { detect } from 'detect-browser'
 import * as serviceWorker from './serviceWorker'
-// components
-import App from './components/app/App'
+import 'normalize.css'
+import { App } from './components/app'
+import { AppUtilsRedirectIfNotFirefox } from './components/app.utils'
 
-const browser: any = detect ()
+const Root = (): ReactElement => {
 
-const Root = (): React.ReactElement => {
+    AppUtilsRedirectIfNotFirefox ()
 
-    if (browser.name !== 'firefox' && window.location.pathname !== '/firefox') {
-
-        window.location.href = `${window.location.origin}/firefox`
-    
-    }
-
-    return <App browser={browser} />
+    return <App />
 
 }
 

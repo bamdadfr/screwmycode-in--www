@@ -1,30 +1,19 @@
 import React, { ReactElement } from 'react'
-import { Icon } from '@iconify/react'
-import questionCircleOutlined from '@iconify/icons-ant-design/question-circle-outlined'
-import toggleOff from '@iconify/icons-bi/toggle-off'
-import toggleOn from '@iconify/icons-bi/toggle-on'
-import repeatOff from '@iconify/icons-mdi/repeat-off'
-import envService from '../../services/env'
-import { sendToast } from '../toast/Toast'
+import { getBackgroundInitState } from './app.env'
+import { sendToast } from './toast.utils'
+import { IHeaderProps } from './header.types'
+import './header.styles.css'
+import { IconRepeat, IconToggle, IconQuestion } from './icons'
 
-interface IProps {
-    // toggleCB: FunctionStringCallback,
-    toggleCB: any,
-}
-
-export default (props: IProps): ReactElement => {
+export const Header = (props: IHeaderProps): ReactElement => {
 
     const { toggleCB } = props
-    const [toggleState, setToggleState] = React.useState<boolean> (envService.getBackgroundInitState)
+    const [toggleState, setToggleState] = React.useState<boolean> (getBackgroundInitState)
 
     const toggle = {
         'state': {
             'get': toggleState,
             'set': setToggleState,
-        },
-        'icon': {
-            'on': toggleOn,
-            'off': toggleOff,
         },
         'callback': toggleCB,
         'onClick': (e: boolean): void => toggle.state.set (e),
@@ -36,9 +25,7 @@ export default (props: IProps): ReactElement => {
                     role="button"
                     tabIndex={-1}
                 >
-                    <Icon
-                        icon={toggle.state.get ? toggle.icon.on : toggle.icon.off}
-                    />
+                    {toggle.state.get ? <IconToggle.on /> : <IconToggle.off />}
                 </span>
             </>
         ),
@@ -59,9 +46,7 @@ export default (props: IProps): ReactElement => {
                     role="button"
                     tabIndex={-1}
                 >
-                    <Icon
-                        icon={questionCircleOutlined}
-                    />
+                    <IconQuestion />
                 </span>
 
             </>
@@ -77,9 +62,7 @@ export default (props: IProps): ReactElement => {
                     role="button"
                     tabIndex={-1}
                 >
-                    <Icon
-                        icon={repeatOff}
-                    />
+                    <IconRepeat />
                 </span>
             </>
         ),

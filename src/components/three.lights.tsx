@@ -1,7 +1,7 @@
 
 const THREE = require ('three')
 
-export default (scene: any): void => {
+export const ThreeLights = (scene: any): void => {
 
     const ambientLight = new THREE.HemisphereLight (0xddeeff, 0x0f0e0d, 5)
     const mainLight = new THREE.DirectionalLight (0xffffff, 5)

@@ -1,8 +1,8 @@
-import { IContainer } from './types'
+import { IContainer } from './three.types'
 
 const THREE = require ('three')
 
-export default (container: IContainer): void => {
+export const ThreeRenderer = (container: IContainer): void => {
 
     const renderer = new THREE.WebGLRenderer ({ 'antialias': true })
 

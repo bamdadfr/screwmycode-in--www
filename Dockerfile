@@ -1,15 +1,14 @@
 FROM node:alpine as build
-LABEL maintainer="Bamdad Sabbagh <devops@bamdadsabbagh.com>"
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json yarn.lock tsconfig.json ./
 RUN yarn install --pure-lockfile --no-progress
 
 COPY . ./
 RUN yarn build
 
-# final step - serving app
+# runtime
 FROM nginx:alpine
 LABEL maintainer="Bamdad Sabbagh <devops@bamdadsabbagh.com>"
 

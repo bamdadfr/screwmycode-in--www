@@ -1,21 +1,13 @@
 import React, { ReactElement } from 'react'
 import { Redirect } from 'react-router-dom'
+import { AppUtilsRedirectIfNotFirefox } from './app.utils'
+import './home.styles.css'
 
-interface IProps {
-    browser: any,
-}
+export const Home = (): React.ReactElement => {
 
-export default (props: IProps): React.ReactElement => {
-
-    const { browser } = props
     const [routeState, setRouteState] = React.useState<string|null> (null)
 
-    // TODO works but can be improved (firefox check)
-    if (browser.name !== 'firefox' && window.location.pathname !== '/firefox') {
-
-        window.location.href = `${window.location.origin}/firefox`
-        
-    }
+    AppUtilsRedirectIfNotFirefox ()
     
     const route = {
         'state': {

@@ -1,8 +1,8 @@
-import { IContainer } from './types'
+import { IContainer } from './three.types'
 
 const THREE = require ('three')
 
-export default (container: IContainer): void => {
+export const ThreeCamera = (container: IContainer): void => {
 
     const camera = new THREE.PerspectiveCamera (
         35,

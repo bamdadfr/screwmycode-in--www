@@ -1,13 +1,13 @@
 import React, { useRef, useCallback, useEffect, ReactElement } from 'react'
 import * as THREE from 'three'
-import ThreeCamera from './ThreeCamera'
-import ThreeLights from './ThreeLights'
-import ThreeMeshes from './ThreeMeshes'
-import ThreeRenderer from './ThreeRenderer'
-import { animateBackground, animateCamera } from './ThreeAnimations'
-import { IScale, ICameraSettings, IMouse, IContainer } from './types'
+import { ThreeCamera } from './three.camera'
+import { ThreeLights } from './three.lights'
+import { ThreeMeshes } from './three.meshes'
+import { ThreeRenderer } from './three.renderer'
+import { animateBackground, animateCamera } from './three.animations'
+import { IScale, ICameraSettings, IMouse, IContainer } from './three.types'
 
-export default (props: any): ReactElement => {
+export const Three = (props: any): ReactElement => {
 
     // props: dom ref
 

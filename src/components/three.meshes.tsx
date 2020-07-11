@@ -1,8 +1,8 @@
-import { IMeshes, IPropsScale } from './types'
+import { IMeshes, IPropsScale } from './three.types'
 
 const THREE = require ('three')
 
-export default (scene: any, params: IPropsScale): IMeshes => {
+export const ThreeMeshes = (scene: any, params: IPropsScale): IMeshes => {
 
     const { scale } = params
     /**

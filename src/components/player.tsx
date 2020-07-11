@@ -1,13 +1,13 @@
-// / <reference path="./declare.d.ts" />
 import React from 'react'
 import { createBrowserHistory } from 'history'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 import 'react-toastify/dist/ReactToastify.css'
-import IconShareSvg from '../../assets/icons/SCRW_SHARE.svg'
-import Controls from './Controls'
-import { sendToast } from '../toast/Toast'
+import { PlayerControls } from './player.controls'
+import { sendToast } from './toast.utils'
+import { IconShare } from './icons'
+import './player.styles.css'
 
-export default (props: any): React.ReactElement => {
+export const Player = (props: any): React.ReactElement => {
 
     const { src, title, speed } = props
     const [isPlaying, setIsPlaying] = React.useState (false)
@@ -103,7 +103,7 @@ export default (props: any): React.ReactElement => {
             <div className="player-icons">
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
                 <img
-                    src={IconShareSvg}
+                    src={IconShare}
                     alt="player-icon-share"
                     className="player-icon-share"
                     onClick={(): void => copyToClipboard ()}
@@ -116,7 +116,7 @@ export default (props: any): React.ReactElement => {
                 </audio>
             </div>
 
-            <Controls
+            <PlayerControls
                 init={speed}
                 speedCB={(s: number): void => handleSpeed (s)}
             />

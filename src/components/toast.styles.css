@@ -1,0 +1,11 @@
+.Toastify {
+    font-size: 1rem;
+}
+
+.Toastify > div > div {
+    background-color: black;
+}
+
+.toast-share > img {
+    margin-right: 7px;
+}
