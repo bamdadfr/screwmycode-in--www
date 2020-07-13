@@ -41,21 +41,18 @@ export const Three = (props: any): ReactElement => {
         'spring': 0.000002,
     })
 
-    const handleMouse = useCallback ((x: number, y: number) => {
-        
+    const onMouseMove = useCallback ((e: any): void => {
+
+        const x: number = e.clientX
+        const y: number = e.clientY
+
         mouse.current = {
             ...mouse.current,
             'x': x - window.innerWidth * 0.5,
             'y': y - window.innerHeight * 0.5,
         }    
-    
+
     }, [])
-
-    const onDocumentMouseMove = useCallback ((e: any): void => {
-
-        handleMouse (e.clientX, e.clientY)
-
-    }, [handleMouse])
     
     const onWindowResize = useCallback ((): void => {
         
@@ -112,11 +109,11 @@ export const Three = (props: any): ReactElement => {
         
         window.addEventListener ('resize', onWindowResize)
 
-        document.addEventListener ('mousemove', onDocumentMouseMove, false)
+        document.addEventListener ('mousemove', onMouseMove, false)
 
         init ()
     
-    }, [init, onDocumentMouseMove, onWindowResize])
+    }, [init, onMouseMove, onWindowResize])
 
     return (
         <></>

@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { getBackgroundInitState } from './app.env'
+import { getBackgroundInitState } from './app.utils'
 import { sendToast } from './toast.utils'
 import { IHeaderProps } from './header.types'
 import './header.styles.css'

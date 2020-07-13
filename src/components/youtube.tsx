@@ -1,13 +1,12 @@
 import React from 'react'
 import { IconChamp } from './icons'
 import { Player } from './player'
-import { getApiBaseUrl } from './app.env'
-import { AppUtilsRedirectHome } from './app.utils'
+import { RedirectToHome } from './app.utils'
+import { isValidID, getDataFromAPI } from './youtube.utils'
 
 export const Youtube = (props: any): React.ReactElement => {
 
     const { match, location } = props
-    const [redirectToHome, setRedirectToHome] = React.useState (false)
     const [isLoading, setIsLoading] = React.useState (true)
     const [playerTitle, setPlayerTitle] = React.useState (null)
     const [playerSrc, setPlayerSrc] = React.useState (null)
@@ -16,11 +15,11 @@ export const Youtube = (props: any): React.ReactElement => {
 
     const getSpeed = (): string => {
 
-        const querySpeed: string|null = queryParams.get ('speed')
+        const speed: string|null = queryParams.get ('speed')
 
-        if (querySpeed !== null && parseFloat (querySpeed) >= 0.5 && parseFloat (querySpeed) <= 1.5) {
+        if (speed !== null && parseFloat (speed) >= 0.5 && parseFloat (speed) <= 1.5) {
 
-            return querySpeed
+            return speed
         
         }
 
@@ -28,84 +27,35 @@ export const Youtube = (props: any): React.ReactElement => {
     
     }
 
-    const testRegEx = React.useCallback ((inputId: string): void => {
+    const getData = React.useCallback (async (id: string): Promise<void> => {
 
-        const fetchUrl = (url: string): void => {
-
-            fetch (url)
-                .then ((r) => r.json ())
-                .then ((data) => {
-    
-                    if (data.success) {
-    
-                        setTimeout (() => {
-    
-                            setPlayerTitle (data.title)
-    
-                            setPlayerSrc (data.url)
-    
-                            setIsLoading (false)
-                        
-                        }, 1300)
-                    
-                    } else {
-    
-                        setRetries (retries + 1)
-                    
-                    }
-                
-                })
-        
-        }
-    
-        const regEx = /^([0-9A-Za-z_-]{11})$/
-
-        if (regEx.test (inputId)) {
+        if (isValidID (id)) {
 
             setIsLoading (true)
 
-            const url: string = getApiBaseUrl () + 'youtube/' + inputId
+            const response = await getDataFromAPI (id)
 
-            fetchUrl (url)
-        
-        } else {
+            if (!response.success) setRetries (retries + 1)
 
-            setRedirectToHome (true)
+            setPlayerTitle (response.title)
+
+            setPlayerSrc (response.url)
+
+            setIsLoading (false)
         
         }
-    
+
     }, [retries])
 
-    // ask the raw URL to API whenever player.id changes
     React.useEffect (() => {
 
-        testRegEx (match.params.id)
+        getData (match.params.id)
     
-    }, [match.params.id, testRegEx])
+    }, [match.params.id, retries, getData])
 
-    React.useEffect (() => {
+    if (retries === 3) return RedirectToHome ()
 
-        if (retries !== 0) {
-
-            testRegEx (match.params.id)
-        
-        }
-    
-    }, [retries, match.params.id, testRegEx])
-
-    if (redirectToHome) {
-
-        AppUtilsRedirectHome ()
-    
-    }
-
-    if (retries === 3) {
-
-        setRedirectToHome (true)
-    
-    }
-
-    if (isLoading && retries === 0) {
+    if (isLoading) {
 
         document.title = 'screwmycode.in'
 
@@ -117,20 +67,6 @@ export const Youtube = (props: any): React.ReactElement => {
                         alt="icon-loading"
                         height={150}
                     />
-                </div>
-            </>
-        )
-    
-    }
-
-    if (isLoading && retries >= 1) {
-
-        return (
-            <>
-                <div className="player">
-                    retry #
-                    {retries}
-                    ...
                 </div>
             </>
         )

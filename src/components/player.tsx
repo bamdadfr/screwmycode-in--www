@@ -12,14 +12,9 @@ export const Player = (props: any): React.ReactElement => {
     const { src, title, speed } = props
     const [isPlaying, setIsPlaying] = React.useState (false)
     const audioRef = React.useRef<HTMLAudioElement> (null)
-
-    const getAudioElement = (): any => {
-
-        return audioRef.current
+    const getAudioElement = (): any => audioRef.current
     
-    }
-    
-    const switchPlayPause = (): void | Promise<void> => {
+    const switchPlayPause = (): void|Promise<void> => {
 
         const audio = getAudioElement ()
 

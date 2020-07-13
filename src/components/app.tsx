@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
-import { getBackgroundInitState } from './app.env'
+import { getBackgroundInitState } from './app.utils'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
-import './app.styles.css'
 import { AppRoutes } from './app.routes'
+import './app.styles.css'
 
 export const App = (): ReactElement => {
 
@@ -28,7 +28,6 @@ export const App = (): ReactElement => {
 
     React.useEffect (() => {
 
-        // init value of threejs background
         three.ref.current.hidden = !getBackgroundInitState ()
     
     }, [three])

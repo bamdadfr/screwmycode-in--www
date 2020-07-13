@@ -1,14 +1,12 @@
 import React, { ReactElement } from 'react'
 import { Redirect } from 'react-router-dom'
-import { AppUtilsRedirectIfNotFirefox } from './app.utils'
 import './home.styles.css'
+import { getIDFromURL } from './youtube.utils'
 
-export const Home = (): React.ReactElement => {
+export const Home = (): ReactElement => {
 
     const [routeState, setRouteState] = React.useState<string|null> (null)
 
-    AppUtilsRedirectIfNotFirefox ()
-    
     const route = {
         'state': {
             'get': routeState,
@@ -21,28 +19,14 @@ export const Home = (): React.ReactElement => {
         'input': {
             'ref': React.useRef<any> (null),
         },
-        'parse': (url: string): string => {
-
-            const youtubeRegEx = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
-            const match = url.match (youtubeRegEx)
-    
-            if (match && match[2].length === 11) {
-    
-                return match[2]
-            
-            }
-    
-            return 'error'
-    
-        },
         'onSubmit': (e: any): void => {
 
             e.preventDefault ()
 
             const target = e.target[0]
-            const id = form.parse (target.value)
+            const id = getIDFromURL (target.value)
 
-            if (id !== 'error') {
+            if (id) {
     
                 target.blur ()
     
@@ -82,11 +66,7 @@ export const Home = (): React.ReactElement => {
     
     }, [form.input.ref])
 
-    if (route.state.get !== null) {
-
-        return route.redirect ()
-    
-    }
+    if (route.state.get !== null) return route.redirect ()
 
     return <form.JSX />
 
