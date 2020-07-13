@@ -6,7 +6,6 @@ export const RedirectToHome = (): ReactElement => <Redirect to="/" />
 
 export const isFirefox = (): boolean => {
 
-    // && window.location.pathname !== '/firefox'
     const browser: any = detect ()
 
     if (browser.name === 'firefox') return true

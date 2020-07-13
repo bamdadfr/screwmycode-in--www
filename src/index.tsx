@@ -12,7 +12,6 @@ const Root = (): ReactElement => {
             <App />
         </BrowserRouter>        
     )
-    // return <App />
 
 }
 

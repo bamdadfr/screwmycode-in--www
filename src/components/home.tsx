@@ -55,7 +55,6 @@ export const Home = (): ReactElement => {
 
     React.useEffect (() => {
 
-        // resetting document title
         document.title = 'screwmycode.in'
 
         if (form.input.ref && form.input.ref.current) {

@@ -9,8 +9,6 @@ import { IScale, ICameraSettings, IMouse, IContainer } from './three.types'
 
 export const Three = (props: any): ReactElement => {
 
-    // props: dom ref
-
     const { domRef } = props
     const renderer = useRef<any> (null)
     const camera = useRef<any> (null)
@@ -58,7 +56,6 @@ export const Three = (props: any): ReactElement => {
         
         camera.current.aspect = container.current.clientWidth / container.current.clientHeight
         
-        // update the camera's frustum
         camera.current.updateProjectionMatrix ()
         
         renderer.current.setSize (container.current.clientWidth, container.current.clientHeight)

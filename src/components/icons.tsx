@@ -4,7 +4,6 @@ import repeatOff from '@iconify/icons-mdi/repeat-off'
 import questionCircleOutlined from '@iconify/icons-ant-design/question-circle-outlined'
 import toggleOn from '@iconify/icons-bi/toggle-on'
 import toggleOff from '@iconify/icons-bi/toggle-off'
-// custom icons
 import IconChampSVG from './icons/SCRW_CHAMP.svg'
 import IconK7SVG from './icons/SCRW_KSET.svg'
 import IconShareSVG from './icons/SCRW_SHARE.svg'

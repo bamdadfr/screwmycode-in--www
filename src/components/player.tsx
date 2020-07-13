@@ -22,7 +22,6 @@ export const Player = (props: any): React.ReactElement => {
     
     }
 
-    // copy to clipboard
     const copyToClipboard = (): void => {
 
         const audio = getAudioElement ()
@@ -42,8 +41,7 @@ export const Player = (props: any): React.ReactElement => {
     
     }
 
-    // handle speed changes
-    const handleSpeed = React.useCallback ((s: number): void => {
+    const onSpeedChange = React.useCallback ((s: number): void => {
 
         const audio = getAudioElement ()
 
@@ -57,31 +55,23 @@ export const Player = (props: any): React.ReactElement => {
 
     React.useEffect (() => {
         
-        // document title
         document.title = `screwmycode.in - ${title}`
         
-        // audio element
         const audio = getAudioElement ()
         
         audio.mozPreservesPitch = false
-        
-        audio.webkitPreservesPitch = false // Does not work
         
         audio.src = src
         
         audio.load ()
         
-        handleSpeed (speed)
+        onSpeedChange (speed)
             
         audio.onplay = (): void => setIsPlaying (true)
             
         audio.onpause = (): void => setIsPlaying (false)
-            
-        // audio.play()
-            
-        // audio.ontimeupdate = () => console.log('time', audio.currentTime)
     
-    }, [src, speed, title, handleSpeed])
+    }, [src, speed, title, onSpeedChange])
 
     return (
         <>
@@ -113,7 +103,7 @@ export const Player = (props: any): React.ReactElement => {
 
             <PlayerControls
                 init={speed}
-                speedCB={(s: number): void => handleSpeed (s)}
+                speedCB={(s: number): void => onSpeedChange (s)}
             />
         </>
     )
