@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getBackgroundInitState } from './app.utils'
 import { Header } from './header'
 import { Three } from './three'
@@ -36,25 +36,23 @@ export const App = (): ReactElement => {
         <>
             <three.JSX />
             <Toast />
-            <BrowserRouter>
-                <div className="page">
-                    <Header toggleCB={(t: boolean): void => three.toggle.callback (t)} />
-                    <div className="container">
-                        <div className="title-spacer" />
-                        <div className="title">
-                            <Link to="/">
-                                screwmycode.in
-                            </Link>
-                        </div>
-                        <div className="main">
-                            <div className="main-item main-spacer" />
-                            <div className="main-item">
-                                <AppRoutes />
-                            </div>
+            <div className="page">
+                <Header toggleCB={(t: boolean): void => three.toggle.callback (t)} />
+                <div className="container">
+                    <div className="title-spacer" />
+                    <div className="title">
+                        <Link to="/">
+                            screwmycode.in
+                        </Link>
+                    </div>
+                    <div className="main">
+                        <div className="main-item main-spacer" />
+                        <div className="main-item">
+                            <AppRoutes />
                         </div>
                     </div>
                 </div>
-            </BrowserRouter>
+            </div>
         </>
     )
 
