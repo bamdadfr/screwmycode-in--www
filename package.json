@@ -39,7 +39,7 @@
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.3.4",
+    "@bamdadsabbagh/eslint-config": "^1.3.5",
     "@bamdadsabbagh/stylelint-config": "^1.2.16",
     "@types/jest": "^26.0.4",
     "@types/react-router-dom": "^5.1.5",
