@@ -1129,10 +1129,10 @@
     prettier "^2.0.5"
     typescript "^3.9.6"
 
-"@bamdadsabbagh/stylelint-config@^1.2.17":
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.17.tgz#e34f2debab91fa59de730f75c941946ff1f673aa"
-  integrity sha512-ZcIwk8uovmCQM3QfSiNGCWyAjdCAYA0qDT2bNfvBjiW81dgsUQSexevCNWUq88TQSlHbAYqWte6hnGYmvAFShQ==
+"@bamdadsabbagh/stylelint-config@^1.2.18":
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.18.tgz#94c790840cfb786fb5f9b1732260613ac7d1e26e"
+  integrity sha512-LmrB0eUfrZY7itVnhfXR5/z3AGwffuiMo9Rif6sQfknDRGvwC/4zqznWCzYX6WaFNPX80li8MeFZXcuvEhW04Q==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -1200,10 +1200,10 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-bi/-/icons-bi-1.0.6.tgz#e4c788d81767fa7d9a1959cfdcba3f0925e529f0"
   integrity sha512-0I/qawqj68W7T80srg0KxxsjgFnmAXsc2Y5lCJnz4y/tHCWFS0qy3q/habBfQtrmiXVKNul98nd2/fXy87iSww==
 
-"@iconify/icons-mdi@^1.0.117":
-  version "1.0.117"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.117.tgz#f0f3dd76c77f3bc403c4dbd7f90762550d38b311"
-  integrity sha512-bFmPdJVJxW7aQPdZVlZuKQfYBEpYhRf+KDnW8Qj+xrJsrIyJI7QajOLXNARTnLebNKMPktz7l7CQXbeB+UmUIg==
+"@iconify/icons-mdi@^1.0.118":
+  version "1.0.118"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.118.tgz#d5b66bf761af208d38d1775a61d5fa24c7a5eebd"
+  integrity sha512-MmnOr9FjaDXNzf2dvomG+YSCsCw9yNb64e5UGyfA0z075PftTe0ZQHuoSttJnGEUb2fgI28lPX8/5bQu5F9bUg==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -3058,9 +3058,9 @@ chokidar@^2.1.8:
     fsevents "^1.2.7"
 
 chokidar@^3.3.0, chokidar@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.0.tgz#b30611423ce376357c765b9b8f904b9fba3c0be8"
-  integrity sha512-aXAaho2VJtisB/1fg1+3nlLJqGOuewTzQpd/Tz0yTg2R0e4IGtshYvtjowyEumcBv2z+y4+kc75Mz7j5xJskcQ==
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
+  integrity sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==
   dependencies:
     anymatch "~3.1.1"
     braces "~3.0.2"
