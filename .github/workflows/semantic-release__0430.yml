@@ -21,9 +21,21 @@ jobs:
 
       - run: yarn
 
-      - run: npm install -g semantic-release @semantic-release/github @semantic-release/git
-
+      - run: |
+          npm install -g \
+            semantic-release \
+            @semantic-release/github \
+            @semantic-release/git \
+            @semantic-release/exec \
+            @semantic-release/changelog \
+            @semantic-release/npm \
+            semantic-release-chrome \
+            semantic-release-firefox-add-on \
+            aggregate-error
+        
       - run: semantic-release
         env:
-          GH_TOKEN: ${{ secrets.PAT }} # repo scoped token
+          GH_TOKEN: ${{ secrets.PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          FIREFOX_API_KEY: ${{ secrets.FIREFOX_API_KEY }}
+          FIREFOX_SECRET_KEY: ${{ secrets.FIREFOX_SECRET_KEY }}
