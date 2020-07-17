@@ -103,7 +103,7 @@ export const Player = (props: any): React.ReactElement => {
 
             <PlayerControls
                 init={speed}
-                speedCB={(s: number): void => onSpeedChange (s)}
+                speedCallback={(s: number): void => onSpeedChange (s)}
             />
         </>
     )

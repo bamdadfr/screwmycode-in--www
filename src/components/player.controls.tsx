@@ -1,59 +1,16 @@
-import React, { useRef, useState, useEffect, ReactElement } from 'react'
+import React, { useState, useEffect, ReactElement } from 'react'
+import { PlayerControlsElementsPercent, PlayerControlsElementsSemiTone } from './player.controls.elements'
 import { IPlayerControlsProps } from './player.controls.types'
 import './player.controls.styles.css'
 
-export const PlayerControls = (props: IPlayerControlsProps): React.ReactElement => {
+export const PlayerControls = (props: IPlayerControlsProps): ReactElement => {
 
-    const { speedCB, init } = props
-    const [speedState, setSpeedState] = useState<any> (init)
-
-    const speed = {
-        'state': {
-            'get': speedState,
-            'set': setSpeedState,
-        },
-        'callback': speedCB,
-    }
-
-    const percent = {
-        'ref': useRef<any> (null),
-        'get': (): string => (speed.state.get * 100 - 100).toFixed (1),
-        'JSX': (): ReactElement => (
-            <>
-                percent
-                <form>
-                    <input
-                        disabled
-                        ref={percent.ref}
-                        type="text"
-                        value={percent.get ()}
-                    />
-                </form>
-            </>
-        ),
-    }
-
-    const tone = {
-        'ref': useRef<any> (null),
-        'get': (): string => (12 * (Math.log (speed.state.get) / Math.log (2))).toFixed (1),
-        'JSX': (): ReactElement => (
-            <>
-                semitone
-                <form>
-                    <input
-                        disabled
-                        ref={tone.ref}
-                        type="text"
-                        value={tone.get ()}
-                    />
-                </form>
-            </>
-        ),
-    }
+    const { speedCallback, init } = props
+    const [speed, setSpeed] = useState<number> (init)
 
     useEffect (() => {
 
-        speed.callback (speed.state.get)
+        speedCallback (speed)
     
     }, [speed])
 
@@ -61,10 +18,10 @@ export const PlayerControls = (props: IPlayerControlsProps): React.ReactElement 
         <>
             <div className="controls">
                 <div className="controls-item">
-                    <percent.JSX />
+                    <PlayerControlsElementsPercent speed={speed} />
                 </div>
                 <div className="controls-item">
-                    <tone.JSX />
+                    <PlayerControlsElementsSemiTone speed={speed} />
                 </div>
             </div>
             <div className="controls-slider">
@@ -73,8 +30,8 @@ export const PlayerControls = (props: IPlayerControlsProps): React.ReactElement 
                     min="0.5"
                     max="1.5"
                     step="0.001"
-                    value={speed.state.get}
-                    onChange={(e): any => speed.state.set (e.target.value)}
+                    value={speed}
+                    onChange={(e): void => setSpeed (parseFloat (e.target.value))}
                 />
             </div>
         </>

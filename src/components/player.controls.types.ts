@@ -1,4 +1,12 @@
 export interface IPlayerControlsProps {
     init: number,
-    speedCB: any,
+    speedCallback: any,
+}
+
+export interface IPlayerControlsElementsPercent {
+    speed: number,
+}
+
+export interface IPlayerControlsElementsSemiTone extends IPlayerControlsElementsPercent {
+    
 }
