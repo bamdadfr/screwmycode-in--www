@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createBrowserHistory } from 'history'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 import 'react-toastify/dist/ReactToastify.css'
@@ -6,11 +6,11 @@ import { PlayerControls } from './player.controls'
 import { sendToast } from './toast.utils'
 import { IconShare } from './icons'
 import './player.styles.css'
+import { stateMap } from './state.map'
 
-export const Player = (props: any): React.ReactElement => {
+export const Player = stateMap ((props: any): React.ReactElement => {
 
-    const { src, title, speed } = props
-    const [isPlaying, setIsPlaying] = React.useState (false)
+    const { player, setStatePlayerIsPlaying } = props
     const audioRef = React.useRef<HTMLAudioElement> (null)
     const getAudioElement = (): any => audioRef.current
     
@@ -18,7 +18,7 @@ export const Player = (props: any): React.ReactElement => {
 
         const audio = getAudioElement ()
 
-        return isPlaying ? audio.pause () : audio.play ()
+        return player.isPlaying ? audio.pause () : audio.play ()
     
     }
 
@@ -41,11 +41,11 @@ export const Player = (props: any): React.ReactElement => {
     
     }
 
-    const onSpeedChange = React.useCallback ((s: number): void => {
+    const onSpeedChange = React.useCallback ((speed: number): void => {
 
         const audio = getAudioElement ()
 
-        audio.playbackRate = s
+        audio.playbackRate = speed
         
         const history = createBrowserHistory ()
 
@@ -53,25 +53,39 @@ export const Player = (props: any): React.ReactElement => {
     
     }, [])
 
-    React.useEffect (() => {
-        
-        document.title = `screwmycode.in - ${title}`
+    useEffect (() => {
         
         const audio = getAudioElement ()
         
         audio.mozPreservesPitch = false
         
-        audio.src = src
+        audio.src = player.src
         
         audio.load ()
         
-        onSpeedChange (speed)
-            
-        audio.onplay = (): void => setIsPlaying (true)
-            
-        audio.onpause = (): void => setIsPlaying (false)
+        audio.onplay = (): void => setStatePlayerIsPlaying (true)
+        
+        audio.onpause = (): void => setStatePlayerIsPlaying (false)
+
+        return (): void => {
+
+            setStatePlayerIsPlaying (false)
+        
+        }
+        
+    }, [player.src, setStatePlayerIsPlaying])
     
-    }, [src, speed, title, onSpeedChange])
+    useEffect (() => {
+
+        document.title = `screwmycode.in - ${player.title}`
+    
+    }, [player.title])
+
+    useEffect (() => {
+
+        onSpeedChange (player.speed)
+
+    }, [player.speed, onSpeedChange])
 
     return (
         <>
@@ -82,17 +96,22 @@ export const Player = (props: any): React.ReactElement => {
             />
 
             <div className="player-title">
-                {title}
+                {player.title}
             </div>
 
             <div className="player-icons">
-                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
-                <img
-                    src={IconShare}
-                    alt="player-icon-share"
-                    className="player-icon-share"
+                <span
                     onClick={(): void => copyToClipboard ()}
-                />
+                    onKeyDown={(): void => undefined}
+                    role="button"
+                    tabIndex={-1}
+                >
+                    <img
+                        src={IconShare}
+                        alt="player-icon-share"
+                        className="player-icon-share"
+                    />
+                </span>
             </div>
 
             <div className="player">
@@ -101,11 +120,8 @@ export const Player = (props: any): React.ReactElement => {
                 </audio>
             </div>
 
-            <PlayerControls
-                init={speed}
-                speedCallback={(s: number): void => onSpeedChange (s)}
-            />
+            <PlayerControls />
         </>
     )
 
-}
+})

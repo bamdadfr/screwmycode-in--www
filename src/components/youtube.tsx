@@ -1,61 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IconChamp } from './icons'
 import { Player } from './player'
 import { RedirectToHome } from './app.utils'
-import { isValidID, getDataFromAPI } from './youtube.utils'
+import { stateMap } from './state.map'
 
-export const Youtube = (props: any): React.ReactElement => {
+export const Youtube = stateMap ((props: any): React.ReactElement => {
 
-    const { match, location } = props
-    const [isLoading, setIsLoading] = React.useState (true)
-    const [playerTitle, setPlayerTitle] = React.useState (null)
-    const [playerSrc, setPlayerSrc] = React.useState (null)
-    const [retries, setRetries] = React.useState (0)
-    const queryParams = new URLSearchParams (location.search)
+    const { match,
+        location,
+        player,
+        setStatePlayerSpeed,
+        setStatePlayerData,
+        setStatePlayerInit } = props
 
-    const getSpeed = (): string => {
+    const params = new URLSearchParams (location.search)
+    const speed: number = parseFloat (params.get ('speed') || '1')
 
-        const speed: string|null = queryParams.get ('speed')
+    useEffect (() => {
+    
+        setStatePlayerSpeed (speed)
+            
+    }, [speed, setStatePlayerSpeed])
 
-        if (speed !== null && parseFloat (speed) >= 0.5 && parseFloat (speed) <= 1.5) {
+    useEffect (() => {
 
-            return speed
-        
-        }
+        const id = match.params.id
 
-        return '1'
+        setStatePlayerData (id)
+
+    }, [match.params.id, setStatePlayerData])
+
+    if (player.isError) {
+
+        setStatePlayerInit ()
+
+        return RedirectToHome ()
     
     }
 
-    const getData = React.useCallback (async (id: string): Promise<void> => {
-
-        if (isValidID (id)) {
-
-            setIsLoading (true)
-
-            const response = await getDataFromAPI (id)
-
-            if (!response.success) setRetries (retries + 1)
-
-            setPlayerTitle (response.title)
-
-            setPlayerSrc (response.url)
-
-            setIsLoading (false)
-        
-        }
-
-    }, [retries])
-
-    React.useEffect (() => {
-
-        getData (match.params.id)
-    
-    }, [match.params.id, retries, getData])
-
-    if (retries === 3) return RedirectToHome ()
-
-    if (isLoading) {
+    if (player.isLoading) {
 
         document.title = 'screwmycode.in'
 
@@ -75,12 +58,8 @@ export const Youtube = (props: any): React.ReactElement => {
 
     return (
         <>
-            <Player
-                title={playerTitle}
-                src={playerSrc}
-                speed={getSpeed ()}
-            />
+            <Player />
         </>
     )
 
-}
+})

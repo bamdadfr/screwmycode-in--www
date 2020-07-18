@@ -1,6 +1,5 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { getBackgroundInitState } from './app.utils'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
@@ -9,35 +8,15 @@ import './app.styles.css'
 
 export const App = (): ReactElement => {
 
-    const three = {
-        'ref': React.useRef<any> (null),
-        'toggle': {
-            'callback': (t: boolean): void => {
-
-                three.ref.current.hidden = !(t && three.ref.current.hidden === true)
-            
-            },
-        },
-        'JSX': (): ReactElement => (
-            <>
-                <div ref={three.ref} className="three-container" />
-                <Three domRef={three.ref} />
-            </>
-        ),
-    }
-
-    React.useEffect (() => {
-
-        three.ref.current.hidden = !getBackgroundInitState ()
-    
-    }, [three])
+    const threeRef = useRef<any> (null)
 
     return (
         <>
-            <three.JSX />
+            <div ref={threeRef} className="three-container" />
+            <Three domRef={threeRef} />
             <Toast />
             <div className="page">
-                <Header toggleCB={(t: boolean): void => three.toggle.callback (t)} />
+                <Header />
                 <div className="container">
                     <div className="title-spacer" />
                     <div className="title">

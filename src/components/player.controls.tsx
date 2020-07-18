@@ -1,27 +1,21 @@
-import React, { useState, useEffect, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { PlayerControlsElementsPercent, PlayerControlsElementsSemiTone } from './player.controls.elements'
 import { IPlayerControlsProps } from './player.controls.types'
 import './player.controls.styles.css'
+import { stateMap } from './state.map'
 
-export const PlayerControls = (props: IPlayerControlsProps): ReactElement => {
+export const PlayerControls = stateMap ((props: IPlayerControlsProps|any): ReactElement => {
 
-    const { speedCallback, init } = props
-    const [speed, setSpeed] = useState<number> (init)
-
-    useEffect (() => {
-
-        speedCallback (speed)
-    
-    }, [speed])
+    const { player, setStatePlayerSpeed } = props
 
     return (
         <>
             <div className="controls">
                 <div className="controls-item">
-                    <PlayerControlsElementsPercent speed={speed} />
+                    <PlayerControlsElementsPercent speed={player.speed} />
                 </div>
                 <div className="controls-item">
-                    <PlayerControlsElementsSemiTone speed={speed} />
+                    <PlayerControlsElementsSemiTone speed={player.speed} />
                 </div>
             </div>
             <div className="controls-slider">
@@ -30,11 +24,11 @@ export const PlayerControls = (props: IPlayerControlsProps): ReactElement => {
                     min="0.5"
                     max="1.5"
                     step="0.001"
-                    value={speed}
-                    onChange={(e): void => setSpeed (parseFloat (e.target.value))}
+                    value={player.speed}
+                    onChange={(e): void => setStatePlayerSpeed (parseFloat (e.target.value))}
                 />
             </div>
         </>
     )
 
-}
+})

@@ -14,7 +14,7 @@ export const isFirefox = (): boolean => {
 
 }
 
-const isProduction = (): boolean => process.env.NODE_ENV === 'production'
+export const isProduction = (): boolean => process.env.NODE_ENV === 'production'
 
 export const getBackgroundInitState = (): boolean => {
 
