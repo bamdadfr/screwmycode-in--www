@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/screwmycode/screwmycode-www/compare/v1.2.0...v1.2.1) (2020-07-18)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([6b2bcd4](https://github.com/screwmycode/screwmycode-www/commit/6b2bcd4a2690b98b250972b0083e3337534347d9))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([be186c5](https://github.com/screwmycode/screwmycode-www/commit/be186c5f5409d6a9325ce331dbe41634d6a1c28b))
+* less complex PlayerControls ([dca9ddc](https://github.com/screwmycode/screwmycode-www/commit/dca9ddc334ee13a0f48e4a9aeb75114e9d269870))
+
 # [1.2.0](https://github.com/screwmycode/screwmycode-www/compare/v1.1.6...v1.2.0) (2020-07-17)
 
 
