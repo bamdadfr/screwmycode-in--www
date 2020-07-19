@@ -1,4 +1,4 @@
-import { getApiBaseUrl } from './app.utils'
+import { getApiBaseURL } from './app.utils'
 
 export const getIDFromURL = (url: string): string|boolean => {
 
@@ -27,9 +27,9 @@ export const isValidID = (id: string): boolean => {
 
 export const getDataFromAPI = async (id: string): Promise<any> => {
 
-    const url = getApiBaseUrl () + 'youtube/' + id
+    const url = getApiBaseURL () + 'youtube/' + id
     const response = await fetch (url)
-    const json: any = response.json ()
+    const json: object = response.json ()
 
     return json
 

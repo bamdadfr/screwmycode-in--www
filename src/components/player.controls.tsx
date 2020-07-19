@@ -1,18 +1,33 @@
-import React, { useState, useEffect, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
+import { useRecoilState } from 'recoil'
 import { PlayerControlsElementsPercent, PlayerControlsElementsSemiTone } from './player.controls.elements'
-import { IPlayerControlsProps } from './player.controls.types'
 import './player.controls.styles.css'
+import { playerStateSpeed } from './player.state'
 
-export const PlayerControls = (props: IPlayerControlsProps): ReactElement => {
+export const PlayerControls = (): ReactElement => {
 
-    const { speedCallback, init } = props
-    const [speed, setSpeed] = useState<number> (init)
+    // const { player, setStatePlayerSpeed } = props
+    const [speed, setSpeed] = useRecoilState (playerStateSpeed)
 
-    useEffect (() => {
+    const onChange = (value: string): void => {
 
-        speedCallback (speed)
+        const number = parseFloat (value)
+        
+        if (number <= 0.5) {
+
+            setSpeed (0.5)
+        
+        } else if (number >= 1.5) {
+
+            setSpeed (1.5)
+        
+        } else {
+
+            setSpeed (number)
+        
+        }
     
-    }, [speed])
+    }
 
     return (
         <>
@@ -31,7 +46,7 @@ export const PlayerControls = (props: IPlayerControlsProps): ReactElement => {
                     max="1.5"
                     step="0.001"
                     value={speed}
-                    onChange={(e): void => setSpeed (parseFloat (e.target.value))}
+                    onChange={(e): void => onChange (e.target.value)}
                 />
             </div>
         </>

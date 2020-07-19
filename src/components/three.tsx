@@ -10,6 +10,7 @@ import { IScale, ICameraSettings, IMouse, IContainer } from './three.types'
 export const Three = (props: any): ReactElement => {
 
     const { domRef } = props
+    // const domRef = three.ref
     const renderer = useRef<any> (null)
     const camera = useRef<any> (null)
     const groups = useRef<any> (null)

@@ -1,78 +1,73 @@
 import React, { ReactElement } from 'react'
-import { getBackgroundInitState } from './app.utils'
-import { sendToast } from './toast.utils'
-import { IHeaderProps } from './header.types'
+import { useRecoilState } from 'recoil'
 import './header.styles.css'
 import { IconRepeat, IconToggle, IconQuestion } from './icons'
+import { sendToast } from './toast.utils'
+import { threeStateVisible } from './three.state'
 
-export const Header = (props: IHeaderProps): ReactElement => {
+const HeaderToggle = (): ReactElement => {
 
-    const { toggleCB } = props
-    const [toggleState, setToggleState] = React.useState<boolean> (getBackgroundInitState)
+    const [visible, setVisible] = useRecoilState (threeStateVisible)
+    const onClick = (): void => setVisible (!visible)
 
-    const toggle = {
-        'state': {
-            'get': toggleState,
-            'set': setToggleState,
-        },
-        'callback': toggleCB,
-        'onClick': (e: boolean): void => toggle.state.set (e),
-        'JSX': (): ReactElement => (
-            <>
-                <span
-                    onClick={(): void => toggle.onClick (!toggle.state.get)}
-                    onKeyDown={(): void => undefined}
-                    role="button"
-                    tabIndex={-1}
-                >
-                    {toggle.state.get ? <IconToggle.on /> : <IconToggle.off />}
-                </span>
-            </>
-        ),
-    }
+    return (
+        <>
+            <span
+                onClick={(): void => onClick ()}
+                onKeyDown={(): void => undefined}
+                role="button"
+                tabIndex={-1}
+            >
+                {true ? <IconToggle.on /> : <IconToggle.off />}
+            </span>
+        </>
+    )
 
-    React.useEffect (() => {
+}
 
-        toggle.callback (toggle.state.get)
-    
-    }, [toggle])
+const HeaderFaq = (): ReactElement => {
 
-    const faq = {
-        'JSX': (): ReactElement => (
-            <>
-                <span
-                    onClick={(): void => sendToast ('FAQ coming soon')}
-                    onKeyDown={(): void => undefined}
-                    role="button"
-                    tabIndex={-1}
-                >
-                    <IconQuestion />
-                </span>
+    return (
+        <>
+            <span
+                onClick={(): void => sendToast ('FAQ coming soon')}
+                onKeyDown={(): void => undefined}
+                role="button"
+                tabIndex={-1}
+            >
+                <IconQuestion />
+            </span>
 
-            </>
-        ),
-    }
+        </>
+    )
 
-    const repeat = {
-        'JSX': (): ReactElement => (
-            <>
-                <span
-                    onClick={(): void => sendToast ('repeat mode coming soon')}
-                    onKeyDown={(): void => undefined}
-                    role="button"
-                    tabIndex={-1}
-                >
-                    <IconRepeat />
-                </span>
-            </>
-        ),
-    }
+}
+
+const HeaderRepeat = (): ReactElement => {
+
+    return (
+        <>
+            <span
+                onClick={(): void => sendToast ('repeat mode coming soon')}
+                onKeyDown={(): void => undefined}
+                role="button"
+                tabIndex={-1}
+            >
+                <IconRepeat />
+            </span>
+        </>
+
+    )
+
+}
+
+export const Header = (): ReactElement => {
 
     return (
         <div className="corner-help">
-            <faq.JSX />
-            <toggle.JSX />
-            <repeat.JSX />
+            <HeaderFaq />
+            <HeaderToggle />
+            <HeaderRepeat />
         </div>
     )
 

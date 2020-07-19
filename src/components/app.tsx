@@ -1,43 +1,33 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getBackgroundInitState } from './app.utils'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
 import { AppRoutes } from './app.routes'
 import './app.styles.css'
+import { isProduction } from './app.utils'
 
 export const App = (): ReactElement => {
 
-    const three = {
-        'ref': React.useRef<any> (null),
-        'toggle': {
-            'callback': (t: boolean): void => {
+    const threeRef = useRef<any> (null)
 
-                three.ref.current.hidden = !(t && three.ref.current.hidden === true)
-            
-            },
-        },
-        'JSX': (): ReactElement => (
-            <>
-                <div ref={three.ref} className="three-container" />
-                <Three domRef={three.ref} />
-            </>
-        ),
-    }
+    useEffect (() => {
 
-    React.useEffect (() => {
+        if (threeRef.current) {
 
-        three.ref.current.hidden = !getBackgroundInitState ()
-    
-    }, [three])
+            threeRef.current.hidden = isProduction ()
+        
+        }
+        
+    }, [])
 
     return (
         <>
-            <three.JSX />
+            <div ref={threeRef} className="three-container" />
+            <Three domRef={threeRef} />
             <Toast />
             <div className="page">
-                <Header toggleCB={(t: boolean): void => three.toggle.callback (t)} />
+                <Header />
                 <div className="container">
                     <div className="title-spacer" />
                     <div className="title">
