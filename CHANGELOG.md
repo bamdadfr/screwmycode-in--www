@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/screwmycode/screwmycode-www/compare/v1.2.2...v1.3.0) (2020-07-19)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([6640aa9](https://github.com/screwmycode/screwmycode-www/commit/6640aa94a30ad06e043e8e592e086d758d452cde))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([b113444](https://github.com/screwmycode/screwmycode-www/commit/b113444a1eb2ba5c786e3f512c90abf50e10e52d))
+* asfalte: 🔨 git-commit-force-release__push ([536ff60](https://github.com/screwmycode/screwmycode-www/commit/536ff602a0894bc3f42ced1190c3bf809ff1130d))
+
+
+### Features
+
+* replaced redux with recoil ([3f44a5e](https://github.com/screwmycode/screwmycode-www/commit/3f44a5eb3cbbe94a89d551126e883079b04cbe0c))
+
 ## [1.2.2](https://github.com/screwmycode/screwmycode-www/compare/v1.2.1...v1.2.2) (2020-07-19)
 
 
