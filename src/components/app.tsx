@@ -15,7 +15,7 @@ export const App = (): ReactElement => {
 
         if (threeRef.current) {
 
-            threeRef.current.hidden = isProduction ()
+            threeRef.current.hidden = !isProduction ()
         
         }
         
