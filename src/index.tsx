@@ -1,19 +1,18 @@
 import React, { ReactElement } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
+import { RecoilRoot } from 'recoil'
 import * as serviceWorker from './serviceWorker'
 import 'normalize.css'
-import { state } from './components/state'
 import { App } from './components/app'
 
 const Root = (): ReactElement => {
 
     return (
         <BrowserRouter>
-            <Provider store={state}>
+            <RecoilRoot>
                 <App />
-            </Provider>
+            </RecoilRoot>
         </BrowserRouter>        
     )
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { createBrowserHistory } from 'history'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
 import 'react-toastify/dist/ReactToastify.css'
@@ -6,38 +7,52 @@ import { PlayerControls } from './player.controls'
 import { sendToast } from './toast.utils'
 import { IconShare } from './icons'
 import './player.styles.css'
-import { stateMap } from './state.map'
+import { playerStateIsPlaying, playerStateSource, playerStateSpeed, playerStateTitle } from './player.state'
+import { IPlayerAudioElement } from './player.types'
 
-export const Player = stateMap ((props: any): React.ReactElement => {
+export const Player = (): React.ReactElement => {
 
-    const { player, setStatePlayerIsPlaying } = props
-    const audioRef = React.useRef<HTMLAudioElement> (null)
-    const getAudioElement = (): any => audioRef.current
+    // const { player, setStatePlayerIsPlaying } = props
+    const [isPlaying, setIsPlaying] = useRecoilState (playerStateIsPlaying)
+    const source = useRecoilValue (playerStateSource)
+    const title = useRecoilValue (playerStateTitle)
+    const speed = useRecoilValue (playerStateSpeed)
+    const audioRef = React.useRef<IPlayerAudioElement> (null)
+    const getAudioElement = (): IPlayerAudioElement|null => audioRef.current
     
     const switchPlayPause = (): void|Promise<void> => {
 
         const audio = getAudioElement ()
 
-        return player.isPlaying ? audio.pause () : audio.play ()
+        if (audio) {
+
+            return isPlaying ? audio.pause () : audio.play ()
+        
+        }
     
     }
 
     const copyToClipboard = (): void => {
 
         const audio = getAudioElement ()
-        const el = document.createElement ('textarea')
 
-        sendToast ('copied to clipboard!')
+        if (audio) {
 
-        el.value = `https://${window.location.host}${window.location.pathname}?speed=${audio.playbackRate}`
+            const el = document.createElement ('textarea')
 
-        document.body.appendChild (el)
-
-        el.select ()
-
-        document.execCommand ('copy')
-
-        document.body.removeChild (el)
+            sendToast ('copied to clipboard!')
+    
+            el.value = `https://${window.location.host}${window.location.pathname}?speed=${audio.playbackRate}`
+    
+            document.body.appendChild (el)
+    
+            el.select ()
+    
+            document.execCommand ('copy')
+    
+            document.body.removeChild (el)
+    
+        }
     
     }
 
@@ -45,47 +60,55 @@ export const Player = stateMap ((props: any): React.ReactElement => {
 
         const audio = getAudioElement ()
 
-        audio.playbackRate = speed
-        
-        const history = createBrowserHistory ()
+        if (audio) {
 
-        history.push (`${window.location.pathname}?speed=${audio.playbackRate}`)
+            audio.playbackRate = speed
+
+            const history = createBrowserHistory ()
+    
+            history.push (`${window.location.pathname}?speed=${audio.playbackRate}`)
+        
+        }
     
     }, [])
 
     useEffect (() => {
         
         const audio = getAudioElement ()
+
+        if (audio) {
+
+            audio.mozPreservesPitch = false
         
-        audio.mozPreservesPitch = false
-        
-        audio.src = player.src
-        
-        audio.load ()
-        
-        audio.onplay = (): void => setStatePlayerIsPlaying (true)
-        
-        audio.onpause = (): void => setStatePlayerIsPlaying (false)
+            audio.src = source
+            
+            audio.load ()
+            
+            audio.onplay = (): void => setIsPlaying (true)
+            
+            audio.onpause = (): void => setIsPlaying (false)
+    
+        }
 
         return (): void => {
 
-            setStatePlayerIsPlaying (false)
+            setIsPlaying (false)
         
         }
         
-    }, [player.src, setStatePlayerIsPlaying])
+    }, [source, setIsPlaying])
     
     useEffect (() => {
 
-        document.title = `screwmycode.in - ${player.title}`
+        document.title = `screwmycode.in - ${title}`
     
-    }, [player.title])
+    }, [title])
 
     useEffect (() => {
 
-        onSpeedChange (player.speed)
+        onSpeedChange (speed)
 
-    }, [player.speed, onSpeedChange])
+    }, [speed, onSpeedChange])
 
     return (
         <>
@@ -96,7 +119,7 @@ export const Player = stateMap ((props: any): React.ReactElement => {
             />
 
             <div className="player-title">
-                {player.title}
+                {title}
             </div>
 
             <div className="player-icons">
@@ -124,4 +147,4 @@ export const Player = stateMap ((props: any): React.ReactElement => {
         </>
     )
 
-})
+}

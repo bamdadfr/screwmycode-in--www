@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react'
 import { Redirect } from 'react-router-dom'
 import { detect } from 'detect-browser'
 
+export const isProduction = (): boolean => process.env.NODE_ENV === 'production'
+
 export const RedirectToHome = (): ReactElement => <Redirect to="/" />
 
 export const isFirefox = (): boolean => {
@@ -14,8 +16,6 @@ export const isFirefox = (): boolean => {
 
 }
 
-export const isProduction = (): boolean => process.env.NODE_ENV === 'production'
-
 export const getBackgroundInitState = (): boolean => {
 
     if (isProduction ()) return true
@@ -24,7 +24,7 @@ export const getBackgroundInitState = (): boolean => {
 
 }
 
-export const getApiBaseUrl = (): string => {
+export const getApiBaseURL = (): string => {
 
     if (isProduction ()) return 'https://api.screwmycode.in/'
 

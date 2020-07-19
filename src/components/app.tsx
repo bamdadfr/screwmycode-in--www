@@ -1,14 +1,25 @@
-import React, { ReactElement, useRef } from 'react'
+import React, { ReactElement, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
 import { AppRoutes } from './app.routes'
 import './app.styles.css'
+import { isProduction } from './app.utils'
 
 export const App = (): ReactElement => {
 
     const threeRef = useRef<any> (null)
+
+    useEffect (() => {
+
+        if (threeRef.current) {
+
+            threeRef.current.hidden = isProduction ()
+        
+        }
+        
+    }, [])
 
     return (
         <>

@@ -1,21 +1,42 @@
 import React, { ReactElement } from 'react'
+import { useRecoilState } from 'recoil'
 import { PlayerControlsElementsPercent, PlayerControlsElementsSemiTone } from './player.controls.elements'
-import { IPlayerControlsProps } from './player.controls.types'
 import './player.controls.styles.css'
-import { stateMap } from './state.map'
+import { playerStateSpeed } from './player.state'
 
-export const PlayerControls = stateMap ((props: IPlayerControlsProps|any): ReactElement => {
+export const PlayerControls = (): ReactElement => {
 
-    const { player, setStatePlayerSpeed } = props
+    // const { player, setStatePlayerSpeed } = props
+    const [speed, setSpeed] = useRecoilState (playerStateSpeed)
+
+    const onChange = (value: string): void => {
+
+        const number = parseFloat (value)
+        
+        if (number <= 0.5) {
+
+            setSpeed (0.5)
+        
+        } else if (number >= 1.5) {
+
+            setSpeed (1.5)
+        
+        } else {
+
+            setSpeed (number)
+        
+        }
+    
+    }
 
     return (
         <>
             <div className="controls">
                 <div className="controls-item">
-                    <PlayerControlsElementsPercent speed={player.speed} />
+                    <PlayerControlsElementsPercent speed={speed} />
                 </div>
                 <div className="controls-item">
-                    <PlayerControlsElementsSemiTone speed={player.speed} />
+                    <PlayerControlsElementsSemiTone speed={speed} />
                 </div>
             </div>
             <div className="controls-slider">
@@ -24,11 +45,11 @@ export const PlayerControls = stateMap ((props: IPlayerControlsProps|any): React
                     min="0.5"
                     max="1.5"
                     step="0.001"
-                    value={player.speed}
-                    onChange={(e): void => setStatePlayerSpeed (parseFloat (e.target.value))}
+                    value={speed}
+                    onChange={(e): void => onChange (e.target.value)}
                 />
             </div>
         </>
     )
 
-})
+}

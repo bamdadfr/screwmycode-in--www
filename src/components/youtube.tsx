@@ -1,44 +1,61 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRecoilState } from 'recoil'
 import { IconChamp } from './icons'
 import { Player } from './player'
 import { RedirectToHome } from './app.utils'
-import { stateMap } from './state.map'
+import { playerStateSpeed, playerStateSource, playerStateTitle } from './player.state'
+import { getDataFromAPI, isValidID } from './youtube.utils'
 
-export const Youtube = stateMap ((props: any): React.ReactElement => {
+export const Youtube = (props: any): React.ReactElement => {
 
-    const { match,
-        location,
-        player,
-        setStatePlayerSpeed,
-        setStatePlayerData,
-        setStatePlayerInit } = props
-
+    const { match, location } = props
+    const [, setPlayerSpeed] = useRecoilState (playerStateSpeed)
+    const [, setPlayerSource] = useRecoilState (playerStateSource)
+    const [, setPlayerTitle] = useRecoilState (playerStateTitle)
+    const [isLoading, setIsLoading] = useState (true)
+    const [redirect, setRedirect] = useState (false)
     const params = new URLSearchParams (location.search)
     const speed: number = parseFloat (params.get ('speed') || '1')
 
     useEffect (() => {
     
-        setStatePlayerSpeed (speed)
+        setPlayerSpeed (speed)
             
-    }, [speed, setStatePlayerSpeed])
+    }, [speed, setPlayerSpeed])
 
     useEffect (() => {
 
         const id = match.params.id
 
-        setStatePlayerData (id)
+        if (isValidID (id)) {
 
-    }, [match.params.id, setStatePlayerData])
+            (async (): Promise<any> => {
 
-    if (player.isError) {
-
-        setStatePlayerInit ()
-
-        return RedirectToHome ()
+                const response = await getDataFromAPI (id)
     
-    }
+                if (response.success) {
+    
+                    setPlayerSource (response.url)
+    
+                    setPlayerTitle (response.title)
+    
+                    setIsLoading (false)
+                
+                } else {
+                    
+                    setRedirect (true)
+                
+                }
+            
+            }) ()
+    
+        }
 
-    if (player.isLoading) {
+    }, [match.params.id, setPlayerSource, setPlayerTitle])
+
+    if (redirect) return RedirectToHome ()
+
+    if (isLoading) {
 
         document.title = 'screwmycode.in'
 
@@ -62,4 +79,4 @@ export const Youtube = stateMap ((props: any): React.ReactElement => {
         </>
     )
 
-})
+}

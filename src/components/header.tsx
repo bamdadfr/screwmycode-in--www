@@ -1,28 +1,29 @@
 import React, { ReactElement } from 'react'
-import { sendToast } from './toast.utils'
+import { useRecoilState } from 'recoil'
 import './header.styles.css'
 import { IconRepeat, IconToggle, IconQuestion } from './icons'
-import { stateMap } from './state.map'
+import { sendToast } from './toast.utils'
+import { threeStateVisible } from './three.state'
 
-const HeaderToggle = stateMap ((props: any): ReactElement => {
+const HeaderToggle = (): ReactElement => {
 
-    const { three, setStateThreeVisible } = props
-    const onClick = (e: boolean): void => setStateThreeVisible (e)
+    const [visible, setVisible] = useRecoilState (threeStateVisible)
+    const onClick = (): void => setVisible (!visible)
 
     return (
         <>
             <span
-                onClick={(): void => onClick (!three.visible)}
+                onClick={(): void => onClick ()}
                 onKeyDown={(): void => undefined}
                 role="button"
                 tabIndex={-1}
             >
-                {three.visible ? <IconToggle.on /> : <IconToggle.off />}
+                {true ? <IconToggle.on /> : <IconToggle.off />}
             </span>
         </>
     )
 
-})
+}
 
 const HeaderFaq = (): ReactElement => {
 
