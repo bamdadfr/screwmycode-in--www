@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, ReactElement } from 'react'
 import { useRecoilState } from 'recoil'
 import 'react-toastify/dist/ReactToastify.css'
-import { PlayerControls } from './player.controls'
+import { PlayerIndicators } from './player.indicators'
 import './player.styles.css'
 import { playerStateRef } from './player.state'
 import { PlayerIcons } from './player.icons'
@@ -21,7 +21,7 @@ export const Player = (): ReactElement => {
 
             <PlayerElement />
 
-            <PlayerControls />
+            <PlayerIndicators />
 
         </>
     )
