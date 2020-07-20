@@ -1,3 +1,20 @@
+## [1.3.3](https://github.com/screwmycode/screwmycode-www/compare/v1.3.2...v1.3.3) (2020-07-20)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([33628aa](https://github.com/screwmycode/screwmycode-www/commit/33628aad7a014d646feac2ffb0ae046e131d5e02))
+* asfalte: 🔨 git-commit-force-release__push ([1c3aa7c](https://github.com/screwmycode/screwmycode-www/commit/1c3aa7cb68b3d964ff52eb777e097975a00798f9))
+* better code quality [force-release] ([5377152](https://github.com/screwmycode/screwmycode-www/commit/53771525e06dd13276a12e439d52f2960c9b8a4a))
+* codeclimate config ([ce55eb9](https://github.com/screwmycode/screwmycode-www/commit/ce55eb91b0841c60948b838f235c4dabbf2f7c86))
+* refactored app.tsx ([5bf6cf1](https://github.com/screwmycode/screwmycode-www/commit/5bf6cf15a23bf72bfa13014e5c103f44ff6429bc))
+* refactored header ([dee4fa7](https://github.com/screwmycode/screwmycode-www/commit/dee4fa7e9256011866187937d5bf7f4059967bde))
+* refactored home.tsx ([01669a6](https://github.com/screwmycode/screwmycode-www/commit/01669a640ab718e592f61577f763ed5e50697686))
+* refactored three visible state ([9b371d3](https://github.com/screwmycode/screwmycode-www/commit/9b371d33c106b1b25591f7bddec68a6cc1a810a4))
+* refactored three.tsx ([9452139](https://github.com/screwmycode/screwmycode-www/commit/94521393cdbf29b91b06a23735240b0f4ad772da))
+* refactoring routes and player ([7362111](https://github.com/screwmycode/screwmycode-www/commit/7362111c6be1fa5cfa41dafe63ce7bfe663913db))
+* testing codeclimate test exclusion ([a675fe7](https://github.com/screwmycode/screwmycode-www/commit/a675fe77c46b3761f783de3dc9dbcb06b46bf876))
+
 ## [1.3.2](https://github.com/screwmycode/screwmycode-www/compare/v1.3.1...v1.3.2) (2020-07-20)
 
 
