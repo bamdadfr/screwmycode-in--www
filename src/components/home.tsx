@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from 'react'
+import React, { ReactElement, useEffect, useState, useRef } from 'react'
 import { Redirect } from 'react-router-dom'
 import './home.styles.css'
 import { useRecoilState } from 'recoil'
@@ -7,8 +7,9 @@ import { playerStateTitle } from './player.state'
 
 export const Home = (): ReactElement => {
 
-    const [routeState, setRouteState] = React.useState<string|null> (null)
+    const [route, setRoute] = useState<string|null> (null)
     const [, setTitle] = useRecoilState (playerStateTitle)
+    const inputRef: any = useRef (null)
 
     useEffect (() => {
 
@@ -16,64 +17,46 @@ export const Home = (): ReactElement => {
     
     }, [setTitle])
 
-    const route = {
-        'state': {
-            'get': routeState,
-            'set': setRouteState,
-        },
-        'redirect': (): ReactElement => <Redirect to={`/${route.state.get}`} />,
-    }
+    const onSubmit = (e: any): ReactElement|void|any => {
 
-    const form = {
-        'input': {
-            'ref': React.useRef<any> (null),
-        },
-        'onSubmit': (e: any): void => {
+        e.preventDefault ()
 
-            e.preventDefault ()
+        const target = e.target[0]
+        const id = getIDFromURL (target.value)
 
-            const target = e.target[0]
-            const id = getIDFromURL (target.value)
+        if (id) {
 
-            if (id) {
-    
-                target.blur ()
-    
-                route.state.set (`youtube/${id}`)
-            
-            } else {
-    
-                target.value = ''
-            
-            }
-    
-        },
-        'JSX': (): ReactElement => (
-            <>
-                <form onSubmit={(e): void => form.onSubmit (e)}>
-                    <div className="form">
-                        <input ref={form.input.ref} placeholder="insert youtube link here" type="text" />
-                    </div>
-                    <div className="form">
-                        <input type="submit" value="submit" />
-                    </div>
-                </form>
-            </>
-        ),
+            target.blur ()
+
+            setRoute (`/youtube/${id}`)
+
+        } else {
+
+            target.value = ''
+        
+        }
+
     }
 
     useEffect (() => {
 
-        if (form.input.ref && form.input.ref.current) {
+        inputRef.current.focus ()
 
-            form.input.ref.current.focus ()
+    }, [inputRef])
 
-        }
-    
-    }, [form.input.ref])
+    if (route !== null) return <Redirect to={route} />
 
-    if (route.state.get !== null) return route.redirect ()
-
-    return <form.JSX />
+    return (
+        <>
+            <form onSubmit={onSubmit}>
+                <div className="form">
+                    <input ref={inputRef} placeholder="insert youtube link here" type="text" />
+                </div>
+                <div className="form">
+                    <input type="submit" value="submit" />
+                </div>
+            </form>
+        </>
+    )
 
 }
