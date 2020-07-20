@@ -5,59 +5,53 @@ import { IconRepeat, IconToggle, IconQuestion } from './icons'
 import { sendToast } from './toast.utils'
 import { threeStateVisible } from './three.state'
 
-const HeaderToggle = (): ReactElement => {
+const HeaderBlueprint = (props: any): ReactElement => {
 
-    const [visible, setVisible] = useRecoilState (threeStateVisible)
-    const onClick = (): void => setVisible (!visible)
+    const { icon, onClickFunction } = props
 
     return (
         <>
             <span
-                onClick={(): void => onClick ()}
+                onClick={onClickFunction}
                 onKeyDown={(): void => undefined}
                 role="button"
                 tabIndex={-1}
             >
-                {true ? <IconToggle.on /> : <IconToggle.off />}
+                {icon}
             </span>
+
         </>
     )
+
+}
+
+const HeaderToggle = (): ReactElement => {
+
+    const [visible, setVisible] = useRecoilState (threeStateVisible)
+    // TODO
+    // eslint-disable-next-line no-constant-condition
+    const icon = true ? <IconToggle.on /> : <IconToggle.off />
+    const onClick = (): void => setVisible (!visible)
+        
+    return <HeaderBlueprint icon={icon} onClickFunction={onClick} />
 
 }
 
 const HeaderFaq = (): ReactElement => {
 
-    return (
-        <>
-            <span
-                onClick={(): void => sendToast ('FAQ coming soon')}
-                onKeyDown={(): void => undefined}
-                role="button"
-                tabIndex={-1}
-            >
-                <IconQuestion />
-            </span>
+    const icon = <IconQuestion />
+    const onClick = (): void => sendToast ('FAQ coming soon')
 
-        </>
-    )
-
+    return <HeaderBlueprint icon={icon} onClickFunction={onClick} />
+    
 }
 
 const HeaderRepeat = (): ReactElement => {
-
-    return (
-        <>
-            <span
-                onClick={(): void => sendToast ('repeat mode coming soon')}
-                onKeyDown={(): void => undefined}
-                role="button"
-                tabIndex={-1}
-            >
-                <IconRepeat />
-            </span>
-        </>
-
-    )
+    
+    const icon = <IconRepeat />
+    const onClick = (): void => sendToast ('repeat mode coming soon')
+    
+    return <HeaderBlueprint icon={icon} onClickFunction={onClick} />
 
 }
 
