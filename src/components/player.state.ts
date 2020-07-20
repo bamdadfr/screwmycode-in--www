@@ -22,5 +22,5 @@ export const playerStateIsPlaying = atom ({
 
 export const playerStateRef = atom ({
     'key': 'playerStateRef',
-    'default': null,
+    'default': document.createElement ('audio'),
 })

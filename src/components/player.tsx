@@ -1,31 +1,49 @@
-import React, { useEffect, useRef, useCallback, ReactElement } from 'react'
+import React, { useEffect, useRef, ReactElement } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { createBrowserHistory } from 'history'
-import KeyboardEventHandler from 'react-keyboard-event-handler'
 import 'react-toastify/dist/ReactToastify.css'
 import { PlayerControls } from './player.controls'
-import { IconShare } from './icons'
 import './player.styles.css'
-import { playerStateIsPlaying, playerStateSource, playerStateSpeed, playerStateTitle } from './player.state'
-import { copyToClipboard } from './player.utils'
+import { playerStateIsPlaying, playerStateSource, playerStateSpeed, playerStateRef } from './player.state'
+import { PlayerIcons } from './player.icons'
+import { PlayerTitle } from './player.title'
+import { PlayerEvents } from './player.events'
+
+const PlayerElement = (): ReactElement => {
+
+    const audioRef: any = useRef (null)
+    const [, setPlayerRef] = useRecoilState (playerStateRef)
+
+    useEffect (() => {
+
+        const audio: any = audioRef.current
+
+        setPlayerRef (audio)
+
+    }, [setPlayerRef])
+
+    return (
+        <>
+            <div className="player">
+                <audio className="w-100" ref={audioRef} controls>
+                    <track kind="captions" />
+                </audio>
+            </div>
+        </>
+    )
+
+}
 
 export const Player = (): ReactElement => {
 
-    const [isPlaying, setIsPlaying] = useRecoilState (playerStateIsPlaying)
+    const [, setIsPlaying] = useRecoilState (playerStateIsPlaying)
+    const playerRef = useRecoilValue (playerStateRef)
     const source = useRecoilValue (playerStateSource)
-    const title = useRecoilValue (playerStateTitle)
     const speed = useRecoilValue (playerStateSpeed)
-    const audioRef: any = useRef (null)
-
-    const switchPlayPause = useCallback ((audio: any) => {
-
-        return isPlaying ? audio.pause () : audio.play ()
-    
-    }, [isPlaying])
 
     useEffect (() => {
         
-        const audio: any = audioRef.current
+        const audio: any = playerRef
 
         audio.mozPreservesPitch = false
         
@@ -43,11 +61,11 @@ export const Player = (): ReactElement => {
         
         }
         
-    }, [source, setIsPlaying])
+    }, [source, setIsPlaying, playerRef])
 
     useEffect ((): void => {
         
-        const audio: any = audioRef.current
+        const audio: any = playerRef
 
         audio.playbackRate = speed
         
@@ -55,38 +73,18 @@ export const Player = (): ReactElement => {
             
         history.push (`${window.location.pathname}?speed=${audio.playbackRate}`)
         
-    }, [speed])
+    }, [speed, playerRef])
 
     return (
         <>
-            <KeyboardEventHandler
-                handleKeys={['Space']}
-                onKeyEvent={(): void|Promise<void> => switchPlayPause (audioRef.current)}
-            />
-            <div className="player-title">
-                {title}
-            </div>
 
-            <div className="player-icons">
-                <span
-                    onClick={(): void => copyToClipboard (audioRef.current)}
-                    onKeyDown={(): void => undefined}
-                    role="button"
-                    tabIndex={-1}
-                >
-                    <img
-                        src={IconShare}
-                        alt="player-icon-share"
-                        className="player-icon-share"
-                    />
-                </span>
-            </div>
+            <PlayerEvents />
+            
+            <PlayerTitle />
 
-            <div className="player">
-                <audio className="w-100" ref={audioRef} controls>
-                    <track kind="captions" />
-                </audio>
-            </div>
+            <PlayerIcons />
+
+            <PlayerElement />
 
             <PlayerControls />
 
