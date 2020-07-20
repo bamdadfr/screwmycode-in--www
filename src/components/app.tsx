@@ -9,7 +9,7 @@ import './app.styles.css'
 import { appTitle } from './app.utils'
 import { playerStateTitle } from './player.state'
 
-export const App = (): ReactElement => {
+const AppTitle = (): ReactElement => {
 
     const title = useRecoilValue (playerStateTitle)
 
@@ -29,6 +29,16 @@ export const App = (): ReactElement => {
 
     return (
         <>
+        </>
+    )
+
+}
+
+export const App = (): ReactElement => {
+
+    return (
+        <>
+            <AppTitle />
             <Three />
             <Toast />
             <div className="page">
