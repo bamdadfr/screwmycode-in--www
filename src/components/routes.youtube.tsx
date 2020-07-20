@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
-import { IconChamp } from './icons'
 import { Player } from './player'
 import { RedirectToHome } from './app.utils'
 import { playerStateSpeed, playerStateSource, playerStateTitle } from './player.state'
 import { getDataFromAPI, isValidID } from './routes.youtube.utils'
+import { RoutesLoading } from './routes.loading'
 
 export const RoutesYoutube = (props: any): React.ReactElement => {
 
@@ -55,26 +55,8 @@ export const RoutesYoutube = (props: any): React.ReactElement => {
 
     if (redirect) return RedirectToHome ()
 
-    if (isLoading) {
+    if (isLoading) return <RoutesLoading />
 
-        return (
-            <>
-                <div className="player">
-                    <img
-                        src={IconChamp}
-                        alt="icon-loading"
-                        height={150}
-                    />
-                </div>
-            </>
-        )
-    
-    }
-
-    return (
-        <>
-            <Player />
-        </>
-    )
+    return <Player />
 
 }
