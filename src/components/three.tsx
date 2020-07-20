@@ -10,10 +10,9 @@ import { IScale, ICameraSettings, IMouse, IContainer } from './three.types'
 export const Three = (props: any): ReactElement => {
 
     const { domRef } = props
-    // const domRef = three.ref
-    const renderer = useRef<any> (null)
-    const camera = useRef<any> (null)
-    const groups = useRef<any> (null)
+    const renderer: any = useRef (null)
+    const camera: any = useRef (null)
+    const groups: any = useRef (null)
 
     const container = useRef<IContainer> ({
         'clientWidth': 0,
@@ -53,7 +52,7 @@ export const Three = (props: any): ReactElement => {
 
     }, [])
     
-    const onWindowResize = useCallback ((): void => {
+    const onWindowResize = useCallback (() => {
         
         camera.current.aspect = container.current.clientWidth / container.current.clientHeight
         
@@ -63,13 +62,13 @@ export const Three = (props: any): ReactElement => {
         
     }, [renderer])
 
-    const render = (s: any): void => {
+    const render = (scene: any): void => {
 
-        renderer.current.render (s, camera.current)
+        renderer.current.render (scene, camera.current)
     
     }
 
-    const update = React.useCallback ((): void => {
+    const update = React.useCallback (() => {
 
         time.current = animateBackground (time.current, groups.current.backgroundGroup.children[0])
 
@@ -77,7 +76,7 @@ export const Three = (props: any): ReactElement => {
     
     }, [cameraSettings])
 
-    const init = useCallback ((): void => {
+    const init = useCallback (() => {
         
         container.current = domRef.current
 
@@ -113,8 +112,6 @@ export const Three = (props: any): ReactElement => {
     
     }, [init, onMouseMove, onWindowResize])
 
-    return (
-        <></>
-    )
+    return <></>
 
 }
