@@ -1,15 +1,32 @@
 import React, { ReactElement, useRef, useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
 import { Link } from 'react-router-dom'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
-import { AppRoutes } from './app.routes'
+import { Routes } from './routes'
 import './app.styles.css'
-import { isProduction } from './app.utils'
+import { isProduction, appTitle } from './app.utils'
+import { playerStateTitle } from './player.state'
 
 export const App = (): ReactElement => {
 
     const threeRef = useRef<any> (null)
+    const title = useRecoilValue (playerStateTitle)
+
+    useEffect (() => {
+
+        if (title) {
+
+            document.title = `${appTitle} - ${title}` 
+
+        } else {
+
+            document.title = appTitle
+        
+        }
+    
+    }, [title])
 
     useEffect (() => {
 
@@ -32,13 +49,13 @@ export const App = (): ReactElement => {
                     <div className="title-spacer" />
                     <div className="title">
                         <Link to="/">
-                            screwmycode.in
+                            {appTitle}
                         </Link>
                     </div>
                     <div className="main">
                         <div className="main-item main-spacer" />
                         <div className="main-item">
-                            <AppRoutes />
+                            <Routes />
                         </div>
                     </div>
                 </div>

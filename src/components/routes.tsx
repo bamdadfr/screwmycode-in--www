@@ -2,10 +2,10 @@ import React, { ReactElement } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Home } from './home'
 import { Firefox } from './firefox'
-import { Youtube } from './youtube'
+import { RoutesYoutube } from './routes.youtube'
 import { RedirectToHome, isFirefox } from './app.utils'
 
-export const AppRoutes = (): ReactElement => {
+export const Routes = (): ReactElement => {
 
     if (isFirefox ()) {
 
@@ -14,7 +14,7 @@ export const AppRoutes = (): ReactElement => {
     
                 <Route exact path="/" component={Home} />
     
-                <Route path="/youtube/:id" component={Youtube} />
+                <Route path="/youtube/:id" component={RoutesYoutube} />
     
                 <Route path="*" component={RedirectToHome} />
     

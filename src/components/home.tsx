@@ -1,11 +1,20 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import './home.styles.css'
-import { getIDFromURL } from './youtube.utils'
+import { useRecoilState } from 'recoil'
+import { getIDFromURL } from './routes.youtube.utils'
+import { playerStateTitle } from './player.state'
 
 export const Home = (): ReactElement => {
 
     const [routeState, setRouteState] = React.useState<string|null> (null)
+    const [, setTitle] = useRecoilState (playerStateTitle)
+
+    useEffect (() => {
+
+        setTitle ('')
+    
+    }, [setTitle])
 
     const route = {
         'state': {
@@ -53,9 +62,7 @@ export const Home = (): ReactElement => {
         ),
     }
 
-    React.useEffect (() => {
-
-        document.title = 'screwmycode.in'
+    useEffect (() => {
 
         if (form.input.ref && form.input.ref.current) {
 

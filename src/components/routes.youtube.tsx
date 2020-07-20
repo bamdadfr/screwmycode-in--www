@@ -4,9 +4,9 @@ import { IconChamp } from './icons'
 import { Player } from './player'
 import { RedirectToHome } from './app.utils'
 import { playerStateSpeed, playerStateSource, playerStateTitle } from './player.state'
-import { getDataFromAPI, isValidID } from './youtube.utils'
+import { getDataFromAPI, isValidID } from './routes.youtube.utils'
 
-export const Youtube = (props: any): React.ReactElement => {
+export const RoutesYoutube = (props: any): React.ReactElement => {
 
     const { match, location } = props
     const [, setPlayerSpeed] = useRecoilState (playerStateSpeed)
@@ -56,8 +56,6 @@ export const Youtube = (props: any): React.ReactElement => {
     if (redirect) return RedirectToHome ()
 
     if (isLoading) {
-
-        document.title = 'screwmycode.in'
 
         return (
             <>

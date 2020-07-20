@@ -1,4 +1,4 @@
-import { getDataFromAPI } from './youtube.utils'
+import { getDataFromAPI } from './routes.youtube.utils'
 
 describe ('testing getDataFromAPI()', () => {
 
