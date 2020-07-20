@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react'
+import React, { ReactElement } from 'react'
 import { useRecoilValue } from 'recoil'
 import './player.indicators.styles.css'
 import { playerStateSpeed } from './player.state'
@@ -25,21 +25,18 @@ export const PlayerIndicators = (): ReactElement => {
 
 }
 
-const PlayerIndicatorsElementsPercent = (props: IPlayerIndicatorsElementsPercent): ReactElement => {
-    
-    const { speed } = props
-    const ref = useRef<any> (null)
-    const speedToPercent = (): string => (speed * 100 - 100).toFixed (1)
+const PlayerIndicatorsBlueprint = (props: any): ReactElement => {
+
+    const { title, value } = props
 
     return (
         <>
-            percent
+            {title}
             <form>
                 <input
                     disabled
-                    ref={ref}
                     type="text"
-                    value={speedToPercent ()}
+                    value={value}
                 />
             </form>
         </>
@@ -47,24 +44,20 @@ const PlayerIndicatorsElementsPercent = (props: IPlayerIndicatorsElementsPercent
 
 }
 
-const PlayerIndicatorsElementsSemiTone = (props: IPlayerIndicatorsElementsSemiTone): ReactElement => {
-
+const PlayerIndicatorsElementsPercent = (props: IPlayerIndicatorsElementsPercent): ReactElement => {
+    
     const { speed } = props
-    const ref = useRef<any> (null)
-    const speedToSemiTone = (): string => (12 * (Math.log (speed) / Math.log (2))).toFixed (1)
+    const speedToPercent = (): string => (speed * 100 - 100).toFixed (1)
 
-    return (
-        <>
-            semitone
-            <form>
-                <input
-                    disabled
-                    ref={ref}
-                    type="text"
-                    value={speedToSemiTone ()}
-                />
-            </form>
-        </>
-    )
+    return <PlayerIndicatorsBlueprint text='percent' value={speedToPercent ()} />
+    
+}
+
+const PlayerIndicatorsElementsSemiTone = (props: IPlayerIndicatorsElementsSemiTone): ReactElement => {
+    
+    const { speed } = props
+    const speedToSemiTone = (): string => (12 * (Math.log (speed) / Math.log (2))).toFixed (1)
+    
+    return <PlayerIndicatorsBlueprint text='semitone' value={speedToSemiTone ()} />
 
 }
