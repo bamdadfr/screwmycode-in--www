@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useEffect } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import { Link } from 'react-router-dom'
 import { Header } from './header'
@@ -6,12 +6,11 @@ import { Three } from './three'
 import { Toast } from './toast'
 import { Routes } from './routes'
 import './app.styles.css'
-import { isProduction, appTitle } from './app.utils'
+import { appTitle } from './app.utils'
 import { playerStateTitle } from './player.state'
 
 export const App = (): ReactElement => {
 
-    const threeRef = useRef<any> (null)
     const title = useRecoilValue (playerStateTitle)
 
     useEffect (() => {
@@ -28,20 +27,9 @@ export const App = (): ReactElement => {
     
     }, [title])
 
-    useEffect (() => {
-
-        if (threeRef.current) {
-
-            threeRef.current.hidden = !isProduction ()
-        
-        }
-        
-    }, [])
-
     return (
         <>
-            <div ref={threeRef} className="three-container" />
-            <Three domRef={threeRef} />
+            <Three />
             <Toast />
             <div className="page">
                 <Header />

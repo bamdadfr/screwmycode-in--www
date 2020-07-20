@@ -28,9 +28,7 @@ const HeaderBlueprint = (props: any): ReactElement => {
 const HeaderToggle = (): ReactElement => {
 
     const [visible, setVisible] = useRecoilState (threeStateVisible)
-    // TODO
-    // eslint-disable-next-line no-constant-condition
-    const icon = true ? <IconToggle.on /> : <IconToggle.off />
+    const icon = visible ? <IconToggle.on /> : <IconToggle.off />
     const onClick = (): void => setVisible (!visible)
         
     return <HeaderBlueprint icon={icon} onClickFunction={onClick} />

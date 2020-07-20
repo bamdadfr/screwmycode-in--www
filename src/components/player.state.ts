@@ -19,3 +19,8 @@ export const playerStateIsPlaying = atom ({
     'key': 'playerStateIsPlaying',
     'default': false,
 })
+
+export const playerStateRef = atom ({
+    'key': 'playerStateRef',
+    'default': null,
+})

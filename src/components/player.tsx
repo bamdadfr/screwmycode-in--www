@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react'
+import React, { useEffect, useRef, useCallback, ReactElement } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { createBrowserHistory } from 'history'
 import KeyboardEventHandler from 'react-keyboard-event-handler'
@@ -9,7 +9,7 @@ import './player.styles.css'
 import { playerStateIsPlaying, playerStateSource, playerStateSpeed, playerStateTitle } from './player.state'
 import { copyToClipboard } from './player.utils'
 
-export const Player = (): React.ReactElement => {
+export const Player = (): ReactElement => {
 
     const [isPlaying, setIsPlaying] = useRecoilState (playerStateIsPlaying)
     const source = useRecoilValue (playerStateSource)
@@ -59,12 +59,10 @@ export const Player = (): React.ReactElement => {
 
     return (
         <>
-
             <KeyboardEventHandler
                 handleKeys={['Space']}
                 onKeyEvent={(): void|Promise<void> => switchPlayPause (audioRef.current)}
             />
-
             <div className="player-title">
                 {title}
             </div>
@@ -91,6 +89,7 @@ export const Player = (): React.ReactElement => {
             </div>
 
             <PlayerControls />
+
         </>
     )
 

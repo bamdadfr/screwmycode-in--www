@@ -1,4 +1,5 @@
-import React, { useRef, useCallback, useEffect, ReactElement } from 'react'
+import React, { useRef, useCallback, useEffect, ReactElement, useState } from 'react'
+import { useRecoilValue } from 'recoil'
 import * as THREE from 'three'
 import { ThreeCamera } from './three.camera'
 import { ThreeLights } from './three.lights'
@@ -6,13 +7,16 @@ import { ThreeMeshes } from './three.meshes'
 import { ThreeRenderer } from './three.renderer'
 import { animateBackground, animateCamera } from './three.animations'
 import { IScale, ICameraSettings, IMouse, IContainer } from './three.types'
+import { threeStateVisible } from './three.state'
 
-export const Three = (props: any): ReactElement => {
+export const Three = (): ReactElement => {
 
-    const { domRef } = props
+    const ref: any = useRef (null)
     const renderer: any = useRef (null)
     const camera: any = useRef (null)
     const groups: any = useRef (null)
+    const [isLoaded, setIsLoaded] = useState (false)
+    const visible = useRecoilValue (threeStateVisible)
 
     const container = useRef<IContainer> ({
         'clientWidth': 0,
@@ -78,29 +82,36 @@ export const Three = (props: any): ReactElement => {
 
     const init = useCallback (() => {
         
-        container.current = domRef.current
+        // container.current = domRef.current
+        if (isLoaded !== true) {
 
-        const scene: any = new THREE.Scene ()
+            container.current = ref.current
 
-        scene.background = new THREE.Color (0x000000)
+            const scene: any = new THREE.Scene ()
 
-        camera.current = ThreeCamera (container.current)
+            scene.background = new THREE.Color (0x000000)
 
-        ThreeLights (scene)
+            camera.current = ThreeCamera (container.current)
 
-        groups.current = ThreeMeshes (scene, { scale })
+            ThreeLights (scene)
 
-        renderer.current = ThreeRenderer (container.current)
+            groups.current = ThreeMeshes (scene, { scale })
 
-        renderer.current.setAnimationLoop (() => {
+            renderer.current = ThreeRenderer (container.current)
 
-            update ()
+            renderer.current.setAnimationLoop (() => {
 
-            render (scene)
+                update ()
+
+                render (scene)
         
-        })
+            })
+
+            setIsLoaded (true)
+        
+        }
     
-    }, [domRef, scale, update])
+    }, [isLoaded, ref, scale, update])
 
     useEffect (() => {
         
@@ -112,6 +123,12 @@ export const Three = (props: any): ReactElement => {
     
     }, [init, onMouseMove, onWindowResize])
 
-    return <></>
+    useEffect (() => {
+
+        ref.current.hidden = !visible
+    
+    }, [visible])
+
+    return <div ref={ref} className="three-container" />
 
 }
