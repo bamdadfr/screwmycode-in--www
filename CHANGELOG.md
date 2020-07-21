@@ -1,3 +1,18 @@
+## [1.3.4](https://github.com/screwmycode/screwmycode-www/compare/v1.3.3...v1.3.4) (2020-07-21)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([5b90eaa](https://github.com/screwmycode/screwmycode-www/commit/5b90eaa05805d61e8977bf2e36bc80ca11681900))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([ca05cb6](https://github.com/screwmycode/screwmycode-www/commit/ca05cb66ab02a93524db81a546c0500c866c17d6))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([a646f34](https://github.com/screwmycode/screwmycode-www/commit/a646f341a3a0a2d35a61ecf909157e8d1edc80fd))
+* refactored  player ([2155c5b](https://github.com/screwmycode/screwmycode-www/commit/2155c5bcae66e2efab4c11796e884f6c55232742))
+* refactored player ([249701b](https://github.com/screwmycode/screwmycode-www/commit/249701baa8c83c89256347c89f8460c38fc21fa3))
+* refactored player indicators ([7eb5288](https://github.com/screwmycode/screwmycode-www/commit/7eb5288b44824c91aacd5c7b1499737c2cf65ad5))
+* refactored three meshes ([8f97496](https://github.com/screwmycode/screwmycode-www/commit/8f97496e5966151b0f69737f895f9bcad1ffc5fa))
+* refactoring again player ([1fa1a49](https://github.com/screwmycode/screwmycode-www/commit/1fa1a49e5203fd85d3513f7f7a02f3f67fc59025))
+* small refactoring of routes ([ee72174](https://github.com/screwmycode/screwmycode-www/commit/ee721743160e4fd5e5470f3290db4f6b53428f9c))
+
 ## [1.3.3](https://github.com/screwmycode/screwmycode-www/compare/v1.3.2...v1.3.3) (2020-07-20)
 
 
