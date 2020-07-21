@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, ReactElement } from 'react'
-import { useRecoilState } from 'recoil'
-import 'react-toastify/dist/ReactToastify.css'
-import { PlayerIndicators } from './player.indicators'
+import React, { ReactElement } from 'react'
 import './player.styles.css'
-import { playerStateRef } from './player.state'
+import { PlayerIndicators } from './player.indicators'
 import { PlayerIcons } from './player.icons'
 import { PlayerTitle } from './player.title'
 import { PlayerEvents } from './player.events'
+import { PlayerElement } from './player.element'
 
 export const Player = (): ReactElement => {
 
@@ -28,27 +26,3 @@ export const Player = (): ReactElement => {
 
 }
 
-const PlayerElement = (): ReactElement => {
-
-    const audioRef: any = useRef (null)
-    const [, setPlayerRef] = useRecoilState (playerStateRef)
-
-    useEffect (() => {
-
-        const audio: any = audioRef.current
-
-        setPlayerRef (audio)
-
-    }, [setPlayerRef])
-
-    return (
-        <>
-            <div className="player">
-                <audio className="w-100" ref={audioRef} controls>
-                    <track kind="captions" />
-                </audio>
-            </div>
-        </>
-    )
-
-}

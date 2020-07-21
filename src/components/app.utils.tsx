@@ -2,8 +2,6 @@ import React, { ReactElement } from 'react'
 import { Redirect } from 'react-router-dom'
 import { detect } from 'detect-browser'
 
-export const appTitle = 'screwmycode.in'
-
 export const isProduction = (): boolean => process.env.NODE_ENV === 'production'
 
 export const RedirectToHome = (): ReactElement => <Redirect to="/" />

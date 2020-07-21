@@ -1,38 +1,12 @@
-import React, { ReactElement, useEffect } from 'react'
-import { useRecoilValue } from 'recoil'
+import React, { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
 import { Header } from './header'
 import { Three } from './three'
 import { Toast } from './toast'
 import { Routes } from './routes'
 import './app.styles.css'
-import { appTitle } from './app.utils'
-import { playerStateTitle } from './player.state'
-
-const AppTitle = (): ReactElement => {
-
-    const title = useRecoilValue (playerStateTitle)
-
-    useEffect (() => {
-
-        if (title) {
-
-            document.title = `${appTitle} - ${title}` 
-
-        } else {
-
-            document.title = appTitle
-        
-        }
-    
-    }, [title])
-
-    return (
-        <>
-        </>
-    )
-
-}
+import { AppConstants } from './app.constants'
+import { AppTitle } from './app.title'
 
 export const App = (): ReactElement => {
 
@@ -47,7 +21,7 @@ export const App = (): ReactElement => {
                     <div className="title-spacer" />
                     <div className="title">
                         <Link to="/">
-                            {appTitle}
+                            {AppConstants.title}
                         </Link>
                     </div>
                     <div className="main">

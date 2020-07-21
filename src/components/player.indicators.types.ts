@@ -2,8 +2,8 @@ export interface IPlayerIndicatorsProps {
     init: number,
 }
 
-export interface IPlayerIndicatorsElementsPercent {
+export interface IPlayerIndicatorsPercent {
     speed: number,
 }
 
-export interface IPlayerIndicatorsElementsSemiTone extends IPlayerIndicatorsElementsPercent {}
+export interface IPlayerIndicatorsSemiTone extends IPlayerIndicatorsPercent {}
