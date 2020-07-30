@@ -4426,9 +4426,9 @@ eslint-plugin-import@^2.22.0:
     tsconfig-paths "^3.9.0"
 
 eslint-plugin-jest@^23.19.0:
-  version "23.19.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.19.0.tgz#da9c45a629bf3180269c7d5033afd7f8b910bde5"
-  integrity sha512-l5PLflALqnODl8Yy0H5hDs18aKJS1KTf66VZGXRpIhmbLbPLaTuMB2P+65fBpkdseSpnTVcIlBYvTvJSBi/itg==
+  version "23.20.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.20.0.tgz#e1d69c75f639e99d836642453c4e75ed22da4099"
+  integrity sha512-+6BGQt85OREevBDWCvhqj1yYA4+BFK4XnRZSGJionuEYmcglMZYLNNBBemwzbqUAckURaHdJSBcjHPyrtypZOw==
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
 
@@ -11694,9 +11694,9 @@ vfile-message@^2.0.0:
     unist-util-stringify-position "^2.0.0"
 
 vfile@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/vfile/-/vfile-4.1.1.tgz#282d28cebb609183ac51703001bc18b3e3f17de9"
-  integrity sha512-lRjkpyDGjVlBA7cDQhQ+gNcvB1BGaTHYuSOcY3S7OhDmBtnzX95FhtZZDecSTDm6aajFymyve6S5DN4ZHGezdQ==
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/vfile/-/vfile-4.2.0.tgz#26c78ac92eb70816b01d4565e003b7e65a2a0e01"
+  integrity sha512-a/alcwCvtuc8OX92rqqo7PflxiCgXRFjdyoGVuYV+qbgCb0GgZJRvIgCD4+U/Kl1yhaRsaTwksF88xbPyGsgpw==
   dependencies:
     "@types/unist" "^2.0.0"
     is-buffer "^2.0.0"
