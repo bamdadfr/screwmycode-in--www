@@ -7,7 +7,7 @@ export const PlayerIndicatorsSemiTone = (props: IPlayerIndicatorsSemiTone): Reac
     const { speed } = props
     const speedToSemiTone = (): string => (12 * (Math.log (speed) / Math.log (2))).toFixed (1)
     
-    return <PlayerIndicatorsBlueprint text='semitone' value={speedToSemiTone ()} />
+    return <PlayerIndicatorsBlueprint title='semitone' value={speedToSemiTone ()} />
 
 }
 

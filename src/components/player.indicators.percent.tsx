@@ -7,7 +7,7 @@ export const PlayerIndicatorsPercent = (props: IPlayerIndicatorsPercent): ReactE
     const { speed } = props
     const speedToPercent = (): string => (speed * 100 - 100).toFixed (1)
 
-    return <PlayerIndicatorsBlueprint text='percent' value={speedToPercent ()} />
+    return <PlayerIndicatorsBlueprint title='percent' value={speedToPercent ()} />
     
 }
 
