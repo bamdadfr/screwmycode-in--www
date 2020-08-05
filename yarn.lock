@@ -1150,10 +1150,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.3.22":
-  version "1.3.22"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.22.tgz#3663e4e43483c8cfcf9e12c6b26b468ae0aac11b"
-  integrity sha512-6k9cNbLfQtFmrlki01fQGXkSy/XeE8UP189jed3Br5UmqiCY2c9k0ednNbJA2afogmorxpzNjXdEF2H2mMuyxA==
+"@bamdadsabbagh/eslint-config@^1.3.23":
+  version "1.3.23"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.23.tgz#518d012f311e7ca48374e999c6dc9b0a574dd242"
+  integrity sha512-M92d5m8vL8l3qU3aH2MjTSAqGYYtc437Cbx76z2aBsxVrTFPcXkae4Hxn7ZkSl/BR2VSK8HKw1ogA3i2hDbePw==
   dependencies:
     "@types/node" "^14.0.27"
     "@types/react" "^16.9.44"
@@ -1172,10 +1172,10 @@
     prettier "^2.0.5"
     typescript "^3.9.7"
 
-"@bamdadsabbagh/stylelint-config@^1.2.34":
-  version "1.2.34"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.34.tgz#066a8da276456d190d579af8b9248b968673e149"
-  integrity sha512-cPFpQuiu8SxNsCdeASLsMAP9h1OMCTqkUcvjPAVYv/9NjYYAg5bw/EzT+/kN7ZN2Cp/CGv8o66u+5ElIlT/ndw==
+"@bamdadsabbagh/stylelint-config@^1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.35.tgz#36ba538beb7581a1a6ba2264e32883dcce3458f0"
+  integrity sha512-ptxVXUwEX99qf4zv24n9TyEPy6Zlpf0J26KcUSzK/nQgTZi9xvw19KDvj5EvoSuNq37SSDDJ/62bb2PRIm/UwA==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -2994,9 +2994,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001109:
-  version "1.0.30001110"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001110.tgz#9003e3c7f5a43ea6f1193d4d5acba0bfb152c71a"
-  integrity sha512-KqJWeat4rhSHF0ito4yz9q/JuZHkvn71SsBnxge4azjPDbowIjOUnS8i1xpKGxZxU6BFiPqO2hSV2eiCpFQVRw==
+  version "1.0.30001111"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001111.tgz#dd0ce822c70eb6c7c068e4a55c22e19ec1501298"
+  integrity sha512-xnDje2wchd/8mlJu8sXvWxOGvMgv+uT3iZ3bkIAynKOzToCssWCmkz/ZIkQBs/2pUB4uwnJKVORWQ31UkbVjOg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -4187,9 +4187,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.488:
-  version "1.3.519"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.519.tgz#d1da9c8a8a96ee7f60c32b2ca2593533a970c210"
-  integrity sha512-2r/p/9YOjIpX10KxcH1HcAGz1oadSD9Cwwotoek8wNJx/SRpklea14qdAMzCTTZlIezvsJ8sNsBQN05bJ/ZjhA==
+  version "1.3.520"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.520.tgz#dfda0a14a4aed785cbddfdb505ea122f75978392"
+  integrity sha512-q6H9E1sXDCjRHP+X06vcP+N0ki8ZvYoRPZfKnDuiRX10WWXxEHzKFVf4O9rBFMpuPtR3M+2KAdJnugJoBBp3Rw==
 
 elliptic@^6.5.3:
   version "6.5.3"
