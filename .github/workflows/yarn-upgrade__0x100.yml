@@ -1,8 +1,8 @@
-name: yarn-upgrade__0*630
+name: yarn-upgrade__0x100
 
 on:
   schedule:
-    - cron: '30 */6 * * *'
+    - cron: '0 * * * *'
 
 jobs:
   yarn-upgrade:
@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '12'
 
-      - run: yarn upgrade --latest
+      - run: yarn upgrade
 
       - run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
@@ -23,7 +23,7 @@ jobs:
 
       - run: |
           git add .
-          git diff-index --quiet HEAD || git commit -m "fix: asfalte: ⚙️ yarn-upgrade__0*630"
+          git diff-index --quiet HEAD || git commit -m "fix: asfalte: ⚙️ yarn-upgrade__0x100"
 
       - run: git push
 
