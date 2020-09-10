@@ -1,3 +1,12 @@
+## [1.3.55](https://github.com/screwmycode/screwmycode-www/compare/v1.3.54...v1.3.55) (2020-09-10)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([e4b65c0](https://github.com/screwmycode/screwmycode-www/commit/e4b65c0b59acec33065b701cd69df6eb7b62eb15))
+* asfalte: 🔨 git-commit-force-release__push ([bed9626](https://github.com/screwmycode/screwmycode-www/commit/bed9626e822508dbf7a2bb0f66c3db0e0408ec39))
+* gpr build & build now fixed at v1 [force-release] ([b5f4fa5](https://github.com/screwmycode/screwmycode-www/commit/b5f4fa57bab27d91f89678c05afabe5ddae1e4f1))
+
 ## [1.3.54](https://github.com/screwmycode/screwmycode-www/compare/v1.3.53...v1.3.54) (2020-09-10)
 
 
