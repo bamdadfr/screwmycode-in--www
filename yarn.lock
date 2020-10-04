@@ -1258,9 +1258,9 @@
   integrity sha512-0I/qawqj68W7T80srg0KxxsjgFnmAXsc2Y5lCJnz4y/tHCWFS0qy3q/habBfQtrmiXVKNul98nd2/fXy87iSww==
 
 "@iconify/icons-mdi@^1.0.130":
-  version "1.0.141"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.141.tgz#906b5df8e3de6414df3f8153cc9067768c652ae0"
-  integrity sha512-LTPZn/k7tkGEi/UgkW5d1XGlMJfkioCOYBDQI9JTwBxdeFgKnEdequGSJMsHgs43uz0ix50PU+ydWzELHWOiAQ==
+  version "1.0.142"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.142.tgz#ea224006d427e195e300387646aab0bd580c0f82"
+  integrity sha512-GY2p96LaFj+LM9SR0qpVnqAqf0RlFEXOB050L3tO4BaoYPFnekEYHGoMx7b3BHpiGd2+XYvOAKZodrFZerGQ2g==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
