@@ -1,3 +1,14 @@
+## [1.3.82](https://github.com/screwmycode/screwmycode-www/compare/v1.3.81...v1.3.82) (2020-10-06)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([806f07e](https://github.com/screwmycode/screwmycode-www/commit/806f07e8dce0f1babac11ebfbf1556e84c873402))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([2b102b4](https://github.com/screwmycode/screwmycode-www/commit/2b102b459dce31d7fbb1ab89c60411ead0b294e8))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([e799135](https://github.com/screwmycode/screwmycode-www/commit/e799135f149e2ac390870a3287b18f652c6a3909))
+* asfalte: 🔨 git-commit-force-release__push ([7e40e4e](https://github.com/screwmycode/screwmycode-www/commit/7e40e4e3d895c8f7224beaca93611f63d836855c))
+* upgrading `recoil` and `three` to latest [force-release] ([30e1a8d](https://github.com/screwmycode/screwmycode-www/commit/30e1a8de2f0126979c7c992b41f95a0087b31006))
+
 ## [1.3.81](https://github.com/screwmycode/screwmycode-www/compare/v1.3.80...v1.3.81) (2020-10-06)
 
 
