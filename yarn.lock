@@ -1258,9 +1258,9 @@
   integrity sha512-0I/qawqj68W7T80srg0KxxsjgFnmAXsc2Y5lCJnz4y/tHCWFS0qy3q/habBfQtrmiXVKNul98nd2/fXy87iSww==
 
 "@iconify/icons-mdi@^1.0.130":
-  version "1.0.142"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.142.tgz#ea224006d427e195e300387646aab0bd580c0f82"
-  integrity sha512-GY2p96LaFj+LM9SR0qpVnqAqf0RlFEXOB050L3tO4BaoYPFnekEYHGoMx7b3BHpiGd2+XYvOAKZodrFZerGQ2g==
+  version "1.0.143"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.143.tgz#4ab364af3b68ccf2bcfed978eacfc371dba36983"
+  integrity sha512-jOsisGaaMzdSRgDQ55tC3b77eKAdtCejb5hfduPe9sn5q3/Ai3dILGnDM1nAXH+4WXbCT4VQ6lWiwOQ5Dhmr4Q==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -1677,9 +1677,9 @@
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
 "@types/node@*", "@types/node@^14.0.27":
-  version "14.11.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.4.tgz#bf6ea3d5f7b1504232b11acbc40e1ac4c750d3b9"
-  integrity sha512-KmoLCUeW2cWKkEOQ0gQcECuqOc0g7B7zcmRPQNMT4ntNm0luKv3BTLcqIyWpTxkhLDzLTdMus11j/6DROaZdPw==
+  version "14.11.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.5.tgz#fecad41c041cae7f2404ad4b2d0742fdb628b305"
+  integrity sha512-jVFzDV6NTbrLMxm4xDSIW/gKnk8rQLF9wAzLWIOg+5nU6ACrIMndeBdXci0FGtqJbP9tQvm6V39eshc96TO2wQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
