@@ -1,6 +1,6 @@
 {
   "name": "screwmycode.in",
-  "version": "1.3.86",
+  "version": "1.3.87",
   "license": "MIT",
   "scripts": {
     "build": "GENERATE_SOURCEMAP=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
