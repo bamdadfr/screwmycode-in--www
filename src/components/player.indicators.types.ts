@@ -1,9 +1,9 @@
 export interface IPlayerIndicatorsProps {
-    init: number,
+    init: number;
 }
 
 export interface IPlayerIndicatorsPercent {
-    speed: number,
+    speed: number;
 }
 
 export interface IPlayerIndicatorsSemiTone extends IPlayerIndicatorsPercent {}
