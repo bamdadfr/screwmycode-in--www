@@ -7,7 +7,7 @@ import { HeaderBlueprint } from './header.blueprint'
 export const HeaderToggle = (): ReactElement => {
 
     const [visible, setVisible] = useRecoilState (threeStateVisible)
-    const icon = visible ? <IconToggle.on /> : <IconToggle.off />
+    const icon = visible ? <IconToggle.On /> : <IconToggle.Off />
     const onClick = (): void => setVisible (!visible)
         
     return <HeaderBlueprint icon={icon} onClickFunction={onClick} />

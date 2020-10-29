@@ -14,8 +14,8 @@ export const IconRepeat = (): ReactElement => <Icon icon={repeatOff} />
 export const IconQuestion = (): ReactElement => <Icon icon={questionCircleOutlined} />
 
 export const IconToggle = {
-    'on': (): ReactElement => <Icon icon={toggleOn} />,
-    'off': (): ReactElement => <Icon icon={toggleOff} />,
+    'On': (): ReactElement => <Icon icon={toggleOn} />,
+    'Off': (): ReactElement => <Icon icon={toggleOff} />,
 }
 
 export const IconChamp = IconChampSVG
