@@ -1,3 +1,21 @@
+## [1.3.107](https://github.com/screwmycode/screwmycode-www/compare/v1.3.106...v1.3.107) (2020-10-30)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([1facc3f](https://github.com/screwmycode/screwmycode-www/commit/1facc3f9bc3285c0ad0b5433a5d22c3946a160b6))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([ee40f7e](https://github.com/screwmycode/screwmycode-www/commit/ee40f7e1f49a0b957161fc7792806a8904000702))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([2c8ba3f](https://github.com/screwmycode/screwmycode-www/commit/2c8ba3f52c73bac766710ff87fd13214b86e2fd6))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([d9dd56f](https://github.com/screwmycode/screwmycode-www/commit/d9dd56f7635cf7903e1dfe43f04f693cdd818947))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([c7f9b8f](https://github.com/screwmycode/screwmycode-www/commit/c7f9b8fa0b0b50720ed3784cfe67ac8a1a62fd2e))
+* better typescript declarations ([085ca3e](https://github.com/screwmycode/screwmycode-www/commit/085ca3e3aeb8d85960083b78ba60e9c926a6660a))
+
+
+### Performance Improvements
+
+* Merge pull request [#21](https://github.com/screwmycode/screwmycode-www/issues/21) from screwmycode/beta ([6bc9ec3](https://github.com/screwmycode/screwmycode-www/commit/6bc9ec39a78a50a40a2f27dbe90ad98cc804220d))
+* upgrade to latest and better Q ([f11f79d](https://github.com/screwmycode/screwmycode-www/commit/f11f79d155a0f5e16aaae4a47e39f457d15d07f5))
+
 ## [1.3.106](https://github.com/screwmycode/screwmycode-www/compare/v1.3.105...v1.3.106) (2020-10-29)
 
 
