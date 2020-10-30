@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
 
-      - run: echo ::set-env name=IMAGE::$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")
+      - run: echo "IMAGE=$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")" >> $GITHUB_ENV
 
       - uses: actions/checkout@master
 
