@@ -1,3 +1,19 @@
+## [1.3.108](https://github.com/screwmycode/screwmycode-www/compare/v1.3.107...v1.3.108) (2020-10-30)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([3a1f69d](https://github.com/screwmycode/screwmycode-www/commit/3a1f69dbcd012e892ac41216a372bae9682b718d))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([84713d1](https://github.com/screwmycode/screwmycode-www/commit/84713d16b00c936b8a706aff2462a71f196d9bdf))
+* asfalte: 🔨 git-commit-force-release__push ([4b57d1f](https://github.com/screwmycode/screwmycode-www/commit/4b57d1f39fe8df958c855c7c92b6471c53c6a910))
+* better package.json ([9b27e17](https://github.com/screwmycode/screwmycode-www/commit/9b27e17bede01981f5ce7eb448b646f2fea74e8c))
+* set-env is now up to date with new github-action version ([02e8b01](https://github.com/screwmycode/screwmycode-www/commit/02e8b010ddd9973f1e1324d69323aee916ef1992))
+
+
+### Performance Improvements
+
+* new recoil version which should not break anything ([1149107](https://github.com/screwmycode/screwmycode-www/commit/1149107b4cae3a0bdce790f6e7e1df46a88ce645)), closes [/github.com/facebookexperimental/recoil/blob/master/CHANGELOG.md#010-2020-10-29](https://github.com//github.com/facebookexperimental/recoil/blob/master/CHANGELOG.md/issues/010-2020-10-29)
+
 ## [1.3.107](https://github.com/screwmycode/screwmycode-www/compare/v1.3.106...v1.3.107) (2020-10-30)
 
 
