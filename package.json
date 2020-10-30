@@ -8,7 +8,9 @@
     "build:run": "GENERATE_SOURCEMAP=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
-    "sort:package": "npx sort-package-json",
+    "package:clean": "rm -rf node_modules",
+    "package:reinstall": "yarn package:clean && yarn",
+    "package:sort": "npx sort-package-json",
     "start": "BROWSER=none SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
   },
