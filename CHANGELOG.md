@@ -1,3 +1,12 @@
+## [1.3.109](https://github.com/screwmycode/screwmycode-www/compare/v1.3.108...v1.3.109) (2020-10-30)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([53517ec](https://github.com/screwmycode/screwmycode-www/commit/53517ec5533044fa220d901ef59591fcaf5976f5))
+* blind test [force-release] ([a8d9f75](https://github.com/screwmycode/screwmycode-www/commit/a8d9f75b503b1183637d6ea17d87e36fe73c8d26))
+* service worker OR value ([5a51f6b](https://github.com/screwmycode/screwmycode-www/commit/5a51f6b755d2029a369ed68b5459c39c5fe9eeae))
+
 ## [1.3.108](https://github.com/screwmycode/screwmycode-www/compare/v1.3.107...v1.3.108) (2020-10-30)
 
 
