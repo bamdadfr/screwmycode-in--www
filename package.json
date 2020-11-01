@@ -1,6 +1,6 @@
 {
   "name": "screwmycode.in",
-  "version": "1.3.111",
+  "version": "1.3.112",
   "license": "MIT",
   "scripts": {
     "build": "yarn build:clean && yarn build:run",
