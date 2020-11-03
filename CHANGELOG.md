@@ -1,3 +1,11 @@
+## [1.3.115](https://github.com/screwmycode/screwmycode-www/compare/v1.3.114...v1.3.115) (2020-11-03)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([e0e2928](https://github.com/screwmycode/screwmycode-www/commit/e0e29289401135cf8866c00f375531d426dc8e82))
+* untyped declaration fix [force-release] ([ea7bdb9](https://github.com/screwmycode/screwmycode-www/commit/ea7bdb9dd08e9186cd08cc4c055ab8ad36989604))
+
 ## [1.3.114](https://github.com/screwmycode/screwmycode-www/compare/v1.3.113...v1.3.114) (2020-11-03)
 
 
