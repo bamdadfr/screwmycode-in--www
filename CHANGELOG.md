@@ -1,3 +1,11 @@
+## [1.3.139](https://github.com/screwmycode/screwmycode-www/compare/v1.3.138...v1.3.139) (2020-11-04)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([27a29f8](https://github.com/screwmycode/screwmycode-www/commit/27a29f871a9ee2c675025bfe7202dae9222cf151))
+* declaration type for keyboard handler lib [force-release] ([00e96e4](https://github.com/screwmycode/screwmycode-www/commit/00e96e4d7c6cdf66e8a62cb7bf053a42b1b375b6))
+
 ## [1.3.138](https://github.com/screwmycode/screwmycode-www/compare/v1.3.137...v1.3.138) (2020-11-04)
 
 
