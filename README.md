@@ -1,16 +1,22 @@
 # [screwmycode-www](https://github.com/screwmycode/screwmycode-www)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability)](https://codeclimate.com/github/screwmycode/screwmycode-www/maintainability)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www)
-![David](https://img.shields.io/david/screwmycode/screwmycode-www)
-![David](https://img.shields.io/david/dev/screwmycode/screwmycode-www)
+[![version](https://img.shields.io/github/v/release/screwmycode/screwmycode-www)](#-screwmycode)
 
-<img width="30px" src="src/components/icons/SCRW_KSET.svg" />
+[![stars](https://img.shields.io/github/stars/screwmycode/screwmycode-www)](#-screwmycode)
+[![forks](https://img.shields.io/github/forks/screwmycode/screwmycode-www)](#-screwmycode)
+
+[![code climate](https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability)](#-screwmycode)
+
+[![dependencies](https://img.shields.io/david/screwmycode/screwmycode-www)](#-screwmycode)
+[![snyk](https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www)](#-screwmycode)
+
+## <img width="20px" src="src/components/icons/SCRW_KSET.svg" /> Presentation
+
 Variable speed pitch control for YouTube
 
 Website available [here](https://screwmycode.in/)
 
-## <img width="15px" src="src/components/icons/SCRW_CHAMP.svg" /> Presentation
+## <img width="15px" src="src/components/icons/SCRW_CHAMP.svg" /> Context
 
 This project is a tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw),
 inventor of the
