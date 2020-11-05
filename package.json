@@ -2,6 +2,11 @@
   "name": "screwmycode.in",
   "version": "1.3.165",
   "license": "MIT",
+  "author": {
+    "name": "Bamdad Sabbagh",
+    "email": "hello@bamdadsabbagh.com",
+    "url": "https://bamdadsabbagh.com/"
+  },
   "scripts": {
     "build": "yarn build:clean && yarn build:run",
     "build:clean": "rm -rf build",
