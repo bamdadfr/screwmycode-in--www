@@ -8,8 +8,9 @@
     "url": "https://bamdadsabbagh.com/"
   },
   "scripts": {
-    "build": "yarn build:clean && yarn build:run",
+    "build": "yarn build:run",
     "build:clean": "rm -rf build",
+    "build:dev": "yarn build:clean && yarn build:run",
     "build:run": "GENERATE_SOURCEMAP=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
