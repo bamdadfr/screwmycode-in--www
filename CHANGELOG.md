@@ -1,3 +1,10 @@
+## [1.3.320](https://github.com/screwmycode/screwmycode-www/compare/v1.3.319...v1.3.320) (2020-11-12)
+
+
+### Bug Fixes
+
+* asfalte: 🐳 docker-base-image-check-gpr__0x100 ([fbc3929](https://github.com/screwmycode/screwmycode-www/commit/fbc3929628375a47ed09472e459a583668b961a7))
+
 ## [1.3.319](https://github.com/screwmycode/screwmycode-www/compare/v1.3.318...v1.3.319) (2020-11-12)
 
 
