@@ -22,19 +22,19 @@ jobs:
 
       - run: |
           if ./check.sh ${{ env.BASE_IMAGE }} docker.pkg.github.com/${{ github.repository }}/${{ env.IMAGE }}:latest; then
-            echo "IS_UP_TO_DATE='true'" >> $GITHUB_ENV
+            echo "IS_OUT_OF_DATE=false" >> $GITHUB_ENV
           else
-            echo "IS_UP_TO_DATE='true'" >> $GITHUB_ENV
+            echo "IS_OUT_OF_DATE=true" >> $GITHUB_ENV
           fi
 
-      - if: env.IS_UP_TO_DATE != 'true'
+      - if: env.IS_OUT_OF_DATE == true
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
           git commit --allow-empty -m "fix: asfalte: 🐳 docker-base-image-check-gpr__0x100"
           git push
 
-      - if: env.IS_UP_TO_DATE != 'true'
+      - if: env.IS_OUT_OF_DATE == true
         uses: peter-evans/repository-dispatch@master
         with:
           token: ${{ secrets.PAT }}
