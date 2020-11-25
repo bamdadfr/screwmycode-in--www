@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useEffect } from 'react'
-import { KeyboardEventHandler } from 'react-keyboard-event-handler'
+import KeyboardEventHandler from 'react-keyboard-event-handler'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import { createBrowserHistory } from 'history'
 import { playerStateIsPlaying, playerStateRef, playerStateSpeed, playerStateSource } from './player.state'
@@ -31,7 +31,7 @@ const PlayerEventsOnKeyboard = (): ReactElement => {
         <>
             <KeyboardEventHandler
                 handleKeys={['Space']}
-                onKeyEvent={(): void|Promise<void> => switchPlayPause (ref)}
+                onKeyEvent={(): any => switchPlayPause (ref)}
             />
 
         </>

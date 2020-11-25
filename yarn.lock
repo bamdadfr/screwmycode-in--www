@@ -9480,7 +9480,7 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-dev-utils@^11.0.0:
+react-dev-utils@^11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.1.tgz#30106c2055acfd6b047d2dc478a85c356e66fe45"
   integrity sha512-rlgpCupaW6qQqvu0hvv2FDv40QG427fjghV56XyPcP5aKtOAPzNAhQ7bHqk1YdS2vpW1W7aSV3JobedxuPlBAA==
@@ -9573,10 +9573,10 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-scripts@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-4.0.0.tgz#36f3d84ffff708ac0618fd61e71eaaea11c26417"
-  integrity sha512-icJ/ctwV5XwITUOupBP9TUVGdWOqqZ0H08tbJ1kVC5VpNWYzEZ3e/x8axhV15ZXRsixLo27snwQE7B6Zd9J2Tg==
+react-scripts@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-4.0.1.tgz#34974c0f4cfdf1655906c95df6a04d80db8b88f0"
+  integrity sha512-NnniMSC/wjwhcJAyPJCWtxx6CWONqgvGgV9+QXj1bwoW/JI++YF1eEf3Upf/mQ9KmP57IBdjzWs1XvnPq7qMTQ==
   dependencies:
     "@babel/core" "7.12.3"
     "@pmmmwh/react-refresh-webpack-plugin" "0.4.2"
@@ -9620,8 +9620,9 @@ react-scripts@4.0.0:
     postcss-normalize "8.0.1"
     postcss-preset-env "6.7.0"
     postcss-safe-parser "5.0.2"
+    prompts "2.4.0"
     react-app-polyfill "^2.0.0"
-    react-dev-utils "^11.0.0"
+    react-dev-utils "^11.0.1"
     react-refresh "^0.8.3"
     resolve "1.18.1"
     resolve-url-loader "^3.1.2"
@@ -11192,10 +11193,10 @@ three-orbitcontrols@^2.102.1:
   resolved "https://registry.yarnpkg.com/three-orbitcontrols/-/three-orbitcontrols-2.110.3.tgz#ca9c91d5ec2f4731a1140acf2ff0281e15988edf"
   integrity sha512-BNNbksJwbN3/MmT0X/gjz5ZCchm7bjk26SUdtJYRxfEYjDfkb/0PeUTHE/KuyJ5vb/owK3mojyy3vcqDx99sRA==
 
-three@^0.122.0:
-  version "0.122.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.122.0.tgz#bd9ed8a8820074856e8ba7b63fe0a65176e01aeb"
-  integrity sha512-bgYMo0WdaQhf7DhLE8OSNN/rVFO5J4K1A2VeeKqoV4MjjuHjfCP6xLpg8Xedhns7NlEnN3sZ6VJROq19Qyl6Sg==
+three@^0.123.0:
+  version "0.123.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.123.0.tgz#3bb6d8f908a432eb7cd450f7eab6dd40fde53085"
+  integrity sha512-KNnx/IbilvoHRkxOtL0ouozoDoElyuvAXhFB21RK7F5IPWSmqyFelICK6x3hJerLNSlAdHxR0hkuvMMhH9pqXg==
 
 throat@^5.0.0:
   version "5.0.0"
