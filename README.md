@@ -1,20 +1,28 @@
-# [screwmycode-www](https://github.com/screwmycode/screwmycode-www)
+#
 
-[![version](https://img.shields.io/github/v/release/screwmycode/screwmycode-www)](#-screwmycode)
+<p align=center>
+  <img width=100 src="./src/components/icons/SCRW_KSET.svg">
+</p>
 
-[![stars](https://img.shields.io/github/stars/screwmycode/screwmycode-www)](#-screwmycode)
-[![forks](https://img.shields.io/github/forks/screwmycode/screwmycode-www)](#-screwmycode)
+<p align=center>
+  Variable speed pitch control for <a href="https://www.youtube.com/">YouTube</a>
+</p>
 
-[![code climate](https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability)](#-screwmycode)
+<p align=center>
+  <img src="https://img.shields.io/github/v/release/screwmycode/screwmycode-www">
+  <img src="https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability">
+</p>
 
-[![dependencies](https://img.shields.io/david/screwmycode/screwmycode-www)](#-screwmycode)
-[![snyk](https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www)](#-screwmycode)
+<p align=center>
+  <img src="https://img.shields.io/david/screwmycode/screwmycode-www">
+  <img src="https://img.shields.io/david/dev/screwmycode/screwmycode-www">
+  <img src="https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www">
+</p>
 
-## <img width="20px" src="src/components/icons/SCRW_KSET.svg" /> Presentation
-
-Variable speed pitch control for YouTube
-
-Website available [here](https://screwmycode.in/)
+<p align=center>
+  <img src="https://img.shields.io/github/stars/screwmycode/screwmycode-www">
+  <img src="https://img.shields.io/github/forks/screwmycode/screwmycode-www">
+</p>
 
 ## <img width="15px" src="src/components/icons/SCRW_CHAMP.svg" /> Context
 
@@ -24,9 +32,19 @@ inventor of the
 
 May he rest in peace.
 
-![DJ_Screw](https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg)
+<p align=center>
+  <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg">
+</p>
 
-## <img height="15px" src="src/components/icons/SCRW_SHARE_TXT.svg" /> dev
+## <img height=15 src="src/components/icons/SCRW_SHARE_TXT.svg" /> How To
+
+There are two ways of accessing the service:
+
+- Directly paste the youtube URL into [screwmycode.in](https://screwmycode.in/).
+- Append **iscrew** to your youtube URL:
+  - Example: `https://www.`**iscrew**`youtube.com/watch?v=ID`
+
+## 🖊 Contribute
 
 ```bash
 git clone https://github.com/screwmycode/screwmycode-www
