@@ -1,3 +1,11 @@
+## [1.3.437](https://github.com/screwmycode/screwmycode-www/compare/v1.3.436...v1.3.437) (2020-11-25)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([5e925ef](https://github.com/screwmycode/screwmycode-www/commit/5e925ef0eeeecc94db77c1c2ee019d6de617f4ee))
+* direct access correctly sets the speed [force-release] ([4603f1b](https://github.com/screwmycode/screwmycode-www/commit/4603f1ba52c8f45ac619b7e52948d3ec0ba017b3))
+
 ## [1.3.436](https://github.com/screwmycode/screwmycode-www/compare/v1.3.435...v1.3.436) (2020-11-25)
 
 
