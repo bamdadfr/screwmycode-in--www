@@ -18,12 +18,6 @@ export const RoutesYoutube = (props: any): React.ReactElement => {
     const speed: number = parseFloat (params.get ('speed') || '1')
 
     useEffect (() => {
-    
-        setPlayerSpeed (speed)
-            
-    }, [speed, setPlayerSpeed])
-
-    useEffect (() => {
 
         const id = match.params.id
 
@@ -34,6 +28,8 @@ export const RoutesYoutube = (props: any): React.ReactElement => {
                 const response = await getDataFromAPI (id)
     
                 if (response.success) {
+
+                    setPlayerSpeed (speed)
     
                     setPlayerSource (response.url)
     
@@ -51,7 +47,7 @@ export const RoutesYoutube = (props: any): React.ReactElement => {
     
         }
 
-    }, [match.params.id, setPlayerSource, setPlayerTitle])
+    }, [match.params.id])
 
     if (redirect) return RedirectToHome ()
 

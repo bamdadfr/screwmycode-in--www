@@ -63,23 +63,26 @@ const PlayerEventsOnMount = (): ReactElement => {
     const [, setIsPlaying] = useRecoilState (playerStateIsPlaying)
     const playerRef = useRecoilValue (playerStateRef)
     const source = useRecoilValue (playerStateSource)
+    const speed = useRecoilValue (playerStateSpeed)
 
     useEffect (() => {
 
         const audio: any = playerRef
-
-        audio.mozPreservesPitch = false
         
         audio.src = source
         
         audio.load ()
+
+        audio.mozPreservesPitch = false
+
+        audio.playbackRate = speed
         
         audio.onplay = (): void => setIsPlaying (true)
-            
+        
         audio.onpause = (): void => setIsPlaying (false)
-
+        
         return (): void => {
-
+            
             setIsPlaying (false) 
 
         }
