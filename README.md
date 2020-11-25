@@ -42,7 +42,7 @@ There are two ways of accessing the service:
 
 - Directly paste the youtube URL into [screwmycode.in](https://screwmycode.in/).
 - Append **iscrew** to your youtube URL:
-  - Example: `https://www.`**iscrew**`youtube.com/watch?v=ID`
+  - `https://www.`**iscrew**`youtube.com/watch?v=ID`
 
 ## 🖊 Contribute
 
