@@ -1,7 +1,7 @@
 #
 
 <p align=center>
-  <img width=100 src="./src/components/icons/SCRW_KSET.svg">
+  <a href="https://screwmycode.in/"><img width=150 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/components/icons/SCRW_KSET.svg"></a>
 </p>
 
 <p align=center>
@@ -9,19 +9,24 @@
 </p>
 
 <p align=center>
+  <a href="https://github.com/screwmycode/screwmycode-www"><img src="https://img.shields.io/github/stars/screwmycode/screwmycode-www?label=git"></a>
+  <img src="https://img.shields.io/github/license/screwmycode/screwmycode-www">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/github/languages/count/screwmycode/screwmycode-www">
+  <img src="https://img.shields.io/github/languages/top/screwmycode/screwmycode-www">
+</p>
+
+<p align=center>
   <img src="https://img.shields.io/github/v/release/screwmycode/screwmycode-www">
-  <img src="https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability">
+  <img src="https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability" />
 </p>
 
 <p align=center>
   <img src="https://img.shields.io/david/screwmycode/screwmycode-www">
   <img src="https://img.shields.io/david/dev/screwmycode/screwmycode-www">
   <img src="https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www">
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/github/stars/screwmycode/screwmycode-www">
-  <img src="https://img.shields.io/github/forks/screwmycode/screwmycode-www">
 </p>
 
 ## <img width="15px" src="src/components/icons/SCRW_CHAMP.svg" /> Context
