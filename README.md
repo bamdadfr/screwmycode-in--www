@@ -1,7 +1,7 @@
 #
 
 <p align=center>
-  <a href="https://screwmycode.in/"><img width=150 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/components/icons/SCRW_KSET.svg"></a>
+  <a href="https://screwmycode.in/"><img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/components/icons/SCRW_KSET.svg"></a>
 </p>
 
 <p align=center>
