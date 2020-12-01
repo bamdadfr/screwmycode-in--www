@@ -1,4 +1,4 @@
-#
+# <img width=25 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/components/icons/SCRW_KSET.svg"> Front End
 
 <p align=center>
   <a href="https://screwmycode.in/"><img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/components/icons/SCRW_KSET.svg"></a>
@@ -6,6 +6,10 @@
 
 <p align=center>
   Variable speed pitch control for <a href="https://www.youtube.com/">YouTube</a>
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/badge/role-lead-blueviolet">
 </p>
 
 <p align=center>
@@ -27,6 +31,11 @@
   <img src="https://img.shields.io/david/screwmycode/screwmycode-www">
   <img src="https://img.shields.io/david/dev/screwmycode/screwmycode-www">
   <img src="https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
+  <img src="https://img.shields.io/badge/cd-docker-yellowgreen">
 </p>
 
 ## <img width="15px" src="src/components/icons/SCRW_CHAMP.svg" /> Context
