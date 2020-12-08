@@ -7379,14 +7379,15 @@ md5.js@^1.3.4:
     safe-buffer "^5.1.2"
 
 mdast-util-from-markdown@^0.8.0:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/mdast-util-from-markdown/-/mdast-util-from-markdown-0.8.2.tgz#d9b5c4eae245e742de8542b9a9fe642c400e8f42"
-  integrity sha512-lEiC6zP3sLGJmseGHf33YInftqOs1p4Z3U/mxEtjMkNjWTHBJx5rPjbgTbpHba11/H/TgB0fgiaiQk0lzdgKHg==
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/mdast-util-from-markdown/-/mdast-util-from-markdown-0.8.3.tgz#39d0f62087bc47b5e63b41a5ef5a6e5366c92361"
+  integrity sha512-BoEfM0H0zQvM2MNf3i4LPWZR7z9gSZb7Zb6p5VTQDmsMB54qusjMwV8SngND5IJ/GCvbTrUk8nSoG/nZ+W7UNg==
   dependencies:
     "@types/mdast" "^3.0.0"
     mdast-util-to-string "^2.0.0"
     micromark "~2.10.0"
     parse-entities "^2.0.0"
+    unist-util-stringify-position "^2.0.0"
 
 mdast-util-to-markdown@^0.5.0:
   version "0.5.4"
@@ -9635,9 +9636,9 @@ react-test-renderer@^17.0.1:
     scheduler "^0.20.1"
 
 react-toastify@^6.0.8:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.1.0.tgz#32ee52477530b9024553586b9072a3326f7618dc"
-  integrity sha512-Ne+wIoO9A+jZlaqGqgeuXDC/DQfqTuJdyoc7G5SsuCHsr8mNRx7W26417YKtHRH0LcnFFd5ii76tGnmm0cMlLg==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.2.0.tgz#f2d76747c70b9de91f71f253d9feae6b53dc836c"
+  integrity sha512-XpjFrcBhQ0/nBOL4syqgP/TywFnOyxmstYLWgSQWcj39qpp+WU4vPt3C/ayIDx7RFyxRWfzWTdR2qOcDGo7G0w==
   dependencies:
     clsx "^1.1.1"
     prop-types "^15.7.2"
