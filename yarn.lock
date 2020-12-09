@@ -7480,9 +7480,9 @@ microevent.ts@~0.1.1:
   integrity sha512-jo1OfR4TaEwd5HOrt5+tAZ9mqT4jmpNAusXtyfNzqVm9uiSYFZlKM1wYL4oU7azZW/PxQW53wM0S6OR1JHNa2g==
 
 micromark@~2.11.0:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.11.1.tgz#c8d3fb9935b722b324d59de730bc44a6edff3b56"
-  integrity sha512-Nc9vqtfC8t5iKL7ZCi1G9+lIDZcnrqmE1Apng01dO6e2g3q76S/FYehj+CjBwiC0tUSsV1S412/HgkW8JAywsw==
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.11.2.tgz#e8b6a05f54697d2d3d27fc89600c6bc40dd05f35"
+  integrity sha512-IXuP76p2uj8uMg4FQc1cRE7lPCLsfAXuEfdjtdO55VRiFO1asrCSQ5g43NmPqFtRwzEnEhafRVzn2jg0UiKArQ==
   dependencies:
     debug "^4.0.0"
     parse-entities "^2.0.0"
