@@ -1,3 +1,16 @@
+## [1.3.452](https://github.com/screwmycode/screwmycode-www/compare/v1.3.451...v1.3.452) (2020-12-10)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([f898310](https://github.com/screwmycode/screwmycode-www/commit/f898310de83e9f51ed233cb366e68774610ee68f))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([68f5d37](https://github.com/screwmycode/screwmycode-www/commit/68f5d370e4c5551c695a2946f58787686b6af535))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([d6ca6dc](https://github.com/screwmycode/screwmycode-www/commit/d6ca6dc3c21f9327929b23c67fc124cda4f3e7c0))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([9cb2232](https://github.com/screwmycode/screwmycode-www/commit/9cb223223a7f61f9bc52af003e26c950c990e520))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([99b5962](https://github.com/screwmycode/screwmycode-www/commit/99b5962b9f9e85d4f932cd96eaee824151f4e30a))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([7f16623](https://github.com/screwmycode/screwmycode-www/commit/7f166232afae5363730d6e184b34ccc0dbf175bd))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([81ba465](https://github.com/screwmycode/screwmycode-www/commit/81ba4650fed94206c7c3bd2224f5ac99c20a508a))
+
 ## [1.3.451](https://github.com/screwmycode/screwmycode-www/compare/v1.3.450...v1.3.451) (2020-12-09)
 
 
