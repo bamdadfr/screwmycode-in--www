@@ -1,11 +1,11 @@
-name: docker-base-image-check-gpr__0x100
+name: docker-gpr-base-image-check--0x100
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *' # every hour
 
 jobs:
-  check:
+  docker-gpr-base-image-check--0x100:
     runs-on: ubuntu-latest
     steps:
 
@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
-          git commit --allow-empty -m "fix: asfalte: 🐳 docker-base-image-check-gpr__0x100"
+          git commit --allow-empty -m "fix: asfalte: 🐳 docker-gpr-base-image-check--0x100"
           git push
 
       - if: env.IS_OUT_OF_DATE == true
