@@ -1,4 +1,4 @@
-name: docker-build-push-gpr-v1__published
+name: docker-gpr-build-push-v1--onPublished
 
 on:
   release:
@@ -6,7 +6,7 @@ on:
       - published
 
 jobs:
-  docker-build-push-gpr:
+  docker-gpr-build-push-v1--onPublished:
     runs-on: ubuntu-latest 
     steps:
 
