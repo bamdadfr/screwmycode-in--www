@@ -6,7 +6,7 @@ COPY package.json package-lock.json tsconfig.json ./
 RUN npm i --legacy-peer-deps
 
 COPY . ./
-RUN yarn build
+RUN npm run build
 
 # runtime
 FROM nginx:alpine
