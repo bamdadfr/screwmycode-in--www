@@ -2,8 +2,8 @@ FROM node:alpine as build
 
 WORKDIR /app
 
-COPY package.json yarn.lock tsconfig.json ./
-RUN yarn install --pure-lockfile --no-progress
+COPY package.json package-lock.json tsconfig.json ./
+RUN npm i --legacy-peer-deps
 
 COPY . ./
 RUN yarn build
