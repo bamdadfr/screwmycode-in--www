@@ -1,3 +1,10 @@
+## [1.3.476](https://github.com/screwmycode/screwmycode-www/compare/v1.3.475...v1.3.476) (2021-01-02)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ npm-update--0x100 ([768c742](https://github.com/screwmycode/screwmycode-www/commit/768c74216f1ef9d33c661c5b7380e275a30374e8))
+
 ## [1.3.475](https://github.com/screwmycode/screwmycode-www/compare/v1.3.474...v1.3.475) (2021-01-01)
 
 
