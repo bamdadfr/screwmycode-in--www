@@ -9,10 +9,6 @@
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/badge/role-lead-blueviolet">
-</p>
-
-<p align=center>
   <a href="https://github.com/screwmycode/screwmycode-www"><img src="https://img.shields.io/github/stars/screwmycode/screwmycode-www?label=git"></a>
   <img src="https://img.shields.io/github/license/screwmycode/screwmycode-www">
 </p>
