@@ -50,8 +50,8 @@
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.4.55",
-    "@bamdadsabbagh/stylelint-config": "^1.2.159",
+    "@bamdadsabbagh/eslint-config": "^1.4.56",
+    "@bamdadsabbagh/stylelint-config": "^1.2.160",
     "@types/jest": "^26.0.20",
     "@types/react-router-dom": "^5.1.7",
     "eslint-plugin-prettier": "^3.3.1",
