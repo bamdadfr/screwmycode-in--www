@@ -1,5 +1,5 @@
 
-const THREE = require ('three')
+import * as THREE from 'three'
 
 export const ThreeLights = (scene: any): void => {
 

@@ -1,4 +1,4 @@
-const THREE = require ('three')
+import * as THREE from 'three'
 
 export const ThreeMeshesSphere = (scene: any, scale: any): any => {
 
