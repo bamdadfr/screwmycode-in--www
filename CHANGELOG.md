@@ -1,3 +1,19 @@
+# [1.4.0](https://github.com/screwmycode/screwmycode-www/compare/v1.3.490...v1.4.0) (2021-01-16)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ npm-update--0x100 ([ac6574b](https://github.com/screwmycode/screwmycode-www/commit/ac6574bace3d76858553ca2764b9f590e27df910))
+* asfalte: ⚙️ npm-update--0x100 ([895da33](https://github.com/screwmycode/screwmycode-www/commit/895da33b75a88f96e27e82913dc661f920e7b90f))
+* asfalte: ⚙️ npm-update--0x100 ([f264970](https://github.com/screwmycode/screwmycode-www/commit/f26497068caa94ce00a7b534d0c879a136cfa869))
+* asfalte: 🔨 git-commit-force-release--onPush ([862bbf7](https://github.com/screwmycode/screwmycode-www/commit/862bbf7dae33b7cff4280392940df3f3c7ffdaa2))
+* refactored three imports ([4487f66](https://github.com/screwmycode/screwmycode-www/commit/4487f666ebdf07d094ef395f2e1b9e7c8b4d8341))
+
+
+### Features
+
+* back to yarn [force-release] ([b7d5dd7](https://github.com/screwmycode/screwmycode-www/commit/b7d5dd7871fe573d7284611ad29a3d01c955523c))
+
 ## [1.3.490](https://github.com/screwmycode/screwmycode-www/compare/v1.3.489...v1.3.490) (2021-01-16)
 
 
