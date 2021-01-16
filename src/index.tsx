@@ -6,17 +6,13 @@ import * as serviceWorker from './serviceWorker'
 import 'normalize.css'
 import { App } from './components/app'
 
-const Root = (): ReactElement => {
-
-    return (
-        <BrowserRouter>
-            <RecoilRoot>
-                <App />
-            </RecoilRoot>
-        </BrowserRouter>        
-    )
-
-}
+const Root = (): ReactElement => (
+    <BrowserRouter>
+        <RecoilRoot>
+            <App />
+        </RecoilRoot>
+    </BrowserRouter>        
+)
 
 ReactDOM.render (
     <Root />,

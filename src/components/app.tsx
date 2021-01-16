@@ -8,31 +8,27 @@ import './app.styles.css'
 import { AppConstants } from './app.constants'
 import { AppTitle } from './app.title'
 
-export const App = (): ReactElement => {
-
-    return (
-        <>
-            <AppTitle />
-            <Three />
-            <Toast />
-            <div className="page">
-                <Header />
-                <div className="container">
-                    <div className="title-spacer" />
-                    <div className="title">
-                        <Link to="/">
-                            {AppConstants.title}
-                        </Link>
-                    </div>
-                    <div className="main">
-                        <div className="main-item main-spacer" />
-                        <div className="main-item">
-                            <Routes />
-                        </div>
+export const App = (): ReactElement => (
+    <>
+        <AppTitle />
+        <Three />
+        <Toast />
+        <div className="page">
+            <Header />
+            <div className="container">
+                <div className="title-spacer" />
+                <div className="title">
+                    <Link to="/">
+                        {AppConstants.title}
+                    </Link>
+                </div>
+                <div className="main">
+                    <div className="main-item main-spacer" />
+                    <div className="main-item">
+                        <Routes />
                     </div>
                 </div>
             </div>
-        </>
-    )
-
-}
+        </div>
+    </>
+)

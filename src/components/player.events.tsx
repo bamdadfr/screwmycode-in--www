@@ -4,28 +4,19 @@ import { useRecoilValue, useRecoilState } from 'recoil'
 import { createBrowserHistory } from 'history'
 import { playerStateIsPlaying, playerStateRef, playerStateSpeed, playerStateSource } from './player.state'
 
-export const PlayerEvents = (): ReactElement => {
-
-    return (
-        <>
-            <PlayerEventsOnKeyboard />
-            <PlayerEventsOnSpeedChange />
-            <PlayerEventsOnMount />
-        </>
-    )
-
-}
+export const PlayerEvents = (): ReactElement => (
+    <>
+        <PlayerEventsOnKeyboard />
+        <PlayerEventsOnSpeedChange />
+        <PlayerEventsOnMount />
+    </>
+)
 
 const PlayerEventsOnKeyboard = (): ReactElement => {
 
     const isPlaying = useRecoilValue (playerStateIsPlaying)
     const ref = useRecoilValue (playerStateRef)
-    
-    const switchPlayPause = useCallback ((audio: any) => {
-
-        return isPlaying ? audio.pause () : audio.play ()
-    
-    }, [isPlaying])
+    const switchPlayPause = useCallback ((audio: any) => isPlaying ? audio.pause () : audio.play (), [isPlaying])
 
     return (
         <>

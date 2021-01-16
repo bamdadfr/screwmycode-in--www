@@ -4,14 +4,10 @@ import { HeaderFaq } from './header.faq'
 import { HeaderToggle } from './header.toggle'
 import { HeaderRepeat } from './header.repeat'
 
-export const Header = (): ReactElement => {
-
-    return (
-        <div className="corner-help">
-            <HeaderFaq />
-            <HeaderToggle />
-            <HeaderRepeat />
-        </div>
-    )
-
-}
+export const Header = (): ReactElement => (
+    <div className="corner-help">
+        <HeaderFaq />
+        <HeaderToggle />
+        <HeaderRepeat />
+    </div>
+)

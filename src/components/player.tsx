@@ -6,23 +6,19 @@ import { PlayerTitle } from './player.title'
 import { PlayerEvents } from './player.events'
 import { PlayerElement } from './player.element'
 
-export const Player = (): ReactElement => {
+export const Player = (): ReactElement => (
+    <>
 
-    return (
-        <>
-
-            <PlayerEvents />
+        <PlayerEvents />
             
-            <PlayerTitle />
+        <PlayerTitle />
 
-            <PlayerIcons />
+        <PlayerIcons />
 
-            <PlayerElement />
+        <PlayerElement />
 
-            <PlayerIndicators />
+        <PlayerIndicators />
 
-        </>
-    )
-
-}
+    </>
+)
 

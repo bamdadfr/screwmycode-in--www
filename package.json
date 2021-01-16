@@ -8,14 +8,14 @@
     "url": "https://bamdadsabbagh.com/"
   },
   "scripts": {
-    "build": "npm run build:run",
+    "build": "yarn build:run",
     "build:clean": "rm -rf build",
-    "build:dev": "npm run build:clean && npm run build:run",
+    "build:dev": "yarn build:clean && yarn build:run",
     "build:run": "GENERATE_SOURCEMAP=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "package:clean": "rm -rf node_modules",
-    "package:reinstall": "npm run package:clean && npm i --legacy-peer-deps",
+    "package:reinstall": "yarn package:clean && yarn",
     "package:sort": "npx sort-package-json",
     "start": "BROWSER=none SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
@@ -50,7 +50,7 @@
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.4.57",
+    "@bamdadsabbagh/eslint-config": "^1.5.0",
     "@bamdadsabbagh/stylelint-config": "^1.2.161",
     "@types/jest": "^26.0.20",
     "@types/react-router-dom": "^5.1.7",
