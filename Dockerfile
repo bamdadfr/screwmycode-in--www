@@ -2,11 +2,11 @@ FROM node:alpine as build
 
 WORKDIR /app
 
-COPY package.json package-lock.json tsconfig.json ./
-RUN npm i --legacy-peer-deps
+COPY package.json yarn.lock tsconfig.json ./
+RUN yarn install --pure-lockfile --no-progress
 
 COPY . ./
-RUN npm run build
+RUN yarn build
 
 # runtime
 FROM nginx:alpine
