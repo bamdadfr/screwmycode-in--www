@@ -62,3 +62,9 @@ cd screwmycode-www
 yarn
 yarn start
 ```
+
+## 🐳 Docker
+
+```bash
+docker run -d --restart=always --name screwmycode-www -p 8080:80 docker.pkg.github.com/screwmycode/screwmycode-www/screwmycode-www:latest
+```
