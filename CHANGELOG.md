@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/screwmycode/screwmycode-www/compare/v1.4.0...v1.4.1) (2021-01-16)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release--onPush ([46b591f](https://github.com/screwmycode/screwmycode-www/commit/46b591f9fa273362839fc9ad0564955f73c963e5))
+* dockerfile is updated to yarn too [force-release] ([9c2011b](https://github.com/screwmycode/screwmycode-www/commit/9c2011bdbcd65d40e2204942b136df2b70542336))
+
 # [1.4.0](https://github.com/screwmycode/screwmycode-www/compare/v1.3.490...v1.4.0) (2021-01-16)
 
 
