@@ -27,14 +27,14 @@ jobs:
             echo "IS_OUT_OF_DATE=true" >> $GITHUB_ENV
           fi
 
-      - if: env.IS_OUT_OF_DATE == true
+      - if: ${{ env.IS_OUT_OF_DATE }} == true
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
           git commit --allow-empty -m "fix: asfalte: 🐳 docker-gpr-base-image-check--0x100"
           git push
 
-      - if: env.IS_OUT_OF_DATE == true
+      - if: ${{ env.IS_OUT_OF_DATE }} == true
         uses: peter-evans/repository-dispatch@master
         with:
           token: ${{ secrets.PAT }}
