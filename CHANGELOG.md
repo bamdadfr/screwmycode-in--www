@@ -1,3 +1,11 @@
+## [1.4.16](https://github.com/screwmycode/screwmycode-www/compare/v1.4.15...v1.4.16) (2021-01-20)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release--onPush ([4f8fa21](https://github.com/screwmycode/screwmycode-www/commit/4f8fa210131983a9a8234227a6a7a4bd161b9aa9))
+* removed useless service worker ([648b1b4](https://github.com/screwmycode/screwmycode-www/commit/648b1b4be97aee5435847c43b99d11c12da5937c))
+
 ## [1.4.15](https://github.com/screwmycode/screwmycode-www/compare/v1.4.14...v1.4.15) (2021-01-20)
 
 
