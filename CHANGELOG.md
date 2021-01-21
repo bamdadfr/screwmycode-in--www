@@ -1,3 +1,10 @@
+## [1.4.17](https://github.com/screwmycode/screwmycode-www/compare/v1.4.16...v1.4.17) (2021-01-21)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade--0x100 ([5168c3f](https://github.com/screwmycode/screwmycode-www/commit/5168c3fc2cc446d379359e740fbdc0901def4a35))
+
 ## [1.4.16](https://github.com/screwmycode/screwmycode-www/compare/v1.4.15...v1.4.16) (2021-01-20)
 
 
