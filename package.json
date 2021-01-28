@@ -46,7 +46,7 @@
     "react-router-dom": "^5.2.0",
     "react-toastify": "^6.0.8",
     "recoil": "^0.1.1",
-    "three": "^0.123.0",
+    "three": "^0.125.1",
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
