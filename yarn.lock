@@ -1239,9 +1239,9 @@
   integrity sha512-pap8Er1h5qZBQ3m9FZ6YMK+HXoQJd0L4KlB0++TYTIQRDKMo8bcrvY4UwVb81gA2mNFlywe+rUa782CtVWZC3A==
 
 "@iconify/icons-mdi@^1.1.5":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.10.tgz#157232e9b72d89cb73c16fdb0aac054153f39a65"
-  integrity sha512-1+WtavUjIQdlvE0F0OSzmQIB37qEpirj/BkUOpbxYD8Em/V7KgwJ3S/Xe8ZEVuZlDWQlLV7ERKwF15e7NYNoCg==
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.11.tgz#c4d8a542465667990f339234c76fed95e8030751"
+  integrity sha512-8K9Dwcxozg4LE0QTxhXllg1Zs1zlwB69yVxc/k+wU2x6beuuPUvF6xl8y5RVIIdt0VzgiSMJ+4xNtd0DQbpYrg==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -1864,9 +1864,9 @@
   integrity sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
 
 "@types/uglify-js@*":
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.11.1.tgz#97ff30e61a0aa6876c270b5f538737e2d6ab8ceb"
-  integrity sha512-7npvPKV+jINLu1SpSYVWG8KvyJBhBa8tmzMMdDoVc2pWUYHN8KIXlPJhjJ4LT97c4dXJA2SHL/q6ADbDriZN+Q==
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.12.0.tgz#2bb061c269441620d46b946350c8f16d52ef37c5"
+  integrity sha512-sYAF+CF9XZ5cvEBkI7RtrG9g2GtMBkviTnBxYYyq+8BWvO4QtXfwwR6a2LFwCi4evMKZfpv6U43ViYvv17Wz3Q==
   dependencies:
     source-map "^0.6.1"
 
