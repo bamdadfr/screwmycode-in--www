@@ -1,3 +1,20 @@
+# [1.5.0](https://github.com/screwmycode/screwmycode-www/compare/v1.4.39...v1.5.0) (2021-02-11)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade--0x100 ([53b7c50](https://github.com/screwmycode/screwmycode-www/commit/53b7c50e3f62efe65a2b0f9ee4041280f1b45754))
+* asfalte: ⚙️ yarn-upgrade--0x100 ([ec22f08](https://github.com/screwmycode/screwmycode-www/commit/ec22f0882fd500dce72b9adbf0ef459862b6fb60))
+* asfalte: ⚙️ yarn-upgrade--0x100 ([f919f59](https://github.com/screwmycode/screwmycode-www/commit/f919f59f6cfe3539ce41ab1e9b21016f2c7aa45f))
+* asfalte: ⚙️ yarn-upgrade--0x100 ([ec8e4f3](https://github.com/screwmycode/screwmycode-www/commit/ec8e4f3cac2a85513df2a89339b4d43e678b378c))
+* asfalte: ⚙️ yarn-upgrade--0x100 ([4b9bd52](https://github.com/screwmycode/screwmycode-www/commit/4b9bd5291feea597dbfe75d41fe87b07d4cfa588))
+* asfalte: 🔨 git-commit-force-release--onPush ([dba5eaa](https://github.com/screwmycode/screwmycode-www/commit/dba5eaa653e0d7d99d684866ba84c2d8cf3fafad))
+
+
+### Features
+
+* switched to matomo analytics ([5be9604](https://github.com/screwmycode/screwmycode-www/commit/5be96049af9c87582b41b2523d4be096d2ee28e8))
+
 ## [1.4.39](https://github.com/screwmycode/screwmycode-www/compare/v1.4.38...v1.4.39) (2021-02-11)
 
 
