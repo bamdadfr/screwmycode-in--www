@@ -44,18 +44,18 @@
     "react-dom": "^17.0.1",
     "react-keyboard-event-handler": "^1.5.4",
     "react-router-dom": "^5.2.0",
-    "react-toastify": "^6.0.8",
+    "react-toastify": "^7.0.3",
     "recoil": "^0.1.1",
-    "three": "^0.123.0",
+    "three": "^0.125.2",
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.5.0",
-    "@bamdadsabbagh/stylelint-config": "^1.2.161",
+    "@bamdadsabbagh/eslint-config": "^1.6.0",
+    "@bamdadsabbagh/stylelint-config": "^1.2.184",
     "@types/jest": "^26.0.20",
     "@types/react-router-dom": "^5.1.7",
     "eslint-plugin-prettier": "^3.3.1",
-    "react-scripts": "4.0.1",
+    "react-scripts": "4.0.2",
     "react-test-renderer": "^17.0.1"
   }
 }
