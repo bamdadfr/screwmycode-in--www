@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/screwmycode/screwmycode-www/compare/v1.5.0...v1.5.1) (2021-02-13)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release--onPush ([1fe3977](https://github.com/screwmycode/screwmycode-www/commit/1fe3977de39c8e216a89e32da307e87cbcd48138))
+* asfalte: 🔨 git-commit-force-release--onPush ([9774774](https://github.com/screwmycode/screwmycode-www/commit/977477447ed36a0f0e459a2324fc5ee72f8cfda8))
+* updated dependencies ([f323e9c](https://github.com/screwmycode/screwmycode-www/commit/f323e9c66d4f922422bae997bc49ce4c83c05ee1))
+
 # [1.5.0](https://github.com/screwmycode/screwmycode-www/compare/v1.4.39...v1.5.0) (2021-02-11)
 
 
