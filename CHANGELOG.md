@@ -1,3 +1,12 @@
+## [1.5.2](https://github.com/screwmycode/screwmycode-www/compare/v1.5.1...v1.5.2) (2021-02-15)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade--onMondays-0930 ([70f6c2b](https://github.com/screwmycode/screwmycode-www/commit/70f6c2b22e3f220177ea803b90592fa249768617))
+* asfalte: 🔨 git-commit-force-release--onPush ([cd46ec3](https://github.com/screwmycode/screwmycode-www/commit/cd46ec30c5913560175fdbce63d8b738ea3266fe))
+* switch back to GA ([e76b6b6](https://github.com/screwmycode/screwmycode-www/commit/e76b6b69eb0a003ac0f93c234dc8cd0c5dfa915f))
+
 ## [1.5.1](https://github.com/screwmycode/screwmycode-www/compare/v1.5.0...v1.5.1) (2021-02-13)
 
 
