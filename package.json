@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.6.0",
-    "@bamdadsabbagh/stylelint-config": "^1.2.184",
+    "@bamdadsabbagh/stylelint-config": "^1.2.186",
     "@types/jest": "^26.0.20",
     "@types/react-router-dom": "^5.1.7",
     "eslint-plugin-prettier": "^3.3.1",
