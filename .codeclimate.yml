@@ -1,4 +1,4 @@
 version: "2"
 exclude_patterns:
   - "**/*.test.*"
-  - "**/three.tsx"
+  - "**/three.js"

@@ -8,6 +8,7 @@
     "url": "https://bamdadsabbagh.com/"
   },
   "scripts": {
+    "dev": "yarn start",
     "build": "yarn build:run",
     "build:clean": "rm -rf build",
     "build:dev": "yarn build:clean && yarn build:run",
