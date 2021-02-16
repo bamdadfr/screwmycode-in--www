@@ -1,3 +1,11 @@
+## [1.5.3](https://github.com/screwmycode/screwmycode-www/compare/v1.5.2...v1.5.3) (2021-02-16)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release--onPush ([0cef3fd](https://github.com/screwmycode/screwmycode-www/commit/0cef3fd1dd6b7af86ba07a01830b6366d6d5ca98))
+* refacto + clean + intellij ([73b319d](https://github.com/screwmycode/screwmycode-www/commit/73b319dad41a9d7bd39e2e28b614ea4d3e3c8008))
+
 ## [1.5.2](https://github.com/screwmycode/screwmycode-www/compare/v1.5.1...v1.5.2) (2021-02-15)
 
 
