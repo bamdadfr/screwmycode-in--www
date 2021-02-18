@@ -1241,10 +1241,10 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-ant-design/-/icons-ant-design-1.1.0.tgz#013574b09d8dd167490e6fd6dd0b2805d7170854"
   integrity sha512-sE4NKXMfN9arTFmfvt4zARoS+hjhd8P0z5osjWYxVkQPCri1RYpF+NRa9MsDh3ScqAcSU9wfUeQ3X4Gf8GrcNQ==
 
-"@iconify/icons-bi@^1.0.6":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-bi/-/icons-bi-1.1.1.tgz#e8c1bf99433987dca06431ade462fdb602fe0e62"
-  integrity sha512-pap8Er1h5qZBQ3m9FZ6YMK+HXoQJd0L4KlB0++TYTIQRDKMo8bcrvY4UwVb81gA2mNFlywe+rUa782CtVWZC3A==
+"@iconify/icons-bi@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-bi/-/icons-bi-1.1.2.tgz#c4e9996ba4a7f8f58fe8ada8d149486eaf9d2b0a"
+  integrity sha512-EWIVIHjT84AyTeevXGmrX0UhAvJVhjPdVpP1zKyxSpCZ+uf6WrvJvD5o97jIUxWSCufcJ3Wxm3vaucuE0sYmdw==
 
 "@iconify/icons-mdi@^1.1.5":
   version "1.1.11"
