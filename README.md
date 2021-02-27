@@ -35,7 +35,7 @@
 
 <p align=center>
     <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-    <img src="https://img.shields.io/badge/cd-ftp-yellowgreen">
+    <img src="https://img.shields.io/badge/cd-FTP-yellowgreen">
 </p>
 
 ## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg" /> Context
