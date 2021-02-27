@@ -35,7 +35,7 @@
 
 <p align=center>
     <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-    <img src="https://img.shields.io/badge/cd-docker-yellowgreen">
+    <img src="https://img.shields.io/badge/cd-ftp-yellowgreen">
 </p>
 
 ## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg" /> Context
@@ -64,10 +64,4 @@ git clone https://github.com/screwmycode/screwmycode-www
 cd screwmycode-www
 yarn
 yarn start
-```
-
-## 🐳 Docker
-
-```bash
-docker run -d --restart=always --name screwmycode-www -p 8080:80 docker.pkg.github.com/screwmycode/screwmycode-www/screwmycode-www:latest
 ```
