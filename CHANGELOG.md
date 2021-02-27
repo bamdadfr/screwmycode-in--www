@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/screwmycode/screwmycode-www/compare/v1.6.0...v1.6.1) (2021-02-27)
+
+
+### Bug Fixes
+
+* apache rewrite rules added ([403a427](https://github.com/screwmycode/screwmycode-www/commit/403a427ab9b1e78653440a1a5108610d638a05da))
+
 # [1.6.0](https://github.com/screwmycode/screwmycode-www/compare/v1.5.7...v1.6.0) (2021-02-27)
 
 
