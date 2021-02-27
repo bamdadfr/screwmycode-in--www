@@ -12,7 +12,7 @@ jobs:
 
       - uses: actions/checkout@master
 
-      - run: yarn
+      - run: yarn install --pure-lockfile
 
       - run: yarn build
 
