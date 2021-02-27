@@ -47,13 +47,13 @@
     "react-router-dom": "^5.2.0",
     "react-toastify": "^7.0.3",
     "recoil": "^0.1.1",
-    "three": "^0.125.2",
+    "three": "^0.126.0",
     "three-orbitcontrols": "^2.102.1"
   },
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.6.0",
     "@bamdadsabbagh/stylelint-config": "^1.2.184",
     "eslint-plugin-prettier": "^3.3.1",
-    "react-scripts": "4.0.2"
+    "react-scripts": "4.0.3"
   }
 }
