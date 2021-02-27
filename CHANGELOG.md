@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/screwmycode/screwmycode-www/compare/v1.5.7...v1.6.0) (2021-02-27)
+
+
+### Features
+
+* new deploy ([e930212](https://github.com/screwmycode/screwmycode-www/commit/e930212331b255ceefc8cb73f3419bcf545c4334))
+
 ## [1.5.7](https://github.com/screwmycode/screwmycode-www/compare/v1.5.6...v1.5.7) (2021-02-22)
 
 
