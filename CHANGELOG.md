@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/screwmycode/screwmycode-www/compare/v1.6.1...v1.6.2) (2021-02-28)
+
+
+### Bug Fixes
+
+* **deploy:** final workflow ([01641bd](https://github.com/screwmycode/screwmycode-www/commit/01641bd02dccd6caadd7454d4027fea5f01207eb))
+
 ## [1.6.1](https://github.com/screwmycode/screwmycode-www/compare/v1.6.0...v1.6.1) (2021-02-27)
 
 
