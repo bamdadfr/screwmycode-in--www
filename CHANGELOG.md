@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/screwmycode/screwmycode-www/compare/v1.6.3...v1.6.4) (2021-03-02)
+
+
+### Bug Fixes
+
+* **htaccess:** added domain verification ([d438cbf](https://github.com/screwmycode/screwmycode-www/commit/d438cbfc6ca2f34be5dbfe145c4e63119d66b309))
+
 ## [1.6.3](https://github.com/screwmycode/screwmycode-www/compare/v1.6.2...v1.6.3) (2021-02-28)
 
 
