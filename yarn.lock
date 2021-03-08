@@ -1151,10 +1151,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.6.0":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.8.2.tgz#87cc3cc685ddf5844582ac1092ae1e53f979aaf3"
-  integrity sha512-JPdBKd6V630KEv9vzWUvbSUHUdQM92nYFlC96U9hlQSPQT7jjywvhDNs1V2FGAMpuHV4pV9gC+yXEs+6oyoHuA==
+"@bamdadsabbagh/eslint-config@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.8.4.tgz#fb207c993f6f3a5d8dd5a0d7b7a74c487bcd4181"
+  integrity sha512-migqdgTcIsQ/+lJFQhlXV2nAxscXTXf6W4qfMGhnoviJ8dyXiivwo5JpzV+G1QODpZjm+VEuC5Npzq6+HPH0DA==
   dependencies:
     eslint "^7.20.0"
     eslint-config-airbnb "^18.2.0"
