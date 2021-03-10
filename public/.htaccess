@@ -1,3 +1,5 @@
+Options -Indexes
+
 RewriteEngine On
 
 # if not our domaimn
