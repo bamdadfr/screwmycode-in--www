@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/screwmycode/screwmycode-www/compare/v1.6.5...v1.6.6) (2021-03-10)
+
+
+### Bug Fixes
+
+* **htaccess:** removed indexing ([9cf36d9](https://github.com/screwmycode/screwmycode-www/commit/9cf36d95ed73a4852c688a865e50fc7e3138ab4c))
+
 ## [1.6.5](https://github.com/screwmycode/screwmycode-www/compare/v1.6.4...v1.6.5) (2021-03-08)
 
 
