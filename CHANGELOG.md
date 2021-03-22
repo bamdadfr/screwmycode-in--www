@@ -1,3 +1,10 @@
+## [1.6.8](https://github.com/screwmycode/screwmycode-www/compare/v1.6.7...v1.6.8) (2021-03-22)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade--onMondays-0930 ([22cf4c5](https://github.com/screwmycode/screwmycode-www/commit/22cf4c56098f2cf4fa46d7e39f606491afb8c9bd))
+
 ## [1.6.7](https://github.com/screwmycode/screwmycode-www/compare/v1.6.6...v1.6.7) (2021-03-15)
 
 
