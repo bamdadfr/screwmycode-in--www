@@ -1,12 +1,11 @@
 import React from 'react'
+import speedToSemitones from 'speed-to-semitones'
 import { PlayerIndicatorsBlueprint } from './player-indicators-blueprint'
 
 export const PlayerIndicatorsSemitone = (props) => {
 
     const { speed } = props
-    const speedToSemiTone = () => (12 * (Math.log (speed) / Math.log (2))).toFixed (1)
 
-    return <PlayerIndicatorsBlueprint title='semitone' value={speedToSemiTone ()}/>
+    return <PlayerIndicatorsBlueprint title='semitone' value={speedToSemitones (speed, 1)}/>
 
 }
-
