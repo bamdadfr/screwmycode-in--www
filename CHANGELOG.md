@@ -1,3 +1,24 @@
+# [1.7.0](https://github.com/screwmycode/screwmycode-www/compare/v1.6.8...v1.7.0) (2021-03-25)
+
+
+### Bug Fixes
+
+* **deps:** updated ([df9f71f](https://github.com/screwmycode/screwmycode-www/commit/df9f71f0febfb99aff33568d1065e1287e44f3be))
+* **deps:** updated to latest ([b3cbf0c](https://github.com/screwmycode/screwmycode-www/commit/b3cbf0c551c48f7f6d3e0c074017a2408f066430))
+* **three clock:** putting THREE.Clock() in Recoil state ([9e7e05e](https://github.com/screwmycode/screwmycode-www/commit/9e7e05e9d964c7bbcc0e761bd0ee43359fdc6b16))
+* **three clock:** time is now removed in favor of the built in THREE.Clock() ([28e92e2](https://github.com/screwmycode/screwmycode-www/commit/28e92e2cdcf3ff96d49ce6c668640be7d3d31265))
+* **three render:** pixel ratio compatible with retina displays ([83112ef](https://github.com/screwmycode/screwmycode-www/commit/83112ef518f6874ebb39c1efb1f25d51f7a61033))
+* **update workflow:** now on mondays at 1000 instead of mondays 0930 ([1d73861](https://github.com/screwmycode/screwmycode-www/commit/1d7386151d8319a0d8d54d2e18a6605fbda6aa2d))
+
+
+### Features
+
+* **deps:** added new packages ([d4172e0](https://github.com/screwmycode/screwmycode-www/commit/d4172e0a28cc7190375fc5af4474786ff930b2a4))
+* **indicators:** speed to percentage from npm package ([3f9eaaa](https://github.com/screwmycode/screwmycode-www/commit/3f9eaaad3d8165fdb49a5191a4532fa9c7bdb3d1))
+* **indicators:** using `speed-to-semitones` ([db19b28](https://github.com/screwmycode/screwmycode-www/commit/db19b289ea14922447cc087855098c99d70e0fe2))
+* **styles reset:** `sass-reset` instead of normalize.css ([a3282fc](https://github.com/screwmycode/screwmycode-www/commit/a3282fc7f2cf909bbe06a7c3b148525b29f440e0))
+* **three sphere:** more meshes and darker ([4243d16](https://github.com/screwmycode/screwmycode-www/commit/4243d16b7675b89de3444b1f9e23df82835b78e4))
+
 ## [1.6.8](https://github.com/screwmycode/screwmycode-www/compare/v1.6.7...v1.6.8) (2021-03-22)
 
 
