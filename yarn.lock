@@ -10522,10 +10522,10 @@ specificity@^0.4.1:
   resolved "https://registry.yarnpkg.com/specificity/-/specificity-0.4.1.tgz#aab5e645012db08ba182e151165738d00887b019"
   integrity sha512-1klA3Gi5PD1Wv9Q0wUoOQN1IWAuPu0D1U03ThXTr0cJ20+/iq2tHSDnK7Kk/0LXJ1ztUB2/1Os0wKmfyNgUQfg==
 
-speed-to-semitones@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.0.1.tgz#a515a8f535b9c252a5cf7d798985bb8a849a16b9"
-  integrity sha512-0eZOKlsW9dwDylpfmOV1Qnq6h1WhJgAXVpv9FNZuxjSPE/bQJluigLsuqa0JHwZ1Mhvslv8rDA1jJlfImiOpaQ==
+speed-to-semitones@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.1.1.tgz#6b5ba36518a4a83f4a49aaf9274e1a5e8322adef"
+  integrity sha512-501/xucjsbZshOZAAIIoDf4HMVeM8AX7pNWGww5b89iF58zEZVv+Cmq1a2m/2oH5mJCsnT0rYqKXIEm2pm96vw==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
