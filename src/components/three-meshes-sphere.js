@@ -8,14 +8,15 @@ export const ThreeMeshesSphere = (scene, scale) => {
 
     const sphere = new THREE.SphereBufferGeometry (
         scale.default,
-        10,
-        10,
+        100,
+        100,
     )
 
     const sphereMesh = new THREE.Mesh (
         sphere,
         new THREE.MeshBasicMaterial ({
             'wireframe': true,
+            'color': 0x222222,
         }),
     )
 
