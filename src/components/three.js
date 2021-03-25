@@ -6,7 +6,7 @@ import { ThreeLights } from './three-lights'
 import { ThreeMeshes } from './three-meshes'
 import { ThreeRenderer } from './three-renderer'
 import { animateBackground, animateCamera } from './three-animations'
-import { threeStateVisible } from './three-state'
+import { threeClock, threeStateVisible } from './three-state'
 
 export const Three = () => {
 
@@ -16,14 +16,13 @@ export const Three = () => {
     const groups = useRef (null)
     const [isLoaded, setIsLoaded] = useState (false)
     const visible = useRecoilValue (threeStateVisible)
+    const clock = useRecoilValue (threeClock)
 
     const container = useRef ({
         'clientWidth': 0,
         'clientHeight': 0,
         'appendChild': () => undefined,
     })
-
-    const time = useRef (0)
 
     const scale = {
         'default': 1,
@@ -71,9 +70,16 @@ export const Three = () => {
 
     }
 
-    const update = React.useCallback (() => {
+    const update = useCallback (() => {
 
-        time.current = animateBackground (time.current, groups.current.backgroundGroup.children[0])
+        const elapsedTime = clock.getElapsedTime ()
+
+        animateBackground (
+            elapsedTime,
+            groups.current.backgroundGroup.children[0],
+        )
+
+        // time.current = animateBackground (time.current, groups.current.backgroundGroup.children[0])
 
         animateCamera (camera.current, cameraSettings, mouse.current)
 

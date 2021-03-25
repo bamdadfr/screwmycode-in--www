@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
-import 'normalize.css'
+import 'sass-reset'
 import { App } from './components/app'
 
 const Root = () => (
