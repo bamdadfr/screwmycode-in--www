@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/screwmycode/screwmycode-www/compare/v1.7.0...v1.7.1) (2021-03-26)
+
+
+### Bug Fixes
+
+* **package.json:** upgrade to latest deps + added stylelint script ([dc4aff2](https://github.com/screwmycode/screwmycode-www/commit/dc4aff2d24e4b8c7e060d4170cd3f9a8a528e428))
+
 # [1.7.0](https://github.com/screwmycode/screwmycode-www/compare/v1.6.8...v1.7.0) (2021-03-25)
 
 
