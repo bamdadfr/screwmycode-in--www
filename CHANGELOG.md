@@ -1,3 +1,11 @@
+## [1.7.2](https://github.com/screwmycode/screwmycode-www/compare/v1.7.1...v1.7.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* **api:** parsing new json structure ([fd0862a](https://github.com/screwmycode/screwmycode-www/commit/fd0862ad1b688da133ee9307a1759635f10435c3))
+* asfalte: ⚙️ yarn-upgrade--onMondays-1000 ([f9e5904](https://github.com/screwmycode/screwmycode-www/commit/f9e5904531284310bdf8faf505a673226ec76186))
+
 ## [1.7.1](https://github.com/screwmycode/screwmycode-www/compare/v1.7.0...v1.7.1) (2021-03-26)
 
 
