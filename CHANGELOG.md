@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/screwmycode/screwmycode-www/compare/v1.7.3...v1.7.4) (2021-03-31)
+
+
+### Bug Fixes
+
+* **firefox:** better URL ([7207ba9](https://github.com/screwmycode/screwmycode-www/commit/7207ba9a91ddef36d41553ef91b370b1a2e9a39c))
+
 ## [1.7.3](https://github.com/screwmycode/screwmycode-www/compare/v1.7.2...v1.7.3) (2021-03-31)
 
 
