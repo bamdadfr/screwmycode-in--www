@@ -41,7 +41,7 @@ const PlayerEventsOnSpeedChange = () => {
 
         const history = createBrowserHistory ()
 
-        history.push (`${window.location.pathname}?speed=${speed}`)
+        history.replace (`${window.location.pathname}?speed=${speed}`)
 
     }, [speed, audio, audio.src])
 
