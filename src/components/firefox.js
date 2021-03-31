@@ -14,7 +14,7 @@ export const Firefox = () => (
                 <a
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://www.mozilla.org/en-US/firefox/download/thanks/firefox.jsd"
+                    href="https://www.mozilla.org/firefox/new/"
                 >
                     download here
                 </a>
