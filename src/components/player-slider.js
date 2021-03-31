@@ -25,7 +25,7 @@ export const PlayerSlider = () => {
                 type="range"
                 min="0.5"
                 max="1.5"
-                step="0.001"
+                step="0.005"
                 value={speed}
                 onChange={(e) => onChange (e.target.value)}
             />
