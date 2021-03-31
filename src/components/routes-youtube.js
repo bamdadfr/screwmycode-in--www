@@ -31,9 +31,9 @@ export const RoutesYoutube = (props) => {
 
                     setPlayerSpeed (speed)
 
-                    setPlayerSource (response.url)
+                    setPlayerTitle (response.data.title)
 
-                    setPlayerTitle (response.title)
+                    setPlayerSource (response.data.url)
 
                     setIsLoading (false)
 
