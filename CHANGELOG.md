@@ -1,3 +1,11 @@
+## [1.7.3](https://github.com/screwmycode/screwmycode-www/compare/v1.7.2...v1.7.3) (2021-03-31)
+
+
+### Bug Fixes
+
+* **player:** history is now .replace() instead of .push() ([be3d011](https://github.com/screwmycode/screwmycode-www/commit/be3d0114986da6c8db1a4b20408860e694201978))
+* **slider:** increased size of increments ([61858e1](https://github.com/screwmycode/screwmycode-www/commit/61858e1188cd746f2c6ac51fe7acd8f8b5106b71))
+
 ## [1.7.2](https://github.com/screwmycode/screwmycode-www/compare/v1.7.1...v1.7.2) (2021-03-31)
 
 
