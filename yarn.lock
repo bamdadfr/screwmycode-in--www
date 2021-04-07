@@ -10551,10 +10551,10 @@ speed-to-percentage@^1.0.1:
   resolved "https://registry.yarnpkg.com/speed-to-percentage/-/speed-to-percentage-1.0.1.tgz#95662a3c9c9fd82c5a95946dc269ca997cbe78af"
   integrity sha512-bQ/TXeBfpGLXuyXl7RsUTzwMUU+Ak9scDzeoEeSQRitFvtm89FZiG68fkA6dRIxkqsTMiC70nfebjluAwbAXEg==
 
-speed-to-semitones@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.1.3.tgz#86ad7357e7e079c8f82b7f517973bb518299cb0f"
-  integrity sha512-Tga0NKA0/xp3xh3Ps5pz3UgW7DixlOPhCkulhJcUrJyhJc1jivuR0GbR/aL8yp+9EDo9Rt4089sgYnLm2nYCag==
+speed-to-semitones@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.1.4.tgz#910b3ebf28725122068c0e0c65cc2b1dcbba7755"
+  integrity sha512-hiXbrqyYx26ldrrwHqbqR1/tH3Aphn5TZtHQSwPSDAw79F4u7uU3ESkbZDvzBj4Sjs1TGdnQn8a90IMMZc6ffw==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
