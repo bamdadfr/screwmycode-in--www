@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/screwmycode/screwmycode-www/compare/v1.7.7...v1.8.0) (2021-04-19)
+
+
+### Features
+
+* **app:** added `sentry` + updated deps ([dcfcb6c](https://github.com/screwmycode/screwmycode-www/commit/dcfcb6cca5f0a5f2add02669f80cdf1f65d0e429))
+
 ## [1.7.7](https://github.com/screwmycode/screwmycode-www/compare/v1.7.6...v1.7.7) (2021-04-19)
 
 
