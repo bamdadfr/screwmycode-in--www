@@ -10615,10 +10615,10 @@ specificity@^0.4.1:
   resolved "https://registry.yarnpkg.com/specificity/-/specificity-0.4.1.tgz#aab5e645012db08ba182e151165738d00887b019"
   integrity sha512-1klA3Gi5PD1Wv9Q0wUoOQN1IWAuPu0D1U03ThXTr0cJ20+/iq2tHSDnK7Kk/0LXJ1ztUB2/1Os0wKmfyNgUQfg==
 
-speed-to-percentage@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/speed-to-percentage/-/speed-to-percentage-1.0.2.tgz#c94222fee7778fdd54d09489b85efdf59ec9f9b3"
-  integrity sha512-zCBwDsJZlm6kcYHhdac7qR8Afw2TLHbQU4HmbynCL7QScOBiuOKyvwBGAYKcwCiMPXormJIOhWBRiaU5z8Nu/w==
+speed-to-percentage@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/speed-to-percentage/-/speed-to-percentage-1.1.1.tgz#5f0d357bd70d067ca2e8331947ea779e4f7a1ec1"
+  integrity sha512-Z62v+FyVIExeXH6dq2adBXNectyLVEsFBGTnUavSVhm78FGr8PZexrp5xTbrnzD+irCEV4I/uTLNatbsGALXHQ==
 
 speed-to-semitones@^1.1.3:
   version "1.1.4"
