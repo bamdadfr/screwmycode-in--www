@@ -1,0 +1,85 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-toastify
+    versions:
+    - 7.0.1
+    - 7.0.2
+    - 7.0.3
+    - 7.0.4
+  - dependency-name: "@sentry/react"
+    versions:
+    - 6.3.0
+    - 6.3.1
+  - dependency-name: "@bamdadsabbagh/eslint-config"
+    versions:
+    - 1.5.17
+    - 1.7.1
+    - 1.8.0
+    - 1.8.1
+    - 1.8.3
+    - 1.8.4
+    - 1.8.5
+    - 1.8.6
+    - 1.9.1
+    - 1.9.2
+    - 1.9.3
+    - 1.9.4
+    - 1.9.6
+  - dependency-name: "@sentry/tracing"
+    versions:
+    - 6.3.0
+    - 6.3.1
+  - dependency-name: "@iconify/icons-mdi"
+    versions:
+    - 1.1.12
+    - 1.1.13
+    - 1.1.14
+  - dependency-name: speed-to-semitones
+    versions:
+    - 1.1.4
+  - dependency-name: speed-to-percentage
+    versions:
+    - 1.0.2
+  - dependency-name: three
+    versions:
+    - 0.125.1
+    - 0.125.2
+    - 0.126.0
+    - 0.126.1
+    - 0.127.0
+  - dependency-name: recoil
+    versions:
+    - 0.1.3
+    - 0.2.0
+  - dependency-name: "@iconify/icons-bi"
+    versions:
+    - 1.1.2
+    - 1.1.3
+    - 1.1.4
+  - dependency-name: react-dom
+    versions:
+    - 17.0.2
+  - dependency-name: react
+    versions:
+    - 17.0.2
+  - dependency-name: react-dev-utils
+    versions:
+    - 11.0.4
+  - dependency-name: "@bamdadsabbagh/stylelint-config"
+    versions:
+    - 1.2.183
+    - 1.2.186
+    - 1.2.188
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.2
+    - 4.0.3
+  - dependency-name: "@iconify/react"
+    versions:
+    - 1.1.4
