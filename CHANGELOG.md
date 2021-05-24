@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/screwmycode/screwmycode-www/compare/v1.8.4...v1.8.5) (2021-05-24)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([163d65e](https://github.com/screwmycode/screwmycode-www/commit/163d65ed5aaad3283b3db4797450f3e9af15f209))
+
 ## [1.8.4](https://github.com/screwmycode/screwmycode-www/compare/v1.8.3...v1.8.4) (2021-05-17)
 
 
