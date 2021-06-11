@@ -1,3 +1,10 @@
+## [1.8.8](https://github.com/screwmycode/screwmycode-www/compare/v1.8.7...v1.8.8) (2021-06-11)
+
+
+### Bug Fixes
+
+* **deps:** updating dependencies ([9fc42dd](https://github.com/screwmycode/screwmycode-www/commit/9fc42dd9db6f91f694e615b251ea5b4d04c0144c))
+
 ## [1.8.7](https://github.com/screwmycode/screwmycode-www/compare/v1.8.6...v1.8.7) (2021-06-07)
 
 
