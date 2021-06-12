@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 import { Helmet } from 'react-helmet'
 import { MetaData } from '@/data/meta.data'
 
-export default function Index () {
+export default function IndexPage () {
 
     return (
         <>
@@ -13,7 +14,16 @@ export default function Index () {
                 ]}
             />
             <div>
-                test
+                <div>
+                    <Link href="/">
+                        <a>/</a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href="/youtube">
+                        <a>/youtube</a>
+                    </Link>
+                </div>
             </div>
         </>
     )
