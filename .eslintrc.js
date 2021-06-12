@@ -1,0 +1,6 @@
+module.exports = {
+    'extends': '@bamdadsabbagh/eslint-config',
+    'rules': {
+        'no-use-before-define': 'off',
+    },
+}
