@@ -16,6 +16,7 @@
         "cra:eject": "react-scripts eject",
         "cra:start": "BROWSER=none SKIP_PREFLIGHT_CHECK=true react-scripts start",
         "cra:test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
+        "dev": "next dev",
         "lint": "yarn lint:es && yarn lint:style",
         "lint:es": "eslint src-cra/ --ext .js,.jsx,.ts,.tsx --fix",
         "lint:style": "stylelint 'src-cra/**/*.{css,scss,js,jsx,ts,tsx}' --fix",
