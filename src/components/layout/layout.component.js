@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import LayoutBackgroundComponent from '@/components/layout-background/layout-background.component'
 import LayoutHeadComponent from '@/components/layout-head/layout-head.component'
 import LayoutMainComponent from '@/components/layout-main/layout-main.component'
+import usePlayer from '@/hooks/use-player'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -16,6 +17,8 @@ const propTypes = {
  * @return {JSX.Element}
  */
 export default function LayoutComponent ({ children }) {
+
+    usePlayer ()
 
     return (
         <>
