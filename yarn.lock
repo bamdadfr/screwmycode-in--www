@@ -1214,10 +1214,10 @@
     eslint-plugin-react-hooks "^4.0.8"
     prettier "^2.3.1"
 
-"@bamdadsabbagh/stylelint-config@^1.3.12":
-  version "1.3.12"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.3.12.tgz#2885108ba178127a63ce93f7d2ebc3ad87d67453"
-  integrity sha512-vozVSDzhh7L+DQfEJ/vSqL/ezW23jcwwJSnR07Vj+z34Gd0NZb+VdVu6YrPMZBZvJoCG4UkIieyp1DXGFaC7Sg==
+"@bamdadsabbagh/stylelint-config@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.3.13.tgz#8d878dccca5eef4c5afe3d0d560943b9d03c0308"
+  integrity sha512-du2jkC86lbJZMtTqiJFMl1va/DaEobSK7K+gnHNC6FV8uN9VfQag7LDQi4fpyyLovF1/HCw1/e+iJWHcg51ZAA==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
