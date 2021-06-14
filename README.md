@@ -60,8 +60,8 @@ There are two ways of accessing the service:
 ## 🖊 Contribute
 
 ```bash
-git clone https://github.com/screwmycode/screwmycode-www
-cd screwmycode-www
+git clone https://github.com/bamdadsabbagh/screwmycode-in--www
+cd screwmycode-in--www
 yarn
 yarn start
 ```
