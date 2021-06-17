@@ -10,11 +10,14 @@ import axios from 'axios'
 import { useRecoilState } from 'recoil'
 import { audioUrlAtom } from '@/atoms/audio-url.atom'
 import { audioTitleAtom } from '@/atoms/audio-title.atom'
+import usePlayer from '@/hooks/use-player'
 
 export default function YoutubeIdPage ({ title, url }) {
 
     const [, setTitle] = useRecoilState (audioTitleAtom)
     const [, setUrl] = useRecoilState (audioUrlAtom)
+
+    usePlayer (url)
 
     useEffect (() => {
 
