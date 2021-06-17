@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LayoutBackgroundComponent from '@/components/layout-background/layout-background.component'
-import LayoutHeadComponent from '@/components/layout-head/layout-head.component'
+import LayoutMetaComponent from '@/components/layout-meta/layout-meta.component'
 import LayoutMainComponent from '@/components/layout-main/layout-main.component'
+import LayoutHeaderComponent from '@/components/layout-header/layout-header.component'
+import LayoutToastComponent from '@/components/layout-toast/layout-toast.component'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -19,8 +20,9 @@ export default function LayoutComponent ({ children }) {
 
     return (
         <>
-            <LayoutBackgroundComponent/>
-            <LayoutHeadComponent/>
+            <LayoutMetaComponent/>
+            <LayoutHeaderComponent/>
+            <LayoutToastComponent/>
             <LayoutMainComponent>
                 {children}
             </LayoutMainComponent>

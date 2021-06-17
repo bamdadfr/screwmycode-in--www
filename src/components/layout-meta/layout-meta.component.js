@@ -3,11 +3,11 @@ import Head from 'next/head'
 
 /**
  * @function
- * @name LayoutHeadComponent
- * @description layout: head component (meta and SEO tags)
+ * @name LayoutMetaComponent
+ * @description layout: meta component (head and SEO tags)
  * @return {JSX.Element}
  */
-export default function LayoutHeadComponent () {
+export default function LayoutMetaComponent () {
 
     return (
         <Head>

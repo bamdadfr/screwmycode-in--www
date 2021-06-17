@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyledContainer } from './layout-main.styles'
+import Link from 'next/link'
+import { StyledContainer, StyledTitle } from './layout-main.styles'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -18,7 +19,17 @@ export default function LayoutMainComponent ({ children }) {
     return (
         <>
             <StyledContainer>
+
+                <StyledTitle>
+                    <Link href="/">
+                        <a>
+                            screwmycode.in
+                        </a>
+                    </Link>
+                </StyledTitle>
+
                 {children}
+
             </StyledContainer>
         </>
     )

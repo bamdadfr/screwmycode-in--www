@@ -30,7 +30,7 @@ export default function usePlayer () {
                 'onload': () => {
 
                     setPlayerIsLoaded (true)
-
+                
                 },
             })
 
