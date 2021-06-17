@@ -3,9 +3,9 @@ import { useRecoilValue } from 'recoil'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
 import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
-import { StyledContainer } from './audio-indicators.styles'
+import { StyledContainer } from './indicators.styles'
 
-export default function AudioIndicatorsComponent () {
+export default function IndicatorsComponent () {
 
     const speed = useRecoilValue (audioSpeedAtom)
 

@@ -3,9 +3,9 @@
 
 import React, { useEffect } from 'react'
 import { IsYoutubeIdValidUtils } from '@/utils/is-youtube-id-valid.utils'
-import AudioIndicatorsComponent from '@/components/audio-indicators/audio-indicators.component'
-import PlayerSliderComponent from '@/components/audio-slider/audio-slider.component'
-import PlayerComponent from '@/components/audio-player/audio-player.component'
+import IndicatorsComponent from '@/components/indicators/indicators.component'
+import PlayerSliderComponent from '@/components/slider/slider.component'
+import PlayerComponent from '@/components/player/player.component'
 import axios from 'axios'
 import { useRecoilState } from 'recoil'
 import { audioUrlAtom } from '@/atoms/audio-url.atom'
@@ -27,7 +27,7 @@ export default function YoutubeIdPage ({ title, url }) {
     return (
         <>
             <PlayerComponent/>
-            <AudioIndicatorsComponent/>
+            <IndicatorsComponent/>
             <PlayerSliderComponent/>
         </>
     )
