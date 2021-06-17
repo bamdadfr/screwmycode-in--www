@@ -15,7 +15,7 @@ export default function MyApp ({ Component, pageProps, err }) {
             <RecoilRoot>
                 <Helmet
                     htmlAttributes={{ 'lang': 'en' }}
-                    title="Bamdad Sabbagh"
+                    title="Screwmycode.in"
                     meta={[
                         ...MetaData,
                     ]}
