@@ -11,8 +11,6 @@ export default function usePlayer (url) {
     const speed = useRecoilValue (audioSpeedAtom)
     const source = url
 
-    console.log (source)
-
     useEffect (async () => {
 
         if (!playerIsLoaded) {

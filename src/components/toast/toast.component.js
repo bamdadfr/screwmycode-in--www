@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
     }
 `
 
-export default function LayoutToastComponent () {
+export default function ToastComponent () {
 
     return (
         <>

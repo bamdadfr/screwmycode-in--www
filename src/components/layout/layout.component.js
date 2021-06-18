@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import LayoutMetaComponent from '@/components/layout-meta/layout-meta.component'
 import LayoutMainComponent from '@/components/layout-main/layout-main.component'
 import LayoutHeaderComponent from '@/components/layout-header/layout-header.component'
-import LayoutToastComponent from '@/components/layout-toast/layout-toast.component'
+import ToastComponent from '@/components/toast/toast.component'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -22,7 +22,7 @@ export default function LayoutComponent ({ children }) {
         <>
             <LayoutMetaComponent/>
             <LayoutHeaderComponent/>
-            <LayoutToastComponent/>
+            <ToastComponent/>
             <LayoutMainComponent>
                 {children}
             </LayoutMainComponent>

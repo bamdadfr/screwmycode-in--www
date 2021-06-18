@@ -4,24 +4,18 @@
 import React, { useEffect } from 'react'
 import { IsYoutubeIdValidUtils } from '@/utils/is-youtube-id-valid.utils'
 import IndicatorsComponent from '@/components/indicators/indicators.component'
-import PlayerSliderComponent from '@/components/slider/slider.component'
+import SliderComponent from '@/components/slider/slider.component'
 import PlayerComponent from '@/components/player/player.component'
 import axios from 'axios'
 import { useRecoilState } from 'recoil'
 import { audioUrlAtom } from '@/atoms/audio-url.atom'
-import { audioTitleAtom } from '@/atoms/audio-title.atom'
-import usePlayer from '@/hooks/use-player'
+import { StyledContainer } from '../../pages-styles/youtube/[id].styles'
 
 export default function YoutubeIdPage ({ title, url }) {
 
-    const [, setTitle] = useRecoilState (audioTitleAtom)
     const [, setUrl] = useRecoilState (audioUrlAtom)
 
-    usePlayer (url)
-
     useEffect (() => {
-
-        setTitle (title)
 
         setUrl (url)
 
@@ -29,9 +23,12 @@ export default function YoutubeIdPage ({ title, url }) {
 
     return (
         <>
-            <PlayerComponent/>
-            <IndicatorsComponent/>
-            <PlayerSliderComponent/>
+            <StyledContainer>
+                {title}
+                <PlayerComponent/>
+                <IndicatorsComponent/>
+                <SliderComponent/>
+            </StyledContainer>
         </>
     )
 
@@ -54,6 +51,8 @@ export async function getServerSideProps (context) {
     const { 'data': response } = request
 
     if (!response.success) return redirectResponse
+
+    console.log (response)
 
     const { title, url } = response.data
 
