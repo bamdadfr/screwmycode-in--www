@@ -54,7 +54,7 @@
         "sass-reset": "^1.0.2",
         "speed-to-percentage": "^1.1.2",
         "speed-to-semitones": "^1.2.1",
-        "three": "^0.129.0",
+        "three": "^0.130.1",
         "three-orbitcontrols": "^2.102.1"
     },
     "devDependencies": {
