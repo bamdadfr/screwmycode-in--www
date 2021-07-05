@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { SendToastUtils } from '@/utils/send-toast.utils'
-import { IconQuestion, IconToggle, IconRepeat } from './layout-header.icons'
+import { useRecoilState } from 'recoil'
+import { audioLoopAtom } from '@/atoms/audio-loop.atom'
+import { IconQuestion, IconToggle, IconLoop } from './layout-header.icons'
 import { StyledContainer } from './layout-header.styles'
 
 export default function LayoutHeaderComponent () {
 
     const [visible, setVisible] = useState (true)
-    const onClick = () => setVisible (!visible)
+    const onClick = () => setVisible (!visible) // TODO
+    const [audioLoop, setAudioLoop] = useRecoilState (audioLoopAtom)
 
     return (
         <>
@@ -28,12 +31,12 @@ export default function LayoutHeaderComponent () {
                     {visible ? <IconToggle.On/> : <IconToggle.Off/>}
                 </span>
                 <span
-                    onClick={() => SendToastUtils ('repeat mode coming soon')}
+                    onClick={() => setAudioLoop (!audioLoop)}
                     onKeyDown={() => undefined}
                     role="button"
                     tabIndex={-1}
                 >
-                    <IconRepeat/>
+                    {audioLoop ? <IconLoop.On/> : <IconLoop.Off/>}
                 </span>
             </StyledContainer>
         </>

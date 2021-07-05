@@ -1,24 +1,132 @@
 import React, { useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import { useRecoilValue } from 'recoil'
-import { audioUrlAtom } from '@/atoms/audio-url.atom'
+import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
+import { audioLoopAtom } from '@/atoms/audio-loop.atom'
 
-export default function PlayerComponent () {
+const propTypes = {
+    'url': PropTypes.string.isRequired,
+}
+
+/**
+ * @function
+ * @name PlayerComponent
+ * @description player: audio component
+ * @param url {string} - audio URL to play
+ * @return {JSX.Element}
+ */
+export default function PlayerComponent ({ url }) {
 
     const ref = useRef (null)
-    const url = useRecoilValue (audioUrlAtom)
+    const audioSpeed = useRecoilValue (audioSpeedAtom)
+    const audioLoop = useRecoilValue (audioLoopAtom)
 
-    useEffect (() => {
+    /**
+     * @function
+     * @name onMount
+     * @description player: on mount
+     * @return void
+     */
+    function onMount () {
 
-        console.log (ref)
-    
-    }, [])
+        const audio = ref.current
+
+        audio.src = url
+
+        audio.load ()
+
+        audio.mozPreservesPitch = false
+
+        audio.playbackRate = audioSpeed
+
+        audio.addEventListener ('canplaythrough', () => {
+
+            audio.play ()
+
+        })
+
+    }
+
+    useEffect (onMount, [])
+
+    /**
+     * @function
+     * @name onLoopChange
+     * @description player: change auto loop when state changes
+     * @return void
+     */
+    function onLoopChange () {
+
+        const audio = ref.current
+
+        audio.loop = audioLoop
+
+    }
+
+    useEffect (onLoopChange, [audioLoop])
+
+    /**
+     * @function
+     * @name onSpeedChange
+     * @description player: change audio speed when state changes
+     */
+    function onSpeedChange () {
+
+        const audio = ref.current
+
+        audio.playbackRate = audioSpeed
+
+    }
+
+    useEffect (onSpeedChange, [audioSpeed])
+
+    /**
+     * @function
+     * @name onKeyboard
+     * @description player: on keyboard events
+     * @return {function(): void} remove event listener (useEffect)
+     */
+    function onKeyboard () {
+
+        function listener (event) {
+
+            if (event.code === 'Space') {
+
+                const audio = ref.current
+
+                if (audio.paused) {
+
+                    audio.play ()
+
+                } else {
+
+                    audio.pause ()
+
+                }
+
+            }
+
+        }
+
+        document.addEventListener ('keydown', listener)
+
+        return () => document.removeEventListener ('keydown', listener)
+
+    }
+
+    useEffect (onKeyboard, [])
 
     return (
         <>
-            <audio className="w-100" ref={ref} controls>
+            <audio
+                ref={ref}
+                controls
+            >
                 <track kind="captions"/>
             </audio>
         </>
     )
 
 }
+
+PlayerComponent.propTypes = propTypes
