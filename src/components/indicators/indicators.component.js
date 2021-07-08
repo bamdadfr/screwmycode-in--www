@@ -5,6 +5,12 @@ import speedToSemitones from 'speed-to-semitones'
 import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
 import { StyledContainer } from './indicators.styles'
 
+/**
+ * @function
+ * @name IndicatorsComponent
+ * @description indicators
+ * @returns {React.ReactNode} - react component
+ */
 export default function IndicatorsComponent () {
 
     const speed = useRecoilValue (audioSpeedAtom)

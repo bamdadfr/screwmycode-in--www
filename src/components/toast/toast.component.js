@@ -1,14 +1,14 @@
 import React from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import styled from 'styled-components'
+import { StyledContainer } from './toast.styles'
 
-const StyledContainer = styled.div`
-    & > div > div > div {
-        background-color: black;
-    }
-`
-
+/**
+ * @function
+ * @name ToastComponent
+ * @description toast
+ * @returns {React.ReactNode} - react component
+ */
 export default function ToastComponent () {
 
     return (

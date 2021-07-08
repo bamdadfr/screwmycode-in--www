@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
-import { SendToastUtils } from '@/utils/send-toast.utils'
 import { useRecoilState } from 'recoil'
 import { audioLoopAtom } from '@/atoms/audio-loop.atom'
-import { IconQuestion, IconToggle, IconLoop } from './layout-header.icons'
+import Link from 'next/link'
+import { IconToggle, IconLoop, IconHome } from './layout-header.icons'
 import { StyledContainer } from './layout-header.styles'
 
+/**
+ * @function
+ * @name LayoutHeaderComponent
+ * @description layout: header component
+ * @returns {React.ReactNode} - react component
+ */
 export default function LayoutHeaderComponent () {
 
     const [visible, setVisible] = useState (true)
@@ -14,13 +20,18 @@ export default function LayoutHeaderComponent () {
     return (
         <>
             <StyledContainer>
+                <Link href="/">
+                    <a>
+                        <IconHome/>
+                    </a>
+                </Link>
                 <span
-                    onClick={() => SendToastUtils ('FAQ coming soon')}
+                    onClick={() => setAudioLoop (!audioLoop)}
                     onKeyDown={() => undefined}
                     role="button"
                     tabIndex={-1}
                 >
-                    <IconQuestion/>
+                    {audioLoop ? <IconLoop.On/> : <IconLoop.Off/>}
                 </span>
                 <span
                     onClick={() => onClick ()}
@@ -29,14 +40,6 @@ export default function LayoutHeaderComponent () {
                     tabIndex={-1}
                 >
                     {visible ? <IconToggle.On/> : <IconToggle.Off/>}
-                </span>
-                <span
-                    onClick={() => setAudioLoop (!audioLoop)}
-                    onKeyDown={() => undefined}
-                    role="button"
-                    tabIndex={-1}
-                >
-                    {audioLoop ? <IconLoop.On/> : <IconLoop.Off/>}
                 </span>
             </StyledContainer>
         </>

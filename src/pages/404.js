@@ -1,11 +1,22 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
+/**
+ * @function
+ * @name NotFoundPage
+ * @description /404
+ * @returns {React.ReactNode} - react component
+ */
 export default function NotFoundPage () {
 
     const router = useRouter ()
 
-    useEffect (() => {
+    /**
+     * @function
+     * @name autoRedirectHome
+     * @description set up automatic redirection to home after delay
+     */
+    function autoRedirectHome () {
 
         setTimeout (async () => {
 
@@ -13,7 +24,9 @@ export default function NotFoundPage () {
 
         }, 2000)
 
-    }, [])
+    }
+
+    useEffect (autoRedirectHome, [])
 
     return (
         <>

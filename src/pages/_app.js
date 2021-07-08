@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import React from 'react'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'

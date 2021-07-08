@@ -1,7 +1,7 @@
 /**
  * @name MetaData
  * @description data feeding the `layout-head` component
- * @type {array.<object.<string, string>>}
+ * @type {object<string, string>[]} - meta data
  */
 export const MetaData = [
     {

@@ -9,6 +9,15 @@ import PlayerComponent from '@/components/player/player.component'
 import axios from 'axios'
 import { StyledContainer } from '../../pages-styles/youtube/[id].styles'
 
+/**
+ * @function
+ * @name YoutubeIdPage
+ * @description /youtube/:id
+ * @param {*} props - react component props
+ * @param {string} props.title - title corresponding to the current youtube id
+ * @param {string} props.url - audio corresponding to the current youtube id
+ * @returns {React.ReactNode} - react component
+ */
 export default function YoutubeIdPage ({ title, url }) {
 
     return (
@@ -24,6 +33,13 @@ export default function YoutubeIdPage ({ title, url }) {
 
 }
 
+/**
+ * @function
+ * @name getServerSideProps
+ * @description next.js convention
+ * @param {*} context - next.js context
+ * @returns {*} - props to feed the above component
+ */
 export async function getServerSideProps (context) {
 
     const { id } = context.params

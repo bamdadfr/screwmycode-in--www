@@ -12,8 +12,8 @@ const propTypes = {
  * @function
  * @name PlayerComponent
  * @description player: audio component
- * @param url {string} - audio URL to play
- * @return {JSX.Element}
+ * @param {string} url - audio URL to play
+ * @returns {React.ReactNode} - react component
  */
 export default function PlayerComponent ({ url }) {
 
@@ -25,7 +25,6 @@ export default function PlayerComponent ({ url }) {
      * @function
      * @name onMount
      * @description player: on mount
-     * @return void
      */
     function onMount () {
 
@@ -38,6 +37,8 @@ export default function PlayerComponent ({ url }) {
         audio.mozPreservesPitch = false
 
         audio.playbackRate = audioSpeed
+
+        audio.volume = 0
 
         audio.addEventListener ('canplaythrough', () => {
 
@@ -53,7 +54,6 @@ export default function PlayerComponent ({ url }) {
      * @function
      * @name onLoopChange
      * @description player: change auto loop when state changes
-     * @return void
      */
     function onLoopChange () {
 
@@ -84,11 +84,11 @@ export default function PlayerComponent ({ url }) {
      * @function
      * @name onKeyboard
      * @description player: on keyboard events
-     * @return {function(): void} remove event listener (useEffect)
+     * @returns {Function<void>} - remove event listener (useEffect)
      */
     function onKeyboard () {
 
-        function listener (event) {
+        const listener = (event) => {
 
             if (event.code === 'Space') {
 

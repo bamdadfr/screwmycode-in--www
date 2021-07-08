@@ -3,10 +3,23 @@ import { useRecoilState } from 'recoil'
 import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
 import { StyledSlider, StyledContainer } from './slider.styles'
 
+/**
+ * @function
+ * @name SliderComponent
+ * @description component: slider
+ * @returns {React.ReactNode} - react component
+ */
 export default function SliderComponent () {
 
     const [speed, setSpeed] = useRecoilState (audioSpeedAtom)
 
+    /**
+     * @function
+     * @name onChange
+     * @description handle when slider value is changed
+     * @param {string} value - value coming from DOM as string
+     * @returns {React.ComponentState} - react component state (actually recoil)
+     */
     function onChange (value) {
 
         const number = parseFloat (value)
