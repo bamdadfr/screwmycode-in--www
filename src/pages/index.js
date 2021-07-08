@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { GetYoutubeIdFromUrlUtils } from '@/utils/get-youtube-id-from-url.utils'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import { TitleData } from '@/data/title.data'
-import { MetaData } from '@/data/meta.data'
 import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.styles'
 
 /**
@@ -21,10 +20,32 @@ export default function IndexPage () {
      * @function
      * @name onMount
      * @description on component mount
+     * @returns {Function<void>} - clean up function
      */
     function onMount () {
 
-        inputRef.current.focus ()
+        // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
+        const inputInstance = inputRef.current
+
+        const listener = () => {
+
+            setTimeout (() => {
+
+                inputInstance.focus ()
+
+            }, 100)
+
+        }
+
+        listener ()
+
+        inputInstance.addEventListener ('blur', listener)
+
+        return () => {
+
+            inputInstance.removeEventListener ('blur', listener)
+
+        }
 
     }
 
@@ -60,16 +81,9 @@ export default function IndexPage () {
 
     return (
         <>
-            <Helmet
-                title={TitleData}
-                meta={[
-                    ...MetaData,
-                    {
-                        'property': 'og:description',
-                        'content': TitleData,
-                    },
-                ]}
-            />
+            <Head>
+                <title>{TitleData}</title>
+            </Head>
             <StyledForm onSubmit={onFormSubmit}>
                 <StyledInput
                     placeholder="insert youtube link here"

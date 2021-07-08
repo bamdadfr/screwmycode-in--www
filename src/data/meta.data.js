@@ -1,10 +1,10 @@
-import { TitleData } from '@/data/title.data'
-
 /**
  * @name MetaData
  * @description data feeding the `layout-head` component
  * @type {object<string, string>[]} - meta data
  */
+import { TitleData } from '@/data/title.data'
+
 export const MetaData = [
     {
         'name': 'viewport',

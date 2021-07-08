@@ -1,60 +1,18 @@
 // http://localhost:3000/youtube/gNUClEERcXI
 // https://www.youtube.com/watch?v=gNUClEERcXI
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IsYoutubeIdValidUtils } from '@/utils/is-youtube-id-valid.utils'
 import IndicatorsComponent from '@/components/indicators/indicators.component'
 import SliderComponent from '@/components/slider/slider.component'
 import PlayerComponent from '@/components/player/player.component'
 import axios from 'axios'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useRecoilState } from 'recoil'
+import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
 import { TitleData } from '@/data/title.data'
-import { Helmet } from 'react-helmet'
-import { MetaData } from '@/data/meta.data'
 import { StyledContainer, StyledTitle } from '../../pages-styles/youtube/[id].styles'
-
-/**
- * @function
- * @name YoutubeIdPage
- * @description /youtube/:id
- * @param {*} props - react component props
- * @param {string} props.title - title corresponding to the current youtube id
- * @param {string} props.url - audio corresponding to the current youtube id
- * @returns {React.ReactNode} - react component
- */
-export default function YoutubeIdPage ({ title, url }) {
-
-    const windowTitle = `${title} - speed - ${TitleData}`
-
-    return (
-        <>
-            <Head>
-                <title>
-                    {windowTitle}
-                </title>
-            </Head>
-            <Helmet
-                title={windowTitle}
-                meta={[
-                    ...MetaData,
-                    {
-                        'property': 'og:description',
-                        'content': windowTitle,
-                    },
-                ]}
-            />
-            <StyledContainer>
-                <StyledTitle>
-                    {title}
-                </StyledTitle>
-                <PlayerComponent url={url}/>
-                <IndicatorsComponent/>
-                <SliderComponent/>
-            </StyledContainer>
-        </>
-    )
-
-}
 
 /**
  * @function
@@ -89,5 +47,75 @@ export async function getServerSideProps (context) {
             url,
         },
     }
+
+}
+
+/**
+ * @function
+ * @name YoutubeIdPage
+ * @description /youtube/:id
+ * @param {*} props - react component props
+ * @param {string} props.title - title corresponding to the current youtube id
+ * @param {string} props.url - audio corresponding to the current youtube id
+ * @returns {React.ReactNode} - react component
+ */
+export default function YoutubeIdPage ({ title, url }) {
+
+    const router = useRouter ()
+    const [speed, setSpeed] = useRecoilState (audioSpeedAtom)
+
+    /**
+     * @function
+     * @name onMount
+     * @description on mount: get query parameters and apply to state
+     */
+    function onMount () {
+
+        if (router.query.speed) {
+
+            let querySpeed = parseFloat (router.query.speed)
+
+            if (querySpeed < 0.5) querySpeed = 0.5
+
+            if (querySpeed > 1.5) querySpeed = 1.5
+
+            setSpeed (querySpeed)
+
+        }
+
+    }
+
+    useEffect (onMount, [])
+
+    /**
+     * @function
+     * @name onSpeedChange
+     * @description change url query parameter on speed change
+     */
+    async function onSpeedChange () {
+
+        await router.replace (`/youtube/${router.query.id}?speed=${speed}`, undefined, { 'shallow': true })
+
+    }
+
+    useEffect (onSpeedChange, [speed])
+
+    return (
+        <>
+            <Head>
+                <title>
+                    {`${title} - ${speed} - ${TitleData}`}
+                </title>
+            </Head>
+            <StyledContainer>
+                <StyledTitle>
+                    {title}
+                </StyledTitle>
+                <PlayerComponent url={url}/>
+                <IndicatorsComponent/>
+                <SliderComponent/>
+            </StyledContainer>
+        </>
+    )
 
 }

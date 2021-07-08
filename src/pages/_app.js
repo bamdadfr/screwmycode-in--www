@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
 import 'sass-reset'
@@ -9,8 +9,22 @@ import { GlobalStyles } from '@/styles/global.styles'
 import { Helmet } from 'react-helmet'
 import { MetaData } from '@/data/meta.data'
 import { TitleData } from '@/data/title.data'
+import { isFirefox } from 'react-device-detect'
+import { useRouter } from 'next/router'
 
 export default function MyApp ({ Component, pageProps, err }) {
+
+    const router = useRouter ()
+
+    useEffect (async () => {
+
+        if (!isFirefox) {
+
+            await router.push ('/firefox')
+
+        }
+
+    }, [router.route])
 
     return (
         <>

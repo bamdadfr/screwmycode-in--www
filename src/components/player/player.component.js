@@ -39,8 +39,6 @@ export default function PlayerComponent ({ url }) {
 
         audio.playbackRate = audioSpeed
 
-        audio.volume = 0
-
         audio.addEventListener ('canplaythrough', () => {
 
             audio.play ()
