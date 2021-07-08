@@ -1,4 +1,6 @@
 import React from 'react'
+import Head from 'next/head'
+import { TitleData } from '@/data/title.data'
 import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
 
 /**
@@ -11,6 +13,9 @@ export default function FirefoxPage () {
 
     return (
         <>
+            <Head>
+                <title>{TitleData}</title>
+            </Head>
             <StyledContainer>
                 <div>
                     available only for firefox
