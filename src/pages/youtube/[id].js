@@ -7,7 +7,11 @@ import IndicatorsComponent from '@/components/indicators/indicators.component'
 import SliderComponent from '@/components/slider/slider.component'
 import PlayerComponent from '@/components/player/player.component'
 import axios from 'axios'
-import { StyledContainer } from '../../pages-styles/youtube/[id].styles'
+import Head from 'next/head'
+import { TitleData } from '@/data/title.data'
+import { Helmet } from 'react-helmet'
+import { MetaData } from '@/data/meta.data'
+import { StyledContainer, StyledTitle } from '../../pages-styles/youtube/[id].styles'
 
 /**
  * @function
@@ -20,10 +24,29 @@ import { StyledContainer } from '../../pages-styles/youtube/[id].styles'
  */
 export default function YoutubeIdPage ({ title, url }) {
 
+    const windowTitle = `${title} - speed - ${TitleData}`
+
     return (
         <>
+            <Head>
+                <title>
+                    {windowTitle}
+                </title>
+            </Head>
+            <Helmet
+                title={windowTitle}
+                meta={[
+                    ...MetaData,
+                    {
+                        'property': 'og:description',
+                        'content': windowTitle,
+                    },
+                ]}
+            />
             <StyledContainer>
-                {title}
+                <StyledTitle>
+                    {title}
+                </StyledTitle>
                 <PlayerComponent url={url}/>
                 <IndicatorsComponent/>
                 <SliderComponent/>

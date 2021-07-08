@@ -1,3 +1,5 @@
+import { TitleData } from '@/data/title.data'
+
 /**
  * @name MetaData
  * @description data feeding the `layout-head` component
@@ -10,7 +12,7 @@ export const MetaData = [
     },
     {
         'property': 'og:title',
-        'content': 'screwmycode.in',
+        'content': TitleData,
     },
     {
         'property': 'og:image',

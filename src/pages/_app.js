@@ -8,6 +8,7 @@ import { ThemeStyles } from '@/styles/theme.styles'
 import { GlobalStyles } from '@/styles/global.styles'
 import { Helmet } from 'react-helmet'
 import { MetaData } from '@/data/meta.data'
+import { TitleData } from '@/data/title.data'
 
 export default function MyApp ({ Component, pageProps, err }) {
 
@@ -16,7 +17,7 @@ export default function MyApp ({ Component, pageProps, err }) {
             <RecoilRoot>
                 <Helmet
                     htmlAttributes={{ 'lang': 'en' }}
-                    title="Screwmycode.in"
+                    title={TitleData}
                     meta={[
                         ...MetaData,
                     ]}

@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { GetYoutubeIdFromUrlUtils } from '@/utils/get-youtube-id-from-url.utils'
+import { Helmet } from 'react-helmet'
+import { TitleData } from '@/data/title.data'
+import { MetaData } from '@/data/meta.data'
 import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.styles'
 
 /**
@@ -57,6 +60,16 @@ export default function IndexPage () {
 
     return (
         <>
+            <Helmet
+                title={TitleData}
+                meta={[
+                    ...MetaData,
+                    {
+                        'property': 'og:description',
+                        'content': TitleData,
+                    },
+                ]}
+            />
             <StyledForm onSubmit={onFormSubmit}>
                 <StyledInput
                     placeholder="insert youtube link here"

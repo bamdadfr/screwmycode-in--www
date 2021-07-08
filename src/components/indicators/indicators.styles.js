@@ -22,4 +22,8 @@ export const StyledContainer = styled.div`
             background: transparent;
         }
     }
+
+    * {
+        user-select: none;
+    }
 `

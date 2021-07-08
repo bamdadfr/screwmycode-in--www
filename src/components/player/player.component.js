@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useRecoilValue } from 'recoil'
 import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
 import { audioLoopAtom } from '@/atoms/audio-loop.atom'
+import { StyledContainer } from './player.styles'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
@@ -118,12 +119,14 @@ export default function PlayerComponent ({ url }) {
 
     return (
         <>
-            <audio
-                ref={ref}
-                controls
-            >
-                <track kind="captions"/>
-            </audio>
+            <StyledContainer>
+                <audio
+                    ref={ref}
+                    controls
+                >
+                    <track kind="captions"/>
+                </audio>
+            </StyledContainer>
         </>
     )
 
