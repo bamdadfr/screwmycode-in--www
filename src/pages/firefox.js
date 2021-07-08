@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { TitleData } from '@/data/title.data'
 import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
 
 /**
@@ -11,10 +10,11 @@ import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
  */
 export default function FirefoxPage () {
 
+    // noinspection HtmlRequiredTitleElement
     return (
         <>
             <Head>
-                <title>{TitleData}</title>
+                <meta property="og:description" content="available only for firefox"/>
             </Head>
             <StyledContainer>
                 <div>

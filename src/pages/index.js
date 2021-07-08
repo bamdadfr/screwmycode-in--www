@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { GetYoutubeIdFromUrlUtils } from '@/utils/get-youtube-id-from-url.utils'
-import Head from 'next/head'
-import { TitleData } from '@/data/title.data'
 import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.styles'
 
 /**
@@ -81,9 +79,6 @@ export default function IndexPage () {
 
     return (
         <>
-            <Head>
-                <title>{TitleData}</title>
-            </Head>
             <StyledForm onSubmit={onFormSubmit}>
                 <StyledInput
                     placeholder="insert youtube link here"

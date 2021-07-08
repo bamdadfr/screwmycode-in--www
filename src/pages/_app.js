@@ -6,11 +6,10 @@ import 'sass-reset'
 import LayoutComponent from '@/components/layout/layout.component'
 import { ThemeStyles } from '@/styles/theme.styles'
 import { GlobalStyles } from '@/styles/global.styles'
-import { Helmet } from 'react-helmet'
-import { MetaData } from '@/data/meta.data'
 import { TitleData } from '@/data/title.data'
 import { isFirefox } from 'react-device-detect'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 export default function MyApp ({ Component, pageProps, err }) {
 
@@ -29,13 +28,13 @@ export default function MyApp ({ Component, pageProps, err }) {
     return (
         <>
             <RecoilRoot>
-                <Helmet
-                    htmlAttributes={{ 'lang': 'en' }}
-                    title={TitleData}
-                    meta={[
-                        ...MetaData,
-                    ]}
-                />
+                <Head>
+                    <title>
+                        {TitleData}
+                    </title>
+                    <meta property="viewport" content="width=device-width, initial-scale=1"/>
+                    <meta property="og:title" content={TitleData}/>
+                </Head>
                 <GlobalStyles/>
                 <ThemeProvider theme={ThemeStyles}>
                     <LayoutComponent>

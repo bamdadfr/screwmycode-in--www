@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 /**
  * @function
@@ -28,8 +29,13 @@ export default function NotFoundPage () {
 
     useEffect (autoRedirectHome, [])
 
+    // noinspection HtmlRequiredTitleElement
     return (
         <>
+            <Head>
+                <meta property="og:title" content="404"/>
+                <meta property="og:description" content="page not found"/>
+            </Head>
             Page not found, redirecting to home...
         </>
     )
