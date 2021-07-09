@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-
+    
     color: ${props => props.theme.colors.white};
     background: black;
 `
