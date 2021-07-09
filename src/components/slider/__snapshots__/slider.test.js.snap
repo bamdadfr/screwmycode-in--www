@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SliderComponent should match snapshot 1`] = `
+<div
+  className="sc-16smwuf-0 fZLvfl"
+>
+  <input
+    className="sc-16smwuf-1 iKuXsy"
+    max={1.5}
+    min={0.5}
+    onChange={[Function]}
+    step={0.005}
+    type="range"
+    value={1}
+  />
+</div>
+`;
