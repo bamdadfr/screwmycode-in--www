@@ -11,7 +11,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
 import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
-import { TitleData } from '@/data/title.data'
 import { StyledContainer, StyledTitle } from '../../pages-styles/youtube/[id].styles'
 
 /**
@@ -100,7 +99,7 @@ export default function YoutubeIdPage ({ title, url }) {
 
     useEffect (onSpeedChange, [speed])
 
-    const pageTitle = `${title} - ${speed} - ${TitleData}`
+    const pageTitle = `${title} - ${speed} - ScrewMyCode.In`
 
     return (
         <>
@@ -108,7 +107,6 @@ export default function YoutubeIdPage ({ title, url }) {
                 <title>
                     {pageTitle}
                 </title>
-                <meta property="og:title" content={TitleData}/>
                 <meta property="og:description" content={pageTitle}/>
             </Head>
             <StyledContainer>

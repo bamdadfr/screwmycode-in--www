@@ -6,7 +6,6 @@ import 'sass-reset'
 import LayoutComponent from '@/components/layout/layout.component'
 import { ThemeStyles } from '@/styles/theme.styles'
 import { GlobalStyles } from '@/styles/global.styles'
-import { TitleData } from '@/data/title.data'
 import { isFirefox } from 'react-device-detect'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -30,10 +29,10 @@ export default function MyApp ({ Component, pageProps, err }) {
             <RecoilRoot>
                 <Head>
                     <title>
-                        {TitleData}
+                        ScrewMyCode.In
                     </title>
                     <meta property="viewport" content="width=device-width, initial-scale=1"/>
-                    <meta property="og:title" content={TitleData}/>
+                    <meta property="og:title" content="ScrewMyCode.In"/>
                 </Head>
                 <GlobalStyles/>
                 <ThemeProvider theme={ThemeStyles}>
