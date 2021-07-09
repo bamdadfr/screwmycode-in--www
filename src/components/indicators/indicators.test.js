@@ -1,29 +1,42 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import { JestWrapper } from '../../../jest/jest-wrapper'
 import IndicatorsComponent from './indicators.component'
 
-describe ('IndicatorsComponent', () => {
+const instance = () => render (JestWrapper (<IndicatorsComponent/>))
 
-    const Component = <IndicatorsComponent/>
-    const instance = renderer.create (JestWrapper (Component)).toJSON ()
+test ('percentage title', () => {
 
-    it ('should match snapshot', () => {
+    const { getByLabelText } = instance ()
+    const el = getByLabelText ('percentage title')
 
-        expect (instance).toMatchSnapshot ()
+    expect (el).toHaveTextContent ('percent')
 
-    })
+})
 
-    it ('should have a className', () => {
+test ('percentage value', () => {
 
-        expect (instance.props.className).toBeDefined ()
+    const { getByLabelText } = instance ()
+    const el = getByLabelText ('percentage value')
 
-    })
+    expect (el).toHaveTextContent ('0.0')
 
-    it ('should have 2 children', () => {
+})
 
-        expect (instance.children).toHaveLength (2)
+test ('semitones title', () => {
 
-    })
+    const { getByLabelText } = instance ()
+    const el = getByLabelText ('semitones title')
+
+    expect (el).toHaveTextContent ('semitone')
+
+})
+
+test ('semitones value', () => {
+
+    const { getByLabelText } = instance ()
+    const el = getByLabelText ('semitones value')
+
+    expect (el).toHaveTextContent ('0.0')
 
 })

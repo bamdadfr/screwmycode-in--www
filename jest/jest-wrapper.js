@@ -7,8 +7,8 @@ import { ThemeStyles } from '../src/styles/theme.styles'
  * @function
  * @name JestWrapper
  * @description jest: wrapper with recoil and styled-components for tests
- * @param {React.ReactNode} Component - react sub component
- * @returns {React.ReactNode} - react component
+ * @param {React.ReactElement} Component - react sub component
+ * @returns {React.ReactElement} - react component
  */
 export function JestWrapper (Component) {
 

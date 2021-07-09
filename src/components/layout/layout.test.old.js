@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 import LayoutMetaComponent from '../layout-meta/layout-meta.component'
-import LayoutHeaderComponent from '../layout-header/layout-header.component'
+import LayoutMenuComponent from '../../layout/menu/layout-menu.component'
 import ToastComponent from '../toast/toast.component'
 import LayoutComponent from './layout.component'
 import { JestWrapper } from '../../../jest/jest-wrapper'
@@ -40,7 +40,7 @@ describe ('LayoutComponent', () => {
 
     it ('should contain LayoutHeaderComponent', () => {
 
-        expect (unit.find (LayoutHeaderComponent)).toHaveLength (1)
+        expect (unit.find (LayoutMenuComponent)).toHaveLength (1)
 
     })
 

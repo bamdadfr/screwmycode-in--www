@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import LayoutMetaComponent from '../layout-meta/layout-meta.component'
 import LayoutMainComponent from '../layout-main/layout-main.component'
-import LayoutHeaderComponent from '../layout-header/layout-header.component'
+import LayoutMenuComponent from '../../layout/menu/layout-menu.component'
 import ToastComponent from '../toast/toast.component'
 
 const propTypes = {
-    'children': PropTypes.node.isRequired,
+    'children': PropTypes.element.isRequired,
 }
 
 /**
@@ -20,8 +20,10 @@ export default function LayoutComponent ({ children }) {
 
     return (
         <>
-            <LayoutMetaComponent/>
-            <LayoutHeaderComponent/>
+            <LayoutMetaComponent
+                aria-label="test"
+            />
+            <LayoutMenuComponent/>
             <ToastComponent/>
             <LayoutMainComponent>
                 {children}

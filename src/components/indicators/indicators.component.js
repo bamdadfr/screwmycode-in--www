@@ -3,13 +3,13 @@ import { useRecoilValue } from 'recoil'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
 import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
-import { StyledContainer } from './indicators.styles'
+import { StyledContainer, StyledTitle, StyledValue } from './indicators.styles'
 
 /**
  * @function
  * @name IndicatorsComponent
  * @description indicators
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react element
  */
 export default function IndicatorsComponent () {
 
@@ -19,20 +19,28 @@ export default function IndicatorsComponent () {
         <>
             <StyledContainer>
                 <div>
-                    percent
-                    <input
-                        disabled
-                        type="text"
-                        value={speedToPercentage (speed, 1)}
-                    />
+                    <StyledTitle
+                        aria-label="percentage title"
+                    >
+                        percent
+                    </StyledTitle>
+                    <StyledValue
+                        aria-label="percentage value"
+                    >
+                        {speedToPercentage (speed, 1).toString ()}
+                    </StyledValue>
                 </div>
                 <div>
-                    semitone
-                    <input
-                        disabled
-                        type="text"
-                        value={speedToSemitones (speed, 1)}
-                    />
+                    <StyledTitle
+                        aria-label="semitones title"
+                    >
+                        semitone
+                    </StyledTitle>
+                    <StyledValue
+                        aria-label="semitones value"
+                    >
+                        {speedToSemitones (speed, 1).toString ()}
+                    </StyledValue>
                 </div>
             </StyledContainer>
         </>
