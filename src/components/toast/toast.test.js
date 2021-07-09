@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ToastComponent from '@/components/toast/toast.component'
+import ToastComponent from './toast.component'
 
 describe ('ToastComponent', () => {
 
@@ -10,13 +10,13 @@ describe ('ToastComponent', () => {
     it ('should match snapshot', () => {
 
         expect (instance).toMatchSnapshot ()
-    
+
     })
 
     it ('should have 1 children', () => {
 
         expect (instance.children).toHaveLength (1)
-    
+
     })
 
 })

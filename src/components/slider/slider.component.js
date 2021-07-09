@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
-import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
+import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
 import { StyledSlider, StyledContainer } from './slider.styles'
 
 /**

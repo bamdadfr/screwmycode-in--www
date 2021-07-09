@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useRecoilValue } from 'recoil'
-import { audioSpeedAtom } from '@/atoms/audio-speed.atom'
-import { audioLoopAtom } from '@/atoms/audio-loop.atom'
+import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
+import { audioLoopAtom } from '../../atoms/audio-loop.atom'
 import { StyledContainer } from './player.styles'
 
 const propTypes = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
-import { audioLoopAtom } from '@/atoms/audio-loop.atom'
 import Link from 'next/link'
+import { audioLoopAtom } from '../../atoms/audio-loop.atom'
 import { IconLoop, IconHome } from './layout-header.icons'
 import { StyledContainer } from './layout-header.styles'
 

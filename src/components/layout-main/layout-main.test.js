@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import LayoutMainComponent from '@/components/layout-main/layout-main.component'
+import LayoutMainComponent from './layout-main.component'
 import { JestWrapper } from '../../../jest/jest-wrapper'
 import { JestChildren } from '../../../jest/jest-children'
 

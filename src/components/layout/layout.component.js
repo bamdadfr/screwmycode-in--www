@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LayoutMetaComponent from '@/components/layout-meta/layout-meta.component'
-import LayoutMainComponent from '@/components/layout-main/layout-main.component'
-import LayoutHeaderComponent from '@/components/layout-header/layout-header.component'
-import ToastComponent from '@/components/toast/toast.component'
+import LayoutMetaComponent from '../layout-meta/layout-meta.component'
+import LayoutMainComponent from '../layout-main/layout-main.component'
+import LayoutHeaderComponent from '../layout-header/layout-header.component'
+import ToastComponent from '../toast/toast.component'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,

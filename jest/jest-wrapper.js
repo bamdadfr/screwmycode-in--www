@@ -1,7 +1,7 @@
 import React from 'react'
 import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
-import { ThemeStyles } from '@/styles/theme.styles'
+import { ThemeStyles } from '../src/styles/theme.styles'
 
 /**
  * @function

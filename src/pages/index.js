@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { GetYoutubeIdFromUrlUtils } from '@/utils/get-youtube-id-from-url.utils'
+import { GetYoutubeIdFromUrlUtils } from '../utils/get-youtube-id-from-url.utils'
 import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.styles'
 
 /**

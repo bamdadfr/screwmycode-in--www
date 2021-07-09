@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import LayoutMetaComponent from '@/components/layout-meta/layout-meta.component'
+import LayoutMetaComponent from './layout-meta.component'
 
 describe ('LayoutMetaComponent', () => {
 

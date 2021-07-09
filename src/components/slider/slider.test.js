@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import SliderComponent from '@/components/slider/slider.component'
+import SliderComponent from './slider.component'
 import { JestWrapper } from '../../../jest/jest-wrapper'
 
 describe ('SliderComponent', () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import LayoutHeaderComponent from '@/components/layout-header/layout-header.component'
+import LayoutHeaderComponent from './layout-header.component'
 import { JestWrapper } from '../../../jest/jest-wrapper'
 
 describe ('LayoutHeaderComponent', () => {

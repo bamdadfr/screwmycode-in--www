@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import PlayerComponent from '@/components/player/player.component'
+import PlayerComponent from './player.component'
 import { JestWrapper } from '../../../jest/jest-wrapper'
 
 describe ('PlayerComponent', () => {
