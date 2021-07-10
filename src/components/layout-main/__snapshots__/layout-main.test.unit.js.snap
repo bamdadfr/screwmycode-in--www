@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should mount and match 1`] = `
+<div
+  className="sc-485y6x-0 gfBQpP"
+>
+  <div
+    className="sc-485y6x-1 iSMMqR"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      screwmycode.in
+    </a>
+  </div>
+  <span>
+    children
+  </span>
+  <span>
+    children
+  </span>
+  <span>
+    children
+  </span>
+</div>
+`;
