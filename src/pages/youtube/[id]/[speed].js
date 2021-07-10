@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -29,6 +29,7 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
     const router = useRouter ()
     const [speed, setSpeed] = useRecoilState (speedAtom)
+    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
 
     /**
      * @function
@@ -52,13 +53,17 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
      */
     async function onSpeedChange () {
 
-        await router.replace (`/youtube/${router.query.id}/${speed}`, undefined, { 'shallow': true })
+        setDescription (`${title} - ${speed} - ScrewMyCode.In`)
+
+        await router.replace (
+            `/youtube/${router.query.id}/${speed}`,
+            undefined,
+            { 'shallow': true },
+        )
 
     }
 
     useEffect (onSpeedChange, [speed])
-
-    const description = `${title} - ${speed} - ScrewMyCode.In`
 
     return (
         <>
