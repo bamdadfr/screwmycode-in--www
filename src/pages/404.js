@@ -6,7 +6,7 @@ import Head from 'next/head'
  * @function
  * @name NotFoundPage
  * @description /404
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function NotFoundPage () {
 

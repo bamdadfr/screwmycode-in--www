@@ -6,7 +6,7 @@ import Image from 'next/image'
  * @function
  * @name SendToastUtils
  * @description wrapper for sending toast notifications
- * @param {React.ReactNode} payload - some HTML|JSX to render
+ * @param {React.ReactElement} payload - some HTML|JSX to render
  * @returns {void}
  */
 export function SendToastUtils (payload) {

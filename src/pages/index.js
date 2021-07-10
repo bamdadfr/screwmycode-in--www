@@ -7,7 +7,7 @@ import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.sty
  * @function
  * @name IndexPage
  * @description /
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function IndexPage () {
 

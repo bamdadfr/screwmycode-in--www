@@ -7,7 +7,7 @@ import { StyledSlider, StyledContainer } from './slider.styles'
  * @function
  * @name SliderComponent
  * @description component: slider
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function SliderComponent () {
 

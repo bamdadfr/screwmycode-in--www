@@ -56,7 +56,7 @@ export async function getServerSideProps (context) {
  * @param {*} props - react component props
  * @param {string} props.title - title corresponding to the current youtube id
  * @param {string} props.url - audio corresponding to the current youtube id
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function YoutubeIdPage ({ title, url }) {
 

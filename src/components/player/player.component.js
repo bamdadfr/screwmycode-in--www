@@ -14,7 +14,7 @@ const propTypes = {
  * @name PlayerComponent
  * @description player: audio component
  * @param {string} url - audio URL to play
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function PlayerComponent ({ url }) {
 

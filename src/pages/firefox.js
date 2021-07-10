@@ -6,7 +6,7 @@ import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
  * @function
  * @name FirefoxPage
  * @description page: /firefox
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function FirefoxPage () {
 

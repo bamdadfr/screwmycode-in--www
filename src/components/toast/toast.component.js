@@ -7,7 +7,7 @@ import { StyledContainer } from './toast.styles'
  * @function
  * @name ToastComponent
  * @description toast
- * @returns {React.ReactNode} - react component
+ * @returns {React.ReactElement} - react component
  */
 export default function ToastComponent () {
 
