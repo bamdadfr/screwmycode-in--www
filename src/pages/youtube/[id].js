@@ -1,6 +1,3 @@
-// http://localhost:3000/youtube/gNUClEERcXI
-// https://www.youtube.com/watch?v=gNUClEERcXI
-
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
@@ -12,42 +9,6 @@ import SliderComponent from '../../components/slider/slider.component'
 import IndicatorsComponent from '../../components/indicators/indicators.component'
 import { IsYoutubeIdValidUtils } from '../../utils/is-youtube-id-valid.utils'
 import { StyledContainer, StyledTitle } from '../../pages-styles/youtube/[id].styles'
-
-/**
- * @function
- * @name getServerSideProps
- * @description next.js convention
- * @param {*} context - next.js context
- * @returns {*} - props to feed the above component
- */
-export async function getServerSideProps (context) {
-
-    const { id } = context.params
-
-    const redirectResponse = {
-        'redirect': {
-            'destination': '/',
-            'permanent': false,
-        },
-    }
-
-    if (!IsYoutubeIdValidUtils (id)) return redirectResponse
-
-    const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`)
-    const { 'data': response } = request
-
-    if (!response.success) return redirectResponse
-
-    const { title, url } = response.data
-
-    return {
-        'props': {
-            title,
-            url,
-        },
-    }
-
-}
 
 /**
  * @function
@@ -119,5 +80,41 @@ export default function YoutubeIdPage ({ title, url }) {
             </StyledContainer>
         </>
     )
+
+}
+
+/**
+ * @function
+ * @name getServerSideProps
+ * @description next.js convention
+ * @param {*} context - next.js context
+ * @returns {*} - props to feed the above component
+ */
+export async function getServerSideProps (context) {
+
+    const { id } = context.params
+
+    const redirectResponse = {
+        'redirect': {
+            'destination': '/',
+            'permanent': false,
+        },
+    }
+
+    if (!IsYoutubeIdValidUtils (id)) return redirectResponse
+
+    const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`)
+    const { 'data': response } = request
+
+    if (!response.success) return redirectResponse
+
+    const { title, url } = response.data
+
+    return {
+        'props': {
+            title,
+            url,
+        },
+    }
 
 }
