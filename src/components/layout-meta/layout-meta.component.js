@@ -11,7 +11,6 @@ export default function LayoutMetaComponent () {
 
     const title = 'ScrewMyCode.In'
     const url = 'https://screwmycode.in'
-    const image = 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg'
 
     // noinspection HtmlRequiredTitleElement,HtmlUnknownTarget
     return (
@@ -23,17 +22,14 @@ export default function LayoutMetaComponent () {
             <title>{title}</title>
 
             <meta itemProp="name" content={title}/>
-            <meta itemProp="image" content={image}/>
 
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content={title}/>
-            <meta name="twitter:image" content={image}/>
 
             <meta property="og:site_name" content={title}/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content={url}/>
             <meta property="og:title" content={title}/>
-            <meta property="og:image" content={image}/>
 
             {/* from https://realfavicongenerator.net/ */}
             <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
