@@ -37,6 +37,7 @@ export default function SliderComponent () {
             <StyledContainer>
                 <StyledSlider
                     type="range"
+                    aria-label="slider"
                     min={0.5}
                     max={1.5}
                     step={0.005}

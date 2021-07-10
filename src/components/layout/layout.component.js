@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import LayoutMetaComponent from '../layout-meta/layout-meta.component'
 import LayoutMainComponent from '../layout-main/layout-main.component'
-import LayoutMenuComponent from '../../layout/menu/layout-menu.component'
+import LayoutHeaderComponent from '../layout-header/layout-header.component'
 import ToastComponent from '../toast/toast.component'
 
 const propTypes = {
@@ -20,10 +20,8 @@ export default function LayoutComponent ({ children }) {
 
     return (
         <>
-            <LayoutMetaComponent
-                aria-label="test"
-            />
-            <LayoutMenuComponent/>
+            <LayoutMetaComponent/>
+            <LayoutHeaderComponent/>
             <ToastComponent/>
             <LayoutMainComponent>
                 {children}

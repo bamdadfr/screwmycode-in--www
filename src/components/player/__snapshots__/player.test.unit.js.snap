@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayerComponent should match snapshot 1`] = `
+exports[`should mount and match 1`] = `
 <div
   className="sc-tf5qq8-0 eAvlQw"
 >

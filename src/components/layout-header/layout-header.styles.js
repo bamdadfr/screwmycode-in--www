@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
     font-size: 2rem;
     color: #606060;
 
-    > span {
+    > button {
         &:hover {
             color: #efefef;
             cursor: pointer;
@@ -18,8 +18,6 @@ export const StyledContainer = styled.div`
         &:not(:last-child) {
             margin-right: 7px;
         }
-
     }
-
 `
 

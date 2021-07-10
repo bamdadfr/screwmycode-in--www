@@ -2,16 +2,16 @@ import React from 'react'
 import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { audioLoopAtom } from '../../atoms/audio-loop.atom'
-import { IconLoop, IconHome } from './layout-menu.icons'
-import { StyledContainer } from './layout-menu.styles'
+import { IconLoop, IconHome } from './layout-header.icons'
+import { StyledContainer } from './layout-header.styles'
 
 /**
  * @function
- * @name LayoutMenuComponent
+ * @name LayoutHeaderComponent
  * @description layout menu component
  * @returns {React.ReactElement} - react
  */
-export default function LayoutMenuComponent () {
+export default function LayoutHeaderComponent () {
 
     const [audioLoop, setAudioLoop] = useRecoilState (audioLoopAtom)
 
@@ -19,18 +19,22 @@ export default function LayoutMenuComponent () {
         <>
             <StyledContainer>
                 <Link href="/">
-                    <a>
+                    <button
+                        type="button"
+                        aria-label="home"
+                    >
                         <IconHome/>
-                    </a>
+                    </button>
                 </Link>
-                <span
+                <button
+                    type="button"
+                    aria-label="repeat"
+                    tabIndex={-1}
                     onClick={() => setAudioLoop (!audioLoop)}
                     onKeyDown={() => undefined}
-                    role="button"
-                    tabIndex={-1}
                 >
                     {audioLoop ? <IconLoop.On/> : <IconLoop.Off/>}
-                </span>
+                </button>
             </StyledContainer>
         </>
     )

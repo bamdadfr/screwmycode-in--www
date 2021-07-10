@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LayoutMainComponent should match snapshot 1`] = `
+exports[`should mount and match 1`] = `
 <div
   className="sc-485y6x-0 gfBQpP"
 >

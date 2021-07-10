@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
 import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
-import { StyledContainer, StyledTitle, StyledValue } from './indicators.styles'
+import { StyledContainer } from './indicators.styles'
 
 /**
  * @function
@@ -19,28 +19,24 @@ export default function IndicatorsComponent () {
         <>
             <StyledContainer>
                 <div>
-                    <StyledTitle
-                        aria-label="percentage title"
-                    >
+                    <span title="percentage">
                         percent
-                    </StyledTitle>
-                    <StyledValue
+                    </span>
+                    <input
+                        disabled
                         aria-label="percentage value"
-                    >
-                        {speedToPercentage (speed, 1).toString ()}
-                    </StyledValue>
+                        value={speedToPercentage (speed, 1)}
+                    />
                 </div>
                 <div>
-                    <StyledTitle
-                        aria-label="semitones title"
-                    >
+                    <span title="semitones">
                         semitone
-                    </StyledTitle>
-                    <StyledValue
+                    </span>
+                    <input
+                        disabled
                         aria-label="semitones value"
-                    >
-                        {speedToSemitones (speed, 1).toString ()}
-                    </StyledValue>
+                        value={speedToSemitones (speed, 1).toString ()}
+                    />
                 </div>
             </StyledContainer>
         </>
