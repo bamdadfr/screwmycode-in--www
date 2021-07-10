@@ -10,6 +10,7 @@ import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
 import { IsYoutubeIdValidUtils } from '../../../utils/is-youtube-id-valid.utils'
 import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id].styles'
+import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -30,6 +31,7 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
     const router = useRouter ()
     const [speed, setSpeed] = useRecoilState (speedAtom)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
+    const [thumbnail] = useState (GetYoutubeThumbnailUtils (router.query.id))
 
     /**
      * @function
@@ -68,10 +70,18 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
     return (
         <>
             <Head>
+
                 <title>{description}</title>
+
                 <meta itemProp="description" content={description}/>
+                <meta itemProp="image" content={thumbnail}/>
+
                 <meta name="twitter:description" content={description}/>
+                <meta name="twitter:image" content={thumbnail}/>
+
                 <meta property="og:description" content={description}/>
+                <meta property="og:image" content={thumbnail}/>
+
             </Head>
             <StyledContainer>
                 <StyledTitle>
