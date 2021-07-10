@@ -60,15 +60,15 @@ export default function YoutubeIdPage ({ title, url }) {
 
     useEffect (onSpeedChange, [speed])
 
-    const pageTitle = `${title} - ${speed} - ScrewMyCode.In`
+    const description = `${title} - ${speed} - ScrewMyCode.In`
 
     return (
         <>
             <Head>
-                <title>
-                    {pageTitle}
-                </title>
-                <meta property="og:description" content={pageTitle}/>
+                <title>{description}</title>
+                <meta itemProp="description" content={description}/>
+                <meta name="twitter:description" content={description}/>
+                <meta property="og:description" content={description}/>
             </Head>
             <StyledContainer>
                 <StyledTitle>
