@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useRecoilValue } from 'recoil'
 import FormComponent from '../components/form/form.component'
+import { speedAtom } from '../atoms/speed.atom'
 
 /**
  * @function
@@ -12,7 +14,7 @@ import FormComponent from '../components/form/form.component'
 export default function IndexPage () {
 
     const router = useRouter ()
-    const description = 'Variable speed pitch control for YouTube'
+    const speed = useRecoilValue (speedAtom)
 
     /**
      * @function
@@ -23,9 +25,11 @@ export default function IndexPage () {
      */
     async function handleForm ({ id }) {
 
-        await router.push (`/youtube/${id}`)
+        await router.replace (`/youtube/${id}/${speed}`)
 
     }
+
+    const description = 'Variable speed pitch control for YouTube'
 
     // noinspection HtmlRequiredTitleElement
     return (
