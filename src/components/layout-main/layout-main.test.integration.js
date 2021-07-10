@@ -6,11 +6,15 @@ import { JestRender } from '../../../jest/jest-render'
 
 const render = () => JestRender (<LayoutMainComponent><JestChildren/></LayoutMainComponent>)
 
+const elements = {
+    'title': () => screen.getByRole ('link', { 'name': 'screwmycode.in' }),
+}
+
 test ('title: should render', () => {
 
     render ()
 
-    const title = screen.getByRole ('link', { 'name': 'screwmycode.in' })
+    const title = elements.title ()
 
     expect (title).toBeInTheDocument ()
 

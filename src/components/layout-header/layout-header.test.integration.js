@@ -5,11 +5,16 @@ import { JestRender } from '../../../jest/jest-render'
 
 const render = () => JestRender (<LayoutHeaderComponent/>)
 
+const elements = {
+    'home': () => screen.getByRole ('button', { 'name': 'home' }),
+    'repeat': () => screen.getByRole ('button', { 'name': 'repeat' }),
+}
+
 test ('home: should render', () => {
 
     render ()
 
-    const home = screen.getByRole ('button', { 'name': 'home' })
+    const home = elements.home ()
 
     expect (home).toBeInTheDocument ()
 
@@ -23,7 +28,7 @@ test ('repeat: should render', () => {
 
     render ()
 
-    const repeat = screen.getByRole ('button', { 'name': 'repeat' })
+    const repeat = elements.repeat ()
 
     expect (repeat).toBeInTheDocument ()
 

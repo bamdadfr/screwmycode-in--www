@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
-import { GetYoutubeIdFromUrlUtils } from '../utils/get-youtube-id-from-url.utils'
-import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.styles'
+import FormComponent from '../components/form/form.component'
 
 /**
  * @function
@@ -11,67 +10,16 @@ import { StyledForm, StyledInput, StyledSubmit } from '../pages-styles/index.sty
  */
 export default function IndexPage () {
 
-    const inputRef = useRef (null)
     const router = useRouter ()
 
     /**
      * @function
-     * @name onMount
-     * @description on component mount
-     * @returns {Function<void>} - clean up function
+     * @name handleForm
+     * @description handle form
+     * @param {*} data - form data
+     * @param {string} data.id - link
      */
-    function onMount () {
-
-        // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
-        const inputInstance = inputRef.current
-
-        const listener = () => {
-
-            setTimeout (() => {
-
-                inputInstance.focus ()
-
-            }, 100)
-
-        }
-
-        listener ()
-
-        inputInstance.addEventListener ('blur', listener)
-
-        return () => {
-
-            inputInstance.removeEventListener ('blur', listener)
-
-        }
-
-    }
-
-    useEffect (onMount, [])
-
-    /**
-     * @function
-     * @name onFormSubmit
-     * @description handle when form is submitted
-     * @param {React.FormEvent} event - event when submitted
-     * @returns {Promise<void>}
-     */
-    async function onFormSubmit (event) {
-
-        event.preventDefault ()
-
-        const target = event.target[0]
-        const id = GetYoutubeIdFromUrlUtils (target.value)
-
-        if (!id) {
-
-            target.value = ''
-
-            return
-
-        }
-
-        target.blur ()
+    async function handleForm ({ id }) {
 
         await router.push (`/youtube/${id}`)
 
@@ -79,14 +27,7 @@ export default function IndexPage () {
 
     return (
         <>
-            <StyledForm onSubmit={onFormSubmit}>
-                <StyledInput
-                    placeholder="insert youtube link here"
-                    type="text"
-                    ref={inputRef}
-                />
-                <StyledSubmit type="submit" value="submit"/>
-            </StyledForm>
+            <FormComponent handleForm={handleForm}/>
         </>
     )
 

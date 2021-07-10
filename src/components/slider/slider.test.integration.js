@@ -5,13 +5,17 @@ import { JestRender } from '../../../jest/jest-render'
 
 const render = () => JestRender (<SliderComponent/>)
 
+const elements = {
+    'slider': () => screen.getByRole ('slider', {
+        'name': 'slider',
+    }),
+}
+
 test ('slider: should render', () => {
 
     render ()
 
-    const slider = screen.getByRole ('slider', {
-        'name': 'slider',
-    })
+    const slider = elements.slider ()
 
     expect (slider).toBeInTheDocument ()
 
@@ -27,9 +31,7 @@ test ('slider: should have a minimum of 0.5', () => {
 
     render ()
 
-    const slider = screen.getByRole ('slider', {
-        'name': 'slider',
-    })
+    const slider = elements.slider ()
 
     fireEvent.change (slider, {
         'target': {
@@ -53,9 +55,7 @@ test ('slider: should have a maximum of 1.5', () => {
 
     render ()
 
-    const slider = screen.getByRole ('slider', {
-        'name': 'slider',
-    })
+    const slider = elements.slider ()
 
     fireEvent.change (slider, {
         'target': {

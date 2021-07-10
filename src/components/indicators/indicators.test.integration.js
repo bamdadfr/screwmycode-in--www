@@ -5,11 +5,26 @@ import { JestRender } from '../../../jest/jest-render'
 
 const render = () => JestRender (<IndicatorsComponent/>)
 
+const elements = {
+    'percentage': {
+        'title': () => screen.getByText ('percent'),
+        'value': () => screen.getByRole ('textbox', {
+            'name': 'percentage value',
+        }),
+    },
+    'semitones': {
+        'title': () => screen.getByText ('semitone'),
+        'value': () => screen.getByRole ('textbox', {
+            'name': 'semitones value',
+        }),
+    },
+}
+
 test ('percentage: title should render', () => {
 
     render ()
 
-    const title = screen.getByText ('percent')
+    const title = elements.percentage.title ()
 
     expect (title).toBeInTheDocument ()
 
@@ -23,9 +38,7 @@ test ('percentage: value should render', () => {
 
     render ()
 
-    const value = screen.getByRole ('textbox', {
-        'name': 'percentage value',
-    })
+    const value = elements.percentage.value ()
 
     expect (value).toBeInTheDocument ()
 
@@ -41,7 +54,7 @@ test ('semitones: title should render', () => {
 
     render ()
 
-    const title = screen.getByText ('semitone')
+    const title = elements.semitones.title ()
 
     expect (title).toBeInTheDocument ()
 
@@ -55,9 +68,7 @@ test ('semitones: value should render', () => {
 
     render ()
 
-    const value = screen.getByRole ('textbox', {
-        'name': 'semitones value',
-    })
+    const value = elements.semitones.value ()
 
     expect (value).toBeInTheDocument ()
 

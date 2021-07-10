@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const StyledForm = styled.form`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
+
 export const StyledInput = styled.input`
     width: 280px;
     font-size: 1.32em;
@@ -17,11 +24,3 @@ export const StyledSubmit = styled.input`
     color: #959595;
     background: rgba(0, 0, 0, .6);
 `
-
-export const StyledForm = styled.form`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-`
-

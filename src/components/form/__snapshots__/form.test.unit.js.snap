@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should mount and match 1`] = `
+<form
+  className="sc-1forcsr-0 fRPgeZ"
+  onSubmit={[Function]}
+>
+  <input
+    className="sc-1forcsr-1 iBFTf"
+    onChange={[Function]}
+    placeholder="insert youtube link here"
+    type="text"
+    value=""
+  />
+  <input
+    className="sc-1forcsr-2 fyEvAn"
+    type="submit"
+    value="submit"
+  />
+</form>
+`;
