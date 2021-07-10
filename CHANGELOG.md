@@ -1,3 +1,60 @@
+# [1.9.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.8.11...v1.9.0) (2021-07-10)
+
+
+### Bug Fixes
+
+* **_app:** moved head data to its own file ([6848ef8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6848ef8c0d0a915f2eaeb197454c5969e547e1cc))
+* **/youtube/:id:** add default and twitter description ([4b3de60](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4b3de607171ea8cc6eff8b311ceb3825a3b9aec3))
+* **/youtube/:id:** cleaner code ([22a1f06](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/22a1f069816a853ead541d966108552606055089))
+* **/youtube/:id/:speed:** updated jsdoc ([fc44589](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fc445891c46c29b6d5875e6bac7c7775b3388cbf))
+* **commands:** renamed `jest` to `test` ([8a534b7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8a534b7ddd4dd6ca43826e933b7c1114670bef9f))
+* **components:** renamed player components ([5675fcd](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5675fcd461b72b9045e682b39d569471edb3bf7a))
+* **cra:** removed old CRA files ([34aaff0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/34aaff03c39d4c04a90a19ca3144a51e4b90086f))
+* **deps:** added yarn `eslint-config-next` ([0813517](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/0813517f40f105b872a66985292ab765f63fc861))
+* **deps:** remove unused deps ([38d3a6b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/38d3a6b130e31ed37826329357b7479a7a064bcf))
+* **doc:** better jsdoc ([35123d5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/35123d5b277e58c748368c3788bb57932f5a8182))
+* **form.test.unit:** add mocked handleForm ([532cc2a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/532cc2a04de587985e21a968e358892c67dcb886))
+* **head:** removing helmet and using head correctly ([d6c4b70](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d6c4b7021b1d55a4730da4c907b3e045c040ebd4))
+* **head:** replace helmet with head + remove title.data.js ([2398c5b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2398c5bb1e99e6abff83e7d1b429f43d4545e4aa))
+* **jest:** ignore `.next` folder ([2dd3968](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2dd3968ebf000b1eef222aa34f897303f90656b0))
+* **jest:** remove config for aliases ([317e653](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/317e653e60886967c19e711d7590c2ab744fb300))
+* **jsconfig:** abandon aliases ([11d27b6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/11d27b61514b40040b5d7a0040942d7de7f6748d))
+* **layout-head:** complete meta data ([66e2e72](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/66e2e7233134cb549b9ea686ddc14a2750ccc5e7))
+* **layout-main.styles:** remove white space ([e84d3d4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e84d3d45ef7f0521d0add58719fe536e1010ccab))
+* **layout-toast:** black background ([76b17de](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/76b17de7078240171c5e179cd4d34a0e930185b9))
+* **meta:** add dj screw image ([fb854d1](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fb854d164ec0e773c5d45efad57e9c697b070f61))
+* **meta:** move description from global to local ([6bfc7c8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6bfc7c8488ac03ffc574ed9a2a02d2be726b914d))
+* **meta:** moved image data from global to local ([fcc8b43](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fcc8b43b5692f36ff01ee56093bb680112d9d931))
+* **OldYoutubePage:** mention that page is redirecting ([490ce2f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/490ce2f68655ec241149a9dcaf9b54e4baf9ff8d))
+* **test:** add jest and test cases ([2b412e0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2b412e02cf70d25a14bea39bbdeb62f023caa368))
+* **title:** helmet title ([a2b8cc4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/a2b8cc449628dadac3450c59685aab11b6c1a383))
+* **types:** add prop-types ([c9a3323](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c9a33235f227f3a30d76dfecdc0fcd17f30783d0))
+* **wip:** small semantics improvements + better testing ([473bd31](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/473bd31fbf265c9c6e1923246aee6c25b4cf7caf))
+* **YoutubePage:** first paint gives correct description ([81a0541](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/81a0541c71e837e95805e685a14be420c4ed5d8d))
+* **YoutubePage:** rename `YoutubeIdPage` to `YoutubePage` ([0b01512](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/0b01512402d11ae702c99e3f1aeb3cbae6846676))
+
+
+### Features
+
+* **app:** adding nextjs first files ([47b40a2](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/47b40a278603efa5a71b0638ed613cd9696bc091))
+* **app:** port to `nextjs` in progress ([415917b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/415917bb3c3249d54032c5bf4754ce7ea2d580f1))
+* **app:** wip ([22a4cbf](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/22a4cbf66f590e569066a63776219fefd03929dc))
+* **app:** wip ([054f3c4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/054f3c43f6b98e24160835fa0c215881b6cdcd0e))
+* **app:** wip ([4d11831](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4d118319d152636adbf5d23503d5b1269f8c505b))
+* **app:** wip ([7aa48a4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7aa48a40e70166d747d0f116ed68827d7d413c93))
+* **audio:** testing ([f92f5d0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f92f5d07eae8e9a67bcaa97bf353404ef67f6dca))
+* **audio:** wip ([c78fb13](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c78fb136010b412db25bd495ae902469aa015d7f))
+* **deps:** remove toast because unused ([26bd39e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/26bd39e6c817104ec9a88d3ccf91fa97f2b16c55))
+* **get-youtube-thumbnail:** get youtube thumbnail from id ([3d8aa6c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3d8aa6c73fea1c195ca4bd740920b9d5a59c55c2))
+* **player:** added volume state + tests ([1d0b434](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1d0b434a7181d58b4b3618ad24312256b5d7b31b))
+* **refactor:** getting ready for next ([5f6ef97](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5f6ef9758f9c7e74a7d48c4c8df4d695e8af61b9))
+* **YoutubePage:** apply thumbnail to meta descriptions ([53a6e97](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/53a6e973a0013b70c54458cd054028bc8298913c))
+
+
+### Performance Improvements
+
+* **testing:** add unit and integration tests ([fd758fb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fd758fbc938cc10f22dd34fb5c71f9d8a0ac1dcb))
+
 ## [1.8.11](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.8.10...v1.8.11) (2021-07-05)
 
 
