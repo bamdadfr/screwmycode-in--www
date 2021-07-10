@@ -3,12 +3,18 @@ import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
+import PropTypes from 'prop-types'
 import { speedAtom } from '../../atoms/speed.atom'
 import PlayerComponent from '../../components/player/player.component'
 import SliderComponent from '../../components/slider/slider.component'
 import IndicatorsComponent from '../../components/indicators/indicators.component'
 import { IsYoutubeIdValidUtils } from '../../utils/is-youtube-id-valid.utils'
 import { StyledContainer, StyledTitle } from '../../pages-styles/youtube/[id].styles'
+
+const propTypes = {
+    'title': PropTypes.string.isRequired,
+    'url': PropTypes.string.isRequired,
+}
 
 /**
  * @function
@@ -82,6 +88,8 @@ export default function YoutubeIdPage ({ title, url }) {
     )
 
 }
+
+YoutubeIdPage.propTypes = propTypes
 
 /**
  * @function

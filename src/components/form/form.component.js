@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 import { StyledForm, StyledInput, StyledSubmit } from './form.styles'
 import { GetYoutubeIdFromUrlUtils } from '../../utils/get-youtube-id-from-url.utils'
+
+const propTypes = {
+    'handleForm': PropTypes.func.isRequired,
+}
 
 /**
  * @function
@@ -93,3 +98,5 @@ export default function FormComponent ({ handleForm }) {
     )
 
 }
+
+FormComponent.propTypes = propTypes
