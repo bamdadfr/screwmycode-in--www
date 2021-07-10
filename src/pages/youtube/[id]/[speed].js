@@ -25,7 +25,7 @@ const propTypes = {
  * @param {string} props.url - audio corresponding to the current youtube id
  * @returns {React.ReactElement} - react component
  */
-export default function YoutubeIdPage ({ title, url, 'speed': speedFromProps }) {
+export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
     const router = useRouter ()
     const [speed, setSpeed] = useRecoilState (speedAtom)
@@ -81,7 +81,7 @@ export default function YoutubeIdPage ({ title, url, 'speed': speedFromProps }) 
 
 }
 
-YoutubeIdPage.propTypes = propTypes
+YoutubePage.propTypes = propTypes
 
 /**
  * @function
