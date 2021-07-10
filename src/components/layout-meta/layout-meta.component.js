@@ -10,7 +10,6 @@ import Head from 'next/head'
 export default function LayoutMetaComponent () {
 
     const title = 'ScrewMyCode.In'
-    const description = 'Variable speed pitch control for YouTube'
     const url = 'https://screwmycode.in'
     const image = 'https://screwmycode.in/static/media/SCRW_KSET.1288b6ee.svg'
 
@@ -24,19 +23,16 @@ export default function LayoutMetaComponent () {
             <title>{title}</title>
 
             <meta itemProp="name" content={title}/>
-            <meta itemProp="description" content={description}/>
             <meta itemProp="image" content={image}/>
 
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content={title}/>
-            <meta name='twitter:description' content={description}/>
             <meta name="twitter:image" content={image}/>
 
             <meta property="og:site_name" content={title}/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content={url}/>
             <meta property="og:title" content={title}/>
-            <meta property="og:description" content={description}/>
             <meta property="og:image" content={image}/>
 
             {/* from https://realfavicongenerator.net/ */}
