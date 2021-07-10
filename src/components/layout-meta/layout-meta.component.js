@@ -11,7 +11,7 @@ export default function LayoutMetaComponent () {
 
     const title = 'ScrewMyCode.In'
     const url = 'https://screwmycode.in'
-    const image = 'https://screwmycode.in/static/media/SCRW_KSET.1288b6ee.svg'
+    const image = 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg'
 
     // noinspection HtmlRequiredTitleElement,HtmlUnknownTarget
     return (
