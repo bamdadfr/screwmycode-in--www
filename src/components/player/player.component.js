@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { speedAtom } from '../../atoms/speed.atom'
 import { repeatAtom } from '../../atoms/repeat.atom'
 import { StyledContainer } from './player.styles'
+import { volumeAtom } from '../../atoms/volume.atom'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
@@ -19,8 +20,10 @@ const propTypes = {
 export default function PlayerComponent ({ url }) {
 
     const ref = useRef (null)
-    const audioSpeed = useRecoilValue (speedAtom)
-    const audioLoop = useRecoilValue (repeatAtom)
+    const speed = useRecoilValue (speedAtom)
+    const repeat = useRecoilValue (repeatAtom)
+    const [volume, setVolume] = useRecoilState (volumeAtom)
+    const [paused, setPaused] = useState (undefined)
 
     /**
      * @function
@@ -37,13 +40,17 @@ export default function PlayerComponent ({ url }) {
 
         audio.mozPreservesPitch = false
 
-        audio.playbackRate = audioSpeed
+        audio.playbackRate = speed
 
-        audio.volume = 0 // dev
+        audio.volume = volume
 
-        audio.addEventListener ('canplaythrough', () => {
+        audio.play ()
 
-            audio.play ()
+        setPaused (audio.paused)
+
+        audio.addEventListener ('volumechange', () => {
+
+            setVolume (audio.volume)
 
         })
 
@@ -53,18 +60,18 @@ export default function PlayerComponent ({ url }) {
 
     /**
      * @function
-     * @name onLoopChange
+     * @name onRepeatChange
      * @description player: change auto loop when state changes
      */
-    function onLoopChange () {
+    function onRepeatChange () {
 
         const audio = ref.current
 
-        audio.loop = audioLoop
+        audio.loop = repeat
 
     }
 
-    useEffect (onLoopChange, [audioLoop])
+    useEffect (onRepeatChange, [repeat])
 
     /**
      * @function
@@ -75,19 +82,19 @@ export default function PlayerComponent ({ url }) {
 
         const audio = ref.current
 
-        audio.playbackRate = audioSpeed
+        audio.playbackRate = speed
 
     }
 
-    useEffect (onSpeedChange, [audioSpeed])
+    useEffect (onSpeedChange, [speed])
 
     /**
      * @function
-     * @name onKeyboard
+     * @name onKeySpace
      * @description player: on keyboard events
      * @returns {Function<void>} - remove event listener (useEffect)
      */
-    function onKeyboard () {
+    function onKeySpace () {
 
         const listener = (event) => {
 
@@ -95,11 +102,15 @@ export default function PlayerComponent ({ url }) {
 
                 const audio = ref.current
 
-                if (audio.paused) {
+                if (paused) {
+
+                    setPaused (false)
 
                     audio.play ()
 
                 } else {
+
+                    setPaused (true)
 
                     audio.pause ()
 
@@ -115,7 +126,7 @@ export default function PlayerComponent ({ url }) {
 
     }
 
-    useEffect (onKeyboard, [])
+    useEffect (onKeySpace, [])
 
     return (
         <>
@@ -123,6 +134,7 @@ export default function PlayerComponent ({ url }) {
                 <audio
                     ref={ref}
                     controls
+                    aria-label="player"
                 >
                     <track kind="captions"/>
                 </audio>

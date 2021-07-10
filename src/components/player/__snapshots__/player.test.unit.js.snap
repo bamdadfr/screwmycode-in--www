@@ -5,6 +5,7 @@ exports[`should mount and match 1`] = `
   className="sc-tf5qq8-0 eAvlQw"
 >
   <audio
+    aria-label="player"
     controls={true}
   >
     <track
