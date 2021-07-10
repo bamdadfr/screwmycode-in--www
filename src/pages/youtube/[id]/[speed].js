@@ -19,7 +19,7 @@ const propTypes = {
 /**
  * @function
  * @name YoutubeIdPage
- * @description /youtube/:id
+ * @description /youtube/:id/:speed
  * @param {*} props - react component props
  * @param {string} props.title - title corresponding to the current youtube id
  * @param {string} props.url - audio corresponding to the current youtube id
