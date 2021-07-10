@@ -37,7 +37,7 @@ export default function OldYoutubePage ({ id, speed }) {
 
     return (
         <>
-            This is the old path.
+            This is the old path. Redirecting...
         </>
     )
 
