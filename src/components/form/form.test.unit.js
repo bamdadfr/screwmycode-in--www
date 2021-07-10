@@ -2,7 +2,8 @@ import React from 'react'
 import FormComponent from './form.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
-const instance = JestInstance (<FormComponent/>)
+const handleForm = jest.fn ()
+const instance = JestInstance (<FormComponent handleForm={handleForm}/>)
 
 it ('should mount and match', () => {
 
