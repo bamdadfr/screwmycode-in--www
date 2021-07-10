@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
 import Link from 'next/link'
-import { audioLoopAtom } from '../../atoms/audio-loop.atom'
-import { IconLoop, IconHome } from './layout-header.icons'
+import { repeatAtom } from '../../atoms/repeat.atom'
+import { IconRepeat, IconHome } from './layout-header.icons'
 import { StyledContainer } from './layout-header.styles'
 
 /**
@@ -13,7 +13,7 @@ import { StyledContainer } from './layout-header.styles'
  */
 export default function LayoutHeaderComponent () {
 
-    const [audioLoop, setAudioLoop] = useRecoilState (audioLoopAtom)
+    const [repeat, setRepeat] = useRecoilState (repeatAtom)
 
     return (
         <>
@@ -30,10 +30,10 @@ export default function LayoutHeaderComponent () {
                     type="button"
                     aria-label="repeat"
                     tabIndex={-1}
-                    onClick={() => setAudioLoop (!audioLoop)}
+                    onClick={() => setRepeat (!repeat)}
                     onKeyDown={() => undefined}
                 >
-                    {audioLoop ? <IconLoop.On/> : <IconLoop.Off/>}
+                    {repeat ? <IconRepeat.On/> : <IconRepeat.Off/>}
                 </button>
             </StyledContainer>
         </>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
-import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
+import { speedAtom } from '../../atoms/speed.atom'
 import { StyledSlider, StyledContainer } from './slider.styles'
 
 /**
@@ -11,7 +11,7 @@ import { StyledSlider, StyledContainer } from './slider.styles'
  */
 export default function SliderComponent () {
 
-    const [speed, setSpeed] = useRecoilState (audioSpeedAtom)
+    const [speed, setSpeed] = useRecoilState (speedAtom)
 
     /**
      * @function

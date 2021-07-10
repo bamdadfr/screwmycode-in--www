@@ -6,7 +6,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
-import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
+import { speedAtom } from '../../atoms/speed.atom'
 import PlayerComponent from '../../components/player/player.component'
 import SliderComponent from '../../components/slider/slider.component'
 import IndicatorsComponent from '../../components/indicators/indicators.component'
@@ -61,7 +61,7 @@ export async function getServerSideProps (context) {
 export default function YoutubeIdPage ({ title, url }) {
 
     const router = useRouter ()
-    const [speed, setSpeed] = useRecoilState (audioSpeedAtom)
+    const [speed, setSpeed] = useRecoilState (speedAtom)
 
     /**
      * @function

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useRecoilValue } from 'recoil'
-import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
-import { audioLoopAtom } from '../../atoms/audio-loop.atom'
+import { speedAtom } from '../../atoms/speed.atom'
+import { repeatAtom } from '../../atoms/repeat.atom'
 import { StyledContainer } from './player.styles'
 
 const propTypes = {
@@ -19,8 +19,8 @@ const propTypes = {
 export default function PlayerComponent ({ url }) {
 
     const ref = useRef (null)
-    const audioSpeed = useRecoilValue (audioSpeedAtom)
-    const audioLoop = useRecoilValue (audioLoopAtom)
+    const audioSpeed = useRecoilValue (speedAtom)
+    const audioLoop = useRecoilValue (repeatAtom)
 
     /**
      * @function

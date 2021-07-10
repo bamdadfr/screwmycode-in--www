@@ -2,7 +2,7 @@ import React from 'react'
 import { useRecoilValue } from 'recoil'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
-import { audioSpeedAtom } from '../../atoms/audio-speed.atom'
+import { speedAtom } from '../../atoms/speed.atom'
 import { StyledContainer } from './indicators.styles'
 
 /**
@@ -13,7 +13,7 @@ import { StyledContainer } from './indicators.styles'
  */
 export default function IndicatorsComponent () {
 
-    const speed = useRecoilValue (audioSpeedAtom)
+    const speed = useRecoilValue (speedAtom)
 
     return (
         <>

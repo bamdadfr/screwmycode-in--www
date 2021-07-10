@@ -10,14 +10,12 @@ export const StyledContainer = styled.div`
     color: #606060;
 
     > button {
+
         &:hover {
             color: #efefef;
             cursor: pointer;
         }
 
-        &:not(:last-child) {
-            margin-right: 7px;
-        }
     }
 `
 

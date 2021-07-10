@@ -1,14 +1,14 @@
 import React from 'react'
-import { shallow } from 'enzyme'
 import LayoutMetaComponent from '../layout-meta/layout-meta.component'
 import LayoutMenuComponent from '../layout-header/layout-header.component'
 import ToastComponent from '../toast/toast.component'
 import LayoutComponent from './layout.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestInstance } from '../../../jest/jest-instance'
+import { JestUnit } from '../../../jest/jest-unit'
 
 const instance = JestInstance (<LayoutComponent><JestChildren/></LayoutComponent>)
-const unit = shallow (<LayoutComponent><JestChildren/></LayoutComponent>)
+const unit = JestUnit (<LayoutComponent><JestChildren/></LayoutComponent>)
 
 it ('should mount and match', () => {
 

@@ -10,13 +10,13 @@ export const StyledContainer = styled.div`
         user-select: none;
     }
 
-    & > div {
+    > div {
         width: 100px;
         text-align: center;
         display: flex;
         flex-direction: column;
 
-        input {
+        > input {
             margin-top: 5px;
             width: 100%;
             height: 30px;
