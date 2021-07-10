@@ -13,4 +13,7 @@ module.exports = {
     'transformIgnorePatterns': [
         `/node_modules/(?!${transformModules}/)`,
     ],
+    'modulePathIgnorePatterns': [
+        '<rootDir>/.next/',
+    ],
 }
