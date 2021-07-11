@@ -4,7 +4,17 @@ import PlayerComponent from './player.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const url = 'https://domain.com/audio.mp3'
-const render = (autoplay) => JestRender (<PlayerComponent url={url} autoplay={autoplay}/>)
+
+const render = (autoplay = false) => JestRender (
+    <PlayerComponent
+        url={url}
+        playbackRate={1}
+        loop
+        volume={1}
+        handleVolume={jest.fn ()}
+        autoplay={autoplay}
+    />,
+)
 
 const elements = {
     'player': () => screen.getByLabelText ('player'),

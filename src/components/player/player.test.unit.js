@@ -3,7 +3,17 @@ import PlayerComponent from './player.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const url = 'https://dummy.audio.url'
-const instance = JestInstance (<PlayerComponent url={url}/>)
+
+const instance = JestInstance (
+    <PlayerComponent
+        url={url}
+        playbackRate={1}
+        loop
+        volume={1}
+        handleVolume={jest.fn ()}
+        autoplay={false}
+    />,
+)
 
 it ('should mount and match', () => {
 
