@@ -27,10 +27,10 @@ export default function PlayerComponent ({ url }) {
 
     /**
      * @function
-     * @name onMount
+     * @name onMountPlayer
      * @description player: on mount
      */
-    function onMount () {
+    function onMountPlayer () {
 
         const audio = ref.current
 
@@ -46,17 +46,51 @@ export default function PlayerComponent ({ url }) {
 
         audio.play ()
 
-        setPaused (audio.paused)
+        audio.addEventListener ('play', () => setPaused (false))
 
-        audio.addEventListener ('volumechange', () => {
+        audio.addEventListener ('pause', () => setPaused (true))
 
-            setVolume (audio.volume)
-
-        })
+        audio.addEventListener ('volumechange', () => setVolume (audio.volume))
 
     }
 
-    useEffect (onMount, [])
+    useEffect (onMountPlayer, [])
+
+    /**
+     * @function
+     * @name onMountKeyboardEvents
+     * @description player: on keyboard events
+     * @returns {Function<void>} - remove event listener (useEffect)
+     */
+    function onMountKeyboardEvents () {
+
+        const listener = (event) => {
+
+            if (event.code === 'Space') {
+
+                const audio = ref.current
+
+                if (paused) {
+
+                    audio.play ()
+
+                    return
+
+                }
+
+                audio.pause ()
+
+            }
+
+        }
+
+        document.addEventListener ('keydown', listener)
+
+        return () => document.removeEventListener ('keydown', listener)
+
+    }
+
+    useEffect (onMountKeyboardEvents, [])
 
     /**
      * @function
@@ -87,46 +121,6 @@ export default function PlayerComponent ({ url }) {
     }
 
     useEffect (onSpeedChange, [speed])
-
-    /**
-     * @function
-     * @name onKeySpace
-     * @description player: on keyboard events
-     * @returns {Function<void>} - remove event listener (useEffect)
-     */
-    function onKeySpace () {
-
-        const listener = (event) => {
-
-            if (event.code === 'Space') {
-
-                const audio = ref.current
-
-                if (paused) {
-
-                    setPaused (false)
-
-                    audio.play ()
-
-                } else {
-
-                    setPaused (true)
-
-                    audio.pause ()
-
-                }
-
-            }
-
-        }
-
-        document.addEventListener ('keydown', listener)
-
-        return () => document.removeEventListener ('keydown', listener)
-
-    }
-
-    useEffect (onKeySpace, [])
 
     return (
         <>

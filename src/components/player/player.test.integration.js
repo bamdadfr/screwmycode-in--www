@@ -66,6 +66,18 @@ test ('player: should render', () => {
 
 })
 
+test ('player: should auto play', () => {
+
+    const play = jest.fn ()
+
+    mock.play (play)
+
+    render ()
+
+    expect (play).toHaveBeenCalledTimes (1)
+
+})
+
 test ('player: should pause', () => {
 
     const pause = jest.fn ()
@@ -82,7 +94,7 @@ test ('player: should pause', () => {
 
 })
 
-test ('player: should toggle play state on space key', async () => {
+test ('player: should pause on space key', () => {
 
     const play = jest.fn ()
     const pause = jest.fn ()
