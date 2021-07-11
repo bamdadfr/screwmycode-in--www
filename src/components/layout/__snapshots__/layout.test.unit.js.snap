@@ -60,7 +60,7 @@ Array [
   <div
     className="sc-485y6x-0 gfBQpP"
   >
-    <div
+    <h1
       className="sc-485y6x-1 iSMMqR"
     >
       <a
@@ -70,7 +70,7 @@ Array [
       >
         screwmycode.in
       </a>
-    </div>
+    </h1>
     <span>
       children
     </span>

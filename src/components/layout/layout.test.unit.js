@@ -1,7 +1,8 @@
 import React from 'react'
-import LayoutMetaComponent from '../layout-meta/layout-meta.component'
-import LayoutMenuComponent from '../layout-header/layout-header.component'
 import LayoutComponent from './layout.component'
+import LayoutHeaderComponent from '../layout-header/layout-header.component'
+import LayoutMetaComponent from '../layout-meta/layout-meta.component'
+import LayoutMainComponent from '../layout-main/layout-main.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestInstance } from '../../../jest/jest-instance'
 import { JestUnit } from '../../../jest/jest-unit'
@@ -35,6 +36,12 @@ it ('should contain LayoutMetaComponent', () => {
 
 it ('should contain LayoutHeaderComponent', () => {
 
-    expect (unit.containsMatchingElement (<LayoutMenuComponent/>)).toEqual (true)
+    expect (unit.containsMatchingElement (<LayoutHeaderComponent/>)).toEqual (true)
+
+})
+
+it ('should contain LayoutMainComponent with children', () => {
+
+    expect (unit.containsMatchingElement (<LayoutMainComponent><JestChildren/></LayoutMainComponent>)).toEqual (true)
 
 })
