@@ -25,9 +25,9 @@ export default function FirefoxPage () {
 
             </Head>
             <StyledContainer>
-                <div>
+                <h2>
                     available only for firefox
-                </div>
+                </h2>
                 <div>
                     <StyledLink
                         rel="noopener noreferrer"
