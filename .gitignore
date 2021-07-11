@@ -27,4 +27,8 @@ yarn-error.log*
 # nextjs
 .next
 
+# sentry
+sentry.properties
+
+# user dev
 TODO.md
