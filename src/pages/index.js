@@ -1,9 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useRecoilValue } from 'recoil'
 import FormComponent from '../components/form/form.component'
-import { speedAtom } from '../atoms/speed.atom'
 import { StyledContainer } from '../pages-styles/index.styles'
 
 /**
@@ -15,7 +13,6 @@ import { StyledContainer } from '../pages-styles/index.styles'
 export default function IndexPage () {
 
     const router = useRouter ()
-    const speed = useRecoilValue (speedAtom)
 
     /**
      * @function
@@ -26,7 +23,7 @@ export default function IndexPage () {
      */
     async function handleForm ({ id }) {
 
-        await router.replace (`/youtube/${id}/${speed}`)
+        await router.push (`/youtube/${id}/1`)
 
     }
 
