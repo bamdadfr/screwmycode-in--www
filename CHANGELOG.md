@@ -1,3 +1,20 @@
+# [1.10.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.9.0...v1.10.0) (2021-07-11)
+
+
+### Bug Fixes
+
+* **app:** forgot to inject gtag script in _document.js ([920d221](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/920d2218261d0d73c6873e4264b18c851d56a540))
+* **deps:** regen yarn.lock ([7dcdd0b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7dcdd0bd9b3f39f2ee9f71fea93d9af563d4f031))
+* **eslint:** update regex for test files ([6998afa](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6998afae07d4aa4a290a7ff990ff8291cd21e419))
+* **FirefoxPage:** added other meta descriptions ([9085437](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9085437605968f4fd5837681f0110a0c253ae907))
+* **styles:** width is now responsive + better semantics ([cb1f443](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cb1f443011319aee52fd34b8795377e7edd32259))
+
+
+### Features
+
+* **app:** add sentry monitoring ([40af650](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/40af650f093308822619dda4d39a3834030a5402))
+* **app:** added gtag analytics + jsdoc for main app file ([cca5b5b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cca5b5be29c3c88baa30189f172948c698301b3b))
+
 # [1.9.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.8.11...v1.9.0) (2021-07-10)
 
 
