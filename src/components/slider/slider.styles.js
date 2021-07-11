@@ -4,13 +4,13 @@ export const StyledContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px;
+    margin: 1em;
     background: transparent;
-    width: 400px;
+    width: 80%;
 `
 
 export const StyledSlider = styled.input`
-    width: 500px;
+    width: 100%;
     background: transparent;
 
     &::-moz-range-thumb {
