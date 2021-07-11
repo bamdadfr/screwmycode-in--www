@@ -22,7 +22,7 @@ export const StyledContainer = styled.div`
             height: 30px;
             text-align: center;
             border: 0;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             font-weight: 900;
             color: ${props => props.theme.colors.white};
             background: transparent;
