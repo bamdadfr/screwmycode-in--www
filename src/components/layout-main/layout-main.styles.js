@@ -8,12 +8,12 @@ export const StyledContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    
+
     color: ${props => props.theme.colors.white};
     background: black;
 `
 
-export const StyledTitle = styled.div`
+export const StyledTitle = styled.h1`
     font-size: 3em;
     font-weight: 900;
 `
