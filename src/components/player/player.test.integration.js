@@ -1,10 +1,10 @@
 import React from 'react'
-import { screen, act, fireEvent } from '@testing-library/react'
+import { screen, act, waitFor } from '@testing-library/react'
 import PlayerComponent from './player.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const url = 'https://domain.com/audio.mp3'
-const render = () => JestRender (<PlayerComponent url={url}/>)
+const render = (autoplay) => JestRender (<PlayerComponent url={url} autoplay={autoplay}/>)
 
 const elements = {
     'player': () => screen.getByLabelText ('player'),
@@ -62,17 +62,21 @@ test ('player: should render', () => {
 
     expect (player.volume).toEqual (1)
 
-    expect (play).toHaveBeenCalledTimes (1)
+    expect (play).not.toHaveBeenCalled ()
 
 })
 
-test ('player: should auto play', () => {
+test ('player: should play', () => {
 
     const play = jest.fn ()
 
     mock.play (play)
 
     render ()
+
+    const player = elements.player ()
+
+    act (() => player.play ())
 
     expect (play).toHaveBeenCalledTimes (1)
 
@@ -94,23 +98,32 @@ test ('player: should pause', () => {
 
 })
 
-test ('player: should pause on space key', () => {
+test ('player: should not autoplay by default', () => {
 
     const play = jest.fn ()
-    const pause = jest.fn ()
 
     mock.play (play)
 
-    mock.pause (pause)
-
     render ()
 
-    expect (play).toHaveBeenCalledTimes (1)
-
-    fireEvent.keyDown (document, {
-        'code': 'Space',
-    })
-
-    expect (pause).toHaveBeenCalledTimes (1)
+    expect (play).not.toHaveBeenCalled ()
 
 })
+
+test ('player: should autoplay if prop is passed', () => {
+
+    const play = jest.fn ()
+
+    mock.play (play)
+
+    render (true)
+
+    waitFor (() => {
+
+        expect (play).toHaveBeenCalledTimes (1)
+
+    })
+
+})
+
+// missing space interactions

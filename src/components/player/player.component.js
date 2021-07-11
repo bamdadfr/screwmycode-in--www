@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { speedAtom } from '../../atoms/speed.atom'
@@ -8,49 +8,55 @@ import { volumeAtom } from '../../atoms/volume.atom'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
+    'autoplay': PropTypes.bool,
+}
+
+const defaultProps = {
+    'autoplay': false,
 }
 
 /**
  * @function
  * @name PlayerComponent
  * @description player: audio component
- * @param {string} url - audio URL to play
+ * @param {*} props - props
+ * @param {string} props.url - audio URL to play
+ * @param {boolean} props.autoplay - autoplay
  * @returns {React.ReactElement} - react component
  */
-export default function PlayerComponent ({ url }) {
+export default function PlayerComponent ({ url, autoplay = false }) {
 
-    const ref = useRef (null)
+    const playerRef = useRef (null)
     const speed = useRecoilValue (speedAtom)
     const repeat = useRecoilValue (repeatAtom)
     const [volume, setVolume] = useRecoilState (volumeAtom)
-    const [paused, setPaused] = useState (undefined)
 
     /**
      * @function
      * @name onMountPlayer
      * @description player: on mount
      */
-    function onMountPlayer () {
+    async function onMountPlayer () {
 
-        const audio = ref.current
+        const player = playerRef.current
 
-        audio.src = url
+        player.src = url
 
-        audio.load ()
+        player.load ()
 
-        audio.mozPreservesPitch = false
+        player.mozPreservesPitch = false
 
-        audio.playbackRate = speed
+        player.playbackRate = speed
 
-        audio.volume = volume
+        player.volume = volume
 
-        audio.play ()
+        player.addEventListener ('canplay', async () => {
 
-        audio.addEventListener ('play', () => setPaused (false))
+            if (autoplay) await player.play ()
 
-        audio.addEventListener ('pause', () => setPaused (true))
+        })
 
-        audio.addEventListener ('volumechange', () => setVolume (audio.volume))
+        player.addEventListener ('volumechange', () => setVolume (player.volume))
 
     }
 
@@ -68,25 +74,25 @@ export default function PlayerComponent ({ url }) {
 
             if (event.code === 'Space') {
 
-                const audio = ref.current
+                const player = playerRef.current
 
-                if (paused) {
+                if (player.paused) {
 
-                    audio.play ()
+                    player.play ()
 
                     return
 
                 }
 
-                audio.pause ()
+                player.pause ()
 
             }
 
         }
 
-        document.addEventListener ('keydown', listener)
+        document.addEventListener ('keypress', listener)
 
-        return () => document.removeEventListener ('keydown', listener)
+        return () => document.removeEventListener ('keypress', listener)
 
     }
 
@@ -94,41 +100,42 @@ export default function PlayerComponent ({ url }) {
 
     /**
      * @function
-     * @name onRepeatChange
+     * @name handleRepeat
      * @description player: change auto loop when state changes
      */
-    function onRepeatChange () {
+    function handleRepeat () {
 
-        const audio = ref.current
+        const player = playerRef.current
 
-        audio.loop = repeat
+        player.loop = repeat
 
     }
 
-    useEffect (onRepeatChange, [repeat])
+    useEffect (handleRepeat, [repeat])
 
     /**
      * @function
-     * @name onSpeedChange
+     * @name handleSpeed
      * @description player: change audio speed when state changes
      */
-    function onSpeedChange () {
+    function handleSpeed () {
 
-        const audio = ref.current
+        const player = playerRef.current
 
-        audio.playbackRate = speed
+        player.playbackRate = speed
 
     }
 
-    useEffect (onSpeedChange, [speed])
+    useEffect (handleSpeed, [speed])
 
     return (
         <>
             <StyledContainer>
                 <audio
-                    ref={ref}
-                    controls
+                    ref={playerRef}
                     aria-label="player"
+                    controls
+                    autoPlay={autoplay}
                 >
                     <track kind="captions"/>
                 </audio>
@@ -139,3 +146,5 @@ export default function PlayerComponent ({ url }) {
 }
 
 PlayerComponent.propTypes = propTypes
+
+PlayerComponent.defaultProps = defaultProps

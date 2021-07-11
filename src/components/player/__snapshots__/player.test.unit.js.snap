@@ -6,6 +6,7 @@ exports[`should mount and match 1`] = `
 >
   <audio
     aria-label="player"
+    autoPlay={false}
     controls={true}
   >
     <track
