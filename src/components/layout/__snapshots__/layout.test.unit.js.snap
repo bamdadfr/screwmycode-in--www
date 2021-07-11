@@ -3,7 +3,7 @@
 exports[`should mount and match 1`] = `
 Array [
   <div
-    className="sc-1yrrc8c-0 hmRcAg"
+    className="sc-o266xa-0 holgnw"
   >
     <button
       aria-label="home"
@@ -58,10 +58,10 @@ Array [
     </button>
   </div>,
   <div
-    className="sc-485y6x-0 gfBQpP"
+    className="sc-cq9yz-0 hdJZHV"
   >
     <h1
-      className="sc-485y6x-1 iSMMqR"
+      className="sc-cq9yz-1 hBNeKD"
     >
       <a
         href="/"

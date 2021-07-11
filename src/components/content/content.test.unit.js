@@ -1,9 +1,9 @@
 import React from 'react'
-import LayoutMainComponent from './layout-main.component'
+import ContentComponent from './content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestInstance } from '../../../jest/jest-instance'
 
-const instance = JestInstance (<LayoutMainComponent><JestChildren/></LayoutMainComponent>)
+const instance = JestInstance (<ContentComponent><JestChildren/></ContentComponent>)
 
 it ('should mount and match', () => {
 

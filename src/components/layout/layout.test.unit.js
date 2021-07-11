@@ -1,8 +1,8 @@
 import React from 'react'
 import LayoutComponent from './layout.component'
-import LayoutHeaderComponent from '../layout-header/layout-header.component'
-import LayoutMetaComponent from '../layout-meta/layout-meta.component'
-import LayoutMainComponent from '../layout-main/layout-main.component'
+import HeaderComponent from '../header/header.component'
+import MetaComponent from '../meta/meta.component'
+import ContentComponent from '../content/content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestInstance } from '../../../jest/jest-instance'
 import { JestUnit } from '../../../jest/jest-unit'
@@ -30,18 +30,18 @@ it ('should have 3+children children', () => {
 
 it ('should contain LayoutMetaComponent', () => {
 
-    expect (unit.containsMatchingElement (<LayoutMetaComponent/>)).toEqual (true)
+    expect (unit.containsMatchingElement (<MetaComponent/>)).toEqual (true)
 
 })
 
 it ('should contain LayoutHeaderComponent', () => {
 
-    expect (unit.containsMatchingElement (<LayoutHeaderComponent/>)).toEqual (true)
+    expect (unit.containsMatchingElement (<HeaderComponent/>)).toEqual (true)
 
 })
 
 it ('should contain LayoutMainComponent with children', () => {
 
-    expect (unit.containsMatchingElement (<LayoutMainComponent><JestChildren/></LayoutMainComponent>)).toEqual (true)
+    expect (unit.containsMatchingElement (<ContentComponent><JestChildren/></ContentComponent>)).toEqual (true)
 
 })

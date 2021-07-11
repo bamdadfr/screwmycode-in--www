@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LayoutMetaComponent from '../layout-meta/layout-meta.component'
-import LayoutMainComponent from '../layout-main/layout-main.component'
-import LayoutHeaderComponent from '../layout-header/layout-header.component'
+import MetaComponent from '../meta/meta.component'
+import ContentComponent from '../content/content.component'
+import HeaderComponent from '../header/header.component'
 
 const propTypes = {
     'children': PropTypes.element.isRequired,
@@ -19,11 +19,11 @@ export default function LayoutComponent ({ children }) {
 
     return (
         <>
-            <LayoutMetaComponent/>
-            <LayoutHeaderComponent/>
-            <LayoutMainComponent>
+            <MetaComponent/>
+            <HeaderComponent/>
+            <ContentComponent>
                 {children}
-            </LayoutMainComponent>
+            </ContentComponent>
         </>
     )
 

@@ -3,11 +3,11 @@ import Head from 'next/head'
 
 /**
  * @function
- * @name LayoutMetaComponent
+ * @name MetaComponent
  * @description layout: meta component (head and SEO tags)
  * @returns {React.ReactElement} - react component
  */
-export default function LayoutMetaComponent () {
+export default function MetaComponent () {
 
     const title = 'ScrewMyCode.In'
     const url = 'https://screwmycode.in'
