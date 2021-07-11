@@ -5,6 +5,7 @@ export const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 1.1em;
 `
 
 export const StyledLink = styled.a`
