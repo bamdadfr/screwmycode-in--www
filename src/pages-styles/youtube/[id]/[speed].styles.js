@@ -8,6 +8,7 @@ export const StyledContainer = styled.div`
     flex-direction: column;
     width: 100vw;
     text-align: center;
+    font-size: 1.1em;
 
     @media screen and ${BreakpointsStyles.mobile} {
         width: 90vw;
@@ -32,5 +33,4 @@ export const StyledContainer = styled.div`
 
 export const StyledTitle = styled.h1`
     height: 3em;
-    font-size: 1.1em;
 `
