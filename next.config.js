@@ -5,15 +5,10 @@ const withTM = require ('next-transpile-modules') ([
     'speed-to-percentage',
 ])
 
-const moduleExports = {
+const moduleExports = withTM ({
     'poweredByHeader': false,
-}
+})
 
 const SentryWebpackPluginOptions = {}
 
-module.exports = withTM (
-    withSentryConfig (
-        moduleExports,
-        SentryWebpackPluginOptions,
-    ),
-)
+module.exports = withSentryConfig (moduleExports, SentryWebpackPluginOptions)
