@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import { StyledContainer, StyledTitle } from './layout-main.styles'
+import { StyledContainer, StyledTitle } from './content.styles'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -9,12 +9,12 @@ const propTypes = {
 
 /**
  * @function
- * @name LayoutMainComponent
+ * @name ContentComponent
  * @description layout: main component
  * @param {React.ReactElement} children - children to render
  * @returns {React.ReactElement} - react component
  */
-export default function LayoutMainComponent ({ children }) {
+export default function ContentComponent ({ children }) {
 
     return (
         <>
@@ -36,4 +36,4 @@ export default function LayoutMainComponent ({ children }) {
 
 }
 
-LayoutMainComponent.propTypes = propTypes
+ContentComponent.propTypes = propTypes

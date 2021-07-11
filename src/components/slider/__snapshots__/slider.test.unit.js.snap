@@ -12,7 +12,6 @@ exports[`should mount and match 1`] = `
     onChange={[Function]}
     step={0.005}
     type="range"
-    value={1}
   />
 </div>
 `;

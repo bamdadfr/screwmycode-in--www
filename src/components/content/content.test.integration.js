@@ -1,10 +1,10 @@
 import React from 'react'
 import { screen } from '@testing-library/react'
-import LayoutMainComponent from './layout-main.component'
+import ContentComponent from './content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<LayoutMainComponent><JestChildren/></LayoutMainComponent>)
+const render = () => JestRender (<ContentComponent><JestChildren/></ContentComponent>)
 
 const elements = {
     'title': () => screen.getByRole ('link', { 'name': 'screwmycode.in' }),

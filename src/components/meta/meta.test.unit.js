@@ -1,8 +1,8 @@
 import React from 'react'
-import LayoutMetaComponent from './layout-meta.component'
+import MetaComponent from './meta.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
-const instance = JestInstance (<LayoutMetaComponent/>)
+const instance = JestInstance (<MetaComponent/>)
 
 it ('should mount and match', () => {
 

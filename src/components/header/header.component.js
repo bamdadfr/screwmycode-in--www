@@ -2,16 +2,16 @@ import React from 'react'
 import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { repeatAtom } from '../../atoms/repeat.atom'
-import { IconRepeat, IconHome } from './layout-header.icons'
-import { StyledContainer } from './layout-header.styles'
+import { IconRepeat, IconHome } from './header.icons'
+import { StyledContainer } from './header.styles'
 
 /**
  * @function
- * @name LayoutHeaderComponent
+ * @name HeaderComponent
  * @description layout menu component
  * @returns {React.ReactElement} - react
  */
-export default function LayoutHeaderComponent () {
+export default function HeaderComponent () {
 
     const [repeat, setRepeat] = useRecoilState (repeatAtom)
 

@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react'
 import SliderComponent from './slider.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<SliderComponent/>)
+const render = () => JestRender (<SliderComponent handleValue={jest.fn ()}/>)
 
 const elements = {
     'slider': () => screen.getByRole ('slider', {

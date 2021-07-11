@@ -1,76 +1,61 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { speedAtom } from '../../atoms/speed.atom'
-import { repeatAtom } from '../../atoms/repeat.atom'
 import { StyledContainer } from './player.styles'
-import { volumeAtom } from '../../atoms/volume.atom'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
-    'autoplay': PropTypes.bool,
-}
-
-const defaultProps = {
-    'autoplay': false,
+    'playbackRate': PropTypes.number.isRequired,
+    'loop': PropTypes.bool.isRequired,
+    'volume': PropTypes.number.isRequired,
+    'handleVolume': PropTypes.func.isRequired,
+    'autoplay': PropTypes.bool.isRequired,
 }
 
 /**
  * @function
  * @name PlayerComponent
  * @description player: audio component
- * @param {*} props - props
- * @param {string} props.url - audio URL to play
+ * @param {object} props - props
+ * @param {string} props.url - url
+ * @param {number} props.playbackRate - speed
+ * @param {boolean} props.loop - repeat
+ * @param {number} props.volume - volume
+ * @param {Function} props.handleVolume - callback for volume
  * @param {boolean} props.autoplay - autoplay
  * @returns {React.ReactElement} - react component
  */
-export default function PlayerComponent ({ url, autoplay = false }) {
+export default function PlayerComponent ({
+    url,
+    playbackRate,
+    loop,
+    volume,
+    handleVolume,
+    autoplay,
+}) {
 
     const playerRef = useRef (null)
-    const speed = useRecoilValue (speedAtom)
-    const repeat = useRecoilValue (repeatAtom)
-    const [volume, setVolume] = useRecoilState (volumeAtom)
 
     /**
      * @function
-     * @name onMountPlayer
-     * @description player: on mount
+     * @name onMount
+     * @description setup player + volume listener + keyboard listener
+     * @returns {Function<void>} clean listeners
      */
-    async function onMountPlayer () {
+    function onMount () {
 
+        // player
         const player = playerRef.current
-
-        player.src = url
-
-        player.load ()
 
         player.mozPreservesPitch = false
 
-        player.playbackRate = speed
-
         player.volume = volume
 
-        player.addEventListener ('canplay', async () => {
+        const playerVolumeListener = () => handleVolume (player.volume)
 
-            if (autoplay) await player.play ()
+        player.addEventListener ('volumechange', playerVolumeListener)
 
-        })
-
-        player.addEventListener ('volumechange', () => setVolume (player.volume))
-
-    }
-
-    useEffect (onMountPlayer, [])
-
-    /**
-     * @function
-     * @name onMountKeyboardEvents
-     * @description player: on keyboard events
-     * @returns {Function<void>} - remove event listener (useEffect)
-     */
-    function onMountKeyboardEvents () {
-
-        const listener = (event) => {
+        // keyboard
+        const keyboardListener = (event) => {
 
             if (event.code === 'Space') {
 
@@ -90,43 +75,75 @@ export default function PlayerComponent ({ url, autoplay = false }) {
 
         }
 
-        document.addEventListener ('keypress', listener)
+        document.addEventListener ('keypress', keyboardListener)
 
-        return () => document.removeEventListener ('keypress', listener)
+        // cleanup
+        return () => {
+
+            player.removeEventListener ('volumechange', playerVolumeListener)
+
+            document.removeEventListener ('keypress', keyboardListener)
+
+        }
 
     }
 
-    useEffect (onMountKeyboardEvents, [])
+    useEffect (onMount, [])
 
     /**
      * @function
-     * @name handleRepeat
-     * @description player: change auto loop when state changes
+     * @name onUrl
+     * @description update url
      */
-    function handleRepeat () {
+    async function onUrl () {
 
         const player = playerRef.current
 
-        player.loop = repeat
+        player.src = url
+
+        player.load ()
+
+        player.playbackRate = playbackRate
+
+        player.addEventListener ('canplay', async () => {
+
+            if (autoplay) await player.play ()
+
+        })
 
     }
 
-    useEffect (handleRepeat, [repeat])
+    useEffect (onUrl, [url])
 
     /**
      * @function
-     * @name handleSpeed
-     * @description player: change audio speed when state changes
+     * @name onLoop
+     * @description update loop (repeat mode)
      */
-    function handleSpeed () {
+    function onLoop () {
 
         const player = playerRef.current
 
-        player.playbackRate = speed
+        player.loop = loop
 
     }
 
-    useEffect (handleSpeed, [speed])
+    useEffect (onLoop, [loop])
+
+    /**
+     * @function
+     * @name onPlaybackRate
+     * @description update playback rate (speed)
+     */
+    function onPlaybackRate () {
+
+        const player = playerRef.current
+
+        player.playbackRate = playbackRate
+
+    }
+
+    useEffect (onPlaybackRate, [playbackRate])
 
     return (
         <>
@@ -146,5 +163,3 @@ export default function PlayerComponent ({ url, autoplay = false }) {
 }
 
 PlayerComponent.propTypes = propTypes
-
-PlayerComponent.defaultProps = defaultProps

@@ -1,9 +1,9 @@
 import React from 'react'
 import { screen } from '@testing-library/react'
-import LayoutHeaderComponent from './layout-header.component'
+import HeaderComponent from './header.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<LayoutHeaderComponent/>)
+const render = () => JestRender (<HeaderComponent/>)
 
 const elements = {
     'home': () => screen.getByRole ('button', { 'name': 'home' }),

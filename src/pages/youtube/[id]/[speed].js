@@ -2,44 +2,53 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import PropTypes from 'prop-types'
-import { speedAtom } from '../../../atoms/speed.atom'
 import PlayerComponent from '../../../components/player/player.component'
 import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
 import { IsYoutubeIdValidUtils } from '../../../utils/is-youtube-id-valid.utils'
 import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
+import { repeatAtom } from '../../../atoms/repeat.atom'
+import { volumeAtom } from '../../../atoms/volume.atom'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
     'url': PropTypes.string.isRequired,
+    'speed': PropTypes.number.isRequired,
 }
 
 /**
  * @function
  * @name YoutubeIdPage
  * @description /youtube/[id]/[speed]
- * @param {*} props - react component props
- * @param {string} props.title - title corresponding to the current youtube id
- * @param {string} props.url - audio corresponding to the current youtube id
+ * @param {*} props - props
+ * @param {string} props.title - audio title
+ * @param {string} props.url - audio url
+ * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
-export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
+export default function YoutubePage ({
+    title,
+    url,
+    'speed': speedFromProps,
+}) {
 
     const router = useRouter ()
-    const [speed, setSpeed] = useRecoilState (speedAtom)
+    const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
     const [thumbnail] = useState (GetYoutubeThumbnailUtils (router.query.id))
-    const [autoplay, setAutoplay] = useState (undefined)
+    const [autoplay, setAutoplay] = useState (false)
+    const repeat = useRecoilValue (repeatAtom)
+    const [volume, setVolume] = useRecoilState (volumeAtom)
 
     /**
      * @function
-     * @name onMountSpeed
-     * @description detect autoplay capability
+     * @name onMount
+     * @description setup autoplay capability
      */
-    async function onMountAutoplay () {
+    async function onMount () {
 
         // https://github.com/video-dev/can-autoplay/issues/36
         import ('can-autoplay')
@@ -60,41 +69,22 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
     }
 
-    useEffect (onMountAutoplay, [])
+    useEffect (onMount, [])
 
     /**
      * @function
-     * @name onMountSpeed
-     * @description on mount: get query parameters and apply to state
+     * @name onSpeed
+     * @description update description + route
      */
-    function onMountSpeed () {
-
-        if (speed === parseFloat (speedFromProps)) return
-
-        setSpeed (parseFloat (speedFromProps))
-
-    }
-
-    useEffect (onMountSpeed, [])
-
-    /**
-     * @function
-     * @name handleSpeed
-     * @description change url query parameter on speed change
-     */
-    async function handleSpeed () {
+    async function onSpeed () {
 
         setDescription (`${title} - ${speed} - ScrewMyCode.In`)
 
-        await router.replace (
-            `/youtube/${router.query.id}/${speed}`,
-            undefined,
-            { 'shallow': true },
-        )
+        await router.replace (`/youtube/${router.query.id}/${speed}`)
 
     }
 
-    useEffect (handleSpeed, [speed])
+    useEffect (onSpeed, [speed])
 
     return (
         <>
@@ -120,12 +110,21 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
                 <PlayerComponent
                     url={url}
+                    playbackRate={speed}
+                    loop={repeat}
+                    volume={volume}
+                    handleVolume={(v) => setVolume (parseFloat (v))}
                     autoplay={autoplay}
                 />
 
-                <IndicatorsComponent/>
+                <IndicatorsComponent
+                    value={speed}
+                />
 
-                <SliderComponent/>
+                <SliderComponent
+                    value={speed}
+                    handleValue={(s) => setSpeed (parseFloat (s))}
+                />
 
             </StyledContainer>
         </>

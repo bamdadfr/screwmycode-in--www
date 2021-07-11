@@ -1,8 +1,8 @@
 import React from 'react'
-import LayoutHeaderComponent from './layout-header.component'
+import HeaderComponent from './header.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
-const instance = JestInstance (<LayoutHeaderComponent/>)
+const instance = JestInstance (<HeaderComponent/>)
 
 it ('should mount and match', () => {
 
