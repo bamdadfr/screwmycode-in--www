@@ -20,7 +20,7 @@ const propTypes = {
 /**
  * @function
  * @name YoutubeIdPage
- * @description /youtube/:id/:speed
+ * @description /youtube/[id]/[speed]
  * @param {*} props - react component props
  * @param {string} props.title - title corresponding to the current youtube id
  * @param {string} props.url - audio corresponding to the current youtube id
@@ -32,13 +32,42 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
     const [speed, setSpeed] = useRecoilState (speedAtom)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
     const [thumbnail] = useState (GetYoutubeThumbnailUtils (router.query.id))
+    const [autoplay, setAutoplay] = useState (undefined)
 
     /**
      * @function
-     * @name onMount
+     * @name onMountSpeed
+     * @description detect autoplay capability
+     */
+    async function onMountAutoplay () {
+
+        // https://github.com/video-dev/can-autoplay/issues/36
+        import ('can-autoplay')
+            .then (module => module.default.video ())
+            .then (({ result }) => {
+
+                if (result === true) {
+
+                    setAutoplay (true)
+
+                } else {
+
+                    setAutoplay (false)
+
+                }
+
+            })
+
+    }
+
+    useEffect (onMountAutoplay, [])
+
+    /**
+     * @function
+     * @name onMountSpeed
      * @description on mount: get query parameters and apply to state
      */
-    function onMount () {
+    function onMountSpeed () {
 
         if (speed === parseFloat (speedFromProps)) return
 
@@ -46,14 +75,14 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
     }
 
-    useEffect (onMount, [])
+    useEffect (onMountSpeed, [])
 
     /**
      * @function
-     * @name onSpeedChange
+     * @name handleSpeed
      * @description change url query parameter on speed change
      */
-    async function onSpeedChange () {
+    async function handleSpeed () {
 
         setDescription (`${title} - ${speed} - ScrewMyCode.In`)
 
@@ -65,7 +94,7 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
     }
 
-    useEffect (onSpeedChange, [speed])
+    useEffect (handleSpeed, [speed])
 
     return (
         <>
@@ -84,12 +113,20 @@ export default function YoutubePage ({ title, url, 'speed': speedFromProps }) {
 
             </Head>
             <StyledContainer>
+
                 <StyledTitle>
                     {title}
                 </StyledTitle>
-                <PlayerComponent url={url}/>
+
+                <PlayerComponent
+                    url={url}
+                    autoplay={autoplay}
+                />
+
                 <IndicatorsComponent/>
+
                 <SliderComponent/>
+
             </StyledContainer>
         </>
     )
