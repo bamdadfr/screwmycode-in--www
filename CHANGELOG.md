@@ -1,3 +1,29 @@
+# [1.12.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.11.0...v1.12.0) (2021-07-11)
+
+
+### Bug Fixes
+
+* **_app:** better rounting events ([436fdfc](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/436fdfc59d289fd712f4f3985eaa0095afbac693))
+* **404:** update description ([706c5b7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/706c5b783558aed020167d53ad3128e085a99036))
+* **FirefoxPage:** add heading ([bbee6e6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/bbee6e64ce8b25bdc314fab29195350fc2f8f3f8))
+* **FormComponent:** handle naming convention ([acca500](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/acca500e3610ad2b9bcdd453e4feb13df3db36c8))
+* **IndexPage:** route is now better + remove speed global state ([4e22856](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4e2285684c7bcdbd8c6e414a401066011a10ab93))
+* **indicators:** is now pure ([ccb5386](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ccb5386e19e4eaa982922cafd138d7c143eab887))
+* **LayoutMainComponent:** title has correct semantics ([d19a413](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d19a413ff1de954d4a45cb0294b095105215cda2))
+* **speed:** remove from global state ([6c8a7c2](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6c8a7c25c2afbded95a20a6947bc45abc6c5bce5))
+
+
+### Features
+
+* **player:** component is now pure ([f2c26b4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f2c26b49bc74f3601ef8c1f711faf152f820e48c))
+* **slider:** component is now pure ([65007bb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/65007bbc5fc1431b997257cf0c7ac47b3901ca46))
+* **YoutubePage:** is now stateful ([63d5b36](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/63d5b361bfa16a445add5318832e9e00cc66735f))
+
+
+### Performance Improvements
+
+* **structure:** improve file structure ([0d3eb08](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/0d3eb08ee9d71f0c838d399eae8df217b93c5b53))
+
 # [1.11.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.10.0...v1.11.0) (2021-07-11)
 
 
