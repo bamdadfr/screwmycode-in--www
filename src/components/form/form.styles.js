@@ -5,11 +5,12 @@ export const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    font-size: 1.1em;
 `
 
 export const StyledInput = styled.input`
-    width: 280px;
-    font-size: 1.32em;
+    width: 90%;
     border: 1px solid #606060;
     padding: 3px 0 0 5px;
     color: #efefef;
@@ -17,10 +18,14 @@ export const StyledInput = styled.input`
 `
 
 export const StyledSubmit = styled.input`
-    margin: 1em;
+    margin-top: 1em;
     padding: 3px 6px;
-    font-size: 1.1em;
     border: 1px solid #606060;
     color: #959595;
     background: rgba(0, 0, 0, .6);
+
+    &:hover {
+        transition: color 200ms ease-in-out;
+        color: white;
+    }
 `
