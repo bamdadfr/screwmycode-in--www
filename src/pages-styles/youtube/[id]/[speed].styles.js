@@ -31,6 +31,6 @@ export const StyledContainer = styled.div`
     }
 `
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled.h2`
     height: 3em;
 `
