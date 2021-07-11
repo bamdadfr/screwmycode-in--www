@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useRecoilValue } from 'recoil'
 import FormComponent from '../components/form/form.component'
 import { speedAtom } from '../atoms/speed.atom'
+import { StyledContainer } from '../pages-styles/index.styles'
 
 /**
  * @function
@@ -47,7 +48,9 @@ export default function IndexPage () {
                 <meta property="og:image" content={image}/>
 
             </Head>
-            <FormComponent handleForm={handleForm}/>
+            <StyledContainer>
+                <FormComponent handleForm={handleForm}/>
+            </StyledContainer>
         </>
     )
 
