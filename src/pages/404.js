@@ -29,14 +29,23 @@ export default function NotFoundPage () {
 
     useEffect (autoRedirectHome, [])
 
+    const description = 'page not found'
+
     // noinspection HtmlRequiredTitleElement
     return (
         <>
             <Head>
-                <meta property="og:title" content="404"/>
-                <meta property="og:description" content="page not found"/>
+
+                <meta itemProp="description" content={description}/>
+
+                <meta property="og:description" content={description}/>
+
+                <meta name='twitter:description' content={description}/>
+
             </Head>
-            Page not found, redirecting to home...
+            <h2>
+                Page not found, redirecting to home...
+            </h2>
         </>
     )
 
