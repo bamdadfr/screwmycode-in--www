@@ -1,3 +1,25 @@
+# [1.11.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.10.0...v1.11.0) (2021-07-11)
+
+
+### Bug Fixes
+
+* **FirefoxPage:** better styles ([1e0cd31](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1e0cd31a1365780c20dd6121d88f3d13e5a69788))
+* **form:** better styles ([79e955a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/79e955a92149297ebff242df71f54e123eb3e688))
+* **IndexPage:** use responsive width ([1cb41f0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1cb41f0771a80f35a228ed661430f53bc964038f))
+* **indicators:** better styles ([66e7a50](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/66e7a50a42760784b7742717609597d659f57323))
+* **next.config:** rectify sentry wrapper in next.js config ([a42fcfa](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/a42fcfa8b028d0308cf6739bdb58453a220fce06))
+* **OldYoutubePage:** redirection is now happening server side ([6776783](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6776783ed4a8c6628232ff98cebc03e1a1182533))
+* **player:** better code for easier testing ([c0ddb8c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c0ddb8cd7820ee2a8f922cb248b7509755f827f4))
+* **YoutubePage:** better styles ([827359c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/827359cd02b5cc95382bc5e8204702729697bff4))
+* **YoutubePage:** sanitize speed param if not a number ([9e5dce9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9e5dce9574edf90fab58e798e4b5c01475501f47))
+
+
+### Features
+
+* **deps:** added `can-autoplay` package ([db0929a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/db0929a098e3cdbbd87b8f93f414e3a1c70d8f28))
+* **player.component:** component has autoplay detection ([6d10c55](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6d10c55e689aa32a9f4c6827c98d22425ff68e0d))
+* **YoutubePage:** detect autoplay and inject to player component ([29705e8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/29705e8e9bee161603ff0729e388a873178ec46c))
+
 # [1.10.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.9.0...v1.10.0) (2021-07-11)
 
 
