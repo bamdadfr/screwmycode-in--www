@@ -1,51 +1,20 @@
-import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
-
-const propTypes = {
-    'id': PropTypes.string.isRequired,
-    'speed': PropTypes.string.isRequired,
-}
+import React from 'react'
 
 /**
  * @function
  * @name OldYoutubePage
- * @description /youtube/:id?speed=x
+ * @description /youtube/[id]?speed=x
  *      redirect to new path
- *      /youtube/:id/:speed
- * @param {*} props - props from next.js
- * @param {string} props.id - id
- * @param {string} props.speed - speed
+ *      /youtube/[id]/[speed]
  * @returns {React.ReactElement} - react component
  */
-export default function OldYoutubePage ({ id, speed }) {
-
-    const router = useRouter ()
-
-    /**
-     * @function
-     * @name onMount
-     * @description redirect to new app path
-     */
-    async function onMount () {
-
-        await router.push (`/youtube/${id}/${speed}`)
-
-    }
-
-    useEffect (onMount, [])
+export default function OldYoutubePage () {
 
     return (
-        <>
-            <h1>
-                This is the old path. Redirecting...
-            </h1>
-        </>
+        <></>
     )
 
 }
-
-OldYoutubePage.propTypes = propTypes
 
 /**
  * @function
@@ -60,9 +29,9 @@ export function getServerSideProps (context) {
     const speed = context.query.speed || '1'
 
     return {
-        'props': {
-            id,
-            speed,
+        'redirect': {
+            'destination': `/youtube/${id}/${speed}`,
+            'permanent': true,
         },
     }
 
