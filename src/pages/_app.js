@@ -37,11 +37,11 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     /**
      * @function
-     * @name onRouterEvents
+     * @name onRouterEventsGtag
      * @description inject google tag script when route events are fired
      * @returns {Function<void>} - react hook clean up function
      */
-    function onRouterEvents () {
+    function onRouterEventsGtag () {
 
         const handleRouteChange = (url) => {
 
@@ -59,14 +59,14 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     }
 
-    useEffect (onRouterEvents, [router.events])
+    useEffect (onRouterEventsGtag, [router.events])
 
     /**
      * @function
-     * @name onRouteChange
+     * @name onRouterEventsFirefox
      * @description on route change
      */
-    async function onRouteChange () {
+    async function onRouterEventsFirefox () {
 
         if (!isFirefox) {
 
@@ -76,7 +76,7 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     }
 
-    useEffect (onRouteChange, [router.route])
+    useEffect (onRouterEventsFirefox, [router.events])
 
     return (
         <>
