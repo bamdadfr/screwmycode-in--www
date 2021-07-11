@@ -108,7 +108,7 @@ YoutubePage.propTypes = propTypes
 export async function getServerSideProps (context) {
 
     const { id, 'speed': speedFromParams } = context.params
-    let speed = speedFromParams
+    let speed = parseFloat (speedFromParams) || 1
 
     if (speedFromParams > 1.5) speed = 1.5
 
