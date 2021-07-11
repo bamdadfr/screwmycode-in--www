@@ -29,9 +29,9 @@
 </p>
 
 <p align=center>
-    <img src="https://img.shields.io/david/screwmycode/screwmycode-www">
-    <img src="https://img.shields.io/david/dev/screwmycode/screwmycode-www">
-    <img src="https://img.shields.io/snyk/vulnerabilities/github/screwmycode/screwmycode-www">
+    <img src="https://img.shields.io/david/bamdadsabbagh/screwmycode-in--www">
+    <img src="https://img.shields.io/david/dev/bamdadsabbagh/screwmycode-in--www">
+    <img src="https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/screwmycode-in--www">
 </p>
 
 <p align=center>
