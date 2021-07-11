@@ -53,12 +53,12 @@ export default function FormComponent ({ handleForm }) {
 
     /**
      * @function
-     * @name onSubmit
+     * @name handleSubmit
      * @description handle when form is submitted
      * @param {React.FormEvent} event - form event
      * @returns {Promise<void>}
      */
-    async function onSubmit (event) {
+    async function handleSubmit (event) {
 
         event.preventDefault ()
 
@@ -80,7 +80,7 @@ export default function FormComponent ({ handleForm }) {
 
     return (
         <>
-            <StyledForm onSubmit={onSubmit}>
+            <StyledForm onSubmit={handleSubmit}>
                 <StyledInput
                     placeholder="insert youtube link here"
                     type="text"
@@ -94,7 +94,6 @@ export default function FormComponent ({ handleForm }) {
                 />
             </StyledForm>
         </>
-
     )
 
 }
