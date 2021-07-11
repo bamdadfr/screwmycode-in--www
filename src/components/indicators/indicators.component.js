@@ -1,19 +1,17 @@
 import React from 'react'
-import { useRecoilValue } from 'recoil'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
-import { speedAtom } from '../../atoms/speed.atom'
 import { StyledContainer } from './indicators.styles'
 
 /**
  * @function
  * @name IndicatorsComponent
  * @description indicators
+ * @param {*} props - props
+ * @param {number} props.value - value
  * @returns {React.ReactElement} - react element
  */
-export default function IndicatorsComponent () {
-
-    const speed = useRecoilValue (speedAtom)
+export default function IndicatorsComponent ({ value = 1 }) {
 
     return (
         <>
@@ -25,7 +23,7 @@ export default function IndicatorsComponent () {
                     <input
                         disabled
                         aria-label="percentage value"
-                        value={speedToPercentage (speed, 1)}
+                        value={speedToPercentage (value, 1)}
                     />
                 </div>
                 <div>
@@ -35,7 +33,7 @@ export default function IndicatorsComponent () {
                     <input
                         disabled
                         aria-label="semitones value"
-                        value={speedToSemitones (speed, 1).toString ()}
+                        value={speedToSemitones (value, 1).toString ()}
                     />
                 </div>
             </StyledContainer>
