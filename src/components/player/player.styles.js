@@ -6,7 +6,6 @@ export const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-left: 1px;
 
     & > audio {
         width: 100%;

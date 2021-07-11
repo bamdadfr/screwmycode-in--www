@@ -10,11 +10,19 @@ import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
  */
 export default function FirefoxPage () {
 
+    const description = 'available only for firefox'
+
     // noinspection HtmlRequiredTitleElement
     return (
         <>
             <Head>
-                <meta property="og:description" content="available only for firefox"/>
+
+                <meta itemProp="description" content={description}/>
+
+                <meta property="og:description" content={description}/>
+
+                <meta name='twitter:description' content={description}/>
+
             </Head>
             <StyledContainer>
                 <div>

@@ -9,7 +9,7 @@ import PlayerComponent from '../../../components/player/player.component'
 import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
 import { IsYoutubeIdValidUtils } from '../../../utils/is-youtube-id-valid.utils'
-import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id].styles'
+import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
 
 const propTypes = {

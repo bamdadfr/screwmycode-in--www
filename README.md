@@ -1,8 +1,9 @@
-# <img width=25 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/assets/icons/SCRW_KSET.svg"> Front End
+# <img width=25 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_KSET.svg"> Front End
 
+<!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
 <p align=center>
     <a href="https://screwmycode.in/">
-        <img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/src/assets/icons/SCRW_KSET.svg">
+        <img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_KSET.svg">
     </a>
 </p>
 
@@ -35,10 +36,10 @@
 
 <p align=center>
     <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-    <img src="https://img.shields.io/badge/cd-FTP-yellowgreen">
+    <img src="https://img.shields.io/badge/cd-vercel-yellowgreen">
 </p>
 
-## <img width="15px" src="src/assets/icons/SCRW_CHAMP.svg" /> Context
+## <img width="15px" src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_CHAMP.svg" /> Context
 
 This project is a tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw), inventor of the
 [chopped and screwed](https://en.wikipedia.org/wiki/Chopped_and_screwed) mixing style.
@@ -49,7 +50,7 @@ May he rest in peace.
     <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg">
 </p>
 
-## <img height=15 src="src/assets/icons/SCRW_SHARE_TXT.svg" /> How To
+## <img height=15 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_SHARE_TXT.svg" /> How To
 
 There are two ways of accessing the service:
 
