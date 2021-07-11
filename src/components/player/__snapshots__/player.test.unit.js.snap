@@ -2,7 +2,7 @@
 
 exports[`should mount and match 1`] = `
 <div
-  className="sc-tf5qq8-0 eAvlQw"
+  className="sc-tf5qq8-0 hBokj"
 >
   <audio
     aria-label="player"
