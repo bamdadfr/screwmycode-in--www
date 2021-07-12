@@ -1,3 +1,29 @@
+# [1.13.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.12.0...v1.13.0) (2021-07-12)
+
+
+### Bug Fixes
+
+* **IndicatorsComponent:** add proptypes + ensure string is injected into JSX ([0ee7447](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/0ee7447a538135dfc74ae08ab1737215a2785af1))
+* **PlayerComponent:** add event listener cleanup + better naming convention and jsdoc ([d2e10fe](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d2e10fe0848ebc25597b01603723f770cae9bb02))
+
+
+### Features
+
+* **deps:** add `ytdl-core` ([c1903ba](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c1903bab5f3ad0896138f880af44eb63657e79d5))
+* **FormComponent:** use `ytdl` for input checking + better jsdoc and naming conventions ([62388f1](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/62388f106f82d94071defe0621450ba77f8151f5))
+* **styles:** add ssr to styled-components ([f4bcd04](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f4bcd04272ccfcffeed343a3753f1a434799dc11))
+* **utils:** remove unused functions replaced by `ytdl-core` ([32ed0a3](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/32ed0a343fcd5526dfe3a079173632e5d745924a))
+* **YoutubePage:** add `ytdl` input checking + better jsdoc + proptypes ([6d72c74](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6d72c7435a30e095cf181c4d1c76f6b2e2a4a036))
+
+
+### Performance Improvements
+
+* **404:** naming convention ([93bfc65](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/93bfc65326f5e0b1891908f6b8431c6ae4cabd57))
+* **ContentComponent:** better jsdoc and proptypes ([1f124fb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1f124fb43ff9b4321b84a9f0c2805d4f710f4661))
+* **MyApp:** better jsdoc ([58ec650](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/58ec6504872bffdf12914f6ae29d056cdfd53079))
+* **OldYoutubePage:** better jsdoc descriptions ([140e57f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/140e57f98070132a4da26f13cce5f9a466d3ad2e))
+* **SliderComponent:** add proptypes + better jsdoc ([2a0e559](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2a0e559d708801b293952421bbdf0e9c3e139f7a))
+
 # [1.12.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.11.0...v1.12.0) (2021-07-11)
 
 
