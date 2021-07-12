@@ -93,7 +93,8 @@ export default function PlayerComponent ({
     /**
      * @function
      * @name onUrl
-     * @description update url
+     * @description update url + loading listener
+     * @returns {Promise<void>} cleanup
      */
     async function onUrl () {
 
@@ -105,11 +106,19 @@ export default function PlayerComponent ({
 
         player.playbackRate = playbackRate
 
-        player.addEventListener ('canplay', async () => {
+        const loadingListener = async () => {
 
             if (autoplay) await player.play ()
 
-        })
+        }
+
+        player.addEventListener ('canplay', loadingListener)
+
+        return () => {
+
+            player.removeEventListener ('canplay', loadingListener)
+
+        }
 
     }
 
