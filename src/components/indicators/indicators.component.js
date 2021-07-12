@@ -1,7 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
 import { StyledContainer } from './indicators.styles'
+
+const propTypes = {
+    'value': PropTypes.number,
+}
+
+const defaultProps = {
+    'value': 1,
+}
 
 /**
  * @function
@@ -23,7 +32,7 @@ export default function IndicatorsComponent ({ value = 1 }) {
                     <input
                         disabled
                         aria-label="percentage value"
-                        value={speedToPercentage (value, 1)}
+                        value={speedToPercentage (value, 1).toString ()}
                     />
                 </div>
                 <div>
@@ -41,3 +50,7 @@ export default function IndicatorsComponent ({ value = 1 }) {
     )
 
 }
+
+IndicatorsComponent.propTypes = propTypes
+
+IndicatorsComponent.defaultProps = defaultProps
