@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { StyledSlider, StyledContainer } from './slider.styles'
 
@@ -16,7 +16,22 @@ const propTypes = {
  * @param {Function} props.handleValue - function from HOC
  * @returns {React.ReactElement} - react component
  */
-export default function SliderComponent ({ value, handleValue }) {
+export default function SliderComponent ({ 'value': valueFromProps, handleValue }) {
+
+    const [value, setValue] = useState (valueFromProps.toString ())
+
+    /**
+     * @function
+     * @name onValue
+     * @description pass value to the handler
+     */
+    function onValue () {
+
+        handleValue (value)
+
+    }
+
+    useEffect (onValue, [value])
 
     return (
         <>
@@ -28,7 +43,7 @@ export default function SliderComponent ({ value, handleValue }) {
                     max={1.5}
                     step={0.005}
                     value={value}
-                    onChange={(e) => handleValue (e.target.value)}
+                    onChange={(e) => setValue (e.target.value)}
                 />
             </StyledContainer>
         </>

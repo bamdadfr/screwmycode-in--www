@@ -2,7 +2,12 @@ import React from 'react'
 import SliderComponent from './slider.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
-const instance = JestInstance (<SliderComponent/>)
+const instance = JestInstance (
+    <SliderComponent
+        value={1}
+        handleValue={jest.fn ()}
+    />,
+)
 
 it ('should mount and match', () => {
 
