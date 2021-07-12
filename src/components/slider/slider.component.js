@@ -1,11 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StyledSlider, StyledContainer } from './slider.styles'
+
+const propTypes = {
+    'value': PropTypes.number.isRequired,
+    'handleValue': PropTypes.func.isRequired,
+}
 
 /**
  * @function
  * @name SliderComponent
  * @description component: slider
- * @param {*} props - props
+ * @param {object} props - props
  * @param {number} props.value - default value
  * @param {Function} props.handleValue - function from HOC
  * @returns {React.ReactElement} - react component
@@ -29,3 +35,5 @@ export default function SliderComponent ({ value, handleValue }) {
     )
 
 }
+
+SliderComponent.propTypes = propTypes

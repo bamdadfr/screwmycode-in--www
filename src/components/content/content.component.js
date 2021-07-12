@@ -4,14 +4,15 @@ import Link from 'next/link'
 import { StyledContainer, StyledTitle } from './content.styles'
 
 const propTypes = {
-    'children': PropTypes.node.isRequired,
+    'children': PropTypes.element.isRequired,
 }
 
 /**
  * @function
  * @name ContentComponent
- * @description layout: main component
- * @param {React.ReactElement} children - children to render
+ * @description render the content
+ * @param {object} props - props
+ * @param {React.ReactElement} props.children - children to render
  * @returns {React.ReactElement} - react component
  */
 export default function ContentComponent ({ children }) {

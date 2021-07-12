@@ -44,7 +44,8 @@
         "recoil": "^0.3.1",
         "speed-to-percentage": "^1.1.2",
         "speed-to-semitones": "^1.2.1",
-        "styled-components": "^5.3.0"
+        "styled-components": "^5.3.0",
+        "ytdl-core": "^4.8.3"
     },
     "devDependencies": {
         "@bamdadsabbagh/eslint-config": "^1.12.0",

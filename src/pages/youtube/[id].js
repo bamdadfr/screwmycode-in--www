@@ -19,9 +19,9 @@ export default function OldYoutubePage () {
 /**
  * @function
  * @name getServerSideProps
- * @description next.js convention
+ * @description parse url parameters and redirect
  * @param {*} context - next.js context
- * @returns {object.<string, string>} - props to pass
+ * @returns {object.<string, string>} - redirect
  */
 export function getServerSideProps (context) {
 

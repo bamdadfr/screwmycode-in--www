@@ -38,8 +38,8 @@ export default function MyApp ({ Component, pageProps, err }) {
     /**
      * @function
      * @name onRouterEventsGtag
-     * @description inject google tag script when route events are fired
-     * @returns {Function<void>} - react hook clean up function
+     * @description binds google tag to router events
+     * @returns {Function<void>} - cleanup
      */
     function onRouterEventsGtag () {
 
@@ -64,7 +64,7 @@ export default function MyApp ({ Component, pageProps, err }) {
     /**
      * @function
      * @name onRouterEventsFirefox
-     * @description on route change
+     * @description checks if browser is not firefox
      */
     async function onRouterEventsFirefox () {
 
