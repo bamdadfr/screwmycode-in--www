@@ -21,7 +21,7 @@ it ('should mount and match', () => {
 it ('should have 3+children children', () => {
 
     const children = JestChildren ().props.children.length || 1
-    const array = instance.map (element => element.children.length)
+    const array = instance.map ((element) => element.children.length)
     const total = array.reduce ((total, current) => total + current)
 
     expect (total).toBe (3 + children)

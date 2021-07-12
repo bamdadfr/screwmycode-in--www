@@ -24,7 +24,7 @@ export const StyledContainer = styled.div`
             border: 0;
             font-size: 1.2em;
             font-weight: 900;
-            color: ${props => props.theme.colors.white};
+            color: ${(props) => props.theme.colors.white};
             background: transparent;
         }
     }

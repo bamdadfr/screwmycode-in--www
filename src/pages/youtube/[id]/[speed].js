@@ -52,7 +52,7 @@ export default function YoutubePage ({
 
         // https://github.com/video-dev/can-autoplay/issues/36
         import ('can-autoplay')
-            .then (module => module.default.video ())
+            .then ((module) => module.default.video ())
             .then (({ result }) => {
 
                 if (result === true) {
