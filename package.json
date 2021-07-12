@@ -48,7 +48,7 @@
         "ytdl-core": "^4.8.3"
     },
     "devDependencies": {
-        "@bamdadsabbagh/eslint-config": "^1.12.1",
+        "@bamdadsabbagh/eslint-config": "^1.13.0",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.0.0",
         "@testing-library/user-event": "^13.1.9",
