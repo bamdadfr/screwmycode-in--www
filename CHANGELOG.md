@@ -1,3 +1,11 @@
+## [1.13.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.2...v1.13.3) (2021-07-12)
+
+
+### Performance Improvements
+
+* **deps:** update to latest eslint-config ([75b76f0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/75b76f06fdb083cb2d6e1b51bf1b2cfd4854082a))
+* **linting:** enforce latest rule `arrow-parens` ([45f6e6a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/45f6e6a84a4be0b2cddba8fe899a30f2d09031d5))
+
 ## [1.13.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.1...v1.13.2) (2021-07-12)
 
 
