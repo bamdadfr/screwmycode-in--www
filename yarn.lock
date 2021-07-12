@@ -358,10 +358,10 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.12.0.tgz#3eb51caf3169c1edcd64f6c4505771fce0f3526f"
-  integrity sha512-q2LJ9dCfvCr/ji9IBsJ/xWW9UoQsF4dwnwRyhy3xfMjazzZfz0fXvLAR65SpuT8Po8qFtjvAy1EL/g3oDXeVWA==
+"@bamdadsabbagh/eslint-config@^1.12.1":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.12.1.tgz#83a3ae9660ac3b8b8acbcadddfd6b33a85db3884"
+  integrity sha512-WmPpTt2ASRdfselp2ivnbkQ9J4pNoRLnUqAugnEuD5OhfluLcJ8OenVDjTRt/v+I5yUYSS2JkSiz4s3dPddQAw==
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/eslint-parser" "^7.14.7"
@@ -5554,15 +5554,15 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.9.tgz#8a595135def9592bda69709474f1cbeea7c2467f"
   integrity sha512-Ki212dKK4ogX+xDo4CtOZBVIwhsKBEfsEEcwmJfLQzirgc2jIWdzg40Unxz/HzEUqM1WFzVlQSMF9kZZ2HboLQ==
 
-speed-to-percentage@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/speed-to-percentage/-/speed-to-percentage-1.1.2.tgz#e8121040f7d76e0abd2a99ea296187c9882e6405"
-  integrity sha512-KVyFgvhMyQlLK5rTkxL0zf7buqeNyoSVfnZwOwibrIN0UhwCwYhPd7W46tR9JnS5kBGj6aMLHkTQcqfMmwFJ+g==
+speed-to-percentage@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/speed-to-percentage/-/speed-to-percentage-1.1.3.tgz#dee8af1d5ce3f8932fa5dd9116eb3d8693f93439"
+  integrity sha512-Ic14mTW8yFwfi5hkM4YbmENFNPfAz2Du16vXX4q78B/CxTvsdrEy+uIOwAInfwNnnZqzcH1hcu/6WoPNaM4rcg==
 
-speed-to-semitones@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.2.1.tgz#d8b44882a9efc38e0a394d40793faac5754e3481"
-  integrity sha512-sb8JxbM1lg4m8t/fYAKzN1k0NN5tdZQWCpVFWL2WJVUfpNQ5RT90ihyBtM1qqOrzDMudNlWI4m2zTqhS2QjRyg==
+speed-to-semitones@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/speed-to-semitones/-/speed-to-semitones-1.2.2.tgz#823ba878b4e0a2f1b0569e57e4fb27c13637cc23"
+  integrity sha512-rAnyfcRUYfwEEbhTOVOedTn2ALVdkeFGnSzmc+/GxbKGX7tnjxSjXeB/CfKExMTvTud+eoKkgzOUFLid9HHN6g==
 
 sprintf-js@~1.0.2:
   version "1.0.3"
