@@ -3,19 +3,31 @@ import { fireEvent, screen } from '@testing-library/react'
 import SliderComponent from './slider.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<SliderComponent handleValue={jest.fn ()}/>)
+const setup = () => {
 
-const elements = {
-    'slider': () => screen.getByRole ('slider', {
+    const handleValue = jest.fn ((v) => v)
+
+    JestRender (
+        <SliderComponent
+            handleValue={handleValue}
+            value={1}
+        />,
+    )
+
+    const slider = screen.getByRole ('slider', {
         'name': 'slider',
-    }),
+    })
+
+    return {
+        slider,
+        handleValue,
+    }
+
 }
 
 test ('slider: should render', () => {
 
-    render ()
-
-    const slider = elements.slider ()
+    const { slider, handleValue } = setup ()
 
     expect (slider).toBeInTheDocument ()
 
@@ -25,13 +37,18 @@ test ('slider: should render', () => {
 
     expect (slider).toHaveValue ('1')
 
+    expect (handleValue).toHaveBeenCalledTimes (1)
+
 })
 
 test ('slider: should have a minimum of 0.5', () => {
 
-    render ()
+    const instance = setup ()
+    const { slider, handleValue } = instance
 
-    const slider = elements.slider ()
+    expect (handleValue).toHaveBeenCalledTimes (1)
+
+    expect (handleValue.mock.results[1 - 1].value).toBe ('1')
 
     fireEvent.change (slider, {
         'target': {
@@ -41,6 +58,10 @@ test ('slider: should have a minimum of 0.5', () => {
 
     expect (slider).toHaveValue ('0.5')
 
+    expect (handleValue).toHaveBeenCalledTimes (2)
+
+    expect (handleValue.mock.results[2 - 1].value).toBe ('0.5')
+
     fireEvent.change (slider, {
         'target': {
             'value': 0.1,
@@ -49,13 +70,20 @@ test ('slider: should have a minimum of 0.5', () => {
 
     expect (slider).toHaveValue ('0.5')
 
+    expect (handleValue).toHaveBeenCalledTimes (2)
+
+    expect (handleValue.mock.results[2 - 1].value).toBe ('0.5')
+
 })
 
 test ('slider: should have a maximum of 1.5', () => {
 
-    render ()
+    const instance = setup ()
+    const { slider, handleValue } = instance
 
-    const slider = elements.slider ()
+    expect (handleValue).toHaveBeenCalledTimes (1)
+
+    expect (handleValue.mock.results[1 - 1].value).toBe ('1')
 
     fireEvent.change (slider, {
         'target': {
@@ -65,6 +93,10 @@ test ('slider: should have a maximum of 1.5', () => {
 
     expect (slider).toHaveValue ('1.5')
 
+    expect (handleValue).toHaveBeenCalledTimes (2)
+
+    expect (handleValue.mock.results[2 - 1].value).toBe ('1.5')
+
     fireEvent.change (slider, {
         'target': {
             'value': 2,
@@ -72,5 +104,9 @@ test ('slider: should have a maximum of 1.5', () => {
     })
 
     expect (slider).toHaveValue ('1.5')
+
+    expect (handleValue).toHaveBeenCalledTimes (2)
+
+    expect (handleValue.mock.results[2 - 1].value).toBe ('1.5')
 
 })
