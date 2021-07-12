@@ -23,6 +23,7 @@ export default function ContentComponent ({ children }) {
 
                 <StyledTitle>
                     <Link href="/">
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a>
                             screwmycode.in
                         </a>
