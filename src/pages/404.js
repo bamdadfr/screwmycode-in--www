@@ -14,10 +14,10 @@ export default function NotFoundPage () {
 
     /**
      * @function
-     * @name autoRedirectHome
-     * @description set up automatic redirection to home after delay
+     * @name onMount
+     * @description setup automatic redirection to /
      */
-    function autoRedirectHome () {
+    function onMount () {
 
         setTimeout (async () => {
 
@@ -27,7 +27,7 @@ export default function NotFoundPage () {
 
     }
 
-    useEffect (autoRedirectHome, [])
+    useEffect (onMount, [])
 
     const description = 'page not found'
 
