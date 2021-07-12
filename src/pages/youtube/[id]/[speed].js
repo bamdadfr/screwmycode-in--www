@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
+import axios from 'axios'
+import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import PropTypes from 'prop-types'
 import PlayerComponent from '../../../components/player/player.component'
 import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
-import { IsYoutubeIdValidUtils } from '../../../utils/is-youtube-id-valid.utils'
 import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
 import { repeatAtom } from '../../../atoms/repeat.atom'
@@ -21,9 +21,9 @@ const propTypes = {
 
 /**
  * @function
- * @name YoutubeIdPage
+ * @name YoutubePage
  * @description /youtube/[id]/[speed]
- * @param {*} props - props
+ * @param {object} props - props
  * @param {string} props.title - audio title
  * @param {string} props.url - audio url
  * @param {number} props.speed - audio speed
@@ -137,9 +137,9 @@ YoutubePage.propTypes = propTypes
 /**
  * @function
  * @name getServerSideProps
- * @description next.js convention
- * @param {*} context - next.js context
- * @returns {*} - props to feed the above component
+ * @description sanitize url parameters + check if id is valid + get data from API
+ * @param {object} context - next.js context
+ * @returns {object} - props to pass
  */
 export async function getServerSideProps (context) {
 
@@ -157,7 +157,16 @@ export async function getServerSideProps (context) {
         },
     }
 
-    if (!IsYoutubeIdValidUtils (id)) return redirectResponse
+    try {
+
+        // throws if `id` is not valid
+        ytdl.getVideoID (id)
+
+    } catch {
+
+        return redirectResponse
+
+    }
 
     const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`)
     const { 'data': response } = request
