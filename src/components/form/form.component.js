@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import * as ytdl from 'ytdl-core'
 import { StyledForm, StyledInput, StyledSubmit } from './form.styles'
-import { GetYoutubeIdFromUrlUtils } from '../../utils/get-youtube-id-from-url.utils'
 
 const propTypes = {
     'handleForm': PropTypes.func.isRequired,
@@ -23,15 +23,15 @@ export default function FormComponent ({ handleForm }) {
     /**
      * @function
      * @name onMount
-     * @description on component mount
-     * @returns {Function<FocusEvent>} - clean up function
+     * @description setup listeners
+     * @returns {Function<void>} - cleanup
      */
     function onMount () {
 
         // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
         const linkInstance = linkRef.current
 
-        const onLinkBlur = () => {
+        const blurListener = () => {
 
             setTimeout (() => {
 
@@ -41,11 +41,15 @@ export default function FormComponent ({ handleForm }) {
 
         }
 
-        onLinkBlur ()
+        blurListener ()
 
-        linkInstance.addEventListener ('blur', onLinkBlur)
+        linkInstance.addEventListener ('blur', blurListener)
 
-        return () => linkInstance.removeEventListener ('blur', onLinkBlur)
+        return () => {
+
+            linkInstance.removeEventListener ('blur', blurListener)
+
+        }
 
     }
 
@@ -62,19 +66,17 @@ export default function FormComponent ({ handleForm }) {
 
         event.preventDefault ()
 
-        const id = GetYoutubeIdFromUrlUtils (link)
+        try {
 
-        if (!id) {
+            const id = ytdl.getURLVideoID (link)
+
+            handleForm ({ id })
+
+        } catch {
 
             setLink ('')
 
-            return
-
         }
-
-        handleForm ({
-            id,
-        })
 
     }
 
