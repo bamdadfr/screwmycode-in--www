@@ -1,3 +1,18 @@
+## [1.13.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.1...v1.13.2) (2021-07-12)
+
+
+### Bug Fixes
+
+* **deps:** regen yarn lock file ([e196482](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e19648213779aef481d9e16184e3d19f80474f97))
+* **SliderComponent:** add internal state for consistency and testing purposes ([1698be5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1698be58ee73eeac54f27b92a2cc04877b6132f4))
+
+
+### Performance Improvements
+
+* **ContentComponent:** disable linting rule for anchor tag (next.js) ([2d47a7c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2d47a7ca24a7188d5b6b8d63d7b2a06e24d77eb3))
+* **deps:** updated deps to latest ([75c2f0b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/75c2f0bdda320b856e59637b575aabfd3a025b6a))
+* **linting:** cleanup eslint configuration file ([12953de](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/12953de3ebfcd2e66debdc916cb633a7693a0a45))
+
 ## [1.13.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.0...v1.13.1) (2021-07-12)
 
 
