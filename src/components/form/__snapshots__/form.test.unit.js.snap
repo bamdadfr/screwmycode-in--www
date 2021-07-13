@@ -8,7 +8,7 @@ exports[`should mount and match 1`] = `
   <input
     className="sc-1forcsr-1 gfjLnx"
     onChange={[Function]}
-    placeholder="insert youtube link here"
+    placeholder="paste link here (youtube, soundcloud)"
     type="text"
     value=""
   />

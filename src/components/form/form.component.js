@@ -99,7 +99,7 @@ export default function FormComponent ({ handleForm }) {
         <>
             <StyledForm onSubmit={handleSubmit}>
                 <StyledInput
-                    placeholder="insert youtube link here"
+                    placeholder="paste link here (youtube, soundcloud)"
                     type="text"
                     ref={linkRef}
                     value={link}
