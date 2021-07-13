@@ -1,3 +1,11 @@
+## [1.14.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.14.0...v1.14.1) (2021-07-13)
+
+
+### Bug Fixes
+
+* **SoundcloudPage:** router.push is now router.replace + add constant + indent for 1:1 comparison with YoutubePage ([cf64453](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cf644535437ef564a8b64cd2edb7db1ca3dbb7e1))
+* **YoutubePage:** add provider constant for 1:1 comparison with SoundcloudPage ([c39fb1c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c39fb1c8491a1c6aa3e842102056ffe7a98ea9a6))
+
 # [1.14.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.3...v1.14.0) (2021-07-13)
 
 
