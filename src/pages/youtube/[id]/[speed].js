@@ -15,6 +15,7 @@ import { volumeAtom } from '../../../atoms/volume.atom'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
+    'image': PropTypes.string.isRequired,
     'url': PropTypes.string.isRequired,
     'speed': PropTypes.number.isRequired,
 }
