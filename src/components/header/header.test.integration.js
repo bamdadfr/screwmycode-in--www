@@ -3,18 +3,23 @@ import { screen } from '@testing-library/react'
 import HeaderComponent from './header.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<HeaderComponent/>)
+const render = () => {
 
-const elements = {
-    'home': () => screen.getByRole ('button', { 'name': 'home' }),
-    'repeat': () => screen.getByRole ('button', { 'name': 'repeat' }),
+    JestRender (<HeaderComponent/>)
+
+    const home = screen.getByRole ('button', { 'name': 'home' })
+    const repeat = screen.getByRole ('button', { 'name': 'repeat' })
+
+    return {
+        home,
+        repeat,
+    }
+
 }
 
 test ('home: should render', () => {
 
-    render ()
-
-    const home = elements.home ()
+    const { home } = render ()
 
     expect (home).toBeInTheDocument ()
 
@@ -26,9 +31,7 @@ test ('home: should render', () => {
 
 test ('repeat: should render', () => {
 
-    render ()
-
-    const repeat = elements.repeat ()
+    const { repeat } = render ()
 
     expect (repeat).toBeInTheDocument ()
 
