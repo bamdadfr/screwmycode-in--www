@@ -1,3 +1,22 @@
+# [1.14.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.3...v1.14.0) (2021-07-13)
+
+
+### Bug Fixes
+
+* **FormComponent:** update placeholder + soundcloud integration test ([b2a6cba](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b2a6cbaa3787f9b8047a8509fd308426a7ef267c))
+* **IndexPage:** assume form returns `path` result ([5027187](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5027187ff489b0bd8c6005b1a9529a4414480313))
+* **PlayerPage:** add `image` to PropTypes ([511deb7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/511deb79cbc8ad2f53c5fb5de094379f521acb51))
+* **PlayerPage:** add `image` to server side props ([43e0197](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/43e01974f67b623ed8f1690e599f778aa2a13e64))
+* **YoutubePage:** add `shouldShallow` debugger ([70095d3](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/70095d36242066fce02fed7f67930bfc913c14ee))
+* **YoutubePage:** remove `shouldShallow` debugger ([08f5d03](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/08f5d0335940cd314574bdf55dfc3c10c268eeb6))
+
+
+### Features
+
+* **deps:** add `soundcloud-scraper` to dependencies ([d660e6f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d660e6f1de512da2f35ffacaf8f03f1dcba0d42b))
+* **FormComponent:** detect soundcloud links ([582bc4e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/582bc4ed98b80b08701a3354b4c1195d8b4c3381))
+* **soundcloud:** add page for soundcloud links ([e2db355](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e2db355d7765e5fd21f3716b90d39366bc603885))
+
 ## [1.13.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.13.2...v1.13.3) (2021-07-12)
 
 
