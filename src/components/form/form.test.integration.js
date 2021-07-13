@@ -4,21 +4,33 @@ import userEvent from '@testing-library/user-event'
 import FormComponent from './form.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const handleForm = jest.fn ()
-const render = () => JestRender (<FormComponent handleForm={handleForm}/>)
+const render = () => {
 
-const elements = {
-    'link': () => screen.getByPlaceholderText ('insert youtube link here'),
-    'submit': () => screen.getByRole ('button', {
+    const handleForm = jest.fn ()
+
+    JestRender (
+        <FormComponent
+            handleForm={handleForm}
+        />,
+    )
+
+    const link = screen.getByPlaceholderText ('insert youtube link here')
+
+    const submit = screen.getByRole ('button', {
         'name': 'submit',
-    }),
+    })
+
+    return {
+        link,
+        submit,
+        handleForm,
+    }
+
 }
 
 test ('link: should render', async () => {
 
-    render ()
-
-    const link = elements.link ()
+    const { link } = render ()
 
     expect (link).toBeInTheDocument ()
 
@@ -36,9 +48,7 @@ test ('link: should render', async () => {
 
 test ('submit: should render', () => {
 
-    render ()
-
-    const submit = elements.submit ()
+    const { submit, handleForm } = render ()
 
     expect (submit).toBeInTheDocument ()
 
@@ -50,9 +60,7 @@ test ('submit: should render', () => {
 
 test ('link: should reset on wrong value', () => {
 
-    render ()
-
-    const link = elements.link ()
+    const { link, handleForm } = render ()
 
     userEvent.type (link, 'wrong value')
 
@@ -68,9 +76,7 @@ test ('link: should reset on wrong value', () => {
 
 test ('link: should trigger handleSubmit on correct value', () => {
 
-    render ()
-
-    const link = elements.link ()
+    const { link, handleForm } = render ()
     const value = 'https://www.youtube.com/watch?v=QtUoBDJA7p0'
 
     userEvent.type (link, value)
@@ -87,9 +93,7 @@ test ('link: should trigger handleSubmit on correct value', () => {
 
 test ('link: should refocus on blur', async () => {
 
-    render ()
-
-    const link = elements.link ()
+    const { link } = render ()
 
     await waitFor (() => {
 

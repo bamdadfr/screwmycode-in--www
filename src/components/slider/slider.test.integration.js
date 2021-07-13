@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react'
 import SliderComponent from './slider.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const setup = () => {
+const render = () => {
 
     const handleValue = jest.fn ((v) => v)
 
@@ -27,7 +27,7 @@ const setup = () => {
 
 test ('slider: should render', () => {
 
-    const { slider, handleValue } = setup ()
+    const { slider, handleValue } = render ()
 
     expect (slider).toBeInTheDocument ()
 
@@ -43,8 +43,7 @@ test ('slider: should render', () => {
 
 test ('slider: should have a minimum of 0.5', () => {
 
-    const instance = setup ()
-    const { slider, handleValue } = instance
+    const { slider, handleValue } = render ()
 
     expect (handleValue).toHaveBeenCalledTimes (1)
 
@@ -78,8 +77,7 @@ test ('slider: should have a minimum of 0.5', () => {
 
 test ('slider: should have a maximum of 1.5', () => {
 
-    const instance = setup ()
-    const { slider, handleValue } = instance
+    const { slider, handleValue } = render ()
 
     expect (handleValue).toHaveBeenCalledTimes (1)
 

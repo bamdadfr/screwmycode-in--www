@@ -4,18 +4,28 @@ import ContentComponent from './content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<ContentComponent><JestChildren/></ContentComponent>)
+const render = () => {
 
-const elements = {
-    'title': () => screen.getByRole ('link', { 'name': 'screwmycode.in' }),
+    JestRender (
+        <ContentComponent>
+            <JestChildren/>
+        </ContentComponent>,
+    )
+
+    const title = screen.getByRole ('link', {
+        'name': 'screwmycode.in',
+    })
+
+    return { title }
+
 }
 
 test ('title: should render', () => {
 
-    render ()
-
-    const title = elements.title ()
+    const { title } = render ()
 
     expect (title).toBeInTheDocument ()
+
+    expect (title).toBeVisible ()
 
 })

@@ -3,79 +3,81 @@ import { screen } from '@testing-library/react'
 import IndicatorsComponent from './indicators.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const render = () => JestRender (<IndicatorsComponent/>)
+const render = () => {
 
-const elements = {
-    'percentage': {
-        'title': () => screen.getByText ('percent'),
-        'value': () => screen.getByRole ('textbox', {
-            'name': 'percentage value',
-        }),
-    },
-    'semitones': {
-        'title': () => screen.getByText ('semitone'),
-        'value': () => screen.getByRole ('textbox', {
-            'name': 'semitones value',
-        }),
-    },
+    JestRender (<IndicatorsComponent/>)
+
+    const percentage = {}
+
+    percentage.title = screen.getByText ('percent')
+
+    percentage.value = screen.getByRole ('textbox', {
+        'name': 'percentage value',
+    })
+
+    const semitones = {}
+
+    semitones.title = screen.getByText ('semitone')
+
+    semitones.value = screen.getByRole ('textbox', {
+        'name': 'semitones value',
+    })
+
+    return {
+        percentage,
+        semitones,
+    }
+
 }
 
 test ('percentage: title should render', () => {
 
-    render ()
+    const { percentage } = render ()
 
-    const title = elements.percentage.title ()
+    expect (percentage.title).toBeInTheDocument ()
 
-    expect (title).toBeInTheDocument ()
+    expect (percentage.title).toBeVisible ()
 
-    expect (title).toBeVisible ()
-
-    expect (title).toEqual (screen.getByTitle ('percentage'))
+    expect (percentage.title).toEqual (screen.getByTitle ('percentage'))
 
 })
 
 test ('percentage: value should render', () => {
 
-    render ()
+    const { percentage } = render ()
 
-    const value = elements.percentage.value ()
+    expect (percentage.value).toBeInTheDocument ()
 
-    expect (value).toBeInTheDocument ()
+    expect (percentage.value).toBeVisible ()
 
-    expect (value).toBeVisible ()
+    expect (percentage.value).toBeDisabled ()
 
-    expect (value).toBeDisabled ()
-
-    expect (value).toHaveValue ('0.0')
+    expect (percentage.value).toHaveValue ('0.0')
 
 })
 
 test ('semitones: title should render', () => {
 
-    render ()
+    const { semitones } = render ()
 
-    const title = elements.semitones.title ()
+    expect (semitones.title).toBeInTheDocument ()
 
-    expect (title).toBeInTheDocument ()
+    expect (semitones.title).toBeVisible ()
 
-    expect (title).toBeVisible ()
-
-    expect (title).toEqual (screen.getByTitle ('semitones'))
+    expect (semitones.title).toEqual (screen.getByTitle ('semitones'))
 
 })
 
 test ('semitones: value should render', () => {
 
-    render ()
+    const { semitones } = render ()
 
-    const value = elements.semitones.value ()
+    expect (semitones.value).toBeInTheDocument ()
 
-    expect (value).toBeInTheDocument ()
+    expect (semitones.value).toBeVisible ()
 
-    expect (value).toBeVisible ()
+    expect (semitones.value).toBeDisabled ()
 
-    expect (value).toBeDisabled ()
-
-    expect (value).toHaveValue ('0.0')
+    expect (semitones.value).toHaveValue ('0.0')
 
 })
