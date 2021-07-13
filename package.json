@@ -25,7 +25,8 @@
         "start": "next start",
         "test": "yarn jest && codecov",
         "test:experimental": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "test:watch:all": "jest --watchAll"
     },
     "dependencies": {
         "@iconify/icons-mdi": "^1.1.5",
