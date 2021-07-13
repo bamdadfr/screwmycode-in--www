@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import * as ytdl from 'ytdl-core'
+import SoundcloudScraper from 'soundcloud-scraper'
 import { StyledForm, StyledInput, StyledSubmit } from './form.styles'
 
 const propTypes = {
@@ -68,9 +69,23 @@ export default function FormComponent ({ handleForm }) {
 
         try {
 
-            const id = ytdl.getURLVideoID (link)
+            // soundcloud
+            if (SoundcloudScraper.Util.validateURL (link)) {
 
-            handleForm ({ id })
+                const userAndId = link.replace ('https://soundcloud.com/', '')
+                const path = `/soundcloud/${userAndId}/1`
+
+                handleForm (path)
+
+                return
+
+            }
+
+            // youtube
+            const id = ytdl.getURLVideoID (link)
+            const path = `/youtube/${id}/1`
+
+            handleForm (path)
 
         } catch {
 
@@ -84,7 +99,7 @@ export default function FormComponent ({ handleForm }) {
         <>
             <StyledForm onSubmit={handleSubmit}>
                 <StyledInput
-                    placeholder="insert youtube link here"
+                    placeholder="paste link here (youtube, soundcloud)"
                     type="text"
                     ref={linkRef}
                     value={link}

@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
-import axios from 'axios'
-import * as ytdl from 'ytdl-core'
+import SoundcloudScraper from 'soundcloud-scraper'
 import { useRouter } from 'next/router'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import PlayerComponent from '../../../components/player/player.component'
-import SliderComponent from '../../../components/slider/slider.component'
-import IndicatorsComponent from '../../../components/indicators/indicators.component'
-import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
-import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
-import { repeatAtom } from '../../../atoms/repeat.atom'
-import { volumeAtom } from '../../../atoms/volume.atom'
+import Head from 'next/head'
+import PlayerComponent from '../../../../components/player/player.component'
+import { repeatAtom } from '../../../../atoms/repeat.atom'
+import { volumeAtom } from '../../../../atoms/volume.atom'
+import { StyledContainer, StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
+import IndicatorsComponent from '../../../../components/indicators/indicators.component'
+import SliderComponent from '../../../../components/slider/slider.component'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -22,8 +20,8 @@ const propTypes = {
 
 /**
  * @function
- * @name YoutubePage
- * @description /youtube/[id]/[speed]
+ * @name SoundcloudPage
+ * @description /soundcloud/[user]/[id]/[speed]
  * @param {object} props - props
  * @param {string} props.title - audio title
  * @param {string} props.image - audio thumbnail url
@@ -31,12 +29,7 @@ const propTypes = {
  * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
-export default function YoutubePage ({
-    title,
-    image,
-    url,
-    'speed': speedFromProps,
-}) {
+export default function SoundcloudPage ({ title, image, url, 'speed': speedFromProps }) {
 
     const router = useRouter ()
     const [speed, setSpeed] = useState (speedFromProps)
@@ -80,10 +73,10 @@ export default function YoutubePage ({
      */
     async function onSpeed () {
 
-        setDescription (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
+        setDescription (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
 
-        await router.replace (
-            `/youtube/${router.query.id}/${speed}`,
+        await router.push (
+            `/soundcloud/${router.query.user}/${router.query.id}/${speed}`,
             undefined,
             { 'shallow': true },
         )
@@ -138,7 +131,7 @@ export default function YoutubePage ({
 
 }
 
-YoutubePage.propTypes = propTypes
+SoundcloudPage.propTypes = propTypes
 
 /**
  * @function
@@ -149,46 +142,25 @@ YoutubePage.propTypes = propTypes
  */
 export async function getServerSideProps (context) {
 
-    const { id, 'speed': speedFromParams } = context.params
-    let speed = parseFloat (speedFromParams) || 1
+    const { user, id, speed } = context.query
+    const props = {}
+    const scraper = new SoundcloudScraper.Client ()
+    const soundcloudUrl = `https://soundcloud.com/${user}/${id}`
+    const isValid = await SoundcloudScraper.Util.validateURL (soundcloudUrl)
 
-    if (speedFromParams > 1.5) speed = 1.5
+    if (!isValid) return { 'redirect': { 'destination': '/', 'permanent': false }}
 
-    if (speedFromParams < 0.5) speed = 0.5
+    const info = await scraper.getSongInfo (soundcloudUrl)
+    const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL (info.trackURL)
 
-    const redirectResponse = {
-        'redirect': {
-            'destination': '/',
-            'permanent': false,
-        },
-    }
+    props.title = info.title
 
-    try {
+    props.image = info.thumbnail
 
-        // throws if `id` is not valid
-        ytdl.getVideoID (id)
+    props.url = audioUrl
 
-    } catch {
+    props.speed = parseFloat (speed) || 1
 
-        return redirectResponse
-
-    }
-
-    const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`)
-    const { 'data': response } = request
-
-    if (!response.success) return redirectResponse
-
-    const { title, url } = response.data
-    const image = GetYoutubeThumbnailUtils (id)
-
-    return {
-        'props': {
-            title,
-            image,
-            url,
-            speed,
-        },
-    }
+    return { props }
 
 }

@@ -18,12 +18,11 @@ export default function IndexPage () {
      * @function
      * @name handleForm
      * @description handle form
-     * @param {*} data - form data
-     * @param {string} data.id - link
+     * @param {string} path - link
      */
-    async function handleForm ({ id }) {
+    async function handleForm (path) {
 
-        await router.push (`/youtube/${id}/1`)
+        await router.push (path)
 
     }
 

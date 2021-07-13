@@ -14,7 +14,7 @@ const render = () => {
         />,
     )
 
-    const link = screen.getByPlaceholderText ('insert youtube link here')
+    const link = screen.getByPlaceholderText ('paste link here (youtube, soundcloud)')
 
     const submit = screen.getByRole ('button', {
         'name': 'submit',
@@ -74,23 +74,6 @@ test ('link: should reset on wrong value', () => {
 
 })
 
-test ('link: should trigger handleSubmit on correct value', () => {
-
-    const { link, handleForm } = render ()
-    const value = 'https://www.youtube.com/watch?v=QtUoBDJA7p0'
-
-    userEvent.type (link, value)
-
-    expect (link).toHaveValue (value)
-
-    fireEvent.submit (link)
-
-    expect (link).toHaveValue (value)
-
-    expect (handleForm).toHaveBeenCalledTimes (1)
-
-})
-
 test ('link: should refocus on blur', async () => {
 
     const { link } = render ()
@@ -108,5 +91,39 @@ test ('link: should refocus on blur', async () => {
         expect (link).toHaveFocus ()
 
     })
+
+})
+
+test ('link: should trigger handleForm on youtube link', () => {
+
+    const { link, handleForm } = render ()
+    const youtubeLink = 'https://www.youtube.com/watch?v=QtUoBDJA7p0'
+
+    userEvent.type (link, youtubeLink)
+
+    expect (link).toHaveValue (youtubeLink)
+
+    fireEvent.submit (link)
+
+    expect (link).toHaveValue (youtubeLink)
+
+    expect (handleForm).toHaveBeenCalledTimes (1)
+
+})
+
+test ('link: should trigger handleForm on soundcloud link', () => {
+
+    const { link, handleForm } = render ()
+    const soundcloudLink = 'https://soundcloud.com/basement93/nichts-mehr-wert'
+
+    userEvent.type (link, soundcloudLink)
+
+    expect (link).toHaveValue (soundcloudLink)
+
+    fireEvent.submit (link)
+
+    expect (link).toHaveValue (soundcloudLink)
+
+    expect (handleForm).toHaveBeenCalledTimes (1)
 
 })
