@@ -25,12 +25,14 @@ const propTypes = {
  * @description /youtube/[id]/[speed]
  * @param {object} props - props
  * @param {string} props.title - audio title
+ * @param {string} props.image - audio thumbnail url
  * @param {string} props.url - audio url
  * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
 export default function YoutubePage ({
     title,
+    image,
     url,
     'speed': speedFromProps,
 }) {
@@ -38,7 +40,6 @@ export default function YoutubePage ({
     const router = useRouter ()
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
-    const [thumbnail] = useState (GetYoutubeThumbnailUtils (router.query.id))
     const [autoplay, setAutoplay] = useState (false)
     const repeat = useRecoilValue (repeatAtom)
     const [volume, setVolume] = useRecoilState (volumeAtom)
@@ -103,13 +104,13 @@ export default function YoutubePage ({
                 <title>{description}</title>
 
                 <meta itemProp="description" content={description}/>
-                <meta itemProp="image" content={thumbnail}/>
+                <meta itemProp="image" content={image}/>
 
                 <meta name="twitter:description" content={description}/>
-                <meta name="twitter:image" content={thumbnail}/>
+                <meta name="twitter:image" content={image}/>
 
                 <meta property="og:description" content={description}/>
-                <meta property="og:image" content={thumbnail}/>
+                <meta property="og:image" content={image}/>
 
             </Head>
             <StyledContainer>
@@ -184,10 +185,12 @@ export async function getServerSideProps (context) {
     if (!response.success) return redirectResponse
 
     const { title, url } = response.data
+    const image = GetYoutubeThumbnailUtils (id)
 
     return {
         'props': {
             title,
+            image,
             url,
             speed,
         },
