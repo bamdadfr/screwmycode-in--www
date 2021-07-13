@@ -1,61 +1,54 @@
 import React from 'react'
-import { screen, act, waitFor } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import PlayerComponent from './player.component'
 import { JestRender } from '../../../jest/jest-render'
 
-const url = 'https://domain.com/audio.mp3'
-
-const render = (autoplay = false) => JestRender (
-    <PlayerComponent
-        url={url}
-        playbackRate={1}
-        loop
-        volume={1}
-        handleVolume={jest.fn ()}
-        autoplay={autoplay}
-    />,
-)
-
-const elements = {
-    'player': () => screen.getByLabelText ('player'),
-}
-
-// https://github.com/jsdom/jsdom/issues/2155
-const mock = {
-    'load': (fn) => {
-
-        window.HTMLMediaElement.prototype.load = fn
-
-    },
-    'play': (fn) => {
-
-        window.HTMLMediaElement.prototype.play = fn
-
-    },
-    'pause': (fn) => {
-
-        window.HTMLMediaElement.prototype.pause = fn
-
-    },
-    'addTextTrack': (fn) => {
-
-        window.HTMLMediaElement.prototype.addTextTrack = fn
-
-    },
-}
-
-test ('player: should render', () => {
+const render = (
+    autoplay = false,
+    url = 'http://localhost/undefined.mp3',
+) => {
 
     const load = jest.fn ()
     const play = jest.fn ()
+    const pause = jest.fn ()
+    const addNextTrack = jest.fn ()
 
-    mock.load (load)
+    window.HTMLMediaElement.prototype.load = load
 
-    mock.play (play)
+    window.HTMLMediaElement.prototype.play = play
 
-    render ()
+    window.HTMLMediaElement.prototype.pause = pause
 
-    const player = elements.player ()
+    window.HTMLMediaElement.prototype.addNextTrack = addNextTrack
+
+    JestRender (
+        <PlayerComponent
+            url={url}
+            playbackRate={1}
+            loop
+            volume={1}
+            handleVolume={jest.fn ()}
+            autoplay={autoplay}
+        />,
+    )
+
+    const player = screen.getByLabelText ('player')
+
+    return {
+        player,
+        load,
+        play,
+        pause,
+        addNextTrack,
+    }
+
+}
+
+// https://github.com/jsdom/jsdom/issues/2155
+test ('player: should render', () => {
+
+    const url = 'http://localhost/myFile.mp3'
+    const { player, load, play } = render (undefined, url)
 
     expect (player).toBeInTheDocument ()
 
@@ -72,21 +65,17 @@ test ('player: should render', () => {
 
     expect (player.volume).toEqual (1)
 
-    expect (play).not.toHaveBeenCalled ()
+    expect (play).toHaveBeenCalledTimes (0)
 
 })
 
 test ('player: should play', () => {
 
-    const play = jest.fn ()
+    const { player, play } = render ()
 
-    mock.play (play)
+    expect (play).toHaveBeenCalledTimes (0)
 
-    render ()
-
-    const player = elements.player ()
-
-    act (() => player.play ())
+    player.play ()
 
     expect (play).toHaveBeenCalledTimes (1)
 
@@ -94,15 +83,9 @@ test ('player: should play', () => {
 
 test ('player: should pause', () => {
 
-    const pause = jest.fn ()
+    const { player, pause } = render ()
 
-    mock.pause (pause)
-
-    render ()
-
-    const player = elements.player ()
-
-    act (() => player.pause ())
+    player.pause ()
 
     expect (pause).toHaveBeenCalledTimes (1)
 
@@ -110,23 +93,15 @@ test ('player: should pause', () => {
 
 test ('player: should not autoplay by default', () => {
 
-    const play = jest.fn ()
+    const { play } = render (false)
 
-    mock.play (play)
-
-    render ()
-
-    expect (play).not.toHaveBeenCalled ()
+    expect (play).toHaveBeenCalledTimes (0)
 
 })
 
 test ('player: should autoplay if prop is passed', () => {
 
-    const play = jest.fn ()
-
-    mock.play (play)
-
-    render (true)
+    const { play } = render (true)
 
     waitFor (() => {
 
