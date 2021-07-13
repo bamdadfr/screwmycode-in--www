@@ -1,6 +1,5 @@
-# <img width=25 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_KSET.svg"> Front End
-
 <!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
+
 <p align=center>
     <a href="https://screwmycode.in/">
         <img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_KSET.svg">
@@ -8,7 +7,7 @@
 </p>
 
 <p align=center>
-    Variable speed pitch control for <a href="https://www.youtube.com/">YouTube</a>
+    Pitch control for <a href="https://www.youtube.com/">YouTube</a>
 </p>
 
 <p align=center>
