@@ -29,11 +29,17 @@ const propTypes = {
  * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
-export default function SoundcloudPage ({ title, image, url, 'speed': speedFromProps }) {
+export default function SoundcloudPage ({
+    title,
+    image,
+    url,
+    'speed': speedFromProps,
+}) {
 
     const router = useRouter ()
+    const [provider] = useState ('SoundCloud')
     const [speed, setSpeed] = useState (speedFromProps)
-    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
+    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
     const repeat = useRecoilValue (repeatAtom)
     const [volume, setVolume] = useRecoilState (volumeAtom)
@@ -73,9 +79,9 @@ export default function SoundcloudPage ({ title, image, url, 'speed': speedFromP
      */
     async function onSpeed () {
 
-        setDescription (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
+        setDescription (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
 
-        await router.push (
+        await router.replace (
             `/soundcloud/${router.query.user}/${router.query.id}/${speed}`,
             undefined,
             { 'shallow': true },
