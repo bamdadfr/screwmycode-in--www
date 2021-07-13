@@ -39,8 +39,9 @@ export default function YoutubePage ({
 }) {
 
     const router = useRouter ()
+    const [provider] = useState ('YouTube')
     const [speed, setSpeed] = useState (speedFromProps)
-    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ScrewMyCode.In`)
+    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
     const repeat = useRecoilValue (repeatAtom)
     const [volume, setVolume] = useRecoilState (volumeAtom)
@@ -80,7 +81,7 @@ export default function YoutubePage ({
      */
     async function onSpeed () {
 
-        setDescription (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
+        setDescription (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
 
         await router.replace (
             `/youtube/${router.query.id}/${speed}`,
