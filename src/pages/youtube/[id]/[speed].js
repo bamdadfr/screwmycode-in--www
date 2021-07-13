@@ -80,12 +80,6 @@ export default function YoutubePage ({
      */
     async function onSpeed () {
 
-        // eslint-disable-next-line no-self-compare
-        const shouldShallow = router.route === router.route && router.query.id === router.query.id
-
-        // eslint-disable-next-line no-console
-        console.log ('shouldShallow', shouldShallow)
-
         setDescription (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
 
         await router.replace (
