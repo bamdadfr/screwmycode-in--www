@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.14.1...v1.15.0) (2021-07-15)
+
+
+### Features
+
+* **state:** swapped `recoil` for `zustand` as default store manger ([5684b7c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5684b7cca03820b003761621173e98be5e416b7f))
+
 ## [1.14.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.14.0...v1.14.1) (2021-07-13)
 
 
