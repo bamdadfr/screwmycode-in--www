@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useEffect } from 'react'
-import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
 import 'sass-reset'
 import { isFirefox } from 'react-device-detect'
@@ -80,15 +79,13 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     return (
         <>
-            <RecoilRoot>
-                <GlobalStyles/>
-                <ThemeProvider theme={ThemeStyles}>
-                    <LayoutComponent>
-                        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                        <Component {...pageProps} err={err}/>
-                    </LayoutComponent>
-                </ThemeProvider>
-            </RecoilRoot>
+            <GlobalStyles/>
+            <ThemeProvider theme={ThemeStyles}>
+                <LayoutComponent>
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    <Component {...pageProps} err={err}/>
+                </LayoutComponent>
+            </ThemeProvider>
         </>
     )
 

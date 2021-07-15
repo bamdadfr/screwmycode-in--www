@@ -4,14 +4,12 @@ import Head from 'next/head'
 import axios from 'axios'
 import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
-import { useRecoilState, useRecoilValue } from 'recoil'
 import PlayerComponent from '../../../components/player/player.component'
 import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
 import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
-import { repeatAtom } from '../../../atoms/repeat.atom'
-import { volumeAtom } from '../../../atoms/volume.atom'
+import { useStore } from '../../../hooks'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -43,8 +41,12 @@ export default function YoutubePage ({
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
-    const repeat = useRecoilValue (repeatAtom)
-    const [volume, setVolume] = useRecoilState (volumeAtom)
+    const repeat = useStore ((state) => state.repeat)
+
+    const { volume, setVolume } = useStore ((state) => ({
+        'volume': state.volume,
+        'setVolume': state.setVolume,
+    }))
 
     /**
      * @function
