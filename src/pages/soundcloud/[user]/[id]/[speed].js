@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { PlayerComponent } from '../../../../domains/player/player/player-component'
+import { AudioComponent, IndicatorsComponent, SliderComponent } from '../../../../domains/player'
 import { StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
-import { IndicatorsComponent } from '../../../../domains/player/indicators'
-import { SliderComponent } from '../../../../domains/player/slider/slider-component'
 import { useStoreRepeat, useStoreVolume } from '../../../../hooks'
 
 const propTypes = {
@@ -110,7 +108,7 @@ export default function SoundcloudPage ({
                 {title}
             </StyledTitle>
 
-            <PlayerComponent
+            <AudioComponent
                 url={url}
                 playbackRate={speed}
                 loop={repeat}

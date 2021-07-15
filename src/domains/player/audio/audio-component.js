@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { StyledContainer } from './player-component-styles'
+import { StyledContainer } from './audio-component-styles'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
@@ -13,7 +13,7 @@ const propTypes = {
 
 /**
  * @function
- * @name PlayerComponent
+ * @name AudioComponent
  * @description player: audio component
  * @param {object} props - props
  * @param {string} props.url - url
@@ -24,7 +24,7 @@ const propTypes = {
  * @param {boolean} props.autoplay - autoplay
  * @returns {React.ReactElement} - react component
  */
-export function PlayerComponent ({
+export function AudioComponent ({
     url,
     playbackRate,
     loop,
@@ -171,4 +171,4 @@ export function PlayerComponent ({
 
 }
 
-PlayerComponent.propTypes = propTypes
+AudioComponent.propTypes = propTypes

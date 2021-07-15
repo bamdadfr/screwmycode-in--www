@@ -1,6 +1,6 @@
 import React from 'react'
 import { screen, waitFor } from '@testing-library/react'
-import { PlayerComponent } from './player-component'
+import { AudioComponent } from './audio-component'
 import { JestRender } from '../../../../jest/jest-render'
 
 const render = (
@@ -22,7 +22,7 @@ const render = (
     window.HTMLMediaElement.prototype.addNextTrack = addNextTrack
 
     JestRender (
-        <PlayerComponent
+        <AudioComponent
             url={url}
             playbackRate={1}
             loop

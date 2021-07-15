@@ -1,11 +1,11 @@
 import React from 'react'
-import { PlayerComponent } from './player-component'
+import { AudioComponent } from './audio-component'
 import { JestInstance } from '../../../../jest/jest-instance'
 
 const url = 'https://dummy.audio.url'
 
 const instance = JestInstance (
-    <PlayerComponent
+    <AudioComponent
         url={url}
         playbackRate={1}
         loop

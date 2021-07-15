@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
-import { PlayerComponent } from '../../../domains/player/player/player-component'
-import { SliderComponent } from '../../../domains/player/slider/slider-component'
-import { IndicatorsComponent } from '../../../domains/player/indicators'
+import { AudioComponent, SliderComponent, IndicatorsComponent } from '../../../domains/player'
 import { StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../app/utils/get-youtube-thumbnail.utils'
 import { useAutoplay, useStoreRepeat, useStoreVolume } from '../../../hooks'
@@ -73,7 +71,7 @@ export default function YoutubePage ({
                     {title}
                 </StyledTitle>
 
-                <PlayerComponent
+                <AudioComponent
                     url={url}
                     playbackRate={speed}
                     loop={repeat}

@@ -1,0 +1,1 @@
+export { AudioComponent } from './audio-component'
