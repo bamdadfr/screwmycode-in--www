@@ -5,7 +5,6 @@ import React, { useEffect } from 'react'
  * @name useInputRefocus
  * @param {React.Ref} ref - react ref
  * @param {number} delay - refocus delay in ms
- * @returns {object} return value
  */
 export function useInputRefocus (ref, delay = 1) {
 
@@ -35,7 +34,5 @@ export function useInputRefocus (ref, delay = 1) {
         }
 
     }, [])
-
-    return {}
 
 }

@@ -16,5 +16,22 @@ export const useStore = create (
                 'volume': parseFloat (newVolume),
             }),
         ),
+        // speed
+        'speed': 1,
+        'setSpeed': (newSpeed) => set (
+            () => {
+
+                let speed = parseFloat (newSpeed)
+
+                if (newSpeed < 0.5) speed = 0.5
+
+                if (newSpeed > 1.5) speed = 1.5
+
+                // console.log (speed)
+
+                return { speed }
+            
+            },
+        ),
     }),
 )

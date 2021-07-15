@@ -1,26 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import speedToPercentage from 'speed-to-percentage'
-import speedToSemitones from 'speed-to-semitones'
 import { StyledContainer } from './indicators-component-styles'
-
-const propTypes = {
-    'value': PropTypes.number,
-}
-
-const defaultProps = {
-    'value': 1,
-}
+import { useIndicatorsComponent } from './hooks'
 
 /**
  * @function
  * @name IndicatorsComponent
  * @description indicators
- * @param {*} props - props
- * @param {number} props.value - value
  * @returns {React.ReactElement} - react element
  */
-export function IndicatorsComponent ({ value = 1 }) {
+export function IndicatorsComponent () {
+
+    const { percentage, semitones } = useIndicatorsComponent ()
 
     return (
         <>
@@ -32,7 +22,7 @@ export function IndicatorsComponent ({ value = 1 }) {
                     <input
                         disabled
                         aria-label="percentage value"
-                        value={speedToPercentage (value, 1).toString ()}
+                        value={percentage}
                     />
                 </div>
                 <div>
@@ -42,7 +32,7 @@ export function IndicatorsComponent ({ value = 1 }) {
                     <input
                         disabled
                         aria-label="semitones value"
-                        value={speedToSemitones (value, 1).toString ()}
+                        value={semitones}
                     />
                 </div>
             </StyledContainer>
@@ -50,7 +40,3 @@ export function IndicatorsComponent ({ value = 1 }) {
     )
 
 }
-
-IndicatorsComponent.propTypes = propTypes
-
-IndicatorsComponent.defaultProps = defaultProps

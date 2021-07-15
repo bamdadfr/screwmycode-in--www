@@ -6,7 +6,7 @@ import { useStore } from './use-store'
  * @name useStoreRepeat
  * @typedef {boolean} Repeat
  * @typedef {Function} ToggleRepeat
- * @returns {{Repeat, ToggleRepeat}} return value
+ * @returns {{Repeat, ToggleRepeat}} getter + toggle
  */
 export function useStoreRepeat () {
 

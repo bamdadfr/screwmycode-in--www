@@ -6,7 +6,6 @@ import * as gtag from '../lib/gtag'
  * @function
  * @name useGoogleAnalytics
  * @description binds google tag to router events
- * @returns {void}
  */
 export function useGoogleAnalytics () {
 

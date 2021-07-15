@@ -8,14 +8,16 @@ import { useInputRefocus } from './use-input-refocus'
 /**
  * @function
  * @name useFormComponent
- * @returns {object} return value
+ * @typedef {useInput} Link
+ * @typedef {Function} HandleSubmit
+ * @returns {{Link, HandleSubmit}} form attributes
  */
 export function useFormComponent () {
 
     const router = useRouter ()
-    const input = useInput ()
+    const link = useInput ()
 
-    useInputRefocus (input.ref)
+    useInputRefocus (link.ref)
 
     const handleSubmit = useCallback (async (e) => {
 
@@ -24,9 +26,9 @@ export function useFormComponent () {
         try {
 
             // soundcloud
-            if (SoundcloudScraper.Util.validateURL (input.value)) {
+            if (SoundcloudScraper.Util.validateURL (link.value)) {
 
-                const userAndId = input.value.replace ('https://soundcloud.com/', '')
+                const userAndId = link.value.replace ('https://soundcloud.com/', '')
                 const path = `/soundcloud/${userAndId}/1`
 
                 await router.push (path)
@@ -36,21 +38,21 @@ export function useFormComponent () {
             }
 
             // youtube
-            const id = ytdl.getURLVideoID (input.value)
+            const id = ytdl.getURLVideoID (link.value)
             const path = `/youtube/${id}/1`
 
             await router.push (path)
 
         } catch {
 
-            input.setValue ('')
+            link.resetValue ()
 
         }
 
-    })
+    }, [link])
 
     return {
-        input,
+        link,
         handleSubmit,
     }
 

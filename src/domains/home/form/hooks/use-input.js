@@ -1,13 +1,18 @@
-import { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 
 /**
  * @function
  * @name useInput
- * @returns {object} return value
+ * @param {string} defaultValue - input default value
+ * @typedef {React.Ref} Ref
+ * @typedef {number} Value
+ * @typedef {Function} OnChange
+ * @typedef {Function} ResetValue
+ * @returns {{Ref, Value, OnChange, ResetValue}} input attributes + reset
  */
-export function useInput () {
+export function useInput (defaultValue = '') {
 
-    const [value, setValue] = useState ('')
+    const [value, setValue] = useState (defaultValue)
     const ref = useRef (null)
 
     const onChange = useCallback ((e) => {
@@ -16,11 +21,17 @@ export function useInput () {
 
     }, [])
 
+    const resetValue = useCallback (() => {
+
+        setValue (defaultValue)
+    
+    }, [])
+
     return {
         ref,
         value,
-        setValue,
         onChange,
+        resetValue,
     }
 
 }

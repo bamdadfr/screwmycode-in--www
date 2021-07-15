@@ -5,7 +5,7 @@ import { useStore } from './use-store'
  * @name useStoreVolume
  * @typedef {number} Volume
  * @typedef {Function} SetVolume
- * @returns {{Volume, SetVolume}} return value
+ * @returns {{Volume, SetVolume}} getter + setter
  */
 export function useStoreVolume () {
 

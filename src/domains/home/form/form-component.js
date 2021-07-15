@@ -10,7 +10,7 @@ import { useFormComponent } from './hooks'
  */
 export function FormComponent () {
 
-    const { input, handleSubmit } = useFormComponent ()
+    const { link, handleSubmit } = useFormComponent ()
 
     return (
         <>
@@ -18,9 +18,9 @@ export function FormComponent () {
                 <StyledInput
                     placeholder="paste link here (youtube, soundcloud)"
                     type="text"
-                    ref={input.ref}
-                    value={input.value}
-                    onChange={input.onChange}
+                    ref={link.ref}
+                    value={link.value}
+                    onChange={link.onChange}
                 />
                 <StyledSubmit
                     type="submit"
