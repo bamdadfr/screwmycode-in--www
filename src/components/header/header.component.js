@@ -1,19 +1,18 @@
 import React from 'react'
-import { useRecoilState } from 'recoil'
 import Link from 'next/link'
-import { repeatAtom } from '../../atoms/repeat.atom'
 import { IconRepeat, IconHome } from './header.icons'
 import { StyledContainer } from './header.styles'
+import { useHeaderComponent } from './hooks'
 
 /**
  * @function
  * @name HeaderComponent
  * @description layout menu component
- * @returns {React.ReactElement} - react
+ * @returns {React.ReactElement} - react component
  */
 export default function HeaderComponent () {
 
-    const [repeat, setRepeat] = useRecoilState (repeatAtom)
+    const { repeat, toggleRepeat } = useHeaderComponent ()
 
     return (
         <>
@@ -29,9 +28,7 @@ export default function HeaderComponent () {
                 <button
                     type="button"
                     aria-label="repeat"
-                    tabIndex={-1}
-                    onClick={() => setRepeat (!repeat)}
-                    onKeyDown={() => undefined}
+                    onClick={() => toggleRepeat ()}
                 >
                     {repeat ? <IconRepeat.On/> : <IconRepeat.Off/>}
                 </button>
