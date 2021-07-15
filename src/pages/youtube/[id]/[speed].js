@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
-import { AudioComponent, SliderComponent, IndicatorsComponent } from '../../../domains/player'
-import { StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../app/utils/get-youtube-thumbnail.utils'
-import { useAutoplay, useStoreRepeat, useStoreVolume } from '../../../hooks'
 import { PlayerLayout } from '../../../layouts'
+import { useStoreSpeed } from '../../../hooks'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
     'image': PropTypes.string.isRequired,
     'url': PropTypes.string.isRequired,
-    'speed': PropTypes.number.isRequired,
 }
 
 /**
@@ -24,32 +21,18 @@ const propTypes = {
  * @param {string} props.title - audio title
  * @param {string} props.image - audio thumbnail url
  * @param {string} props.url - audio url
- * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
 export default function YoutubePage ({
     title,
     image,
     url,
-    'speed': speedFromProps,
 }) {
 
     const router = useRouter ()
-    const [provider] = useState ('YouTube')
-    const [speed, setSpeed] = useState (speedFromProps)
-    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
-    const { autoplay } = useAutoplay ()
-    const { repeat } = useStoreRepeat ()
-    const { volume, setVolume } = useStoreVolume ()
+    const { speed } = useStoreSpeed ()
 
-    /**
-     * @function
-     * @name onSpeed
-     * @description update description + route
-     */
-    async function onSpeed () {
-
-        setDescription (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
+    useEffect (async () => {
 
         await router.replace (
             `/youtube/${router.query.id}/${speed}`,
@@ -57,38 +40,18 @@ export default function YoutubePage ({
             { 'shallow': true },
         )
 
-    }
+    }, [speed])
 
-    useEffect (onSpeed, [speed])
+    const description = `${title} - ${speed} - YouTube - ScrewMyCode.In`
 
     return (
         <>
             <PlayerLayout
-                audioDescription={description}
-                audioImage={image}
-            >
-                <StyledTitle>
-                    {title}
-                </StyledTitle>
-
-                <AudioComponent
-                    url={url}
-                    playbackRate={speed}
-                    loop={repeat}
-                    volume={volume}
-                    handleVolume={(v) => setVolume (parseFloat (v))}
-                    autoplay={autoplay}
-                />
-
-                <IndicatorsComponent
-                    value={speed}
-                />
-
-                <SliderComponent
-                    value={speed}
-                    handleValue={(s) => setSpeed (parseFloat (s))}
-                />
-            </PlayerLayout>
+                description={description}
+                url={url}
+                title={title}
+                image={image}
+            />
         </>
     )
 
@@ -105,7 +68,7 @@ YoutubePage.propTypes = propTypes
  */
 export async function getServerSideProps (context) {
 
-    const { id, 'speed': speedFromParams } = context.params
+    const { id, 'speed': speedFromParams } = context.params // todo SSR zustand for speed
     let speed = parseFloat (speedFromParams) || 1
 
     if (speedFromParams > 1.5) speed = 1.5

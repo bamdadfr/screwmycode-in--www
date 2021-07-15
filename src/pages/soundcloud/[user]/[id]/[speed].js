@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
-import { AudioComponent, IndicatorsComponent, SliderComponent } from '../../../../domains/player'
-import { StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
-import { useStoreRepeat, useStoreVolume } from '../../../../hooks'
+import { PlayerLayout } from '../../../../layouts'
+import { useStoreSpeed } from '../../../../hooks'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
     'image': PropTypes.string.isRequired,
     'url': PropTypes.string.isRequired,
-    'speed': PropTypes.number.isRequired,
 }
 
 /**
@@ -22,60 +19,18 @@ const propTypes = {
  * @param {string} props.title - audio title
  * @param {string} props.image - audio thumbnail url
  * @param {string} props.url - audio url
- * @param {number} props.speed - audio speed
  * @returns {React.ReactElement} - react component
  */
 export default function SoundcloudPage ({
     title,
     image,
     url,
-    'speed': speedFromProps,
 }) {
 
     const router = useRouter ()
-    const [provider] = useState ('SoundCloud')
-    const [speed, setSpeed] = useState (speedFromProps)
-    const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
-    const [autoplay, setAutoplay] = useState (false)
-    const { repeat } = useStoreRepeat ()
-    const { volume, setVolume } = useStoreVolume ()
+    const { speed } = useStoreSpeed ()
 
-    /**
-     * @function
-     * @name onMount
-     * @description setup autoplay capability
-     */
-    async function onMount () {
-
-        // https://github.com/video-dev/can-autoplay/issues/36
-        import ('can-autoplay')
-            .then ((module) => module.default.video ())
-            .then (({ result }) => {
-
-                if (result === true) {
-
-                    setAutoplay (true)
-
-                } else {
-
-                    setAutoplay (false)
-
-                }
-
-            })
-
-    }
-
-    useEffect (onMount, [])
-
-    /**
-     * @function
-     * @name onSpeed
-     * @description update description + route
-     */
-    async function onSpeed () {
-
-        setDescription (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
+    useEffect (async () => {
 
         await router.replace (
             `/soundcloud/${router.query.user}/${router.query.id}/${speed}`,
@@ -83,49 +38,18 @@ export default function SoundcloudPage ({
             { 'shallow': true },
         )
 
-    }
+    }, [speed])
 
-    useEffect (onSpeed, [speed])
+    const description = `${title} - ${speed} - SoundCloud - ScrewMyCode.In`
 
     return (
         <>
-            <Head>
-
-                <title>{description}</title>
-
-                <meta itemProp="description" content={description}/>
-                <meta itemProp="image" content={image}/>
-
-                <meta name="twitter:description" content={description}/>
-                <meta name="twitter:image" content={image}/>
-
-                <meta property="og:description" content={description}/>
-                <meta property="og:image" content={image}/>
-
-            </Head>
-
-            <StyledTitle>
-                {title}
-            </StyledTitle>
-
-            <AudioComponent
+            <PlayerLayout
+                description={description}
                 url={url}
-                playbackRate={speed}
-                loop={repeat}
-                volume={volume}
-                handleVolume={(v) => setVolume (parseFloat (v))}
-                autoplay={autoplay}
+                title={title}
+                image={image}
             />
-
-            <IndicatorsComponent
-                value={speed}
-            />
-
-            <SliderComponent
-                value={speed}
-                handleValue={(s) => setSpeed (parseFloat (s))}
-            />
-
         </>
     )
 

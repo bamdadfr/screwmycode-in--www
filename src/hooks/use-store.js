@@ -27,8 +27,6 @@ export const useStore = create (
 
                 if (newSpeed > 1.5) speed = 1.5
 
-                // console.log (speed)
-
                 return { speed }
             
             },

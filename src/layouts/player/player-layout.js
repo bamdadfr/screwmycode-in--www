@@ -2,42 +2,46 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { CoreLayout } from '..'
-import { Container } from './player-layout-styles'
+import { Container, Title } from './player-layout-styles'
 import { MetaComponent } from '../../domains/core'
+import { AudioComponent, IndicatorsComponent, SliderComponent } from '../../domains/player'
 
 const propTypes = {
-    'children': PropTypes.oneOfType ([
-        PropTypes.element,
-        PropTypes.array,
-    ]).isRequired,
-    'audioDescription': PropTypes.string.isRequired,
-    'audioImage': PropTypes.string.isRequired,
+    'description': PropTypes.string.isRequired,
+    'url': PropTypes.string.isRequired,
+    'title': PropTypes.string.isRequired,
+    'image': PropTypes.string.isRequired,
 }
 
 /**
  * @function
  * @name PlayerLayout
  * @param {object} props - react props
- * @param {React.ReactElement} props.children - react children
- * @param {string} props.audioDescription - audio title drilling to meta
- * @param {string} props.audioImage - audio image drilling to meta
+ * @param {string} props.description - audio title drilling to meta
+ * @param {string} props.url - audio url
+ * @param {string} props.title - audio title
+ * @param {string} props.image - audio image drilling to meta
  * @returns {React.ReactElement} react component
  */
 export function PlayerLayout ({
-    children,
-    audioDescription,
-    audioImage,
+    description,
+    url,
+    title,
+    image,
 }) {
 
     return (
         <>
             <Head>
-                <title>{audioDescription}</title>
+                <title>{description}</title>
             </Head>
-            <MetaComponent description={audioDescription} image={audioImage}/>
+            <MetaComponent description={description} image={image}/>
             <CoreLayout meta={false}>
                 <Container>
-                    {children}
+                    <Title>{title}</Title>
+                    <AudioComponent url={url}/>
+                    <IndicatorsComponent/>
+                    <SliderComponent/>
                 </Container>
             </CoreLayout>
         </>
