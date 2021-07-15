@@ -1,6 +1,6 @@
 import React from 'react'
 import { screen } from '@testing-library/react'
-import HeaderComponent from './header.component'
+import { HeaderComponent } from './header.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const render = () => {

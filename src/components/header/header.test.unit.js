@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderComponent from './header.component'
+import { HeaderComponent } from './header.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const instance = JestInstance (<HeaderComponent/>)

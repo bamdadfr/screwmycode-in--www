@@ -24,7 +24,7 @@ const propTypes = {
  * @param {boolean} props.autoplay - autoplay
  * @returns {React.ReactElement} - react component
  */
-export default function PlayerComponent ({
+export function PlayerComponent ({
     url,
     playbackRate,
     loop,

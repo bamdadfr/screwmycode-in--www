@@ -20,7 +20,7 @@ const defaultProps = {
  * @param {number} props.value - value
  * @returns {React.ReactElement} - react element
  */
-export default function IndicatorsComponent ({ value = 1 }) {
+export function IndicatorsComponent ({ value = 1 }) {
 
     return (
         <>

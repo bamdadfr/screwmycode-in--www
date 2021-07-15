@@ -10,7 +10,7 @@ import { useHeaderComponent } from './hooks'
  * @description layout menu component
  * @returns {React.ReactElement} - react component
  */
-export default function HeaderComponent () {
+export function HeaderComponent () {
 
     const { repeat, toggleRepeat } = useHeaderComponent ()
 

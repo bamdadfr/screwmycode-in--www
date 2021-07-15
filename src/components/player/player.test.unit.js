@@ -1,5 +1,5 @@
 import React from 'react'
-import PlayerComponent from './player.component'
+import { PlayerComponent } from './player.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const url = 'https://dummy.audio.url'

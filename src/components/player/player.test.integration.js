@@ -1,6 +1,6 @@
 import React from 'react'
 import { screen, waitFor } from '@testing-library/react'
-import PlayerComponent from './player.component'
+import { PlayerComponent } from './player.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const render = (

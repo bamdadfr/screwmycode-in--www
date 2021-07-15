@@ -1,5 +1,5 @@
 import React from 'react'
-import MetaComponent from './meta.component'
+import { MetaComponent } from './meta.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const instance = JestInstance (<MetaComponent/>)

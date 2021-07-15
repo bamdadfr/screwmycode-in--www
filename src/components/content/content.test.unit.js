@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentComponent from './content.component'
+import { ContentComponent } from './content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestInstance } from '../../../jest/jest-instance'
 

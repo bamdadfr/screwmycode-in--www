@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, screen, act, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import FormComponent from './form.component'
+import { FormComponent } from './form.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const render = () => {

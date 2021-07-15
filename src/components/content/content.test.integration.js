@@ -1,6 +1,6 @@
 import React from 'react'
 import { screen } from '@testing-library/react'
-import ContentComponent from './content.component'
+import { ContentComponent } from './content.component'
 import { JestChildren } from '../../../jest/jest-children'
 import { JestRender } from '../../../jest/jest-render'
 

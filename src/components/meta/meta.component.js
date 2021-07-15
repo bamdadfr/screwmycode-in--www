@@ -7,7 +7,7 @@ import Head from 'next/head'
  * @description layout: meta component (head and SEO tags)
  * @returns {React.ReactElement} - react component
  */
-export default function MetaComponent () {
+export function MetaComponent () {
 
     const title = 'ScrewMyCode.In'
     const url = 'https://screwmycode.in'

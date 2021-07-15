@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import PlayerComponent from '../../../../components/player/player.component'
+import { PlayerComponent } from '../../../../components/player/player.component'
 import { StyledContainer, StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
-import IndicatorsComponent from '../../../../components/indicators/indicators.component'
-import SliderComponent from '../../../../components/slider/slider.component'
+import { IndicatorsComponent } from '../../../../components/indicators/indicators.component'
+import { SliderComponent } from '../../../../components/slider/slider.component'
 import { useRepeat, useVolume } from '../../../../hooks'
 
 const propTypes = {

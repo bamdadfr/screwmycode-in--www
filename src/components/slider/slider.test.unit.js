@@ -1,5 +1,5 @@
 import React from 'react'
-import SliderComponent from './slider.component'
+import { SliderComponent } from './slider.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const instance = JestInstance (

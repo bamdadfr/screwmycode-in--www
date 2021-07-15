@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import FormComponent from '../components/form/form.component'
+import { FormComponent } from '../components/form/form.component'
 import { StyledContainer } from '../pages-styles/index.styles'
 
 /**

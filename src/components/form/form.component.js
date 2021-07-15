@@ -16,7 +16,7 @@ const propTypes = {
  * @param {Function} props.handleForm - handle form function from HOC
  * @returns {React.ReactElement} - react component
  */
-export default function FormComponent ({ handleForm }) {
+export function FormComponent ({ handleForm }) {
 
     const linkRef = useRef (null)
     const [link, setLink] = useState ('')

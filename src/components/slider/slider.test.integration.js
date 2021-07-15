@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent, screen } from '@testing-library/react'
-import SliderComponent from './slider.component'
+import { SliderComponent } from './slider.component'
 import { JestRender } from '../../../jest/jest-render'
 
 const render = () => {

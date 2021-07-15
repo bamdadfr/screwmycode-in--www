@@ -1,5 +1,5 @@
 import React from 'react'
-import IndicatorsComponent from './indicators.component'
+import { IndicatorsComponent } from './indicators.component'
 import { JestInstance } from '../../../jest/jest-instance'
 
 const instance = JestInstance (<IndicatorsComponent/>)

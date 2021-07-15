@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MetaComponent from '../meta/meta.component'
-import ContentComponent from '../content/content.component'
-import HeaderComponent from '../header/header.component'
+import { MetaComponent } from '../meta/meta.component'
+import { ContentComponent } from '../content/content.component'
+import { HeaderComponent } from '../header/header.component'
 
 const propTypes = {
     'children': PropTypes.element.isRequired,
@@ -15,7 +15,7 @@ const propTypes = {
  * @param {React.ReactElement} children - children to render
  * @returns {React.ReactElement} - react component
  */
-export default function LayoutComponent ({ children }) {
+export function LayoutComponent ({ children }) {
 
     return (
         <>

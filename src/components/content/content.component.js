@@ -15,7 +15,7 @@ const propTypes = {
  * @param {React.ReactElement} props.children - children to render
  * @returns {React.ReactElement} - react component
  */
-export default function ContentComponent ({ children }) {
+export function ContentComponent ({ children }) {
 
     return (
         <>

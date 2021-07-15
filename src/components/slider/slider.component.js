@@ -16,7 +16,7 @@ const propTypes = {
  * @param {Function} props.handleValue - function from HOC
  * @returns {React.ReactElement} - react component
  */
-export default function SliderComponent ({ 'value': valueFromProps, handleValue }) {
+export function SliderComponent ({ 'value': valueFromProps, handleValue }) {
 
     const [value, setValue] = useState (valueFromProps.toString ())
 
