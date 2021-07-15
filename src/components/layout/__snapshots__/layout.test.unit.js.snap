@@ -33,8 +33,6 @@ Array [
     <button
       aria-label="repeat"
       onClick={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={-1}
       type="button"
     >
       <svg

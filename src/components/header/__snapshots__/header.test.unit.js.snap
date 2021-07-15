@@ -32,8 +32,6 @@ exports[`should mount and match 1`] = `
   <button
     aria-label="repeat"
     onClick={[Function]}
-    onKeyDown={[Function]}
-    tabIndex={-1}
     type="button"
   >
     <svg
