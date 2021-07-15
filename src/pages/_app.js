@@ -5,7 +5,6 @@ import 'sass-reset'
 import { isFirefox } from 'react-device-detect'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { LayoutComponent } from '../components/layout/layout.component'
 import { ThemeStyles } from '../styles/theme.styles'
 import { GlobalStyles } from '../styles/global.styles'
 import * as gtag from '../lib/gtag'
@@ -81,10 +80,8 @@ export default function MyApp ({ Component, pageProps, err }) {
         <>
             <GlobalStyles/>
             <ThemeProvider theme={ThemeStyles}>
-                <LayoutComponent>
-                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                    <Component {...pageProps} err={err}/>
-                </LayoutComponent>
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <Component {...pageProps} err={err}/>
             </ThemeProvider>
         </>
     )

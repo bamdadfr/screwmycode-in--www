@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledContainer = styled.div`
+export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
     font-size: 1.1em;
 `
 
-export const StyledLink = styled.a`
+export const TextLink = styled.a`
     font-weight: 900;
     text-decoration: none;
     border-bottom: 1px solid white;

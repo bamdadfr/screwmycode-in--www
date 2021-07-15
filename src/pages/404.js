@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
+import { CoreLayout } from '../layouts'
 
 /**
  * @function
@@ -29,23 +29,16 @@ export default function NotFoundPage () {
 
     useEffect (onMount, [])
 
-    const description = 'page not found'
-
     // noinspection HtmlRequiredTitleElement
     return (
         <>
-            <Head>
-
-                <meta itemProp="description" content={description}/>
-
-                <meta property="og:description" content={description}/>
-
-                <meta name='twitter:description' content={description}/>
-
-            </Head>
-            <h2>
-                Page not found, redirecting to home...
-            </h2>
+            <CoreLayout
+                metaDescription="page not found"
+            >
+                <h2>
+                    Page not found, redirecting to home...
+                </h2>
+            </CoreLayout>
         </>
     )
 

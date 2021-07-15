@@ -1,6 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
-import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
+import { Container, TextLink } from '../pages-styles/firefox.styles'
+import { CoreLayout } from '../layouts'
 
 /**
  * @function
@@ -10,34 +10,26 @@ import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
  */
 export default function FirefoxPage () {
 
-    const description = 'available only for firefox'
-
-    // noinspection HtmlRequiredTitleElement
     return (
         <>
-            <Head>
-
-                <meta itemProp="description" content={description}/>
-
-                <meta property="og:description" content={description}/>
-
-                <meta name='twitter:description' content={description}/>
-
-            </Head>
-            <StyledContainer>
-                <h2>
-                    available only for firefox
-                </h2>
-                <div>
-                    <StyledLink
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://www.mozilla.org/firefox/new/"
-                    >
-                        download here
-                    </StyledLink>
-                </div>
-            </StyledContainer>
+            <CoreLayout
+                metaDescription="only available for firefox"
+            >
+                <Container>
+                    <h2>
+                        only available for firefox
+                    </h2>
+                    <div>
+                        <TextLink
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://www.mozilla.org/firefox/new/"
+                        >
+                            download here
+                        </TextLink>
+                    </div>
+                </Container>
+            </CoreLayout>
         </>
     )
 
