@@ -1,5 +1,4 @@
-import { useCallback } from 'react'
-import { useStore } from '../../../hooks'
+import { useRepeat } from '../../../hooks'
 
 /**
  * @function
@@ -11,8 +10,7 @@ import { useStore } from '../../../hooks'
  */
 export function useHeaderComponent () {
 
-    const repeat = useStore ((state) => state.repeat)
-    const toggleRepeat = useStore (useCallback ((state) => state.toggleRepeat, [repeat]))
+    const { repeat, toggleRepeat } = useRepeat ()
 
     return {
         repeat,

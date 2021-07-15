@@ -9,7 +9,7 @@ import SliderComponent from '../../../components/slider/slider.component'
 import IndicatorsComponent from '../../../components/indicators/indicators.component'
 import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
-import { useStore } from '../../../hooks'
+import { useRepeat, useVolume } from '../../../hooks'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -41,12 +41,8 @@ export default function YoutubePage ({
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
-    const repeat = useStore ((state) => state.repeat)
-
-    const { volume, setVolume } = useStore ((state) => ({
-        'volume': state.volume,
-        'setVolume': state.setVolume,
-    }))
+    const { repeat } = useRepeat ()
+    const { volume, setVolume } = useVolume ()
 
     /**
      * @function
