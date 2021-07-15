@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { PlayerComponent } from '../../../../domains/player/player/player.component'
-import { StyledContainer, StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
-import { IndicatorsComponent } from '../../../../domains/player/indicators/indicators.component'
-import { SliderComponent } from '../../../../domains/player/slider/slider.component'
-import { useRepeat, useVolume } from '../../../../hooks'
+import { PlayerComponent } from '../../../../domains/player/player/player-component'
+import { StyledTitle } from '../../../../pages-styles/youtube/[id]/[speed].styles'
+import { IndicatorsComponent } from '../../../../domains/player/indicators'
+import { SliderComponent } from '../../../../domains/player/slider/slider-component'
+import { useStoreRepeat, useStoreVolume } from '../../../../hooks'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -39,8 +39,8 @@ export default function SoundcloudPage ({
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
-    const { repeat } = useRepeat ()
-    const { volume, setVolume } = useVolume ()
+    const { repeat } = useStoreRepeat ()
+    const { volume, setVolume } = useStoreVolume ()
 
     /**
      * @function
@@ -105,31 +105,29 @@ export default function SoundcloudPage ({
                 <meta property="og:image" content={image}/>
 
             </Head>
-            <StyledContainer>
 
-                <StyledTitle>
-                    {title}
-                </StyledTitle>
+            <StyledTitle>
+                {title}
+            </StyledTitle>
 
-                <PlayerComponent
-                    url={url}
-                    playbackRate={speed}
-                    loop={repeat}
-                    volume={volume}
-                    handleVolume={(v) => setVolume (parseFloat (v))}
-                    autoplay={autoplay}
-                />
+            <PlayerComponent
+                url={url}
+                playbackRate={speed}
+                loop={repeat}
+                volume={volume}
+                handleVolume={(v) => setVolume (parseFloat (v))}
+                autoplay={autoplay}
+            />
 
-                <IndicatorsComponent
-                    value={speed}
-                />
+            <IndicatorsComponent
+                value={speed}
+            />
 
-                <SliderComponent
-                    value={speed}
-                    handleValue={(s) => setSpeed (parseFloat (s))}
-                />
+            <SliderComponent
+                value={speed}
+                handleValue={(s) => setSpeed (parseFloat (s))}
+            />
 
-            </StyledContainer>
         </>
     )
 

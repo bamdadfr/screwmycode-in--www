@@ -1,1 +1,1 @@
-export { PlayerLayout } from './player.layout'
+export { PlayerLayout } from './player-layout'

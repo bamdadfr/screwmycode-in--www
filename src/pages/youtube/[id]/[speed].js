@@ -4,12 +4,13 @@ import Head from 'next/head'
 import axios from 'axios'
 import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
-import { PlayerComponent } from '../../../domains/player/player/player.component'
-import { SliderComponent } from '../../../domains/player/slider/slider.component'
-import { IndicatorsComponent } from '../../../domains/player/indicators/indicators.component'
-import { StyledContainer, StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
-import { GetYoutubeThumbnailUtils } from '../../../utils/get-youtube-thumbnail.utils'
-import { useRepeat, useVolume } from '../../../hooks'
+import { PlayerComponent } from '../../../domains/player/player/player-component'
+import { SliderComponent } from '../../../domains/player/slider/slider-component'
+import { IndicatorsComponent } from '../../../domains/player/indicators'
+import { StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
+import { GetYoutubeThumbnailUtils } from '../../../app/utils/get-youtube-thumbnail.utils'
+import { useStoreRepeat, useStoreVolume } from '../../../hooks'
+import { PlayerLayout } from '../../../layouts'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -41,8 +42,8 @@ export default function YoutubePage ({
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
     const [autoplay, setAutoplay] = useState (false)
-    const { repeat } = useRepeat ()
-    const { volume, setVolume } = useVolume ()
+    const { repeat } = useStoreRepeat ()
+    const { volume, setVolume } = useStoreVolume ()
 
     /**
      * @function
@@ -107,8 +108,10 @@ export default function YoutubePage ({
                 <meta property="og:image" content={image}/>
 
             </Head>
-            <StyledContainer>
-
+            <PlayerLayout
+                metaDescription={description}
+                metaImage={image}
+            >
                 <StyledTitle>
                     {title}
                 </StyledTitle>
@@ -130,8 +133,7 @@ export default function YoutubePage ({
                     value={speed}
                     handleValue={(s) => setSpeed (parseFloat (s))}
                 />
-
-            </StyledContainer>
+            </PlayerLayout>
         </>
     )
 

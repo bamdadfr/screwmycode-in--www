@@ -1,1 +1,1 @@
-export { CoreLayout } from './core.layout'
+export { CoreLayout } from './core-layout'

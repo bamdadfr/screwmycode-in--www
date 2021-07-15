@@ -1,5 +1,5 @@
-export { useRepeat } from './use-repeat'
-
 export { useStore } from './use-store'
 
-export { useVolume } from './use-volume'
+export { useStoreRepeat } from './use-store-repeat'
+
+export { useStoreVolume } from './use-store-volume'

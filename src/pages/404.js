@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import { CoreLayout } from '../layouts'
+import { useRedirectAuto } from '../hooks/use-redirect-auto'
 
 /**
  * @function
@@ -10,26 +10,8 @@ import { CoreLayout } from '../layouts'
  */
 export default function NotFoundPage () {
 
-    const router = useRouter ()
+    useRedirectAuto ('/', 2000)
 
-    /**
-     * @function
-     * @name onMount
-     * @description setup automatic redirection to /
-     */
-    function onMount () {
-
-        setTimeout (async () => {
-
-            await router.push ('/')
-
-        }, 2000)
-
-    }
-
-    useEffect (onMount, [])
-
-    // noinspection HtmlRequiredTitleElement
     return (
         <>
             <CoreLayout

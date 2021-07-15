@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { ThemeStyles } from '../src/styles/theme.styles'
+import { ThemeStyles } from '../src/app/styles/theme.styles'
 
 /**
  * @function

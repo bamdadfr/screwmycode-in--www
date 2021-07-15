@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, TextLink } from '../pages-styles/firefox.styles'
+import { Container, TextLink } from '../pages-styles/firefox-styles'
 import { CoreLayout } from '../layouts'
 
 /**

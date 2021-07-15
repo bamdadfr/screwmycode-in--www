@@ -1,4 +1,4 @@
-import { useRepeat } from '../../../../hooks'
+import { useStoreRepeat } from '../../../../hooks'
 
 /**
  * @function
@@ -10,7 +10,7 @@ import { useRepeat } from '../../../../hooks'
  */
 export function useHeaderComponent () {
 
-    const { repeat, toggleRepeat } = useRepeat ()
+    const { repeat, toggleRepeat } = useStoreRepeat ()
 
     return {
         repeat,

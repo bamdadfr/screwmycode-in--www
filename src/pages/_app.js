@@ -1,13 +1,11 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import 'sass-reset'
-import { isFirefox } from 'react-device-detect'
-import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { ThemeStyles } from '../styles/theme.styles'
-import { GlobalStyles } from '../styles/global.styles'
-import * as gtag from '../lib/gtag'
+import { ThemeStyles } from '../app/styles/theme.styles'
+import { GlobalStyles } from '../app/styles/global.styles'
+import { useApp } from '../app/hooks'
 
 const propTypes = {
     'Component': PropTypes.func.isRequired,
@@ -31,50 +29,7 @@ const defaultProps = {
  */
 export default function MyApp ({ Component, pageProps, err }) {
 
-    const router = useRouter ()
-
-    /**
-     * @function
-     * @name onRouterEventsGtag
-     * @description binds google tag to router events
-     * @returns {Function<void>} - cleanup
-     */
-    function onRouterEventsGtag () {
-
-        const handleRouteChange = (url) => {
-
-            gtag.pageview (url)
-
-        }
-
-        router.events.on ('routeChangeComplete', handleRouteChange)
-
-        return () => {
-
-            router.events.off ('routeChangeComplete', handleRouteChange)
-
-        }
-
-    }
-
-    useEffect (onRouterEventsGtag, [router.events])
-
-    /**
-     * @function
-     * @name onRouterEventsFirefox
-     * @description checks if browser is not firefox
-     */
-    async function onRouterEventsFirefox () {
-
-        if (!isFirefox) {
-
-            await router.push ('/firefox')
-
-        }
-
-    }
-
-    useEffect (onRouterEventsFirefox, [router.events])
+    useApp ()
 
     return (
         <>
