@@ -8,17 +8,11 @@ const propTypes = {
         PropTypes.element,
         PropTypes.array,
     ]).isRequired,
-    'metaTitle': PropTypes.string,
-    'metaUrl': PropTypes.string,
-    'metaDescription': PropTypes.string,
-    'metaImage': PropTypes.string,
+    'meta': PropTypes.bool,
 }
 
-export const defaultProps = {
-    'metaTitle': 'ScrewMyCode.In',
-    'metaUrl': 'https://www.screwmycode.in',
-    'metaDescription': 'Variable speed pitch control for YouTube',
-    'metaImage': 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
+const defaultProps = {
+    'meta': true,
 }
 
 /**
@@ -26,28 +20,17 @@ export const defaultProps = {
  * @name CoreLayout
  * @param {object} props - react props
  * @param {React.ReactElement} props.children - react children
- * @param {string} props.metaTitle - meta title
- * @param {string} props.metaUrl - meta url
- * @param {string} props.metaDescription - meta description
- * @param {string} props.metaImage - meta image
+ * @param {boolean} props.meta - render meta?
  * @returns {React.ReactElement} react component
  */
 export function CoreLayout ({
     children,
-    metaTitle = defaultProps.metaTitle,
-    metaUrl = defaultProps.metaUrl,
-    metaDescription = defaultProps.metaDescription,
-    metaImage = defaultProps.metaImage,
+    meta = defaultProps.meta,
 }) {
 
     return (
         <>
-            <MetaComponent
-                title={metaTitle}
-                url={metaUrl}
-                description={metaDescription}
-                image={metaImage}
-            />
+            {meta && <MetaComponent/>}
             <HeaderComponent/>
             <Container>
                 <TitleComponent/>

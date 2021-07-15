@@ -3,10 +3,17 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-    'description': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
+    'title': PropTypes.string,
+    'url': PropTypes.string,
+    'description': PropTypes.string,
+    'image': PropTypes.string,
+}
+
+export const defaultProps = {
+    'title': 'ScrewMyCode.In',
+    'url': 'https://www.screwmycode.in',
+    'description': 'Variable speed pitch control for YouTube',
+    'image': 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
 }
 
 /**
@@ -21,10 +28,10 @@ const propTypes = {
  * @returns {React.ReactElement} - react component
  */
 export function MetaComponent ({
-    title,
-    url,
-    description,
-    image,
+    title = defaultProps.title,
+    url = defaultProps.url,
+    description = defaultProps.description,
+    image = defaultProps.image,
 }) {
 
     // console.log (title, url, description, image)
@@ -69,3 +76,5 @@ export function MetaComponent ({
 }
 
 MetaComponent.propTypes = propTypes
+
+MetaComponent.defaultProps = defaultProps

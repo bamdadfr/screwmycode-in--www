@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
 import axios from 'axios'
 import * as ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
@@ -9,7 +8,7 @@ import { SliderComponent } from '../../../domains/player/slider/slider-component
 import { IndicatorsComponent } from '../../../domains/player/indicators'
 import { StyledTitle } from '../../../pages-styles/youtube/[id]/[speed].styles'
 import { GetYoutubeThumbnailUtils } from '../../../app/utils/get-youtube-thumbnail.utils'
-import { useStoreRepeat, useStoreVolume } from '../../../hooks'
+import { useAutoplay, useStoreRepeat, useStoreVolume } from '../../../hooks'
 import { PlayerLayout } from '../../../layouts'
 
 const propTypes = {
@@ -41,37 +40,9 @@ export default function YoutubePage ({
     const [provider] = useState ('YouTube')
     const [speed, setSpeed] = useState (speedFromProps)
     const [description, setDescription] = useState (`${title} - ${speedFromProps} - ${provider} - ScrewMyCode.In`)
-    const [autoplay, setAutoplay] = useState (false)
+    const { autoplay } = useAutoplay ()
     const { repeat } = useStoreRepeat ()
     const { volume, setVolume } = useStoreVolume ()
-
-    /**
-     * @function
-     * @name onMount
-     * @description setup autoplay capability
-     */
-    async function onMount () {
-
-        // https://github.com/video-dev/can-autoplay/issues/36
-        import ('can-autoplay')
-            .then ((module) => module.default.video ())
-            .then (({ result }) => {
-
-                if (result === true) {
-
-                    setAutoplay (true)
-
-                } else {
-
-                    setAutoplay (false)
-
-                }
-
-            })
-
-    }
-
-    useEffect (onMount, [])
 
     /**
      * @function
@@ -94,23 +65,9 @@ export default function YoutubePage ({
 
     return (
         <>
-            <Head>
-
-                <title>{description}</title>
-
-                <meta itemProp="description" content={description}/>
-                <meta itemProp="image" content={image}/>
-
-                <meta name="twitter:description" content={description}/>
-                <meta name="twitter:image" content={image}/>
-
-                <meta property="og:description" content={description}/>
-                <meta property="og:image" content={image}/>
-
-            </Head>
             <PlayerLayout
-                metaDescription={description}
-                metaImage={image}
+                audioDescription={description}
+                audioImage={image}
             >
                 <StyledTitle>
                     {title}

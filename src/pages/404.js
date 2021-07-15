@@ -1,6 +1,6 @@
 import React from 'react'
 import { CoreLayout } from '../layouts'
-import { useRedirectAuto } from '../hooks/use-redirect-auto'
+import { useRedirectAuto } from '../hooks'
 
 /**
  * @function
@@ -14,9 +14,7 @@ export default function NotFoundPage () {
 
     return (
         <>
-            <CoreLayout
-                metaDescription="page not found"
-            >
+            <CoreLayout metaDescription="page not found">
                 <h2>
                     Page not found, redirecting to home...
                 </h2>

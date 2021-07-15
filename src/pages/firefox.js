@@ -12,9 +12,7 @@ export default function FirefoxPage () {
 
     return (
         <>
-            <CoreLayout
-                metaDescription="only available for firefox"
-            >
+            <CoreLayout metaDescription="only available for firefox">
                 <Container>
                     <h2>
                         only available for firefox
