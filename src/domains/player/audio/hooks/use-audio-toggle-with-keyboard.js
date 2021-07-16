@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 
 /**
- * @function
- * @name useAudioToggleWithKeyboard
  * @param {React.Ref} ref - audio ref
  * @param {string} keyCode - keyboard code
  */

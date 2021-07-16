@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useStore } from './use-store'
 
 /**
@@ -9,11 +10,12 @@ import { useStore } from './use-store'
  */
 export function useStoreSpeed () {
 
-    const { speed, setSpeed } = useStore (
-        (state) => ({
-            'speed': state.speed,
-            'setSpeed': state.setSpeed,
-        }),
+    const speed = useStore (
+        useCallback ((state) => state.speed, []),
+    )
+
+    const setSpeed = useStore (
+        useCallback ((state) => state.setSpeed, []),
     )
 
     return {

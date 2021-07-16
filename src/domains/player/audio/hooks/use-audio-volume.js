@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import { useStoreVolume } from '../../../../hooks'
 
 /**
- * @function
- * @name useAudioVolume
  * @param {React.Ref} ref - audio ref
  */
 export function useAudioVolume (ref) {

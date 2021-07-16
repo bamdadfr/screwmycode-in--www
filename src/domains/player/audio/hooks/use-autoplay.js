@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 
 /**
- * @function
- * @name useAutoplay
  * @description check if client has autoplay enabled (settings enabled or already interacted with app)
  * @returns {{boolean}} autoplay
  */

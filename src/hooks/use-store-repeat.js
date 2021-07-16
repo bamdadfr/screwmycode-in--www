@@ -10,8 +10,13 @@ import { useStore } from './use-store'
  */
 export function useStoreRepeat () {
 
-    const repeat = useStore ((state) => state.repeat)
-    const toggleRepeat = useStore (useCallback ((state) => state.toggleRepeat, [repeat]))
+    const repeat = useStore (
+        useCallback ((state) => state.repeat, []),
+    )
+
+    const toggleRepeat = useStore (
+        useCallback ((state) => state.toggleRepeat, []),
+    )
 
     return {
         repeat,

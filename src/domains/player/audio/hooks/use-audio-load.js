@@ -2,17 +2,11 @@ import React, { useEffect } from 'react'
 import { useAutoplay } from './use-autoplay'
 
 /**
- * @function
- * @name useAudioLoad
  * @param {React.Ref} ref - audio ref
  * @param {string} url - audio url
  * @returns {boolean} autoplay
  */
 export function useAudioLoad (ref, url) {
-
-    if (typeof ref === 'undefined') return
-
-    if (typeof url === 'undefined') return
 
     const { autoplay } = useAutoplay ()
 

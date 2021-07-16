@@ -11,11 +11,9 @@ export const useStore = create (
         ),
         // volume
         'volume': 1,
-        'setVolume': (newVolume) => set (
-            () => ({
-                'volume': parseFloat (newVolume),
-            }),
-        ),
+        'setVolume': (newVolume) => set ({
+            'volume': parseFloat (newVolume),
+        }),
         // speed
         'speed': 1,
         'setSpeed': (newSpeed) => set (

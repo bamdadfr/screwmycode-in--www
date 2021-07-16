@@ -7,16 +7,12 @@ import { useAudioVolume } from './use-audio-volume'
 import { useAudioLoad } from './use-audio-load'
 
 /**
- * @function
- * @name useAudioComponent
  * @param {string} url - audio url
  * @typedef {React.Ref} Ref
  * @typedef {boolean} Autoplay
  * @returns {{Ref, Autoplay}} audio attributes
  */
 export function useAudioComponent (url) {
-
-    if (typeof url === 'undefined') return
 
     const ref = useRef (null)
     const { autoplay } = useAudioLoad (ref, url)

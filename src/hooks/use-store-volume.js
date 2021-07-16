@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useStore } from './use-store'
 
 /**
@@ -9,11 +10,12 @@ import { useStore } from './use-store'
  */
 export function useStoreVolume () {
 
-    const { volume, setVolume } = useStore (
-        (state) => ({
-            'volume': state.volume,
-            'setVolume': state.setVolume,
-        }),
+    const volume = useStore (
+        useCallback ((state) => state.volume, []),
+    )
+
+    const setVolume = useStore (
+        useCallback ((state) => state.setVolume, []),
     )
 
     return {
