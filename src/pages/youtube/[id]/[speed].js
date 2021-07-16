@@ -14,14 +14,12 @@ const propTypes = {
 }
 
 /**
- * @function
- * @name YoutubePage
  * @description /youtube/[id]/[speed]
- * @param {object} props - props
- * @param {string} props.title - audio title
- * @param {string} props.image - audio thumbnail url
- * @param {string} props.url - audio url
- * @returns {React.ReactElement} - react component
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @returns {React.ReactElement} react component
  */
 export default function YoutubePage ({
     title,
@@ -60,54 +58,35 @@ export default function YoutubePage ({
 YoutubePage.propTypes = propTypes
 
 /**
- * @function
- * @name getServerSideProps
- * @description sanitize url parameters + check if id is valid + get data from API
- * @param {object} context - next.js context
- * @returns {object} - props to pass
+ * @param {object} context next.js context
+ * @typedef {string} Title
+ * @typedef {string} Image
+ * @typedef {string} Url
+ * @typedef {number} Speed
+ * @returns {{Title, Image, Url, Speed}} passing props
  */
 export async function getServerSideProps (context) {
 
-    const { id, 'speed': speedFromParams } = context.params // todo SSR zustand for speed
-    let speed = parseFloat (speedFromParams) || 1
+    const { id, speed } = context.params
+    const props = {}
+    const redirect = { 'redirect': { 'destination': '/', 'permanent': false }}
+    const isValid = ytdl.validateID (id)
 
-    if (speedFromParams > 1.5) speed = 1.5
-
-    if (speedFromParams < 0.5) speed = 0.5
-
-    const redirectResponse = {
-        'redirect': {
-            'destination': '/',
-            'permanent': false,
-        },
-    }
-
-    try {
-
-        // throws if `id` is not valid
-        ytdl.getVideoID (id)
-
-    } catch {
-
-        return redirectResponse
-
-    }
+    if (!isValid) return redirect
 
     const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`)
-    const { 'data': response } = request
+    const response = request.data
 
-    if (!response.success) return redirectResponse
+    if (!response.success) return redirect
 
-    const { title, url } = response.data
-    const image = GetYoutubeThumbnailUtils (id)
+    props.title = response.data.title
 
-    return {
-        'props': {
-            title,
-            image,
-            url,
-            speed,
-        },
-    }
+    props.image = GetYoutubeThumbnailUtils (id)
+
+    props.url = response.data.url
+
+    props.speed = parseFloat (speed) || 1
+
+    return { props }
 
 }

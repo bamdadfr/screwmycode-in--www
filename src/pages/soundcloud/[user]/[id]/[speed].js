@@ -12,14 +12,12 @@ const propTypes = {
 }
 
 /**
- * @function
- * @name SoundcloudPage
  * @description /soundcloud/[user]/[id]/[speed]
- * @param {object} props - props
- * @param {string} props.title - audio title
- * @param {string} props.image - audio thumbnail url
- * @param {string} props.url - audio url
- * @returns {React.ReactElement} - react component
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @returns {React.ReactElement} react component
  */
 export default function SoundcloudPage ({
     title,
@@ -58,11 +56,12 @@ export default function SoundcloudPage ({
 SoundcloudPage.propTypes = propTypes
 
 /**
- * @function
- * @name getServerSideProps
- * @description sanitize url parameters + check if id is valid + get data from API
- * @param {object} context - next.js context
- * @returns {object} - props to pass
+ * @param {object} context next.js context
+ * @typedef {string} Title
+ * @typedef {string} Image
+ * @typedef {string} Url
+ * @typedef {number} Speed
+ * @returns {{Title, Image, Url, Speed}} passing props
  */
 export async function getServerSideProps (context) {
 
