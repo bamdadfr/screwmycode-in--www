@@ -33,8 +33,8 @@ export function PlayerLayout ({
             <Head>
                 <title>{description}</title>
             </Head>
-            <MetaComponent description={description} image={image}/>
-            <CoreLayout meta={false}>
+            <MetaComponent customTitle description={description} image={image}/>
+            <CoreLayout customMeta>
                 <Container>
                     <Title>{title}</Title>
                     <AudioComponent url={url}/>
