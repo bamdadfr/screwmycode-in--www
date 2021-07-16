@@ -8,27 +8,27 @@ const propTypes = {
         PropTypes.element,
         PropTypes.array,
     ]).isRequired,
-    'meta': PropTypes.bool,
+    'customMeta': PropTypes.bool,
 }
 
 const defaultProps = {
-    'meta': true,
+    'customMeta': false,
 }
 
 /**
  * @param {object} props react props
  * @param {React.ReactElement} props.children react children
- * @param {boolean} props.meta render meta?
+ * @param {boolean} [props.customMeta] have your own meta?
  * @returns {React.ReactElement} react component
  */
 export function CoreLayout ({
     children,
-    meta = defaultProps.meta,
+    customMeta = defaultProps.customMeta,
 }) {
 
     return (
         <>
-            {meta && <MetaComponent/>}
+            {!customMeta && <MetaComponent/>}
             <HeaderComponent/>
             <Container>
                 <TitleComponent/>
