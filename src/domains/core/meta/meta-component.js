@@ -7,22 +7,25 @@ const propTypes = {
     'url': PropTypes.string,
     'description': PropTypes.string,
     'image': PropTypes.string,
+    'customTitle': PropTypes.bool,
 }
 
 export const defaultProps = {
     'title': 'ScrewMyCode.In',
-    'url': 'https://www.screwmycode.in',
+    'url': 'https://www.screwmycode.in/',
     'description': 'Variable speed pitch control for YouTube',
     'image': 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
+    'customTitle': false,
 }
 
 /**
  * @description head and SEO tags
  * @param {object} props react props
- * @param {string} props.title meta title
- * @param {string} props.url meta url
- * @param {string} props.description meta description
- * @param {string} props.image meta image
+ * @param {string} [props.title] meta title
+ * @param {string} [props.url] meta url
+ * @param {string} [props.description] meta description
+ * @param {string} [props.image] meta image
+ * @param {boolean} [props.customTitle] have your own title?
  * @returns {React.ReactElement} react component
  */
 export function MetaComponent ({
@@ -30,18 +33,19 @@ export function MetaComponent ({
     url = defaultProps.url,
     description = defaultProps.description,
     image = defaultProps.image,
+    customTitle = defaultProps.customTitle,
 }) {
 
     // console.log (title, url, description, image)
 
-    // noinspection HtmlUnknownTarget
+    // noinspection HtmlUnknownTarget, HtmlRequiredTitleElement
     return (
-        <Head lang="en">
+        <Head>
 
             <meta charSet="UTF-8"/>
             <meta property="viewport" content="width=device-width, initial-scale=1.0"/>
 
-            <title>{title}</title>
+            {!customTitle && <title>{title}</title>}
 
             <meta itemProp="name" content={title}/>
             <meta itemProp="description" content={description}/>
