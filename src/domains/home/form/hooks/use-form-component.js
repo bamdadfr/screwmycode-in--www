@@ -6,8 +6,6 @@ import { useInput } from './use-input'
 import { useInputRefocus } from './use-input-refocus'
 
 /**
- * @function
- * @name useFormComponent
  * @typedef {useInput} Link
  * @typedef {Function} HandleSubmit
  * @returns {{Link, HandleSubmit}} form attributes

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useStoreSpeed } from '../../../../hooks'
 
 /**
- * @param {React.Ref} ref - audio ref
+ * @param {React.Ref} ref audio ref
  */
 export function useAudioPlaybackRate (ref) {
 

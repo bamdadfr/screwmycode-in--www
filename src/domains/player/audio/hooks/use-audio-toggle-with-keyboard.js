@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
 /**
- * @param {React.Ref} ref - audio ref
- * @param {string} keyCode - keyboard code
+ * @param {React.Ref} ref audio ref
+ * @param {string} keyCode keyboard code
  */
 export function useAudioToggleWithKeyboard (ref, keyCode = 'Space') {
 

@@ -7,7 +7,7 @@ import { useAudioVolume } from './use-audio-volume'
 import { useAudioLoad } from './use-audio-load'
 
 /**
- * @param {string} url - audio url
+ * @param {string} url audio url
  * @typedef {React.Ref} Ref
  * @typedef {boolean} Autoplay
  * @returns {{Ref, Autoplay}} audio attributes

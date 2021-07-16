@@ -1,9 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 
 /**
- * @function
- * @name useInput
- * @param {string} defaultValue - input default value
+ * @param {string} [defaultValue=''] input default value
  * @typedef {React.Ref} Ref
  * @typedef {number} Value
  * @typedef {Function} OnChange

@@ -2,8 +2,7 @@ import { useCallback } from 'react'
 import { useStore } from './use-store'
 
 /**
- * @function
- * @name useStoreSpeed
+ * @description speed selector
  * @typedef {number} Speed
  * @typedef {Function} SetSpeed
  * @returns {{Speed, SetSpeed}} getter + setter

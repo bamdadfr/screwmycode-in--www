@@ -3,10 +3,8 @@ import { isFirefox } from 'react-device-detect'
 import { useRouter } from 'next/router'
 
 /**
- * @function
- * @name useFirefoxOnly
  * @description redirect if browser is not firefox
- * @param {string} [target='/firefox'] - target url
+ * @param {string} [target='/firefox'] target url
  */
 export function useFirefoxOnly (target = '/firefox') {
 

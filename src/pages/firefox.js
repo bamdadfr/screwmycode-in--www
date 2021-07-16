@@ -17,10 +17,7 @@ const TextLink = styled.a`
 `
 
 /**
- * @function
- * @name FirefoxPage
- * @description page: /firefox
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export default function FirefoxPage () {
 

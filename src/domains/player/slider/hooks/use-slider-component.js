@@ -2,8 +2,6 @@ import { useCallback } from 'react'
 import { useStoreSpeed } from '../../../../hooks'
 
 /**
- * @function
- * @name useSliderComponent
  * @returns {{number, Function}} slider attributes
  */
 export function useSliderComponent () {

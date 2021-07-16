@@ -17,15 +17,13 @@ export const defaultProps = {
 }
 
 /**
- * @function
- * @name MetaComponent
  * @description head and SEO tags
- * @param {object} props - react props
- * @param {string} props.title - meta title
- * @param {string} props.url - meta url
- * @param {string} props.description - meta description
- * @param {string} props.image - meta image
- * @returns {React.ReactElement} - react component
+ * @param {object} props react props
+ * @param {string} props.title meta title
+ * @param {string} props.url meta url
+ * @param {string} props.description meta description
+ * @param {string} props.image meta image
+ * @returns {React.ReactElement} react component
  */
 export function MetaComponent ({
     title = defaultProps.title,

@@ -2,8 +2,7 @@ import { useGoogleAnalytics } from './use-google-analytics'
 import { useFirefoxOnly } from './use-firefox-only'
 
 /**
- * @function
- * @name useApp
+ * @description exclusive use for next.js _app.js
  */
 export function useApp () {
 

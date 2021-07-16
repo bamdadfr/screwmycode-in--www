@@ -3,10 +3,7 @@ import { StyledForm, StyledInput, StyledSubmit } from './form-component-styles'
 import { useFormComponent } from './hooks'
 
 /**
- * @function
- * @name FormComponent
- * @description home: form component
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export function FormComponent () {
 

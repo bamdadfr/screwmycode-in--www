@@ -3,10 +3,7 @@ import { CoreLayout } from '../layouts'
 import { useRedirectAuto } from '../hooks'
 
 /**
- * @function
- * @name NotFoundPage
- * @description /404
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export default function NotFoundPage () {
 

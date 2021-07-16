@@ -1,9 +1,7 @@
 /**
- * @function
- * @name GetYoutubeThumbnailUtils
  * @description get thumbnail from youtube id
- * @param {string} id - youtube id
- * @returns {string} - thumbnail url
+ * @param {string} id youtube id
+ * @returns {string} thumbnail url
  */
 export function GetYoutubeThumbnailUtils (id) {
 

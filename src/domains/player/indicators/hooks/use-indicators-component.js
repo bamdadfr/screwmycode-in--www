@@ -4,8 +4,6 @@ import speedToSemitones from 'speed-to-semitones'
 import { useStoreSpeed } from '../../../../hooks'
 
 /**
- * @function
- * @name useIndicatorsComponent
  * @returns {{string, string}} indicators values
  */
 export function useIndicatorsComponent () {

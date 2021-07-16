@@ -16,11 +16,9 @@ const defaultProps = {
 }
 
 /**
- * @function
- * @name CoreLayout
- * @param {object} props - react props
- * @param {React.ReactElement} props.children - react children
- * @param {boolean} props.meta - render meta?
+ * @param {object} props react props
+ * @param {React.ReactElement} props.children react children
+ * @param {boolean} props.meta render meta?
  * @returns {React.ReactElement} react component
  */
 export function CoreLayout ({

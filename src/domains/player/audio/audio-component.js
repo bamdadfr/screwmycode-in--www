@@ -8,7 +8,6 @@ const propTypes = {
 }
 
 /**
- * @description player: audio component
  * @param {object} props props
  * @param {string} props.url url
  * @returns {React.ReactElement} react component

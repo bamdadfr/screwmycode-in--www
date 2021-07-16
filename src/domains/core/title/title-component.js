@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { Title } from './title-component-styles'
 
 /**
- * @function
- * @name TitleComponent
  * @returns {React.ReactElement} react component
  */
 export function TitleComponent () {

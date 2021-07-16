@@ -3,10 +3,7 @@ import { StyledContainer } from './indicators-component-styles'
 import { useIndicatorsComponent } from './hooks'
 
 /**
- * @function
- * @name IndicatorsComponent
- * @description indicators
- * @returns {React.ReactElement} - react element
+ * @returns {React.ReactElement} react element
  */
 export function IndicatorsComponent () {
 

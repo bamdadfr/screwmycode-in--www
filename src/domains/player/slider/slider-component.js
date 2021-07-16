@@ -3,10 +3,7 @@ import { StyledSlider, StyledContainer } from './slider-component-styles'
 import { useSliderComponent } from './hooks'
 
 /**
- * @function
- * @name SliderComponent
- * @description component: slider
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export function SliderComponent () {
 

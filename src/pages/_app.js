@@ -18,14 +18,11 @@ const defaultProps = {
 }
 
 /**
- * @function
- * @name MyApp
- * @description next.js default component
- * @param {*} props - component props
- * @param {Function} props.Component - next.js component
- * @param {object} props.pageProps - next.js props
- * @param {*} props.err - next.js errors
- * @returns {React.ReactElement} - react component
+ * @param {object} props component props
+ * @param {Function} props.Component next.js component
+ * @param {object} props.pageProps next.js props
+ * @param {*} props.err next.js errors
+ * @returns {React.ReactElement} react component
  */
 export default function MyApp ({ Component, pageProps, err }) {
 

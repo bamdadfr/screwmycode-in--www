@@ -5,10 +5,7 @@ import { Container } from './header-component-styles'
 import { useHeaderComponent } from './hooks'
 
 /**
- * @function
- * @name HeaderComponent
- * @description layout menu component
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export function HeaderComponent () {
 

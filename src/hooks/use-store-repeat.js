@@ -2,8 +2,7 @@ import { useCallback } from 'react'
 import { useStore } from './use-store'
 
 /**
- * @function
- * @name useStoreRepeat
+ * @description repeat selector
  * @typedef {boolean} Repeat
  * @typedef {Function} ToggleRepeat
  * @returns {{Repeat, ToggleRepeat}} getter + toggle

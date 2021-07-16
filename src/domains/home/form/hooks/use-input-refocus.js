@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 
 /**
- * @function
- * @name useInputRefocus
- * @param {React.Ref} ref - react ref
- * @param {number} delay - refocus delay in ms
+ * @param {React.Ref} ref react ref
+ * @param {number} delay refocus delay in ms
  */
 export function useInputRefocus (ref, delay = 1) {
 

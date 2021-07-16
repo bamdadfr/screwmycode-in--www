@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
 
 /**
- * @function
- * @name useGoogleAnalytics
  * @description binds google tag to router events
  */
 export function useGoogleAnalytics () {

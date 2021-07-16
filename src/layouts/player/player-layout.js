@@ -14,13 +14,11 @@ const propTypes = {
 }
 
 /**
- * @function
- * @name PlayerLayout
- * @param {object} props - react props
- * @param {string} props.description - audio title drilling to meta
- * @param {string} props.url - audio url
- * @param {string} props.title - audio title
- * @param {string} props.image - audio image drilling to meta
+ * @param {object} props react props
+ * @param {string} props.description audio title drilling to meta
+ * @param {string} props.url audio url
+ * @param {string} props.title audio title
+ * @param {string} props.image audio image drilling to meta
  * @returns {React.ReactElement} react component
  */
 export function PlayerLayout ({

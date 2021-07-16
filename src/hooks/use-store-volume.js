@@ -2,8 +2,7 @@ import { useCallback } from 'react'
 import { useStore } from './use-store'
 
 /**
- * @function
- * @name useStoreVolume
+ * @description volume selector
  * @typedef {number} Volume
  * @typedef {Function} SetVolume
  * @returns {{Volume, SetVolume}} getter + setter
