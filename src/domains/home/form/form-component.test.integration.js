@@ -6,13 +6,7 @@ import { JestRender } from '../../../../jest/jest-render'
 
 const render = () => {
 
-    const handleForm = jest.fn ()
-
-    JestRender (
-        <FormComponent
-            handleForm={handleForm}
-        />,
-    )
+    JestRender (<FormComponent/>)
 
     const link = screen.getByPlaceholderText ('paste link here (youtube, soundcloud)')
 
@@ -23,7 +17,6 @@ const render = () => {
     return {
         link,
         submit,
-        handleForm,
     }
 
 }

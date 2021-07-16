@@ -8,16 +8,12 @@ const propTypes = {
 }
 
 /**
- * @function
- * @name AudioComponent
  * @description player: audio component
- * @param {object} props - props
- * @param {string} props.url - url
- * @returns {React.ReactElement} - react component
+ * @param {object} props props
+ * @param {string} props.url url
+ * @returns {React.ReactElement} react component
  */
-export function AudioComponent ({
-    url,
-}) {
+export function AudioComponent ({ url }) {
 
     if (typeof url === 'undefined') return <>no URL</>
 
