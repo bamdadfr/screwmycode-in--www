@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormComponent } from './form.component'
-import { JestInstance } from '../../../../../jest/jest-instance'
+import { JestInstance } from '../../../jest/jest-instance'
 
 const handleForm = jest.fn ()
 const instance = JestInstance (<FormComponent handleForm={handleForm}/>)
