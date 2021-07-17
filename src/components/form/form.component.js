@@ -1,118 +1,39 @@
-import React, { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
-import * as ytdl from 'ytdl-core'
-import SoundcloudScraper from 'soundcloud-scraper'
-import { StyledForm, StyledInput, StyledSubmit } from './form.styles'
-
-const propTypes = {
-    'handleForm': PropTypes.func.isRequired,
-}
+import React from 'react'
+import Image from 'next/image'
+import { Form, Input, Submit, ImageContainer } from './form.component.styles'
+import { useFormComponent } from './hooks'
 
 /**
- * @function
- * @name FormComponent
- * @description form component
- * @param {*} props - props
- * @param {Function} props.handleForm - handle form function from HOC
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
-export default function FormComponent ({ handleForm }) {
+export function FormComponent () {
 
-    const linkRef = useRef (null)
-    const [link, setLink] = useState ('')
-
-    /**
-     * @function
-     * @name onMount
-     * @description setup listeners
-     * @returns {Function<void>} - cleanup
-     */
-    function onMount () {
-
-        // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
-        const linkInstance = linkRef.current
-
-        const blurListener = () => {
-
-            setTimeout (() => {
-
-                linkInstance.focus ()
-
-            }, 100)
-
-        }
-
-        blurListener ()
-
-        linkInstance.addEventListener ('blur', blurListener)
-
-        return () => {
-
-            linkInstance.removeEventListener ('blur', blurListener)
-
-        }
-
-    }
-
-    useEffect (onMount, [])
-
-    /**
-     * @function
-     * @name handleSubmit
-     * @description handle when form is submitted
-     * @param {React.FormEvent} event - form event
-     * @returns {Promise<void>}
-     */
-    async function handleSubmit (event) {
-
-        event.preventDefault ()
-
-        try {
-
-            // soundcloud
-            if (SoundcloudScraper.Util.validateURL (link)) {
-
-                const userAndId = link.replace ('https://soundcloud.com/', '')
-                const path = `/soundcloud/${userAndId}/1`
-
-                handleForm (path)
-
-                return
-
-            }
-
-            // youtube
-            const id = ytdl.getURLVideoID (link)
-            const path = `/youtube/${id}/1`
-
-            handleForm (path)
-
-        } catch {
-
-            setLink ('')
-
-        }
-
-    }
+    const { link, handleSubmit } = useFormComponent ()
 
     return (
         <>
-            <StyledForm onSubmit={handleSubmit}>
-                <StyledInput
+            <Form onSubmit={handleSubmit}>
+                <Input
                     placeholder="paste link here (youtube, soundcloud)"
                     type="text"
-                    ref={linkRef}
-                    value={link}
-                    onChange={(e) => setLink (e.target.value)}
+                    ref={link.ref}
+                    value={link.value}
+                    onChange={link.onChange}
                 />
-                <StyledSubmit
+                <Submit
                     type="submit"
-                    value="submit"
-                />
-            </StyledForm>
+                >
+                    submit
+                    <ImageContainer>
+                        <Image
+                            src="/icons/SCRW_KSET.svg"
+                            width={20}
+                            height={20}
+                        />
+                    </ImageContainer>
+                </Submit>
+            </Form>
         </>
     )
 
 }
-
-FormComponent.propTypes = propTypes

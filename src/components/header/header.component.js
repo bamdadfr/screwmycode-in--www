@@ -1,22 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
-import { IconRepeat, IconHome } from './header.icons'
-import { StyledContainer } from './header.styles'
+import { IconHome, IconRepeatOff, IconRepeatOn } from './components'
+import { Container } from './header.component.styles'
 import { useHeaderComponent } from './hooks'
 
 /**
- * @function
- * @name HeaderComponent
- * @description layout menu component
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
-export default function HeaderComponent () {
+export function HeaderComponent () {
 
     const { repeat, toggleRepeat } = useHeaderComponent ()
 
     return (
         <>
-            <StyledContainer>
+            <Container>
                 <Link href="/">
                     <button
                         type="button"
@@ -30,9 +27,12 @@ export default function HeaderComponent () {
                     aria-label="repeat"
                     onClick={() => toggleRepeat ()}
                 >
-                    {repeat ? <IconRepeat.On/> : <IconRepeat.Off/>}
+                    {repeat
+                        ? <IconRepeatOn/>
+                        : <IconRepeatOff/>
+                    }
                 </button>
-            </StyledContainer>
+            </Container>
         </>
     )
 

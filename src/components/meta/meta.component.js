@@ -1,35 +1,67 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
+const propTypes = {
+    'title': PropTypes.string,
+    'url': PropTypes.string,
+    'description': PropTypes.string,
+    'image': PropTypes.string,
+    'customTitle': PropTypes.bool,
+}
+
+export const defaultProps = {
+    'title': 'ScrewMyCode.In',
+    'url': 'https://www.screwmycode.in/',
+    'description': 'Variable speed pitch control for YouTube',
+    'image': 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
+    'customTitle': false,
+}
+
 /**
- * @function
- * @name MetaComponent
- * @description layout: meta component (head and SEO tags)
- * @returns {React.ReactElement} - react component
+ * @description head and SEO tags
+ * @param {object} props react props
+ * @param {string} [props.title] meta title
+ * @param {string} [props.url] meta url
+ * @param {string} [props.description] meta description
+ * @param {string} [props.image] meta image
+ * @param {boolean} [props.customTitle] have your own title?
+ * @returns {React.ReactElement} react component
  */
-export default function MetaComponent () {
+export function MetaComponent ({
+    title = defaultProps.title,
+    url = defaultProps.url,
+    description = defaultProps.description,
+    image = defaultProps.image,
+    customTitle = defaultProps.customTitle,
+}) {
 
-    const title = 'ScrewMyCode.In'
-    const url = 'https://screwmycode.in'
+    // console.log (title, url, description, image)
 
-    // noinspection HtmlRequiredTitleElement,HtmlUnknownTarget
+    // noinspection HtmlUnknownTarget, HtmlRequiredTitleElement
     return (
-        <Head lang="en">
+        <Head>
 
             <meta charSet="UTF-8"/>
             <meta property="viewport" content="width=device-width, initial-scale=1.0"/>
 
-            <title>{title}</title>
+            {!customTitle && <title>{title}</title>}
 
             <meta itemProp="name" content={title}/>
+            <meta itemProp="description" content={description}/>
+            <meta itemProp="image" content={image}/>
 
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content={title}/>
+            <meta name='twitter:description' content={description}/>
+            <meta name="twitter:image" content={image}/>
 
             <meta property="og:site_name" content={title}/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content={url}/>
             <meta property="og:title" content={title}/>
+            <meta property="og:description" content={description}/>
+            <meta property="og:image" content={image}/>
 
             {/* from https://realfavicongenerator.net/ */}
             <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
@@ -44,3 +76,7 @@ export default function MetaComponent () {
     )
 
 }
+
+MetaComponent.propTypes = propTypes
+
+MetaComponent.defaultProps = defaultProps

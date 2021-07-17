@@ -1,38 +1,34 @@
 import React from 'react'
 
 /**
- * @function
- * @name OldYoutubePage
- * @description /youtube/[id]?speed=x
- *      redirect to new path
- *      /youtube/[id]/[speed]
- * @returns {React.ReactElement} - react component
+ * @param {object} context next.js context
+ * @returns {object.<string, string>} redirect
  */
-export default function OldYoutubePage () {
+export function getServerSideProps (context) {
 
-    return (
-        <></>
-    )
+    const { id, speed } = context.params
+    const props = {}
+
+    props.id = id
+
+    props.speed = parseFloat (speed) || 1
+
+    return {
+        'redirect': {
+            'destination': `/youtube/${props.id}/${props.speed.toString ()}`,
+            'permanent': true,
+        },
+    }
 
 }
 
 /**
- * @function
- * @name getServerSideProps
- * @description parse url parameters and redirect
- * @param {*} context - next.js context
- * @returns {object.<string, string>} - redirect
+ * @description redirection for the old youtube page
+ *      /youtube/[id]?speed=x => /youtube/[id]/[speed]
+ * @returns {React.ReactElement} react component
  */
-export function getServerSideProps (context) {
+export default function OldYoutubePage () {
 
-    const { id } = context.params
-    const speed = context.query.speed || '1'
-
-    return {
-        'redirect': {
-            'destination': `/youtube/${id}/${speed}`,
-            'permanent': true,
-        },
-    }
+    return <></>
 
 }

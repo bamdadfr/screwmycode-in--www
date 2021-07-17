@@ -1,0 +1,1 @@
+export { useSliderComponent } from './use-slider-component'

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should mount and match 1`] = `
+<div
+  className="sc-7v0s4t-0 jQMzFM"
+>
+  <div>
+    <span
+      title="percentage"
+    >
+      percent
+    </span>
+    <input
+      aria-label="percentage value"
+      disabled={true}
+      value="0.0"
+    />
+  </div>
+  <div>
+    <span
+      title="semitones"
+    >
+      semitone
+    </span>
+    <input
+      aria-label="semitones value"
+      disabled={true}
+      value="0.0"
+    />
+  </div>
+</div>
+`;

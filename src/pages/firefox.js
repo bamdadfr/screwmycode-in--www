@@ -1,43 +1,69 @@
 import React from 'react'
-import Head from 'next/head'
-import { StyledContainer, StyledLink } from '../pages-styles/firefox.styles'
+import Image from 'next/image'
+import styled from 'styled-components'
+import { DefaultLayout } from '../layouts'
+
+const Container = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    max-width: 20em;
+`
+
+const ImageContainer = styled.div`
+    position: relative;
+    height: 10em;
+    width: 4em;
+
+    > div {
+        transform: translate3d(0, -0.9em, 0);
+    }
+`
+
+const TextContainer = styled.div`
+    margin-left: 2em;
+    text-align: left;
+`
+
+const TextLink = styled.a`
+    font-weight: 600;
+    color: ${(props) => props.theme.highlight};
+    border-bottom: 0.15em solid ${(props) => props.theme.highlight};
+`
 
 /**
- * @function
- * @name FirefoxPage
- * @description page: /firefox
- * @returns {React.ReactElement} - react component
+ * @returns {React.ReactElement} react component
  */
 export default function FirefoxPage () {
 
-    const description = 'available only for firefox'
-
-    // noinspection HtmlRequiredTitleElement
     return (
         <>
-            <Head>
-
-                <meta itemProp="description" content={description}/>
-
-                <meta property="og:description" content={description}/>
-
-                <meta name='twitter:description' content={description}/>
-
-            </Head>
-            <StyledContainer>
-                <h2>
-                    available only for firefox
-                </h2>
-                <div>
-                    <StyledLink
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://www.mozilla.org/firefox/new/"
-                    >
-                        download here
-                    </StyledLink>
-                </div>
-            </StyledContainer>
+            <DefaultLayout metaDescription="only available for firefox">
+                <Container>
+                    <ImageContainer>
+                        <Image
+                            src="/icons/SCRW_CHAMP.svg"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </ImageContainer>
+                    <TextContainer>
+                        <h2>
+                            only available for firefox
+                        </h2>
+                        <div>
+                            <TextLink
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://www.mozilla.org/firefox/new/"
+                            >
+                                download here
+                            </TextLink>
+                        </div>
+                    </TextContainer>
+                </Container>
+            </DefaultLayout>
         </>
     )
 
