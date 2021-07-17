@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import ytdl from 'ytdl-core'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { getYoutubeThumbnail } from '../../../utils'
 import { useStore } from '../../../hooks'
 import { MetaComponent, AudioTitleComponent } from '../../../components'
@@ -66,6 +67,7 @@ export default function YoutubePage ({
     speed,
 }) {
 
+    const router = useRouter ()
     const setSpeed = useStore ((state) => state.setSpeed)
     const setAudioTitle = useStore ((state) => state.setAudioTitle)
     const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
@@ -79,7 +81,12 @@ export default function YoutubePage ({
             <Head>
                 <title>{description}</title>
             </Head>
-            <MetaComponent customTitle description={description} image={image}/>
+            <MetaComponent
+                customTitle
+                description={description}
+                image={image}
+                url={'https://www.screwmycode.in' + router.asPath}
+            />
             <DefaultLayout customMeta>
                 <AudioTitleComponent title={title}/>
                 <PlayerModule url={url}/>

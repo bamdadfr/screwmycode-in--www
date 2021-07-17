@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useStore } from '../../../../hooks'
 import { MetaComponent, AudioTitleComponent } from '../../../../components'
 import { DefaultLayout } from '../../../../layouts'
@@ -63,6 +64,7 @@ export default function SoundcloudPage ({
     speed,
 }) {
 
+    const router = useRouter ()
     const setSpeed = useStore ((state) => state.setSpeed)
     const [description] = useState (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
 
@@ -73,7 +75,12 @@ export default function SoundcloudPage ({
             <Head>
                 <title>{description}</title>
             </Head>
-            <MetaComponent customTitle description={description} image={image}/>
+            <MetaComponent
+                customTitle
+                description={description}
+                image={image}
+                url={'https://www.screwmycode.in' + router.asPath}
+            />
             <DefaultLayout customMeta>
                 <AudioTitleComponent title={title}/>
                 <PlayerModule url={url}/>
