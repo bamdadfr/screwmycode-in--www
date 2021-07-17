@@ -18,6 +18,6 @@ export function useFirefoxOnly (target = '/firefox') {
 
         }
 
-    }, [router.events])
+    }, [router.pathname])
 
 }
