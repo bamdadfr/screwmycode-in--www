@@ -7,7 +7,7 @@ import { useRedirectAuto } from '../hooks'
  */
 export default function NotFoundPage () {
 
-    useRedirectAuto ('/', 2000)
+    useRedirectAuto ()
 
     return (
         <>
