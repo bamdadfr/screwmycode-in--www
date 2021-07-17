@@ -6,7 +6,8 @@ import React from 'react'
  */
 export function getServerSideProps (context) {
 
-    const { id, speed } = context.params
+    const { id } = context.params
+    const { speed } = context.query
     const props = {}
 
     props.id = id
