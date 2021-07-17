@@ -1,3 +1,44 @@
+# [1.16.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.15.0...v1.16.0) (2021-07-17)
+
+
+### Bug Fixes
+
+* **core-layout:** rename `meta` to `customMeta` ([f1aa72c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f1aa72c17d3de9e575b4309257a5a46ed52d0039))
+* **HTML:** add `lang` ([97f5af8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/97f5af8528e82f8be152d62c767b5560f96d39c6))
+* **indicators:** increase vertical space between title and value ([758e614](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/758e614ac8e4e9e18e63cc5c21a8472d3afbeb94))
+* **meta:** add `customTitle` ([846950a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/846950a34f47d6c48d473b8c74d855d58b01ee78))
+* **player-layout:** using new render props ([7280adb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7280adbd63825facf3b5ecc46b5192a58876b4a3))
+* **slider:** clean styles and add better shapes ([bcbe1d6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/bcbe1d68ac23d8144d7ef4bd49e2329f9a2411e8))
+
+
+### Features
+
+* **FirefoxPage:** add champagne icon ([d998a8a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d998a8a6fc9441cec898cba6018ba0669b19f428))
+* various improvements (folder structure, state management, style management, window.history handling `replaceNextRoute`, theming) ([045ad82](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/045ad820218068e5afa892bf4550d07cf1b39999))
+
+
+### Performance Improvements
+
+* **404:** remove unnecessary arguments ([6d4defd](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6d4defd4315a25db7759d8cb38a4fee88cad16be))
+* **exports:** all exports are now named exports (except defaults needed by next.js) ([2b1483e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2b1483ed98d15600f0c335dadafff954f7cc2281))
+* **filenames:** rename test filenames to match their origin ([88ebd35](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/88ebd35d62d7ba8681374bb4cfd1b9a754f78d0a))
+* **home:** remove home.module.js and move form.component.js ([b75ef08](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b75ef08d019407873e683a779fd5079d96ef7b67))
+* **home:** remove home.module.js and move form.component.js ([1ad4af3](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1ad4af3939309915e079c35203067a231332729f))
+* **home:** remove home.module.js and move form.component.js ([fa405df](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fa405df05683fd9a1798918d540e0ba738533a72))
+* **hooks:** remove unnecessary information from jsdoc + add useCallback around state selectors ([9692a50](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9692a5094fdc0cc0e7f92df4298bea34e1aa0e7e))
+* **jsdoc:** write more non repetitive jsdoc ([303cca9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/303cca9c2eb3730f96edf6a5cc7f3f473c953ff3))
+* **misc:** various ([3ee4270](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3ee427024bbef37c2341ac1345634db33fb2e8e4))
+* **naming:** remane player-component.js to audio-component.js ([65aa74a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/65aa74adeba813783d5ea592e8be3a116920b7b8))
+* **player-pages:** write more readable server side code + remove unnecessary info from jsdoc ([cb27091](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cb2709115be1b2a276053dce68aa513684cffff9))
+* **slider:** rename styled containers ([0293023](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/029302356f1f79ed437d9dcde37612d95025025d))
+* **state:** custom hook by state feature ([2858f0d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2858f0d6d622b4f50340b0e28022e64d76caeb67))
+* **structure:** add barrel exports + externalise logic into hooks + better filenames ([aba8c8c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/aba8c8c1e3491c339ae23c9b0f6bc783914ccd75))
+* **structure:** extract logic to custom hooks + add barrel exports ([da95832](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/da9583227c004d05d2f5b79efc1082cbde999753))
+* **structure:** extract most of logic from player-pages + put all audio-component.js logic into custom hooks ([bd9a0b9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/bd9a0b940a4ad3a04bed7bc7905e3010a7b89a9e))
+* **structure:** move files until it feels right ([3703632](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/370363275060fb48a5bbe74ec61ce0e7098eb9d7))
+* **structure/tests:** update snapshot + removed drilling for meta-component.js + started extracting logic from YoutubePage ([da3e7fc](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/da3e7fc9ce9df7f6d66da25376d97c799b23eeea))
+* **styles:** tweak global opacity ([85f45ad](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/85f45ad1991f462643a447fd479e581575b9916f))
+
 # [1.15.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.14.1...v1.15.0) (2021-07-15)
 
 
