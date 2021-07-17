@@ -25,7 +25,7 @@ export const InputTitle = styled.span`
 `
 
 export const InputValue = styled.input`
-    margin-top: 0.5em;
+    margin-top: 0.7em;
     text-align: center;
     color: ${(props) => props.theme.highlight};
     background: ${(props) => props.theme.background.highlight};
