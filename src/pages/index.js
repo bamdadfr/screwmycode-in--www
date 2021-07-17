@@ -1,6 +1,6 @@
 import React from 'react'
 import { DefaultLayout } from '../layouts'
-import { HomeModule } from '../modules'
+import { FormComponent } from '../components'
 
 /**
  * @returns {React.ReactElement} react component
@@ -10,7 +10,7 @@ export default function IndexPage () {
     return (
         <>
             <DefaultLayout>
-                <HomeModule/>
+                <FormComponent/>
             </DefaultLayout>
         </>
     )
