@@ -14,6 +14,6 @@ export const Theme = {
         'primary': '#343434',
     },
     'shadow': {
-        'opacity': 'rgba(0, 0, 0, 0.3)',
+        'opacity': 'rgba(0, 0, 0, 0.25)',
     },
 }
