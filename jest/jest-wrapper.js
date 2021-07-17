@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { ThemeStyles } from '../src/app/styles/theme.styles'
+import { Theme } from '../src/app/styles'
 
 /**
  * @function
@@ -12,7 +12,7 @@ import { ThemeStyles } from '../src/app/styles/theme.styles'
 export function JestWrapper (Component) {
 
     return (
-        <ThemeProvider theme={ThemeStyles}>
+        <ThemeProvider theme={Theme}>
             {Component}
         </ThemeProvider>
     )

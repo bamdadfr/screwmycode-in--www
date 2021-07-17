@@ -3,15 +3,10 @@
   <component name="SaveActionSettings">
     <option name="actions">
       <set>
-        <option value="activate" />
+        <option value="activateOnShortcut" />
         <option value="reformat" />
       </set>
     </option>
     <option name="configurationPath" value="" />
-    <option name="exclusions">
-      <set>
-        <option value="src/.*\.js" />
-      </set>
-    </option>
   </component>
 </project>

@@ -1,59 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
-import { useRouter } from 'next/router'
-import { PlayerLayout } from '../../../../layouts'
-import { useStoreSpeed } from '../../../../hooks'
-
-const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-}
-
-/**
- * @description /soundcloud/[user]/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @returns {React.ReactElement} react component
- */
-export default function SoundcloudPage ({
-    title,
-    image,
-    url,
-}) {
-
-    const router = useRouter ()
-    const { speed } = useStoreSpeed ()
-
-    useEffect (async () => {
-
-        await router.replace (
-            `/soundcloud/${router.query.user}/${router.query.id}/${speed}`,
-            undefined,
-            { 'shallow': true },
-        )
-
-    }, [speed])
-
-    const description = `${title} - ${speed} - SoundCloud - ScrewMyCode.In`
-
-    return (
-        <>
-            <PlayerLayout
-                description={description}
-                url={url}
-                title={title}
-                image={image}
-            />
-        </>
-    )
-
-}
-
-SoundcloudPage.propTypes = propTypes
+import Head from 'next/head'
+import { useStore } from '../../../../hooks'
+import { MetaComponent, AudioTitleComponent } from '../../../../components'
+import { DefaultLayout } from '../../../../layouts'
+import { PlayerModule } from '../../../../modules'
 
 /**
  * @param {object} context next.js context
@@ -87,3 +39,48 @@ export async function getServerSideProps (context) {
     return { props }
 
 }
+
+const propTypes = {
+    'title': PropTypes.string.isRequired,
+    'image': PropTypes.string.isRequired,
+    'url': PropTypes.string.isRequired,
+    'speed': PropTypes.number.isRequired,
+}
+
+/**
+ * @description /soundcloud/[user]/[id]/[speed]
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @param {number} props.speed audio initial speed
+ * @returns {React.ReactElement} react component
+ */
+export default function SoundcloudPage ({
+    title,
+    image,
+    url,
+    speed,
+}) {
+
+    const setSpeed = useStore ((state) => state.setSpeed)
+    const [description] = useState (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
+
+    useEffect (() => setSpeed (speed), [])
+
+    return (
+        <>
+            <Head>
+                <title>{description}</title>
+            </Head>
+            <MetaComponent customTitle description={description} image={image}/>
+            <DefaultLayout customMeta>
+                <AudioTitleComponent title={title}/>
+                <PlayerModule url={url}/>
+            </DefaultLayout>
+        </>
+    )
+
+}
+
+SoundcloudPage.propTypes = propTypes

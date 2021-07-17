@@ -1,61 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import * as ytdl from 'ytdl-core'
-import { useRouter } from 'next/router'
-import { GetYoutubeThumbnailUtils } from '../../../app/utils/get-youtube-thumbnail.utils'
-import { PlayerLayout } from '../../../layouts'
-import { useStoreSpeed } from '../../../hooks'
-
-const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-}
-
-/**
- * @description /youtube/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @returns {React.ReactElement} react component
- */
-export default function YoutubePage ({
-    title,
-    image,
-    url,
-}) {
-
-    const router = useRouter ()
-    const { speed } = useStoreSpeed ()
-
-    useEffect (async () => {
-
-        await router.replace (
-            `/youtube/${router.query.id}/${speed}`,
-            undefined,
-            { 'shallow': true },
-        )
-
-    }, [speed])
-
-    const description = `${title} - ${speed} - YouTube - ScrewMyCode.In`
-
-    return (
-        <>
-            <PlayerLayout
-                description={description}
-                url={url}
-                title={title}
-                image={image}
-            />
-        </>
-    )
-
-}
-
-YoutubePage.propTypes = propTypes
+import ytdl from 'ytdl-core'
+import Head from 'next/head'
+import { getYoutubeThumbnail } from '../../../utils'
+import { useStore } from '../../../hooks'
+import { MetaComponent, AudioTitleComponent } from '../../../components'
+import { PlayerModule } from '../../../modules'
+import { DefaultLayout } from '../../../layouts'
 
 /**
  * @param {object} context next.js context
@@ -81,7 +33,7 @@ export async function getServerSideProps (context) {
 
     props.title = response.data.title
 
-    props.image = GetYoutubeThumbnailUtils (id)
+    props.image = getYoutubeThumbnail (id)
 
     props.url = response.data.url
 
@@ -90,3 +42,51 @@ export async function getServerSideProps (context) {
     return { props }
 
 }
+
+const propTypes = {
+    'title': PropTypes.string.isRequired,
+    'image': PropTypes.string.isRequired,
+    'url': PropTypes.string.isRequired,
+    'speed': PropTypes.number.isRequired,
+}
+
+/**
+ * @description /youtube/[id]/[speed]
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @param {number} props.speed audio initial speed
+ * @returns {React.ReactElement} react component
+ */
+export default function YoutubePage ({
+    title,
+    image,
+    url,
+    speed,
+}) {
+
+    const setSpeed = useStore ((state) => state.setSpeed)
+    const setAudioTitle = useStore ((state) => state.setAudioTitle)
+    const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
+
+    useEffect (() => setSpeed (speed), [])
+
+    useEffect (() => setAudioTitle (title), [])
+
+    return (
+        <>
+            <Head>
+                <title>{description}</title>
+            </Head>
+            <MetaComponent customTitle description={description} image={image}/>
+            <DefaultLayout customMeta>
+                <AudioTitleComponent title={title}/>
+                <PlayerModule url={url}/>
+            </DefaultLayout>
+        </>
+    )
+
+}
+
+YoutubePage.propTypes = propTypes

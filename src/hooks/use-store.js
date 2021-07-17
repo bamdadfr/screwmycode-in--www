@@ -29,5 +29,10 @@ export const useStore = create (
             
             },
         ),
+        // audio title
+        'audioTitle': undefined,
+        'setAudioTitle': (newAudioTitle) => set ({
+            'audioTitle': newAudioTitle.toString (),
+        }),
     }),
 )

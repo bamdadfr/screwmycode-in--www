@@ -1,19 +1,6 @@
 import React from 'react'
 
 /**
- * @description redirection for the old youtube page
- *      /youtube/[id]?speed=x => /youtube/[id]/[speed]
- * @returns {React.ReactElement} react component
- */
-export default function OldYoutubePage () {
-
-    return (
-        <></>
-    )
-
-}
-
-/**
  * @param {object} context next.js context
  * @returns {object.<string, string>} redirect
  */
@@ -32,5 +19,16 @@ export function getServerSideProps (context) {
             'permanent': true,
         },
     }
+
+}
+
+/**
+ * @description redirection for the old youtube page
+ *      /youtube/[id]?speed=x => /youtube/[id]/[speed]
+ * @returns {React.ReactElement} react component
+ */
+export default function OldYoutubePage () {
+
+    return <></>
 
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CoreLayout } from '../layouts'
+import { DefaultLayout } from '../layouts'
 
 const Container = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ export default function FirefoxPage () {
 
     return (
         <>
-            <CoreLayout metaDescription="only available for firefox">
+            <DefaultLayout metaDescription="only available for firefox">
                 <Container>
                     <h2>
                         only available for firefox
@@ -38,7 +38,7 @@ export default function FirefoxPage () {
                         </TextLink>
                     </div>
                 </Container>
-            </CoreLayout>
+            </DefaultLayout>
         </>
     )
 

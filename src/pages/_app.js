@@ -3,8 +3,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import 'sass-reset'
 import PropTypes from 'prop-types'
-import { ThemeStyles } from '../app/styles/theme.styles'
-import { GlobalStyles } from '../app/styles/global.styles'
+import { Theme, Global } from '../app/styles'
 import { useApp } from '../app/hooks'
 
 const propTypes = {
@@ -30,8 +29,8 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     return (
         <>
-            <GlobalStyles/>
-            <ThemeProvider theme={ThemeStyles}>
+            <Global/>
+            <ThemeProvider theme={Theme}>
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <Component {...pageProps} err={err}/>
             </ThemeProvider>
