@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledContainer = styled.div`
+export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,34 +9,37 @@ export const StyledContainer = styled.div`
     width: 90%;
 `
 
-export const StyledSlider = styled.input`
+export const Slider = styled.input`
     width: 100%;
-    
+
     &::-moz-range-thumb {
-        //box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
         box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary},
         0 0 1px ${(props) => props.theme.background.highlight};
-        //border: 1px solid #000000;
-        border: 1px solid ${(props) => props.theme.border.primary};
-        height: 30px;
-        width: 10px;
-        border-radius: 1px;
-        //background: #ffffff;
-        background: ${(props) => props.theme.primary};
+        border: 0.15em solid ${(props) => props.theme.primary};
+        background: ${(props) => props.theme.background.highlight};
         cursor: pointer;
+        border-radius: 100%;
+        width: 1.3em;
+        height: 1.3em;
+        transition: border 100ms ease-in-out;
+
+        &:hover {
+            border: 0.15em solid ${(props) => props.theme.highlight};
+        }
     }
 
     &::-moz-range-track {
         width: 100%;
         height: 8.4px;
         cursor: pointer;
-        //box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
-        box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary}, 
-        0 0 1px ${(props) => props.theme.background.highlight};
-        //background: #232323;
         background: ${(props) => props.theme.background.highlight};
-        border-radius: 1.3px;
-        //border: 0.2px solid #010101;
+        border-radius: 5px;
         border: 1px solid ${(props) => props.theme.border.primary};
+        box-shadow: 0 1px 10px 1px ${(props) => props.theme.shadow.opacity};
+        transition: background 100ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 `
