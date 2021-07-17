@@ -1,3 +1,12 @@
+## [1.16.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.0...v1.16.1) (2021-07-17)
+
+
+### Bug Fixes
+
+* **OldYoutubePage:** fetch `speed` from context.query instead of context.params ([95f85f6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/95f85f6fe396c8b737cd5ba96281a5e85432a7f7))
+* **player-pages:** provide url to meta-component ([c146249](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c1462492da6e2da573b0d53d10189a95bbeb00fb))
+* **use-firefox-only:** trigger on `router.pathname` instead of `router.events` ([f8f9f4f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f8f9f4f470b734c067d0a2902ec8f7fee6492487))
+
 # [1.16.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.15.0...v1.16.0) (2021-07-17)
 
 
