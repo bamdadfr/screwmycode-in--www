@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledSlider, StyledContainer } from './slider.component.styles'
+import { Slider, Container } from './slider.component.styles'
 import { useSliderComponent } from './hooks'
 
 /**
@@ -11,8 +11,8 @@ export function SliderComponent () {
 
     return (
         <>
-            <StyledContainer>
-                <StyledSlider
+            <Container>
+                <Slider
                     type="range"
                     aria-label="slider"
                     min={0.5}
@@ -21,7 +21,7 @@ export function SliderComponent () {
                     value={value}
                     onChange={onChange}
                 />
-            </StyledContainer>
+            </Container>
         </>
     )
 
