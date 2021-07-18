@@ -1,7 +1,7 @@
 import React from 'react'
 import { screen, waitFor } from '@testing-library/react'
 import { AudioComponent } from './audio.component'
-import { JestRender } from '../../../../../jest/jest-render'
+import { JestRender } from '../../../../../jest'
 
 const render = (
     autoplay = false,

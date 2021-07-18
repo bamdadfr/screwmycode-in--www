@@ -22,14 +22,6 @@ describe ('IconHome', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<IconHome/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should not be empty', () => {
 
             const { container } = render (<IconHome/>)

@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { JestWrapper } from './jest-wrapper'
+import { JestWithStyledComponents } from './jest-with-styled-components'
 
 /**
  * @function
@@ -12,7 +12,7 @@ import { JestWrapper } from './jest-wrapper'
 export function JestInstance (Component) {
 
     return renderer.create (
-        JestWrapper (Component),
+        JestWithStyledComponents (Component),
     ).toJSON ()
 
 }

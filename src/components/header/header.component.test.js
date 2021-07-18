@@ -23,14 +23,6 @@ describe ('HeaderComponent', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<HeaderComponent/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should not be empty', () => {
 
             const { container } = render (<HeaderComponent/>)
@@ -63,16 +55,6 @@ describe ('HeaderComponent', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            render (<HeaderComponent/>)
-
-            const home = screen.getByRole ('button', { 'name': 'home' })
-
-            expect (home).toBeEnabled ()
-
-        })
-    
     })
 
     describe ('repeat icon', () => {
@@ -94,16 +76,6 @@ describe ('HeaderComponent', () => {
             const repeat = screen.getByRole ('button', { 'name': 'repeat' })
 
             expect (repeat).toBeVisible ()
-        
-        })
-
-        it ('should be enabled', () => {
-
-            render (<HeaderComponent/>)
-
-            const repeat = screen.getByRole ('button', { 'name': 'repeat' })
-
-            expect (repeat).toBeEnabled ()
         
         })
 

@@ -22,14 +22,6 @@ describe ('AudioTitleComponent', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<AudioTitleComponent title="title"/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should not be empty', () => {
 
             const { container } = render (<AudioTitleComponent title="title"/>)
@@ -59,16 +51,6 @@ describe ('AudioTitleComponent', () => {
             const title = screen.getByRole ('heading')
 
             expect (title).toBeVisible ()
-
-        })
-
-        it ('should be enabled', () => {
-
-            render (<AudioTitleComponent title="title"/>)
-
-            const title = screen.getByRole ('heading')
-
-            expect (title).toBeEnabled ()
 
         })
 

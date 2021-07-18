@@ -22,14 +22,6 @@ describe ('IconRepeatOff', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<IconRepeatOn/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should not be empty', () => {
 
             const { container } = render (<IconRepeatOn/>)

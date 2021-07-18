@@ -22,14 +22,6 @@ describe ('MetaComponent', () => {
 
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<TitleComponent/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should not be empty', () => {
 
             const { container } = render (<TitleComponent/>)
@@ -59,16 +51,6 @@ describe ('MetaComponent', () => {
             const heading = screen.getByRole ('heading')
 
             expect (heading).toBeVisible ()
-        
-        })
-
-        it ('should be enabled', () => {
-
-            render (<TitleComponent/>)
-
-            const heading = screen.getByRole ('heading')
-
-            expect (heading).toBeEnabled ()
         
         })
 

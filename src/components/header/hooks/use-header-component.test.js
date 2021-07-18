@@ -53,7 +53,7 @@ describe ('useHeaderComponent', () => {
             expect (typeof result.current.toggleRepeat).toBe ('function')
 
         })
-    
+
     })
 
 })

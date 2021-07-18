@@ -22,14 +22,6 @@ describe ('MetaComponent', () => {
         
         })
 
-        it ('should be enabled', () => {
-
-            const { container } = render (<MetaComponent/>)
-
-            expect (container).toBeEnabled ()
-
-        })
-
         it ('should be empty', () => {
 
             const { container } = render (<MetaComponent/>)

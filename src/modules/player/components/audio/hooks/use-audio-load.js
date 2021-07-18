@@ -4,7 +4,7 @@ import { useAutoplay } from './use-autoplay'
 /**
  * @param {React.Ref} ref audio ref
  * @param {string} url audio url
- * @returns {boolean} autoplay
+ * @returns {{boolean}} autoplay
  */
 export function useAudioLoad (ref, url) {
 

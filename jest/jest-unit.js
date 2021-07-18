@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { JestWrapper } from './jest-wrapper'
+import { JestWithStyledComponents } from './jest-with-styled-components'
 
 /**
  * @function
@@ -15,7 +15,7 @@ export function JestUnit (Component, wrap = false) {
     if (wrap) {
 
         return shallow (
-            JestWrapper (Component),
+            JestWithStyledComponents (Component),
         )
 
     }

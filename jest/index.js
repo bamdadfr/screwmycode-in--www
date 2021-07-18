@@ -6,4 +6,4 @@ export { JestRender } from './jest-render'
 
 export { JestUnit } from './jest-unit'
 
-export { JestWrapper } from './jest-wrapper'
+export { JestWithStyledComponents } from './jest-with-styled-components'
