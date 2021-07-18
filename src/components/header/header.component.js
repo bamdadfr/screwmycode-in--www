@@ -26,6 +26,7 @@ export function HeaderComponent () {
                     type="button"
                     aria-label="repeat"
                     onClick={() => toggleRepeat ()}
+                    value={repeat ? 'on' : 'off'}
                 >
                     {repeat
                         ? <IconRepeatOn/>

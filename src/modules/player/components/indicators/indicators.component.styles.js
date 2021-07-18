@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
 `
 
-export const InputTitle = styled.span`
+export const InputTitle = styled.h2`
     font-size: 0.7em;
     text-transform: uppercase;
 `

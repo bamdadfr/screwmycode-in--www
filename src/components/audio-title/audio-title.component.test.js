@@ -1,124 +1,92 @@
 import React from 'react'
-import { screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { AudioTitleComponent } from './audio-title.component'
-import { JestInstance, JestRender } from '../../../jest'
-
-const setup = (title = 'title') => {
-
-    const Component = () => <AudioTitleComponent title={title} />
-    const instance = JestInstance (<Component/>)
-    const render = JestRender (<Component/>)
-
-    const elements = {
-        'title': screen.getByRole ('heading'),
-    }
-
-    return {
-        instance,
-        render,
-        elements,
-    }
-
-}
 
 describe ('AudioTitleComponent', () => {
 
-    describe ('unit testing', () => {
+    describe ('container', () => {
 
-        describe ('instance', () => {
+        it ('should be in the document', () => {
 
-            it ('should be defined', () => {
+            const { container } = render (<AudioTitleComponent title="title"/>)
 
-                const { instance } = setup ()
-
-                expect (instance).toBeDefined ()
-
-            })
-
-            it ('should match snapshot', () => {
-
-                const { instance } = setup ()
-
-                expect (instance).toMatchSnapshot ()
-            
-            })
+            expect (container).toBeInTheDocument ()
 
         })
 
-        describe ('styles', () => {
+        it ('should be visible', () => {
 
-            it ('should have a defined classname', () => {
+            const { container } = render (<AudioTitleComponent title="title"/>)
 
-                const { instance } = setup ()
-
-                expect (instance.props.className).toBeDefined ()
-
-            })
-
-            it ('should have a sc classname', () => {
-
-                const { instance } = setup ()
-
-                expect (instance.props.className).toContain ('sc')
-
-            })
+            expect (container).toBeVisible ()
 
         })
 
-        describe ('children', () => {
+        it ('should not be empty', () => {
 
-            it ('should have 1 child', () => {
+            const { container } = render (<AudioTitleComponent title="title"/>)
 
-                const { instance } = setup ()
-
-                expect (instance.children).toHaveLength (1)
-
-            })
+            expect (container).not.toBeEmptyDOMElement ()
 
         })
 
     })
 
-    describe ('visual testing', () => {
+    describe ('title', () => {
 
-        describe ('title', () => {
+        it ('should be in the document', () => {
 
-            it ('should be in the document', () => {
+            render (<AudioTitleComponent title="title"/>)
 
-                const { title } = setup ().elements
+            const title = screen.getByRole ('heading')
 
-                expect (title).toBeInTheDocument ()
+            expect (title).toBeInTheDocument ()
 
-            })
-
-            it ('should be visible', () => {
-
-                const { title } = setup ().elements
-
-                expect (title).toBeVisible ()
-
-            })
-
-            it ('should be enabled', () => {
-
-                const { title } = setup ().elements
-
-                expect (title).toBeEnabled ()
-
-            })
-
-            it ('should have a title prop of test value', () => {
-
-                const value = 'testing dummy placeholder value'
-                const { elements } = setup (value)
-                const { title } = elements
-
-                expect (title).toHaveTextContent (value)
-
-            })
-        
         })
-    
+
+        it ('should be visible', () => {
+
+            render (<AudioTitleComponent title="title"/>)
+
+            const title = screen.getByRole ('heading')
+
+            expect (title).toBeVisible ()
+
+        })
+
+        it ('should not be empty', () => {
+
+            render (<AudioTitleComponent title="title"/>)
+
+            const title = screen.getByRole ('heading')
+
+            expect (title).not.toBeEmptyDOMElement ()
+
+        })
+
+        it ('should be empty if props.title is undefined', () => {
+
+            // noinspection RequiredAttributes
+            render (<AudioTitleComponent />)
+
+            const title = screen.getByRole ('heading')
+
+            expect (title).toBeEmptyDOMElement ()
+
+        })
+
+        it ('should display props.title', () => {
+
+            const value = 'testing dummy placeholder value'
+
+            render (<AudioTitleComponent title={value}/>)
+
+            const title = screen.getByRole ('heading')
+
+            expect (title).toHaveTextContent (value)
+
+        })
+
     })
 
 })

@@ -10,7 +10,7 @@ const propTypes = {
     'customTitle': PropTypes.bool,
 }
 
-export const defaultProps = {
+const defaultProps = {
     'title': 'ScrewMyCode.In',
     'url': 'https://www.screwmycode.in/',
     'description': 'Variable speed pitch control for YouTube',

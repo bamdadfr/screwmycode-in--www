@@ -18,7 +18,7 @@ export function IndicatorsComponent () {
                     </InputTitle>
                     <InputValue
                         disabled
-                        aria-label="percentage value"
+                        aria-label="percentage"
                         value={`${percentage} %`}
                     />
                 </Wrapper>
@@ -28,7 +28,7 @@ export function IndicatorsComponent () {
                     </InputTitle>
                     <InputValue
                         disabled
-                        aria-label="semitones value"
+                        aria-label="semitones"
                         value={`${semitones} st`}
                     />
                 </Wrapper>
