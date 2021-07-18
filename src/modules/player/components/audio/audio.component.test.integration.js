@@ -1,9 +1,8 @@
 import React from 'react'
-import { screen, waitFor } from '@testing-library/react'
+import { screen, waitFor, render } from '@testing-library/react'
 import { AudioComponent } from './audio.component'
-import { JestRender } from '../../../../../jest'
 
-const render = (
+const setup = (
     autoplay = false,
     url = 'http://localhost/undefined.mp3',
 ) => {
@@ -21,7 +20,7 @@ const render = (
 
     window.HTMLMediaElement.prototype.addNextTrack = addNextTrack
 
-    JestRender (
+    render (
         <AudioComponent
             url={url}
             playbackRate={1}
@@ -48,7 +47,7 @@ const render = (
 test ('player: should render', () => {
 
     const url = 'http://localhost/myFile.mp3'
-    const { player, load, play } = render (undefined, url)
+    const { player, load, play } = setup (undefined, url)
 
     expect (player).toBeInTheDocument ()
 
@@ -71,7 +70,7 @@ test ('player: should render', () => {
 
 test ('player: should play', () => {
 
-    const { player, play } = render ()
+    const { player, play } = setup ()
 
     expect (play).toHaveBeenCalledTimes (0)
 
@@ -83,7 +82,7 @@ test ('player: should play', () => {
 
 test ('player: should pause', () => {
 
-    const { player, pause } = render ()
+    const { player, pause } = setup ()
 
     player.pause ()
 
@@ -93,7 +92,7 @@ test ('player: should pause', () => {
 
 test ('player: should not autoplay by default', () => {
 
-    const { play } = render (false)
+    const { play } = setup (false)
 
     expect (play).toHaveBeenCalledTimes (0)
 
@@ -101,7 +100,7 @@ test ('player: should not autoplay by default', () => {
 
 test ('player: should autoplay if prop is passed', () => {
 
-    const { play } = render (true)
+    const { play } = setup (true)
 
     waitFor (() => {
 
