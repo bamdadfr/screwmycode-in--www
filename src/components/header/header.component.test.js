@@ -103,7 +103,7 @@ describe ('HeaderComponent', () => {
 
             const repeat = screen.getByRole ('button', { 'name': 'repeat' })
 
-            expect (repeat).toBeVisible ()
+            expect (repeat).toBeEnabled ()
         
         })
 

@@ -82,7 +82,7 @@ describe ('AudioTitleComponent', () => {
 
         })
 
-        it ('should be empty if props.title is undefiend', () => {
+        it ('should be empty if props.title is undefined', () => {
 
             // noinspection RequiredAttributes
             render (<AudioTitleComponent />)
