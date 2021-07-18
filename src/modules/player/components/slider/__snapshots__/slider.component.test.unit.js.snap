@@ -2,11 +2,11 @@
 
 exports[`should mount and match 1`] = `
 <div
-  className="sc-vdqkso-0 efDkNM"
+  className="sc-1bnwvve-0 einlyy"
 >
   <input
     aria-label="slider"
-    className="sc-vdqkso-1 cnoOki"
+    className="sc-1bnwvve-1 dUGNOc"
     max={1.5}
     min={0.5}
     onChange={[Function]}

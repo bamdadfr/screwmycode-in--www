@@ -1,5 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Title } from './audio-title.component.styles'
+
+const propTypes = {
+    'title': PropTypes.string.isRequired,
+}
 
 /**
  * @param {object} props react props
@@ -17,3 +22,5 @@ export function AudioTitleComponent ({ title }) {
     )
 
 }
+
+AudioTitleComponent.propTypes = propTypes
