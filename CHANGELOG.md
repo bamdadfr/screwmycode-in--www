@@ -1,3 +1,20 @@
+## [1.16.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.1...v1.16.2) (2021-07-18)
+
+
+### Bug Fixes
+
+* **player.module:** add caching mechanism for `speed` to slow down effects ([81651ff](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/81651ff0cb3b2aac18109a34ebe875b8506f9468))
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependencies ([daad169](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/daad169a60d7387c28f72bcf20fc6f057f5912ff))
+* **tests:** clean unused configuration files + unused packages ([5972ee6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5972ee60301a419f6749d7be72546aa21c78dcd7))
+* **tests:** fix typos ([645b3ca](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/645b3ca50b1f6152e6f7cb875e310de536a5e621))
+* **tests:** write better tests ([2270a8e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2270a8e263e34ea27103e269def420762a653f6b))
+* **tests:** write new tests ([c388c81](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c388c810dc8e6989781da98246ac4286471f3138))
+* **tests:** writing better tests ([1ff4da3](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1ff4da3aeb01e4893d0e087e57053c55ce6d42ec))
+
 ## [1.16.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.0...v1.16.1) (2021-07-17)
 
 
