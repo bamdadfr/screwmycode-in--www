@@ -3,12 +3,9 @@ module.exports = {
         'next/babel',
     ],
     'plugins': [
-        [
-            'styled-components',
-            {
-                'ssr': true,
-                'displayName': false,
-            },
-        ],
+        ['styled-components', {
+            'ssr': true,
+            'displayName': false,
+        }],
     ],
 }
