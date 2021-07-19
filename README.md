@@ -2,7 +2,7 @@
 
 <p align=center>
     <a href="https://screwmycode.in/">
-        <img width=100 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_KSET.svg">
+        <img width=100 src="https://raw.githubusercontent.com/bamdadsabbagh/screwmycode-in--www/master/public/icons/SCRW_KSET.svg">
     </a>
 </p>
 
@@ -11,20 +11,21 @@
 </p>
 
 <p align=center>
-    <a href="https://github.com/screwmycode/screwmycode-www">
-        <img src="https://img.shields.io/github/stars/screwmycode/screwmycode-www?label=git">
+    <a href="https://github.com/bamdadsabbagh/screwmycode-in--www">
+        <img src="https://img.shields.io/github/stars/bamdadsabbagh/screwmycode-in--www?label=git">
     </a>
-    <img src="https://img.shields.io/github/license/screwmycode/screwmycode-www">
+    <img src="https://img.shields.io/github/license/bamdadsabbagh/screwmycode-in--www">
 </p>
 
 <p align=center>
-    <img src="https://img.shields.io/github/languages/count/screwmycode/screwmycode-www">
-    <img src="https://img.shields.io/github/languages/top/screwmycode/screwmycode-www">
+    <img src="https://img.shields.io/github/languages/count/bamdadsabbagh/screwmycode-in--www">
+    <img src="https://img.shields.io/github/languages/top/bamdadsabbagh/screwmycode-in--www">
 </p>
 
 <p align=center>
-    <img src="https://img.shields.io/github/v/release/screwmycode/screwmycode-www">
-    <img src="https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability" />
+    <img src="https://img.shields.io/github/v/release/bamdadsabbagh/screwmycode-in--www">
+    <img src="https://api.codeclimate.com/v1/badges/43b9b1c5b6357b7a10fa/maintainability">
+    <img src="https://codecov.io/gh/bamdadsabbagh/screwmycode-in--www/branch/master/graph/badge.svg?token=svkyUlczh8">
 </p>
 
 <p align=center>
@@ -38,7 +39,7 @@
     <img src="https://img.shields.io/badge/cd-vercel-yellowgreen">
 </p>
 
-## <img width="15px" src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_CHAMP.svg" /> Context
+## <img width="15px" src="https://raw.githubusercontent.com/bamdadsabbagh/screwmycode-in--www/master/public/icons/SCRW_CHAMP.svg" /> Context
 
 This project is a tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw), inventor of the
 [chopped and screwed](https://en.wikipedia.org/wiki/Chopped_and_screwed) mixing style.
@@ -49,19 +50,11 @@ May he rest in peace.
     <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg">
 </p>
 
-## <img height=15 src="https://raw.githubusercontent.com/screwmycode/screwmycode-www/master/public/icons/SCRW_SHARE_TXT.svg" /> How To
+## <img height=15 src="https://raw.githubusercontent.com/bamdadsabbagh/screwmycode-in--www/master/public/icons/SCRW_SHARE_TXT.svg" /> How To
 
 There are two ways of accessing the service:
 
-- Directly paste the youtube URL into [screwmycode.in](https://screwmycode.in/).
-- Append **iscrew** to your youtube URL:
-    - `https://www.`**iscrew**`youtube.com/watch?v=ID`
-
-## 🖊 Contribute
-
-```bash
-git clone https://github.com/bamdadsabbagh/screwmycode-in--www
-cd screwmycode-in--www
-yarn
-yarn start
-```
+- Browse [screwmycode.in](https://screwmycode.in/).
+- Insert `iscrew` in the URL of these services:
+    - https://www.<u>iscrew</u>youtube.com
+    - https://www.<u>iscrew</u>soundcloud.com
