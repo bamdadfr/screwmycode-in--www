@@ -1,3 +1,10 @@
+## [1.16.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.2...v1.16.3) (2021-07-19)
+
+
+### Performance Improvements
+
+* **tests:** write unit tests + add coverage collecting ([aa7575e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/aa7575e8cc54998a025db79d1ae88167f03a1391))
+
 ## [1.16.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.1...v1.16.2) (2021-07-18)
 
 
