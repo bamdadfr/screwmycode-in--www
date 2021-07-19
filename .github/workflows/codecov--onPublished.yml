@@ -1,0 +1,21 @@
+name: codecov--onPublished
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  codecov--onPublished:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@master
+
+      - run: yarn
+
+      - run: yarn test
+
+      - uses: codecov/codecov-action@master
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
