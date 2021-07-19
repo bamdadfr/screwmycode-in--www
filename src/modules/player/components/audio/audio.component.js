@@ -14,8 +14,6 @@ const propTypes = {
  */
 export function AudioComponent ({ url }) {
 
-    if (typeof url === 'undefined') return <>no URL</>
-
     const { ref, autoplay } = useAudioComponent (url)
 
     return (

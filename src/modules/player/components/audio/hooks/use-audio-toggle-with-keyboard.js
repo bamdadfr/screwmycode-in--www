@@ -8,7 +8,7 @@ export function useAudioToggleWithKeyboard (ref, keyCode = 'Space') {
 
     useEffect (() => {
 
-        const listener = (event) => {
+        const handleKeyboard = (event) => {
 
             if (event.code === keyCode) {
 
@@ -28,11 +28,11 @@ export function useAudioToggleWithKeyboard (ref, keyCode = 'Space') {
         
         }
 
-        document.addEventListener ('keypress', listener)
+        document.addEventListener ('keypress', handleKeyboard)
 
         return () => {
 
-            document.removeEventListener ('keypress', listener)
+            document.removeEventListener ('keypress', handleKeyboard)
         
         }
     

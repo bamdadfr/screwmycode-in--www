@@ -16,4 +16,6 @@ module.exports = {
     'modulePathIgnorePatterns': [
         '<rootDir>/.next/',
     ],
+    'collectCoverage': true,
+    'coverageDirectory': './coverage/',
 }
