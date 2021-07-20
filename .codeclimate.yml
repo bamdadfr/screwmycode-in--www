@@ -1,11 +1,3 @@
 version: "2"
-
 exclude_patterns:
   - "**/*.test.*"
-  - "**/*.spec.*"
-
-check:
-  method-lines:
-    enabled: true
-    config:
-      threshold: 30
