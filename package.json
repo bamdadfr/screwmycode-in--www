@@ -60,7 +60,7 @@
         "cross-env": "^7.0.3",
         "eslint-config-next": "^11.0.1",
         "eslint-plugin-jest-dom": "^3.9.0",
-        "eslint-plugin-testing-library": "^4.9.0",
+        "eslint-plugin-testing-library": "^4.10.0",
         "jest": "^27.0.6",
         "jest-transform-stub": "^2.0.0",
         "rimraf": "^3.0.2",
