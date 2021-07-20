@@ -1,13 +1,13 @@
 <!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
 
 <p align=center>
-    <a href="https://screwmycode.in/">
+    <a href="https://www.screwmycode.in/">
         <img width=100 src="https://raw.githubusercontent.com/bamdadsabbagh/screwmycode-in--www/master/public/icons/SCRW_KSET.svg">
     </a>
 </p>
 
 <p align=center>
-    Pitch control for <a href="https://www.youtube.com/">YouTube</a>
+    Pitch control for <a href="https://www.youtube.com/">YouTube</a> & <a href="https://soundcloud.com/">SoundCloud</a>
 </p>
 
 <p align=center>
