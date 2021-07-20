@@ -1,9 +1,9 @@
-name: codecov--onPublished
+name: codecov--onPush
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - master
 
 jobs:
   codecov--onPublished:
