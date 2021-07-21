@@ -1,3 +1,10 @@
+## [1.16.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.4...v1.16.5) (2021-07-21)
+
+
+### Performance Improvements
+
+* **meta:** extract constants from meta.component.js + write better tests ([1a26751](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1a26751c15f1f1d7243f3a5b20c4c69604db1611))
+
 ## [1.16.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.3...v1.16.4) (2021-07-19)
 
 
