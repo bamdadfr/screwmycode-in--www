@@ -9,9 +9,7 @@
     },
     "scripts": {
         "build": "next build && yarn build:post",
-        "build:post": "yarn build:post:client && yarn build:post:server",
-        "build:post:client": "rimraf .next/static/**/*.map",
-        "build:post:server": "rimraf .next/server/**/*.map",
+        "build:post": "rimraf .next/**/**/*.map",
         "dev": "next dev",
         "export": "next export",
         "lint": "eslint src --ext .js --fix",
