@@ -32,3 +32,6 @@ sentry.properties
 
 # user dev
 TODO.md
+
+# env
+.env
