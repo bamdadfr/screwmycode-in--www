@@ -57,7 +57,7 @@
         "@types/styled-components": "^5.1.11",
         "babel-jest": "^27.0.6",
         "babel-plugin-styled-components": "^1.13.2",
-        "codecov": "^3.8.2",
+        "codecov": "^3.8.3",
         "cross-env": "^7.0.3",
         "eslint-config-next": "^11.0.1",
         "eslint-plugin-jest-dom": "^3.9.0",
