@@ -1,3 +1,10 @@
+## [1.16.7](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.6...v1.16.7) (2021-07-21)
+
+
+### Bug Fixes
+
+* remove sourcemaps post build using `find` instead of rm (recursive search) ([63d937a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/63d937a8088949a20a609ff0600f4896d83b60f7))
+
 ## [1.16.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.5...v1.16.6) (2021-07-21)
 
 
