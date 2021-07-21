@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
+import { MetaConstants } from './meta.constants'
 
 const propTypes = {
     'title': PropTypes.string,
@@ -11,10 +12,10 @@ const propTypes = {
 }
 
 const defaultProps = {
-    'title': 'ScrewMyCode.In',
-    'url': 'https://www.screwmycode.in/',
-    'description': 'Variable speed pitch control for YouTube',
-    'image': 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
+    'title': MetaConstants.title,
+    'url': MetaConstants.url,
+    'description': MetaConstants.description,
+    'image': MetaConstants.image,
     'customTitle': false,
 }
 
