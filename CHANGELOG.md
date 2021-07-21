@@ -1,3 +1,10 @@
+## [1.16.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.5...v1.16.6) (2021-07-21)
+
+
+### Bug Fixes
+
+* **ci:** add post build commands to package.json to remove sourcemaps ([4d83186](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4d831866ba20ff1b72db979f9a77ce845d223f69))
+
 ## [1.16.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.4...v1.16.5) (2021-07-21)
 
 
