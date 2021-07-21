@@ -8,10 +8,10 @@
         "url": "https://bamdad.fr/"
     },
     "scripts": {
-        "build": "next build",
-        "build:clean": "rimraf build",
-        "build:dev": "yarn build:clean && yarn build:run",
-        "build:run": "GENERATE_SOURCEMAP=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
+        "build": "next build && yarn build:post",
+        "build:post": "yarn build:post:client && yarn build:post:server",
+        "build:post:client": "rimraf .next/static/**/*.map",
+        "build:post:server": "rimraf .next/server/**/*.map",
         "dev": "next dev",
         "export": "next export",
         "lint": "eslint src --ext .js --fix",
