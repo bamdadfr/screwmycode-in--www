@@ -9,7 +9,7 @@
     },
     "scripts": {
         "build": "next build && yarn build:post",
-        "build:post": "rimraf .next/**/**/*.map",
+        "build:post": "find .next -type f -name \"*.map\" -exec rm {} \\;",
         "dev": "next dev",
         "export": "next export",
         "lint": "eslint src --ext .js --fix",
