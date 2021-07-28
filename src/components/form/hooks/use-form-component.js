@@ -47,7 +47,7 @@ export function useFormComponent () {
 
         }
 
-    }, [link])
+    }, [link, router])
 
     return {
         link,

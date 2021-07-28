@@ -36,6 +36,6 @@ export function useAudioToggleWithKeyboard (ref, keyCode = 'Space') {
         
         }
     
-    }, [])
+    }, [keyCode, ref])
 
 }

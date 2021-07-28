@@ -23,7 +23,7 @@ export function useInput (defaultValue = '') {
 
         setValue (defaultValue)
     
-    }, [])
+    }, [defaultValue])
 
     return {
         ref,

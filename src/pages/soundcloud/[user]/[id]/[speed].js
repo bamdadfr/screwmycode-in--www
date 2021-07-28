@@ -22,7 +22,7 @@ export async function getServerSideProps (context) {
     const props = {}
     const scraper = new SoundcloudScraper.Client ()
     const soundcloudUrl = `https://soundcloud.com/${user}/${id}`
-    const isValid = await SoundcloudScraper.Util.validateURL (soundcloudUrl)
+    const isValid = SoundcloudScraper.Util.validateURL (soundcloudUrl)
 
     if (!isValid) return { 'redirect': { 'destination': '/', 'permanent': false }}
 
@@ -66,9 +66,12 @@ export default function SoundcloudPage ({
 
     const router = useRouter ()
     const setSpeed = useStore ((state) => state.setSpeed)
+    const setAudioTitle = useStore ((state) => state.setAudioTitle)
     const [description] = useState (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
 
-    useEffect (() => setSpeed (speed), [])
+    useEffect (() => setSpeed (speed), [setSpeed, speed])
+
+    useEffect (() => setAudioTitle (title), [setAudioTitle, title])
 
     return (
         <>

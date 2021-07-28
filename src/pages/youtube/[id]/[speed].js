@@ -72,9 +72,9 @@ export default function YoutubePage ({
     const setAudioTitle = useStore ((state) => state.setAudioTitle)
     const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
 
-    useEffect (() => setSpeed (speed), [])
+    useEffect (() => setSpeed (speed), [setSpeed, speed])
 
-    useEffect (() => setAudioTitle (title), [])
+    useEffect (() => setAudioTitle (title), [setAudioTitle, title])
 
     return (
         <>

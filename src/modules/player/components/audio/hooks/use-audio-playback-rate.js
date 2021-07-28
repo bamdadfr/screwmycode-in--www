@@ -14,6 +14,6 @@ export function useAudioPlaybackRate (ref) {
 
         audio.playbackRate = speed
 
-    }, [speed])
+    }, [ref, speed])
 
 }

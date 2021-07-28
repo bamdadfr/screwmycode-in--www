@@ -8,24 +8,28 @@ export function useAutoplay () {
 
     const [autoplay, setAutoplay] = useState (false)
 
-    useEffect (async () => {
+    useEffect (() => {
 
-        // https://github.com/video-dev/can-autoplay/issues/36
-        import ('can-autoplay')
-            .then ((module) => module.default.video ())
-            .then (({ result }) => {
+        (async () => {
 
-                if (result === true) {
+            // https://github.com/video-dev/can-autoplay/issues/36
+            import ('can-autoplay')
+                .then ((module) => module.default.video ())
+                .then (({ result }) => {
 
-                    setAutoplay (true)
+                    if (result === true) {
 
-                } else {
+                        setAutoplay (true)
 
-                    setAutoplay (false)
+                    } else {
 
-                }
+                        setAutoplay (false)
 
-            })
+                    }
+
+                })
+
+        }) ()
 
     }, [])
 

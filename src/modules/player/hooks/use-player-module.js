@@ -30,6 +30,6 @@ export function usePlayerModule () {
             audioTitle ? `${audioTitle} - ${cachedSpeed} - ${provider} - ScrewMyCode.In` : undefined,
         )
     
-    }, [cachedSpeed])
+    }, [audioTitle, cachedSpeed, router.pathname])
 
 }
