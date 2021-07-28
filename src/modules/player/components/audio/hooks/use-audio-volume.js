@@ -25,6 +25,6 @@ export function useAudioVolume (ref) {
         
         }
 
-    }, [])
+    }, [ref, setVolume, volume])
 
 }

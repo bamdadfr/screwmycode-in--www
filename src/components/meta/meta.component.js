@@ -37,8 +37,6 @@ export function MetaComponent ({
     customTitle = defaultProps.customTitle,
 }) {
 
-    // console.log (title, url, description, image)
-
     // noinspection HtmlUnknownTarget, HtmlRequiredTitleElement
     return (
         <Head>

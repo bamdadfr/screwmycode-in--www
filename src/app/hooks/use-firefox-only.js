@@ -10,14 +10,16 @@ export function useFirefoxOnly (target = '/firefox') {
 
     const router = useRouter ()
 
-    useEffect (async () => {
+    useEffect (() => {
 
-        if (!isFirefox) {
+        if (router.asPath === target) return
 
-            await router.push (target)
+        (async () => {
 
-        }
+            if (!isFirefox) await router.push (target)
 
-    }, [router.pathname])
+        }) ()
+
+    }, [router, target])
 
 }

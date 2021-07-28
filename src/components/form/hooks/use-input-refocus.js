@@ -31,6 +31,6 @@ export function useInputRefocus (ref, delay = 1) {
 
         }
 
-    }, [])
+    }, [delay, ref])
 
 }

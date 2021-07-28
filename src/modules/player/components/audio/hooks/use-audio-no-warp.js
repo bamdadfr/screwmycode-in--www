@@ -11,6 +11,6 @@ export function useAudioNoWarp (ref) {
 
         audio.mozPreservesPitch = false
     
-    }, [])
+    }, [ref])
 
 }

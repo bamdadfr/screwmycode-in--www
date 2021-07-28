@@ -14,6 +14,6 @@ export function useAudioLoop (ref) {
 
         audio.loop = repeat
     
-    }, [repeat])
+    }, [ref, repeat])
 
 }

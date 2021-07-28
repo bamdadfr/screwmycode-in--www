@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAutoplay } from './use-autoplay'
 
 /**
@@ -9,9 +9,12 @@ import { useAutoplay } from './use-autoplay'
 export function useAudioLoad (ref, url) {
 
     const { autoplay } = useAutoplay ()
+    const [savedUrl, setSavedUrl] = useState ()
 
     useEffect (() => {
-        
+
+        if (url === savedUrl) return
+
         const audio = ref.current
 
         audio.src = url
@@ -25,13 +28,15 @@ export function useAudioLoad (ref, url) {
         // 'canplay' === loaded enough
         audio.addEventListener ('canplay', listener)
 
+        setSavedUrl (url)
+
         return () => {
 
             audio.removeEventListener ('canplay', listener)
         
         }
     
-    }, [url])
+    }, [autoplay, ref, savedUrl, url])
 
     return { autoplay }
 

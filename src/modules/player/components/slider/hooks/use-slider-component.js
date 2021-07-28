@@ -13,7 +13,7 @@ export function useSliderComponent () {
 
         setSpeed (e.target.value)
     
-    }, [])
+    }, [setSpeed])
 
     return {
         'value': speed,
