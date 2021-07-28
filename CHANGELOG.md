@@ -1,3 +1,10 @@
+## [1.16.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.8...v1.16.9) (2021-07-28)
+
+
+### Bug Fixes
+
+* **hooks:** enforce rules of hooks + some cleaning + add `NextReplaceRoute` for soundcloud links ([3ce3786](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3ce378620f846a397b40d9314443ae7305fb0be5))
+
 ## [1.16.8](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.7...v1.16.8) (2021-07-26)
 
 
