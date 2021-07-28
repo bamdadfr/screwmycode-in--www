@@ -31,7 +31,7 @@ describe ('useAudioLoad', () => {
                 },
             }
 
-            const url = 'http://localhost:3000/my-file.mp3'
+            const url = 'http://localhost/my-file.mp3'
 
             expect (ref.current.src).toBe (undefined)
 
@@ -55,7 +55,7 @@ describe ('useAudioLoad', () => {
 
             expect (ref.current.addEventListener).toHaveBeenCalledTimes (0)
 
-            renderHook (() => useAudioLoad (ref))
+            renderHook (() => useAudioLoad (ref, 'http://localhost/my-file.mp3'))
 
             expect (ref.current.addEventListener).toHaveBeenCalledTimes (1)
         
@@ -72,7 +72,7 @@ describe ('useAudioLoad', () => {
 
             expect (ref.current.removeEventListener).toHaveBeenCalledTimes (0)
 
-            const { unmount } = renderHook (() => useAudioLoad (ref))
+            const { unmount } = renderHook (() => useAudioLoad (ref, 'http://localhost/my-file.mp3'))
 
             unmount ()
 
