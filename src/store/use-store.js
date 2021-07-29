@@ -4,6 +4,7 @@ export const useStore = create (
     (set) => ({
         // general
         'isLoaded': false,
+        'setIsLoaded': (v) => set (() => ({ 'isLoaded': v })),
         // repeat
         'repeat': true,
         'toggleRepeat': () => set (

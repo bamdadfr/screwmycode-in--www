@@ -2,10 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { AudioTitleComponent, IndicatorsComponent, MetaComponent, SpeedComponent } from '../../components'
+import {
+    PlayerTitleComponent,
+    IndicatorsComponent,
+    LoadingComponent,
+    MetaComponent,
+    SpeedComponent,
+} from '../../components'
 import { DefaultLayout } from '../default'
-import { PlayerModule } from '../../modules'
+import { AudioModule } from '../../modules'
 import { useStore } from '../../store'
+import { PlayerComponent } from '../../components/player'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -30,6 +37,8 @@ export function PlayerLayout ({
 }) {
 
     const router = useRouter ()
+    const isLoaded = useStore ((state) => state.isLoaded)
+    const setIsLoaded = useStore ((state) => state.setIsLoaded)
     const setSpeed = useStore ((state) => state.setSpeed)
     const setAudioTitle = useStore ((state) => state.setAudioTitle)
     const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
@@ -37,6 +46,10 @@ export function PlayerLayout ({
     useEffect (() => setSpeed (speed), [setSpeed, speed])
 
     useEffect (() => setAudioTitle (title), [setAudioTitle, title])
+
+    useEffect (() => setIsLoaded (false), [setIsLoaded])
+
+    useEffect (() => {}, [isLoaded])
 
     return (
         <>
@@ -50,10 +63,20 @@ export function PlayerLayout ({
                 url={'https://www.screwmycode.in' + router.asPath}
             />
             <DefaultLayout customMeta>
-                <AudioTitleComponent title={title}/>
-                <PlayerModule url={url}/>
-                <IndicatorsComponent/>
-                <SpeedComponent/>
+                <AudioModule url={url}/>
+                {!isLoaded
+                    &&
+                    <>
+                        <LoadingComponent/>
+                    </>
+                }
+                {isLoaded && <>
+                    <PlayerTitleComponent title={title}/>
+                    <PlayerComponent/>
+                    <IndicatorsComponent/>
+                    <SpeedComponent/>
+                </>
+                }
             </DefaultLayout>
         </>
     )

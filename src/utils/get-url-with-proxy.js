@@ -9,8 +9,6 @@ export function getUrlWithProxy (url) {
     const isProduction = process.env.NODE_ENV === 'production'
     let proxy = 'https://screwmycode-in--cors.herokuapp.com'
 
-    console.log (isProduction)
-
     if (!isProduction) proxy = 'http://localhost:8080'
 
     return `${proxy}/${url}`

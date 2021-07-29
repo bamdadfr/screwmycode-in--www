@@ -1,0 +1,35 @@
+import React, { useRef } from 'react'
+import { useNativePlaybackRate } from './use-native-playback-rate'
+import { useNativeLoop } from './use-native-loop'
+import { useNativeToggleWithKeyboard } from './use-native-toggle-with-keyboard'
+import { useNativeNoWarp } from './use-native-no-warp'
+import { useNativeVolume } from './use-native-volume'
+import { useNativeLoad } from './use-native-load'
+
+/**
+ * @param {string} url audio url
+ * @typedef {React.Ref} Ref
+ * @typedef {boolean} Autoplay
+ * @returns {{Ref, Autoplay}} audio attributes
+ */
+export function useNativeComponent (url) {
+
+    const ref = useRef (null)
+    const { autoplay } = useNativeLoad (ref, url)
+
+    useNativeLoop (ref)
+
+    useNativeNoWarp (ref)
+
+    useNativePlaybackRate (ref)
+
+    useNativeToggleWithKeyboard (ref)
+
+    useNativeVolume (ref)
+
+    return {
+        ref,
+        autoplay,
+    }
+
+}

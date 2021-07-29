@@ -1,0 +1,1 @@
+export { PlayerTitleComponent } from './player-title.component'
