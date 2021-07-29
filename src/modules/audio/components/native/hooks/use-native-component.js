@@ -16,15 +16,15 @@ export function useNativeComponent (url) {
 
     const ref = useRef (null)
 
-    useNativeLoad (ref, url)
+    useNativeLoad (ref.current, url)
 
-    useNativeLoop (ref)
+    useNativeLoop (ref.current)
 
-    useNativePitch (ref)
+    useNativePitch (ref.current)
 
-    useNativePlaybackRate (ref)
+    useNativePlaybackRate (ref.current)
 
-    useNativeVolume (ref)
+    useNativeVolume (ref.current)
 
     useNativePlayPause (ref.current)
 

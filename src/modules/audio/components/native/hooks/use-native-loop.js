@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useStore } from '../../../../../store'
 
 /**
- * @param {React.Ref} ref audio ref
+ * @param {HTMLAudioElement} audio element
  */
-export function useNativeLoop (ref) {
+export function useNativeLoop (audio) {
 
     const isRepeat = useStore ((state) => state.isRepeat)
 
     useEffect (() => {
 
-        const audio = ref.current
+        if (audio === null) return
 
         audio.loop = isRepeat
     
-    }, [ref, isRepeat])
+    }, [audio, isRepeat])
 
 }

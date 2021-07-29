@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useStore } from '../../../../../store'
 
 /**
- * @param {React.Ref} ref audio ref
+ * @param {HTMLAudioElement} audio element
  */
-export function useNativeVolume (ref) {
+export function useNativeVolume (audio) {
 
     const volume = useStore ((state) => state.volume)
     const setVolume = useStore ((state) => state.setVolume)
 
     useEffect (() => {
 
-        const audio = ref.current
+        if (audio === null) return
 
         audio.volume = volume
 
@@ -21,6 +21,6 @@ export function useNativeVolume (ref) {
 
         return () => audio.removeEventListener ('volumechange', handleVolumeChange)
 
-    }, [ref, setVolume, volume])
+    }, [audio, setVolume, volume])
 
 }

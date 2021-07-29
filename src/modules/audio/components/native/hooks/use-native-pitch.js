@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 /**
- * @param {React.Ref} ref audio ref
+ * @param {HTMLAudioElement} audio element
  */
-export function useNativePitch (ref) {
+export function useNativePitch (audio) {
 
     useEffect (() => {
 
-        const audio = ref.current
+        if (audio === null) return
 
         audio.mozPreservesPitch = false
     
-    }, [ref])
+    }, [audio])
 
 }

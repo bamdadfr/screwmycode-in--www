@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useStore } from '../../../../../store'
 
 /**
- * @param {React.Ref} ref audio ref
+ * @param {HTMLAudioElement} audio element
  * @param {string} url audio url
  */
-export function useNativeLoad (ref, url) {
+export function useNativeLoad (audio, url) {
 
     const [savedUrl, setSavedUrl] = useState ()
     const setIsLoaded = useStore ((state) => state.setIsLoaded)
@@ -18,9 +18,9 @@ export function useNativeLoad (ref, url) {
 
     useEffect (() => {
 
-        if (url === savedUrl) return
+        if (audio === null) return
 
-        const audio = ref.current
+        if (url === savedUrl) return
 
         audio.src = url
 
@@ -30,6 +30,6 @@ export function useNativeLoad (ref, url) {
 
         return () => audio.removeEventListener ('canplay', () => handleCanPlay ())
 
-    }, [handleCanPlay, ref, savedUrl, url])
+    }, [audio, handleCanPlay, savedUrl, url])
 
 }
