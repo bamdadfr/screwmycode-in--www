@@ -1,3 +1,19 @@
+# [1.18.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.17.0...v1.18.0) (2021-07-29)
+
+
+### Features
+
+* add loading.component.js + fade.animation.js ([83f9b80](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/83f9b80718d8a45aea94e2e0be26d92aa872b749))
+* **utils:** get-url-with-proxy.js ([ed23d0b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ed23d0b3f171e6ba582dfe5c9fde6be87d80cdcb))
+* add `PlayerLayout` to avoid repetition in `pages/` + move non-audio components out of `PlayerModule` ([92ad56c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/92ad56ced1980b5952ad579b8124def1e0b51d85))
+
+
+### Performance Improvements
+
+* **audio.module:** move logic out of native.component.js ([ebcffb0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ebcffb0561b4a3cdf9de68570aa546410eee3912))
+* move files around ([fb897f2](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fb897f2fec96ee77c08071d8ec36c9acf8e405fb))
+* move slider.component.js out of audio.module ([5a4db0d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5a4db0dc5abde8514aec877204735a17f2c45215))
+
 # [1.17.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.10...v1.17.0) (2021-07-29)
 
 
