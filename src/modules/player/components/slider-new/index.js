@@ -1,1 +1,0 @@
-export { SliderNewComponent } from './slider-new.component'

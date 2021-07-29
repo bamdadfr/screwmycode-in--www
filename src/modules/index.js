@@ -1,1 +1,1 @@
-export { PlayerModule } from './player'
+export { AudioModule } from './audio'

@@ -1,1 +1,0 @@
-export { PlayerModule } from './player.module'

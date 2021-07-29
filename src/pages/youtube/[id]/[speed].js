@@ -1,14 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import ytdl from 'ytdl-core'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { getYoutubeThumbnail } from '../../../utils'
-import { useStore } from '../../../store'
-import { MetaComponent, AudioTitleComponent } from '../../../components'
-import { PlayerModule } from '../../../modules'
-import { DefaultLayout } from '../../../layouts'
+import { PlayerLayout } from '../../../layouts'
+
+const propTypes = {
+    'title': PropTypes.string.isRequired,
+    'image': PropTypes.string.isRequired,
+    'url': PropTypes.string.isRequired,
+    'speed': PropTypes.number.isRequired,
+}
+
+/**
+ * @description /youtube/[id]/[speed]
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @param {number} props.speed audio initial speed
+ * @returns {React.ReactElement} react component
+ */
+export default function YoutubePage ({
+    title,
+    image,
+    url,
+    speed,
+}) {
+
+    return (
+        <>
+            <PlayerLayout
+                title={title}
+                image={image}
+                url={url}
+                speed={speed}
+            />
+        </>
+    )
+
+}
 
 /**
  * @param {object} context next.js context
@@ -41,58 +72,6 @@ export async function getServerSideProps (context) {
     props.speed = parseFloat (speed) || 1
 
     return { props }
-
-}
-
-const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-    'speed': PropTypes.number.isRequired,
-}
-
-/**
- * @description /youtube/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @param {number} props.speed audio initial speed
- * @returns {React.ReactElement} react component
- */
-export default function YoutubePage ({
-    title,
-    image,
-    url,
-    speed,
-}) {
-
-    const router = useRouter ()
-    const setSpeed = useStore ((state) => state.setSpeed)
-    const setAudioTitle = useStore ((state) => state.setAudioTitle)
-    const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
-
-    useEffect (() => setSpeed (speed), [setSpeed, speed])
-
-    useEffect (() => setAudioTitle (title), [setAudioTitle, title])
-
-    return (
-        <>
-            <Head>
-                <title>{description}</title>
-            </Head>
-            <MetaComponent
-                customTitle
-                description={description}
-                image={image}
-                url={'https://www.screwmycode.in' + router.asPath}
-            />
-            <DefaultLayout customMeta>
-                <AudioTitleComponent title={title}/>
-                <PlayerModule url={url}/>
-            </DefaultLayout>
-        </>
-    )
 
 }
 
