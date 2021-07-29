@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import repeat from '@iconify/icons-mdi/repeat'
 import play from '@iconify/icons-mdi/play'
 import volumeHigh from '@iconify/icons-mdi/volume-high'
-import { SliderComponent } from '../../modules/audio/components'
+import { SliderComponent } from '../slider'
 import { Button, Container, Time } from './player.component.styles'
 
 /**

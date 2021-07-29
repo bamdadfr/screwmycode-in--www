@@ -10,6 +10,8 @@ export { LoadingComponent } from './loading'
 
 export { MetaComponent } from './meta'
 
+export { SliderComponent } from './slider'
+
 export { SpeedComponent } from './speed'
 
 export { TitleComponent } from './title'

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Bar, BarColor, Handle, Slider } from './slider.component.styles'
-import { getMyComputedStyle } from '../../../../utils'
+import { getMyComputedStyle } from '../../utils'
 
 /**
  * @returns {React.ReactElement} react component
