@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.10...v1.17.0) (2021-07-29)
+
+
+### Features
+
+* move use-store to `store/` + work on new player design compatible with chrome + add `react-howler` ([4f5000e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4f5000e732f5d842cc5d8ae0d8ac20d2201973d4))
+
 ## [1.16.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.16.9...v1.16.10) (2021-07-28)
 
 
