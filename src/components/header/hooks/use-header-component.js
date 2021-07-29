@@ -7,11 +7,11 @@ import { useStore } from '../../../store'
  */
 export function useHeaderComponent () {
 
-    const repeat = useStore ((state) => state.repeat)
+    const isRepeat = useStore ((state) => state.isRepeat)
     const toggleRepeat = useStore ((state) => state.toggleRepeat)
 
     return {
-        repeat,
+        isRepeat,
         toggleRepeat,
     }
 

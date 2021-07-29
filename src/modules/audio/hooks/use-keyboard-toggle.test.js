@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { useNativeToggleWithKeyboard } from './use-native-toggle-with-keyboard'
+import { useKeyboardToggle } from './use-keyboard-toggle'
 
-describe ('useAudioToggleWithKeyboard', () => {
+describe ('useKeyboardToggle', () => {
 
     describe ('keypress event listener', () => {
 
@@ -13,7 +13,7 @@ describe ('useAudioToggleWithKeyboard', () => {
             expect (DOCUMENT_SPY).toHaveBeenCalledTimes (0)
 
             // when
-            renderHook (() => useNativeToggleWithKeyboard ())
+            renderHook (() => useKeyboardToggle ())
 
             // then
             expect (DOCUMENT_SPY).toHaveBeenCalled ()
@@ -24,7 +24,7 @@ describe ('useAudioToggleWithKeyboard', () => {
 
             // given
             const DOCUMENT_SPY = jest.spyOn (document, 'removeEventListener')
-            const { unmount } = renderHook (() => useNativeToggleWithKeyboard ())
+            const { unmount } = renderHook (() => useKeyboardToggle ())
 
             expect (DOCUMENT_SPY).toHaveBeenCalledTimes (0)
 

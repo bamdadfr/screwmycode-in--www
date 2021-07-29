@@ -12,23 +12,17 @@ export function HowlerComponent ({ url }) {
 
     const speed = useStore ((state) => state.speed)
     const howler = useRef (null)
-    const isLoaded = useStore ((state) => state.isLoaded)
     const setIsLoaded = useStore ((state) => state.setIsLoaded)
-    
-    useEffect (() => {
+    const isPlaying = useStore ((state) => state.isPlaying)
 
-        if (!isLoaded) return
-
-        howler.current.rate (speed)
-    
-    }, [isLoaded, speed])
+    useEffect (() => howler.current.rate (speed), [speed])
 
     return (
         <>
             <ReactHowler
                 ref={howler}
                 src={getUrlWithProxy (url)}
-                playing
+                playing={isPlaying}
                 rate={0.5}
                 format={['mp3']}
                 onLoad={() => setIsLoaded (true)}
