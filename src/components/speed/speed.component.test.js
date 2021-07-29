@@ -1,8 +1,8 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { SliderComponent } from './slider.component'
-import { JestWithStyledComponents } from '../../../../../jest'
-import * as useSliderComponent from './hooks/use-slider-component'
+import { SpeedComponent } from './speed.component'
+import { JestWithStyledComponents } from '../../../jest'
+import * as useSliderComponent from './hooks/use-speed-component'
 
 describe ('SliderComponent', () => {
 
@@ -10,7 +10,7 @@ describe ('SliderComponent', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (JestWithStyledComponents (<SliderComponent/>))
+            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
 
             expect (container).toBeInTheDocument ()
 
@@ -18,7 +18,7 @@ describe ('SliderComponent', () => {
 
         it ('should be visible', () => {
 
-            const { container } = render (JestWithStyledComponents (<SliderComponent/>))
+            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
 
             expect (container).toBeVisible ()
 
@@ -26,7 +26,7 @@ describe ('SliderComponent', () => {
 
         it ('should not be empty', () => {
 
-            const { container } = render (JestWithStyledComponents (<SliderComponent/>))
+            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
 
             expect (container).not.toBeEmptyDOMElement ()
 
@@ -38,7 +38,7 @@ describe ('SliderComponent', () => {
 
         it ('should be enabled', () => {
 
-            render (JestWithStyledComponents (<SliderComponent/>))
+            render (JestWithStyledComponents (<SpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -48,7 +48,7 @@ describe ('SliderComponent', () => {
 
         it ('should have a default value of 1', () => {
 
-            render (JestWithStyledComponents (<SliderComponent/>))
+            render (JestWithStyledComponents (<SpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -58,7 +58,7 @@ describe ('SliderComponent', () => {
 
         it ('should have a minimum value of 0.5', () => {
 
-            render (JestWithStyledComponents (<SliderComponent/>))
+            render (JestWithStyledComponents (<SpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -74,7 +74,7 @@ describe ('SliderComponent', () => {
 
         it ('should have a maximmum value of 1.5', () => {
 
-            render (JestWithStyledComponents (<SliderComponent/>))
+            render (JestWithStyledComponents (<SpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -99,7 +99,7 @@ describe ('SliderComponent', () => {
                 'onChange': ON_CHANGE,
             })
 
-            render (JestWithStyledComponents (<SliderComponent/>))
+            render (JestWithStyledComponents (<SpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 

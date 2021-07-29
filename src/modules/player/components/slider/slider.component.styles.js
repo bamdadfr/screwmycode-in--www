@@ -1,45 +1,47 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Slider = styled.div`
+    position: relative;
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
-    background: transparent;
-    width: 90%;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 7px;
 `
 
-export const Slider = styled.input`
+export const Bar = styled.div`
     width: 100%;
+    height: 100%;
 
-    &::-moz-range-thumb {
-        box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary},
-        0 0 1px ${(props) => props.theme.background.highlight};
-        border: 0.15em solid ${(props) => props.theme.primary};
-        background: ${(props) => props.theme.background.highlight};
-        cursor: pointer;
-        border-radius: 100%;
-        width: 1.3em;
-        height: 1.3em;
-        transition: border 100ms ease-in-out;
+    border-radius: 7px;
+    background: ${(props) => props.theme.grey};
+`
 
-        &:hover {
-            border: 0.15em solid ${(props) => props.theme.highlight};
-        }
-    }
+export const BarColor = styled.div`
+    position: absolute;
 
-    &::-moz-range-track {
-        width: 100%;
-        height: 8.4px;
-        cursor: pointer;
-        background: ${(props) => props.theme.background.highlight};
-        border-radius: 5px;
-        border: 1px solid ${(props) => props.theme.border.primary};
-        box-shadow: 0 1px 10px 1px ${(props) => props.theme.shadow.opacity};
-        transition: background 100ms ease-in-out;
+    width: calc(${(props) => props.value}px - 15px); // [15px, width]
+    height: 100%;
 
-        &:hover {
-            cursor: pointer;
-        }
-    }
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+
+    border-color: ${(props) => props.theme.highlight};
+    background: ${(props) => props.theme.highlight};
+`
+
+export const Handle = styled.div`
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    top: -6px;
+    left: calc(${(props) => props.value}px - 20px); // [19px, width]
+
+    border: 3px solid;
+    cursor: pointer;
+    background-color: ${(props) => props.theme.background.primary};
+    border-radius: 100%;
 `

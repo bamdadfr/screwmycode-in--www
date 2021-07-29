@@ -27,7 +27,9 @@ export function usePlayerModule () {
         replaceNextRoute (
             'speed',
             cachedSpeed.toString (),
-            audioTitle ? `${audioTitle} - ${cachedSpeed} - ${provider} - ScrewMyCode.In` : undefined,
+            audioTitle
+                ? `${audioTitle} - ${cachedSpeed} - ${provider} - ScrewMyCode.In`
+                : undefined,
         )
     
     }, [audioTitle, cachedSpeed, router.pathname])

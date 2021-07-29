@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../store'
 
 /**
  * @returns {{number, Function}} slider attributes
  */
-export function useSliderComponent () {
+export function useSpeedComponent () {
 
     const speed = useStore ((state) => state.speed)
     const setSpeed = useStore ((state) => state.setSpeed)

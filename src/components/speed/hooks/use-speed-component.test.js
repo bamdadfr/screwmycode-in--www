@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useSliderComponent } from './use-slider-component'
+import { useSpeedComponent } from './use-speed-component'
 
 describe ('useSliderComponent', () => {
 
@@ -7,7 +7,7 @@ describe ('useSliderComponent', () => {
 
         it ('should default to state.speed which is 1', () => {
 
-            const { result } = renderHook (() => useSliderComponent ())
+            const { result } = renderHook (() => useSpeedComponent ())
 
             expect (result.current.value).toBe (1)
         
@@ -16,7 +16,7 @@ describe ('useSliderComponent', () => {
         it ('should change when .onChange() is fired', () => {
 
             // given
-            const { result } = renderHook (() => useSliderComponent ())
+            const { result } = renderHook (() => useSpeedComponent ())
             // when
             const event = { 'target': { 'value': 1.23 }}
 
@@ -37,7 +37,7 @@ describe ('useSliderComponent', () => {
 
         it ('should be a function', () => {
 
-            const { result } = renderHook (() => useSliderComponent ())
+            const { result } = renderHook (() => useSpeedComponent ())
 
             expect (typeof result.current.onChange).toBe ('function')
         

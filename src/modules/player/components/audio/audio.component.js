@@ -20,7 +20,6 @@ export function AudioComponent ({ url }) {
             <audio
                 ref={ref}
                 aria-label="player"
-                controls
                 autoPlay={autoplay}
             >
                 <track kind="captions"/>

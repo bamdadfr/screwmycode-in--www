@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { IndicatorsComponent } from './indicators.component'
-import { JestWithStyledComponents } from '../../../../../jest'
+import { JestWithStyledComponents } from '../../../jest'
 
 describe ('IndicatorsComponent', () => {
 

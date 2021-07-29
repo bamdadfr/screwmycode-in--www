@@ -1,27 +1,42 @@
-import React from 'react'
-import { Slider, Container } from './slider.component.styles'
-import { useSliderComponent } from './hooks'
+import React, { useEffect, useRef, useState } from 'react'
+import { Bar, BarColor, Handle, Slider } from './slider.component.styles'
+import { getMyComputedStyle } from '../../../../utils'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function SliderComponent () {
 
-    const { value, onChange } = useSliderComponent ()
+    const [viewport, setViewport] = useState ()
+    const ref = useRef (null)
+    const [width, setWidth] = useState ()
+
+    useEffect (() => {
+
+        const handleResize = () => setViewport ({
+            'height': window.innerHeight,
+            'width': window.innerWidth,
+        })
+
+        window.addEventListener ('resize', handleResize)
+
+        return () => window.removeEventListener ('resize', handleResize)
+
+    }, [])
+
+    useEffect (() => {
+
+        setWidth (getMyComputedStyle (ref, 'width'))
+
+    }, [viewport])
 
     return (
         <>
-            <Container>
-                <Slider
-                    type="range"
-                    aria-label="slider"
-                    min={0.5}
-                    max={1.5}
-                    step={0.005}
-                    value={value}
-                    onChange={onChange}
-                />
-            </Container>
+            <Slider ref={ref}>
+                <Bar/>
+                <BarColor value={width} />
+                <Handle value={width}/>
+            </Slider>
         </>
     )
 

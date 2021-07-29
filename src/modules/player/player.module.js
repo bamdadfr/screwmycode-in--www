@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { isFirefox } from 'react-device-detect'
-import { AudioComponent, IndicatorsComponent, SliderComponent, AudioHowlerComponent } from './components'
+import { Icon } from '@iconify/react'
+import repeat from '@iconify/icons-mdi/repeat'
+import play from '@iconify/icons-mdi/play'
+import volumeHigh from '@iconify/icons-mdi/volume-high'
+import { AudioComponent, AudioHowlerComponent, SliderComponent } from './components'
 import { usePlayerModule } from './hooks'
-import { AudioContainer } from './player.module.styles'
-import { TrackComponent } from './components/track/track.component'
+import { Invisible, Container, Button, Time } from './player.module.styles'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
@@ -21,15 +24,39 @@ export function PlayerModule ({ url }) {
 
     return (
         <>
-            <TrackComponent/>
-            <AudioContainer>
+            <Invisible>
                 {isFirefox
                     ? <AudioComponent url={url}/>
                     : <AudioHowlerComponent url={url}/>
                 }
-            </AudioContainer>
-            <IndicatorsComponent/>
-            <SliderComponent/>
+            </Invisible>
+
+            <Container>
+
+                <Button>
+                    <Icon icon={repeat}/>
+                </Button>
+
+                <Button>
+                    <Icon icon={play}/>
+                </Button>
+
+                <SliderComponent/>
+
+                <Time>
+                    <span>
+                        00:00
+                    </span>
+                    &nbsp;/&nbsp;08:30
+                </Time>
+
+                <Button>
+                    <Icon icon={volumeHigh}/>
+                </Button>
+
+                <SliderComponent/>
+
+            </Container>
         </>
     )
 

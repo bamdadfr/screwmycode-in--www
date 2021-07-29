@@ -1,12 +1,36 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useStore } from '../../../../store'
-import { MetaComponent, AudioTitleComponent } from '../../../../components'
-import { DefaultLayout } from '../../../../layouts'
-import { PlayerModule } from '../../../../modules'
+import { PlayerLayout } from '../../../../layouts'
+
+/**
+ * @description /soundcloud/[user]/[id]/[speed]
+ * @param {object} props props
+ * @param {string} props.title audio title
+ * @param {string} props.image audio thumbnail url
+ * @param {string} props.url audio url
+ * @param {number} props.speed audio initial speed
+ * @returns {React.ReactElement} react component
+ */
+export default function SoundcloudPage ({
+    title,
+    image,
+    url,
+    speed,
+}) {
+
+    return (
+        <>
+            <PlayerLayout
+                title={title}
+                image={image}
+                url={url}
+                speed={speed}
+            />
+        </>
+    )
+
+}
 
 /**
  * @param {object} context next.js context
@@ -46,51 +70,6 @@ const propTypes = {
     'image': PropTypes.string.isRequired,
     'url': PropTypes.string.isRequired,
     'speed': PropTypes.number.isRequired,
-}
-
-/**
- * @description /soundcloud/[user]/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @param {number} props.speed audio initial speed
- * @returns {React.ReactElement} react component
- */
-export default function SoundcloudPage ({
-    title,
-    image,
-    url,
-    speed,
-}) {
-
-    const router = useRouter ()
-    const setSpeed = useStore ((state) => state.setSpeed)
-    const setAudioTitle = useStore ((state) => state.setAudioTitle)
-    const [description] = useState (`${title} - ${speed} - SoundCloud - ScrewMyCode.In`)
-
-    useEffect (() => setSpeed (speed), [setSpeed, speed])
-
-    useEffect (() => setAudioTitle (title), [setAudioTitle, title])
-
-    return (
-        <>
-            <Head>
-                <title>{description}</title>
-            </Head>
-            <MetaComponent
-                customTitle
-                description={description}
-                image={image}
-                url={'https://www.screwmycode.in' + router.asPath}
-            />
-            <DefaultLayout customMeta>
-                <AudioTitleComponent title={title}/>
-                <PlayerModule url={url}/>
-            </DefaultLayout>
-        </>
-    )
-
 }
 
 SoundcloudPage.propTypes = propTypes
