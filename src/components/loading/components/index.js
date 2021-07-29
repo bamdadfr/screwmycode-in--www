@@ -1,0 +1,1 @@
+export { DotsComponent } from './dots'

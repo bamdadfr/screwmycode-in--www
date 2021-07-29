@@ -33,6 +33,7 @@ export function NativeComponent ({ url }) {
                 ref={ref}
                 aria-label="player"
                 autoPlay={autoplay}
+                controls
             >
                 <track kind="captions"/>
             </audio>
