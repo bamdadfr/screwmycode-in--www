@@ -1,4 +1,4 @@
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 
 /**
  * @typedef {boolean} Repeat

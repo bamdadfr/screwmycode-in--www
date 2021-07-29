@@ -1,8 +1,8 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import 'sass-reset'
 import PropTypes from 'prop-types'
+import 'sass-reset'
+import { ThemeProvider } from 'styled-components'
 import { Theme, Global } from '../app/styles'
 import { useApp } from '../app/hooks'
 

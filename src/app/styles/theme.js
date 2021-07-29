@@ -1,7 +1,7 @@
 /**
  * @name Theme
  * @description theme for `styled-components`
- * @type {object.<string, (object|string)>}
+ * @type {object}
  */
 export const Theme = {
     'primary': '#808386',
@@ -16,4 +16,7 @@ export const Theme = {
     'shadow': {
         'opacity': 'rgba(0, 0, 0, 0.25)',
     },
+    // new theme
+    'blue': '#63BCF8',
+    'grey': '#444',
 }

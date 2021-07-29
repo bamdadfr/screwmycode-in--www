@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../../../../hooks'
+import { useStore } from '../../../../../store'
 
 /**
  * @param {React.Ref} ref audio ref

@@ -1,3 +1,3 @@
-export { useRedirectAuto } from './use-redirect-auto'
+export { useFirefoxOnly } from './use-firefox-only'
 
-export { useStore } from './use-store'
+export { useRedirectAuto } from './use-redirect-auto'

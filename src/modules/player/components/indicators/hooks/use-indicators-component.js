@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import speedToPercentage from 'speed-to-percentage'
 import speedToSemitones from 'speed-to-semitones'
-import { useStore } from '../../../../../hooks'
+import { useStore } from '../../../../../store'
 
 /**
  * @returns {{string, string}} indicators values

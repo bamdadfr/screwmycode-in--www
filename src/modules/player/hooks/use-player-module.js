@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 import { replaceNextRoute } from '../utils'
 import { useCache } from './use-cache'
 

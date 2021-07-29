@@ -2,6 +2,8 @@ import create from 'zustand'
 
 export const useStore = create (
     (set) => ({
+        // general
+        'isLoaded': false,
         // repeat
         'repeat': true,
         'toggleRepeat': () => set (

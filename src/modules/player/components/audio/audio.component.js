@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container } from './audio.component.styles'
 import { useAudioComponent } from './hooks'
 
 const propTypes = {
@@ -18,16 +17,14 @@ export function AudioComponent ({ url }) {
 
     return (
         <>
-            <Container>
-                <audio
-                    ref={ref}
-                    aria-label="player"
-                    controls
-                    autoPlay={autoplay}
-                >
-                    <track kind="captions"/>
-                </audio>
-            </Container>
+            <audio
+                ref={ref}
+                aria-label="player"
+                controls
+                autoPlay={autoplay}
+            >
+                <track kind="captions"/>
+            </audio>
         </>
     )
 
