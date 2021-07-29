@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { useNativePlaybackRate } from './use-native-playback-rate'
 import { useNativeLoop } from './use-native-loop'
 import { useNativePitch } from './use-native-pitch'
 import { useNativeVolume } from './use-native-volume'
 import { useNativeLoad } from './use-native-load'
-import { useStore } from '../../../../../store'
+import { useNativePlayPause } from './use-native-play-pause'
 
 /**
  * @param {string} url audio url
@@ -26,15 +26,7 @@ export function useNativeComponent (url) {
 
     useNativeVolume (ref)
 
-    const isPlaying = useStore ((state) => state.isPlaying)
-
-    useEffect (() => {
-
-        if (isPlaying) return ref.current.play ()
-
-        ref.current.pause ()
-    
-    }, [isPlaying])
+    useNativePlayPause (ref.current)
 
     return { ref }
 
