@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useNativePlaybackRate } from './use-native-playback-rate'
 import { useNativeLoop } from './use-native-loop'
-import { useNativeToggleWithKeyboard } from './use-native-toggle-with-keyboard'
 import { useNativePitch } from './use-native-pitch'
 import { useNativeVolume } from './use-native-volume'
 import { useNativeLoad } from './use-native-load'
@@ -24,8 +23,6 @@ export function useNativeComponent (url) {
     useNativePitch (ref)
 
     useNativePlaybackRate (ref)
-
-    useNativeToggleWithKeyboard (ref)
 
     useNativeVolume (ref)
 

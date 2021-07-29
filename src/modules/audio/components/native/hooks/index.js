@@ -8,6 +8,4 @@ export { useNativePitch } from './use-native-pitch'
 
 export { useNativePlaybackRate } from './use-native-playback-rate'
 
-export { useNativeToggleWithKeyboard } from './use-native-toggle-with-keyboard'
-
 export { useNativeVolume } from './use-native-volume'

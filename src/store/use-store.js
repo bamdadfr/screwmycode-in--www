@@ -15,9 +15,10 @@ export const useStore = create (
         'toggleRepeat': () => set ((s) => ({ 'isRepeat': !s.isRepeat })),
         // volume
         'volume': 1,
-        'setVolume': (newVolume) => set ({
-            'volume': parseFloat (newVolume),
-        }),
+        'setVolume': (v) => set ({ 'volume': parseFloat (v) }),
+        // mute
+        'isMuted': false,
+        'toggleMute': () => set ((s) => ({ 'isMuted': !s.isMuted })),
         // speed
         'speed': 1,
         'setSpeed': (newSpeed) => set (

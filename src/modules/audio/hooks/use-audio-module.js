@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
 import { replaceNextRoute } from '../utils'
 import { useCache } from './use-cache'
+import { useKeyboardToggle } from './use-keyboard-toggle'
 
 const providers = {
     'youtube': 'YouTube',
@@ -18,6 +19,8 @@ export function useAudioModule () {
     const speed = useStore ((state) => state.speed)
     const audioTitle = useStore ((state) => state.audioTitle)
     const cachedSpeed = useCache (speed, 350)
+
+    useKeyboardToggle ('Space')
 
     // replace route
     useEffect (() => {

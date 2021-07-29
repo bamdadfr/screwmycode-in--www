@@ -5,6 +5,7 @@ import repeatOff from '@iconify/icons-mdi/repeat-off'
 import play from '@iconify/icons-mdi/play'
 import pause from '@iconify/icons-mdi/pause'
 import volumeHigh from '@iconify/icons-mdi/volume-high'
+import volumeOff from '@iconify/icons-mdi/volume-off'
 import { SliderComponent } from '../slider'
 import { Button, Container, Time } from './player.component.styles'
 import { useStore } from '../../store'
@@ -19,6 +20,7 @@ export function PlayerComponent () {
     const isPlaying = useStore ((state) => state.isPlaying)
     const togglePlayPause = useStore ((state) => state.togglePlayPause)
     const volume = useStore ((state) => state.volume)
+    const isMuted = useStore ((state) => state.isMuted)
 
     return (
         <>
@@ -38,7 +40,11 @@ export function PlayerComponent () {
                     }
                 </Button>
 
-                <SliderComponent/>
+                <SliderComponent
+                    min={0}
+                    max={0}
+                    value={volume}
+                />
 
                 <Time>
                     <span>
@@ -48,13 +54,17 @@ export function PlayerComponent () {
                 </Time>
 
                 <Button>
-                    <Icon icon={volumeHigh}/>
+                    {volume === 0 || isMuted
+                        ? <Icon icon={volumeOff}/>
+                        : <Icon icon={volumeHigh}/>
+                    }
                 </Button>
 
-                <div>
-                    {volume}
-                    <SliderComponent/>
-                </div>
+                <SliderComponent
+                    min={0}
+                    max={1}
+                    value={volume}
+                />
 
             </Container>
         </>
