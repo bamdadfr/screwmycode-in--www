@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useNativeComponent } from './hooks'
-import { useStore } from '../../../../store'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,
@@ -15,17 +14,6 @@ const propTypes = {
 export function NativeComponent ({ url }) {
 
     const { ref, autoplay } = useNativeComponent (url)
-    const setIsLoaded = useStore ((state) => state.setIsLoaded)
-
-    useEffect (() => {
-
-        setTimeout (() => {
-
-            setIsLoaded (true)
-        
-        }, 5)
-
-    }, [setIsLoaded])
 
     return (
         <>
