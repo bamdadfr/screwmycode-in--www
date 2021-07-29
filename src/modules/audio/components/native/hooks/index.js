@@ -4,7 +4,7 @@ export { useNativeLoad } from './use-native-load'
 
 export { useNativeLoop } from './use-native-loop'
 
-export { useNativeNoWarp } from './use-native-no-warp'
+export { useNativePitch } from './use-native-pitch'
 
 export { useNativePlaybackRate } from './use-native-playback-rate'
 

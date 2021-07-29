@@ -15,15 +15,11 @@ export function useNativeVolume (ref) {
 
         audio.volume = volume
 
-        const listener = () => setVolume (audio.volume)
+        const handleVolumeChange = () => setVolume (audio.volume)
 
-        audio.addEventListener ('volumechange', listener)
+        audio.addEventListener ('volumechange', handleVolumeChange)
 
-        return () => {
-
-            audio.removeEventListener ('volumechange', listener)
-        
-        }
+        return () => audio.removeEventListener ('volumechange', handleVolumeChange)
 
     }, [ref, setVolume, volume])
 

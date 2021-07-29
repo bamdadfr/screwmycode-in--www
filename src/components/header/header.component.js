@@ -9,7 +9,7 @@ import { useHeaderComponent } from './hooks'
  */
 export function HeaderComponent () {
 
-    const { repeat, toggleRepeat } = useHeaderComponent ()
+    const { isRepeat, toggleRepeat } = useHeaderComponent ()
 
     return (
         <>
@@ -26,9 +26,9 @@ export function HeaderComponent () {
                     type="button"
                     aria-label="repeat"
                     onClick={() => toggleRepeat ()}
-                    value={repeat ? 'on' : 'off'}
+                    value={isRepeat ? 'on' : 'off'}
                 >
-                    {repeat
+                    {isRepeat
                         ? <IconRepeatOn/>
                         : <IconRepeatOff/>
                     }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useNativePlaybackRate } from './use-native-playback-rate'
 import { useNativeLoop } from './use-native-loop'
 import { useNativeToggleWithKeyboard } from './use-native-toggle-with-keyboard'
-import { useNativeNoWarp } from './use-native-no-warp'
+import { useNativePitch } from './use-native-pitch'
 import { useNativeVolume } from './use-native-volume'
 import { useNativeLoad } from './use-native-load'
 import { useStore } from '../../../../../store'
@@ -16,12 +16,12 @@ import { useStore } from '../../../../../store'
 export function useNativeComponent (url) {
 
     const ref = useRef (null)
-    const setIsLoaded = useStore ((state) => state.setIsLoaded)
-    const { autoplay } = useNativeLoad (ref, url)
+
+    useNativeLoad (ref, url)
 
     useNativeLoop (ref)
 
-    useNativeNoWarp (ref)
+    useNativePitch (ref)
 
     useNativePlaybackRate (ref)
 
@@ -29,19 +29,16 @@ export function useNativeComponent (url) {
 
     useNativeVolume (ref)
 
+    const isPlaying = useStore ((state) => state.isPlaying)
+
     useEffect (() => {
 
-        setTimeout (() => {
+        if (isPlaying) return ref.current.play ()
 
-            setIsLoaded (true)
+        ref.current.pause ()
+    
+    }, [isPlaying])
 
-        }, 5)
-
-    }, [setIsLoaded])
-
-    return {
-        ref,
-        autoplay,
-    }
+    return { ref }
 
 }

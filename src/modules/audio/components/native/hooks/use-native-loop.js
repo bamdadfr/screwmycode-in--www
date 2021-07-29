@@ -6,14 +6,14 @@ import { useStore } from '../../../../../store'
  */
 export function useNativeLoop (ref) {
 
-    const repeat = useStore ((state) => state.repeat)
+    const isRepeat = useStore ((state) => state.isRepeat)
 
     useEffect (() => {
 
         const audio = ref.current
 
-        audio.loop = repeat
+        audio.loop = isRepeat
     
-    }, [ref, repeat])
+    }, [ref, isRepeat])
 
 }

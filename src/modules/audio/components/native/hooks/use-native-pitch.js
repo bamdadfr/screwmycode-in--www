@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 /**
  * @param {React.Ref} ref audio ref
  */
-export function useNativeNoWarp (ref) {
+export function useNativePitch (ref) {
 
     useEffect (() => {
 

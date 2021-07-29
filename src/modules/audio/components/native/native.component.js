@@ -13,14 +13,13 @@ const propTypes = {
  */
 export function NativeComponent ({ url }) {
 
-    const { ref, autoplay } = useNativeComponent (url)
+    const { ref } = useNativeComponent (url)
 
     return (
         <>
             <audio
                 ref={ref}
                 aria-label="player"
-                autoPlay={autoplay}
                 controls
             >
                 <track kind="captions"/>

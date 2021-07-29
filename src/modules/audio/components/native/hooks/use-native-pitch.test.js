@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { useNativeNoWarp } from './use-native-no-warp'
+import { useNativePitch } from './use-native-pitch'
 
-describe ('useAudioNoWarp', () => {
+describe ('useNativePitch', () => {
 
     describe ('mozPreservesPitch', () => {
 
@@ -13,7 +13,7 @@ describe ('useAudioNoWarp', () => {
                 },
             }
 
-            renderHook (() => useNativeNoWarp (ref))
+            renderHook (() => useNativePitch (ref))
 
             expect (ref.current.mozPreservesPitch).toBe (false)
 

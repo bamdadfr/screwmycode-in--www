@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { useAutoplay } from '../../../hooks'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useStore } from '../../../../../store'
 
 /**
  * @param {React.Ref} ref audio ref
  * @param {string} url audio url
- * @returns {{boolean}} autoplay
  */
 export function useNativeLoad (ref, url) {
 
-    const { autoplay } = useAutoplay ()
     const [savedUrl, setSavedUrl] = useState ()
+    const setIsLoaded = useStore ((state) => state.setIsLoaded)
+
+    const handleCanPlay = useCallback (() => {
+
+        setIsLoaded (true)
+
+    }, [setIsLoaded])
 
     useEffect (() => {
 
@@ -19,21 +24,12 @@ export function useNativeLoad (ref, url) {
 
         audio.src = url
 
-        const listener = async () => {
-
-            if (autoplay) await audio.play ()
-        
-        }
-
-        // 'canplay' === loaded enough
-        audio.addEventListener ('canplay', listener)
+        audio.addEventListener ('canplay', () => handleCanPlay ())
 
         setSavedUrl (url)
 
-        return () => audio.removeEventListener ('canplay', listener)
+        return () => audio.removeEventListener ('canplay', () => handleCanPlay ())
 
-    }, [autoplay, ref, savedUrl, url])
-
-    return { autoplay }
+    }, [handleCanPlay, ref, savedUrl, url])
 
 }
