@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import ReactHowler from 'react-howler'
 import { useStore } from '../../../../store'
+import { getUrlWithProxy } from '../../../../utils'
 
 /**
  * @param {object} props react props
@@ -9,7 +10,6 @@ import { useStore } from '../../../../store'
  */
 export function AudioHowlerComponent ({ url }) {
 
-    const proxy = useRef ('http://localhost:8080/') // https://screwmycode-in--cors.herokuapp.com/
     const speed = useStore ((state) => state.speed)
     const howler = useRef (null)
 
@@ -23,11 +23,11 @@ export function AudioHowlerComponent ({ url }) {
         <>
             <ReactHowler
                 ref={howler}
-                src={proxy.current + url}
+                src={getUrlWithProxy (url)}
                 playing
                 rate={0.5}
                 format={['mp3']}
-                onLoad={() => console.log ('lol')}
+                onLoad={() => console.log ('howler loaded')}
             />
         </>
     )
