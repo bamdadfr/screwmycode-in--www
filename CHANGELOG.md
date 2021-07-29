@@ -1,3 +1,17 @@
+# [1.19.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.18.0...v1.19.0) (2021-07-29)
+
+
+### Features
+
+* continue binding new player.component.js + move files around ([92f69c8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/92f69c8160999aeb4fea03cbfd82ab5b4239f581))
+* **player.component:** linking state wip ([32c2dbe](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/32c2dbed3ba58d34bd17687cdfcfe1157161919e))
+
+
+### Performance Improvements
+
+* cleaning ([f7ab613](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f7ab61383755d4816efc02be5e6bc05035d9ac00))
+* cleaning ([be2193f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/be2193f015d9096219a832628ca13d6e21ced0a7))
+
 # [1.18.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.17.0...v1.18.0) (2021-07-29)
 
 
