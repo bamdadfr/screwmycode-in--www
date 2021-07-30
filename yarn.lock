@@ -1824,7 +1824,7 @@ cheerio-select@^1.5.0:
     domhandler "^4.2.0"
     domutils "^2.7.0"
 
-cheerio@^1.0.0-rc.9:
+cheerio@^1.0.0-rc.10:
   version "1.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.10.tgz#2ba3dcdfcc26e7956fc1f440e61d51c643379f3e"
   integrity sha512-g0J0q/O6mW8z5zxQ3A8E8J1hUgp4SMOvEoW/x84OwyHKe/Zccz83PVT4y5Crcr530FV6NgmKI1qvGTKVl9XXVw==
@@ -4229,7 +4229,7 @@ lz-string@^1.4.4:
   resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
   integrity sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=
 
-m3u8stream@^0.8.3:
+m3u8stream@^0.8.3, m3u8stream@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.8.4.tgz#15b49d0c2b510755ea43c1e53f85d7aaa4dc65c2"
   integrity sha512-sco80Db+30RvcaIOndenX6E6oQNgTiBKeJbFPc+yDXwPQIkryfboEbCvXPlBRq3mQTCVPQO93TDVlfRwqpD35w==
@@ -5380,13 +5380,13 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-soundcloud-scraper@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/soundcloud-scraper/-/soundcloud-scraper-5.0.0.tgz#3f4e9d9fc9ee79cbaf6cdd64f462ad6803e25ac1"
-  integrity sha512-8Rt7WbW85AqiFoKkemF5BKsGAThLGnhOi13ztctAI0Y/wso/iuR97yiVXK1eYRc2YqaD8gkpKUAjEY7bOxLxnw==
+soundcloud-scraper@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/soundcloud-scraper/-/soundcloud-scraper-5.0.1.tgz#4872d3c09d7cac40a81c99b3c509095ab17bcbcc"
+  integrity sha512-f3JxM/afLRumaT06YsLs8u/WtXDZYvMBis7kB3+rFcx0cyJeu825D3b8D3oTSflNWeFgbGt2+QRrvsXnUi/n1Q==
   dependencies:
-    cheerio "^1.0.0-rc.9"
-    m3u8stream "^0.8.3"
+    cheerio "^1.0.0-rc.10"
+    m3u8stream "^0.8.4"
     node-fetch "^2.6.1"
 
 source-map-resolve@^0.6.0:
