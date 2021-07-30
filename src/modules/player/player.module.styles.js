@@ -32,15 +32,3 @@ export const Button = styled.button`
         background: ${(props) => props.theme.shadow.opacity};
     }
 `
-
-export const Time = styled.div`
-    justify-content: center;
-    white-space: nowrap;
-    transform: translateY(${(props) => props.y ? `${props.y}px` : 0});
-
-    > span {
-        color: ${(props) => props.theme.blue};
-    }
-
-    z-index: -1;
-`

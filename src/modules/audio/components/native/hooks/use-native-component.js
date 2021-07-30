@@ -5,6 +5,8 @@ import { useNativePitch } from './use-native-pitch'
 import { useNativeVolume } from './use-native-volume'
 import { useNativeLoad } from './use-native-load'
 import { useNativePlayPause } from './use-native-play-pause'
+import { useNativePlaying } from './use-native-playing'
+import { useNativeSeek } from './use-native-seek'
 
 /**
  * @param {string} url audio url
@@ -27,6 +29,10 @@ export function useNativeComponent (url) {
     useNativeVolume (ref.current)
 
     useNativePlayPause (ref.current)
+
+    useNativePlaying (ref.current)
+
+    useNativeSeek (ref.current)
 
     return { ref }
 

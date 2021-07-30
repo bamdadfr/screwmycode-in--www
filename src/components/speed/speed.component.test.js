@@ -4,7 +4,7 @@ import { SpeedComponent } from './speed.component'
 import { JestWithStyledComponents } from '../../../jest'
 import * as useSliderComponent from './hooks/use-speed-component'
 
-describe ('SliderComponent', () => {
+describe ('SpeedComponent', () => {
 
     describe ('container', () => {
 

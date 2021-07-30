@@ -19,6 +19,14 @@ export const useStore = create (
         // mute
         'isMuted': false,
         'toggleMute': () => set ((s) => ({ 'isMuted': !s.isMuted })),
+        // duration
+        'duration': undefined,
+        'setDuration': (v) => set (() => ({ 'duration': v })),
+        // seek
+        'seek': 0,
+        'setSeek': (v) => set (() => ({ 'seek': v })),
+        'seekMax': undefined,
+        'setSeekMax': (v) => set (() => ({ 'seekMax': v })),
         // speed
         'speed': 1,
         'setSpeed': (newSpeed) => set (

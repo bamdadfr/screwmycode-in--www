@@ -24,10 +24,10 @@ export function LoadingComponent () {
                         loading<DotsComponent/>
                     </h2>
                     <div>
-                        <FadeAnimation delay={4000}>
+                        <FadeAnimation delay={8000}>
                             tired of waiting?
                         </FadeAnimation>
-                        <FadeAnimation delay={6000}>
+                        <FadeAnimation delay={10000}>
                             use&nbsp;
                             <TextLink
                                 rel="noopener noreferrer"
