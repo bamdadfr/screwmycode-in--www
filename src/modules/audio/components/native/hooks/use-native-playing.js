@@ -8,18 +8,23 @@ export function useNativePlaying (audio) {
 
     const requestRef = useRef ()
     const setSeek = useStore ((state) => state.setSeek)
-
-    const animate = () => {
-
-        if (audio === null) return
-
-        setSeek (audio.currentTime)
-
-        requestRef.current = requestAnimationFrame (animate)
-    
-    }
+    const fps = 5
 
     // todo improve performance
+    const animate = () => {
+
+        setTimeout (() => {
+
+            if (audio === null) return
+
+            setSeek (audio.currentTime)
+
+            requestRef.current = requestAnimationFrame (animate)
+
+        }, 1000 / fps)
+
+    }
+
     useEffect (() => {
 
         if (audio === null) return
