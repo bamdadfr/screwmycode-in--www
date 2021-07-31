@@ -1,3 +1,10 @@
+## [1.22.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.2...v1.22.3) (2021-07-31)
+
+
+### Bug Fixes
+
+* **HowlerComponent:** disable exception handler (wip) ([e006b6e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e006b6e6274216f4d1f28c97578389d32c3a404b))
+
 ## [1.22.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.1...v1.22.2) (2021-07-31)
 
 
