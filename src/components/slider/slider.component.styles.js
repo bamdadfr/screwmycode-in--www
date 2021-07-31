@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components'
 
 const config = {
     'trackW': '100%',
-    'trackH': '7px',
+    // 'trackH': '7px',
+    'trackH': '0.5em',
     'thumbD': '1.5em',
     'thumbDV': 1.5,
     'trackC': '#ccc',
@@ -60,7 +61,11 @@ export const Input = styled.input.attrs ((props) => ({
     height: ${config.thumbD};
     background: transparent;
     font: 1em/1 arial, sans-serif;
-    
+
+    &:hover {
+        cursor: pointer;
+    }
+
     // track
     &::-webkit-slider-runnable-track {
         ${track};
