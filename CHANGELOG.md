@@ -1,3 +1,23 @@
+# [1.21.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.20.1...v1.21.0) (2021-07-31)
+
+
+### Bug Fixes
+
+* **HowlerComponent:** add basic proxy warmup function (because heroku) ([37384b3](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/37384b39bf54eb41327126031c7a43cc09661eb1))
+* **PlayerLayout:** reset `seek` and `progress` on page mount ([1458f55](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1458f554745c6107597a908da231b5561dcdacca))
+* **SliderComponent:** rectify webkit progress styling ([d00764d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d00764d18717e99db01748c4d51e05c5accac69e))
+
+
+### Features
+
+* **PlayerModule:** bind state to howler.component.js + various improvements ([b123cd0](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b123cd06ba3dcfe07d667c50aed0b85726bdaa05))
+
+
+### Performance Improvements
+
+* **PlayerLayout:** refine styles (alignments) ([bb03bfc](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/bb03bfcd72211e7eb911be524aac1ea29394cb9e))
+* **store:** set default volume to `0.7` instead of `1` ([d5358a2](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d5358a2daea453be8e559c148f6fe048f449569d))
+
 ## [1.20.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.20.0...v1.20.1) (2021-07-31)
 
 
