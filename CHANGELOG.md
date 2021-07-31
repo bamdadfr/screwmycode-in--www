@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.3...v1.22.4) (2021-07-31)
+
+
+### Bug Fixes
+
+* **PlayerModule:** set `z-index` for volume + clean ([628780d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/628780d06330402c389484ea1a72726097aedbd0))
+
 ## [1.22.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.2...v1.22.3) (2021-07-31)
 
 
