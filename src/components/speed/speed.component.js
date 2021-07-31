@@ -1,6 +1,7 @@
 import React from 'react'
-import { Slider, Container } from './speed.component.styles'
+import { Container } from './speed.component.styles'
 import { useSpeedComponent } from './hooks'
+import { PlayerSliderComponent } from '../player-slider'
 
 /**
  * @returns {React.ReactElement} react component
@@ -12,9 +13,7 @@ export function SpeedComponent () {
     return (
         <>
             <Container>
-                <Slider
-                    type="range"
-                    aria-label="slider"
+                <PlayerSliderComponent
                     min={0.5}
                     max={1.5}
                     step={0.005}

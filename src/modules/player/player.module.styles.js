@@ -8,7 +8,7 @@ export const Container = styled.div`
 
     width: 100%;
 
-    padding: 0.5em;
+    padding: 0.5em 0;
 
     font-size: 0.75em;
 
