@@ -34,15 +34,16 @@ export function HowlerComponent ({ url }) {
 
             if (warmup.status !== 200) return
 
-            try {
-
-                await axios.head (getUrlWithProxy (url))
-            
-            } catch {
-
-                await router.push ('/')
-            
-            }
+            // todo
+            // try {
+            //
+            //     await axios.head (getUrlWithProxy (url))
+            //
+            // } catch {
+            //
+            //     await router.push ('/')
+            //
+            // }
 
             setProxyReady (true)
 
