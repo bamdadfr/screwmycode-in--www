@@ -14,8 +14,9 @@ const track = css`
     border: none;
     width: ${config.trackW};
     height: ${config.trackH};
-    background: ${(props) => props.theme.grey};
+    background: ${(props) => props.theme.background.highlight};
     border-radius: 7px;
+    box-shadow: 0 1px 10px 1px ${(props) => props.theme.shadow.opacity};
 `
 
 const progress = css`
@@ -31,6 +32,8 @@ const handle = css`
     border-radius: 50%;
     border: 3px solid;
     background: ${(props) => props.theme.background.primary};
+    box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary},
+    0 0 1px ${(props) => props.theme.background.highlight};
 `
 
 const range = (props) => props.max - props.min
@@ -57,7 +60,7 @@ export const Input = styled.input.attrs ((props) => ({
     height: ${config.thumbD};
     background: transparent;
     font: 1em/1 arial, sans-serif;
-
+    
     // track
     &::-webkit-slider-runnable-track {
         ${track};

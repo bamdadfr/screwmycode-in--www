@@ -1,15 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
-import { IconHome, IconRepeatOff, IconRepeatOn } from './components'
+import home from '@iconify/icons-mdi/home'
+import { Icon } from '@iconify/react'
 import { Container } from './header.component.styles'
-import { useHeaderComponent } from './hooks'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function HeaderComponent () {
-
-    const { isRepeat, toggleRepeat } = useHeaderComponent ()
 
     return (
         <>
@@ -19,20 +17,9 @@ export function HeaderComponent () {
                         type="button"
                         aria-label="home"
                     >
-                        <IconHome/>
+                        <Icon icon={home}/>
                     </button>
                 </Link>
-                <button
-                    type="button"
-                    aria-label="repeat"
-                    onClick={() => toggleRepeat ()}
-                    value={isRepeat ? 'on' : 'off'}
-                >
-                    {isRepeat
-                        ? <IconRepeatOn/>
-                        : <IconRepeatOff/>
-                    }
-                </button>
             </Container>
         </>
     )
