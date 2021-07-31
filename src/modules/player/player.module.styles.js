@@ -22,12 +22,12 @@ export const Container = styled.div`
     }
 
     grid-template-columns: 2em 2em 1fr 8em 2em 6em;
-    
+
     > *:nth-child(1) {
         grid-column-start: 1;
         grid-row-start: 1;
         white-space: nowrap;
-        transform: translateY(0.45em);
+        transform: translate3d(.3em, .45em, 0);
     }
 
     > *:nth-child(6) {
@@ -66,7 +66,10 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+        font-size: 0.9em;
+
         grid-template-columns: 2em 2em 1fr 6em;
+        grid-gap: 0.25em;
 
         > *:nth-child(1) {
             grid-column-start: 1;
@@ -103,6 +106,7 @@ export const Container = styled.div`
         > *:nth-child(5) {
             grid-column-start: 4;
             grid-row-start: 2;
+            justify-self: inherit;
         }
     }
 `
