@@ -56,5 +56,6 @@ There are two ways of accessing the service:
 
 - Browse [screwmycode.in](https://screwmycode.in/).
 - Insert `iscrew` in the URL of these services:
-    - https://www.<u>iscrew</u>youtube.com
-    - https://www.<u>iscrew</u>soundcloud.com
+    - https://www.`iscrew`youtube.com
+    - https://www.`iscrew`youtu.be
+    - https://www.`iscrew`soundcloud.com
