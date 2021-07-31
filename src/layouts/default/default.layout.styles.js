@@ -16,13 +16,14 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 100vw;
+    height: 16em;
     text-align: center;
     font-size: 1.1em;
-
+    
     @media screen and (max-width: ${Breakpoints.mobile}px) {
         width: 90vw;
     }
