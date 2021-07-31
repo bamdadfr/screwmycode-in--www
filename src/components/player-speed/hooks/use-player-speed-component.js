@@ -4,7 +4,7 @@ import { useStore } from '../../../store'
 /**
  * @returns {{number, Function}} slider attributes
  */
-export function useSpeedComponent () {
+export function usePlayerSpeedComponent () {
 
     const speed = useStore ((state) => state.speed)
     const setSpeed = useStore ((state) => state.setSpeed)

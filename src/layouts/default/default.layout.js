@@ -31,8 +31,8 @@ export function DefaultLayout ({
             {!customMeta && <MetaComponent/>}
             <HeaderComponent/>
             <Container>
-                <TitleComponent/>
                 <Wrapper>
+                    <TitleComponent/>
                     {children}
                 </Wrapper>
             </Container>

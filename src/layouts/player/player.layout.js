@@ -3,11 +3,10 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import {
-    PlayerTitleComponent,
     IndicatorsComponent,
     LoadingComponent,
     MetaComponent,
-    SpeedComponent,
+    PlayerSpeedComponent,
 } from '../../components'
 import { DefaultLayout } from '../default'
 import { AudioModule, PlayerModule } from '../../modules'
@@ -72,10 +71,9 @@ export function PlayerLayout ({
                         <LoadingComponent/>
                     </>
                     : <>
-                        <PlayerTitleComponent title={title}/>
                         <PlayerModule/>
                         <IndicatorsComponent/>
-                        <SpeedComponent/>
+                        <PlayerSpeedComponent/>
                     </>
                 }
             </DefaultLayout>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PlayerSliderComponent } from '../../../../components'
+import { SliderComponent } from '../../../../components'
 import { useStore } from '../../../../store'
 
 /**
@@ -12,7 +12,7 @@ export function VolumeSliderComponent () {
 
     return (
         <>
-            <PlayerSliderComponent
+            <SliderComponent
                 min={0}
                 max={1}
                 step={0.01}

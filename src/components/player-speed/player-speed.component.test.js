@@ -1,8 +1,8 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { SpeedComponent } from './speed.component'
+import { PlayerSpeedComponent } from './player-speed.component'
 import { JestWithStyledComponents } from '../../../jest'
-import * as useSliderComponent from './hooks/use-speed-component'
+import * as useSliderComponent from './hooks/use-player-speed-component'
 
 describe ('SpeedComponent', () => {
 
@@ -10,7 +10,7 @@ describe ('SpeedComponent', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
+            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             expect (container).toBeInTheDocument ()
 
@@ -18,7 +18,7 @@ describe ('SpeedComponent', () => {
 
         it ('should be visible', () => {
 
-            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
+            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             expect (container).toBeVisible ()
 
@@ -26,7 +26,7 @@ describe ('SpeedComponent', () => {
 
         it ('should not be empty', () => {
 
-            const { container } = render (JestWithStyledComponents (<SpeedComponent/>))
+            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             expect (container).not.toBeEmptyDOMElement ()
 
@@ -38,7 +38,7 @@ describe ('SpeedComponent', () => {
 
         it ('should be enabled', () => {
 
-            render (JestWithStyledComponents (<SpeedComponent/>))
+            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -48,7 +48,7 @@ describe ('SpeedComponent', () => {
 
         it ('should have a default value of 1', () => {
 
-            render (JestWithStyledComponents (<SpeedComponent/>))
+            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -58,7 +58,7 @@ describe ('SpeedComponent', () => {
 
         it ('should have a minimum value of 0.5', () => {
 
-            render (JestWithStyledComponents (<SpeedComponent/>))
+            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -74,7 +74,7 @@ describe ('SpeedComponent', () => {
 
         it ('should have a maximmum value of 1.5', () => {
 
-            render (JestWithStyledComponents (<SpeedComponent/>))
+            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
@@ -99,7 +99,7 @@ describe ('SpeedComponent', () => {
                 'onChange': ON_CHANGE,
             })
 
-            render (JestWithStyledComponents (<SpeedComponent/>))
+            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
