@@ -1,3 +1,10 @@
+## [1.22.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.4...v1.22.5) (2021-07-31)
+
+
+### Bug Fixes
+
+* **player.module.styles:** fix alignments in portrait mode ([9800067](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9800067dcf9cfa7e8be4ae0396bb6273b5db9628))
+
 ## [1.22.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.3...v1.22.4) (2021-07-31)
 
 
