@@ -1,3 +1,10 @@
+## [1.22.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.1...v1.22.2) (2021-07-31)
+
+
+### Bug Fixes
+
+* **HowlerComponent:** handle throw exception on `axios.head(url)` ([80eff07](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/80eff070824a70bcfbb52562012e3be8eb187e13))
+
 ## [1.22.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.0...v1.22.1) (2021-07-31)
 
 
