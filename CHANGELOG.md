@@ -1,3 +1,18 @@
+# [1.20.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.19.0...v1.20.0) (2021-07-31)
+
+
+### Features
+
+* create `PlayerModule` + add bindings to audio `NativeComponent` + wip performance ([cbb4c2f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cbb4c2f6cfa387ffb5ecab0a0cacf034a9630661))
+
+
+### Performance Improvements
+
+* **player.module:** improve seek track performance + various ([5dba0d9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5dba0d9c39b3572fcbb5dfa5b50148d84179f36e))
+* **styles:** various ([4cea442](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4cea4427a822467e35854eb972c029de193a571c))
+* **styles:** various ([c6f241a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c6f241a83539b36f0fd85c68d4301412fb25ce07))
+* **use-native-playing:** limit request animation frame to 5 fps ([86b5e23](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/86b5e239a50db449fbb0d328e34881b63a72cb7c))
+
 # [1.19.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.18.0...v1.19.0) (2021-07-29)
 
 
