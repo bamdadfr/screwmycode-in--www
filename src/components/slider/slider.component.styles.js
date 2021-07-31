@@ -4,6 +4,7 @@ const config = {
     'trackW': '100%',
     'trackH': '7px',
     'thumbD': '1.5em',
+    'thumbDV': 1.5,
     'trackC': '#ccc',
     'filllC': '#95a',
 }
@@ -32,23 +33,23 @@ const handle = css`
     background: ${(props) => props.theme.background.primary};
 `
 
+const range = (props) => props.max - props.min
+const ratio = (props) => (props.value - props.min) / range (props)
+const sx = (props) => 0.5 * config.thumbDV + ratio (props) * (100 % -config.thumbDV)
+
 /**
  * @param {object} props react component props
  * @see https://codepen.io/thebabydino/pen/goYYrN
  * @returns {object} styled component
  */
-export const Input = styled.input`
+export const Input = styled.input.attrs ((props) => ({
+    'style': {
+        '--sx': sx (props),
+    },
+}))`
     &, &::-webkit-slider-thumb {
         -webkit-appearance: none;
     }
-
-    --min: ${(props) => props.min};
-    --max: ${(props) => props.max};
-    --val: ${(props) => props.value};
-
-    --range: calc(var(--max) - var(--min));
-    --ratio: calc((var(--val) - var(--min)) / var(--range));
-    --sx: calc(.5 * ${config.thumbD} + var(--ratio) * (100% - ${config.thumbD}));
 
     margin: 0;
     padding: 0;

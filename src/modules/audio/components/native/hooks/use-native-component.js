@@ -5,7 +5,7 @@ import { useNativePitch } from './use-native-pitch'
 import { useNativeVolume } from './use-native-volume'
 import { useNativeLoad } from './use-native-load'
 import { useNativePlayPause } from './use-native-play-pause'
-import { useNativePlaying } from './use-native-playing'
+import { useNativeProgress } from './use-native-progress'
 import { useNativeSeek } from './use-native-seek'
 
 /**
@@ -30,7 +30,7 @@ export function useNativeComponent (url) {
 
     useNativePlayPause (ref.current)
 
-    useNativePlaying (ref.current)
+    useNativeProgress (ref.current)
 
     useNativeSeek (ref.current)
 

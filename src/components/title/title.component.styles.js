@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Breakpoints } from '../../app/styles'
 
 export const Title = styled.h1`
     font-size: 3em;
@@ -7,5 +8,9 @@ export const Title = styled.h1`
 
     &:hover {
         color: ${(props) => props.theme.highlight};
+    }
+    
+    @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+        font-size: 2em;
     }
 `

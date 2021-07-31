@@ -20,8 +20,11 @@ export const useStore = create (
         'isMuted': false,
         'toggleMute': () => set ((s) => ({ 'isMuted': !s.isMuted })),
         // duration
-        'duration': undefined,
+        'duration': 0,
         'setDuration': (v) => set (() => ({ 'duration': v })),
+        // progress
+        'progress': 0,
+        'setProgress': (v) => set (() => ({ 'progress': v })),
         // seek
         'seek': 0,
         'setSeek': (v) => set (() => ({ 'seek': v })),

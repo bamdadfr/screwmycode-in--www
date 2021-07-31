@@ -9,15 +9,15 @@ import { useStore } from '../../../../store'
 export function TimeComponent () {
 
     const duration = useStore ((state) => state.duration)
-    const seek = useStore ((state) => state.seek)
+    const progress = useStore ((state) => state.progress)
 
     return (
         <>
             <Container>
                 <span>
-                    {calculateMinutes (seek)}
+                    {calculateMinutes (progress)}
                 </span>
-                &nbsp;/&nbsp;{duration}
+                &nbsp;/&nbsp;{calculateMinutes (duration)}
             </Container>
         </>
     )

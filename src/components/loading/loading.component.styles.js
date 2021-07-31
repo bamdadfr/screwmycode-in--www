@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 80%;
     max-width: 20em;
+    transform: translateX(0.5em);
 `
 
 export const ImageContainer = styled.div`
@@ -14,7 +15,7 @@ export const ImageContainer = styled.div`
     width: 4em;
 
     > div {
-        transform: translate3d(0, -0.9em, 0);
+        transform: translate3d(1em, -0.9em, 0);
     }
 `
 

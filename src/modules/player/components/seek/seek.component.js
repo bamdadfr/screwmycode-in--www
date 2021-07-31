@@ -7,18 +7,18 @@ import { useStore } from '../../../../store'
  */
 export function SeekComponent () {
 
-    const seek = useStore ((state) => state.seek)
+    const progress = useStore ((state) => state.progress)
+    const duration = useStore ((state) => state.duration)
     const setSeek = useStore ((state) => state.setSeek)
-    const seekMax = useStore ((state) => state.seekMax)
 
     return (
         <>
             <SliderComponent
                 min={0}
-                max={seekMax}
+                max={duration}
                 step={1}
-                value={seek}
-                onChange={(e) => setSeek (parseFloat (e.target.value))}
+                value={progress}
+                onChange={(e) => setSeek (Math.floor (e.target.value))}
             />
         </>
     )

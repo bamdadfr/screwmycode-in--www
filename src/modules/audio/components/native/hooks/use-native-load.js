@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useStore } from '../../../../../store'
-import { calculateMinutes } from '../../../../../utils'
 
 /**
  * @param {HTMLAudioElement} audio element
@@ -19,6 +18,16 @@ export function useNativeLoad (audio, url) {
 
     }, [setIsLoaded])
 
+    const handleMetadata = useCallback (() => {
+
+        if (audio !== null) {
+
+            setDuration (audio.duration)
+        
+        }
+
+    }, [audio, setDuration])
+
     useEffect (() => {
 
         if (audio === null) return
@@ -29,13 +38,7 @@ export function useNativeLoad (audio, url) {
 
         audio.addEventListener ('canplay', () => handleCanPlay ())
 
-        audio.addEventListener ('loadedmetadata', () => {
-
-            setDuration (calculateMinutes (audio.duration))
-
-            setSeekMax (Math.floor (audio.duration))
-
-        })
+        audio.addEventListener ('loadedmetadata', () => handleMetadata ())
 
         setSavedUrl (url)
 
@@ -43,8 +46,10 @@ export function useNativeLoad (audio, url) {
 
             audio.removeEventListener ('canplay', () => handleCanPlay ())
 
+            audio.removeEventListener ('loadedmetadata', () => handleMetadata ())
+
         }
 
-    }, [audio, handleCanPlay, savedUrl, setDuration, setSeekMax, url])
+    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, setSeekMax, url])
 
 }

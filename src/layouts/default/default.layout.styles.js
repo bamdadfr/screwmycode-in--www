@@ -23,23 +23,23 @@ export const Wrapper = styled.div`
     text-align: center;
     font-size: 1.1em;
 
-    @media screen and ${Breakpoints.mobile} {
+    @media screen and (max-width: ${Breakpoints.mobile}px) {
         width: 90vw;
     }
 
-    @media screen and ${Breakpoints.tablet} {
+    @media screen and (min-width: ${Breakpoints.tablet}px) {
         width: 80vw;
     }
 
-    @media screen and ${Breakpoints.desktop} {
+    @media screen and (min-width: ${Breakpoints.desktop}px) {
         width: 60vw;
     }
 
-    @media screen and ${Breakpoints.widescreen} {
+    @media screen and (min-width: ${Breakpoints.widescreen}px) {
         width: 50vw;
     }
 
-    @media screen and ${Breakpoints.fullhd} {
+    @media screen and (min-width: ${Breakpoints.fullhd}px) {
         width: 40vw;
     }
 `
