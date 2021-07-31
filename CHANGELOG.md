@@ -1,3 +1,17 @@
+# [1.22.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.21.0...v1.22.0) (2021-07-31)
+
+
+### Features
+
+* **PlayerModule:** add audio title inside the grid + various files renaming ([cbab3fd](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cbab3fd19897922db55fe7d3869fa2dfb3e2ac49))
+
+
+### Performance Improvements
+
+* **deps:** upgrade to latest dependencies ([4392c6b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4392c6bbbc1f7f2ade96d765fa44069dd49a1722))
+* **hooks:** remove unused hook use-firefox-only.js ([01c6fac](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/01c6fac2f5268c6a73d26e7990855c46e4eea828))
+* **styles:** wrap title.component.styles.js in default.layout.js ([375b576](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/375b57612bfe1f91176fe83569573c72812e2f2a))
+
 # [1.21.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.20.1...v1.21.0) (2021-07-31)
 
 
