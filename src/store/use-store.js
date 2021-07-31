@@ -14,7 +14,7 @@ export const useStore = create (
         'isRepeat': true,
         'toggleRepeat': () => set ((s) => ({ 'isRepeat': !s.isRepeat })),
         // volume
-        'volume': 1,
+        'volume': 0.7,
         'setVolume': (v) => set ({ 'volume': parseFloat (v) }),
         // mute
         'isMuted': false,
