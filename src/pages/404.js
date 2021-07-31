@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import React from 'react'
 import { DefaultLayout } from '../layouts'
 import { useRedirectAuto } from '../hooks'

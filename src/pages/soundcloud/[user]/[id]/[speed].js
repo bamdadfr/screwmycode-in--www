@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
@@ -51,7 +53,7 @@ export async function getServerSideProps (context) {
     if (!isValid) return { 'redirect': { 'destination': '/', 'permanent': false }}
 
     const info = await scraper.getSongInfo (soundcloudUrl)
-    const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL (info.trackURL)
+    const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL (info.trackURL, undefined)
 
     props.title = info.title
 

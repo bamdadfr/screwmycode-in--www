@@ -39,6 +39,8 @@ export function PlayerLayout ({
     const isLoaded = useStore ((state) => state.isLoaded)
     const setIsLoaded = useStore ((state) => state.setIsLoaded)
     const setSpeed = useStore ((state) => state.setSpeed)
+    const setSeek = useStore ((state) => state.setSeek)
+    const setProgress = useStore ((state) => state.setProgress)
     const setAudioTitle = useStore ((state) => state.setAudioTitle)
     const [description] = useState (`${title} - ${speed} - YouTube - ScrewMyCode.In`)
 
@@ -46,9 +48,11 @@ export function PlayerLayout ({
 
     useEffect (() => setAudioTitle (title), [setAudioTitle, title])
 
-    useEffect (() => setIsLoaded (false), [setIsLoaded])
+    useEffect (() => setSeek (0), [setSeek])
 
-    useEffect (() => {}, [isLoaded])
+    useEffect (() => setProgress (0), [setProgress])
+
+    useEffect (() => setIsLoaded (false), [setIsLoaded])
 
     return (
         <>

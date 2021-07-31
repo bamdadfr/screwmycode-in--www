@@ -5,6 +5,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin: 1em 0.7em;
+    width: 100%;
 
     * {
         user-select: none;

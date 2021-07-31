@@ -10,7 +10,7 @@ export { MetaComponent } from './meta'
 
 export { PlayerTitleComponent } from './player-title'
 
-export { SliderComponent } from './slider'
+export { PlayerSliderComponent } from './player-slider'
 
 export { SpeedComponent } from './speed'
 

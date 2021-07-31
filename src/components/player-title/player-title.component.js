@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Title } from './player-title.component.styles'
+import { H2 } from './player-title.component.styles'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -15,9 +15,9 @@ export function PlayerTitleComponent ({ title }) {
 
     return (
         <>
-            <Title>
+            <H2>
                 {title}
-            </Title>
+            </H2>
         </>
     )
 

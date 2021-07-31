@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../store'
+import axios from 'axios'
 import { getUrlWithProxy } from '../../../../utils'
+import { useHowlerComponent } from './hooks'
 
 /**
  * @param {object} props react props
@@ -10,22 +11,47 @@ import { getUrlWithProxy } from '../../../../utils'
  */
 export function HowlerComponent ({ url }) {
 
-    const speed = useStore ((state) => state.speed)
-    const howler = useRef (null)
-    const setIsLoaded = useStore ((state) => state.setIsLoaded)
-    const isPlaying = useStore ((state) => state.isPlaying)
+    const {
+        ref,
+        setIsLoaded,
+        isPlaying,
+        isRepeat,
+        speed,
+        volume,
+        handleEnd,
+    } = useHowlerComponent ()
 
-    useEffect (() => howler.current.rate (speed), [speed])
+    // proxy warmup
+    const [proxyReady, setProxyReady] = useState (false)
+
+    useEffect (() => {
+
+        (async () => {
+
+            const response = await axios.get (getUrlWithProxy ('https://www.screwmycode.in/'))
+
+            if (response.status !== 200) return
+
+            setProxyReady (true)
+
+        }) ()
+    
+    }, [setProxyReady])
+
+    if (!proxyReady) return <></>
 
     return (
         <>
             <ReactHowler
-                ref={howler}
+                ref={ref}
                 src={getUrlWithProxy (url)}
                 playing={isPlaying}
-                rate={0.5}
+                rate={speed}
+                volume={volume}
+                loop={isRepeat}
                 format={['mp3']}
                 onLoad={() => setIsLoaded (true)}
+                onEnd={handleEnd}
             />
         </>
     )

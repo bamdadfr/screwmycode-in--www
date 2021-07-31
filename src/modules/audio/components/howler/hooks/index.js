@@ -1,0 +1,1 @@
+export { useHowlerComponent } from './use-howler-component'
