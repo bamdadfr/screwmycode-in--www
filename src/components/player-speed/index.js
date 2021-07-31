@@ -1,0 +1,1 @@
+export { PlayerSpeedComponent } from './player-speed.component'

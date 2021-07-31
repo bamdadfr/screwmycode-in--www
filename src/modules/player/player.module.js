@@ -3,7 +3,7 @@ import { Container } from './player.module.styles'
 import {
     PlayPauseButtonComponent, RepeatButtonComponent,
     SeekComponent,
-    TimeComponent,
+    TimeComponent, TitleComponent,
     VolumeButtonComponent,
     VolumeSliderComponent,
 } from './components'
@@ -16,6 +16,7 @@ export function PlayerModule () {
     return (
         <>
             <Container>
+                <TitleComponent/>
                 <RepeatButtonComponent/>
                 <PlayPauseButtonComponent/>
                 <SeekComponent/>

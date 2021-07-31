@@ -6,6 +6,8 @@ export { SeekComponent } from './seek'
 
 export { TimeComponent } from './time'
 
+export { TitleComponent } from './title'
+
 export { VolumeButtonComponent } from './volume-button'
 
 export { VolumeSliderComponent } from './volume-slider'

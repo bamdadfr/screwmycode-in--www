@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Breakpoints } from '../../app/styles'
 
 export const Container = styled.div`
     display: flex;
@@ -16,6 +17,10 @@ export const ImageContainer = styled.div`
 
     > div {
         transform: translate3d(1em, -0.9em, 0);
+
+        @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+            transform: translate3d(0, -0.9em, 0);
+        }
     }
 `
 
@@ -24,15 +29,15 @@ export const TextContainer = styled.div`
     height: 107px;
     width: 120px;
     align-self: flex-end;
-    
+
     > h2 {
         height: 3em;
     }
-    
+
     > div {
         height: 40px;
         font-size: 0.8em;
-        
+
         > div {
             //display: none;
         }

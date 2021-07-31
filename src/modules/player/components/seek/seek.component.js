@@ -1,5 +1,5 @@
 import React from 'react'
-import { PlayerSliderComponent } from '../../../../components'
+import { SliderComponent } from '../../../../components'
 import { useStore } from '../../../../store'
 
 /**
@@ -13,7 +13,7 @@ export function SeekComponent () {
 
     return (
         <>
-            <PlayerSliderComponent
+            <SliderComponent
                 min={0}
                 max={duration}
                 step={1}

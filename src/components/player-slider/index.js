@@ -1,1 +1,0 @@
-export { PlayerSliderComponent } from './player-slider.component'
