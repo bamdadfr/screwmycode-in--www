@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactHowler from 'react-howler'
+import axios from 'axios'
 import { getUrlWithProxy } from '../../../../utils'
 import { useHowlerComponent } from './hooks'
 
@@ -19,6 +20,25 @@ export function HowlerComponent ({ url }) {
         volume,
         handleEnd,
     } = useHowlerComponent ()
+
+    // proxy warmup
+    const [proxyReady, setProxyReady] = useState (false)
+
+    useEffect (() => {
+
+        (async () => {
+
+            const response = await axios.get (getUrlWithProxy ('https://www.screwmycode.in/'))
+
+            if (response.status !== 200) return
+
+            setProxyReady (true)
+
+        }) ()
+    
+    }, [setProxyReady])
+
+    if (!proxyReady) return <></>
 
     return (
         <>
