@@ -34,9 +34,15 @@ export function HowlerComponent ({ url }) {
 
             if (warmup.status !== 200) return
 
-            const audio = await axios.head (getUrlWithProxy (url))
+            try {
 
-            if (audio.status !== 200) return await router.push ('/')
+                await axios.head (getUrlWithProxy (url))
+            
+            } catch {
+
+                await router.push ('/')
+            
+            }
 
             setProxyReady (true)
 
