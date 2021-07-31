@@ -9,12 +9,24 @@ export function useNativeLoad (audio, url) {
 
     const [savedUrl, setSavedUrl] = useState ()
     const setIsLoaded = useStore ((state) => state.setIsLoaded)
+    const setDuration = useStore ((state) => state.setDuration)
+    const setSeekMax = useStore ((state) => state.setSeekMax)
 
     const handleCanPlay = useCallback (() => {
 
         setIsLoaded (true)
 
     }, [setIsLoaded])
+
+    const handleMetadata = useCallback (() => {
+
+        if (audio !== null) {
+
+            setDuration (audio.duration)
+        
+        }
+
+    }, [audio, setDuration])
 
     useEffect (() => {
 
@@ -26,10 +38,18 @@ export function useNativeLoad (audio, url) {
 
         audio.addEventListener ('canplay', () => handleCanPlay ())
 
+        audio.addEventListener ('loadedmetadata', () => handleMetadata ())
+
         setSavedUrl (url)
 
-        return () => audio.removeEventListener ('canplay', () => handleCanPlay ())
+        return () => {
 
-    }, [audio, handleCanPlay, savedUrl, url])
+            audio.removeEventListener ('canplay', () => handleCanPlay ())
+
+            audio.removeEventListener ('loadedmetadata', () => handleMetadata ())
+
+        }
+
+    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, setSeekMax, url])
 
 }

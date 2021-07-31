@@ -20,7 +20,7 @@ export function NativeComponent ({ url }) {
             <audio
                 ref={ref}
                 aria-label="player"
-                controls
+                // controls
             >
                 <track kind="captions"/>
             </audio>

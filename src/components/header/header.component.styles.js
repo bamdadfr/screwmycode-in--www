@@ -6,7 +6,7 @@ export const Container = styled.div`
     margin: 7px 7px;
     top: 0;
     left: 0;
-    font-size: 2rem;
+    font-size: 2em;
     color: ${(props) => props.theme.primary};
 
     > button {

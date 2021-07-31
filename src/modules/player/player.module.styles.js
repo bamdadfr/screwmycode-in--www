@@ -7,7 +7,6 @@ export const Container = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 4em;
 
     padding: 0.5em;
 
@@ -31,16 +30,4 @@ export const Button = styled.button`
     &:hover {
         background: ${(props) => props.theme.shadow.opacity};
     }
-`
-
-export const Time = styled.div`
-    justify-content: center;
-    white-space: nowrap;
-    transform: translateY(${(props) => props.y ? `${props.y}px` : 0});
-
-    > span {
-        color: ${(props) => props.theme.blue};
-    }
-
-    z-index: -1;
 `

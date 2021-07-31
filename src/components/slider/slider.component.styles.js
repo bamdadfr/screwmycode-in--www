@@ -1,47 +1,111 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Slider = styled.div`
-    position: relative;
+const config = {
+    'trackW': '100%',
+    // 'trackH': '7px',
+    'trackH': '0.5em',
+    'thumbD': '1.5em',
+    'thumbDV': 1.5,
+    'trackC': '#ccc',
+    'filllC': '#95a',
+}
 
-    display: flex;
-    justify-content: flex-start;
-
-    width: 100%;
-    height: 7px;
-`
-
-export const Bar = styled.div`
-    width: 100%;
-    height: 100%;
-
+const track = css`
+    box-sizing: border-box;
+    border: none;
+    width: ${config.trackW};
+    height: ${config.trackH};
+    background: ${(props) => props.theme.background.highlight};
     border-radius: 7px;
-    background: ${(props) => props.theme.grey};
+    box-shadow: 0 1px 10px 1px ${(props) => props.theme.shadow.opacity};
 `
 
-export const BarColor = styled.div`
-    position: absolute;
-
-    width: calc(${(props) => props.value}px - 15px); // [15px, width]
-    height: 100%;
-
-    border-bottom-left-radius: 7px;
-    border-top-left-radius: 7px;
-
-    border-color: ${(props) => props.theme.highlight};
+const progress = css`
+    height: ${config.trackH};
     background: ${(props) => props.theme.highlight};
+    border-radius: 7px;
 `
 
-export const Handle = styled.div`
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    top: -6px;
-    left: calc(${(props) => props.value}px - 20px); // [19px, width]
-
+const handle = css`
+    box-sizing: border-box;
+    width: ${config.thumbD};
+    height: ${config.thumbD};
+    border-radius: 50%;
     border: 3px solid;
-    cursor: pointer;
-    background-color: ${(props) => props.theme.background.primary};
-    border-radius: 100%;
+    background: ${(props) => props.theme.background.primary};
+    box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary},
+    0 0 1px ${(props) => props.theme.background.highlight};
+`
+
+const range = (props) => props.max - props.min
+const ratio = (props) => (props.value - props.min) / range (props)
+const sx = (props) => 0.5 * config.thumbDV + ratio (props) * (100 % -config.thumbDV)
+
+/**
+ * @param {object} props react component props
+ * @see https://codepen.io/thebabydino/pen/goYYrN
+ * @returns {object} styled component
+ */
+export const Input = styled.input.attrs ((props) => ({
+    'style': {
+        '--sx': sx (props),
+    },
+}))`
+    &, &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    margin: 0;
+    padding: 0;
+    width: ${config.trackW};
+    height: ${config.thumbD};
+    background: transparent;
+    font: 1em/1 arial, sans-serif;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    // track
+    &::-webkit-slider-runnable-track {
+        ${track};
+        background: linear-gradient(${(props) => props.theme.highlight}, ${(props) => props.theme.highlight})
+            0/ var(--sx) 100% no-repeat ${(props) => props.theme.grey};
+    }
+
+    &::-moz-range-track {
+        ${track};
+    }
+
+    &::-ms-track {
+        ${track};
+    }
+
+    // progress
+    &::-moz-range-progress {
+        ${progress};
+    }
+
+    &::-ms-fill-lower {
+        ${progress};
+    }
+
+    // handle
+    &::-webkit-slider-thumb {
+        margin-top: calc(.5 * (${config.trackH} - ${config.thumbD}));
+        ${handle};
+    }
+
+    &::-moz-range-thumb {
+        ${handle};
+    }
+
+    &::-ms-thumb {
+        margin-top: 0;
+        ${handle};
+    }
+
+    &::-ms-tooltip {
+        display: none;
+    }
 `

@@ -1,1 +1,0 @@
-export { useHeaderComponent } from './use-header-component'

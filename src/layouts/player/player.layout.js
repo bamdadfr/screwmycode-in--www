@@ -10,9 +10,8 @@ import {
     SpeedComponent,
 } from '../../components'
 import { DefaultLayout } from '../default'
-import { AudioModule } from '../../modules'
+import { AudioModule, PlayerModule } from '../../modules'
 import { useStore } from '../../store'
-import { PlayerComponent } from '../../components/player'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,
@@ -65,17 +64,15 @@ export function PlayerLayout ({
             <DefaultLayout customMeta>
                 <AudioModule url={url}/>
                 {!isLoaded
-                    &&
-                    <>
+                    ? <>
                         <LoadingComponent/>
                     </>
-                }
-                {isLoaded && <>
-                    <PlayerTitleComponent title={title}/>
-                    <PlayerComponent/>
-                    <IndicatorsComponent/>
-                    <SpeedComponent/>
-                </>
+                    : <>
+                        <PlayerTitleComponent title={title}/>
+                        <PlayerModule/>
+                        <IndicatorsComponent/>
+                        <SpeedComponent/>
+                    </>
                 }
             </DefaultLayout>
         </>
