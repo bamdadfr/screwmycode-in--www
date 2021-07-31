@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.20.0...v1.20.1) (2021-07-31)
+
+
+### Bug Fixes
+
+* **header.component.test:** remove repeat leftovers ([215cb54](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/215cb548f5a09e3f04e9e14d9637436750756923))
+
 # [1.20.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.19.0...v1.20.0) (2021-07-31)
 
 
