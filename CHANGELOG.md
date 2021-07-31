@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.0...v1.22.1) (2021-07-31)
+
+
+### Bug Fixes
+
+* **HowlerComponent:** better loading ([0059236](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/005923607451e7df503b1f2774833a99c95ff76b))
+
 # [1.22.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.21.0...v1.22.0) (2021-07-31)
 
 
