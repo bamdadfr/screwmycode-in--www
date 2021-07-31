@@ -39,7 +39,6 @@ const handle = css`
 
 const range = (props) => props.max - props.min
 const ratio = (props) => (props.value - props.min) / range (props)
-const sx = (props) => 0.5 * config.thumbDV + ratio (props) * (100 % -config.thumbDV)
 
 /**
  * @param {object} props react component props
@@ -48,7 +47,7 @@ const sx = (props) => 0.5 * config.thumbDV + ratio (props) * (100 % -config.thum
  */
 export const Input = styled.input.attrs ((props) => ({
     'style': {
-        '--sx': sx (props),
+        '--ratio': ratio (props),
     },
 }))`
     &, &::-webkit-slider-thumb {
@@ -69,6 +68,7 @@ export const Input = styled.input.attrs ((props) => ({
     // track
     &::-webkit-slider-runnable-track {
         ${track};
+        --sx: calc(.5 * ${config.thumbD} + var(--ratio) * (100% - ${config.thumbD}));
         background: linear-gradient(${(props) => props.theme.highlight}, ${(props) => props.theme.highlight})
             0/ var(--sx) 100% no-repeat ${(props) => props.theme.grey};
     }
