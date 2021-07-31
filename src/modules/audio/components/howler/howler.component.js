@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../store'
 import { getUrlWithProxy } from '../../../../utils'
+import { useHowlerComponent } from './hooks'
 
 /**
  * @param {object} props react props
@@ -10,22 +10,28 @@ import { getUrlWithProxy } from '../../../../utils'
  */
 export function HowlerComponent ({ url }) {
 
-    const speed = useStore ((state) => state.speed)
-    const howler = useRef (null)
-    const setIsLoaded = useStore ((state) => state.setIsLoaded)
-    const isPlaying = useStore ((state) => state.isPlaying)
-
-    useEffect (() => howler.current.rate (speed), [speed])
+    const {
+        ref,
+        setIsLoaded,
+        isPlaying,
+        isRepeat,
+        speed,
+        volume,
+        handleEnd,
+    } = useHowlerComponent ()
 
     return (
         <>
             <ReactHowler
-                ref={howler}
+                ref={ref}
                 src={getUrlWithProxy (url)}
                 playing={isPlaying}
-                rate={0.5}
+                rate={speed}
+                volume={volume}
+                loop={isRepeat}
                 format={['mp3']}
                 onLoad={() => setIsLoaded (true)}
+                onEnd={handleEnd}
             />
         </>
     )

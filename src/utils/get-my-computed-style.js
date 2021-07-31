@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * @param {React.Ref} ref react element ref
  * @param {string} property css property
- * @returns {number} without 'px'
+ * @returns {string} without 'px'
  */
 export function getMyComputedStyle (ref, property) {
 

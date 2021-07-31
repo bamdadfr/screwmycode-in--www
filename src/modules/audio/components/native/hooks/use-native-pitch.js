@@ -9,6 +9,7 @@ export function useNativePitch (audio) {
 
         if (audio === null) return
 
+        // noinspection JSUndefinedPropertyAssignment
         audio.mozPreservesPitch = false
     
     }, [audio])

@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 /**
  * @name Breakpoints
  * @description breakpoints styles as string to use in media queries
