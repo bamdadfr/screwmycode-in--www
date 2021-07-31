@@ -25,7 +25,6 @@ export const Container = styled.div`
     
     > *:nth-child(1) {
         grid-column-start: 1;
-        grid-column-end: 5;
         grid-row-start: 1;
         white-space: nowrap;
         transform: translateY(0.45em);
@@ -34,11 +33,13 @@ export const Container = styled.div`
     > *:nth-child(6) {
         grid-column-start: 5;
         grid-row-start: 1;
+        z-index: 1;
     }
 
     > *:nth-child(7) {
         grid-column-start: 6;
         grid-row-start: 1;
+        z-index: 1;
     }
 
     > *:nth-child(2) {
@@ -61,6 +62,7 @@ export const Container = styled.div`
         grid-column-start: 6;
         grid-column-end: 7;
         grid-row-start: 2;
+        justify-self: flex-end;
     }
 
     @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
@@ -68,10 +70,7 @@ export const Container = styled.div`
 
         > *:nth-child(1) {
             grid-column-start: 1;
-            grid-column-end: 3;
             grid-row-start: 1;
-            white-space: nowrap;
-            transform: translateY(0.45em);
         }
 
         > *:nth-child(6) {
