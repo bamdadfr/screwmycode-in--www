@@ -7,7 +7,7 @@ const propTypes = {
     'delay': PropTypes.number,
 }
 
-export const defaultProps = {
+const defaultProps = {
     'delay': 0,
 }
 
