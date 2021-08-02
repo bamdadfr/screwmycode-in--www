@@ -15,6 +15,7 @@ module.exports = {
     ],
     'modulePathIgnorePatterns': [
         '<rootDir>/.next/',
+        '<rootDir>/src/.*/__mocks__',
     ],
     'collectCoverage': true,
     'coverageDirectory': './coverage/',

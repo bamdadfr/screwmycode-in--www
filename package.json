@@ -18,7 +18,8 @@
         "package:sort": "npx sort-package-json",
         "start": "next start",
         "test": "yarn jest",
-        "test:cov": "jest --coverage && codecov",
+        "test:cov": "yarn test:coverage",
+        "test:coverage": "jest --coverage && codecov",
         "test:experimental": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
         "test:watch": "jest --watch",
         "test:watch:all": "jest --watchAll"

@@ -1,85 +1,105 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useNativeLoad } from './use-native-load'
+import { MOCK_AUDIO, MOCK_URL } from './use-native-component.mock'
 
-describe ('useAudioLoad', () => {
+afterEach (() => jest.resetAllMocks ())
 
-    describe ('autoplay', () => {
-
-        it ('should default to false', () => {
-
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                },
-            }
-
-            const { result } = renderHook (() => useNativeLoad (ref))
-
-            expect (result.current.autoplay).toBe (false)
-        
-        })
-    
-    })
+describe ('useNativeLoad', () => {
 
     describe ('src', () => {
 
         it ('should default to url parameter', () => {
 
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                },
-            }
+            expect (MOCK_AUDIO.src).toBe (undefined)
 
-            const url = 'http://localhost/my-file.mp3'
+            renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
 
-            expect (ref.current.src).toBe (undefined)
-
-            renderHook (() => useNativeLoad (ref, url))
-
-            expect (ref.current.src).toBe (url)
+            expect (MOCK_AUDIO.src).toBe (MOCK_URL)
 
         })
 
     })
 
-    describe ('canplay event listener', () => {
+    describe ('events', () => {
 
-        it ('should be added on mount', () => {
+        it ('should manage 2 events', () => {
 
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                },
-            }
+            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (0)
 
-            expect (ref.current.addEventListener).toHaveBeenCalledTimes (0)
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
 
-            renderHook (() => useNativeLoad (ref, 'http://localhost/my-file.mp3'))
+            const { unmount } = renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
 
-            expect (ref.current.addEventListener).toHaveBeenCalledTimes (1)
-        
-        })
+            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (2)
 
-        it ('should be removed on unmount', () => {
-
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                    'removeEventListener': jest.fn (),
-                },
-            }
-
-            expect (ref.current.removeEventListener).toHaveBeenCalledTimes (0)
-
-            const { unmount } = renderHook (() => useNativeLoad (ref, 'http://localhost/my-file.mp3'))
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (2) // todo should be 0
 
             unmount ()
 
-            expect (ref.current.removeEventListener).toHaveBeenCalledTimes (1)
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (2)
+        
+        })
+
+        describe ('canplay', () => {
+
+            it ('should add on mount', () => {
+
+                renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
+
+                const CANPLAY_ADD = MOCK_AUDIO.addEventListener.mock.calls[0]
+
+                expect (CANPLAY_ADD[0]).toBe ('canplay')
+
+                expect (typeof CANPLAY_ADD[1]).toBe ('function')
+
+            })
+
+            it ('should remove on unmount', () => {
+
+                const { unmount } = renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
+
+                unmount ()
+
+                const CANPLAY_REMOVE = MOCK_AUDIO.removeEventListener.mock.calls[0]
+
+                expect (CANPLAY_REMOVE[0]).toBe ('canplay')
+
+                expect (typeof CANPLAY_REMOVE[1]).toBe ('function')
+
+            })
 
         })
-    
+
+        describe ('loadedmetadata', () => {
+
+            it ('should add on mount', () => {
+
+                renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
+
+                const LOADEDMETADATA_ADD = MOCK_AUDIO.addEventListener.mock.calls[1]
+
+                expect (LOADEDMETADATA_ADD[0]).toBe ('loadedmetadata')
+
+                expect (typeof LOADEDMETADATA_ADD[1]).toBe ('function')
+
+            })
+
+            it ('should remove on unmount', () => {
+
+                const { unmount } = renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
+
+                unmount ()
+
+                const LOADEDMETADATA_REMOVE = MOCK_AUDIO.removeEventListener.mock.calls[1]
+
+                expect (LOADEDMETADATA_REMOVE[0]).toBe ('loadedmetadata')
+
+                expect (typeof LOADEDMETADATA_REMOVE[1]).toBe ('function')
+
+            })
+        
+        })
+
     })
 
 })

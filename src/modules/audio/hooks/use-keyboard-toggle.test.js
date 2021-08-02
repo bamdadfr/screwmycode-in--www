@@ -1,5 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useKeyboardToggle } from './use-keyboard-toggle'
+import { MOCK_DOCUMENT } from './use-keyboard-toggle.mock'
+
+afterEach (() => jest.resetAllMocks ())
 
 describe ('useKeyboardToggle', () => {
 
@@ -8,31 +11,28 @@ describe ('useKeyboardToggle', () => {
         it ('should be added on mount', () => {
 
             // given
-            const DOCUMENT_SPY = jest.spyOn (document, 'addEventListener')
-
-            expect (DOCUMENT_SPY).toHaveBeenCalledTimes (0)
+            expect (MOCK_DOCUMENT.addEventListener).toHaveBeenCalledTimes (0)
 
             // when
             renderHook (() => useKeyboardToggle ())
 
             // then
-            expect (DOCUMENT_SPY).toHaveBeenCalled ()
+            expect (MOCK_DOCUMENT.addEventListener).toHaveBeenCalled ()
         
         })
 
         it ('should be removed on unmount', () => {
 
             // given
-            const DOCUMENT_SPY = jest.spyOn (document, 'removeEventListener')
             const { unmount } = renderHook (() => useKeyboardToggle ())
 
-            expect (DOCUMENT_SPY).toHaveBeenCalledTimes (0)
+            expect (MOCK_DOCUMENT.removeEventListener).toHaveBeenCalledTimes (0)
 
             // when
             unmount ()
 
             // then
-            expect (DOCUMENT_SPY).toHaveBeenCalledTimes (1)
+            expect (MOCK_DOCUMENT.removeEventListener).toHaveBeenCalledTimes (1)
 
         })
     

@@ -1,14 +1,15 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { NativeComponent } from './native.component'
+import { MOCK_URL } from './hooks/use-native-component.mock'
 
-describe ('AudioComponent', () => {
+describe ('NativeComponent', () => {
 
     describe ('container', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (<NativeComponent url="http://localhost/my-file.mp3"/>)
+            const { container } = render (<NativeComponent url={MOCK_URL}/>)
 
             expect (container).toBeInTheDocument ()
 
@@ -16,7 +17,7 @@ describe ('AudioComponent', () => {
 
         it ('should be visible', () => {
 
-            const { container } = render (<NativeComponent url="http://localhost/my-file.mp3"/>)
+            const { container } = render (<NativeComponent url={MOCK_URL}/>)
 
             expect (container).toBeVisible ()
 
@@ -30,7 +31,7 @@ describe ('AudioComponent', () => {
 
             it ('should default to false', () => {
 
-                render (<NativeComponent url="http://localhost/my-file.mp3"/>)
+                render (<NativeComponent url={MOCK_URL}/>)
 
                 const audio = screen.getByLabelText ('player')
 
@@ -42,9 +43,13 @@ describe ('AudioComponent', () => {
 
         describe ('keyboard events', () => {
 
-            it ('should fire .play() on first keypress', () => {})
+            it ('should fire .play() on first keypress', () => {
+                // todo
+            })
 
-            it ('should fire .pause() on second keypress', () => {})
+            it ('should fire .pause() on second keypress', () => {
+                // todo
+            })
 
         })
 

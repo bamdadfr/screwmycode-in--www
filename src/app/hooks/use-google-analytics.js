@@ -1,6 +1,20 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import * as gtag from '../lib/gtag'
+import { GA_TRACKING_ID } from './use-google-analytics.constants'
+
+/**
+ * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+ * @param {string} url from next/router
+ */
+function pageview (url) {
+
+    window.gtag ('config', GA_TRACKING_ID, {
+        'page_path': url,
+    })
+
+}
+
+const listener = (url) => pageview (url)
 
 /**
  * @description binds google tag to router events
@@ -10,12 +24,6 @@ export function useGoogleAnalytics () {
     const router = useRouter ()
 
     useEffect (() => {
-
-        const listener = (url) => {
-
-            gtag.pageview (url)
-
-        }
 
         router.events.on ('routeChangeComplete', listener)
 
