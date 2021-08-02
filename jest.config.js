@@ -19,4 +19,7 @@ module.exports = {
     ],
     'collectCoverage': true,
     'coverageDirectory': './coverage/',
+    'collectCoverageFrom': [
+        '<rootDir>/src/**/*.js',
+    ],
 }
