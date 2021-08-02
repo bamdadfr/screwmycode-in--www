@@ -1,3 +1,10 @@
+## [1.22.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.5...v1.22.6) (2021-08-02)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([5d3b12b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5d3b12b445f28b0d957afe7fb54645a8a3b0d02f))
+
 ## [1.22.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.4...v1.22.5) (2021-07-31)
 
 
