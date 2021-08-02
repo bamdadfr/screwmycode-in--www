@@ -1,5 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useNativePitch } from './use-native-pitch'
+import { MOCK_AUDIO } from './use-native-component.mock'
+
+afterEach (() => jest.resetAllMocks ())
 
 describe ('useNativePitch', () => {
 
@@ -7,15 +10,9 @@ describe ('useNativePitch', () => {
 
         it ('should default to false', () => {
 
-            const ref = {
-                'current': {
-                    'mozPreservesPitch': undefined,
-                },
-            }
+            renderHook (() => useNativePitch (MOCK_AUDIO))
 
-            renderHook (() => useNativePitch (ref))
-
-            expect (ref.current.mozPreservesPitch).toBe (false)
+            expect (MOCK_AUDIO.mozPreservesPitch).toBe (false)
 
         })
 

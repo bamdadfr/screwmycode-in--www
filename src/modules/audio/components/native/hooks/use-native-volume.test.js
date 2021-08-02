@@ -1,63 +1,43 @@
 import { renderHook } from '@testing-library/react-hooks'
+import { MOCK_AUDIO } from './use-native-component.mock'
 import { useNativeVolume } from './use-native-volume'
 
-describe ('useAudioVolume', () => {
+afterEach (() => jest.resetAllMocks ())
+
+describe ('useNativeVolume', () => {
 
     describe ('volume', () => {
 
         it ('should default to 1', () => {
 
-            const ref = {
-                'current': {
-                    'volume': undefined,
-                },
-            }
+            renderHook (() => useNativeVolume (MOCK_AUDIO))
 
-            renderHook (() => useNativeVolume (ref))
-
-            expect (ref.current.volume).toBe (1)
+            expect (MOCK_AUDIO.volume).toBe (0.7)
         
         })
     
     })
 
-    describe ('volumechange event listener', () => {
+    describe ('events', () => {
 
-        it ('should be added on mount', () => {
+        it ('should handle 1 event', () => {
 
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                },
-            }
+            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (0)
 
-            expect (ref.current.addEventListener).toHaveBeenCalledTimes (0)
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
 
-            renderHook (() => useNativeVolume (ref))
+            const { unmount } = renderHook (() => useNativeVolume (MOCK_AUDIO))
 
-            expect (ref.current.addEventListener).toHaveBeenCalledTimes (1)
+            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (1)
 
-        })
-
-        it ('should be removed on unmount', () => {
-
-            const ref = {
-                'current': {
-                    'addEventListener': jest.fn (),
-                    'removeEventListener': jest.fn (),
-                },
-            }
-
-            const { unmount } = renderHook (() => useNativeVolume (ref))
-
-            expect (ref.current.removeEventListener).toHaveBeenCalledTimes (0)
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
 
             unmount ()
 
-            expect (ref.current.removeEventListener).toHaveBeenCalledTimes (1)
-
+            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (1)
+        
         })
-    
+
     })
 
 })

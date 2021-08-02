@@ -2,9 +2,9 @@ import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { PlayerSpeedComponent } from './player-speed.component'
 import { JestWithStyledComponents } from '../../../jest'
-import * as useSliderComponent from './hooks/use-player-speed-component'
+import { MOCK_STATE } from './player-speed.component.mock'
 
-describe ('SpeedComponent', () => {
+describe ('PlayerSpeedComponent', () => {
 
     describe ('container', () => {
 
@@ -91,19 +91,13 @@ describe ('SpeedComponent', () => {
         it ('should fire .onChange() when user interacts with the slider', () => {
 
             // given
-            const STATE_SPY = jest.spyOn (useSliderComponent, 'useSliderComponent')
-            const ON_CHANGE = jest.fn ()
-
-            STATE_SPY.mockReturnValue ({
-                'value': 1,
-                'onChange': ON_CHANGE,
-            })
+            const { onChange } = MOCK_STATE ()
 
             render (JestWithStyledComponents (<PlayerSpeedComponent/>))
 
             const slider = screen.getByRole ('slider')
 
-            expect (ON_CHANGE).toHaveBeenCalledTimes (0)
+            expect (onChange).toHaveBeenCalledTimes (0)
 
             // when
             fireEvent.change (slider, {
@@ -113,7 +107,7 @@ describe ('SpeedComponent', () => {
             })
 
             // then
-            expect (ON_CHANGE).toHaveBeenCalledTimes (1)
+            expect (onChange).toHaveBeenCalledTimes (1)
 
         })
     

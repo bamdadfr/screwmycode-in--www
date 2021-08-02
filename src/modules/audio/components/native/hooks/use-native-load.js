@@ -36,20 +36,20 @@ export function useNativeLoad (audio, url) {
 
         audio.src = url
 
+        setSavedUrl (url)
+
         audio.addEventListener ('canplay', () => handleCanPlay ())
 
         audio.addEventListener ('loadedmetadata', () => handleMetadata ())
-
-        setSavedUrl (url)
 
         return () => {
 
             audio.removeEventListener ('canplay', () => handleCanPlay ())
 
             audio.removeEventListener ('loadedmetadata', () => handleMetadata ())
+        
+        } 
 
-        }
-
-    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, setSeekMax, url])
+    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, setIsLoaded, setSeekMax, url])
 
 }

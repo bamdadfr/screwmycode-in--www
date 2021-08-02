@@ -7,7 +7,7 @@ const propTypes = {
     'delay': PropTypes.number,
 }
 
-const defaultProps = {
+export const defaultProps = {
     'delay': 0,
 }
 
@@ -19,7 +19,7 @@ const defaultProps = {
  */
 export function FadeAnimation ({
     children,
-    delay = defaultProps.delay,
+    delay,
 }) {
 
     const props = useSpring ({

@@ -23,7 +23,7 @@ const defaultProps = {
  */
 export function DefaultLayout ({
     children,
-    customMeta = defaultProps.customMeta,
+    customMeta,
 }) {
 
     return (
