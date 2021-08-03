@@ -1,3 +1,10 @@
+## [1.22.12](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.11...v1.22.12) (2021-08-03)
+
+
+### Performance Improvements
+
+* **IndicatorsComponent:** extract blueprint to `IndicatorComponent` ([7883c78](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7883c7858f3881634e1d17ac4f91cbf95b79a008))
+
 ## [1.22.11](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.10...v1.22.11) (2021-08-03)
 
 
