@@ -1,3 +1,16 @@
+## [1.22.7](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.6...v1.22.7) (2021-08-03)
+
+
+### Performance Improvements
+
+* **accessbility:** add aria-labels and title ([863585d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/863585d14db786f1f10056c228d9e9e48496b281))
+* **DefaultLayout:** use grid instead of flexbox ([5616cb6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5616cb65dbce7326992f1f76c4901c95cdee832d))
+* **SEO:** add image alt attributes ([91fc829](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/91fc829cb86b9fdeb698376629f3753a550ed311))
+* **SEO:** missing meta description in meta.component.js ([5f3d80b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5f3d80be2dc3923c5e4b3a176bb9b22a92fc0951))
+* **styles:** increase contrast of primary color (vs background) ([b5ceddf](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b5ceddf34921f8ad2e288271e3a2cb2390ed1061))
+* **test:** add unit testing ([3aaa4cb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3aaa4cbae9fbaa4765ddad495cfb9df5132dc862))
+* **tests:** add first `pages` tests ([56f6206](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/56f620637f301dce7a0f9181ff62e0b6207520fa))
+
 ## [1.22.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.5...v1.22.6) (2021-08-02)
 
 
