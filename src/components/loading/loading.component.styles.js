@@ -1,35 +1,41 @@
 import styled from 'styled-components'
-import { Breakpoints } from '../../app/styles'
 
 export const Container = styled.div`
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    max-width: 20em;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+
+    width: 100%;
+
     transform: translateX(0.5em);
 `
 
 export const ImageContainer = styled.div`
+    display: flex;
+    justify-self: flex-end;
+    align-items: flex-start;
+
     position: relative;
-    height: 10em;
+
     width: 4em;
+    height: 10em;
 
-    > div {
-        transform: translate3d(1em, -0.9em, 0);
-
-        @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
-            transform: translate3d(0, -0.9em, 0);
-        }
-    }
+    transform: translateX(-1.5em);
 `
 
 export const TextContainer = styled.div`
-    text-align: left;
-    height: 107px;
-    width: 120px;
-    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
 
+    height: 100%;
+    width: 100%;
+
+    text-align: left;
+    
     > h2 {
         height: 3em;
     }
