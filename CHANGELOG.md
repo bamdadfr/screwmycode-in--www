@@ -1,3 +1,10 @@
+## [1.22.8](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.7...v1.22.8) (2021-08-03)
+
+
+### Performance Improvements
+
+* **FormComponent:** extract common style ([f54a962](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f54a962b321f839b732d43ae2892a448b5c7b818))
+
 ## [1.22.7](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.6...v1.22.7) (2021-08-03)
 
 
