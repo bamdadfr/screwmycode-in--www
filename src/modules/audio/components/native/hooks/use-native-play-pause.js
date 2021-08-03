@@ -10,7 +10,7 @@ export function useNativePlayPause (audio) {
 
     useEffect (() => {
 
-        if (audio === null) return
+        if (!(audio instanceof HTMLAudioElement)) return
 
         if (isPlaying) return audio.play ()
 

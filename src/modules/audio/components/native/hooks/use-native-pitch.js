@@ -7,7 +7,7 @@ export function useNativePitch (audio) {
 
     useEffect (() => {
 
-        if (audio === null) return
+        if (!(audio instanceof HTMLAudioElement)) return
 
         // noinspection JSUndefinedPropertyAssignment
         audio.mozPreservesPitch = false
