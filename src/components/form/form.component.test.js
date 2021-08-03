@@ -3,12 +3,17 @@ import { render as defaultRender, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { FormComponent } from './form.component'
 import { MOCK_STATE } from './form.component.test.mock'
-import { JestWithStyledComponents } from '../../../jest'
+import { WithStyledComponents } from '../../app/components'
 
 const render = () => {
 
     const { link, handleSubmit } = MOCK_STATE ()
-    const { container } = defaultRender (JestWithStyledComponents (<FormComponent/>))
+
+    const { container } = defaultRender (
+        <WithStyledComponents>
+            <FormComponent/>
+        </WithStyledComponents>,
+    )
 
     return {
         container,

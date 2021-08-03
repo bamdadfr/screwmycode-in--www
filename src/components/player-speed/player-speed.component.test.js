@@ -1,12 +1,16 @@
 import React from 'react'
 import { fireEvent, render as defaultRender, screen } from '@testing-library/react'
 import { PlayerSpeedComponent } from './player-speed.component'
-import { JestWithStyledComponents } from '../../../jest'
+import { WithStyledComponents } from '../../app/components'
 import { MOCK_STATE } from './player-speed.component.test.mock'
 
 const render = () => {
 
-    const { container } = defaultRender (JestWithStyledComponents (<PlayerSpeedComponent/>))
+    const { container } = defaultRender (
+        <WithStyledComponents>
+            <PlayerSpeedComponent/>
+        </WithStyledComponents>,
+    )
 
     return {
         container,

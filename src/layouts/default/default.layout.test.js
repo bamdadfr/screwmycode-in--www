@@ -1,18 +1,18 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import { DefaultLayout } from './default.layout'
-import { JestWithStyledComponents } from '../../../jest'
+import { WithStyledComponents } from '../../app/components'
 
 const render = () => {
 
     const Children = () => <span>test</span>
 
     const { container } = defaultRender (
-        JestWithStyledComponents (
+        <WithStyledComponents>
             <DefaultLayout>
                 <Children/>
             </DefaultLayout>,
-        ),
+        </WithStyledComponents>,
     )
 
     return {

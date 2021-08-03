@@ -1,12 +1,14 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import OldYoutubePage, { getServerSideProps } from '../../pages/youtube/[id]'
-import { JestWithStyledComponents } from '../../../jest'
+import { WithStyledComponents } from '../../app/components'
 
 const render = () => {
 
     const { container } = defaultRender (
-        JestWithStyledComponents (<OldYoutubePage/>),
+        <WithStyledComponents>
+            <OldYoutubePage/>
+        </WithStyledComponents>,
     )
 
     return {

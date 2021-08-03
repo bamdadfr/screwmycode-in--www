@@ -1,12 +1,14 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import IndexPage from '../pages'
-import { JestWithStyledComponents } from '../../jest'
+import { WithStyledComponents } from '../app/components'
 
 const render = () => {
 
     const { container } = defaultRender (
-        JestWithStyledComponents (<IndexPage/>),
+        <WithStyledComponents>
+            <IndexPage/>
+        </WithStyledComponents>,
     )
 
     return {
