@@ -1,3 +1,16 @@
+## [1.22.11](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.10...v1.22.11) (2021-08-03)
+
+
+### Performance Improvements
+
+* **AudioModule/HowlerComponent:** add unit tests ([c8de46a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c8de46a6a596f5c24fe7b5e99ca8dc73cd36f88c))
+* **AudioModule/NativeComponent:** add better audio mock to unit tests ([9a5aba7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9a5aba7e5b8a24d4dcc0d280019b2089836cd3a9))
+* **AudioModule/NativeComponent/hooks:** add better object validation ([d2afb26](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d2afb26a6ed4706f5feaeab08e818b62119134ca))
+* **PlayerModule:** add basic unit test ([d5cb4b5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d5cb4b5b71fa20ff05fa7e4efb9028f7be227991))
+* extract styled components wrapper to its own higher order function + update imports in code and tests accordingly ([76ef150](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/76ef150b0959b9dc36e5d76c80304eb6534ceab5))
+* **PlayerPages:** remove unnecessary function drilling ([3a423b5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3a423b58b7ee84cac4d0b9c43baf4e69dcf3d39f))
+* **test:** improve unit testing ([fdf345c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/fdf345ccfe0e7e2371825be012965cad35724883))
+
 ## [1.22.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.9...v1.22.10) (2021-08-03)
 
 
