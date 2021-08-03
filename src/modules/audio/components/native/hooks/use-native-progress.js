@@ -14,7 +14,9 @@ export function useNativeProgress (audio) {
 
         let i1 = undefined
 
-        if (audio !== null && isPlaying) {
+        if (!(audio instanceof HTMLAudioElement)) return
+
+        if (isPlaying) {
 
             i1 = setInterval (() => {
 

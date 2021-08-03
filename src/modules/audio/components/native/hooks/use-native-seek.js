@@ -10,11 +10,9 @@ export function useNativeSeek (audio) {
 
     useEffect (() => {
 
-        if (audio !== null) {
+        if (!(audio instanceof HTMLAudioElement)) return
 
-            audio.currentTime = seek
-            
-        }
+        audio.currentTime = seek
 
     }, [audio, seek])
 

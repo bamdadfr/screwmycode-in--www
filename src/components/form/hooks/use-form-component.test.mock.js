@@ -10,18 +10,16 @@ export const MOCK_LINK = {
 export const SPY_LINK = {
     'blur': jest.spyOn (MOCK_LINK.ref.current, 'blur'),
     'focus': jest.spyOn (MOCK_LINK.ref.current, 'focus'),
-    'addEventListener':
-        jest
-            .spyOn (MOCK_LINK.ref.current, 'addEventListener')
-            .mockReturnValue ((eventType, listenerFunction) => ({
-                eventType,
-                listenerFunction,
-            })),
-    'removeEventListener':
-        jest
-            .spyOn (MOCK_LINK.ref.current, 'removeEventListener')
-            .mockReturnValue ((eventType, listenerFunction) => ({
-                eventType,
-                listenerFunction,
-            })),
+    'addEventListener': jest
+        .spyOn (MOCK_LINK.ref.current, 'addEventListener')
+        .mockReturnValue ((eventType, listenerFunction) => ({
+            eventType,
+            listenerFunction,
+        })),
+    'removeEventListener': jest
+        .spyOn (MOCK_LINK.ref.current, 'removeEventListener')
+        .mockReturnValue ((eventType, listenerFunction) => ({
+            eventType,
+            listenerFunction,
+        })),
 }

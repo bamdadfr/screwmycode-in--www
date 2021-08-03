@@ -10,8 +10,6 @@ describe ('useNativePlaybackRate', () => {
 
         it ('should default to 1', () => {
 
-            expect (MOCK_AUDIO.playbackRate).toBe (undefined)
-
             renderHook (() => useNativePlaybackRate (MOCK_AUDIO))
 
             expect (MOCK_AUDIO.playbackRate).toBe (1)

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useNativeVolume } from './use-native-volume'
-import { MOCK_AUDIO } from './use-native-component.test.mock'
+import { MOCK_AUDIO, SPY_AUDIO } from './use-native-component.test.mock'
 
 afterEach (() => jest.resetAllMocks ())
 
@@ -22,19 +22,19 @@ describe ('useNativeVolume', () => {
 
         it ('should handle 1 event', () => {
 
-            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (0)
+            expect (SPY_AUDIO.addEventListener).toHaveBeenCalledTimes (0)
 
-            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
+            expect (SPY_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
 
             const { unmount } = renderHook (() => useNativeVolume (MOCK_AUDIO))
 
-            expect (MOCK_AUDIO.addEventListener).toHaveBeenCalledTimes (1)
+            expect (SPY_AUDIO.addEventListener).toHaveBeenCalledTimes (1)
 
-            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
+            expect (SPY_AUDIO.removeEventListener).toHaveBeenCalledTimes (0)
 
             unmount ()
 
-            expect (MOCK_AUDIO.removeEventListener).toHaveBeenCalledTimes (1)
+            expect (SPY_AUDIO.removeEventListener).toHaveBeenCalledTimes (1)
         
         })
 
