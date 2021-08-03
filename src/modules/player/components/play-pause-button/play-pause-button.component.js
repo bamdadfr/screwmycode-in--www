@@ -15,7 +15,10 @@ export function PlayPauseButtonComponent () {
 
     return (
         <>
-            <Button onClick={togglePlayPause}>
+            <Button
+                onClick={togglePlayPause}
+                aria-label={(isPlaying ? 'pause' : 'play')}
+            >
                 {isPlaying
                     ? <Icon icon={pause}/>
                     : <Icon icon={play}/>

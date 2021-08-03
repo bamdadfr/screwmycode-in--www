@@ -15,7 +15,10 @@ export function RepeatButtonComponent () {
 
     return (
         <>
-            <Button onClick={toggleRepeat}>
+            <Button
+                onClick={toggleRepeat}
+                aria-label={(isRepeat ? 'disable' : 'enable') + ' repeat'}
+            >
                 {isRepeat
                     ? <Icon icon={repeat}/>
                     : <Icon icon={repeatOff}/>

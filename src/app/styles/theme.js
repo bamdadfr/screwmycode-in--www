@@ -17,7 +17,4 @@ export const Theme = {
     'shadow': {
         'opacity': 'rgba(0, 0, 0, 0.25)',
     },
-    // new theme
-    'blue': '#63BCF8',
-    'grey': '#444',
 }

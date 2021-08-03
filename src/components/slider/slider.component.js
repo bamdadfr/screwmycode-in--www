@@ -8,6 +8,7 @@ const propTypes = {
     'step': PropTypes.number.isRequired,
     'value': PropTypes.number.isRequired,
     'onChange': PropTypes.func.isRequired,
+    'name': PropTypes.string.isRequired,
 }
 
 /**
@@ -16,7 +17,8 @@ const propTypes = {
  * @param {number} props.max slider max
  * @param {number} props.step slider step
  * @param {number} props.value slider value
- * @param {Function} props.onChange slider onChange handler function
+ * @param {Function<undefined>} props.onChange slider onChange handler function
+ * @param {string} props.name accessibility
  * @returns {React.ReactElement} react component
  */
 export function SliderComponent ({
@@ -25,12 +27,15 @@ export function SliderComponent ({
     step,
     value,
     onChange,
+    name,
 }) {
 
     return (
         <>
             <Input
                 type="range"
+                title={name}
+                aria-label={name}
                 min={min}
                 max={max}
                 step={step}
