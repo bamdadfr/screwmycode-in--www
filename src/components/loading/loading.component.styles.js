@@ -37,10 +37,6 @@ export const TextContainer = styled.div`
     > div {
         height: 40px;
         font-size: 0.8em;
-
-        > div {
-            //display: none;
-        }
     }
 `
 

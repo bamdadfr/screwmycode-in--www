@@ -2,8 +2,12 @@ import styled from 'styled-components'
 import { Breakpoints } from '../../app/styles'
 
 export const Title = styled.h1`
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     
+    height: 100%;
+
     margin-bottom: 3em;
     
     font-size: 3em;
