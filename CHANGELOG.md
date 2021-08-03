@@ -1,3 +1,10 @@
+## [1.22.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.8...v1.22.9) (2021-08-03)
+
+
+### Performance Improvements
+
+* **LoadingComponent:** better styling ([44fb594](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/44fb5948c93012ecea8278404714664b8013820c))
+
 ## [1.22.8](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.7...v1.22.8) (2021-08-03)
 
 
