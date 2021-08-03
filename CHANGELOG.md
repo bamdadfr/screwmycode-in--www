@@ -1,3 +1,10 @@
+## [1.22.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.9...v1.22.10) (2021-08-03)
+
+
+### Bug Fixes
+
+* **TitleComponent:** fix hover style ([b7bd2b6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b7bd2b66b83481e4137710818c08b5f0f5f3f902))
+
 ## [1.22.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.8...v1.22.9) (2021-08-03)
 
 
