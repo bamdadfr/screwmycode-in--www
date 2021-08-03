@@ -27,6 +27,7 @@ export function FormComponent () {
                     <ImageContainer>
                         <Image
                             src="/icons/SCRW_KSET.svg"
+                            alt="cassette tape"
                             width={20}
                             height={20}
                         />
