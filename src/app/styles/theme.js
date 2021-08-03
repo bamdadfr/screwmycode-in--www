@@ -4,7 +4,8 @@
  * @type {object}
  */
 export const Theme = {
-    'primary': '#808386',
+    // 'primary': '#808386',
+    'primary': '#8c8f92',
     'highlight': '#63BCF8',
     'background': {
         'primary': '#242930',
