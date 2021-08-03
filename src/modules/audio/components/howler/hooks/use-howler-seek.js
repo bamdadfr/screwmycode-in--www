@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
+import ReactHowler from 'react-howler'
 import { useStore } from '../../../../../store'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
+ * @returns {number} seek position in seconds
  */
 export function useHowlerSeek (howler) {
 
@@ -10,12 +12,12 @@ export function useHowlerSeek (howler) {
 
     useEffect (() => {
 
-        if (howler !== null) {
+        if (!(howler instanceof ReactHowler)) return
 
-            howler.seek (seek)
-        
-        }
+        howler.seek (seek)
     
     }, [howler, seek])
+
+    return seek
 
 }
