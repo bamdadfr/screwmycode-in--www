@@ -48,6 +48,7 @@ export function MetaComponent ({
 
             <meta itemProp="name" content={title}/>
             <meta itemProp="description" content={description}/>
+            <meta name="description" content={description}/>
             <meta itemProp="image" content={image}/>
 
             <meta name="twitter:card" content="summary_large_image"/>
