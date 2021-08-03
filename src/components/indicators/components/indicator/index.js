@@ -1,0 +1,1 @@
+export { IndicatorComponent } from './indicator.component'

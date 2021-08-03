@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Wrapper, InputTitle, InputValue } from './indicators.component.styles'
+import { Container } from './indicators.component.styles'
 import { useIndicatorsComponent } from './hooks'
+import { IndicatorComponent } from './components'
 
 /**
  * @returns {React.ReactElement} react element
@@ -12,26 +13,16 @@ export function IndicatorsComponent () {
     return (
         <>
             <Container>
-                <Wrapper>
-                    <InputTitle title="percentage">
-                        percent
-                    </InputTitle>
-                    <InputValue
-                        disabled
-                        aria-label="percentage"
-                        value={`${percentage} %`}
-                    />
-                </Wrapper>
-                <Wrapper>
-                    <InputTitle title="semitones">
-                        semitone
-                    </InputTitle>
-                    <InputValue
-                        disabled
-                        aria-label="semitones"
-                        value={`${semitones} st`}
-                    />
-                </Wrapper>
+                <IndicatorComponent
+                    title="percent"
+                    metaName="percentage"
+                    value={`${percentage} %`}
+                />
+                <IndicatorComponent
+                    title="semitone"
+                    metaName="semitones"
+                    value={`${semitones} st`}
+                />
             </Container>
         </>
     )
