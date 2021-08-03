@@ -13,7 +13,7 @@ const render = () => {
     return {
         container,
         'input': screen.getByRole ('textbox'),
-        'submit': screen.getByRole ('button', { 'name': 'submit' }),
+        'submit': screen.getByRole ('button'),
         'state': {
             link,
             handleSubmit,
