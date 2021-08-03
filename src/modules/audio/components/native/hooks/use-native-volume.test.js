@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { MOCK_AUDIO } from './use-native-component.mock'
 import { useNativeVolume } from './use-native-volume'
+import { MOCK_AUDIO } from './use-native-component.test.mock'
 
 afterEach (() => jest.resetAllMocks ())
 

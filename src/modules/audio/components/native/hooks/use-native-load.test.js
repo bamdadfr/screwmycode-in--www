@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useNativeLoad } from './use-native-load'
-import { MOCK_AUDIO, MOCK_URL } from './use-native-component.mock'
+import { MOCK_AUDIO, MOCK_URL } from './use-native-component.test.mock'
 
 afterEach (() => jest.resetAllMocks ())
 
@@ -46,11 +46,9 @@ describe ('useNativeLoad', () => {
 
                 renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
 
-                const CANPLAY_ADD = MOCK_AUDIO.addEventListener.mock.calls[0]
+                expect (MOCK_AUDIO.addEventListener.mock.calls[0][0]).toBe ('canplay')
 
-                expect (CANPLAY_ADD[0]).toBe ('canplay')
-
-                expect (typeof CANPLAY_ADD[1]).toBe ('function')
+                expect (typeof MOCK_AUDIO.addEventListener.mock.calls[0][1]).toBe ('function')
 
             })
 
@@ -60,11 +58,9 @@ describe ('useNativeLoad', () => {
 
                 unmount ()
 
-                const CANPLAY_REMOVE = MOCK_AUDIO.removeEventListener.mock.calls[0]
+                expect (MOCK_AUDIO.removeEventListener.mock.calls[0][0]).toBe ('canplay')
 
-                expect (CANPLAY_REMOVE[0]).toBe ('canplay')
-
-                expect (typeof CANPLAY_REMOVE[1]).toBe ('function')
+                expect (typeof MOCK_AUDIO.removeEventListener.mock.calls[0][1]).toBe ('function')
 
             })
 
@@ -76,11 +72,9 @@ describe ('useNativeLoad', () => {
 
                 renderHook (() => useNativeLoad (MOCK_AUDIO, MOCK_URL))
 
-                const LOADEDMETADATA_ADD = MOCK_AUDIO.addEventListener.mock.calls[1]
+                expect (MOCK_AUDIO.addEventListener.mock.calls[1][0]).toBe ('loadedmetadata')
 
-                expect (LOADEDMETADATA_ADD[0]).toBe ('loadedmetadata')
-
-                expect (typeof LOADEDMETADATA_ADD[1]).toBe ('function')
+                expect (typeof MOCK_AUDIO.addEventListener.mock.calls[1][1]).toBe ('function')
 
             })
 
@@ -90,11 +84,9 @@ describe ('useNativeLoad', () => {
 
                 unmount ()
 
-                const LOADEDMETADATA_REMOVE = MOCK_AUDIO.removeEventListener.mock.calls[1]
+                expect (MOCK_AUDIO.removeEventListener.mock.calls[1][0]).toBe ('loadedmetadata')
 
-                expect (LOADEDMETADATA_REMOVE[0]).toBe ('loadedmetadata')
-
-                expect (typeof LOADEDMETADATA_REMOVE[1]).toBe ('function')
+                expect (typeof MOCK_AUDIO.removeEventListener.mock.calls[1][1]).toBe ('function')
 
             })
         

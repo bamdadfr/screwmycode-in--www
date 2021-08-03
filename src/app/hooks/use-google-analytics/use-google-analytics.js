@@ -27,11 +27,7 @@ export function useGoogleAnalytics () {
 
         router.events.on ('routeChangeComplete', listener)
 
-        return () => {
-
-            router.events.off ('routeChangeComplete', listener)
-
-        }
+        return () => router.events.off ('routeChangeComplete', listener)
 
     }, [router.events])
 

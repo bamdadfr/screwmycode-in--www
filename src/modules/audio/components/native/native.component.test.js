@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { NativeComponent } from './native.component'
-import { MOCK_URL } from './hooks/use-native-component.mock'
+import { MOCK_URL } from './hooks/use-native-component.test.mock'
 
 describe ('NativeComponent', () => {
 

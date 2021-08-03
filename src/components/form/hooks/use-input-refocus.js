@@ -1,36 +1,28 @@
 import React, { useEffect } from 'react'
 
 /**
- * @param {React.Ref} ref react ref
- * @param {number} delay refocus delay in ms
+ * @description this will not work when cursor outside of viewport
+ * @see https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
+ * @param {React.Ref} inputRef html element to handle
  */
-export function useInputRefocus (ref, delay = 1) {
+export function useInputRefocus (inputRef) {
 
     useEffect (() => {
 
-        // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
-        const instance = ref.current
+        if (inputRef.current === null) return
 
-        const listener = () => {
+        const input = inputRef.current
 
-            setTimeout (() => {
+        if (!(input instanceof HTMLInputElement)) return
 
-                instance.focus ()
-
-            }, delay)
-
-        }
+        const listener = () => requestAnimationFrame (() => input.focus ())
 
         listener ()
 
-        instance.addEventListener ('blur', listener)
+        input.addEventListener ('blur', listener)
 
-        return () => {
-
-            instance.removeEventListener ('blur', listener)
-
-        }
-
-    }, [delay, ref])
+        return () => input.removeEventListener ('blur', listener)
+    
+    }, [inputRef])
 
 }

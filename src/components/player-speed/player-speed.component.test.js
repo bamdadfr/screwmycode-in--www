@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render as defaultRender, screen } from '@testing-library/react'
 import { PlayerSpeedComponent } from './player-speed.component'
 import { JestWithStyledComponents } from '../../../jest'
-import { MOCK_STATE } from './player-speed.component.mock'
+import { MOCK_STATE } from './player-speed.component.test.mock'
 
 const render = () => {
 

@@ -2,7 +2,7 @@
 export const MOCK_URL = 'http://localhost/my-file.mp3'
 
 // state
-export const MOCK_REF = {
+export const MOCK_AUDIO_REF = {
     'current': {
         'loop': undefined,
         'mozPreservesPitch': undefined,
@@ -24,4 +24,4 @@ export const MOCK_REF = {
     },
 }
 
-export const MOCK_AUDIO = MOCK_REF.current
+export const MOCK_AUDIO = MOCK_AUDIO_REF.current

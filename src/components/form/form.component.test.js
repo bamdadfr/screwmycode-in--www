@@ -2,7 +2,7 @@ import React from 'react'
 import { render as defaultRender, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { FormComponent } from './form.component'
-import { MOCK_STATE } from './form.component.mock'
+import { MOCK_STATE } from './form.component.test.mock'
 import { JestWithStyledComponents } from '../../../jest'
 
 const render = () => {
