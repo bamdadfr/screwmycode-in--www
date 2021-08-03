@@ -1,13 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import IndexPage from '../pages'
-import { WithStyledComponents } from '../app/components'
+import { PlayerModule } from './player.module'
+import { WithStyledComponents } from '../../app/components'
 
 const render = () => {
 
     const { container } = defaultRender (
         <WithStyledComponents>
-            <IndexPage/>
+            <PlayerModule/>
         </WithStyledComponents>,
     )
 
@@ -17,7 +17,7 @@ const render = () => {
 
 }
 
-describe ('NotFoundPage', () => {
+describe ('PlayerModule', () => {
 
     describe ('container', () => {
 

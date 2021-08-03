@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
+import ReactHowler from 'react-howler'
 import { useStore } from '../../../../../store'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
+ * @returns {number} duration in seconds
  */
 export function useHowlerDuration (howler) {
 
@@ -11,10 +13,12 @@ export function useHowlerDuration (howler) {
 
     useEffect (() => {
 
-        if (howler === null) return
+        if (!(howler instanceof ReactHowler)) return
 
         setDuration (duration)
     
     }, [duration, howler, setDuration])
+
+    return duration
 
 }

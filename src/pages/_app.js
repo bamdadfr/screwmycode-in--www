@@ -4,9 +4,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'sass-reset'
-import { ThemeProvider } from 'styled-components'
-import { Theme, Global } from '../app/styles'
 import { useApp } from '../app/hooks'
+import { WithStyledComponents } from '../app/components'
 
 const propTypes = {
     'Component': PropTypes.func.isRequired,
@@ -31,11 +30,10 @@ export default function MyApp ({ Component, pageProps, err }) {
 
     return (
         <>
-            <Global/>
-            <ThemeProvider theme={Theme}>
+            <WithStyledComponents>
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <Component {...pageProps} err={err}/>
-            </ThemeProvider>
+            </WithStyledComponents>
         </>
     )
 

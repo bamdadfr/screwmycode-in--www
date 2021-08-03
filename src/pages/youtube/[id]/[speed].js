@@ -1,47 +1,14 @@
 // noinspection JSUnusedGlobalSymbols
 
-import React from 'react'
-import PropTypes from 'prop-types'
 import axios from 'axios'
 import ytdl from 'ytdl-core'
 import { getYoutubeThumbnail } from '../../../utils'
 import { PlayerLayout } from '../../../layouts'
 
-const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-    'speed': PropTypes.number.isRequired,
-}
-
 /**
  * @description /youtube/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @param {number} props.speed audio initial speed
- * @returns {React.ReactElement} react component
  */
-export default function YoutubePage ({
-    title,
-    image,
-    url,
-    speed,
-}) {
-
-    return (
-        <>
-            <PlayerLayout
-                title={title}
-                image={image}
-                url={url}
-                speed={speed}
-            />
-        </>
-    )
-
-}
+export default PlayerLayout
 
 /**
  * @param {object} context next.js context
@@ -76,5 +43,3 @@ export async function getServerSideProps (context) {
     return { props }
 
 }
-
-YoutubePage.propTypes = propTypes

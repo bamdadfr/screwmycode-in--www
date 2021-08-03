@@ -1,38 +1,12 @@
 // noinspection JSUnusedGlobalSymbols
 
-import React from 'react'
-import PropTypes from 'prop-types'
 import SoundcloudScraper from 'soundcloud-scraper'
 import { PlayerLayout } from '../../../../layouts'
 
 /**
  * @description /soundcloud/[user]/[id]/[speed]
- * @param {object} props props
- * @param {string} props.title audio title
- * @param {string} props.image audio thumbnail url
- * @param {string} props.url audio url
- * @param {number} props.speed audio initial speed
- * @returns {React.ReactElement} react component
  */
-export default function SoundcloudPage ({
-    title,
-    image,
-    url,
-    speed,
-}) {
-
-    return (
-        <>
-            <PlayerLayout
-                title={title}
-                image={image}
-                url={url}
-                speed={speed}
-            />
-        </>
-    )
-
-}
+export default PlayerLayout
 
 /**
  * @param {object} context next.js context
@@ -66,12 +40,3 @@ export async function getServerSideProps (context) {
     return { props }
 
 }
-
-const propTypes = {
-    'title': PropTypes.string.isRequired,
-    'image': PropTypes.string.isRequired,
-    'url': PropTypes.string.isRequired,
-    'speed': PropTypes.number.isRequired,
-}
-
-SoundcloudPage.propTypes = propTypes

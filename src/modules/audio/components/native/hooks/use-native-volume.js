@@ -11,7 +11,7 @@ export function useNativeVolume (audio) {
 
     useEffect (() => {
 
-        if (audio === null) return
+        if (!(audio instanceof HTMLAudioElement)) return
 
         audio.volume = volume
 

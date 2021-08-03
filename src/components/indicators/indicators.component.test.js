@@ -1,7 +1,29 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render as defaultRender, screen } from '@testing-library/react'
 import { IndicatorsComponent } from './indicators.component'
-import { JestWithStyledComponents } from '../../../jest'
+import { WithStyledComponents } from '../../app/components'
+
+const render = () => {
+
+    const { container } = defaultRender (
+        <WithStyledComponents>
+            <IndicatorsComponent/>
+        </WithStyledComponents>,
+    )
+    
+    return {
+        container,
+        'percentage': {
+            'title': screen.getByRole ('heading', { 'name': 'percentage' }),
+            'value': screen.getByRole ('textbox', { 'name': 'percentage' }),
+        },
+        'semitones': {
+            'title': screen.getByRole ('heading', { 'name': 'semitones' }),
+            'value': screen.getByRole ('textbox', { 'name': 'semitones' }),
+        },
+    }
+
+}
 
 describe ('IndicatorsComponent', () => {
 
@@ -9,7 +31,7 @@ describe ('IndicatorsComponent', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (JestWithStyledComponents (<IndicatorsComponent/>))
+            const { container } = render ()
 
             expect (container).toBeInTheDocument ()
         
@@ -17,7 +39,7 @@ describe ('IndicatorsComponent', () => {
 
         it ('should be visible', () => {
 
-            const { container } = render (JestWithStyledComponents (<IndicatorsComponent/>))
+            const { container } = render ()
 
             expect (container).toBeVisible ()
 
@@ -25,7 +47,7 @@ describe ('IndicatorsComponent', () => {
 
         it ('should not be empty', () => {
 
-            const { container } = render (JestWithStyledComponents (<IndicatorsComponent/>))
+            const { container } = render ()
 
             expect (container).not.toBeEmptyDOMElement ()
 
@@ -39,21 +61,17 @@ describe ('IndicatorsComponent', () => {
 
             it ('should be visible', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { percentage } = render ()
 
-                const title = screen.getByRole ('heading', { 'name': 'percentage' })
-
-                expect (title).toBeVisible ()
+                expect (percentage.title).toBeVisible ()
 
             })
 
             it ('should display percent', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { percentage } = render ()
 
-                const title = screen.getByRole ('heading', { 'name': 'percentage' })
-
-                expect (title).toHaveTextContent ('percent')
+                expect (percentage.title).toHaveTextContent ('percent')
 
             })
 
@@ -63,21 +81,17 @@ describe ('IndicatorsComponent', () => {
 
             it ('should be disabled', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { percentage } = render ()
 
-                const value = screen.getByRole ('textbox', { 'name': 'percentage' })
-
-                expect (value).toBeDisabled ()
+                expect (percentage.value).toBeDisabled ()
             
             })
 
             it ('should display 0.0 %', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { percentage } = render ()
 
-                const value = screen.getByRole ('textbox', { 'name': 'percentage' })
-
-                expect (value).toHaveValue ('0.0 %')
+                expect (percentage.value).toHaveValue ('0.0 %')
 
             })
 
@@ -91,21 +105,17 @@ describe ('IndicatorsComponent', () => {
 
             it ('should be visible', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { semitones } = render ()
 
-                const title = screen.getByRole ('heading', { 'name': 'semitones' })
-
-                expect (title).toBeVisible ()
+                expect (semitones.title).toBeVisible ()
 
             })
 
             it ('should display percent', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { semitones } = render ()
 
-                const title = screen.getByRole ('heading', { 'name': 'semitones' })
-
-                expect (title).toHaveTextContent ('semitone')
+                expect (semitones.title).toHaveTextContent ('semitone')
 
             })
 
@@ -115,21 +125,17 @@ describe ('IndicatorsComponent', () => {
 
             it ('should be disabled', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { semitones } = render ()
 
-                const value = screen.getByRole ('textbox', { 'name': 'semitones' })
-
-                expect (value).toBeDisabled ()
+                expect (semitones.value).toBeDisabled ()
 
             })
 
             it ('should display 0.0 st', () => {
 
-                render (JestWithStyledComponents (<IndicatorsComponent/>))
+                const { semitones } = render ()
 
-                const value = screen.getByRole ('textbox', { 'name': 'semitones' })
-
-                expect (value).toHaveValue ('0.0 st')
+                expect (semitones.value).toHaveValue ('0.0 st')
             
             })
 

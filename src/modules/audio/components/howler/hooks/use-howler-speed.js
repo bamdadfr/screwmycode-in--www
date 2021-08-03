@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import ReactHowler from 'react-howler'
 import { useStore } from '../../../../../store'
 
 /**
@@ -11,7 +12,7 @@ export function useHowlerSpeed (howler) {
 
     useEffect (() => {
 
-        if (howler === null) return
+        if (!(howler instanceof ReactHowler)) return
 
         howler.rate (speed)
     

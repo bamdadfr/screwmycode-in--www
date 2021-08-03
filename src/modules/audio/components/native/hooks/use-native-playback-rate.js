@@ -10,7 +10,7 @@ export function useNativePlaybackRate (audio) {
 
     useEffect (() => {
 
-        if (audio === null) return
+        if (!(audio instanceof HTMLAudioElement)) return
 
         audio.playbackRate = speed
     

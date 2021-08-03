@@ -20,17 +20,15 @@ export function useNativeLoad (audio, url) {
 
     const handleMetadata = useCallback (() => {
 
-        if (audio !== null) {
+        if (!(audio instanceof HTMLAudioElement)) return
 
-            setDuration (audio.duration)
-        
-        }
+        setDuration (audio.duration)
 
     }, [audio, setDuration])
 
     useEffect (() => {
 
-        if (audio === null) return
+        if (!(audio instanceof HTMLAudioElement)) return
 
         if (url === savedUrl) return
 

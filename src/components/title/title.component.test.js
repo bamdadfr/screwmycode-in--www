@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { TitleComponent } from './title.component'
 
-describe ('MetaComponent', () => {
+describe ('TitleComponent', () => {
 
     describe ('container', () => {
 

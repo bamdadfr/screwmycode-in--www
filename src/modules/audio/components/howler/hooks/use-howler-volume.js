@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import ReactHowler from 'react-howler'
 import { useStore } from '../../../../../store'
 
 /**
@@ -6,12 +7,12 @@ import { useStore } from '../../../../../store'
  * @returns {number} volume
  */
 export function useHowlerVolume (howler) {
-
+    
     const volume = useStore ((state) => state.volume)
 
     useEffect (() => {
 
-        if (howler === null) return
+        if (!(howler instanceof ReactHowler)) return
 
         howler.volume (volume)
     

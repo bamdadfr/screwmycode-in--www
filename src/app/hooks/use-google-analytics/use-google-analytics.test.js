@@ -1,38 +1,30 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useGoogleAnalytics } from './use-google-analytics'
 
-const MOCK_EVENTS_ON = jest.fn ((event, listener) => ({
-    event,
-    listener,
+const MOCK_EVENTS_ON = jest.fn ((eventType, listenerFunction) => ({
+    eventType,
+    listenerFunction,
 }))
 
-const MOCK_EVENTS_OFF = jest.fn ((event, listener) => ({
-    event,
-    listener,
+const MOCK_EVENTS_OFF = jest.fn ((eventType, listenerFunction) => ({
+    eventType,
+    listenerFunction,
 }))
 
 jest.mock ('next/router', () => ({
-    useRouter () {
-
-        return {
-            'route': '/',
-            'pathname': '',
-            'query': '',
-            'asPath': '',
-            'events': {
-                'on': MOCK_EVENTS_ON,
-                'off': MOCK_EVENTS_OFF,
-            },
-        }
-
-    },
+    'useRouter': () => ({
+        'route': '/',
+        'pathname': '',
+        'query': '',
+        'asPath': '',
+        'events': {
+            'on': MOCK_EVENTS_ON,
+            'off': MOCK_EVENTS_OFF,
+        },
+    }),
 }))
 
-afterEach (() => {
-
-    jest.resetAllMocks ()
-
-})
+afterEach (() => jest.resetAllMocks ())
 
 describe ('useGoogleAnalytics', () => {
 
@@ -48,34 +40,38 @@ describe ('useGoogleAnalytics', () => {
     
     })
 
-    describe ('routeChangeComplete event', () => {
+    describe ('events', () => {
 
-        it ('should mount function', () => {
+        describe ('routeChangeComplete', () => {
 
-            renderHook (() => useGoogleAnalytics ())
+            it ('should mount correctly', () => {
 
-            expect (MOCK_EVENTS_ON).toHaveBeenCalledTimes (1)
+                renderHook (() => useGoogleAnalytics ())
 
-            expect (MOCK_EVENTS_ON.mock.calls[0][0]).toEqual ('routeChangeComplete')
+                expect (MOCK_EVENTS_ON).toHaveBeenCalledTimes (1)
 
-            expect (typeof MOCK_EVENTS_ON.mock.calls[0][1]).toEqual ('function')
+                expect (MOCK_EVENTS_ON.mock.calls[0][0]).toEqual ('routeChangeComplete')
+
+                expect (typeof MOCK_EVENTS_ON.mock.calls[0][1]).toEqual ('function')
+
+            })
+
+            it ('should unmount corectly', () => {
+
+                const { unmount } = renderHook (() => useGoogleAnalytics ())
+
+                unmount ()
+
+                expect (MOCK_EVENTS_OFF).toHaveBeenCalledTimes (1)
+
+                expect (MOCK_EVENTS_OFF.mock.calls[0][0]).toEqual ('routeChangeComplete')
+
+                expect (typeof MOCK_EVENTS_OFF.mock.calls[0][1]).toEqual ('function')
+
+            })
 
         })
-
-        it ('should unmount function', () => {
-
-            const { unmount } = renderHook (() => useGoogleAnalytics ())
-
-            unmount ()
-
-            expect (MOCK_EVENTS_OFF).toHaveBeenCalledTimes (1)
-
-            expect (MOCK_EVENTS_OFF.mock.calls[0][0]).toEqual ('routeChangeComplete')
-
-            expect (typeof MOCK_EVENTS_OFF.mock.calls[0][1]).toEqual ('function')
-
-        })
-
+    
     })
 
 })

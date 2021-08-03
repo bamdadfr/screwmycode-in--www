@@ -1,14 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import IndexPage from '../pages'
-import { WithStyledComponents } from '../app/components'
+import { HowlerComponent } from './howler.component'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <WithStyledComponents>
-            <IndexPage/>
-        </WithStyledComponents>,
+        <HowlerComponent/>,
     )
 
     return {
@@ -17,11 +14,11 @@ const render = () => {
 
 }
 
-describe ('NotFoundPage', () => {
+describe ('HowlerComponent', () => {
 
     describe ('container', () => {
 
-        it ('should be in the document, visible and not empty', () => {
+        it ('should be in the document, visible and empty', () => {
 
             const { container } = render ()
 
@@ -29,7 +26,7 @@ describe ('NotFoundPage', () => {
 
             expect (container).toBeVisible ()
 
-            expect (container).not.toBeEmptyDOMElement ()
+            expect (container).toBeEmptyDOMElement ()
         
         })
     

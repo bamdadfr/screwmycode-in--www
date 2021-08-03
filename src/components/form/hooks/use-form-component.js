@@ -1,9 +1,8 @@
 import { useCallback } from 'react'
-import SoundcloudScraper from 'soundcloud-scraper'
-import ytdl from 'ytdl-core'
 import { useRouter } from 'next/router'
 import { useInput } from './use-input'
 import { useInputRefocus } from './use-input-refocus'
+import { validateForm } from '../utils'
 
 /**
  * @typedef {useInput} Link
@@ -17,36 +16,16 @@ export function useFormComponent () {
 
     useInputRefocus (link.ref)
 
-    const handleSubmit = useCallback (async (e) => {
+    const handleSubmit = useCallback (async (event) => {
 
-        e.preventDefault ()
+        event.preventDefault ()
 
-        try {
+        const { isValid, path } = validateForm (link.value)
 
-            // soundcloud
-            if (SoundcloudScraper.Util.validateURL (link.value)) {
+        if (!isValid) return link.resetValue ()
 
-                const userAndId = link.value.replace ('https://soundcloud.com/', '')
-                const path = `/soundcloud/${userAndId}/1`
-
-                await router.push (path)
-
-                return
-
-            }
-
-            // youtube
-            const id = ytdl.getURLVideoID (link.value)
-            const path = `/youtube/${id}/1`
-
-            await router.push (path)
-
-        } catch {
-
-            link.resetValue ()
-
-        }
-
+        await router.push (path)
+    
     }, [link, router])
 
     return {

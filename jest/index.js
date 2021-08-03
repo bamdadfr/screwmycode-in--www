@@ -1,1 +1,0 @@
-export { JestWithStyledComponents } from './jest-with-styled-components'
