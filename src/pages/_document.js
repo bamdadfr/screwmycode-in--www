@@ -4,7 +4,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { GA_TRACKING_ID } from '../app/hooks/use-google-analytics.constants'
+import { GA_TRACKING_ID } from '../app/hooks/use-google-analytics/use-google-analytics.constants'
 
 export default class MyDocument extends Document {
 

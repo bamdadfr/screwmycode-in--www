@@ -13,9 +13,12 @@ export function VolumeButtonComponent () {
     const volume = useStore ((state) => state.volume)
     const isMuted = useStore ((state) => state.isMuted)
 
+    // todo bind click action
     return (
         <>
-            <Button>
+            <Button
+                aria-label="volume"
+            >
                 {volume === 0 || isMuted
                     ? <Icon icon={volumeOff}/>
                     : <Icon icon={volumeHigh}/>

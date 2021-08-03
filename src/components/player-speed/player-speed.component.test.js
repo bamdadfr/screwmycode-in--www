@@ -1,8 +1,21 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render as defaultRender, screen } from '@testing-library/react'
 import { PlayerSpeedComponent } from './player-speed.component'
 import { JestWithStyledComponents } from '../../../jest'
 import { MOCK_STATE } from './player-speed.component.mock'
+
+const render = () => {
+
+    const { container } = defaultRender (JestWithStyledComponents (<PlayerSpeedComponent/>))
+
+    return {
+        container,
+        'slider': screen.getByRole ('slider'),
+    }
+
+}
+
+afterEach (() => jest.resetAllMocks ())
 
 describe ('PlayerSpeedComponent', () => {
 
@@ -10,7 +23,7 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
+            const { container } = render ()
 
             expect (container).toBeInTheDocument ()
 
@@ -18,7 +31,7 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should be visible', () => {
 
-            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
+            const { container } = render ()
 
             expect (container).toBeVisible ()
 
@@ -26,7 +39,7 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should not be empty', () => {
 
-            const { container } = render (JestWithStyledComponents (<PlayerSpeedComponent/>))
+            const { container } = render ()
 
             expect (container).not.toBeEmptyDOMElement ()
 
@@ -38,19 +51,15 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should be enabled', () => {
 
-            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
-
-            const slider = screen.getByRole ('slider')
+            const { slider } = render ()
 
             expect (slider).toBeEnabled ()
-        
+
         })
 
         it ('should have a default value of 1', () => {
 
-            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
-
-            const slider = screen.getByRole ('slider')
+            const { slider } = render ()
 
             expect (slider).toHaveValue ('1')
 
@@ -58,9 +67,7 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should have a minimum value of 0.5', () => {
 
-            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
-
-            const slider = screen.getByRole ('slider')
+            const { slider } = render ()
 
             fireEvent.change (slider, {
                 'target': {
@@ -74,9 +81,7 @@ describe ('PlayerSpeedComponent', () => {
 
         it ('should have a maximmum value of 1.5', () => {
 
-            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
-
-            const slider = screen.getByRole ('slider')
+            const { slider } = render ()
 
             fireEvent.change (slider, {
                 'target': {
@@ -92,10 +97,7 @@ describe ('PlayerSpeedComponent', () => {
 
             // given
             const { onChange } = MOCK_STATE ()
-
-            render (JestWithStyledComponents (<PlayerSpeedComponent/>))
-
-            const slider = screen.getByRole ('slider')
+            const { slider } = render ()
 
             expect (onChange).toHaveBeenCalledTimes (0)
 

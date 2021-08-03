@@ -14,6 +14,7 @@ export function SeekComponent () {
     return (
         <>
             <SliderComponent
+                name="seek slider"
                 min={0}
                 max={duration}
                 step={1}

@@ -1,0 +1,1 @@
+export { useGoogleAnalytics } from './use-google-analytics'

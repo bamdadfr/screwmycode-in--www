@@ -22,6 +22,7 @@
         "test:coverage": "jest --coverage && codecov",
         "test:experimental": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
         "test:watch": "jest --watch",
+        "test:watch:coverage": "jest --watch --coverage",
         "test:watch:all": "jest --watchAll"
     },
     "dependencies": {

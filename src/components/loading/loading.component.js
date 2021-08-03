@@ -15,6 +15,7 @@ export function LoadingComponent () {
                 <ImageContainer>
                     <Image
                         src="/icons/SCRW_CHAMP.svg"
+                        alt="filling glass"
                         layout="fill"
                         objectFit="contain"
                     />

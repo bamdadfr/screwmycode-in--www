@@ -4,7 +4,8 @@
  * @type {object}
  */
 export const Theme = {
-    'primary': '#808386',
+    // 'primary': '#808386',
+    'primary': '#8c8f92',
     'highlight': '#63BCF8',
     'background': {
         'primary': '#242930',
@@ -16,7 +17,4 @@ export const Theme = {
     'shadow': {
         'opacity': 'rgba(0, 0, 0, 0.25)',
     },
-    // new theme
-    'blue': '#63BCF8',
-    'grey': '#444',
 }

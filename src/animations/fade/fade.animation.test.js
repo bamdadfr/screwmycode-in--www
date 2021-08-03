@@ -38,7 +38,7 @@ describe ('FadeAnimation', () => {
 
         describe ('delay', () => {
 
-            it ('should render when missing', () => {
+            it ('should render if missing', () => {
 
                 const { container } = render (<FadeAnimation><Children/></FadeAnimation>)
 
@@ -46,7 +46,7 @@ describe ('FadeAnimation', () => {
             
             })
 
-            it ('should render when given a number of 2000', () => {
+            it ('should render if 2000', () => {
 
                 const { container } = render (<FadeAnimation delay={2000}><Children/></FadeAnimation>)
 

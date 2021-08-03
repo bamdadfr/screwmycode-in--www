@@ -1,6 +1,17 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render as defaultRender, screen } from '@testing-library/react'
 import { HeaderComponent } from './header.component'
+
+const render = () => {
+
+    const { container } = defaultRender (<HeaderComponent/>)
+
+    return {
+        container,
+        'home': screen.getByRole ('button', { 'name': 'home' }),
+    }
+
+}
 
 describe ('HeaderComponent', () => {
 
@@ -8,7 +19,7 @@ describe ('HeaderComponent', () => {
 
         it ('should be in the document', () => {
 
-            const { container } = render (<HeaderComponent/>)
+            const { container } = render ()
 
             expect (container).toBeInTheDocument ()
         
@@ -16,7 +27,7 @@ describe ('HeaderComponent', () => {
     
         it ('should be visible', () => {
 
-            const { container } = render (<HeaderComponent/>)
+            const { container } = render ()
 
             expect (container).toBeVisible ()
 
@@ -24,7 +35,7 @@ describe ('HeaderComponent', () => {
 
         it ('should not be empty', () => {
 
-            const { container } = render (<HeaderComponent/>)
+            const { container } = render ()
 
             expect (container).not.toBeEmptyDOMElement ()
 
@@ -36,21 +47,25 @@ describe ('HeaderComponent', () => {
 
         it ('should be in the document', () => {
 
-            render (<HeaderComponent/>)
-
-            const home = screen.getByRole ('button', { 'name': 'home' })
+            const { home } = render ()
 
             expect (home).toBeInTheDocument ()
-        
+
         })
 
         it ('should be visible', () => {
 
-            render (<HeaderComponent/>)
-
-            const home = screen.getByRole ('button', { 'name': 'home' })
+            const { home } = render ()
 
             expect (home).toBeVisible ()
+
+        })
+
+        it ('should be an instance of HTMlButtonElement', () => {
+
+            const { home } = render ()
+
+            expect (home instanceof HTMLButtonElement).toBe (true)
 
         })
 

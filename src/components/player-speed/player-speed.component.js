@@ -14,6 +14,7 @@ export function PlayerSpeedComponent () {
         <>
             <Container>
                 <SliderComponent
+                    name="speed slider"
                     min={0.5}
                     max={1.5}
                     step={0.005}

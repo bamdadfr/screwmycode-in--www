@@ -3,12 +3,14 @@ import { Breakpoints } from '../../app/styles'
 
 export const Container = styled.div`
     position: fixed;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
 
     color: ${(props) => props.theme.primary};
     background: ${(props) => props.theme.background.primary};
@@ -19,11 +21,12 @@ export const Wrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
-    height: 16em;
+    
+    height: 100%;
+    
     text-align: center;
     font-size: 1.1em;
-    
+
     @media screen and (max-width: ${Breakpoints.mobile}px) {
         width: 90vw;
     }

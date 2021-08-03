@@ -6,8 +6,6 @@ const config = {
     'trackH': '0.5em',
     'thumbD': '1.5em',
     'thumbDV': 1.5,
-    'trackC': '#ccc',
-    'filllC': '#95a',
 }
 
 const track = css`
@@ -70,7 +68,7 @@ export const Input = styled.input.attrs ((props) => ({
         ${track};
         --sx: calc(.5 * ${config.thumbD} + var(--ratio) * (100% - ${config.thumbD}));
         background: linear-gradient(${(props) => props.theme.highlight}, ${(props) => props.theme.highlight})
-            0/ var(--sx) 100% no-repeat ${(props) => props.theme.grey};
+            0/ var(--sx) 100% no-repeat ${(props) => props.theme.background.highlight};
     }
 
     &::-moz-range-track {

@@ -17,6 +17,9 @@ module.exports = {
         '<rootDir>/.next/',
         '<rootDir>/src/.*/__mocks__',
     ],
-    'collectCoverage': true,
+    // 'collectCoverage': true,
     'coverageDirectory': './coverage/',
+    'collectCoverageFrom': [
+        '<rootDir>/src/**/*.js',
+    ],
 }

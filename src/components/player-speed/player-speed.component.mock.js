@@ -1,7 +1,5 @@
 import * as usePlayerSpeedComponent from './hooks/use-player-speed-component'
 
-const SPY = jest.spyOn (usePlayerSpeedComponent, 'usePlayerSpeedComponent')
-
 export const MOCK_STATE = () => {
 
     const response = {
@@ -9,7 +7,9 @@ export const MOCK_STATE = () => {
         'onChange': jest.fn (),
     }
 
-    SPY.mockReturnValue (response)
+    jest
+        .spyOn (usePlayerSpeedComponent, 'usePlayerSpeedComponent')
+        .mockReturnValue (response)
 
     return response
 
