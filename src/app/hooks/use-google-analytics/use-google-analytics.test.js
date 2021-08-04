@@ -1,28 +1,10 @@
+/* eslint-disable */
 import { renderHook } from '@testing-library/react-hooks'
 import { useGoogleAnalytics } from './use-google-analytics'
+import { useRouter } from '../../../../__mocks__/next-router'
 
-const MOCK_EVENTS_ON = jest.fn ((eventType, listenerFunction) => ({
-    eventType,
-    listenerFunction,
-}))
-
-const MOCK_EVENTS_OFF = jest.fn ((eventType, listenerFunction) => ({
-    eventType,
-    listenerFunction,
-}))
-
-jest.mock ('next/router', () => ({
-    'useRouter': () => ({
-        'route': '/',
-        'pathname': '',
-        'query': '',
-        'asPath': '',
-        'events': {
-            'on': MOCK_EVENTS_ON,
-            'off': MOCK_EVENTS_OFF,
-        },
-    }),
-}))
+const MOCK_EVENTS_ON = useRouter ().events.on
+const MOCK_EVENTS_OFF = useRouter ().events.off
 
 afterEach (() => jest.resetAllMocks ())
 
