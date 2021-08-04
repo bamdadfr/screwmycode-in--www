@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { renderHook } from '@testing-library/react-hooks'
 import { useGoogleAnalytics } from './use-google-analytics'
 import { useRouter } from '../../../../__mocks__/next-router'
