@@ -1,3 +1,10 @@
+## [1.22.13](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.12...v1.22.13) (2021-08-04)
+
+
+### Performance Improvements
+
+* add mocks for `next/head` and `next/router` + remove `jest-transform-stub` from deps ([27721c8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/27721c8bfd72d1ab11fac23d1a392a65ea147540))
+
 ## [1.22.12](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.11...v1.22.12) (2021-08-03)
 
 
