@@ -3,11 +3,6 @@ import { cleanup, render } from '@testing-library/react'
 import { MetaComponent } from './meta.component'
 import { MetaConstants } from './meta.constants'
 
-jest.mock ('next/head', () => ({
-    '__esModule': true,
-    'default': ({ children }) => <>{children}</>,
-}))
-
 afterEach (cleanup)
 
 describe ('MetaComponent', () => {
