@@ -1,3 +1,10 @@
+## [1.22.14](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.13...v1.22.14) (2021-08-04)
+
+
+### Performance Improvements
+
+* **tests:** silence jsdom errors ([f53ab8a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f53ab8a6490b2b636649c8b99ab24c694dfefcca))
+
 ## [1.22.13](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.12...v1.22.13) (2021-08-04)
 
 
