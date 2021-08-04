@@ -4,7 +4,7 @@ export const MOCK_AUDIO = document.createElement ('audio')
 
 export const SPY_AUDIO = {
     'play': jest.spyOn (MOCK_AUDIO, 'play'),
-    'pause': jest.spyOn (MOCK_AUDIO, 'pause'),
+    'pause': jest.spyOn (MOCK_AUDIO, 'pause').mockImplementation (),
     'addEventListener': jest
         .spyOn (MOCK_AUDIO, 'addEventListener')
         .mockReturnValue ((eventType, listenerFunction) => ({

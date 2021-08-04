@@ -1,5 +1,4 @@
 import * as useFormComponent from './hooks/use-form-component'
-import { validateForm } from './utils'
 
 export const MOCK_STATE = () => {
 
@@ -10,11 +9,7 @@ export const MOCK_STATE = () => {
             'onChange': jest.fn (),
             'resetValue': jest.fn (),
         },
-        'handleSubmit': jest.fn ((value) => {
-
-            validateForm (value)
-        
-        }),
+        'handleSubmit': jest.fn ((e) => e.preventDefault ()),
     }
 
     jest

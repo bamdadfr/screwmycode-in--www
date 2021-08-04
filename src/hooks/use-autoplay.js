@@ -17,17 +17,12 @@ export function useAutoplay () {
                 .then ((module) => module.default.video ())
                 .then (({ result }) => {
 
-                    if (result === true) {
+                    if (result === true) return setAutoplay (true)
 
-                        setAutoplay (true)
-
-                    } else {
-
-                        setAutoplay (false)
-
-                    }
+                    setAutoplay (false)
 
                 })
+                .catch (() => setAutoplay (false))
 
         }) ()
 
