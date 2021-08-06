@@ -1,4 +1,3 @@
-import SoundcloudScraper from 'soundcloud-scraper'
 import { PlayerLayout } from '../../../../layouts/player/player.layout'
 
 /**
@@ -18,6 +17,7 @@ export async function getServerSideProps (context) {
 
     const { user, id, speed } = context.query
     const props = {}
+    const SoundcloudScraper = (await import ('soundcloud-scraper')).default
     const scraper = new SoundcloudScraper.Client ()
     const soundcloudUrl = `https://soundcloud.com/${user}/${id}`
     const isValid = SoundcloudScraper.Util.validateURL (soundcloudUrl)

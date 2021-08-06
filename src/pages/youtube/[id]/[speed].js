@@ -1,5 +1,4 @@
 import axios from 'axios'
-import ytdl from 'ytdl-core'
 import { getYoutubeThumbnail } from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail'
 import { PlayerLayout } from '../../../layouts/player/player.layout'
 
@@ -21,6 +20,7 @@ export async function getServerSideProps (context) {
     const { id, speed } = context.params
     const props = {}
     const redirect = { 'redirect': { 'destination': '/', 'permanent': false }}
+    const ytdl = (await import ('ytdl-core')).default
     const isValid = ytdl.validateID (id)
 
     if (!isValid) return redirect
