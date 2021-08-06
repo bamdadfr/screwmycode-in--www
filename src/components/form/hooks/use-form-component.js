@@ -20,7 +20,7 @@ export function useFormComponent () {
 
         event.preventDefault ()
 
-        const { isValid, path } = validateForm (link.value)
+        const { isValid, path } = await validateForm (link.value)
 
         if (!isValid) return link.resetValue ()
 

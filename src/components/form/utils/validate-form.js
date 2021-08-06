@@ -1,13 +1,10 @@
-import { validateURL } from 'soundcloud-scraper'
-import { getURLVideoID } from 'ytdl-core'
-
 /**
  * @param {string} value form input value
  * @typedef {(boolean|undefined)} IsValid
  * @typedef {(string|undefined)} Path
  * @returns {{IsValid,Path}} validation data
  */
-export function validateForm (value) {
+export async function validateForm (value) {
 
     const response = {
         'isValid': undefined,
@@ -17,7 +14,9 @@ export function validateForm (value) {
     try {
 
         // soundcloud
-        if (validateURL (value)) {
+        const isSoundcloud = (await import ('soundcloud-scraper')).validateURL
+
+        if (isSoundcloud (value)) {
 
             const userAndId = value.replace ('https://soundcloud.com/', '')
 
@@ -30,7 +29,8 @@ export function validateForm (value) {
         }
 
         // youtube
-        const id = getURLVideoID (value)
+        const ytdl = (await import ('ytdl-core')).default
+        const id = ytdl.getURLVideoID (value)
 
         response.isValid = true
 
