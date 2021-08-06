@@ -1,3 +1,11 @@
+## [1.23.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.0...v1.23.1) (2021-08-06)
+
+
+### Performance Improvements
+
+* **FormComponent:** dynamic imports for soundcloud and youtube libraries ([5907a3e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5907a3e9d82198c13cfaaed555426a44690cd828))
+* **PlayerPages:** dynamic imports for soundcloud and youtube libraries (SSR) ([c7c869a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c7c869a5d05bbe7b8ae7f33e2851b169d3493009))
+
 # [1.23.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.14...v1.23.0) (2021-08-06)
 
 
