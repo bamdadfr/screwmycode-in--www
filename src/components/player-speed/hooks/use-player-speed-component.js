@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useStore } from '../../../store'
+import { useStore } from '../../../store/use-store'
 
 /**
  * @returns {{number, Function}} slider attributes

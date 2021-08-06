@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import pause from '@iconify/icons-mdi/pause'
 import play from '@iconify/icons-mdi/play'
 import { Button } from '../../player.module.styles'
-import { useStore } from '../../../../store'
+import { useStore } from '../../../../store/use-store'
 
 /**
  * @returns {React.ReactElement} react component

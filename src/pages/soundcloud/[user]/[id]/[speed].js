@@ -1,7 +1,5 @@
-// noinspection JSUnusedGlobalSymbols
-
 import SoundcloudScraper from 'soundcloud-scraper'
-import { PlayerLayout } from '../../../../layouts'
+import { PlayerLayout } from '../../../../layouts/player/player.layout'
 
 /**
  * @description /soundcloud/[user]/[id]/[speed]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './time.component.styles'
-import { calculateMinutes } from '../../../../utils'
-import { useStore } from '../../../../store'
+import { calculateMinutes } from '../../../../utils/calculate-minutes/calculate-minutes'
+import { useStore } from '../../../../store/use-store'
 
 /**
  * @returns {React.ReactElement} react component

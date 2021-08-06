@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './indicators.component.styles'
-import { useIndicatorsComponent } from './hooks'
-import { IndicatorComponent } from './components'
+import { useIndicatorsComponent } from './hooks/use-indicators-component'
+import { IndicatorComponent } from './components/indicator/indicator.component'
 
 /**
  * @returns {React.ReactElement} react element

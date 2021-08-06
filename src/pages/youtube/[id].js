@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import React from 'react'
 
 /**

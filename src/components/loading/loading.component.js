@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { Container, ImageContainer, TextContainer, TextLink } from './loading.component.styles'
-import { DotsComponent } from './components'
-import { FadeAnimation } from '../../animations'
+import { DotsComponent } from './components/dots/dots.component'
+import { FadeAnimation } from '../../animations/fade/fade.animation'
 
 /**
  * @returns {React.ReactElement} react component

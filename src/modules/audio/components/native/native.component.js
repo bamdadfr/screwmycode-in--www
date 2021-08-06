@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useNativeComponent } from './hooks'
+import { useNativeComponent } from './hooks/use-native-component'
 
 const propTypes = {
     'url': PropTypes.string.isRequired,

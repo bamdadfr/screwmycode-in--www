@@ -3,7 +3,7 @@ import { render as defaultRender, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { FormComponent } from './form.component'
 import { MOCK_STATE } from './form.component.test.mock'
-import { WithStyledComponents } from '../../app/components'
+import { WithStyledComponents } from '../../app/components/with-styled-components/with-styled-components'
 
 const render = () => {
 

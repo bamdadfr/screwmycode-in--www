@@ -1,1 +1,0 @@
-export { VolumeSliderComponent } from './volume-slider.component'

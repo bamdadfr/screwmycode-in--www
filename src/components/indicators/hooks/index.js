@@ -1,1 +1,0 @@
-export { useIndicatorsComponent } from './use-indicators-component'

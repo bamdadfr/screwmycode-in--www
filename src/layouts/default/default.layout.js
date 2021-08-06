@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { HeaderComponent, MetaComponent, TitleComponent } from '../../components'
+import { HeaderComponent } from '../../components/header/header.component'
+import { MetaComponent } from '../../components/meta/meta.component'
+import { TitleComponent } from '../../components/title/title.component'
 import { Wrapper, Container } from './default.layout.styles'
 
 const propTypes = {

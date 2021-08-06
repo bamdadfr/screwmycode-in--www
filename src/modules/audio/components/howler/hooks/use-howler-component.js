@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 import { useHowlerDuration } from './use-howler-duration'
 import { useHowlerSpeed } from './use-howler-speed'
 import { useHowlerVolume } from './use-howler-volume'

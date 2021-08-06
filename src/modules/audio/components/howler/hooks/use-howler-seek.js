@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)

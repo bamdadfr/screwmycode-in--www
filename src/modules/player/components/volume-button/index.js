@@ -1,1 +1,0 @@
-export { VolumeButtonComponent } from './volume-button.component'

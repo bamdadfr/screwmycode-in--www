@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStore } from '../../../../store'
+import { useStore } from '../../../../store/use-store'
 import { H2 } from './title.component.styles'
 
 /**

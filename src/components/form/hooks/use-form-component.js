@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { useInput } from './use-input'
 import { useInputRefocus } from './use-input-refocus'
-import { validateForm } from '../utils'
+import { validateForm } from '../utils/validate-form'
 
 /**
  * @typedef {useInput} Link
