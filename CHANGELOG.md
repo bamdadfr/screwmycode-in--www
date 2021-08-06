@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.14...v1.23.0) (2021-08-06)
+
+
+### Features
+
+* remove all barrel exports ([9f352f8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9f352f8ebbc29b8f7214645188dca66d350c7a29))
+
 ## [1.22.14](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.22.13...v1.22.14) (2021-08-04)
 
 
