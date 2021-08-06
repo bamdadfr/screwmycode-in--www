@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 
 /**
  * @param {HTMLAudioElement} audio element

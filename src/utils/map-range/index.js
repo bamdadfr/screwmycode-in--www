@@ -1,1 +1,0 @@
-export { mapRange } from './map-range'

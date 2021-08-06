@@ -1,1 +1,0 @@
-export { getYoutubeThumbnail } from './get-youtube-thumbnail'

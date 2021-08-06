@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useInterval } from '../../../../hooks'
+import { useInterval } from '../../../../hooks/use-interval'
 
 /**
  * @param {object} props react props

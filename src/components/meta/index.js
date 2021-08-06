@@ -1,1 +1,0 @@
-export { MetaComponent } from './meta.component'

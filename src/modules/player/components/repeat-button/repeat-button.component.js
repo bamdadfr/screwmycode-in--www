@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import repeat from '@iconify/icons-mdi/repeat'
 import repeatOff from '@iconify/icons-mdi/repeat-off'
 import { Button } from '../../player.module.styles'
-import { useStore } from '../../../../store'
+import { useStore } from '../../../../store/use-store'
 
 /**
  * @returns {React.ReactElement} react component

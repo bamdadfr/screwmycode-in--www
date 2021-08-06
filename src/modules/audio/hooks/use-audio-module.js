@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../../../store'
-import { replaceNextRoute } from '../utils'
+import { useStore } from '../../../store/use-store'
+import { replaceNextRoute } from '../utils/replace-next-route'
 import { useCache } from './use-cache'
 import { useKeyboardToggle } from './use-keyboard-toggle'
 

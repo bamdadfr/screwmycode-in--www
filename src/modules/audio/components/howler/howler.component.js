@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ReactHowler from 'react-howler'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { getUrlWithProxy } from '../../../../utils'
-import { useHowlerComponent } from './hooks'
+import { getUrlWithProxy } from '../../../../utils/get-url-with-proxy/get-url-with-proxy'
+import { useHowlerComponent } from './hooks/use-howler-component'
 
 /**
  * @param {object} props react props

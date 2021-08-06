@@ -1,5 +1,5 @@
-import SoundcloudScraper from 'soundcloud-scraper'
-import ytdl from 'ytdl-core'
+import { validateURL } from 'soundcloud-scraper'
+import { getURLVideoID } from 'ytdl-core'
 
 /**
  * @param {string} value form input value
@@ -17,7 +17,7 @@ export function validateForm (value) {
     try {
 
         // soundcloud
-        if (SoundcloudScraper.Util.validateURL (value)) {
+        if (validateURL (value)) {
 
             const userAndId = value.replace ('https://soundcloud.com/', '')
 
@@ -30,7 +30,7 @@ export function validateForm (value) {
         }
 
         // youtube
-        const id = ytdl.getURLVideoID (value)
+        const id = getURLVideoID (value)
 
         response.isValid = true
 
@@ -47,4 +47,3 @@ export function validateForm (value) {
     }
 
 }
-

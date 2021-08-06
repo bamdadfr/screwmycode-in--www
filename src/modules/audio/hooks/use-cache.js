@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useInterval } from '../../../hooks'
+import { useInterval } from '../../../hooks/use-interval'
 
 /**
  * @description cache a value and refresh it on a given interval

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render as defaultRender, screen } from '@testing-library/react'
 import { IndicatorsComponent } from './indicators.component'
-import { WithStyledComponents } from '../../app/components'
+import { WithStyledComponents } from '../../app/components/with-styled-components/with-styled-components'
 
 const render = () => {
 

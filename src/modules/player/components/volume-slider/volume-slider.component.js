@@ -1,6 +1,6 @@
 import React from 'react'
-import { SliderComponent } from '../../../../components'
-import { useStore } from '../../../../store'
+import { SliderComponent } from '../../../../components/slider/slider.component'
+import { useStore } from '../../../../store/use-store'
 
 /**
  * @returns {React.ReactElement} react component

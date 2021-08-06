@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, render as defaultRender, screen } from '@testing-library/react'
 import { PlayerSpeedComponent } from './player-speed.component'
-import { WithStyledComponents } from '../../app/components'
+import { WithStyledComponents } from '../../app/components/with-styled-components/with-styled-components'
 import { MOCK_STATE } from './player-speed.component.test.mock'
 
 const render = () => {

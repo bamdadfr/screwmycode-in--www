@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { isFirefox } from 'react-device-detect'
-import { NativeComponent, HowlerComponent } from './components'
-import { useAudioModule } from './hooks'
+import { NativeComponent } from './components/native/native.component'
+import { HowlerComponent } from './components/howler/howler.component'
+import { useAudioModule } from './hooks/use-audio-module'
 import { Invisible } from './audio.module.styles'
 
 const propTypes = {

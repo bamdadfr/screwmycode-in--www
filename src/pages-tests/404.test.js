@@ -1,7 +1,7 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import NotFoundPage from '../pages/404'
-import { WithStyledComponents } from '../app/components'
+import { WithStyledComponents } from '../app/components/with-styled-components/with-styled-components'
 
 const render = () => {
 

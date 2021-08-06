@@ -1,1 +1,0 @@
-export { useNativeComponent } from './use-native-component'

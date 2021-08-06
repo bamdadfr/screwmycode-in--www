@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './player-speed.component.styles'
-import { usePlayerSpeedComponent } from './hooks'
-import { SliderComponent } from '../slider'
+import { usePlayerSpeedComponent } from './hooks/use-player-speed-component'
+import { SliderComponent } from '../slider/slider.component'
 
 /**
  * @returns {React.ReactElement} react component

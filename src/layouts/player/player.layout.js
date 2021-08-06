@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import {
-    IndicatorsComponent,
-    LoadingComponent,
-    MetaComponent,
-    PlayerSpeedComponent,
-} from '../../components'
-import { DefaultLayout } from '../default'
-import { AudioModule, PlayerModule } from '../../modules'
-import { useStore } from '../../store'
+import { IndicatorsComponent } from '../../components/indicators/indicators.component'
+import { LoadingComponent } from '../../components/loading/loading.component'
+import { MetaComponent } from '../../components/meta/meta.component'
+import { PlayerSpeedComponent } from '../../components/player-speed/player-speed.component'
+import { DefaultLayout } from '../default/default.layout'
+import { AudioModule } from '../../modules/audio/audio.module'
+import { PlayerModule } from '../../modules/player/player.module'
+import { useStore } from '../../store/use-store'
 
 const propTypes = {
     'title': PropTypes.string.isRequired,

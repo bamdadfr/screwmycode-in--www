@@ -1,9 +1,7 @@
-// noinspection JSUnusedGlobalSymbols
-
 import axios from 'axios'
 import ytdl from 'ytdl-core'
-import { getYoutubeThumbnail } from '../../../utils'
-import { PlayerLayout } from '../../../layouts'
+import { getYoutubeThumbnail } from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail'
+import { PlayerLayout } from '../../../layouts/player/player.layout'
 
 /**
  * @description /youtube/[id]/[speed]

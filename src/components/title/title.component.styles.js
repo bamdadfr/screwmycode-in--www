@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Breakpoints } from '../../app/styles'
+import { Breakpoints } from '../../app/styles/breakpoints'
 
 export const Title = styled.h1`
     display: flex;

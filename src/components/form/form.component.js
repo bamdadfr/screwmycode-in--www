@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Form, Input, Submit, ImageContainer } from './form.component.styles'
-import { useFormComponent } from './hooks'
+import { useFormComponent } from './hooks/use-form-component'
 
 /**
  * @returns {React.ReactElement} react component
