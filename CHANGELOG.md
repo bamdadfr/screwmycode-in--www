@@ -1,3 +1,11 @@
+## [1.23.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.1...v1.23.2) (2021-08-06)
+
+
+### Performance Improvements
+
+* **deps:** update .eslintrc.js ([187a2b8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/187a2b8c625e23afa820cf984f005848b033ebe2))
+* **deps:** update to latest dependencies ([6fbe7b7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6fbe7b70a563b9f141dda915697cd2cc203b0be6))
+
 ## [1.23.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.0...v1.23.1) (2021-08-06)
 
 
