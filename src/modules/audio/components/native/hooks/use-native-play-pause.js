@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { isPlayingAtom } from '../../../../../atoms/play-pause.atoms'
 
 /**
  * @param {HTMLAudioElement} audio element
  */
 export function useNativePlayPause (audio) {
 
-    const isPlaying = useStore ((state) => state.isPlaying)
+    const [isPlaying] = useAtom (isPlayingAtom)
 
     useEffect (() => {
 

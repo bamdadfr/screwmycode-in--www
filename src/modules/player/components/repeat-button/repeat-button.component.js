@@ -2,24 +2,25 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import repeat from '@iconify/icons-mdi/repeat'
 import repeatOff from '@iconify/icons-mdi/repeat-off'
+import { useAtom } from 'jotai'
 import { Button } from '../../player.module.styles'
-import { useStore } from '../../../../store/use-store'
+import { isRepeatingAtom, toggleRepeatingAtom } from '../../../../atoms/repeat.atoms'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function RepeatButtonComponent () {
 
-    const isRepeat = useStore ((state) => state.isRepeat)
-    const toggleRepeat = useStore ((state) => state.toggleRepeat)
+    const [isRepeating] = useAtom (isRepeatingAtom)
+    const [, toggleRepeating] = useAtom (toggleRepeatingAtom)
 
     return (
         <>
             <Button
-                onClick={toggleRepeat}
-                aria-label={(isRepeat ? 'disable' : 'enable') + ' repeat'}
+                onClick={toggleRepeating}
+                aria-label={(isRepeating ? 'disable' : 'enable') + ' repeat'}
             >
-                {isRepeat
+                {isRepeating
                     ? <Icon icon={repeat}/>
                     : <Icon icon={repeatOff}/>
                 }

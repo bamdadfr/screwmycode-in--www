@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { setDurationAtom } from '../../../../../atoms/duration.atoms'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
@@ -8,17 +9,17 @@ import { useStore } from '../../../../../store/use-store'
  */
 export function useHowlerDuration (howler) {
 
-    const setDuration = useStore ((state) => state.setDuration)
-    const duration = Math.floor (howler?.duration ()) || 0
+    const howlerDuration = Math.floor (howler?.duration ()) || 0
+    const [, setDuration] = useAtom (setDurationAtom)
 
     useEffect (() => {
 
         if (!(howler instanceof ReactHowler)) return
 
-        setDuration (duration)
+        setDuration (howlerDuration)
     
-    }, [duration, howler, setDuration])
+    }, [howlerDuration, howler, setDuration])
 
-    return duration
+    return howlerDuration
 
 }

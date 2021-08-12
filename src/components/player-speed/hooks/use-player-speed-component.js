@@ -1,13 +1,14 @@
 import { useCallback } from 'react'
-import { useStore } from '../../../store/use-store'
+import { useAtom } from 'jotai'
+import { setSpeedAtom, speedAtom } from '../../../atoms/speed.atoms'
 
 /**
  * @returns {{number, Function}} slider attributes
  */
 export function usePlayerSpeedComponent () {
 
-    const speed = useStore ((state) => state.speed)
-    const setSpeed = useStore ((state) => state.setSpeed)
+    const [speed] = useAtom (speedAtom)
+    const [, setSpeed] = useAtom (setSpeedAtom)
 
     const onChange = useCallback ((e) => {
 

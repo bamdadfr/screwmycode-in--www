@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { volumeAtom } from '../../../../../atoms/volume.atoms'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
@@ -8,7 +9,7 @@ import { useStore } from '../../../../../store/use-store'
  */
 export function useHowlerVolume (howler) {
     
-    const volume = useStore ((state) => state.volume)
+    const [volume] = useAtom (volumeAtom)
 
     useEffect (() => {
 

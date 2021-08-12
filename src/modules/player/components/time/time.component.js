@@ -1,15 +1,17 @@
 import React from 'react'
+import { useAtom } from 'jotai'
 import { Container } from './time.component.styles'
 import { calculateMinutes } from '../../../../utils/calculate-minutes/calculate-minutes'
-import { useStore } from '../../../../store/use-store'
+import { progressAtom } from '../../../../atoms/progress.atoms'
+import { durationAtom } from '../../../../atoms/duration.atoms'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function TimeComponent () {
 
-    const duration = useStore ((state) => state.duration)
-    const progress = useStore ((state) => state.progress)
+    const [duration] = useAtom (durationAtom)
+    const [progress] = useAtom (progressAtom)
 
     return (
         <>

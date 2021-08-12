@@ -14,9 +14,9 @@ export function HowlerComponent ({ url }) {
 
     const {
         ref,
-        setIsLoaded,
+        setLoaded,
         isPlaying,
-        isRepeat,
+        isRepeating,
         speed,
         volume,
         handleEnd,
@@ -61,9 +61,9 @@ export function HowlerComponent ({ url }) {
                 playing={isPlaying}
                 rate={speed}
                 volume={volume}
-                loop={isRepeat}
+                loop={isRepeating}
                 format={['mp3']}
-                onLoad={() => setIsLoaded (true)}
+                onLoad={() => setLoaded (true)}
                 onEnd={handleEnd}
             />
         </>

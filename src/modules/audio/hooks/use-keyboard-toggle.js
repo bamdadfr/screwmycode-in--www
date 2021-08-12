@@ -1,14 +1,15 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../store/use-store'
+import { useAtom } from 'jotai'
+import { isPlayingAtom, setPauseAtom, setPlayAtom } from '../../../atoms/play-pause.atoms'
 
 /**
  * @param {string} keyCode keyboard code
  */
 export function useKeyboardToggle (keyCode = 'Space') {
 
-    const isPlaying = useStore ((state) => state.isPlaying)
-    const play = useStore ((state) => state.play)
-    const pause = useStore ((state) => state.pause)
+    const [isPlaying] = useAtom (isPlayingAtom)
+    const [, setPlay] = useAtom (setPlayAtom)
+    const [, setPause] = useAtom (setPauseAtom)
 
     useEffect (() => {
 
@@ -16,9 +17,9 @@ export function useKeyboardToggle (keyCode = 'Space') {
 
             if (event.code === keyCode) {
 
-                if (isPlaying) return pause ()
+                if (isPlaying) return setPause ()
 
-                play ()
+                setPlay ()
             
             }
         
@@ -28,6 +29,6 @@ export function useKeyboardToggle (keyCode = 'Space') {
 
         return () => document.removeEventListener ('keypress', handleKeyboard)
 
-    }, [isPlaying, keyCode, pause, play])
+    }, [isPlaying, keyCode, setPause, setPlay])
 
 }

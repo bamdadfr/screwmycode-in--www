@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { setDurationAtom } from '../../../../../atoms/duration.atoms'
+import { setLoadedAtom } from '../../../../../atoms/load.atoms'
 
 /**
  * @param {HTMLAudioElement} audio element
@@ -8,15 +10,14 @@ import { useStore } from '../../../../../store/use-store'
 export function useNativeLoad (audio, url) {
 
     const [savedUrl, setSavedUrl] = useState ()
-    const setIsLoaded = useStore ((state) => state.setIsLoaded)
-    const setDuration = useStore ((state) => state.setDuration)
-    const setSeekMax = useStore ((state) => state.setSeekMax)
+    const [, setLoaded] = useAtom (setLoadedAtom)
+    const [, setDuration] = useAtom (setDurationAtom)
 
     const handleCanPlay = useCallback (() => {
 
-        setIsLoaded (true)
+        setLoaded (true)
 
-    }, [setIsLoaded])
+    }, [setLoaded])
 
     const handleMetadata = useCallback (() => {
 
@@ -48,6 +49,6 @@ export function useNativeLoad (audio, url) {
         
         } 
 
-    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, setIsLoaded, setSeekMax, url])
+    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, url])
 
 }

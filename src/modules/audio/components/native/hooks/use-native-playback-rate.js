@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { speedAtom } from '../../../../../atoms/speed.atoms'
 
 /**
  * @param {HTMLAudioElement} audio element
  */
 export function useNativePlaybackRate (audio) {
 
-    const speed = useStore ((state) => state.speed)
+    const [speed] = useAtom (speedAtom)
 
     useEffect (() => {
 

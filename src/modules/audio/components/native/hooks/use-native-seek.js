@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { seekAtom } from '../../../../../atoms/seek.atoms'
 
 /**
  * @param {HTMLAudioElement} audio audio element
  */
 export function useNativeSeek (audio) {
 
-    const seek = useStore ((state) => state.seek)
+    const [seek] = useAtom (seekAtom)
 
     useEffect (() => {
 

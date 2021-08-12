@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { seekAtom } from '../../../../../atoms/seek.atoms'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
@@ -8,7 +9,7 @@ import { useStore } from '../../../../../store/use-store'
  */
 export function useHowlerSeek (howler) {
 
-    const seek = useStore ((state) => state.seek)
+    const [seek] = useAtom (seekAtom)
 
     useEffect (() => {
 

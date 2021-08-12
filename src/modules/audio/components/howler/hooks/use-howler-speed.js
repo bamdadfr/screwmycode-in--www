@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ReactHowler from 'react-howler'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { speedAtom } from '../../../../../atoms/speed.atoms'
 
 /**
  * @param {object} howler react-howler instance (extends AudioContext)
@@ -8,7 +9,7 @@ import { useStore } from '../../../../../store/use-store'
  */
 export function useHowlerSpeed (howler) {
 
-    const speed = useStore ((state) => state.speed)
+    const [speed] = useAtom (speedAtom)
 
     useEffect (() => {
 
