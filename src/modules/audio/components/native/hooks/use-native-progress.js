@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { setProgressAtom } from '../../../../../atoms/progress.atoms'
+import { isPlayingAtom } from '../../../../../atoms/play-pause.atoms'
 
 /**
  * @param {HTMLAudioElement} audio audio element
  */
 export function useNativeProgress (audio) {
 
-    const isPlaying = useStore ((state) => state.isPlaying)
-    const setProgress = useStore ((state) => state.setProgress)
+    const [isPlaying] = useAtom (isPlayingAtom)
+    const [, setProgress] = useAtom (setProgressAtom)
     const fps = 10
 
     useEffect (() => {

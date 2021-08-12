@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { setVolumeAtom, volumeAtom } from '../../../../../atoms/volume.atoms'
 
 /**
  * @param {HTMLAudioElement} audio element
  */
 export function useNativeVolume (audio) {
 
-    const volume = useStore ((state) => state.volume)
-    const setVolume = useStore ((state) => state.setVolume)
+    const [volume] = useAtom (volumeAtom)
+    const [, setVolume] = useAtom (setVolumeAtom)
 
     useEffect (() => {
 

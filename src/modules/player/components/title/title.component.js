@@ -1,13 +1,14 @@
 import React from 'react'
-import { useStore } from '../../../../store/use-store'
+import { useAtom } from 'jotai'
 import { H2 } from './title.component.styles'
+import { audioTitleAtom } from '../../../../atoms/audio-title.atoms'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function TitleComponent () {
 
-    const audioTitle = useStore ((state) => state.audioTitle)
+    const [audioTitle] = useAtom (audioTitleAtom)
 
     return (
         <>

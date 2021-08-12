@@ -1,14 +1,15 @@
 import React from 'react'
+import { useAtom } from 'jotai'
 import { SliderComponent } from '../../../../components/slider/slider.component'
-import { useStore } from '../../../../store/use-store'
+import { setVolumeAtom, volumeAtom } from '../../../../atoms/volume.atoms'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function VolumeSliderComponent () {
 
-    const volume = useStore ((state) => state.volume)
-    const setVolume = useStore ((state) => state.setVolume)
+    const [volume] = useAtom (volumeAtom)
+    const [, setVolume] = useAtom (setVolumeAtom)
 
     return (
         <>

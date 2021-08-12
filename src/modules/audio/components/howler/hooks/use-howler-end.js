@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { isPlayingAtom, togglePlayingAtom } from '../../../../../atoms/play-pause.atoms'
+import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
 
 /**
  * @returns {Function} handleEnd (useCallback function)
@@ -7,9 +9,9 @@ import { useStore } from '../../../../../store/use-store'
 export function useHowlerEnd () {
 
     const [eventFired, setEventFired] = useState (false)
-    const isRepeat = useStore ((state) => state.isRepeat)
-    const isPlaying = useStore ((state) => state.isPlaying)
-    const togglePlayPause = useStore ((state) => state.togglePlayPause)
+    const [isRepeating] = useAtom (isRepeatingAtom)
+    const [isPlaying] = useAtom (isPlayingAtom)
+    const [, togglePlaying] = useAtom (togglePlayingAtom)
 
     const handleEnd = useCallback (() => {
 
@@ -23,13 +25,13 @@ export function useHowlerEnd () {
 
         setEventFired (false)
 
-        if (isRepeat) return
+        if (isRepeating) return
 
         if (!isPlaying) return
 
-        togglePlayPause ()
+        togglePlaying ()
 
-    }, [eventFired, isRepeat, isPlaying, togglePlayPause])
+    }, [eventFired, isRepeating, isPlaying, togglePlaying])
 
     return handleEnd
 

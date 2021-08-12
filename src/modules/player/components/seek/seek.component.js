@@ -1,15 +1,18 @@
 import React from 'react'
+import { useAtom } from 'jotai'
 import { SliderComponent } from '../../../../components/slider/slider.component'
-import { useStore } from '../../../../store/use-store'
+import { progressAtom } from '../../../../atoms/progress.atoms'
+import { durationAtom } from '../../../../atoms/duration.atoms'
+import { setSeekAtom } from '../../../../atoms/seek.atoms'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function SeekComponent () {
 
-    const progress = useStore ((state) => state.progress)
-    const duration = useStore ((state) => state.duration)
-    const setSeek = useStore ((state) => state.setSeek)
+    const [progress] = useAtom (progressAtom)
+    const [duration] = useAtom (durationAtom)
+    const [, setSeek] = useAtom (setSeekAtom)
 
     return (
         <>

@@ -4052,6 +4052,11 @@ jest@^27.0.6:
     import-local "^3.0.2"
     jest-cli "^27.0.6"
 
+jotai@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.3.0.tgz#dfeb67928304272215e9a99f100bfc36aa84c922"
+  integrity sha512-Qw0MUsx+y5ljGcLwppZp1Q9YuyEC4jutqWdR4A8Yvb9fvRYnXXy55WxXIESxHjQ+rWgnvx4eEL/xzUz5O4PfVQ==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -6333,8 +6338,3 @@ ytdl-core@^4.9.1:
     m3u8stream "^0.8.3"
     miniget "^4.0.0"
     sax "^1.1.3"
-
-zustand@^3.5.7:
-  version "3.5.7"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.5.7.tgz#add5e8d0ba031ce6e0ddf9cb76ef15306efb665f"
-  integrity sha512-DlVFXJavIHyXTOGz6dB+8QHZsPyJcGJSEBtlp2Ivmd5SwtlCnhPo3L8LB6YRfAOJC2PbqzgoD8NMjk+y+vIF0g==

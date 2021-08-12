@@ -1,19 +1,20 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../../../store/use-store'
+import { useAtom } from 'jotai'
+import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
 
 /**
  * @param {HTMLAudioElement} audio element
  */
 export function useNativeLoop (audio) {
 
-    const isRepeat = useStore ((state) => state.isRepeat)
+    const [isRepeating] = useAtom (isRepeatingAtom)
 
     useEffect (() => {
 
         if (!(audio instanceof HTMLAudioElement)) return
 
-        audio.loop = isRepeat
+        audio.loop = isRepeating
     
-    }, [audio, isRepeat])
+    }, [audio, isRepeating])
 
 }
