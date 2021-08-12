@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.4...v1.24.0) (2021-08-12)
+
+
+### Features
+
+* **store:** move to recoil-ish state management with `jotai` instead of `zustand` + create utility `getProvider` + rename `page-tests/` to `page-lib/` ([f307851](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f3078512bd9c3e0341ab6235ad1ec4738017d8d3))
+
 ## [1.23.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.3...v1.23.4) (2021-08-12)
 
 
