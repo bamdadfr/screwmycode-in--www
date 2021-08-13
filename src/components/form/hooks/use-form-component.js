@@ -1,8 +1,6 @@
-import { useCallback } from 'react'
-import { useRouter } from 'next/router'
 import { useInput } from './use-input'
 import { useInputRefocus } from './use-input-refocus'
-import { validateForm } from '../utils/validate-form'
+import { useFormSubmit } from './use-form-submit'
 
 /**
  * @typedef {useInput} Link
@@ -11,22 +9,11 @@ import { validateForm } from '../utils/validate-form'
  */
 export function useFormComponent () {
 
-    const router = useRouter ()
     const link = useInput ()
 
     useInputRefocus (link.ref)
 
-    const handleSubmit = useCallback (async (event) => {
-
-        event.preventDefault ()
-
-        const { isValid, path } = await validateForm (link.value)
-
-        if (!isValid) return link.resetValue ()
-
-        await router.push (path)
-    
-    }, [link, router])
+    const { handleSubmit } = useFormSubmit ({ link })
 
     return {
         link,
