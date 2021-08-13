@@ -1,3 +1,10 @@
+## [1.24.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.2...v1.24.3) (2021-08-13)
+
+
+### Performance Improvements
+
+* **FormComponent:** remove useless dependency preload ([e56951f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e56951f2668c80ec69d3a745ea0ccf8effd1840e))
+
 ## [1.24.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.1...v1.24.2) (2021-08-13)
 
 
