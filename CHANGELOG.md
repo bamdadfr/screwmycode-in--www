@@ -1,3 +1,10 @@
+## [1.24.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.1...v1.24.2) (2021-08-13)
+
+
+### Performance Improvements
+
+* **usePlayerLoading:** add jsdoc description ([44cfc7d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/44cfc7d8deee47514fbc496de1c6459ae85205ab))
+
 ## [1.24.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.0...v1.24.1) (2021-08-13)
 
 
