@@ -1,3 +1,12 @@
+## [1.24.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.0...v1.24.1) (2021-08-13)
+
+
+### Performance Improvements
+
+* **FormComponent:** better form dependency lazy loading + various line break removal ([c5cfe93](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c5cfe937e0f0e2b491f45ea23cf4131209d43c98))
+* **HowlerComponent:** move proxy logic to its own custom hook ([764b950](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/764b950eddee4133f2c53f84e30412a89e17f0f0))
+* **PlayerLayout:** move logic to custom hooks ([730eb47](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/730eb474d3e9acc351311a528fda07dd7bac1ec0))
+
 # [1.24.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.23.4...v1.24.0) (2021-08-12)
 
 
