@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { validateForm } from '../utils/validate-form'
 
@@ -11,19 +11,6 @@ import { validateForm } from '../utils/validate-form'
 export function useFormSubmit ({ link }) {
 
     const router = useRouter ()
-
-    // warmup validateForm by important its dependencies
-    useEffect (() => {
-
-        (async () => {
-
-            await import ('soundcloud-scraper')
-
-            await import ('ytdl-core')
-
-        }) ()
-    
-    }, [])
 
     const handleSubmit = useCallback (async (event) => {
 
