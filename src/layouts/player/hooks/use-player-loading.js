@@ -5,7 +5,7 @@ import { setSeekAtom } from '../../../atoms/seek.atoms'
 import { setProgressAtom } from '../../../atoms/progress.atoms'
 
 /**
- *
+ * @description set initial loading state for audio player
  */
 export function usePlayerLoading () {
 
