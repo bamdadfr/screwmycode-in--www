@@ -9,8 +9,11 @@ import { useHowlerEnd } from './use-howler-end'
 import { setLoadedAtom } from '../../../../../atoms/load.atoms'
 import { isPlayingAtom } from '../../../../../atoms/play-pause.atoms'
 import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
+import { useHowlerProxy } from './use-howler-proxy'
 
 /**
+ * @param {object} params params from component props
+ * @param {string} params.url audio target url
  * @typedef {React.Ref} Ref react-howler component
  * @typedef {Function} SetIsLoaded
  * @typedef {boolean} IsPlaying
@@ -20,7 +23,7 @@ import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
  * @typedef {Function} HandleEnd callback function
  * @returns {{Ref,SetIsLoaded,IsPlaying,IsRepeat,Speed,Volume,HandleEnd}} component state
  */
-export function useHowlerComponent () {
+export function useHowlerComponent ({ url }) {
 
     const ref = useRef (null)
     const [, setLoaded] = useAtom (setLoadedAtom)
@@ -36,6 +39,7 @@ export function useHowlerComponent () {
     useHowlerSeek (ref.current)
 
     const handleEnd = useHowlerEnd ()
+    const { proxyReady } = useHowlerProxy ({ url })
 
     return {
         ref,
@@ -45,6 +49,7 @@ export function useHowlerComponent () {
         speed,
         volume,
         handleEnd,
+        proxyReady,
     }
 
 }

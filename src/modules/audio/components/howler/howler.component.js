@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import ReactHowler from 'react-howler'
-import axios from 'axios'
-import { useRouter } from 'next/router'
 import { getUrlWithProxy } from '../../../../utils/get-url-with-proxy/get-url-with-proxy'
 import { useHowlerComponent } from './hooks/use-howler-component'
+
+const propTypes = {
+    'url': PropTypes.string.isRequired,
+}
 
 /**
  * @param {object} props react props
@@ -20,53 +23,27 @@ export function HowlerComponent ({ url }) {
         speed,
         volume,
         handleEnd,
-    } = useHowlerComponent ()
-
-    // proxy warmup
-    const router = useRouter ()
-    const [proxyReady, setProxyReady] = useState (false)
-
-    useEffect (() => {
-
-        (async () => {
-
-            const warmup = await axios.head (getUrlWithProxy ('https://www.screwmycode.in/'))
-
-            if (warmup.status !== 200) return
-
-            // todo
-            // try {
-            //
-            //     await axios.head (getUrlWithProxy (url))
-            //
-            // } catch {
-            //
-            //     await router.push ('/')
-            //
-            // }
-
-            setProxyReady (true)
-
-        }) ()
-
-    }, [router, url, setProxyReady])
-
-    if (!proxyReady) return <></>
+        proxyReady,
+    } = useHowlerComponent ({ url })
 
     return (
         <>
-            <ReactHowler
-                ref={ref}
-                src={getUrlWithProxy (url)}
-                playing={isPlaying}
-                rate={speed}
-                volume={volume}
-                loop={isRepeating}
-                format={['mp3']}
-                onLoad={() => setLoaded (true)}
-                onEnd={handleEnd}
-            />
+            {proxyReady &&
+                <ReactHowler
+                    ref={ref}
+                    src={getUrlWithProxy (url)}
+                    playing={isPlaying}
+                    rate={speed}
+                    volume={volume}
+                    loop={isRepeating}
+                    format={['mp3']}
+                    onLoad={() => setLoaded (true)}
+                    onEnd={handleEnd}
+                />
+            }
         </>
     )
 
 }
+
+HowlerComponent.propTypes = propTypes
