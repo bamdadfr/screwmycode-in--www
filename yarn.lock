@@ -1806,10 +1806,10 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
-can-autoplay@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/can-autoplay/-/can-autoplay-3.0.1.tgz#fa45751db80a6dbfa1af5a8f7fea1b8f085c5965"
-  integrity sha512-qTJj2aX/xLhJFHulTk6Nm0wMrhyGlWH5StcJwQ+8ctdQa1PgvZM/DKWLvK2+ShXFG2UgVeH/MD3lrYdfAWNQVA==
+can-autoplay@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/can-autoplay/-/can-autoplay-3.0.2.tgz#d48b4d68c44834fdb02635a4014f06609b22caee"
+  integrity sha512-Ih6wc7yJB4TylS/mLyAW0Dj5Nh3Gftq/g966TcxgvpNCOzlbqTs85srAq7mwIspo4w8gnLCVVGroyCHfh6l9aA==
 
 caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001248:
   version "1.0.30001251"
