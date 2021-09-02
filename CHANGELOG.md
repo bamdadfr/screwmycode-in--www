@@ -1,3 +1,10 @@
+## [1.24.7](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.6...v1.24.7) (2021-09-02)
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependencies ([e391f43](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e391f43eaafc4860b6965387e1efbe24c37924c1))
+
 ## [1.24.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.5...v1.24.6) (2021-08-30)
 
 
