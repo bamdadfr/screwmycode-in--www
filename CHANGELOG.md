@@ -1,3 +1,11 @@
+## [1.24.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.9...v1.24.10) (2021-09-20)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([ba32f9a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ba32f9ac6fd9c9dd4f4c601d3347981c004bd831))
+* **CI:** use node version 14 in pipelines ([e2a380b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e2a380be97a0b5902f72f67dd1e391e312f8ebb4))
+
 ## [1.24.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.8...v1.24.9) (2021-09-13)
 
 
