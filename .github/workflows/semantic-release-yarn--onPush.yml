@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  semantic-release-yarn--onMondays-1030:
+  semantic-release-yarn--onPush:
     runs-on: ubuntu-latest
     steps:
 
