@@ -39,7 +39,7 @@
         "next-transpile-modules": "^8.0.0",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
-        "react-device-detect": "^1.17.0",
+        "react-device-detect": "^2.0.1",
         "react-dom": "^17.0.2",
         "react-howler": "^5.2.0",
         "soundcloud-scraper": "^5.0.1",
