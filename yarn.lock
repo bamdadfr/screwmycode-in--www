@@ -5102,12 +5102,12 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-device-detect@^1.17.0:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-1.17.0.tgz#a00b4fd6880cebfab3fd8a42a79dc0290cdddca9"
-  integrity sha512-bBblIStwpHmoS281JFIVqeimcN3LhpoP5YKDWzxQdBIUP8S2xPvHDgizLDhUq2ScguLfVPmwfF5y268EEQR60w==
+react-device-detect@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-2.1.1.tgz#e3a055a36be74d10a87a28182358209f701dbe6b"
+  integrity sha512-F0pYqYlo0/O5RmahZ1io3NHWd1ckr8THiiz/ItCW+ikh3TaKKCT2Rpk/NVKkSGnartzdkgOpcNKGDgO2JxdZvw==
   dependencies:
-    ua-parser-js "^0.7.24"
+    ua-parser-js "0.7.28"
 
 react-dom@^17.0.2:
   version "17.0.2"
@@ -5997,7 +5997,7 @@ typescript@^4.3.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
   integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
 
-ua-parser-js@^0.7.24:
+ua-parser-js@0.7.28:
   version "0.7.28"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
   integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
