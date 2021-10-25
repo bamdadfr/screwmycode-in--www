@@ -4084,10 +4084,10 @@ jest@^27.0.6:
     import-local "^3.0.2"
     jest-cli "^27.3.1"
 
-jotai@^1.3.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.4.1.tgz#669b891ce2e5b49efa608d93524f831a16a13f20"
-  integrity sha512-AzcHYUZ8zQPycJKb40tBnY1KBWA6r2ZENVkd9xe+oD9jmtfSUWP7HBANtl/wsAQ75qGlis8yGm1cc/rNkoXcUg==
+jotai@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.4.2.tgz#0747581840c82ec0862d4c15ee0f7d59246ed46e"
+  integrity sha512-/NcK8DGvfGcVCqoOvjWIo8/KaUYtadXEl+6uxLiQJUxbyiqCtXkhAdrugk5jmpAFXXD2y6fNDw2Ln7h0EuY+ng==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
