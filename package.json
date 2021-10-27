@@ -61,7 +61,7 @@
         "babel-plugin-styled-components": "^1.13.2",
         "codecov": "^3.8.2",
         "cross-env": "^7.0.3",
-        "eslint-config-next": "^11.1.2",
+        "eslint-config-next": "^12.0.1",
         "eslint-plugin-jest-dom": "^3.9.0",
         "eslint-plugin-testing-library": "^4.9.0",
         "jest": "^27.0.6",
