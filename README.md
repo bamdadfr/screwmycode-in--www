@@ -22,7 +22,7 @@ May he rest in peace.
 
 There are two ways of accessing the service:
 
-- Paste service URL to [screwmycode.in](https://screwmycode.in/)
+- Paste service URL to [screwmycode.in](https://screwmycode.in)
 - Add `iscrew` prefix to the service domain:
   - iscrewyoutube.com
   - iscrewyoutu.be
