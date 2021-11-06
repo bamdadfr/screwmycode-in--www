@@ -1,3 +1,10 @@
+## [1.24.17](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.16...v1.24.17) (2021-11-06)
+
+
+### Performance Improvements
+
+* remove `codecov` dependency + replace coverage workflow with codeclimate + update README ([1f549c9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1f549c90f4628d34e25371fe900ab7a00a21fe61))
+
 ## [1.24.16](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.15...v1.24.16) (2021-11-01)
 
 
