@@ -1,0 +1,19 @@
+name: codeclimate--onPush
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  codeclimate--onPush:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: yarn
+      - uses: paambaati/codeclimate-action@master
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPORTER_ID }}
+        with:
+          coverageCommand: yarn coverage
+          debug: true
