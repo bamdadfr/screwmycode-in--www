@@ -1,3 +1,10 @@
+## [1.24.19](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.18...v1.24.19) (2021-11-06)
+
+
+### Bug Fixes
+
+* new `build:post` command ([d0ad1ca](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d0ad1ca6ffe5e7f09ad83e6515ef62ad574daf12))
+
 ## [1.24.18](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.17...v1.24.18) (2021-11-06)
 
 
