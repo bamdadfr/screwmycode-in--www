@@ -8,8 +8,9 @@
         "url": "https://bamdad.fr/"
     },
     "scripts": {
-        "build": "next build && yarn build:post",
-        "build:post": "find .next -type f -name \"*.map\" -exec rm {} \\;",
+        "build": "yarn build:run && yarn build:post",
+        "build:run": "next build",
+        "build:post": "find .next/static -type f -name \"*.map\" -exec rm {} \\;",
         "coverage": "yarn test:coverage",
         "dev": "next dev",
         "export": "next export",
