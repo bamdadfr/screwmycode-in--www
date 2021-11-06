@@ -9,6 +9,15 @@
 
 Pitch control for [YouTube](https://www.youtube.com) & [SoundCloud](https://soundcloud.com)
 
+## Context
+
+This project is a tribute to [DJ Screw](https://en.wikipedia.org/wiki/DJ_Screw), inventor of the
+[chopped and screwed](https://en.wikipedia.org/wiki/Chopped_and_screwed) mixing style.
+
+May he rest in peace.
+
+![dj screw](https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg)
+
 ## How To
 
 There are two ways of accessing the service:
