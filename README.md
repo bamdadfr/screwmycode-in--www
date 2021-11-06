@@ -5,7 +5,7 @@
 ![coverage](https://img.shields.io/codeclimate/coverage/bamdadsabbagh/screwmycode-in--www)
 ![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/screwmycode-in--www)
 
-![KSET](public/icons/SCRW_KSET.svg)
+<img alt="KSET" width="100px" src="https://raw.githubusercontent.com/bamdadsabbagh/screwmycode-in--www/master/public/icons/SCRW_KSET.svg">
 
 Pitch control for [YouTube](https://www.youtube.com) & [SoundCloud](https://soundcloud.com)
 
