@@ -365,9 +365,9 @@
     to-fast-properties "^2.0.0"
 
 "@bamdadsabbagh/eslint-config@^1.16.0":
-  version "1.16.13"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.16.13.tgz#22f7ce9c7fd6d031bd43858f0f7d616f6d88a456"
-  integrity sha512-APNzhZQUahH7ULwj3J1/RNqnURhkjYPh9P/cR3GtoZfo/LBN4jeHFcKSDD/oRbVxxDU9gq28whfMidVLKddZXA==
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.17.2.tgz#42ea42633da3811ea4193b45e5805cd8c94c8f40"
+  integrity sha512-on4mKekXG1RpjqcsQjtaOwHV4mO5vVkqCSQKnmk7WR40s41C20TWAMdS2nF1DbRKaXgeglU/XdrCBJg8s8Vd4w==
   dependencies:
     "@babel/core" "^7.15.0"
     "@babel/eslint-parser" "^7.15.0"
@@ -4092,9 +4092,9 @@ jest@^27.0.6:
     jest-cli "^27.3.1"
 
 jotai@^1.3.0:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.4.2.tgz#0747581840c82ec0862d4c15ee0f7d59246ed46e"
-  integrity sha512-/NcK8DGvfGcVCqoOvjWIo8/KaUYtadXEl+6uxLiQJUxbyiqCtXkhAdrugk5jmpAFXXD2y6fNDw2Ln7h0EuY+ng==
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.4.3.tgz#fb5ae5ac44c28a7b16edc478aaa6d5816e0df4cc"
+  integrity sha512-ttgbxK/DqHq2CFg0/qcRu2G4QpSPz8/PdvzskFAIyjgOadFOMIpOFxyDz1P975RjZKI3Bul6fm+X5n80HJ+NFg==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
