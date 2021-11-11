@@ -1,17 +1,17 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 /**
- * @param {HTMLAudioElement} audio element
+ * Hook to set the native pitch of the audio element
+ *
+ * @param {HTMLAudioElement} audio - The audio element
  */
 export function useNativePitch (audio) {
+  useEffect (() => {
+    if (!(audio instanceof HTMLAudioElement)) {
+      return;
+    }
 
-    useEffect (() => {
-
-        if (!(audio instanceof HTMLAudioElement)) return
-
-        // noinspection JSUndefinedPropertyAssignment
-        audio.mozPreservesPitch = false
-    
-    }, [audio])
-
+    // noinspection JSUndefinedPropertyAssignment
+    audio.mozPreservesPitch = false;
+  }, [audio]);
 }

@@ -1,24 +1,23 @@
-import { useEffect } from 'react'
-import ReactHowler from 'react-howler'
-import { useAtom } from 'jotai'
-import { speedAtom } from '../../../../../atoms/speed.atoms'
+import { useEffect } from 'react';
+import ReactHowler from 'react-howler';
+import { useAtom } from 'jotai';
+import { speedAtom } from '../../../../../atoms/speed.atoms';
 
 /**
- * @param {object} howler react-howler instance (extends AudioContext)
- * @returns {number} speed audio playbackRate
+ * Hook to set the speed of the Howler instance
+ *
+ * @param {object} howler - Howler instance
+ * @returns {number} - Speed / playback rate
  */
 export function useHowlerSpeed (howler) {
+  const [speed] = useAtom (speedAtom);
 
-    const [speed] = useAtom (speedAtom)
+  useEffect (() => {
+    if (!(howler instanceof ReactHowler)) {
+      return;
+    }
+    howler.rate (speed);
+  }, [howler, speed]);
 
-    useEffect (() => {
-
-        if (!(howler instanceof ReactHowler)) return
-
-        howler.rate (speed)
-    
-    }, [howler, speed])
-
-    return speed
-
+  return speed;
 }

@@ -1,36 +1,35 @@
-import { useEffect, useState } from 'react'
-import { useInterval } from '../../../hooks/use-interval'
+import { useEffect, useState } from 'react';
+import { useInterval } from '../../../hooks/use-interval';
 
 /**
- * @description cache a value and refresh it on a given interval
- *      useful for slowing down renders
- * @param {*} value value to cache
- * @param {number} delay used to run the interval
- * @returns {number} cached value
+ * Hook for caching a value and updating it every `interval` milliseconds.
+ * Useful to control rendering of a value that is expensive to compute.
+ *
+ * @param {*} value - The value to cache.
+ * @param {number} delay - The delay in milliseconds between updates.
+ * @returns {number} - The cached value.
  */
 export function useCache (value, delay) {
+  const [cachedValue, setCachedValue] = useState (value);
+  const [isRunning, setIsRunning] = useState (false);
 
-    const [cachedValue, setCachedValue] = useState (value)
-    const [isRunning, setIsRunning] = useState (false)
+  // detect when interval needs to run
+  useEffect (() => {
+    if (value === cachedValue) {
+      return setIsRunning (false);
+    }
 
-    // detect when interval needs to run
-    useEffect (() => {
+    setIsRunning (true);
+  }, [value, cachedValue]);
 
-        if (value === cachedValue) return setIsRunning (false)
+  // setup interval
+  useInterval (() => {
+    if (value === cachedValue) {
+      return;
+    }
 
-        setIsRunning (true)
+    setCachedValue (value);
+  }, isRunning ? delay : null);
 
-    }, [value, cachedValue])
-
-    // setup interval
-    useInterval (() => {
-
-        if (value === cachedValue) return
-
-        setCachedValue (value)
-    
-    }, isRunning ? delay : null)
-
-    return cachedValue
-
+  return cachedValue;
 }

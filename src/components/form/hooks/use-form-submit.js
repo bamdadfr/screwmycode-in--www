@@ -1,31 +1,31 @@
-import { useCallback } from 'react'
-import { useRouter } from 'next/router'
-import { validateForm } from '../utils/validate-form'
+import { useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { validateForm } from '../utils/validate-form';
 
 /**
- * @param {object} params parameters
- * @param {object} params.link input link
+ * Hook to handle form submission
+ *
+ * @param {object} options - Options
+ * @param {object} options.link - Link to submit form to
  * @typedef {function(): undefined} HandleSubmit
- * @returns {{HandleSubmit}} form submit handler
+ * @returns {{HandleSubmit}} - Form submit handler
  */
 export function useFormSubmit ({ link }) {
+  const router = useRouter ();
 
-    const router = useRouter ()
+  const handleSubmit = useCallback (async (event) => {
+    event.preventDefault ();
 
-    const handleSubmit = useCallback (async (event) => {
+    const { isValid, path } = await validateForm (link.value);
 
-        event.preventDefault ()
-
-        const { isValid, path } = await validateForm (link.value)
-
-        if (!isValid) return link.resetValue ()
-
-        await router.push (path)
-
-    }, [link, router])
-
-    return {
-        handleSubmit,
+    if (!isValid) {
+      return link.resetValue ();
     }
 
+    await router.push (path);
+  }, [link, router]);
+
+  return {
+    handleSubmit,
+  };
 }

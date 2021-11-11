@@ -1,38 +1,43 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useAtom } from 'jotai'
-import { isPlayingAtom, togglePlayingAtom } from '../../../../../atoms/play-pause.atoms'
-import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
+import { useCallback, useEffect, useState } from 'react';
+import { useAtom } from 'jotai';
+import {
+  isPlayingAtom,
+  togglePlayingAtom,
+} from '../../../../../atoms/play-pause.atoms';
+import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms';
 
 /**
- * @returns {Function} handleEnd (useCallback function)
+ * Hook to use the Howler end event
+ *
+ * @returns {Function} handleEnd - The handleEnd function
  */
 export function useHowlerEnd () {
+  const [eventFired, setEventFired] = useState (false);
+  const [isRepeating] = useAtom (isRepeatingAtom);
+  const [isPlaying] = useAtom (isPlayingAtom);
+  const [, togglePlaying] = useAtom (togglePlayingAtom);
 
-    const [eventFired, setEventFired] = useState (false)
-    const [isRepeating] = useAtom (isRepeatingAtom)
-    const [isPlaying] = useAtom (isPlayingAtom)
-    const [, togglePlaying] = useAtom (togglePlayingAtom)
+  const handleEnd = useCallback (() => {
+    setEventFired (true);
+  }, []);
 
-    const handleEnd = useCallback (() => {
+  useEffect (() => {
+    if (!eventFired) {
+      return;
+    }
 
-        setEventFired (true)
+    setEventFired (false);
 
-    }, [])
+    if (isRepeating) {
+      return;
+    }
 
-    useEffect (() => {
+    if (!isPlaying) {
+      return;
+    }
 
-        if (!eventFired) return
+    togglePlaying ();
+  }, [eventFired, isRepeating, isPlaying, togglePlaying]);
 
-        setEventFired (false)
-
-        if (isRepeating) return
-
-        if (!isPlaying) return
-
-        togglePlaying ()
-
-    }, [eventFired, isRepeating, isPlaying, togglePlaying])
-
-    return handleEnd
-
+  return handleEnd;
 }

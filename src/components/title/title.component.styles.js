@@ -1,27 +1,27 @@
-import styled from 'styled-components'
-import { Breakpoints } from '../../app/styles/breakpoints'
+import styled from 'styled-components';
+import { Breakpoints } from '../../app/styles/breakpoints';
 
 export const Title = styled.h1`
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 
-    height: 100%;
+  height: 100%;
 
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 
-    font-size: 3em;
-    font-weight: 900;
+  font-size: 3em;
+  font-weight: 900;
 
-    & a {
-        transition: color 200ms ease-in-out;
+  & a {
+    transition: color 200ms ease-in-out;
 
-        &:hover {
-            color: ${(props) => props.theme.highlight};
-        }
+    &:hover {
+      color: ${(props) => props.theme.highlight};
     }
+  }
 
-    @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
-        font-size: 2em;
-    }
-`
+  @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+    font-size: 2em;
+  }
+`;

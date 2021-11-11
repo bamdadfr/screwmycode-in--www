@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 module.exports = {
-    '__esModule': true,
-    'default': ({ children }) => <>{children}</>,
-}
+  __esModule: true,
+  default: ({ children }) => <>{children}</>,
+};

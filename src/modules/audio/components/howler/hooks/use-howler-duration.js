@@ -1,25 +1,24 @@
-import { useEffect } from 'react'
-import ReactHowler from 'react-howler'
-import { useAtom } from 'jotai'
-import { setDurationAtom } from '../../../../../atoms/duration.atoms'
+import { useEffect } from 'react';
+import ReactHowler from 'react-howler';
+import { useAtom } from 'jotai';
+import { setDurationAtom } from '../../../../../atoms/duration.atoms';
 
 /**
- * @param {object} howler react-howler instance (extends AudioContext)
- * @returns {number} duration in seconds
+ * Hook to set the duration of the Howler audio
+ *
+ * @param {object} howler - The Howler object
+ * @returns {number} - The duration of the audio
  */
 export function useHowlerDuration (howler) {
+  const howlerDuration = Math.floor (howler?.duration ()) || 0;
+  const [, setDuration] = useAtom (setDurationAtom);
 
-    const howlerDuration = Math.floor (howler?.duration ()) || 0
-    const [, setDuration] = useAtom (setDurationAtom)
+  useEffect (() => {
+    if (!(howler instanceof ReactHowler)) {
+      return;
+    }
+    setDuration (howlerDuration);
+  }, [howlerDuration, howler, setDuration]);
 
-    useEffect (() => {
-
-        if (!(howler instanceof ReactHowler)) return
-
-        setDuration (howlerDuration)
-    
-    }, [howlerDuration, howler, setDuration])
-
-    return howlerDuration
-
+  return howlerDuration;
 }

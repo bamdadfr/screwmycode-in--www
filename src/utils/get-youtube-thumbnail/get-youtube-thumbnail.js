@@ -1,16 +1,17 @@
-export const prefix = 'https://i.ytimg.com/vi/'
+export const prefix = 'https://i.ytimg.com/vi/';
 
-export const suffix = '/maxresdefault.jpg'
+export const suffix = '/maxresdefault.jpg';
 
 /**
- * @description get thumbnail from youtube id
- * @param {string} id youtube id
- * @returns {string} thumbnail url
+ * Get the thumbnail of a YouTube video
+ *
+ * @param {string} id - The video ID
+ * @returns {string} - The thumbnail URL
  */
 export function getYoutubeThumbnail (id) {
+  if (typeof id !== 'string') {
+    throw new Error ('id is not a string');
+  }
 
-    if (typeof id !== 'string') throw new Error ('id is not a string')
-
-    return `${prefix}${id}${suffix}`
-
+  return `${prefix}${id}${suffix}`;
 }

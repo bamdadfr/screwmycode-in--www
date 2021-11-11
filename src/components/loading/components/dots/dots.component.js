@@ -1,29 +1,26 @@
-import React, { useState } from 'react'
-import { useInterval } from '../../../../hooks/use-interval'
+import React, { useState } from 'react';
+import { useInterval } from '../../../../hooks/use-interval';
 
 /**
- * @param {object} props react props
- * @param {number} props.frequency setInterval delay
- * @returns {React.ReactElement} react component
+ * Component for the dots animation
+ *
+ * @param {object} props - Component props
+ * @param {number} props.frequency setInterval - frequency of the animation
+ * @returns {React.ReactElement} - Rendered component
  */
-export function DotsComponent ({
-    frequency = 500,
-}) {
+export function DotsComponent ({ frequency = 500 }) {
+  const [dots, setDots] = useState ('');
 
-    const [dots, setDots] = useState ('')
+  useInterval (() => {
+    if (dots === '...') {
+      return setDots ('');
+    }
+    setDots ((s) => s + '.');
+  }, frequency);
 
-    useInterval (() => {
-
-        if (dots === '...') return setDots ('')
-
-        setDots ((s) => s + '.')
-
-    }, frequency)
-
-    return (
-        <>
-            {dots}
-        </>
-    )
-
+  return (
+    <>
+      {dots}
+    </>
+  );
 }

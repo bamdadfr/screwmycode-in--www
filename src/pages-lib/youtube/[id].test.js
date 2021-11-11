@@ -1,64 +1,45 @@
-import React from 'react'
-import { render as defaultRender } from '@testing-library/react'
-import OldYoutubePage, { getServerSideProps } from '../../pages/youtube/[id]'
-import { WithStyledComponents } from '../../app/components/with-styled-components/with-styled-components'
+import React from 'react';
+import { render as defaultRender } from '@testing-library/react';
+import OldYoutubePage, { getServerSideProps } from '../../pages/youtube/[id]';
+import { WithStyledComponents } from '../../app/components/with-styled-components/with-styled-components';
 
 const render = () => {
+  const { container } = defaultRender (
+    <WithStyledComponents>
+      <OldYoutubePage />
+    </WithStyledComponents>,
+  );
 
-    const { container } = defaultRender (
-        <WithStyledComponents>
-            <OldYoutubePage/>
-        </WithStyledComponents>,
-    )
-
-    return {
-        container,
-    }
-
-}
+  return {
+    container,
+  };
+};
 
 describe ('NotFoundPage', () => {
+  describe ('container', () => {
+    it ('should be in the document, visible and empty', () => {
+      const { container } = render ();
+      expect (container).toBeInTheDocument ();
+      expect (container).toBeVisible ();
+      expect (container).toBeEmptyDOMElement ();
+    });
+  });
 
-    describe ('container', () => {
+  describe ('getServerSideProps', () => {
+    const context = {
+      params: { id: 'id' },
+      query: { speed: 1 },
+    };
 
-        it ('should be in the document, visible and empty', () => {
+    const expected = {
+      redirect: {
+        destination: `/youtube/${context.params.id}/${context.query.speed.toString ()}`,
+        permanent: true,
+      },
+    };
 
-            const { container } = render ()
-
-            expect (container).toBeInTheDocument ()
-
-            expect (container).toBeVisible ()
-
-            expect (container).toBeEmptyDOMElement ()
-        
-        })
-    
-    })
-
-    describe ('getServerSideProps', () => {
-
-        const context = {
-            'params': {
-                'id': 'id',
-            },
-            'query': {
-                'speed': 1,
-            },
-        }
-
-        const expected = {
-            'redirect': {
-                'destination': `/youtube/${context.params.id}/${context.query.speed.toString ()}`,
-                'permanent': true,
-            },
-        }
-
-        it ('should match expected and context', () => {
-
-            expect (getServerSideProps (context)).toEqual (expected)
-        
-        })
-    
-    })
-
-})
+    it ('should match expected and context', () => {
+      expect (getServerSideProps (context)).toEqual (expected);
+    });
+  });
+});

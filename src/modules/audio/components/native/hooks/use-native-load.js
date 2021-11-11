@@ -1,54 +1,49 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useAtom } from 'jotai'
-import { setDurationAtom } from '../../../../../atoms/duration.atoms'
-import { setLoadedAtom } from '../../../../../atoms/load.atoms'
+import { useCallback, useEffect, useState } from 'react';
+import { useAtom } from 'jotai';
+import { setDurationAtom } from '../../../../../atoms/duration.atoms';
+import { setLoadedAtom } from '../../../../../atoms/load.atoms';
 
 /**
- * @param {HTMLAudioElement} audio element
- * @param {string} url audio url
+ * Hook to load a native audio element
+ *
+ * @param {HTMLAudioElement} audio - The audio element to load
+ * @param {string} url - The url of the audio
  */
 export function useNativeLoad (audio, url) {
+  const [savedUrl, setSavedUrl] = useState ();
+  const [, setLoaded] = useAtom (setLoadedAtom);
+  const [, setDuration] = useAtom (setDurationAtom);
 
-    const [savedUrl, setSavedUrl] = useState ()
-    const [, setLoaded] = useAtom (setLoadedAtom)
-    const [, setDuration] = useAtom (setDurationAtom)
+  const handleCanPlay = useCallback (() => {
+    setLoaded (true);
+  }, [setLoaded]);
 
-    const handleCanPlay = useCallback (() => {
+  const handleMetadata = useCallback (() => {
+    if (!(audio instanceof HTMLAudioElement)) {
+      return;
+    }
 
-        setLoaded (true)
+    setDuration (audio.duration);
+  }, [audio, setDuration]);
 
-    }, [setLoaded])
+  useEffect (() => {
+    if (!(audio instanceof HTMLAudioElement)) {
+      return;
+    }
 
-    const handleMetadata = useCallback (() => {
+    if (url === savedUrl) {
+      return;
+    }
 
-        if (!(audio instanceof HTMLAudioElement)) return
+    audio.src = url;
+    setSavedUrl (url);
 
-        setDuration (audio.duration)
+    audio.addEventListener ('canplay', () => handleCanPlay ());
+    audio.addEventListener ('loadedmetadata', () => handleMetadata ());
 
-    }, [audio, setDuration])
-
-    useEffect (() => {
-
-        if (!(audio instanceof HTMLAudioElement)) return
-
-        if (url === savedUrl) return
-
-        audio.src = url
-
-        setSavedUrl (url)
-
-        audio.addEventListener ('canplay', () => handleCanPlay ())
-
-        audio.addEventListener ('loadedmetadata', () => handleMetadata ())
-
-        return () => {
-
-            audio.removeEventListener ('canplay', () => handleCanPlay ())
-
-            audio.removeEventListener ('loadedmetadata', () => handleMetadata ())
-        
-        } 
-
-    }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, url])
-
+    return () => {
+      audio.removeEventListener ('canplay', () => handleCanPlay ());
+      audio.removeEventListener ('loadedmetadata', () => handleMetadata ());
+    };
+  }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, url]);
 }

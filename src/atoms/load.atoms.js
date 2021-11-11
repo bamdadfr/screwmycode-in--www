@@ -1,8 +1,8 @@
-import { atom } from 'jotai'
+import { atom } from 'jotai';
 
-export const isLoadedAtom = atom (false)
+export const isLoadedAtom = atom (false);
 
 export const setLoadedAtom = atom (
-    null,
-    (get, set, arg) => set (isLoadedAtom, arg),
-)
+  null,
+  (get, set, arg) => set (isLoadedAtom, arg),
+);

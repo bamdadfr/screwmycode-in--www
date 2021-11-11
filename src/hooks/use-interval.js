@@ -1,35 +1,27 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 /**
- * @description basically setInterval as a hook
+ * Hook to use setInterval
+ *
  * @see https://overreacted.io/making-setinterval-declarative-with-react-hooks/
- * @param {Function|null} callback callback function
- * @param {number|null} delay delay to apply
+ * @param {Function|null} callback - Callback function
+ * @param {number|null} delay - Delay in milliseconds
  */
 export function useInterval (callback, delay) {
+  const savedCallback = useRef ();
 
-    const savedCallback = useRef ()
+  // Remember the latest callback.
+  useEffect (() => {
+    savedCallback.current = callback;
+  }, [callback]);
 
-    // Remember the latest callback.
-    useEffect (() => {
+  // Set up the interval.
+  useEffect (() => {
+    const tick = () => savedCallback.current ();
 
-        savedCallback.current = callback
-
-    }, [callback])
-
-    // Set up the interval.
-    useEffect (() => {
-
-        const tick = () => savedCallback.current ()
-
-        if (delay !== null) {
-
-            const id = setInterval (tick, delay)
-
-            return () => clearInterval (id)
-
-        }
-
-    }, [delay])
-
+    if (delay !== null) {
+      const id = setInterval (tick, delay);
+      return () => clearInterval (id);
+    }
+  }, [delay]);
 }

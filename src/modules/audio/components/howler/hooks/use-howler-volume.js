@@ -1,24 +1,24 @@
-import { useEffect } from 'react'
-import ReactHowler from 'react-howler'
-import { useAtom } from 'jotai'
-import { volumeAtom } from '../../../../../atoms/volume.atoms'
+import { useEffect } from 'react';
+import ReactHowler from 'react-howler';
+import { useAtom } from 'jotai';
+import { volumeAtom } from '../../../../../atoms/volume.atoms';
 
 /**
- * @param {object} howler react-howler instance (extends AudioContext)
- * @returns {number} volume
+ * Hook to set the volume of the Howler instance
+ *
+ * @param {object} howler - Howler instance
+ * @returns {number} - Volume
  */
 export function useHowlerVolume (howler) {
-    
-    const [volume] = useAtom (volumeAtom)
+  const [volume] = useAtom (volumeAtom);
 
-    useEffect (() => {
+  useEffect (() => {
+    if (!(howler instanceof ReactHowler)) {
+      return;
+    }
 
-        if (!(howler instanceof ReactHowler)) return
+    howler.volume (volume);
+  }, [howler, volume]);
 
-        howler.volume (volume)
-    
-    }, [howler, volume])
-
-    return volume
-
+  return volume;
 }

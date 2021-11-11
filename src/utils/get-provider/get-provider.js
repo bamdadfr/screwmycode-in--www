@@ -1,14 +1,14 @@
 const providers = {
-    'youtube': 'YouTube',
-    'soundcloud': 'SoundCloud',
-}
+  youtube: 'YouTube',
+  soundcloud: 'SoundCloud',
+};
 
 /**
- * @param {object} router next.js router
- * @returns {string} provider
+ * Get the provider name from the URL
+ *
+ * @param {object} router - The router object
+ * @returns {string} - The provider name. Either 'youtube' or 'soundcloud'
  */
 export function getProvider (router) {
-
-    return providers[router.pathname.split ('/')[1]]
-
+  return providers[router.pathname.split ('/')[1]];
 }
