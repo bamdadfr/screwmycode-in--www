@@ -1,3 +1,10 @@
+## [1.24.21](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.20...v1.24.21) (2021-11-11)
+
+
+### Performance Improvements
+
+* update dependencies + apply new code style ([67f99fa](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/67f99fa83c0107207000e3a254aa5e8e8dc0c161))
+
 ## [1.24.20](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.19...v1.24.20) (2021-11-08)
 
 
