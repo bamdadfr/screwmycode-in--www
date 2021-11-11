@@ -1,3 +1,10 @@
+## [1.24.22](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.21...v1.24.22) (2021-11-11)
+
+
+### Bug Fixes
+
+* disable output file tracing to prevent sentry package from crashing server functions ([a054bf5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/a054bf5c47a86b45b545433beee95efee695528e))
+
 ## [1.24.21](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.20...v1.24.21) (2021-11-11)
 
 
