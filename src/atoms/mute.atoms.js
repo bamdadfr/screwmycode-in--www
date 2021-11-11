@@ -1,8 +1,8 @@
-import { atom } from 'jotai'
+import { atom } from 'jotai';
 
-export const isMutedAtom = atom (false)
+export const isMutedAtom = atom (false);
 
 export const toggleMuteAtom = atom (
-    null,
-    (get, set) => set (isMutedAtom, !get (isMutedAtom)),
-)
+  null,
+  (get, set) => set (isMutedAtom, !get (isMutedAtom)),
+);

@@ -1,27 +1,27 @@
-import { useEffect } from 'react'
-import { useAtom } from 'jotai'
-import { setVolumeAtom, volumeAtom } from '../../../../../atoms/volume.atoms'
+import { useEffect } from 'react';
+import { useAtom } from 'jotai';
+import { setVolumeAtom, volumeAtom } from '../../../../../atoms/volume.atoms';
 
 /**
- * @param {HTMLAudioElement} audio element
+ * Hook to set the native volume
+ *
+ * @param {HTMLAudioElement} audio - The audio element
  */
 export function useNativeVolume (audio) {
+  const [volume] = useAtom (volumeAtom);
+  const [, setVolume] = useAtom (setVolumeAtom);
 
-    const [volume] = useAtom (volumeAtom)
-    const [, setVolume] = useAtom (setVolumeAtom)
+  useEffect (() => {
+    if (!(audio instanceof HTMLAudioElement)) {
+      return;
+    }
 
-    useEffect (() => {
+    audio.volume = volume;
 
-        if (!(audio instanceof HTMLAudioElement)) return
+    const handleVolumeChange = () => setVolume (audio.volume);
 
-        audio.volume = volume
+    audio.addEventListener ('volumechange', handleVolumeChange);
 
-        const handleVolumeChange = () => setVolume (audio.volume)
-
-        audio.addEventListener ('volumechange', handleVolumeChange)
-
-        return () => audio.removeEventListener ('volumechange', handleVolumeChange)
-
-    }, [audio, setVolume, volume])
-
+    return () => audio.removeEventListener ('volumechange', handleVolumeChange);
+  }, [audio, setVolume, volume]);
 }

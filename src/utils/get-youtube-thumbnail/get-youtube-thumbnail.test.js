@@ -1,40 +1,25 @@
-import { getYoutubeThumbnail, prefix, suffix } from './get-youtube-thumbnail'
+import { getYoutubeThumbnail, prefix, suffix } from './get-youtube-thumbnail';
 
 describe ('getYoutubeThumbnail', () => {
+  describe ('success story', () => {
+    const id = 'id';
+    const response = getYoutubeThumbnail (id);
 
-    describe ('success story', () => {
+    it ('should return a string', () => {
+      expect (typeof response).toBe ('string');
+    });
 
-        const id = 'id'
-        const response = getYoutubeThumbnail (id)
+    it ('should return expect value', () => {
+      expect (response).toBe (prefix + id + suffix);
+    });
+  });
 
-        it ('should return a string', () => {
-
-            expect (typeof response).toBe ('string')
-
-        })
-
-        it ('should return expect value', () => {
-
-            expect (response).toBe (prefix + id + suffix)
-        
-        })
-    
-    })
-
-    describe ('arguments', () => {
-
-        describe ('id', () => {
-
-            it ('should throw when not a string', () => {
-
-                const request = () => getYoutubeThumbnail (1)
-
-                expect (request).toThrowError ()
-            
-            })
-        
-        })
-    
-    })
-
-})
+  describe ('arguments', () => {
+    describe ('id', () => {
+      it ('should throw when not a string', () => {
+        const request = () => getYoutubeThumbnail (1);
+        expect (request).toThrowError ();
+      });
+    });
+  });
+});

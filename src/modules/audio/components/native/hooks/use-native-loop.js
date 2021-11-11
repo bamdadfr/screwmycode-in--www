@@ -1,20 +1,20 @@
-import { useEffect } from 'react'
-import { useAtom } from 'jotai'
-import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms'
+import { useEffect } from 'react';
+import { useAtom } from 'jotai';
+import { isRepeatingAtom } from '../../../../../atoms/repeat.atoms';
 
 /**
- * @param {HTMLAudioElement} audio element
+ * Hook to set the native loop on the audio element
+ *
+ * @param {HTMLAudioElement} audio - The audio element
  */
 export function useNativeLoop (audio) {
+  const [isRepeating] = useAtom (isRepeatingAtom);
 
-    const [isRepeating] = useAtom (isRepeatingAtom)
+  useEffect (() => {
+    if (!(audio instanceof HTMLAudioElement)) {
+      return;
+    }
 
-    useEffect (() => {
-
-        if (!(audio instanceof HTMLAudioElement)) return
-
-        audio.loop = isRepeating
-    
-    }, [audio, isRepeating])
-
+    audio.loop = isRepeating;
+  }, [audio, isRepeating]);
 }

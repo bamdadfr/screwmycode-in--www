@@ -1,24 +1,20 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 /**
- * @param {string} [target='/'] target url
- * @param {number} [delay=2000] delay before redirect
+ * Hook to redirect automatically to a given path
+ *
+ * @param {string} [target='/'] - Target path
+ * @param {number} [delay=2000] - Delay before redirecting
  */
 export function useRedirectAuto (target = '/', delay = 2000) {
+  const router = useRouter ();
 
-    const router = useRouter ()
+  useEffect (() => {
+    const t1 = setTimeout (async () => {
+      await router.push (target);
+    }, delay);
 
-    useEffect (() => {
-
-        const t1 = setTimeout (async () => {
-
-            await router.push (target)
-
-        }, delay)
-
-        return () => clearTimeout (t1)
-
-    }, [delay, router, target])
-
+    return () => clearTimeout (t1);
+  }, [delay, router, target]);
 }
