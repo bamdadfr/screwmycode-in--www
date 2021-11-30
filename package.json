@@ -63,7 +63,7 @@
     "eslint-config-next": "^12.0.3",
     "eslint-plugin-jest-dom": "^3.9.0",
     "eslint-plugin-testing-library": "^5.0.0",
-    "jest": "^27.0.6",
+    "jest": "^27.4.2",
     "rimraf": "^3.0.2",
     "sass": "^1.39.0",
     "sass-reset": "^1.0.2"
