@@ -464,10 +464,10 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.42.tgz#abd1503a51af389e50bcc84338706afbcc10ede7"
   integrity sha512-YHX2Z0s+5Y5EQlBbQ2xQV9pI+RmTr4EwRaqtTEPjfP5g8cekQzR7A8aSohLtgq6m+nziDagIROFFZIFzkS+LJw==
 
-"@iconify/react@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.1.0.tgz#7c27627e6613f47094d838887929935ec8704e42"
-  integrity sha512-RBmYRPgjBukT7/qdUBnj0ZFEEP4plKs8f/ANYrPvnMID+T0VXRc1zKzKWWV9tjR5hw/QpsKSw1fmxfKjSihKHg==
+"@iconify/react@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.1.1.tgz#a517147b22c6e437529a539fcada4411e2f0cbe6"
+  integrity sha512-KsMXgZD94UTah5kFO41qMTQGVSt9xYnC2OCX3LiV7aRThUuTdjTFyu9EfVzHLjwhgYnkP54/DZNa+3ssBqiLBQ==
   dependencies:
     cross-fetch "^3.1.4"
 
