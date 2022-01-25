@@ -46,6 +46,7 @@ export async function getServerSideProps(context) {
 
   props.title = response.data.title;
   props.image = image;
+  props.imageUrl = remoteImage;
   props.url = response.data.url;
   props.speed = parseFloat(speed) || 1;
 

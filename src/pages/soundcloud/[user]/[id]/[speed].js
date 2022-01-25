@@ -36,6 +36,7 @@ export async function getServerSideProps(context) {
   const image = await serverFetchAndConvertToBase64(info.thumbnail);
 
   props.title = info.title;
+  props.imageUrl = info.thumbnail;
   props.image = image;
   props.url = audioUrl;
   props.speed = parseFloat(speed) || 1;

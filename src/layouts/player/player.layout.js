@@ -26,7 +26,8 @@ const propTypes = {
  *
  * @param {object} props - Component props
  * @param {string} props.title - Title of the track
- * @param {string} props.image - Image of the track
+ * @param {string} props.image - Base64 image of the track
+ * @param {string} props.imageUrl - Image url of the track
  * @param {string} props.url - URL of the track
  * @param {number} props.speed - Speed of the track
  * @returns {React.ReactElement} - Rendered component
@@ -34,6 +35,7 @@ const propTypes = {
 export function PlayerLayout({
   title,
   image,
+  imageUrl,
   url,
   speed,
 }) {
@@ -51,7 +53,7 @@ export function PlayerLayout({
       <MetaComponent
         customTitle
         description={metaDescription}
-        image={image}
+        image={imageUrl}
         url={metaUrl}
       />
       <DefaultLayout customMeta>
