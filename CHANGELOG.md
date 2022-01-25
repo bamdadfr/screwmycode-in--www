@@ -1,3 +1,10 @@
+## [1.26.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.1...v1.26.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* keep image url for meta component ([1c73b9c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1c73b9cad9e4fe1e70434e27cab6938a3baa8390))
+
 ## [1.26.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.0...v1.26.1) (2022-01-25)
 
 
