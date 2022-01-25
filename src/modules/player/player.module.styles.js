@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import {Breakpoints} from '../../app/styles/breakpoints';
 
 export const Container = styled.div`
+  width: 100%;
+`;
+
+export const PlayerContainer = styled.div`
   display: grid;
   grid-gap: 0.25em;
   align-items: center;

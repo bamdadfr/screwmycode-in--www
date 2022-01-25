@@ -41,7 +41,7 @@ export function PlayerLayout({
     metaDescription,
     metaUrl,
     isLoaded,
-  } = usePlayerLayout({title, speed});
+  } = usePlayerLayout({title, speed, image});
 
   return (
     <>

@@ -1,3 +1,5 @@
+import {constrain} from '../constrain/constrain.js';
+
 /**
  * Transpose a value with its current scale to a new scale
  * Inspired from processing/p5.js source code.
@@ -8,6 +10,7 @@
  * @param {number} stop1 - The end of the current scale
  * @param {number} start2 - The start of the new scale
  * @param {number} stop2 - The end of the new scale
+ * @param {boolean} [isClamp] - If true, the value will be clamped between start2 and stop2
  * @returns {number} The value transposed to the new scale
  */
 export function mapRange(
@@ -16,6 +19,7 @@ export function mapRange(
   stop1,
   start2,
   stop2,
+  isClamp = false,
 ) {
   if (typeof n !== 'number') {
     throw new Error('n is not a number');
@@ -33,5 +37,15 @@ export function mapRange(
     throw new Error('stop2 is not a number');
   }
 
-  return (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+  const value = (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+
+  if (!isClamp) {
+    return value;
+  }
+
+  if (start2 < stop2) {
+    return constrain(value, start2, stop2);
+  } else {
+    return constrain(value, stop2, start2);
+  }
 }
