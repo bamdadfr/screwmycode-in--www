@@ -2,11 +2,20 @@ import styled from 'styled-components';
 import {mapRange} from '../../../../utils/map-range/map-range';
 
 export const Image = styled.img`
-  width: 60%;
-  max-width: 400px;
+  // global
+  object-fit: cover;
   position: fixed;
-  transform: translate(-50%, -50%);
   z-index: -1;
+  transform: translate(-50%, -50%);
+
+  // sizes
+  width: 90%;
+  max-width: 800px;
+
+  height: ${({width}) => width}px;
+  max-height: 800px;
+
+  // filters
   filter: ${({speed}) => {
     const sepia = Math.round(mapRange(speed, 0.84, 1, 100, 0, true));
     const hueRotate = Math.round(mapRange(speed, 0.84, 1, 250, 0, true));

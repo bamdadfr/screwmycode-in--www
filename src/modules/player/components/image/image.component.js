@@ -1,5 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useAtom} from 'jotai';
+import useMeasure from 'react-use-measure';
+import {ResizeObserver} from '@juggle/resize-observer';
 import {imageAtom} from '../../../../atoms/image.atoms';
 import {Image} from './image.component.styles';
 import {speedAtom} from '../../../../atoms/speed.atoms';
@@ -10,13 +12,17 @@ import {speedAtom} from '../../../../atoms/speed.atoms';
 export function ImageComponent() {
   const [artwork] = useAtom(imageAtom);
   const [speed] = useAtom(speedAtom);
-
-  useEffect(() => {
-  }, []);
+  const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
 
   return (
     <>
-      <Image src={artwork} speed={speed} alt="artwork" />
+      <Image
+        ref={ref}
+        src={artwork}
+        speed={speed}
+        width={width}
+        alt="artwork"
+      />
     </>
   );
 }
