@@ -1,8 +1,8 @@
-import { atom } from 'jotai';
+import {atom} from 'jotai';
 
-export const isRepeatingAtom = atom (true);
+export const isRepeatingAtom = atom(true);
 
-export const toggleRepeatingAtom = atom (
+export const toggleRepeatingAtom = atom(
   null,
-  (get, set) => set (isRepeatingAtom, !get (isRepeatingAtom)),
+  (get, set) => set(isRepeatingAtom, !get(isRepeatingAtom)),
 );

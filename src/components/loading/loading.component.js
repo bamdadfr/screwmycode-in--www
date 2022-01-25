@@ -6,15 +6,15 @@ import {
   TextContainer,
   TextLink,
 } from './loading.component.styles';
-import { DotsComponent } from './components/dots/dots.component';
-import { FadeAnimation } from '../../animations/fade/fade.animation';
+import {DotsComponent} from './components/dots/dots.component';
+import {FadeAnimation} from '../../animations/fade/fade.animation';
 
 /**
  * Component for the loading screen
  *
  * @returns {React.ReactElement} - Rendered component
  */
-export function LoadingComponent () {
+export function LoadingComponent() {
   return (
     <>
       <Container>

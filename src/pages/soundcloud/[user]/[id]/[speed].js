@@ -1,4 +1,4 @@
-import { PlayerLayout } from '../../../../layouts/player/player.layout';
+import {PlayerLayout} from '../../../../layouts/player/player.layout';
 
 /**
  * SoundCloud page
@@ -16,25 +16,25 @@ export default PlayerLayout;
  * @typedef {number} Speed - Playback speed
  * @returns {{Title, Image, Url, Speed}} - Server side props
  */
-export async function getServerSideProps (context) {
-  const { user, id, speed } = context.query;
+export async function getServerSideProps(context) {
+  const {user, id, speed} = context.query;
   const props = {};
-  const SoundcloudScraper = (await import ('soundcloud-scraper')).default;
-  const scraper = new SoundcloudScraper.Client ();
+  const SoundcloudScraper = (await import('soundcloud-scraper')).default;
+  const scraper = new SoundcloudScraper.Client();
   const soundcloudUrl = `https://soundcloud.com/${user}/${id}`;
-  const isValid = SoundcloudScraper.Util.validateURL (soundcloudUrl);
+  const isValid = SoundcloudScraper.Util.validateURL(soundcloudUrl);
 
   if (!isValid) {
-    return { redirect: { destination: '/', permanent: false }};
+    return {redirect: {destination: '/', permanent: false}};
   }
 
-  const info = await scraper.getSongInfo (soundcloudUrl);
-  const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL (info.trackURL, undefined);
+  const info = await scraper.getSongInfo(soundcloudUrl);
+  const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL(info.trackURL, undefined);
 
   props.title = info.title;
   props.image = info.thumbnail;
   props.url = audioUrl;
-  props.speed = parseFloat (speed) || 1;
+  props.speed = parseFloat(speed) || 1;
 
-  return { props };
+  return {props};
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from './slider.component.styles';
+import {Input} from './slider.component.styles';
 
 const propTypes = {
   min: PropTypes.number.isRequired,
@@ -23,7 +23,7 @@ const propTypes = {
  * @param {string} props.name - Name of the slider
  * @returns {React.ReactElement} - Rendered component
  */
-export function SliderComponent ({
+export function SliderComponent({
   min,
   max,
   step,

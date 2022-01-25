@@ -5,15 +5,15 @@ export const MOCK_STATE = () => {
     link: {
       ref: null,
       value: '',
-      onChange: jest.fn (),
-      resetValue: jest.fn (),
+      onChange: jest.fn(),
+      resetValue: jest.fn(),
     },
-    handleSubmit: jest.fn ((e) => e.preventDefault ()),
+    handleSubmit: jest.fn((e) => e.preventDefault()),
   };
 
   jest
-    .spyOn (useFormComponent, 'useFormComponent')
-    .mockReturnValue (state);
+    .spyOn(useFormComponent, 'useFormComponent')
+    .mockReturnValue(state);
 
   return state;
 };

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Container } from './player-speed.component.styles';
-import { usePlayerSpeedComponent } from './hooks/use-player-speed-component';
-import { SliderComponent } from '../slider/slider.component';
+import {Container} from './player-speed.component.styles';
+import {usePlayerSpeedComponent} from './hooks/use-player-speed-component';
+import {SliderComponent} from '../slider/slider.component';
 
 /**
  * Component for the player speed
  *
  * @returns {React.ReactElement} - Rendered component
  */
-export function PlayerSpeedComponent () {
-  const { value, onChange } = usePlayerSpeedComponent ();
+export function PlayerSpeedComponent() {
+  const {value, onChange} = usePlayerSpeedComponent();
 
   return (
     <>

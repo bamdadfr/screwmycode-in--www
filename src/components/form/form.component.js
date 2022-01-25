@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import { Form, Input, Submit, ImageContainer } from './form.component.styles';
-import { useFormComponent } from './hooks/use-form-component';
+import {Form, Input, Submit, ImageContainer} from './form.component.styles';
+import {useFormComponent} from './hooks/use-form-component';
 
 /**
  * Component for the form
  *
  * @returns {React.ReactElement} - Rendered component
  */
-export function FormComponent () {
-  const { link, handleSubmit } = useFormComponent ();
+export function FormComponent() {
+  const {link, handleSubmit} = useFormComponent();
 
   return (
     <>

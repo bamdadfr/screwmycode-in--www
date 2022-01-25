@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 
 /**
  * Hook to handle input value
@@ -10,16 +10,16 @@ import React, { useCallback, useRef, useState } from 'react';
  * @typedef {Function} ResetValue - Callback function
  * @returns {{Ref, Value, OnChange, ResetValue}} - Input state
  */
-export function useInput (defaultValue = '') {
-  const [value, setValue] = useState (defaultValue);
-  const ref = useRef (null);
+export function useInput(defaultValue = '') {
+  const [value, setValue] = useState(defaultValue);
+  const ref = useRef(null);
 
-  const onChange = useCallback ((e) => {
-    setValue (e.target.value);
+  const onChange = useCallback((e) => {
+    setValue(e.target.value);
   }, []);
 
-  const resetValue = useCallback (() => {
-    setValue (defaultValue);
+  const resetValue = useCallback(() => {
+    setValue(defaultValue);
   }, [defaultValue]);
 
   return {

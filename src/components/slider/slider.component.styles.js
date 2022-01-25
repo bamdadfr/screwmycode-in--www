@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const config = {
   'trackW': '100%',
@@ -36,16 +36,16 @@ const handle = css`
 `;
 
 const range = (props) => props.max - props.min;
-const ratio = (props) => (props.value - props.min) / range (props);
+const ratio = (props) => (props.value - props.min) / range(props);
 
 /**
  * @param {object} props react component props
  * @see https://codepen.io/thebabydino/pen/goYYrN
  * @returns {object} styled component
  */
-export const Input = styled.input.attrs ((props) => ({
+export const Input = styled.input.attrs((props) => ({
   'style': {
-    '--ratio': ratio (props),
+    '--ratio': ratio(props),
   },
 }))`
   &, &::-webkit-slider-thumb {

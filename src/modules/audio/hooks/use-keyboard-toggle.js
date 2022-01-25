@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useAtom } from 'jotai';
+import {useEffect} from 'react';
+import {useAtom} from 'jotai';
 import {
   isPlayingAtom,
   setPauseAtom,
@@ -11,23 +11,23 @@ import {
  *
  * @param {string} keyCode - Key code to listen to
  */
-export function useKeyboardToggle (keyCode = 'Space') {
-  const [isPlaying] = useAtom (isPlayingAtom);
-  const [, setPlay] = useAtom (setPlayAtom);
-  const [, setPause] = useAtom (setPauseAtom);
+export function useKeyboardToggle(keyCode = 'Space') {
+  const [isPlaying] = useAtom(isPlayingAtom);
+  const [, setPlay] = useAtom(setPlayAtom);
+  const [, setPause] = useAtom(setPauseAtom);
 
-  useEffect (() => {
+  useEffect(() => {
     const handleKeyboard = (event) => {
       if (event.code === keyCode) {
         if (isPlaying) {
-          return setPause ();
+          return setPause();
         }
 
-        setPlay ();
+        setPlay();
       }
     };
 
-    document.addEventListener ('keypress', handleKeyboard);
-    return () => document.removeEventListener ('keypress', handleKeyboard);
+    document.addEventListener('keypress', handleKeyboard);
+    return () => document.removeEventListener('keypress', handleKeyboard);
   }, [isPlaying, keyCode, setPause, setPlay]);
 }

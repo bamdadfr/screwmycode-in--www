@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { Title } from './title.component.styles';
+import {Title} from './title.component.styles';
 
 /**
  * Component for the title of the page
  *
  * @returns {React.ReactElement} - Rendered component
  */
-export function TitleComponent () {
+export function TitleComponent() {
   return (
     <>
       <Title>

@@ -8,9 +8,9 @@ export const developmentProxy = 'http://localhost:8080';
  * @param {string} url - url to be proxified
  * @returns {string} - proxified url
  */
-export function getUrlWithProxy (url) {
+export function getUrlWithProxy(url) {
   if (typeof url !== 'string') {
-    throw new Error ('url is not a string');
+    throw new Error('url is not a string');
   }
 
   const isProduction = process.env.NODE_ENV === 'production';

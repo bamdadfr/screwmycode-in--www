@@ -1,8 +1,8 @@
-import { atom } from 'jotai';
+import {atom} from 'jotai';
 
-export const seekAtom = atom (0);
+export const seekAtom = atom(0);
 
-export const setSeekAtom = atom (
+export const setSeekAtom = atom(
   null,
-  (get, set, arg) => set (seekAtom, arg),
+  (get, set, arg) => set(seekAtom, arg),
 );

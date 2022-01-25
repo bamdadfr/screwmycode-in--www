@@ -7,7 +7,7 @@ import React from 'react';
  *
  * @returns {React.ReactElement} - Old YouTube page component
  */
-export default function OldYoutubePage () {
+export default function OldYoutubePage() {
   return <></>;
 }
 
@@ -17,17 +17,17 @@ export default function OldYoutubePage () {
  * @param {object} context - Next.js context
  * @returns {object} - Next.js redirection object
  */
-export function getServerSideProps (context) {
-  const { id } = context.params;
-  const { speed } = context.query;
+export function getServerSideProps(context) {
+  const {id} = context.params;
+  const {speed} = context.query;
   const props = {};
 
   props.id = id;
-  props.speed = parseFloat (speed) || 1;
+  props.speed = parseFloat(speed) || 1;
 
   return {
     redirect: {
-      destination: `/youtube/${props.id}/${props.speed.toString ()}`,
+      destination: `/youtube/${props.id}/${props.speed.toString()}`,
       permanent: true,
     },
   };

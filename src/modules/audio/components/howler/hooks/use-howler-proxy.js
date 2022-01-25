@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import {useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
 import axios from 'axios';
-import { getUrlWithProxy } from '../../../../../utils/get-url-with-proxy/get-url-with-proxy';
+import {getUrlWithProxy} from '../../../../../utils/get-url-with-proxy/get-url-with-proxy';
 
 /**
  * Hook to proxy howler requests
@@ -11,35 +11,35 @@ import { getUrlWithProxy } from '../../../../../utils/get-url-with-proxy/get-url
  * @typedef {boolean} ProxyReady - Whether the proxy is ready
  * @returns {{ProxyReady}} - ProxyReady
  */
-export function useHowlerProxy ({ url }) {
-  const router = useRouter ();
-  const [proxyReady, setProxyReady] = useState (false);
-  const [proxyFailed, setProxyFailed] = useState (false);
+export function useHowlerProxy({url}) {
+  const router = useRouter();
+  const [proxyReady, setProxyReady] = useState(false);
+  const [proxyFailed, setProxyFailed] = useState(false);
 
-  useEffect (() => {
+  useEffect(() => {
     (async () => {
       try {
         // warmup
-        await axios.head (getUrlWithProxy ('https://www.screwmycode.in/'));
+        await axios.head(getUrlWithProxy('https://www.screwmycode.in/'));
 
         // target
-        await axios.head (getUrlWithProxy (url));
+        await axios.head(getUrlWithProxy(url));
 
-        setProxyReady (true);
+        setProxyReady(true);
       } catch (error) {
-        setProxyFailed (true);
+        setProxyFailed(true);
       }
-    }) ();
+    })();
   }, [router, url, setProxyReady]);
 
-  useEffect (() => {
+  useEffect(() => {
     if (!proxyFailed) {
       return;
     }
 
     (async () => {
-      await router.replace ('/');
-    }) ();
+      await router.replace('/');
+    })();
   }, [proxyFailed, router]);
 
   return {

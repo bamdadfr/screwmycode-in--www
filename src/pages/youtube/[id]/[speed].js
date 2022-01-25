@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { getYoutubeThumbnail } from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail';
-import { PlayerLayout } from '../../../layouts/player/player.layout';
+import {
+  getYoutubeThumbnail,
+} from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail';
+import {PlayerLayout} from '../../../layouts/player/player.layout';
 
 /**
  * Youtube page
@@ -18,18 +20,18 @@ export default PlayerLayout;
  * @typedef {number} Speed - Playback speed
  * @returns {{Title, Image, Url, Speed}} - Server side props
  */
-export async function getServerSideProps (context) {
-  const { id, speed } = context.params;
+export async function getServerSideProps(context) {
+  const {id, speed} = context.params;
   const props = {};
-  const redirect = { 'redirect': { 'destination': '/', 'permanent': false }};
-  const ytdl = (await import ('ytdl-core')).default;
-  const isValid = ytdl.validateID (id);
+  const redirect = {'redirect': {'destination': '/', 'permanent': false}};
+  const ytdl = (await import('ytdl-core')).default;
+  const isValid = ytdl.validateID(id);
 
   if (!isValid) {
     return redirect;
   }
 
-  const request = await axios.get (`https://api.screwmycode.in/youtube/${id}`);
+  const request = await axios.get(`https://api.screwmycode.in/youtube/${id}`);
   const response = request.data;
 
   if (!response.success) {
@@ -37,9 +39,9 @@ export async function getServerSideProps (context) {
   }
 
   props.title = response.data.title;
-  props.image = getYoutubeThumbnail (id);
+  props.image = getYoutubeThumbnail(id);
   props.url = response.data.url;
-  props.speed = parseFloat (speed) || 1;
+  props.speed = parseFloat(speed) || 1;
 
-  return { props };
+  return {props};
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { MetaConstants } from './meta.constants';
+import {MetaConstants} from './meta.constants';
 
 const propTypes = {
   title: PropTypes.string,
@@ -30,7 +30,7 @@ const defaultProps = {
  * @param {boolean} [props.customTitle] - Whether to use the title prop as the page title
  * @returns {React.ReactElement} - Rendered component
  */
-export function MetaComponent ({
+export function MetaComponent({
   title,
   url,
   description,
