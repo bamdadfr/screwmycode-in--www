@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useInterval } from '../../../hooks/use-interval';
+import {useEffect, useState} from 'react';
+import {useInterval} from '../../../hooks/use-interval';
 
 /**
  * Hook for caching a value and updating it every `interval` milliseconds.
@@ -9,26 +9,26 @@ import { useInterval } from '../../../hooks/use-interval';
  * @param {number} delay - The delay in milliseconds between updates.
  * @returns {number} - The cached value.
  */
-export function useCache (value, delay) {
-  const [cachedValue, setCachedValue] = useState (value);
-  const [isRunning, setIsRunning] = useState (false);
+export function useCache(value, delay) {
+  const [cachedValue, setCachedValue] = useState(value);
+  const [isRunning, setIsRunning] = useState(false);
 
   // detect when interval needs to run
-  useEffect (() => {
+  useEffect(() => {
     if (value === cachedValue) {
-      return setIsRunning (false);
+      return setIsRunning(false);
     }
 
-    setIsRunning (true);
+    setIsRunning(true);
   }, [value, cachedValue]);
 
   // setup interval
-  useInterval (() => {
+  useInterval(() => {
     if (value === cachedValue) {
       return;
     }
 
-    setCachedValue (value);
+    setCachedValue(value);
   }, isRunning ? delay : null);
 
   return cachedValue;

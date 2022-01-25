@@ -1,9 +1,9 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
+import {Icon} from '@iconify/react';
 import pause from '@iconify/icons-mdi/pause';
 import play from '@iconify/icons-mdi/play';
-import { useAtom } from 'jotai';
-import { Button } from '../../player.module.styles';
+import {useAtom} from 'jotai';
+import {Button} from '../../player.module.styles';
 import {
   isPlayingAtom,
   togglePlayingAtom,
@@ -14,9 +14,9 @@ import {
  *
  * @returns {React.ReactElement} - Play/Pause button
  */
-export function PlayPauseButtonComponent () {
-  const [isPlaying] = useAtom (isPlayingAtom);
-  const [, togglePlaying] = useAtom (togglePlayingAtom);
+export function PlayPauseButtonComponent() {
+  const [isPlaying] = useAtom(isPlayingAtom);
+  const [, togglePlaying] = useAtom(togglePlayingAtom);
 
   return (
     <>

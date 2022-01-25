@@ -8,9 +8,9 @@ export const suffix = '/maxresdefault.jpg';
  * @param {string} id - The video ID
  * @returns {string} - The thumbnail URL
  */
-export function getYoutubeThumbnail (id) {
+export function getYoutubeThumbnail(id) {
   if (typeof id !== 'string') {
-    throw new Error ('id is not a string');
+    throw new Error('id is not a string');
   }
 
   return `${prefix}${id}${suffix}`;

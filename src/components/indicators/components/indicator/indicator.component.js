@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InputTitle, InputValue, Wrapper } from './indicator.component.styles';
+import {InputTitle, InputValue, Wrapper} from './indicator.component.styles';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -17,7 +17,7 @@ const propTypes = {
  * @param {string} props.metaName - Indicator meta name
  * @returns {React.ReactElement} - Rendered component
  */
-export function IndicatorComponent ({
+export function IndicatorComponent({
   title,
   value,
   metaName,

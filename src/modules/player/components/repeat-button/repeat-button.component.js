@@ -1,9 +1,9 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
+import {Icon} from '@iconify/react';
 import repeat from '@iconify/icons-mdi/repeat';
 import repeatOff from '@iconify/icons-mdi/repeat-off';
-import { useAtom } from 'jotai';
-import { Button } from '../../player.module.styles';
+import {useAtom} from 'jotai';
+import {Button} from '../../player.module.styles';
 import {
   isRepeatingAtom,
   toggleRepeatingAtom,
@@ -14,9 +14,9 @@ import {
  *
  * @returns {React.ReactElement} - Repeat button
  */
-export function RepeatButtonComponent () {
-  const [isRepeating] = useAtom (isRepeatingAtom);
-  const [, toggleRepeating] = useAtom (toggleRepeatingAtom);
+export function RepeatButtonComponent() {
+  const [isRepeating] = useAtom(isRepeatingAtom);
+  const [, toggleRepeating] = useAtom(toggleRepeatingAtom);
 
   return (
     <>

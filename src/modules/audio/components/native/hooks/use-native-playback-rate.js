@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { useAtom } from 'jotai';
-import { speedAtom } from '../../../../../atoms/speed.atoms';
+import {useEffect} from 'react';
+import {useAtom} from 'jotai';
+import {speedAtom} from '../../../../../atoms/speed.atoms';
 
 /**
  * Hook to set the native playback rate
  *
  * @param {HTMLAudioElement} audio - The audio element
  */
-export function useNativePlaybackRate (audio) {
-  const [speed] = useAtom (speedAtom);
+export function useNativePlaybackRate(audio) {
+  const [speed] = useAtom(speedAtom);
 
-  useEffect (() => {
+  useEffect(() => {
     if (!(audio instanceof HTMLAudioElement)) {
       return;
     }

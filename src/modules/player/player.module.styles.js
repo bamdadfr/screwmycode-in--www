@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Breakpoints } from '../../app/styles/breakpoints';
+import {Breakpoints} from '../../app/styles/breakpoints';
 
 export const Container = styled.div`
   display: grid;

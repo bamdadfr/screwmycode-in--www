@@ -8,38 +8,38 @@
  * @param {string} value - New parameter value
  * @param {undefined|string} [title=false] - New page title
  */
-export function replaceNextRoute (parameter, value, title = undefined) {
+export function replaceNextRoute(parameter, value, title = undefined) {
   if (typeof parameter !== 'string') {
-    throw new Error ('parameter not a string');
+    throw new Error('parameter not a string');
   }
 
   if (typeof value !== 'string') {
-    throw new Error ('value not a string');
+    throw new Error('value not a string');
   }
 
   if (typeof title !== 'undefined') {
     document.title = title;
   }
 
-  const { as, url } = window.history.state;
-  const args = as.split ('/');
-  const id = new RegExp (`^(.*)(\\[${parameter}\\])(.*)$`)
-    .exec (url)
-    .slice (1)[0]
-    .split ('/')
+  const {as, url} = window.history.state;
+  const args = as.split('/');
+  const id = new RegExp(`^(.*)(\\[${parameter}\\])(.*)$`)
+    .exec(url)
+    .slice(1)[0]
+    .split('/')
     .length - 1;
 
   args[id] = value;
 
-  const newAs = args.join ('/');
+  const newAs = args.join('/');
 
-  const newUrl = url.replace (
-    new RegExp (`${parameter}=.*?(?=&|$)`),
+  const newUrl = url.replace(
+    new RegExp(`${parameter}=.*?(?=&|$)`),
     `${parameter}=${value}`,
   );
 
-  window.history.replaceState (
-    { ...window.history.state, as: newAs, url: newUrl },
+  window.history.replaceState(
+    {...window.history.state, as: newAs, url: newUrl},
     '',
     newAs,
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { animated, useSpring } from '@react-spring/web';
+import {animated, useSpring} from '@react-spring/web';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -19,11 +19,11 @@ const defaultProps = {
  * @param {number} [props.delay=defaultProps.delay] - Delay before animation
  * @returns {React.ReactElement} - Rendered component
  */
-export function FadeAnimation ({
+export function FadeAnimation({
   children,
   delay,
 }) {
-  const props = useSpring ({
+  const props = useSpring({
     from: {
       opacity: 0,
     },

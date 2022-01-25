@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isFirefox } from 'react-device-detect';
-import { NativeComponent } from './components/native/native.component';
-import { HowlerComponent } from './components/howler/howler.component';
-import { useAudioModule } from './hooks/use-audio-module';
-import { Invisible } from './audio.module.styles';
+import {isFirefox} from 'react-device-detect';
+import {NativeComponent} from './components/native/native.component';
+import {HowlerComponent} from './components/howler/howler.component';
+import {useAudioModule} from './hooks/use-audio-module';
+import {Invisible} from './audio.module.styles';
 
 const propTypes = {
   url: PropTypes.string.isRequired,
@@ -17,8 +17,8 @@ const propTypes = {
  * @param {{Url}} props - The props of the component
  * @returns {React.ReactElement} - Audio component
  */
-export function AudioModule ({ url }) {
-  useAudioModule ();
+export function AudioModule({url}) {
+  useAudioModule();
 
   return (
     <>

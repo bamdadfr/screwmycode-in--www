@@ -1,8 +1,8 @@
-import { atom } from 'jotai';
+import {atom} from 'jotai';
 
-export const progressAtom = atom (0);
+export const progressAtom = atom(0);
 
-export const setProgressAtom = atom (
+export const setProgressAtom = atom(
   null,
-  (get, set, arg) => set (progressAtom, arg),
+  (get, set, arg) => set(progressAtom, arg),
 );

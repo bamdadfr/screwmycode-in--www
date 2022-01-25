@@ -1,8 +1,8 @@
-import { useGoogleAnalytics } from '../use-google-analytics/use-google-analytics';
+import {useGoogleAnalytics} from '../use-google-analytics/use-google-analytics';
 
 /**
  * Entry hook for the Next.js app
  */
-export function useApp () {
-  useGoogleAnalytics ();
+export function useApp() {
+  useGoogleAnalytics();
 }

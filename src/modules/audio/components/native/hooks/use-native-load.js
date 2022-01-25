@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useAtom } from 'jotai';
-import { setDurationAtom } from '../../../../../atoms/duration.atoms';
-import { setLoadedAtom } from '../../../../../atoms/load.atoms';
+import {useCallback, useEffect, useState} from 'react';
+import {useAtom} from 'jotai';
+import {setDurationAtom} from '../../../../../atoms/duration.atoms';
+import {setLoadedAtom} from '../../../../../atoms/load.atoms';
 
 /**
  * Hook to load a native audio element
@@ -9,24 +9,24 @@ import { setLoadedAtom } from '../../../../../atoms/load.atoms';
  * @param {HTMLAudioElement} audio - The audio element to load
  * @param {string} url - The url of the audio
  */
-export function useNativeLoad (audio, url) {
-  const [savedUrl, setSavedUrl] = useState ();
-  const [, setLoaded] = useAtom (setLoadedAtom);
-  const [, setDuration] = useAtom (setDurationAtom);
+export function useNativeLoad(audio, url) {
+  const [savedUrl, setSavedUrl] = useState();
+  const [, setLoaded] = useAtom(setLoadedAtom);
+  const [, setDuration] = useAtom(setDurationAtom);
 
-  const handleCanPlay = useCallback (() => {
-    setLoaded (true);
+  const handleCanPlay = useCallback(() => {
+    setLoaded(true);
   }, [setLoaded]);
 
-  const handleMetadata = useCallback (() => {
+  const handleMetadata = useCallback(() => {
     if (!(audio instanceof HTMLAudioElement)) {
       return;
     }
 
-    setDuration (audio.duration);
+    setDuration(audio.duration);
   }, [audio, setDuration]);
 
-  useEffect (() => {
+  useEffect(() => {
     if (!(audio instanceof HTMLAudioElement)) {
       return;
     }
@@ -36,14 +36,14 @@ export function useNativeLoad (audio, url) {
     }
 
     audio.src = url;
-    setSavedUrl (url);
+    setSavedUrl(url);
 
-    audio.addEventListener ('canplay', () => handleCanPlay ());
-    audio.addEventListener ('loadedmetadata', () => handleMetadata ());
+    audio.addEventListener('canplay', () => handleCanPlay());
+    audio.addEventListener('loadedmetadata', () => handleMetadata());
 
     return () => {
-      audio.removeEventListener ('canplay', () => handleCanPlay ());
-      audio.removeEventListener ('loadedmetadata', () => handleMetadata ());
+      audio.removeEventListener('canplay', () => handleCanPlay());
+      audio.removeEventListener('loadedmetadata', () => handleMetadata());
     };
   }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, url]);
 }
