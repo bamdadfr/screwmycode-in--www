@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.0...v1.26.1) (2022-01-25)
+
+
+### Bug Fixes
+
+* add artwork server side base64 conversion to bypass YouTube CORS ([c830071](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c8300713126f6fa760b6254f150a76e64c50022b))
+
 # [1.26.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.25.0...v1.26.0) (2022-01-25)
 
 
