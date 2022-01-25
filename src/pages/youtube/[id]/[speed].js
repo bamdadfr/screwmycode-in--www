@@ -3,6 +3,9 @@ import {
   getYoutubeThumbnail,
 } from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail';
 import {PlayerLayout} from '../../../layouts/player/player.layout';
+import {
+  serverFetchAndConvertToBase64,
+} from '../../../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
 
 /**
  * Youtube page
@@ -38,8 +41,11 @@ export async function getServerSideProps(context) {
     return redirect;
   }
 
+  const remoteImage = response.data.image || getYoutubeThumbnail(id);
+  const image = await serverFetchAndConvertToBase64(remoteImage);
+
   props.title = response.data.title;
-  props.image = getYoutubeThumbnail(id);
+  props.image = image;
   props.url = response.data.url;
   props.speed = parseFloat(speed) || 1;
 

@@ -1,4 +1,7 @@
 import {PlayerLayout} from '../../../../layouts/player/player.layout';
+import {
+  serverFetchAndConvertToBase64,
+} from '../../../../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
 
 /**
  * SoundCloud page
@@ -30,9 +33,10 @@ export async function getServerSideProps(context) {
 
   const info = await scraper.getSongInfo(soundcloudUrl);
   const audioUrl = await SoundcloudScraper.Util.fetchSongStreamURL(info.trackURL, undefined);
+  const image = await serverFetchAndConvertToBase64(info.thumbnail);
 
   props.title = info.title;
-  props.image = info.thumbnail;
+  props.image = image;
   props.url = audioUrl;
   props.speed = parseFloat(speed) || 1;
 
