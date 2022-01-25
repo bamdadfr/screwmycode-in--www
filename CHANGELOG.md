@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.25.0...v1.26.0) (2022-01-25)
+
+
+### Features
+
+* **artwork:** add GLSL shader ([51437c1](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/51437c15f955a30fbb06f27be58b86c980e0d383))
+
 # [1.25.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.33...v1.25.0) (2022-01-25)
 
 
