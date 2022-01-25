@@ -1,3 +1,21 @@
+# [1.25.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.33...v1.25.0) (2022-01-25)
+
+
+### Bug Fixes
+
+* Adjust color and blur of artwork image ([e967bdd](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e967bdd01ca4723784c14f3c81df5d41ede45253))
+
+
+### Features
+
+* Add artwork in the background with shifting color based on current speed ([1e8ca4c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1e8ca4cd391ba399c993bc504a468e6b90b2be0f))
+* **artwork:** add dynamic size to keep fluid perfect square size ([69a243f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/69a243fd4319cb630f80e49f09cce1da9358a421))
+
+
+### Performance Improvements
+
+* update dependencies to latest ([bdfe4ae](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/bdfe4aeb83d39e2e155a153b43d70a25deb2101d))
+
 ## [1.24.33](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.24.32...v1.24.33) (2022-01-24)
 
 
