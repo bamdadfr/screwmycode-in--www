@@ -8,7 +8,6 @@ const render = () => {
     container,
   };
 };
-
 describe('DotsComponent', () => {
   describe('container', () => {
     it('should be in the document, visible and not empty', () => {

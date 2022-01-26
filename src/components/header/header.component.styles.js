@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   position: fixed;
   z-index: 10;
+
   margin: 7px 7px;
   top: 0;
-  left: 0;
+
+  display: flex;
+  grid-gap: 3px;
+
   font-size: 2em;
   color: ${(props) => props.theme.primary};
 
@@ -16,6 +20,19 @@ export const Container = styled.div`
       cursor: pointer;
       color: ${(props) => props.theme.highlight};
     }
-
   }
+`;
+
+export const LeftContainer = styled(Container)`
+  left: 0;
+`;
+
+export const RightContainer = styled(Container)`
+  right: 0;
+`;
+
+export const PodiumButton = styled.button`
+  font-size: 91%;
+  transform: translateY(-3px);
+  margin-left: 3px;
 `;
