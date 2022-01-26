@@ -1,3 +1,10 @@
+## [1.28.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.1...v1.28.2) (2022-01-26)
+
+
+### Bug Fixes
+
+* **HeaderComponent:** Transform header buttons to valid HTML anchors ([4e5efe1](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4e5efe15a128cd08fef4736163dfd90bdd79c43f))
+
 ## [1.28.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.0...v1.28.1) (2022-01-26)
 
 
