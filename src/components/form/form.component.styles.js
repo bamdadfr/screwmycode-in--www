@@ -42,7 +42,7 @@ export const Submit = styled.button`
 export const ImageContainer = styled.span`
   margin-left: 0.3em;
 
-  & > div {
-    transform: translate3d(0.1em, 0.15em, 0);
+  & > span {
+    transform: translate3d(2px, 3px, 0);
   }
 `;
