@@ -7,6 +7,7 @@ import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
 import {getProvider} from '../../../utils/get-provider/get-provider';
 import {usePlayerLoading} from './use-player-loading';
 import {setImageAtom} from '../../../atoms/image.atoms';
+import {setPauseAtom} from '../../../atoms/play-pause.atoms';
 
 /**
  * Entry hook for the player layout
@@ -31,6 +32,7 @@ export function usePlayerLayout({
   const [, setSpeed] = useAtom(setSpeedAtom);
   const [, setAudioTitle] = useAtom(setAudioTitleAtom);
   const [, setArtwork] = useAtom(setImageAtom);
+  const [, setPause] = useAtom(setPauseAtom);
 
   const [metaDescription] = useState(`${title} - ${speed} - ${getProvider(router)} - ScrewMyCode.In`);
   const metaUrl = 'https://www.screwmycode.in/' + router.asPath;
@@ -39,6 +41,10 @@ export function usePlayerLayout({
   useEffect(() => setSpeed(speed), [setSpeed, speed]);
   useEffect(() => setAudioTitle(title), [setAudioTitle, title]);
   useEffect(() => setArtwork(image), [setArtwork, image]);
+
+  useEffect(() => () => {
+    setPause();
+  });
 
   return {
     metaDescription,
