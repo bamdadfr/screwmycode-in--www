@@ -1,3 +1,10 @@
+## [1.27.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.27.0...v1.27.1) (2022-01-26)
+
+
+### Bug Fixes
+
+* **use-howler-proxy:** add `X-Requested-With` header + warmup with API ([df4c59d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/df4c59d2d0f96133b65bb5fa55b42db02a4618d1))
+
 # [1.27.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.3...v1.27.0) (2022-01-26)
 
 
