@@ -1,7 +1,7 @@
 const transformModules = [
   'speed-to-semitones',
   'speed-to-percentage',
-].join ('|');
+].join('|');
 
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.js'],
