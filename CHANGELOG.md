@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.27.1...v1.28.0) (2022-01-26)
+
+
+### Features
+
+* Create screw-texture component + Create table component + Feed data to `/latest` and `/top` pages ([a91ab9e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/a91ab9e3a7fe1a28dbda38364670ac2525272829))
+
 ## [1.27.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.27.0...v1.27.1) (2022-01-26)
 
 
