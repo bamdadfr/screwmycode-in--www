@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.0...v1.28.1) (2022-01-26)
+
+
+### Bug Fixes
+
+* **HomePage:** recenter submit button icon ([7287bcd](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7287bcd8d2308d86acbc06f152c2a7723f387e54))
+
 # [1.28.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.27.1...v1.28.0) (2022-01-26)
 
 
