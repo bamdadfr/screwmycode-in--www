@@ -1,3 +1,23 @@
+# [1.27.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.3...v1.27.0) (2022-01-26)
+
+
+### Bug Fixes
+
+* **player:** pause playing state on player unmount ([4fec8ad](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4fec8ad83d0c373b10c51388214db6b8fdf8a9d6))
+
+
+### Features
+
+* **about:** add under construction page ([2e87c35](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2e87c35788b51f7e27238261cc151b7797b03976))
+* **header:** add `latest`, `top` and `about` buttons ([437be91](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/437be915b15ed4f6c1027f9343cbb1dce0dacbc6))
+* **latest:** add first draft page ([148be99](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/148be99477432306cbdf8cf3c7d038d9440f7824))
+* **top:** add under construction page ([1fd60b9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1fd60b9b7b1b4c9e558308037a706b79e6ddd962))
+
+
+### Performance Improvements
+
+* **loading/dots:** split hook code from component + add tests ([f4ac398](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f4ac3982f39c4978f3cf34fa65eb4553325947d3))
+
 ## [1.26.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.2...v1.26.3) (2022-01-26)
 
 
