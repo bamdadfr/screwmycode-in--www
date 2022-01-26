@@ -9,6 +9,7 @@ module.exports = {
   moduleNameMapper: {
     'next/head': '<rootDir>/__mocks__/next-head.js',
     'next/router': '<rootDir>/__mocks__/next-router.js',
+    '^.+.(glsl)$': '<rootDir>/__mocks__/glsl.js',
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: [
