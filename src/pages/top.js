@@ -1,18 +1,48 @@
 import React from 'react';
+import axios from 'axios';
 import {DefaultLayout} from '../layouts/default/default.layout';
+import {TableComponent} from '../components/table/table.component';
+import {
+  serverFetchAndConvertToBase64,
+} from '../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
 
 /**
  * Top page
  * Path: /top
  *
+ * @param {*} props - React props
+ * @param {*[]} props.top - Top list
  * @returns {React.ReactElement} - Top page component
  */
-export default function TopPage() {
+export default function TopPage({top}) {
   return (
     <>
       <DefaultLayout>
-        Under construction
+        <TableComponent table={top} />
       </DefaultLayout>
     </>
   );
+}
+
+/**
+ * @returns {*} - Top tracks
+ */
+export async function getServerSideProps() {
+  const props = {};
+
+  const request = await axios.get('https://api.screwmycode.in/youtube');
+  const response = request.data;
+  const redirect = {'redirect': {'destination': '/', 'permanent': false}};
+
+  if (!response.success) {
+    return redirect;
+  }
+
+  props.top = response.data;
+
+  await Promise.all(props.top.map(async (item) => {
+    item.image = await serverFetchAndConvertToBase64(item.image);
+  }));
+
+  return {props};
 }

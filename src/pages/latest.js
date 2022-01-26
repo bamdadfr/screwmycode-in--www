@@ -1,45 +1,10 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-import {Icon} from '@iconify/react';
-import play from '@iconify/icons-mdi/play';
-import {useRouter} from 'next/router';
 import {DefaultLayout} from '../layouts/default/default.layout';
-
-const Container = styled.div`
-  max-height: 20em;
-
-  display: grid;
-  grid-gap: 0.5em;
-
-  overflow-y: scroll;
-
-  img {
-    width: 5em;
-    height: 5em;
-    object-fit: cover;
-  }
-`;
-
-const Item = styled.div`
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 6em 1fr 5em;
-
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    color: ${(props) => props.theme.highlight};
-    background: ${(props) => props.theme.background.highlight};
-  }
-`;
-
-const PlayButton = styled.button`
-  font-size: 2em;
-  transform: translateY(5px);
-`;
+import {TableComponent} from '../components/table/table.component';
+import {
+  serverFetchAndConvertToBase64,
+} from '../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
 
 /**
  * Latest page
@@ -50,31 +15,10 @@ const PlayButton = styled.button`
  * @returns {React.ReactElement} - Latest page component
  */
 export default function LatestPage({latest}) {
-  const router = useRouter();
-
-  const onClick = useCallback((id) => {
-    router.push(`/youtube/${id}/1`);
-  }, [router]);
-
   return (
     <>
       <DefaultLayout>
-        <Container>
-          {latest.map((item) => (
-            <Item
-              key={item.id}
-              onClick={() => onClick(item.id)}
-            >
-              <img src={item.image} alt="artwork" />
-              <span>{item.title}</span>
-              <span>
-                <PlayButton type="button" aria-label="play">
-                  <Icon icon={play} />
-                </PlayButton>
-              </span>
-            </Item>
-          ))}
-        </Container>
+        <TableComponent table={latest} />
       </DefaultLayout>
     </>
   );
@@ -95,6 +39,10 @@ export async function getServerSideProps() {
   }
 
   props.latest = response.data;
+
+  await Promise.all(props.latest.map(async (item) => {
+    item.image = await serverFetchAndConvertToBase64(item.image);
+  }));
 
   return {props};
 }

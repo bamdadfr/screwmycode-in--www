@@ -4,7 +4,7 @@ precision highp float;
 
 uniform float time;
 uniform sampler2D image;
-uniform float screw;
+uniform float dryWet;
 
 varying vec2 uv;
 
@@ -60,7 +60,7 @@ void main(void)
   float value = fbm(ratio);
   float boundedValue = mix(-bound, bound, value);
 
-  vec2 surface = screw * vec2(boundedValue, boundedValue);
+  vec2 surface = dryWet * vec2(boundedValue, boundedValue);
   newUv += refract(vec2(0.0, 0.0), surface, 1.0 / 1.333);
 
   gl_FragColor = texture2D(image, newUv);
