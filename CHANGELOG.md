@@ -1,3 +1,10 @@
+## [1.26.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.2...v1.26.3) (2022-01-26)
+
+
+### Performance Improvements
+
+* rewrite time loop HOC + split files + apply code style rules ([84dbae2](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/84dbae2abc83c42aedbd7157a9fc2bce0060984a))
+
 ## [1.26.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.26.1...v1.26.2) (2022-01-25)
 
 
