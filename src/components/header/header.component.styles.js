@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Icon} from '@iconify/react';
 
 const Container = styled.div`
   position: fixed;
@@ -13,7 +14,7 @@ const Container = styled.div`
   font-size: 2em;
   color: ${(props) => props.theme.primary};
 
-  > button {
+  > a {
     transition: color 200ms ease-in-out;
 
     &:hover {
@@ -31,8 +32,8 @@ export const RightContainer = styled(Container)`
   right: 0;
 `;
 
-export const PodiumButton = styled.button`
+export const PodiumIcon = styled(Icon)`
   font-size: 91%;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   margin-left: 3px;
 `;

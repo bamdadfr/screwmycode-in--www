@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // noinspection HtmlUnknownTarget
 
 import React from 'react';
@@ -9,7 +10,7 @@ import information from '@iconify/icons-mdi/information-variant';
 import {Icon} from '@iconify/react';
 import {
   LeftContainer,
-  PodiumButton,
+  PodiumIcon,
   RightContainer,
 } from './header.component.styles';
 
@@ -23,38 +24,21 @@ export function HeaderComponent() {
     <>
       <LeftContainer>
         <Link href="/">
-          <button
-            type="button"
-            aria-label="home"
-          >
-            <Icon icon={home} />
-          </button>
+          <a><Icon icon={home} /></a>
         </Link>
+
         <Link href="/latest">
-          <button
-            type="button"
-            aria-label="latest"
-          >
-            <Icon icon={history} />
-          </button>
+          <a><Icon icon={history} /></a>
         </Link>
+
         <Link href="/top">
-          <PodiumButton
-            type="button"
-            aria-label="latest"
-          >
-            <Icon icon={podium} />
-          </PodiumButton>
+          <a><PodiumIcon icon={podium} /></a>
         </Link>
       </LeftContainer>
+
       <RightContainer>
         <Link href="/about">
-          <button
-            type="button"
-            aria-label="latest"
-          >
-            <Icon icon={information} />
-          </button>
+          <a><Icon icon={information} /></a>
         </Link>
       </RightContainer>
     </>
