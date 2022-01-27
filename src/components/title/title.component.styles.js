@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Breakpoints} from '../../app/styles/breakpoints';
+import {down} from 'styled-breakpoints';
 
 export const Title = styled.h1`
   display: flex;
@@ -21,7 +21,7 @@ export const Title = styled.h1`
     }
   }
 
-  @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+  ${down('md')} {
     font-size: 2em;
   }
 `;

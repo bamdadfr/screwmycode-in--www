@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Breakpoints} from '../../app/styles/breakpoints';
+import {down, up} from 'styled-breakpoints';
 
 export const Container = styled.div`
   position: fixed;
@@ -27,23 +27,23 @@ export const Wrapper = styled.div`
   text-align: center;
   font-size: 1.1em;
 
-  @media screen and (max-width: ${Breakpoints.mobile}px) {
+  ${down('md')} {
     width: 90vw;
   }
 
-  @media screen and (min-width: ${Breakpoints.tablet}px) {
+  ${up('md')} {
     width: 80vw;
   }
 
-  @media screen and (min-width: ${Breakpoints.desktop}px) {
+  ${up('lg')} {
     width: 60vw;
   }
 
-  @media screen and (min-width: ${Breakpoints.widescreen}px) {
+  ${up('xl')} {
     width: 50vw;
   }
 
-  @media screen and (min-width: ${Breakpoints.fullhd}px) {
+  ${up('xxl')} {
     width: 40vw;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-height: 20em;
+  height: 35vh;
 
   display: grid;
   grid-gap: 0.5em;

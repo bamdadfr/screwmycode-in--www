@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: left;
+  overflow-y: scroll;
+  height: 35vh;
 `;
 
 export const Title = styled.h1`

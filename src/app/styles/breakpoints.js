@@ -1,7 +1,10 @@
-export const Breakpoints = {
-  mobile: 768 - 1,
-  tablet: 768,
-  desktop: 1024,
-  widescreen: 1216,
-  fullhd: 1408,
-};
+import {createTheme} from 'styled-breakpoints';
+
+export const Breakpoints = createTheme({
+  xs: '0px',
+  sm: '576px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1216px',
+  xxl: '1408px',
+});

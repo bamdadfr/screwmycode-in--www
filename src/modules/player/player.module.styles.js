@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Breakpoints} from '../../app/styles/breakpoints';
+import {down} from 'styled-breakpoints';
 
 export const Container = styled.div`
   width: 100%;
@@ -69,7 +69,7 @@ export const PlayerContainer = styled.div`
     justify-self: flex-end;
   }
 
-  @media screen and (max-width: ${Breakpoints.tablet - 1}px) {
+  ${down('md')} {
     font-size: 0.9em;
 
     grid-template-columns: 2em 2em 1fr 6em;
