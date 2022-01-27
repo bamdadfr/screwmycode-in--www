@@ -21,7 +21,7 @@ const defaultProps = {
  */
 export function FadeAnimation({
   children,
-  delay,
+  delay = defaultProps.delay,
 }) {
   const props = useSpring({
     from: {
