@@ -1,3 +1,15 @@
+# [1.29.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.2...v1.29.0) (2022-01-27)
+
+
+### Bug Fixes
+
+* update header tests ([79a942d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/79a942dc09f410a03b326c15536ac7814be172fc))
+
+
+### Features
+
+* Add `/about` page + small improvements ([2b0e99d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2b0e99db6d265b091998a0131764cde67c36740a))
+
 ## [1.28.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.1...v1.28.2) (2022-01-26)
 
 
