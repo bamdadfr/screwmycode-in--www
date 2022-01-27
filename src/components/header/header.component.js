@@ -24,21 +24,21 @@ export function HeaderComponent() {
     <>
       <LeftContainer>
         <Link href="/">
-          <a><Icon icon={home} /></a>
+          <a aria-label="home"><Icon icon={home} /></a>
         </Link>
 
         <Link href="/latest">
-          <a><Icon icon={history} /></a>
+          <a aria-label="latest"><Icon icon={history} /></a>
         </Link>
 
         <Link href="/top">
-          <a><PodiumIcon icon={podium} /></a>
+          <a aria-label="top"><PodiumIcon icon={podium} /></a>
         </Link>
       </LeftContainer>
 
       <RightContainer>
         <Link href="/about">
-          <a><Icon icon={information} /></a>
+          <a aria-label="about"><Icon icon={information} /></a>
         </Link>
       </RightContainer>
     </>
