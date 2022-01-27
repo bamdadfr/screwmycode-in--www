@@ -14,11 +14,10 @@ const render = () => {
 
 describe('HowlerComponent', () => {
   describe('container', () => {
-    it('should be in the document, visible and empty', () => {
+    it('should be in the document and visible', () => {
       const {container} = render();
       expect(container).toBeInTheDocument();
       expect(container).toBeVisible();
-      expect(container).toBeEmptyDOMElement();
     });
   });
 });

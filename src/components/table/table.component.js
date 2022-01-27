@@ -25,7 +25,7 @@ export function TableComponent({table}) {
         {table.map((item) => (
           <CellComponent
             key={item.id}
-            image={item.image}
+            image={`https://api.screwmycode.in/youtube/${item.id}/image`}
             icon={youtube}
             id={item.id}
             title={item.title}

@@ -19,6 +19,12 @@ const propTypes = {
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   speed: PropTypes.number.isRequired,
+  provider: PropTypes.string.isRequired,
+  youtubeId: PropTypes.string,
+};
+
+const defaultProps = {
+  youtubeId: undefined,
 };
 
 /**
@@ -30,6 +36,8 @@ const propTypes = {
  * @param {string} props.imageUrl - Image url of the track
  * @param {string} props.url - URL of the track
  * @param {number} props.speed - Speed of the track
+ * @param {string} props.provider - Provider of the track (YouTube or SoundCloud)
+ * @param {string} [props.youtubeId] - YouTube ID of the track
  * @returns {React.ReactElement} - Rendered component
  */
 export function PlayerLayout({
@@ -38,6 +46,8 @@ export function PlayerLayout({
   imageUrl,
   url,
   speed,
+  provider,
+  youtubeId = defaultProps.youtubeId,
 }) {
   const {
     metaDescription,
@@ -57,7 +67,13 @@ export function PlayerLayout({
         url={metaUrl}
       />
       <DefaultLayout customMeta>
-        <AudioModule url={url} />
+        <AudioModule
+          url={
+            provider === 'soundcloud'
+              ? url
+              : `https://api.screwmycode.in/youtube/${youtubeId}/audio`
+          }
+        />
         {!isLoaded
           ? <>
             <LoadingComponent />
@@ -74,3 +90,4 @@ export function PlayerLayout({
 }
 
 PlayerLayout.propTypes = propTypes;
+PlayerLayout.defaultProps = defaultProps;

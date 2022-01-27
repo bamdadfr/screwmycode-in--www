@@ -9,13 +9,10 @@ import {useHowlerEnd} from './use-howler-end';
 import {setLoadedAtom} from '../../../../../atoms/load.atoms';
 import {isPlayingAtom} from '../../../../../atoms/play-pause.atoms';
 import {isRepeatingAtom} from '../../../../../atoms/repeat.atoms';
-import {useHowlerProxy} from './use-howler-proxy';
 
 /**
  * Entry hook to use the Howler component
  *
- * @param {object} options - Options for the Howler component
- * @param {string} options.url - The URL of the audio file
  * @typedef {React.Ref} Ref - The react-howler ref
  * @typedef {Function} SetIsLoaded - Setter for the isLoaded atom
  * @typedef {boolean} IsPlaying - The isPlaying atom
@@ -25,7 +22,7 @@ import {useHowlerProxy} from './use-howler-proxy';
  * @typedef {Function} HandleEnd - Callback for when the audio ends
  * @returns {{Ref,SetIsLoaded,IsPlaying,IsRepeat,Speed,Volume,HandleEnd}} - Howler component state
  */
-export function useHowlerComponent({url}) {
+export function useHowlerComponent() {
   const ref = useRef(null);
   const [, setLoaded] = useAtom(setLoadedAtom);
   const [isPlaying] = useAtom(isPlayingAtom);
@@ -38,7 +35,6 @@ export function useHowlerComponent({url}) {
   useHowlerSeek(ref.current);
 
   const handleEnd = useHowlerEnd();
-  const {proxyReady} = useHowlerProxy({url});
 
   return {
     ref,
@@ -48,6 +44,5 @@ export function useHowlerComponent({url}) {
     speed,
     volume,
     handleEnd,
-    proxyReady,
   };
 }

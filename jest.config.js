@@ -1,6 +1,7 @@
 const transformModules = [
   'speed-to-semitones',
   'speed-to-percentage',
+  'ky',
 ].join('|');
 
 module.exports = {

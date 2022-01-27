@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactHowler from 'react-howler';
-import {getUrlWithProxy} from '../../../../utils/get-url-with-proxy/get-url-with-proxy';
 import {useHowlerComponent} from './hooks/use-howler-component';
 
 const propTypes = {
@@ -24,15 +23,13 @@ export function HowlerComponent({url}) {
     speed,
     volume,
     handleEnd,
-    proxyReady,
-  } = useHowlerComponent({url});
+  } = useHowlerComponent();
 
   return (
     <>
-      {proxyReady &&
       <ReactHowler
         ref={ref}
-        src={getUrlWithProxy(url)}
+        src={url}
         playing={isPlaying}
         rate={speed}
         volume={volume}
@@ -41,7 +38,6 @@ export function HowlerComponent({url}) {
         onLoad={() => setLoaded(true)}
         onEnd={handleEnd}
       />
-      }
     </>
   );
 }

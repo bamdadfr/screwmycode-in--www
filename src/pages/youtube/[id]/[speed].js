@@ -1,20 +1,14 @@
-import axios from 'axios';
-import {
-  getYoutubeThumbnail,
-} from '../../../utils/get-youtube-thumbnail/get-youtube-thumbnail';
+import ky from 'ky';
 import {PlayerLayout} from '../../../layouts/player/player.layout';
-import {
-  serverFetchAndConvertToBase64,
-} from '../../../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
 
 /**
- * Youtube page
+ * YouTube page
  * Path: /youtube/[id]/[speed]
  */
 export default PlayerLayout;
 
 /**
- * Youtube page server side props
+ * YouTube page server side props
  *
  * @param {object} context - Next.js context object
  * @typedef {string} Title - Page title
@@ -34,21 +28,18 @@ export async function getServerSideProps(context) {
     return redirect;
   }
 
-  const request = await axios.get(`https://api.screwmycode.in/youtube/${id}`);
-  const response = request.data;
+  const response = await ky.get(`https://api.screwmycode.in/youtube/${id}`).json();
 
   if (!response.success) {
     return redirect;
   }
 
-  const remoteImage = response.data.image || getYoutubeThumbnail(id);
-  const image = await serverFetchAndConvertToBase64(remoteImage);
-
   props.title = response.data.title;
-  props.image = image;
-  props.imageUrl = remoteImage;
+  props.image = `https://api.screwmycode.in/youtube/${id}/image`;
   props.url = response.data.url;
   props.speed = parseFloat(speed) || 1;
+  props.provider = 'youtube';
+  props.youtubeId = id;
 
   return {props};
 }
