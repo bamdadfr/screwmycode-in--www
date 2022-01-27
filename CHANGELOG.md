@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.1...v1.29.2) (2022-01-27)
+
+
+### Bug Fixes
+
+* add various fixes, tests and types ([c010d25](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c010d25445a0a9d4c2b8620a6b5f9c03b125cc62))
+
 ## [1.29.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.0...v1.29.1) (2022-01-27)
 
 
