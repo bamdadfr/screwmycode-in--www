@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.0.0...v2.0.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* **player:** feed the correct image url to meta component ([6616422](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6616422d4f29cc495994d0a334955534b23aba14))
+
 # [2.0.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.3...v2.0.0) (2022-01-27)
 
 ## [1.29.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.2...v1.29.3) (2022-01-27)
