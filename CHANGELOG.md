@@ -1,3 +1,10 @@
+## [1.29.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.2...v1.29.3) (2022-01-27)
+
+
+### Bug Fixes
+
+* **FadeAnimation:** assign default props ([5872598](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5872598f1da614bfc5ef96ceaa336c3efebafb6a))
+
 ## [1.29.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.1...v1.29.2) (2022-01-27)
 
 
