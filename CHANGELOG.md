@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.29.0...v1.29.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* add relative height to about page + add `styled-breakpoints` package for better media queries ([5293bf6](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5293bf6246dd8bc0d0996e0e8717a5e699d7a78b))
+
 # [1.29.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v1.28.2...v1.29.0) (2022-01-27)
 
 
