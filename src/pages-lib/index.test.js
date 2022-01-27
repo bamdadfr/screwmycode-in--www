@@ -1,7 +1,9 @@
 import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
-import IndexPage from '../../pages';
-import {WithStyledComponents} from '../../app/components/with-styled-components/with-styled-components';
+import IndexPage from '../pages';
+import {
+  WithStyledComponents,
+} from '../app/components/with-styled-components/with-styled-components';
 
 const render = () => {
   const {container} = defaultRender(

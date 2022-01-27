@@ -4,10 +4,10 @@ import {
   Container,
   ImageContainer,
   TextContainer,
-  TextLink,
 } from './loading.component.styles';
 import {DotsComponent} from './components/dots/dots.component';
 import {FadeAnimation} from '../../animations/fade/fade.animation';
+import {TextLinkComponent} from '../text-link/text-link.component';
 
 /**
  * Component for the loading screen
@@ -36,13 +36,14 @@ export function LoadingComponent() {
             </FadeAnimation>
             <FadeAnimation delay={10000}>
               use&nbsp;
-              <TextLink
-                rel="noopener noreferrer"
+              <TextLinkComponent
                 target="_blank"
                 href="https://www.mozilla.org/firefox/new/"
+                bold
+                underline
               >
                 Firefox
-              </TextLink>
+              </TextLinkComponent>
             </FadeAnimation>
           </div>
         </TextContainer>
