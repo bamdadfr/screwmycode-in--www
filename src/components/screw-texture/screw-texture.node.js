@@ -5,14 +5,14 @@ import {mapRange} from '../../utils/map-range/map-range';
 import {shaders} from './screw-texture.shaders.js';
 
 const propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   time: PropTypes.number.isRequired,
   dryWet: PropTypes.number.isRequired,
 };
 
 /**
  * @param {object} props - Component props.
- * @param {string} props.children - Component children (image)
+ * @param {React.ReactNode} props.children - Component children (image)
  * @param {number} props.time - Component time
  * @param {number} props.dryWet - Dry/wet ratio
  * @returns {React.ReactNode} - Texture Node

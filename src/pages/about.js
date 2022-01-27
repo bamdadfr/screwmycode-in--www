@@ -18,7 +18,7 @@ import {
  * @returns {React.ReactElement} - About page component
  */
 export default function AboutPage() {
-  const Prefix = ({spacing}) => <Blue spacing={spacing}>iscrew</Blue>;
+  const Prefix = ({spacing}) => <Blue spacing={spacing ? 1 : 0}>iscrew</Blue>;
   return (
     <>
       <DefaultLayout>

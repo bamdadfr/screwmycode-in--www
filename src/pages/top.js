@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {TableComponent} from '../components/table/table.component';
 import {
   serverFetchAndConvertToBase64,
 } from '../utils/server-fetch-and-convert-to-base64/server-fetch-and-convert-to-base64';
+
+const propTypes = {
+  top: PropTypes.arrayOf(
+    PropTypes.object.isRequired,
+  ).isRequired,
+};
 
 /**
  * Top page
@@ -23,6 +30,8 @@ export default function TopPage({top}) {
     </>
   );
 }
+
+TopPage.propTypes = propTypes;
 
 /**
  * @returns {*} - Top tracks
