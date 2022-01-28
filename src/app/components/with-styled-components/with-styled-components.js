@@ -18,8 +18,8 @@ const propTypes = {
 export function WithStyledComponents({children}) {
   return (
     <>
-      <Global />
       <ThemeProvider theme={{...Breakpoints, ...Theme}}>
+        <Global />
         {children}
       </ThemeProvider>
     </>
