@@ -10,13 +10,13 @@ export const Form = styled.form`
 `;
 
 const formElement = css`
-  color: ${(props) => props.theme.highlight};
-  background: ${(props) => props.theme.background.highlight};
+  color: ${({theme}) => theme.highlight};
+  background: ${({theme}) => theme.background.highlight};
   text-transform: none;
   display: inline-block;
   line-height: 2em;
   border-radius: 3px;
-  box-shadow: 0 1px 10px 1px ${(props) => props.theme.shadow.opacity};
+  box-shadow: 0 1px 10px 1px ${({theme}) => theme.shadow.opacity};
   padding: 0 0.5em;
 `;
 
@@ -24,6 +24,11 @@ export const Input = styled.input`
   ${formElement};
   width: 90%;
   font-size: 0.9em;
+
+  &::-webkit-input-placeholder {
+    color ${({theme}) => theme.highlight};
+    opacity: 0.5;
+  }
 `;
 
 export const Submit = styled.button`
@@ -34,8 +39,8 @@ export const Submit = styled.button`
   transition: color 100ms ease-in-out, background 200ms ease-in-out;
 
   &:hover {
-    background: ${(props) => props.theme.highlight};
-    color: ${(props) => props.theme.background.highlight};
+    background: ${({theme}) => theme.highlight};
+    color: ${({theme}) => theme.background.highlight};
   }
 `;
 

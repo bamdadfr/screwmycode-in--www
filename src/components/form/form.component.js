@@ -15,7 +15,7 @@ export function FormComponent() {
     <>
       <Form onSubmit={handleSubmit}>
         <Input
-          placeholder="paste link here (youtube, soundcloud)"
+          placeholder="Paste link here (YouTube, Soundcloud)"
           type="text"
           ref={link.ref}
           value={link.value}
