@@ -6,9 +6,10 @@ import {
   Container,
   Content,
   List,
-  SectionTitle,
   Spacer,
-  Title,
+  TitleH1,
+  TitleH2,
+  TitleH3,
 } from '../pages-lib/about.styles';
 
 /**
@@ -29,9 +30,9 @@ export default function AboutPage() {
 
           <Spacer />
 
-          <Title>
+          <TitleH1>
             About
-          </Title>
+          </TitleH1>
 
           <Content>
             <p>
@@ -51,9 +52,9 @@ export default function AboutPage() {
             </p>
           </Content>
 
-          <SectionTitle>
+          <TitleH2>
             How to use
-          </SectionTitle>
+          </TitleH2>
 
           <Content>
             <p>
@@ -63,20 +64,38 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Examples
-            </p>
+              <TitleH3>
+                Examples
+              </TitleH3>
 
-            <List>
-              <li>
-                https://www.<Prefix spacing />youtube.com/watch?v=1234567890
-              </li>
-              <li>
-                https://<Prefix spacing />youtu.be/1234567890
-              </li>
-              <li>
-                https://<Prefix spacing />soundcloud.com/username/trackName
-              </li>
-            </List>
+              <List>
+                <li>
+                  https://www.<Prefix spacing />youtube.com/watch?v=1234567890
+                </li>
+                <li>
+                  https://<Prefix spacing />youtu.be/1234567890
+                </li>
+                <li>
+                  https://<Prefix spacing />soundcloud.com/username/trackName
+                </li>
+              </List>
+            </p>
+          </Content>
+
+          <TitleH2>
+            Extension
+          </TitleH2>
+
+          <Content>
+            <p>
+              Use variable speed pitch control directly on YouTube through
+              this <TextLinkComponent
+              href="https://addons.mozilla.org/firefox/addon/screwmycode-in/"
+              target="_blank"
+              underlineOnHover
+            >Firefox Web
+                Extension</TextLinkComponent>.
+            </p>
           </Content>
         </Container>
       </DefaultLayout>
