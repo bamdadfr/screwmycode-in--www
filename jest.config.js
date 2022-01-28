@@ -11,6 +11,7 @@ module.exports = {
     'next/head': '<rootDir>/__mocks__/next-head.js',
     'next/router': '<rootDir>/__mocks__/next-router.js',
     '^.+.(glsl)$': '<rootDir>/__mocks__/glsl.js',
+    '@fontsource/noto-sans': '<rootDir>/__mocks__/fontsource-noto-sans.js',
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: [
