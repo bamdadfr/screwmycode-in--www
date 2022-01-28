@@ -1,3 +1,20 @@
+# [2.1.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.0.1...v2.1.0) (2022-01-28)
+
+
+### Bug Fixes
+
+* **FormComponent:** Add placeholder styling for Chrome + Capitalize placeholder ([8f30c2a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8f30c2ab73d3695a5440973fb395279475a804c7))
+* **HeaderComponent:** Adjust vertical align for top/podium button ([7087c50](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/7087c50979fd47cbad1a4d81bf3407ed67ba44ba))
+* **PlayerSpeedComponent:** Add horizontal padding ([5597689](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5597689c410083ef1f7008cd5408a62312627a9f))
+* **Styles:** Inject global style inside theme provider ([f1f38b9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f1f38b9bc348581ab68124525d05d79d04ef4fd8))
+
+
+### Features
+
+* **AboutPage:** Add new title styling + Add description and link to Firefox extension ([5aa993c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5aa993ccb0dba59ddd384a5bb2c5be2868099656))
+* **Styles:** Add font + Add style for chrome scrollbars ([b1279d5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b1279d5351dffa4dcffbbebdb87476c9f1a92c58))
+* **Styles:** Add new colors ([968b942](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/968b942bd33deeb724b9b86e7efb93fef5440fef))
+
 ## [2.0.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.0.0...v2.0.1) (2022-01-27)
 
 
