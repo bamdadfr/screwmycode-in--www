@@ -34,6 +34,5 @@ export const RightContainer = styled(Container)`
 
 export const PodiumIcon = styled(Icon)`
   font-size: 91%;
-  transform: translateY(-2px);
-  margin-left: 3px;
+  transform: translate(3px, -4px);
 `;
