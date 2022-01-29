@@ -20,8 +20,8 @@ export default function OldYoutubePage() {
 export function getServerSideProps(context) {
   const {id} = context.params;
   const {speed} = context.query;
-  const props = {};
 
+  const props = {};
   props.id = id;
   props.speed = parseFloat(speed) || 1;
 

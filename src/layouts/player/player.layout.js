@@ -17,14 +17,8 @@ import {usePlayerLayout} from './hooks/use-player-layout';
 const propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  audio: PropTypes.string.isRequired,
   speed: PropTypes.number.isRequired,
-  provider: PropTypes.string.isRequired,
-  youtubeId: PropTypes.string,
-};
-
-const defaultProps = {
-  youtubeId: undefined,
 };
 
 /**
@@ -33,19 +27,15 @@ const defaultProps = {
  * @param {object} props - Component props
  * @param {string} props.title - Title of the track
  * @param {string} props.image - Image of the track
- * @param {string} props.url - URL of the track
- * @param {number} props.speed - Speed of the track
- * @param {string} props.provider - Provider of the track (YouTube or SoundCloud)
- * @param {string} [props.youtubeId] - YouTube ID of the track
+ * @param {string} props.audio - URL of the track
+ * @param {number} [props.speed] - Speed of the track
  * @returns {React.ReactElement} - Rendered component
  */
 export function PlayerLayout({
   title,
   image,
-  url,
-  speed,
-  provider,
-  youtubeId = defaultProps.youtubeId,
+  audio,
+  speed = 1,
 }) {
   const {
     metaDescription,
@@ -65,13 +55,7 @@ export function PlayerLayout({
         url={metaUrl}
       />
       <DefaultLayout customMeta>
-        <AudioModule
-          url={
-            provider === 'soundcloud'
-              ? url
-              : `https://api.screwmycode.in/youtube/${youtubeId}/audio`
-          }
-        />
+        <AudioModule url={audio} />
         {!isLoaded
           ? <>
             <LoadingComponent />
@@ -88,4 +72,3 @@ export function PlayerLayout({
 }
 
 PlayerLayout.propTypes = propTypes;
-PlayerLayout.defaultProps = defaultProps;

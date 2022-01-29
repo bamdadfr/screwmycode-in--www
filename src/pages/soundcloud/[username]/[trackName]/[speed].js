@@ -1,20 +1,20 @@
-import {PlayerLayout} from '../../../layouts/player/player.layout';
+import {PlayerLayout} from '../../../../layouts/player/player.layout';
+import {
+  validateSoundcloudId,
+} from '../../../../utils/validate-soundcloud-id/validate-soundcloud-id';
 import {
   invokeRedirection,
-} from '../../../utils/invoke-redirection/invoke-redirection';
-import {apiQuery} from '../../../utils/api-query/api-query';
-import {
-  validateYoutubeId,
-} from '../../../utils/validate-youtube-id/validate-youtube-id';
+} from '../../../../utils/invoke-redirection/invoke-redirection';
+import {apiQuery} from '../../../../utils/api-query/api-query';
 
 /**
- * YouTube page
- * Path: /youtube/[id]/[speed]
+ * SoundCloud page
+ * Path: /soundcloud/[user]/[id]/[speed]
  */
 export default PlayerLayout;
 
 /**
- * YouTube page server side props
+ * Soundcloud page server side props
  *
  * @param {object} context - Next.js context object
  * @typedef {string} Title - Page title
@@ -25,11 +25,12 @@ export default PlayerLayout;
  */
 export async function getServerSideProps(context) {
   try {
-    const {id, speed} = context.params;
+    const {username, trackName, speed} = context.query;
+    const id = `${username}/${trackName}`;
 
-    validateYoutubeId(id);
+    validateSoundcloudId(id);
 
-    const data = await apiQuery(`/youtube/${id}`);
+    const data = await apiQuery(`/soundcloud/${id}`);
 
     const props = {};
     props.title = data.title;

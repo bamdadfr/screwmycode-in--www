@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ky from 'ky';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {TableComponent} from '../components/table/table.component';
+import {apiQuery} from '../utils/api-query/api-query';
+import {
+  invokeRedirection,
+} from '../utils/invoke-redirection/invoke-redirection';
 
 const propTypes = {
   latest: PropTypes.arrayOf(
@@ -34,16 +37,14 @@ LatestPage.propTypes = propTypes;
  * @returns {*} - Latest tracks
  */
 export async function getServerSideProps() {
-  const props = {};
+  try {
+    const data = await apiQuery('/latest');
 
-  const response = await ky.get('https://api.screwmycode.in/youtube/latest').json();
-  const redirect = {'redirect': {'destination': '/', 'permanent': false}};
+    const props = {};
+    props.latest = data;
 
-  if (!response.success) {
-    return redirect;
+    return {props};
+  } catch {
+    return invokeRedirection();
   }
-
-  props.latest = response.data;
-
-  return {props};
 }
