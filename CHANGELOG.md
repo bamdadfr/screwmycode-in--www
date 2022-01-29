@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.0.0...v3.0.1) (2022-01-29)
+
+
+### Performance Improvements
+
+* **dependencies:** Update to latest ([72d149d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/72d149d0654d2c6fd0f067cb1a0d0058c50f12a8))
+
 # [3.0.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.1.0...v3.0.0) (2022-01-29)
 
 # [2.1.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.0.1...v2.1.0) (2022-01-28)
