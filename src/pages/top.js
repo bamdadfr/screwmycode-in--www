@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ky from 'ky';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {TableComponent} from '../components/table/table.component';
+import {apiQuery} from '../utils/api-query/api-query';
+import {
+  invokeRedirection,
+} from '../utils/invoke-redirection/invoke-redirection';
 
 const propTypes = {
   top: PropTypes.arrayOf(
@@ -34,16 +37,14 @@ TopPage.propTypes = propTypes;
  * @returns {*} - Top tracks
  */
 export async function getServerSideProps() {
-  const props = {};
+  try {
+    const data = await apiQuery('/top');
 
-  const response = await ky.get('https://api.screwmycode.in/youtube').json();
-  const redirect = {'redirect': {'destination': '/', 'permanent': false}};
+    const props = {};
+    props.top = data;
 
-  if (!response.success) {
-    return redirect;
+    return {props};
+  } catch {
+    return invokeRedirection();
   }
-
-  props.top = response.data;
-
-  return {props};
 }

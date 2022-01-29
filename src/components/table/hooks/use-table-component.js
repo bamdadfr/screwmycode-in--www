@@ -7,8 +7,10 @@ import {useRouter} from 'next/router';
 export function useTableComponent() {
   const router = useRouter();
 
-  const onClick = useCallback((id) => {
-    router.push(`/youtube/${id}/1`);
+  const onClick = useCallback((type, id) => {
+    (async () => {
+      await router.push(`/${type}/${id}/1`);
+    })();
   }, [router]);
 
   return {onClick};
