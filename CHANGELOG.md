@@ -1,3 +1,5 @@
+# [3.0.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.1.0...v3.0.0) (2022-01-29)
+
 # [2.1.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v2.0.1...v2.1.0) (2022-01-28)
 
 
