@@ -11,6 +11,7 @@ import {
   TitleH2,
   TitleH3,
 } from '../pages-lib/about.styles';
+import {MetaComponent} from '../components/meta/meta.component';
 
 /**
  * About page
@@ -22,7 +23,8 @@ export default function AboutPage() {
   const Prefix = ({spacing}) => <Blue spacing={spacing ? 1 : 0}>iscrew</Blue>;
   return (
     <>
-      <DefaultLayout>
+      <MetaComponent description="About" />
+      <DefaultLayout customMeta>
         <Container>
           <Content>
             Pitch control for YouTube and Soundcloud.
@@ -63,23 +65,20 @@ export default function AboutPage() {
               the URL of the YouTube video or Soundcloud track.
             </p>
 
-            <p>
-              <TitleH3>
-                Examples
-              </TitleH3>
-
-              <List>
-                <li>
-                  https://www.<Prefix spacing />youtube.com/watch?v=1234567890
-                </li>
-                <li>
-                  https://<Prefix spacing />youtu.be/1234567890
-                </li>
-                <li>
-                  https://<Prefix spacing />soundcloud.com/username/trackName
-                </li>
-              </List>
-            </p>
+            <TitleH3>
+              Examples
+            </TitleH3>
+            <List>
+              <li>
+                https://www.<Prefix spacing />youtube.com/watch?v=1234567890
+              </li>
+              <li>
+                https://<Prefix spacing />youtu.be/1234567890
+              </li>
+              <li>
+                https://<Prefix spacing />soundcloud.com/username/trackName
+              </li>
+            </List>
           </Content>
 
           <TitleH2>

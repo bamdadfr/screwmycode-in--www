@@ -1,4 +1,5 @@
 import ky from 'ky';
+import {isEnvProduction} from '../is-env-production/is-env-production';
 
 /**
  * @param {string} query - Query and parameters to send to the API
@@ -7,7 +8,7 @@ import ky from 'ky';
 export async function apiQuery(query) {
   let base;
 
-  if (process.env.NODE_ENV === 'production') {
+  if (isEnvProduction()) {
     base = 'https://api.screwmycode.in';
   } else {
     base = 'http://localhost:3000';

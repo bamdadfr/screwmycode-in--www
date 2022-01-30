@@ -21,9 +21,6 @@ const propTypes = {
  * @returns {React.ReactElement} react component
  */
 export function ScrewTextureComponent({image, dryWet, width}) {
-  if (typeof image === 'undefined') {
-    return <></>;
-  }
   return (
     <>
       <Surface width={width} height={width}>

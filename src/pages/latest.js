@@ -6,6 +6,7 @@ import {apiQuery} from '../utils/api-query/api-query';
 import {
   invokeRedirection,
 } from '../utils/invoke-redirection/invoke-redirection';
+import {MetaComponent} from '../components/meta/meta.component';
 
 const propTypes = {
   latest: PropTypes.arrayOf(
@@ -24,7 +25,8 @@ const propTypes = {
 export default function LatestPage({latest}) {
   return (
     <>
-      <DefaultLayout>
+      <MetaComponent description="Latest" />
+      <DefaultLayout customMeta>
         <TableComponent table={latest} />
       </DefaultLayout>
     </>

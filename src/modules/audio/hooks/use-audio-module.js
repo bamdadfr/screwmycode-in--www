@@ -6,7 +6,9 @@ import {useCache} from './use-cache';
 import {useKeyboardToggle} from './use-keyboard-toggle';
 import {speedAtom} from '../../../atoms/speed.atoms';
 import {audioTitleAtom} from '../../../atoms/audio-title.atoms';
-import {getProvider} from '../../../utils/get-provider/get-provider';
+import {
+  getProviderFromRouter,
+} from '../../../utils/get-provider/get-provider-from-router';
 
 /**
  * Entry hook for the audio module
@@ -25,7 +27,7 @@ export function useAudioModule() {
       'speed',
       cachedSpeed.toString(),
       audioTitle
-        ? `${audioTitle} - ${cachedSpeed} - ${getProvider(router)} - ScrewMyCode.In`
+        ? `${audioTitle} - ${cachedSpeed} - ${getProviderFromRouter(router)}`
         : undefined,
     );
   }, [audioTitle, cachedSpeed, router]);

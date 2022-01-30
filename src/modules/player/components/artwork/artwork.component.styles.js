@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import {down, up} from 'styled-breakpoints';
 import {mapRange} from '../../../../utils/map-range/map-range';
+import {Widths} from '../../../../app/styles/widths';
 
 export const Container = styled.span`
   // global
@@ -7,10 +9,30 @@ export const Container = styled.span`
   position: fixed;
   z-index: -1;
   transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   // sizes
-  width: 90%;
-  max-width: 800px;
+  ${down('md')} {
+    width: calc(${Widths.sm} + 3em);
+  }
+
+  ${up('md')} {
+    width: calc(${Widths.md} + 2em);
+  }
+
+  ${up('lg')} {
+    width: calc(${Widths.lg} + 2em);
+  }
+
+  ${up('xl')} {
+    width: calc(${Widths.xl} + 2em);
+  }
+
+  ${up('xxl')} {
+    width: calc(${Widths.xxl} + 2em);
+  }
 
   // filters
   filter: ${({speed}) => {

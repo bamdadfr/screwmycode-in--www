@@ -6,7 +6,7 @@ import {audioTitleAtom} from '../../../../atoms/audio-title.atoms';
 /**
  * Component to display the title of the audio
  *
- * @returns {React.ReactElement} - Title of the audio
+ * @returns {React.ReactElement} - TitleWrapper of the audio
  */
 export function TitleComponent() {
   const [audioTitle] = useAtom(audioTitleAtom);

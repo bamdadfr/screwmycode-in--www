@@ -4,16 +4,18 @@ import {useAtom} from 'jotai';
 import {isLoadedAtom} from '../../../atoms/load.atoms';
 import {setSpeedAtom} from '../../../atoms/speed.atoms';
 import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
-import {getProvider} from '../../../utils/get-provider/get-provider';
 import {usePlayerLoading} from './use-player-loading';
 import {setImageAtom} from '../../../atoms/image.atoms';
 import {setPauseAtom} from '../../../atoms/play-pause.atoms';
+import {
+  getProviderFromRouter,
+} from '../../../utils/get-provider/get-provider-from-router';
 
 /**
  * Entry hook for the player layout
  *
  * @param {object} options - Options
- * @param {string} options.title - Title of the audio
+ * @param {string} options.title - TitleWrapper of the audio
  * @param {number} options.speed - Speed of the audio
  * @param {string} options.image - Image of the audio
  * @typedef {string} MetaDescription - Meta description of the audio
@@ -34,7 +36,7 @@ export function usePlayerLayout({
   const [, setArtwork] = useAtom(setImageAtom);
   const [, setPause] = useAtom(setPauseAtom);
 
-  const [metaDescription] = useState(`${title} - ${speed} - ${getProvider(router)} - ScrewMyCode.In`);
+  const [metaDescription] = useState(`${title} - ${speed} - ${getProviderFromRouter(router)}`);
   const metaUrl = 'https://www.screwmycode.in/' + router.asPath;
 
   usePlayerLoading();

@@ -21,7 +21,7 @@ export default PlayerLayout;
  * @typedef {string} Image - Page image
  * @typedef {string} Url - Page URL
  * @typedef {number} Speed - Playback speed
- * @returns {{Title, Image, Url, Speed}} - Server side props
+ * @returns {{TitleWrapper, Image, Url, Speed}} - Server side props
  */
 export async function getServerSideProps(context) {
   try {

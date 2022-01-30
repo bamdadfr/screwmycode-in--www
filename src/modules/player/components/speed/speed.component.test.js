@@ -4,14 +4,16 @@ import {
   render as defaultRender,
   screen,
 } from '@testing-library/react';
-import {PlayerSpeedComponent} from './player-speed.component';
-import {WithStyledComponents} from '../../app/components/with-styled-components/with-styled-components';
-import {MOCK_STATE} from './player-speed.component.test.mock';
+import {SpeedComponent} from './speed.component';
+import {
+  WithStyledComponents,
+} from '../../../../app/components/with-styled-components/with-styled-components';
+import {MOCK_STATE} from './speed.component.test.mock';
 
 const render = () => {
   const {container} = defaultRender(
     <WithStyledComponents>
-      <PlayerSpeedComponent />
+      <SpeedComponent />
     </WithStyledComponents>,
   );
 
@@ -23,7 +25,7 @@ const render = () => {
 
 afterEach(() => jest.resetAllMocks());
 
-describe('PlayerSpeedComponent', () => {
+describe('SpeedComponent', () => {
   describe('container', () => {
     it('should be in the document', () => {
       const {container} = render();

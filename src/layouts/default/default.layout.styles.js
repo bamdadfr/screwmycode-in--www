@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {down, up} from 'styled-breakpoints';
+import {Widths} from '../../app/styles/widths';
 
 export const Container = styled.div`
   position: fixed;
@@ -28,22 +29,22 @@ export const Wrapper = styled.div`
   font-size: 1.1em;
 
   ${down('md')} {
-    width: 90vw;
+    width: ${Widths.sm};
   }
 
   ${up('md')} {
-    width: 80vw;
+    width: ${Widths.md};
   }
 
   ${up('lg')} {
-    width: 60vw;
+    width: ${Widths.lg};
   }
 
   ${up('xl')} {
-    width: 50vw;
+    width: ${Widths.xl};
   }
 
   ${up('xxl')} {
-    width: 40vw;
+    width: ${Widths.xxl};
   }
 `;

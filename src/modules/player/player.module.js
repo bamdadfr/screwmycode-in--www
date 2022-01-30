@@ -1,5 +1,15 @@
 import React from 'react';
-import {Container, PlayerContainer} from './player.module.styles';
+import {
+  Container,
+  PlayerWrapper,
+  PlayPauseButtonWrapper,
+  RepeatButtonWrapper,
+  SeekWrapper,
+  TimeWrapper,
+  TitleWrapper,
+  VolumeButtonWrapper,
+  VolumeSliderWrapper,
+} from './player.module.styles';
 import {TitleComponent} from './components/title/title.component';
 import {
   RepeatButtonComponent,
@@ -15,7 +25,11 @@ import {
 import {
   VolumeSliderComponent,
 } from './components/volume-slider/volume-slider.component';
-import {ImageComponent} from './components/image/image.component';
+import {ArtworkComponent} from './components/artwork/artwork.component';
+import {
+  IndicatorsComponent,
+} from '../../components/indicators/indicators.component';
+import {SpeedComponent} from './components/speed/speed.component';
 
 /**
  * Component to render the player.
@@ -26,16 +40,34 @@ export function PlayerModule() {
   return (
     <>
       <Container>
-        <ImageComponent />
-        <PlayerContainer>
-          <TitleComponent />
-          <RepeatButtonComponent />
-          <PlayPauseButtonComponent />
-          <SeekComponent />
-          <TimeComponent />
-          <VolumeButtonComponent />
-          <VolumeSliderComponent />
-        </PlayerContainer>
+        <ArtworkComponent />
+
+        <PlayerWrapper>
+          <TitleWrapper>
+            <TitleComponent />
+          </TitleWrapper>
+          <RepeatButtonWrapper>
+            <RepeatButtonComponent />
+          </RepeatButtonWrapper>
+          <PlayPauseButtonWrapper>
+            <PlayPauseButtonComponent />
+          </PlayPauseButtonWrapper>
+          <SeekWrapper>
+            <SeekComponent />
+          </SeekWrapper>
+          <TimeWrapper>
+            <TimeComponent />
+          </TimeWrapper>
+          <VolumeButtonWrapper>
+            <VolumeButtonComponent />
+          </VolumeButtonWrapper>
+          <VolumeSliderWrapper>
+            <VolumeSliderComponent />
+          </VolumeSliderWrapper>
+        </PlayerWrapper>
+
+        <IndicatorsComponent />
+        <SpeedComponent />
       </Container>
     </>
   );
