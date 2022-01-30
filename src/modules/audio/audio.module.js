@@ -23,9 +23,10 @@ export function AudioModule({url}) {
   return (
     <>
       <Invisible>
-        {isFirefox
-          ? <NativeComponent url={url} />
-          : <HowlerComponent url={url} />
+        {
+          isFirefox
+            ? <NativeComponent url={url} />
+            : <HowlerComponent url={url} />
         }
       </Invisible>
     </>

@@ -56,15 +56,16 @@ export function PlayerLayout({
       />
       <DefaultLayout customMeta>
         <AudioModule url={audio} />
-        {!isLoaded
-          ? <>
-            <LoadingComponent />
-          </>
-          : <>
-            <PlayerModule />
-            <IndicatorsComponent />
-            <PlayerSpeedComponent />
-          </>
+        {
+          !isLoaded
+            ? <>
+              <LoadingComponent />
+            </>
+            : <>
+              <PlayerModule />
+              <IndicatorsComponent />
+              <PlayerSpeedComponent />
+            </>
         }
       </DefaultLayout>
     </>
