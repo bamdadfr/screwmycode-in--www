@@ -4,7 +4,7 @@ import useMeasure from 'react-use-measure';
 import {ResizeObserver} from '@juggle/resize-observer';
 import {imageAtom} from '../../../../atoms/image.atoms';
 import {speedAtom} from '../../../../atoms/speed.atoms';
-import {Container} from './image.component.styles';
+import {Container} from './artwork.component.styles';
 import {
   ScrewTextureComponent,
 } from '../../../../components/screw-texture/screw-texture.component';
@@ -12,7 +12,7 @@ import {
 /**
  * @returns {React.ReactElement} react component
  */
-export function ImageComponent() {
+export function ArtworkComponent() {
   const [artwork] = useAtom(imageAtom);
   const [speed] = useAtom(speedAtom);
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});

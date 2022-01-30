@@ -15,7 +15,7 @@ import {
 import {
   VolumeSliderComponent,
 } from './components/volume-slider/volume-slider.component';
-import {ImageComponent} from './components/image/image.component';
+import {ArtworkComponent} from './components/artwork/artwork.component';
 
 /**
  * Component to render the player.
@@ -26,7 +26,7 @@ export function PlayerModule() {
   return (
     <>
       <Container>
-        <ImageComponent />
+        <ArtworkComponent />
         <PlayerContainer>
           <TitleComponent />
           <RepeatButtonComponent />
