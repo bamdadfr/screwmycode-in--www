@@ -1,6 +1,7 @@
 import React from 'react';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {useRedirectAuto} from '../hooks/use-redirect-auto';
+import {MetaComponent} from '../components/meta/meta.component';
 
 /**
  * 404 page
@@ -13,7 +14,8 @@ export default function NotFoundPage() {
 
   return (
     <>
-      <DefaultLayout metaDescription="page not found">
+      <MetaComponent description="Page not found" />
+      <DefaultLayout customMeta>
         <h2>
           Page not found, redirecting to home...
         </h2>

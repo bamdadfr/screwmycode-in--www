@@ -1,7 +1,6 @@
 import React from 'react';
 import {cleanup, render} from '@testing-library/react';
-import {MetaComponent} from './meta.component';
-import {MetaConstants} from './meta.constants';
+import {defaultProps, MetaComponent} from './meta.component';
 
 afterEach(cleanup);
 
@@ -29,15 +28,15 @@ describe('MetaComponent', () => {
         render(<MetaComponent />);
 
         expect(document.title)
-          .toBe(MetaConstants.title);
+          .toBe(`${defaultProps.description} - ${defaultProps.title}`);
         expect(document.querySelector('meta[itemprop="name"]').content)
-          .toBe(MetaConstants.title);
+          .toBe(defaultProps.title);
         expect(document.querySelector('meta[name="twitter:title"]').content)
-          .toBe(MetaConstants.title);
+          .toBe(defaultProps.title);
         expect(document.querySelector('meta[property="og:site_name"]').content)
-          .toBe(MetaConstants.title);
+          .toBe(defaultProps.title);
         expect(document.querySelector('meta[property="og:title"]').content)
-          .toBe(MetaConstants.title);
+          .toBe(defaultProps.title);
       });
 
       it('should match given props', () => {
@@ -45,7 +44,7 @@ describe('MetaComponent', () => {
         render(<MetaComponent title={title} />);
 
         expect(document.title)
-          .toBe(title);
+          .toBe(`${defaultProps.description} - ${title}`);
         expect(document.querySelector('meta[itemprop="name"]').content)
           .toBe(title);
         expect(document.querySelector('meta[name="twitter:title"]').content)
@@ -62,11 +61,11 @@ describe('MetaComponent', () => {
         render(<MetaComponent />);
 
         expect(document.querySelector('meta[itemprop="description"]').content)
-          .toBe(MetaConstants.description);
+          .toBe(defaultProps.description);
         expect(document.querySelector('meta[name="twitter:description"]').content)
-          .toBe(MetaConstants.description);
+          .toBe(defaultProps.description);
         expect(document.querySelector('meta[property="og:description"]').content)
-          .toBe(MetaConstants.description);
+          .toBe(defaultProps.description);
       });
 
       it('should match given prop', () => {
@@ -86,7 +85,7 @@ describe('MetaComponent', () => {
       it('should default to defaultProps', () => {
         render(<MetaComponent />);
         expect(document.querySelector('meta[property="og:url"]').content)
-          .toBe(MetaConstants.url);
+          .toBe(defaultProps.url);
       });
 
       it('should match given prop', () => {
@@ -101,11 +100,11 @@ describe('MetaComponent', () => {
       it('should default to defaultProps', () => {
         render(<MetaComponent />);
         expect(document.querySelector('meta[itemprop="image"]').content)
-          .toBe(MetaConstants.image);
+          .toBe(defaultProps.image);
         expect(document.querySelector('meta[name="twitter:image"]').content)
-          .toBe(MetaConstants.image);
+          .toBe(defaultProps.image);
         expect(document.querySelector('meta[property="og:image"]').content)
-          .toBe(MetaConstants.image);
+          .toBe(defaultProps.image);
       });
 
       it('should match given prop', () => {

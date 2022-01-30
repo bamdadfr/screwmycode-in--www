@@ -1,41 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import {MetaConstants} from './meta.constants';
 
 const propTypes = {
   title: PropTypes.string,
   url: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  customTitle: PropTypes.bool,
 };
 
-const defaultProps = {
-  title: MetaConstants.title,
-  url: MetaConstants.url,
-  description: MetaConstants.description,
-  image: MetaConstants.image,
-  customTitle: false,
+export const defaultProps = {
+  title: 'ScrewMyCode.in',
+  url: 'https://www.screwmycode.in/',
+  description: 'Variable speed pitch control for YouTube',
+  image: 'https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Screw.jpeg',
 };
 
 /**
  * Component for rendering meta tags
  *
  * @param {object} props - Component props
- * @param {string} [props.title] - Title of the page
+ * @param {string} [props.title] - TitleWrapper of the page
  * @param {string} [props.url] - URL of the page
  * @param {string} [props.description] - Description of the page
  * @param {string} [props.image] - Image of the page
- * @param {boolean} [props.customTitle] - Whether to use the title prop as the page title
  * @returns {React.ReactElement} - Rendered component
  */
 export function MetaComponent({
-  title,
-  url,
-  description,
-  image,
-  customTitle,
+  title = defaultProps.title,
+  url = defaultProps.url,
+  description = defaultProps.description,
+  image = defaultProps.image,
 }) {
   // noinspection HtmlUnknownTarget, HtmlRequiredTitleElement
   return (
@@ -47,7 +42,7 @@ export function MetaComponent({
         content="width=device-width, initial-scale=1.0"
       />
 
-      {!customTitle && <title>{title}</title>}
+      <title>{`${description} - ${title}`}</title>
 
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />

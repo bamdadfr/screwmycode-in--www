@@ -14,8 +14,8 @@ const render = () => {
             id: '1',
             title: 'title',
             description: 'description',
-            url: 'url',
-            image: 'image',
+            url: '',
+            image: 'https://i.imgur.com/5EOyTDQ.jpg',
             date: 'date',
           },
         ]}

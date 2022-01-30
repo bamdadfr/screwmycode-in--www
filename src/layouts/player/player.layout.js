@@ -1,14 +1,7 @@
 import React from 'react';
-import Head from 'next/head';
 import PropTypes from 'prop-types';
-import {
-  IndicatorsComponent,
-} from '../../components/indicators/indicators.component';
 import {LoadingComponent} from '../../components/loading/loading.component';
 import {MetaComponent} from '../../components/meta/meta.component';
-import {
-  PlayerSpeedComponent,
-} from '../../components/player-speed/player-speed.component';
 import {DefaultLayout} from '../default/default.layout';
 import {AudioModule} from '../../modules/audio/audio.module';
 import {PlayerModule} from '../../modules/player/player.module';
@@ -25,7 +18,7 @@ const propTypes = {
  * Layout for the player page
  *
  * @param {object} props - Component props
- * @param {string} props.title - Title of the track
+ * @param {string} props.title - TitleWrapper of the track
  * @param {string} props.image - Image of the track
  * @param {string} props.audio - URL of the track
  * @param {number} [props.speed] - Speed of the track
@@ -45,11 +38,7 @@ export function PlayerLayout({
 
   return (
     <>
-      <Head>
-        <title>{metaDescription}</title>
-      </Head>
       <MetaComponent
-        customTitle
         description={metaDescription}
         image={image}
         url={metaUrl}
@@ -58,14 +47,8 @@ export function PlayerLayout({
         <AudioModule url={audio} />
         {
           !isLoaded
-            ? <>
-              <LoadingComponent />
-            </>
-            : <>
-              <PlayerModule />
-              <IndicatorsComponent />
-              <PlayerSpeedComponent />
-            </>
+            ? <LoadingComponent />
+            : <PlayerModule />
         }
       </DefaultLayout>
     </>

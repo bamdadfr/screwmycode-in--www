@@ -1,29 +1,23 @@
 import React from 'react';
 import {useAtom} from 'jotai';
-import useMeasure from 'react-use-measure';
-import {ResizeObserver} from '@juggle/resize-observer';
-import {imageAtom} from '../../../../atoms/image.atoms';
-import {speedAtom} from '../../../../atoms/speed.atoms';
-import {Container} from './artwork.component.styles';
+import {WebGlComponent} from './components/web-gl/web-gl.component';
+import {NativeComponent} from './components/native/native.component';
 import {
-  ScrewTextureComponent,
-} from '../../../../components/screw-texture/screw-texture.component';
+  isWebGlAvailableAtom,
+} from '../../../../atoms/is-web-gl-available.atoms';
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function ArtworkComponent() {
-  const [artwork] = useAtom(imageAtom);
-  const [speed] = useAtom(speedAtom);
-  const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
-
+  const [isWebGlAvailable] = useAtom(isWebGlAvailableAtom);
   return (
-    <Container ref={ref} speed={speed}>
-      <ScrewTextureComponent
-        image={artwork}
-        dryWet={speed}
-        width={width}
-      />
-    </Container>
+    <>
+      {
+        isWebGlAvailable
+          ? <WebGlComponent />
+          : <NativeComponent />
+      }
+    </>
   );
 }

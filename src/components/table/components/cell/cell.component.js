@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Icon} from '@iconify/react';
+import Image from 'next/image';
+import {useAtom} from 'jotai';
 import {Button, Item} from '../../table.component.styles';
 import {
   ScrewTextureComponent,
 } from '../../../screw-texture/screw-texture.component';
+import {
+  isWebGlAvailableAtom,
+} from '../../../../atoms/is-web-gl-available.atoms';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -24,7 +29,7 @@ const propTypes = {
  * @param {string} props.title - Cell title
  * @param {object} props.icon - Cell icon
  * @param {Function} props.onClick - Click handler
- * @returns {React.Component} Table Cell Component
+ * @returns {React.ReactElement} - Table cell component
  */
 export function CellComponent({
   id,
@@ -33,7 +38,9 @@ export function CellComponent({
   icon,
   onClick,
 }) {
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [width] = useState(88);
+  const [isWebGlAvailable] = useAtom(isWebGlAvailableAtom);
 
   return (
     <>
@@ -43,11 +50,26 @@ export function CellComponent({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <ScrewTextureComponent
-          image={image}
-          dryWet={isHovered ? 100 : 1}
-          width={88}
-        />
+        {
+          isWebGlAvailable
+            ? (
+              <ScrewTextureComponent
+                image={image}
+                dryWet={isHovered ? 100 : 1}
+                width={width}
+              />
+            )
+            : (
+              <Image
+                src={image}
+                width={width}
+                height={width}
+                priority="true"
+                layout="fixed"
+                objectFit="cover"
+              />
+            )
+        }
         <span>{title}</span>
         <span>
           <Button type="button" aria-label="youtube">
