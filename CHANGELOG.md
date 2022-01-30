@@ -1,3 +1,29 @@
+# [3.1.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.0.1...v3.1.0) (2022-01-30)
+
+
+### Bug Fixes
+
+* **AboutPage:** Remove usage of lists and titles inside paragraphs ([c021f73](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/c021f73ef2810892199b054959f9d0a250ff7e03))
+* **AboutPages:** Set width to the container to prevent overflow + Add padding to left as well but reduce the overall amount ([6551bbe](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6551bbe877974b2c640a84fd12ab1d1a0e300f7e))
+* Add custom hook to verify if a remote resource is accessible ([e8dff18](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e8dff18e7267d93be1bdf526422b4dd7a00899f5))
+* **CellComponent:** Remove dead code ([2b15c7a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2b15c7a8a68dc11c25dd251b1d737be176049093))
+* **ScrewTextureComponent:** Request image headers before rendering + Check if WebGL available + Add fallback to native image element if WebGL not available ([6ea9fa5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6ea9fa569ab942fe491194afee1c3a3395ac8377))
+* **TableComponent:** Set width to use all the available horizontal space given by the parent container ([3cdc515](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3cdc515c33213fbb9b5c1a24917253c7e6a4a095))
+* **WebGL:** Add WebGL2 verification ([24af81a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/24af81a352e1a3b1712f5e0737a14914a6b1e418))
+
+
+### Features
+
+* Define the content wrapper size for each breakpoints (Artwork had too much height) + Fallback to native image if WebGL is not available (Chrome Android) + Add meta tags for recently added pages + Various improvements and fixes ([5c56724](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5c56724f5ca20c91af186c7f342b38f35653b6a4))
+* **Next.js:** Add domains whitelists for images ([5d4b4e1](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5d4b4e1edef5c277c1673781f2674c682655ab08))
+
+
+### Performance Improvements
+
+* **Breakpoints:** Remove old breakpoints in favor of defaults from `styled-breakpoints` package ([433a260](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/433a260ef9849a764cb88ed6e3bd8afe453c6965))
+* **PlayerModule:** Rename ImageComponent to ArtworkComponent ([2d24e6a](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2d24e6a489af38c5ff3dc82564e51b7973acfd66))
+* **ScrewTextureComponent:** Remove custom `object-fit` CSS directive in favor of built-in `next/image` equivalent ([38a213c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/38a213c6b03d2371e5e0ed49c6b402b04d0e4121))
+
 ## [3.0.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.0.0...v3.0.1) (2022-01-29)
 
 
