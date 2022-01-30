@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ky from 'ky';
 import {Surface} from 'gl-react-dom/lib';
 import GLImage from 'gl-react-image';
-import {Image} from './screw-texture.component.styles';
+import Image from 'next/image';
 import {withTimeLoop} from '../../app/components/with-time-loop/with-time-loop';
 import {ScrewTextureNode} from './screw-texture.node';
 import {
@@ -49,7 +49,7 @@ export function ScrewTextureComponent({image, dryWet, width}) {
     return <></>;
   }
 
-  if (!isWebGLAvailable()) {
+  if (isWebGLAvailable()) {
     return (
       <>
         <Image
@@ -58,6 +58,7 @@ export function ScrewTextureComponent({image, dryWet, width}) {
           height={width}
           priority="true"
           layout="fixed"
+          objectFit="cover"
         />
       </>
     );
