@@ -49,5 +49,5 @@ export const List = styled.ul`
   list-style-type: circle;
   font-size: 0.9em;
   line-height: 1.3em;
-  padding-left: 0;
+  padding-left: 1em;
 `;

@@ -68,6 +68,7 @@ export default function AboutPage() {
             <TitleH3>
               Examples
             </TitleH3>
+
             <List>
               <li>
                 https://www.<Prefix spacing />youtube.com/watch?v=1234567890
@@ -80,6 +81,8 @@ export default function AboutPage() {
               </li>
             </List>
           </Content>
+
+          <Spacer />
 
           <TitleH2>
             Extension
