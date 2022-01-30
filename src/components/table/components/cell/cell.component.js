@@ -10,6 +10,7 @@ import {
 import {
   isWebGlAvailableAtom,
 } from '../../../../atoms/is-web-gl-available.atoms';
+import {useRemoteAccessible} from '../../../../hooks/use-remote-accessible';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -41,6 +42,7 @@ export function CellComponent({
   const [isHovered, setIsHovered] = useState(false);
   const [width] = useState(88);
   const [isWebGlAvailable] = useAtom(isWebGlAvailableAtom);
+  const isAccessible = useRemoteAccessible(image);
 
   return (
     <>
@@ -51,7 +53,7 @@ export function CellComponent({
         onMouseLeave={() => setIsHovered(false)}
       >
         {
-          isWebGlAvailable
+          isWebGlAvailable && isAccessible
             ? (
               <ScrewTextureComponent
                 image={image}
