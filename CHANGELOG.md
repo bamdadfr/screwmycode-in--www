@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.0...v3.1.1) (2022-01-30)
+
+
+### Bug Fixes
+
+* **AboutPage:** Add missing space before Extension section + Add padding to show bullet points for list of examples ([656462c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/656462cc2b6838b18ae39190a7a37abc59c69fba))
+
 # [3.1.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.0.1...v3.1.0) (2022-01-30)
 
 
