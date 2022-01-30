@@ -43,7 +43,6 @@ export function CellComponent({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* <img src={image} alt="artwork" /> */}
         <ScrewTextureComponent
           image={image}
           dryWet={isHovered ? 100 : 1}
