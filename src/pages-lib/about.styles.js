@@ -4,7 +4,8 @@ export const Container = styled.div`
   text-align: left;
   overflow-y: scroll;
   height: 35vh;
-  padding-right: 1em;
+  width: 100%;
+  padding: 0 0.5em;
 `;
 
 export const Spacer = styled.div`
