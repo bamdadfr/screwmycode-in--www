@@ -12,8 +12,8 @@
    version="1.1"
    x="0px"
    y="0px"
-   width="215"
-   height="215"
+   width="260"
+   height="260"
    sodipodi:docname="screw-icon.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    inkscape:export-filename="/home/bamdad/Downloads/screw-icon.png"
@@ -45,21 +45,21 @@
      inkscape:window-height="1016"
      id="namedview195"
      showgrid="false"
-     inkscape:zoom="0.61780105"
-     inkscape:cx="-341.58026"
-     inkscape:cy="364.98335"
+     inkscape:zoom="0.8737026"
+     inkscape:cx="305.18332"
+     inkscape:cy="-31.853851"
      inkscape:window-x="42"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2" />
+     inkscape:current-layer="layer1" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="background"
      style="display:inline">
     <path
-       style="fill:#242930;fill-opacity:1;stroke:none;stroke-width:1.02682257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 26.81415,48.049571 -5.582447,18.804074 -2.93814,32.31948 -0.881444,66.108045 17.335004,9.10823 28.49991,1.17525 7.051529,-5.58245 53.180238,4.11339 44.07203,-3.81959 29.38136,-6.17008 6.46389,-9.98965 -0.29381,-38.78339 2.93814,-39.958649 -4.70103,-21.7422 L 164.02507,41.58568 57.664574,41.879487 Z"
+       style="fill:#242930;fill-opacity:1;stroke:none;stroke-width:1.35180092px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 20.580947,51.814566 -7.349232,24.755363 -3.8680316,42.548241 -1.1604112,87.03054 22.8213498,11.99089 37.519829,1.5472 9.283262,-7.34923 70.011227,5.41523 58.02036,-5.02846 38.68025,-8.12284 8.50963,-13.15127 -0.38679,-51.05792 3.86803,-52.605119 -6.18886,-28.623376 -49.1239,-15.858893 -140.022459,0.386794 z"
        id="path1152"
        inkscape:connector-curvature="0" />
   </g>
@@ -71,7 +71,7 @@
     <g
        style="display:inline"
        id="S.__C3.__A9quence-1"
-       transform="matrix(-1.0268226,0,0,1.0268226,232.11344,2.0651699)">
+       transform="matrix(-1.351801,0,0,1.351801,291.99984,-8.4372713)">
       <g
          display="none"
          id="Layer85_0_FILL"
