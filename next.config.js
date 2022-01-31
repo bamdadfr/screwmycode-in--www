@@ -3,7 +3,6 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 
 const configuration = {
   poweredByHeader: false,
-  outputFileTracing: false,
   images: {
     domains: [
       'api.screwmycode.in',
