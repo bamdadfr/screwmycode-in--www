@@ -327,9 +327,9 @@
     to-fast-properties "^2.0.0"
 
 "@bamdadsabbagh/eslint-config@^2.0.12":
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-2.0.12.tgz#6c8291ef4db8e91ce26ff96cc79aaf3d6bce692b"
-  integrity sha512-/kb7VI/T9gWdWIFzEcjpXIl6MotHIZLo5sV1+Cf04OWIbim2VqlbQvbfW4osVRDo+Ff7lr1wyjpaxnYozjA3ag==
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-2.0.13.tgz#4d088cc25fe07025aa46bd61d6aca7ce70b098fb"
+  integrity sha512-JhTQGHutPSeSHhUur1M4Rx0DaeGJZs9zJ5s8F1ii7DFPj2h9Cbvd0aacqUcUUqv2jSMH9eF/rUUe9C1NZ0i7SA==
   dependencies:
     "@babel/core" "^7.15.0"
     "@babel/eslint-parser" "^7.15.0"
@@ -423,9 +423,9 @@
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
 "@iconify/icons-mdi@^1.1.44":
-  version "1.1.44"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.44.tgz#61e29da90b8a744225226ad89004321aa23d6f1d"
-  integrity sha512-s81voVGamh/njwPVsYzs3vHjUwYZ3WH6GOKzOgU5XbG3RK0FLfS5ZHBZPGMYsYvCodIzRKXaRxqMWje9OL3MJw==
+  version "1.1.45"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.45.tgz#8c8505a58c20aad6d6eabdf64310b205c7a6e58b"
+  integrity sha512-yBxOzgTEj/hk+JgLVM0my0rdLvh1HeNXEAsbY4+ac4KxPY/syVBOGItw/otX3Qp3TIrPrR8gt4e206c811PoDg==
 
 "@iconify/react@^3.1.3":
   version "3.1.3"
@@ -1693,9 +1693,9 @@ can-autoplay@^3.0.1:
   integrity sha512-Ih6wc7yJB4TylS/mLyAW0Dj5Nh3Gftq/g966TcxgvpNCOzlbqTs85srAq7mwIspo4w8gnLCVVGroyCHfh6l9aA==
 
 caniuse-lite@^1.0.30001283, caniuse-lite@^1.0.30001286:
-  version "1.0.30001303"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001303.tgz#9b168e4f43ccfc372b86f4bc5a551d9b909c95c9"
-  integrity sha512-/Mqc1oESndUNszJP0kx0UaQU9kEv9nNtJ7Kn8AdA0mNnH8eR1cj0kG+NbNuC1Wq/b21eA8prhKRA3bbkjONegQ==
+  version "1.0.30001304"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001304.tgz#38af55ed3fc8220cb13e35e6e7309c8c65a05559"
+  integrity sha512-bdsfZd6K6ap87AGqSHJP/s1V+U6Z5lyrcbBu3ovbCCf8cSYpwTtGrCBObMpJqwxfTbLW6YTIdbb1jEeTelcpYQ==
 
 chalk@^2.0.0:
   version "2.4.2"
