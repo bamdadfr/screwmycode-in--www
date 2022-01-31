@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.2...v3.1.3) (2022-01-31)
+
+
+### Bug Fixes
+
+* **Next.js:** Remove soundcloud CDN from allowed images domains as all media is now piped through API ([6b6a6ed](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/6b6a6ed86b3ffe631c97097f2b78c10213571995))
+
 ## [3.1.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.1...v3.1.2) (2022-01-31)
 
 
