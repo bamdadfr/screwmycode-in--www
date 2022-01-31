@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.1...v3.1.2) (2022-01-31)
+
+
+### Bug Fixes
+
+* **Images:** Render empty fragment before rendering either Native or WebGL images after accessible check, fixes [#364](https://github.com/bamdadsabbagh/screwmycode-in--www/issues/364) ([1a31a06](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1a31a068d349b2841fca22fb1740cdbc3af74b57))
+
 ## [3.1.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.0...v3.1.1) (2022-01-30)
 
 
