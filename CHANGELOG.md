@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.0...v3.2.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* **Meta:** Increase favicon size + Add safari mask icon ([e76377b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e76377bbff5635d6a723f8e60d5e7455fca30b37))
+
 # [3.2.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.5...v3.2.0) (2022-01-31)
 
 
