@@ -7,7 +7,6 @@ const configuration = {
   images: {
     domains: [
       'api.screwmycode.in',
-      'i1.sndcdn.com',
     ],
   },
   webpack: (config) => {
@@ -32,7 +31,6 @@ if (!isEnvProduction) {
   configuration.images.domains = [
     ...configuration.images.domains,
     'localhost',
-    '192.168.1.102',
   ];
 }
 
