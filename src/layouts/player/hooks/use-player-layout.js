@@ -5,7 +5,7 @@ import {isLoadedAtom} from '../../../atoms/load.atoms';
 import {setSpeedAtom} from '../../../atoms/speed.atoms';
 import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
 import {usePlayerLoading} from './use-player-loading';
-import {setImageAtom} from '../../../atoms/image.atoms';
+import {setArtworkAtom} from '../../../atoms/artwork.atoms';
 import {setPauseAtom} from '../../../atoms/play-pause.atoms';
 import {
   getProviderFromRouter,
@@ -33,7 +33,7 @@ export function usePlayerLayout({
   const [isLoaded] = useAtom(isLoadedAtom);
   const [, setSpeed] = useAtom(setSpeedAtom);
   const [, setAudioTitle] = useAtom(setAudioTitleAtom);
-  const [, setArtwork] = useAtom(setImageAtom);
+  const [, setArtwork] = useAtom(setArtworkAtom);
   const [, setPause] = useAtom(setPauseAtom);
 
   const [metaDescription] = useState(`${title} - ${speed} - ${getProviderFromRouter(router)}`);

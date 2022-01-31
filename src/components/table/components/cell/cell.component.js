@@ -46,39 +46,44 @@ export function CellComponent({
 
   return (
     <>
-      <Item
-        key={id}
-        onClick={() => onClick(id)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {
-          isWebGlAvailable && isAccessible
-            ? (
-              <ScrewTextureComponent
-                image={image}
-                dryWet={isHovered ? 100 : 1}
-                width={width}
-              />
-            )
-            : (
-              <Image
-                src={image}
-                width={width}
-                height={width}
-                priority="true"
-                layout="fixed"
-                objectFit="cover"
-              />
-            )
-        }
-        <span>{title}</span>
-        <span>
-          <Button type="button" aria-label="youtube">
-            <Icon icon={icon} />
-          </Button>
-        </span>
-      </Item>
+      {
+        isAccessible &&
+        (
+          <Item
+            key={id}
+            onClick={() => onClick(id)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {
+              isWebGlAvailable
+                ? (
+                  <ScrewTextureComponent
+                    image={image}
+                    dryWet={isHovered ? 100 : 1}
+                    width={width}
+                  />
+                )
+                : (
+                  <Image
+                    src={image}
+                    width={width}
+                    height={width}
+                    priority="true"
+                    layout="fixed"
+                    objectFit="cover"
+                  />
+                )
+            }
+            <span>{title}</span>
+            <span>
+              <Button type="button" aria-label="youtube">
+                <Icon icon={icon} />
+              </Button>
+            </span>
+          </Item>
+        )
+      }
     </>
   );
 }

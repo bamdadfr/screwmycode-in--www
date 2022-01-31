@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {useAtom} from 'jotai';
 import useMeasure from 'react-use-measure';
 import {ResizeObserver} from '@juggle/resize-observer';
-import {imageAtom} from '../../../../../../atoms/image.atoms';
+import {artworkAtom} from '../../../../../../atoms/artwork.atoms';
 import {speedAtom} from '../../../../../../atoms/speed.atoms';
 import {Container} from '../../artwork.component.styles';
 
@@ -11,7 +11,7 @@ import {Container} from '../../artwork.component.styles';
  * @returns {React.ReactElement} - React Component
  */
 export function NativeComponent() {
-  const [artwork] = useAtom(imageAtom);
+  const [artwork] = useAtom(artworkAtom);
   const [speed] = useAtom(speedAtom);
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
 
