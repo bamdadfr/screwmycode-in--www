@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.5...v3.2.0) (2022-01-31)
+
+
+### Features
+
+* **Meta:** Add favicons ([1643ed4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1643ed478fa54970ddcc3aae6f6643d33ede9857))
+
 ## [3.1.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.4...v3.1.5) (2022-01-31)
 
 
