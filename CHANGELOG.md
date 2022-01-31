@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.3...v3.1.4) (2022-01-31)
+
+
+### Bug Fixes
+
+* **Next.js:** Re-enable sentry ([3839d99](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3839d993d0626086803642cb46da9a888e8d5871))
+
 ## [3.1.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.1.2...v3.1.3) (2022-01-31)
 
 
