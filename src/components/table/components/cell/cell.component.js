@@ -2,15 +2,11 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Icon} from '@iconify/react';
 import Image from 'next/image';
-import {useAtom} from 'jotai';
+import {isDesktop} from 'react-device-detect';
 import {Button, Item} from '../../table.component.styles';
 import {
   ScrewTextureComponent,
 } from '../../../screw-texture/screw-texture.component';
-import {
-  isWebGlAvailableAtom,
-} from '../../../../atoms/is-web-gl-available.atoms';
-import {useRemoteAccessible} from '../../../../hooks/use-remote-accessible';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -41,49 +37,42 @@ export function CellComponent({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [width] = useState(88);
-  const [isWebGlAvailable] = useAtom(isWebGlAvailableAtom);
-  const isAccessible = useRemoteAccessible(image);
 
   return (
     <>
-      {
-        isAccessible &&
-        (
-          <Item
-            key={id}
-            onClick={() => onClick(id)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {
-              isWebGlAvailable
-                ? (
-                  <ScrewTextureComponent
-                    image={image}
-                    dryWet={isHovered ? 100 : 1}
-                    width={width}
-                  />
-                )
-                : (
-                  <Image
-                    src={image}
-                    width={width}
-                    height={width}
-                    priority="true"
-                    layout="fixed"
-                    objectFit="cover"
-                  />
-                )
-            }
-            <span>{title}</span>
-            <span>
-              <Button type="button" aria-label="youtube">
-                <Icon icon={icon} />
-              </Button>
-            </span>
-          </Item>
-        )
-      }
+      <Item
+        key={id}
+        onClick={() => onClick(id)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {
+          isDesktop
+            ? (
+              <ScrewTextureComponent
+                image={image}
+                dryWet={isHovered ? 100 : 1}
+                width={width}
+              />
+            )
+            : (
+              <Image
+                src={image}
+                width={width}
+                height={width}
+                priority="true"
+                layout="fixed"
+                objectFit="cover"
+              />
+            )
+        }
+        <span>{title}</span>
+        <span>
+          <Button type="button" aria-label="youtube">
+            <Icon icon={icon} />
+          </Button>
+        </span>
+      </Item>
     </>
   );
 }
