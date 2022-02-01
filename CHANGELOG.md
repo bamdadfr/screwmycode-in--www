@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.1...v3.2.2) (2022-02-01)
+
+
+### Performance Improvements
+
+* **WebGL:** Use WebGL only on desktop by default + Remove unused code ([48531e7](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/48531e792d33cf82bac95c9daaf00cc1cf4555eb))
+
 ## [3.2.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.0...v3.2.1) (2022-01-31)
 
 
