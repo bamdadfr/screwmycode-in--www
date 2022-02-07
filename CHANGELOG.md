@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.2...v3.2.3) (2022-02-07)
+
+
+### Performance Improvements
+
+* ⚙️ yarn-upgrade--onMondays-1000 ([301c44b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/301c44ba7fed26a0128c51eb66ecfabb2986cf90))
+
 ## [3.2.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.1...v3.2.2) (2022-02-01)
 
 
