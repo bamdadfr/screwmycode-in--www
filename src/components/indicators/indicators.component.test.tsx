@@ -1,13 +1,13 @@
 import React from 'react';
 import {render as defaultRender, screen} from '@testing-library/react';
 import {IndicatorsComponent} from './indicators.component';
-import {WithTheme} from '../../app/components/with-theme/with-theme';
+import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <IndicatorsComponent />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {

@@ -3,15 +3,15 @@ import {render as defaultRender, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {FormComponent} from './form.component';
 import {MOCK_STATE} from './form.component.test.mock';
-import {WithTheme} from '../../app/components/with-theme/with-theme';
+import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {link, handleSubmit} = MOCK_STATE();
 
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <FormComponent />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {

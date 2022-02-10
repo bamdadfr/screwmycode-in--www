@@ -10,10 +10,8 @@ interface WithThemeProps {
 
 /**
  * Wrapper component for styled-components
- *
- * @todo should be lower case to wrap the whole component, not the body
  */
-export function WithTheme({children}: WithThemeProps): ReactElement {
+export function ThemeWrapper({children}: WithThemeProps): ReactElement {
   return (
     <>
       <ThemeProvider theme={{...breakpoints, ...theme}}>

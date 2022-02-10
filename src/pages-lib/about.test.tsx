@@ -1,13 +1,13 @@
 import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
 import AboutPage from '../pages/about';
-import {WithTheme} from '../app/components/with-theme/with-theme';
+import {ThemeWrapper} from '../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <AboutPage />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {

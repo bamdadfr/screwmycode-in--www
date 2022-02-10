@@ -5,14 +5,16 @@ import {
   screen,
 } from '@testing-library/react';
 import {SpeedComponent} from './speed.component';
-import {WithTheme} from '../../../../app/components/with-theme/with-theme';
+import {
+  ThemeWrapper,
+} from '../../../../app/components/theme-wrapper/theme-wrapper';
 import {MOCK_STATE} from './speed.component.test.mock';
 
 const render = () => {
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <SpeedComponent />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {

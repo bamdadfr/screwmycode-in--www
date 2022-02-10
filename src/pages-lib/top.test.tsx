@@ -1,24 +1,24 @@
 import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
 import TopPage from '../pages/top';
-import {WithTheme} from '../app/components/with-theme/with-theme';
+import {ThemeWrapper} from '../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <TopPage
         top={[
           {
             id: '1',
             title: 'title',
-            description: 'description',
-            url: '',
             image: 'https://i.imgur.com/5EOyTDQ.jpg',
-            date: 'date',
+            icon: 'string',
+            onClick: () => undefined,
+            type: 'youtube',
           },
         ]}
       />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {

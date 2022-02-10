@@ -1,13 +1,13 @@
 import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
 import IndexPage from '../pages';
-import {WithTheme} from '../app/components/with-theme/with-theme';
+import {ThemeWrapper} from '../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {container} = defaultRender(
-    <WithTheme>
+    <ThemeWrapper>
       <IndexPage />
-    </WithTheme>,
+    </ThemeWrapper>,
   );
 
   return {
