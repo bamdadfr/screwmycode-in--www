@@ -1,3 +1,26 @@
+## [3.2.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.3...v3.2.4) (2022-02-10)
+
+
+### Bug Fixes
+
+* **API:** Add `API_BASE_URL` to constants file at src root ([5ef329c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/5ef329cdb037e81dca4c66713fc5b009b31b2ffa))
+* **apiQuery:** Remove redundant `await` in return ([19df649](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/19df649a2c2f27936322f41571a570fee983a5ae))
+* **ArtworkComponentStyles:** Add utility function for easier experiments ([61b416c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/61b416cd09ed7a1f8aa125d31eeef138b68198e6))
+* **Breakpoints:** Remove `styled-breakpoints` dependency + Use generated media queries + Rename device size to human-readable descriptions ([61267dc](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/61267dc111a161c20a8370a9516ed139f9d257e9))
+* **CellComponent:** Avoid nested ternaries ([147e4c4](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/147e4c4fba0d4644dd89aecb1a4e7f031250cc78))
+* **NativeComponentTest:** Set audio type + Remove todos ([3570a76](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3570a7644c4e56d2d826925e60db4957a83ccd1d))
+* **PlayerModuleStyles:** Remove unused prop ([ad1a2bb](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ad1a2bb61b3efd7fb5a9e0674b37419bb64101b5))
+* **TextLinkComponent:** Add utility function for easier experiments ([2b10cd5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2b10cd576d781b029c47cf4cd18dcd71f9c84ae3))
+* **TextLinkComponentStyles:** Add utility function for easier experiments ([d7e9e2e](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/d7e9e2e74de05351dca5ec6dc5e0c55e4d119217))
+* **ThemeWrapper:** Rename from `WithTheme` + Misc in unit tests ([1ce794d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1ce794d3afe5681e88ac4c8481e39c3ef578ce20))
+* **Types:** Add types for `apiQuery` and some atoms ([9b0bca5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9b0bca51fc164559503899094834cd0c2a429605))
+* **withTimeLoop:** Rename variables to unique names + Add inspiration in JSDOC + Allow TS `any` ([2986a55](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2986a55b244808b00739814ffbb2c82cf61e056b))
+
+
+### Performance Improvements
+
+* Rewrite with TS ([1712356](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/1712356cca3879d5ed2a2db4288e3f3e49fb4161))
+
 ## [3.2.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.2...v3.2.3) (2022-02-07)
 
 
