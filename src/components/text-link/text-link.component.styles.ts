@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {AnchorOptions} from './text-link.component';
 
+const getBorder = (c) => `0.15em solid ${c}`;
+
 export const TextLink = styled.a<AnchorOptions>`
   font-weight: ${({bold}) => bold ? '600' : 'inherit'};
 
@@ -8,7 +10,7 @@ export const TextLink = styled.a<AnchorOptions>`
 
   border-bottom: ${(props) => {
     if (props.underline) {
-      return `0.15em solid ${props.theme.highlight}`;
+      return getBorder(props.theme.highlight);
     }
 
     return 'none';
@@ -17,7 +19,7 @@ export const TextLink = styled.a<AnchorOptions>`
   &:hover {
     border-bottom: ${(props) => {
     if (props.underlineOnHover) {
-      return `0.15em solid ${props.theme.highlight}`;
+      return getBorder(props.theme.highlight);
     }
 
     return 'none';
