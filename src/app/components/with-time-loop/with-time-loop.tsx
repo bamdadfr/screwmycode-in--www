@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {
   JSXElementConstructor,
   ReactElement,
@@ -8,6 +9,9 @@ import React, {
 import raf from 'raf';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
+/**
+ * @see https://github.com/gre/gl-react/blob/master/packages/cookbook/src/HOC/timeLoop.js
+ */
 export function withTimeLoop(C: JSXElementConstructor<any>, {refreshRate = 60} = {}): JSXElementConstructor<any> {
   function TimeLoop({...props}): ReactElement {
     const [time, setTime] = useState(0);
@@ -22,17 +26,17 @@ export function withTimeLoop(C: JSXElementConstructor<any>, {refreshRate = 60} =
 
       lastTime = -interval;
 
-      const loop = (t) => {
+      const loop = (currentTime) => {
         savedRequestAnimationFrame.current = raf(loop);
 
         if (!startTime) {
-          startTime = t;
+          startTime = currentTime;
         }
 
-        if (t - lastTime > interval) {
-          setTime(t - startTime);
-          setTick((tick) => tick + 1);
-          lastTime = t;
+        if (currentTime - lastTime > interval) {
+          setTime(currentTime - startTime);
+          setTick((t) => t + 1);
+          lastTime = currentTime;
         }
       };
 
