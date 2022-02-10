@@ -20,18 +20,8 @@ describe('NativeComponent', () => {
     describe('autoplay', () => {
       it('should default to false', () => {
         render(<NativeComponent url={MOCK_URL} />);
-        const audio = screen.getByLabelText('player');
+        const audio = screen.getByLabelText('player') as HTMLAudioElement;
         expect(audio.autoplay).toBe(false);
-      });
-    });
-
-    describe('keyboard events', () => {
-      it('should fire .play() on first keypress', () => {
-        // todo
-      });
-
-      it('should fire .pause() on second keypress', () => {
-        // todo
       });
     });
   });
