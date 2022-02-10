@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {down, up} from 'styled-breakpoints';
 import {mapRange} from '../../../../utils/map-range/map-range';
 import {widths} from '../../../../app/styles/widths';
+import {mediaQueries} from '../../../../app/styles/breakpoints';
 
 const getFilter = ({sepia, hueRotate, saturate, blur}) => `
       sepia(${sepia}%)
@@ -23,24 +23,24 @@ export const Container = styled.span <{speed: number;}>`
   justify-content: center;
 
   // sizes
-  ${down('md')} {
-    width: calc(${widths.sm} + 3em);
+  ${mediaQueries.below.tablet} {
+    width: calc(${widths.mobile} + 3em);
   }
 
-  ${up('md')} {
-    width: calc(${widths.md} + 2em);
+  ${mediaQueries.above.tablet} {
+    width: calc(${widths.tablet} + 2em);
   }
 
-  ${up('lg')} {
-    width: calc(${widths.lg} + 2em);
+  ${mediaQueries.above.desktop} {
+    width: calc(${widths.desktop} + 2em);
   }
 
-  ${up('xl')} {
-    width: calc(${widths.xl} + 2em);
+  ${mediaQueries.above.widescreen} {
+    width: calc(${widths.widescreen} + 2em);
   }
 
-  ${up('xxl')} {
-    width: calc(${widths.xxl} + 2em);
+  ${mediaQueries.above.fullhd} {
+    width: calc(${widths.fullhd} + 2em);
   }
 
   // filters

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {down} from 'styled-breakpoints';
+import {mediaQueries} from '../../app/styles/breakpoints';
 
 export const Container = styled.div`
   width: 100%;
@@ -36,7 +36,7 @@ export const PlayerWrapper = styled.div`
 
   grid-template-columns: 2em 2em 1fr 8em 2em 6em;
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     font-size: 0.9em;
     grid-template-columns: 2em 2em 1fr 6em;
     grid-gap: 0.25em;
@@ -55,7 +55,7 @@ export const VolumeButtonWrapper = styled.span`
   grid-row-start: 1;
   z-index: 1;
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     grid-column-start: 3;
     grid-row-start: 1;
     justify-self: flex-end;
@@ -67,7 +67,7 @@ export const VolumeSliderWrapper = styled.span`
   grid-row-start: 1;
   z-index: 1;
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     grid-column-start: 4;
     grid-row-start: 1;
   }
@@ -88,7 +88,7 @@ export const SeekWrapper = styled.span`
   grid-column-end: 6;
   grid-row-start: 2;
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
@@ -101,7 +101,7 @@ export const TimeWrapper = styled.span`
   grid-row-start: 2;
   justify-self: flex-end;
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     grid-column-start: 4;
     grid-row-start: 2;
     justify-self: inherit;

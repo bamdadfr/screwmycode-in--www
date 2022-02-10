@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {down} from 'styled-breakpoints';
+import {mediaQueries} from '../../app/styles/breakpoints';
 
 export const Title = styled.h1`
   display: flex;
@@ -21,7 +21,7 @@ export const Title = styled.h1`
     }
   }
 
-  ${down('md')} {
+  ${mediaQueries.below.tablet} {
     font-size: 2em;
   }
 `;

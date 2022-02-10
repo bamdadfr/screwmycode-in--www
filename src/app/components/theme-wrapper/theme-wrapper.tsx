@@ -2,7 +2,6 @@ import React, {ReactElement} from 'react';
 import {ThemeProvider} from 'styled-components';
 import {Global} from '../../styles/global';
 import {theme} from '../../styles/theme';
-import {breakpoints} from '../../styles/breakpoints';
 
 interface WithThemeProps {
   children: ReactElement | ReactElement[];
@@ -14,7 +13,7 @@ interface WithThemeProps {
 export function ThemeWrapper({children}: WithThemeProps): ReactElement {
   return (
     <>
-      <ThemeProvider theme={{...breakpoints, ...theme}}>
+      <ThemeProvider theme={theme}>
         <Global />
         {children}
       </ThemeProvider>

@@ -1,11 +1,22 @@
-import {createTheme} from 'styled-breakpoints';
+const getBelow = (v) => `@media screen and (max-width: ${v - 1}px)`;
+const getAbove = (v) => `@media screen and (min-width: ${v}px)`;
 
-// todo: remove dependency on styled-breakpoints
-export const breakpoints = createTheme({
-  xs: '0px',
-  sm: '576px',
-  md: '768px',
-  lg: '992px',
-  xl: '1200px',
-  xxl: '1400px',
-});
+const breakpoints = {
+  mobile: 576,
+  tablet: 768,
+  desktop: 992,
+  widescreen: 1200,
+  fullhd: 1400,
+};
+
+export const mediaQueries = {
+  below: {
+    tablet: getBelow(breakpoints.tablet),
+  },
+  above: {
+    tablet: getAbove(breakpoints.tablet),
+    desktop: getAbove(breakpoints.desktop),
+    widescreen: getAbove(breakpoints.widescreen),
+    fullhd: getAbove(breakpoints.fullhd),
+  },
+};

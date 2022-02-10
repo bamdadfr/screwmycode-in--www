@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {down, up} from 'styled-breakpoints';
 import {widths} from '../../app/styles/widths';
+import {mediaQueries} from '../../app/styles/breakpoints';
 
 export const Container = styled.div`
   position: fixed;
@@ -28,23 +28,23 @@ export const Wrapper = styled.div`
   text-align: center;
   font-size: 1.1em;
 
-  ${down('md')} {
-    width: ${widths.sm};
+  ${mediaQueries.below.tablet} {
+    width: ${widths.mobile};
   }
 
-  ${up('md')} {
-    width: ${widths.md};
+  ${mediaQueries.above.tablet} {
+    width: ${widths.tablet};
   }
 
-  ${up('lg')} {
-    width: ${widths.lg};
+  ${mediaQueries.above.desktop} {
+    width: ${widths.desktop};
   }
 
-  ${up('xl')} {
-    width: ${widths.xl};
+  ${mediaQueries.above.widescreen} {
+    width: ${widths.widescreen};
   }
 
-  ${up('xxl')} {
-    width: ${widths.xxl};
+  ${mediaQueries.above.fullhd} {
+    width: ${widths.fullhd};
   }
 `;

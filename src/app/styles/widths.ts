@@ -1,8 +1,7 @@
 export const widths = {
-  xs: '0vw',
-  sm: '95vw',
-  md: '80vw',
-  lg: '60vw',
-  xl: '45vw',
-  xxl: '40vw',
+  mobile: '95vw',
+  tablet: '80vw',
+  desktop: '60vw',
+  widescreen: '45vw',
+  fullhd: '40vw',
 };
