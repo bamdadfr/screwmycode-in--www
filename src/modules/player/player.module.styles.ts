@@ -5,10 +5,9 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const Button = styled.button<{y?: number;}>`
+export const Button = styled.button`
   touch-action: manipulation;
   transition: background .3s ease;
-  transform: translateY(${({y}) => y ? `${y}px` : 0});
 
   &:hover {
     background: ${({theme}) => theme.shadow.opacity};
