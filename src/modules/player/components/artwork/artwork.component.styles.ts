@@ -3,6 +3,15 @@ import {down, up} from 'styled-breakpoints';
 import {mapRange} from '../../../../utils/map-range/map-range';
 import {widths} from '../../../../app/styles/widths';
 
+const getFilter = ({sepia, hueRotate, saturate, blur}) => `
+      sepia(${sepia}%)
+      hue-rotate(${hueRotate}deg)
+      saturate(${saturate}%)
+      // blur(${blur}px)
+      opacity(0.618)
+      brightness(0.618)
+    `;
+
 export const Container = styled.span <{speed: number;}>`
   // global
   object-fit: cover;
@@ -41,13 +50,6 @@ export const Container = styled.span <{speed: number;}>`
     const saturate = Math.round(mapRange(speed, 0.84, 1, 500, 100, true));
     const blur = Math.round(mapRange(speed, 0.84, 1, 5, 1, true));
 
-    return `
-      sepia(${sepia}%)
-      hue-rotate(${hueRotate}deg)
-      saturate(${saturate}%)
-      // blur(${blur}px)
-      opacity(0.618)
-      brightness(0.618)
-    `;
+    return getFilter({sepia, hueRotate, saturate, blur});
   }};
 `;
