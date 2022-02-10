@@ -1,0 +1,24 @@
+import {useState} from 'react';
+import {useInterval} from '../../../../../hooks/use-interval';
+
+interface UseDotsComponent {
+  dots: string;
+}
+
+/**
+ * Animate the dots
+ */
+export function useDotsComponent(frequency = 500): UseDotsComponent {
+  const [dots, setDots] = useState('');
+
+  useInterval(() => {
+    if (dots === '...') {
+      return setDots('');
+    }
+    setDots((s) => s + '.');
+  }, frequency);
+
+  return {
+    dots,
+  };
+}

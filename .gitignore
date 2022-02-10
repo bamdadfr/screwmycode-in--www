@@ -35,3 +35,6 @@ TODO.md
 
 # env
 .env
+
+# sonarlint
+/.idea/sonarlint/
