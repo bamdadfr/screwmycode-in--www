@@ -1,4 +1,4 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useMemo, useState} from 'react';
 import {Icon, IconifyIcon} from '@iconify/react';
 import Image from 'next/image';
 import {isDesktop} from 'react-device-detect';
@@ -28,6 +28,14 @@ export function CellComponent({
   const [isHovered, setIsHovered] = useState(false);
   const [width] = useState(88);
 
+  const dryWet = useMemo(() => {
+    if (isHovered) {
+      return 100;
+    }
+
+    return 1;
+  }, [isHovered]);
+
   return (
     <>
       <Item
@@ -41,7 +49,7 @@ export function CellComponent({
             ? (
               <ScrewTextureComponent
                 image={image}
-                dryWet={isHovered ? 100 : 1}
+                dryWet={dryWet}
                 width={width}
               />
             )
