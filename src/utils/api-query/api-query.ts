@@ -1,7 +1,7 @@
 import ky from 'ky';
 import {isEnvProduction} from '../is-env-production/is-env-production';
 
-export async function apiQuery(endpoint: string): Promise<Response> {
+export async function apiQuery<R>(endpoint: string): Promise<R> {
   let base;
 
   if (isEnvProduction()) {

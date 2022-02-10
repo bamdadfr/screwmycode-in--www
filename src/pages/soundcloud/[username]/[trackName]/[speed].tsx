@@ -29,7 +29,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
 
     validateSoundcloudId(id);
 
-    const data = await apiQuery(`/soundcloud/${id}`);
+    const data = await apiQuery<PlayerLayoutProps>(`/soundcloud/${id}`);
 
     const props: PlayerLayoutProps = {
       title: data.title,

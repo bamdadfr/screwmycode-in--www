@@ -32,7 +32,7 @@ export default function LatestPage({latest}: LatestPageProps): ReactElement {
 
 export async function getServerSideProps(): Promise<GetServerSidePropsResult<unknown>> {
   try {
-    const data = await apiQuery('/latest');
+    const data = await apiQuery<LatestPageProps['latest']>('/latest');
 
     const props: LatestPageProps = {
       latest: data,

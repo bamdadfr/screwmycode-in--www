@@ -27,7 +27,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
 
     validateYoutubeId(id);
 
-    const data = await apiQuery(`/youtube/${id}`);
+    const data = await apiQuery<PlayerLayoutProps>(`/youtube/${id}`);
 
     const props: PlayerLayoutProps = {
       title: data.title,

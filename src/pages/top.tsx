@@ -32,7 +32,7 @@ export default function TopPage({top}: TopPageProps): ReactElement {
 
 export async function getServerSideProps(): Promise<GetServerSidePropsResult<unknown>> {
   try {
-    const data = await apiQuery('/top');
+    const data = await apiQuery<TopPageProps['top']>('/top');
 
     const props: TopPageProps = {
       top: data,
