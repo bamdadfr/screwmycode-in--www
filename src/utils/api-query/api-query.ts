@@ -1,15 +1,6 @@
 import ky from 'ky';
-import {isEnvProduction} from '../is-env-production/is-env-production';
+import {API_BASE_URL} from '../../constants';
 
 export async function apiQuery<R>(endpoint: string): Promise<R> {
-  let base;
-
-  if (isEnvProduction()) {
-    base = 'https://api.screwmycode.in';
-  } else {
-    // base = 'http://localhost:3000';
-    base = 'https://api.screwmycode.in';
-  }
-
-  return await ky.get(`${base}${endpoint}`).json();
+  return await ky.get(`${API_BASE_URL}${endpoint}`).json();
 }
