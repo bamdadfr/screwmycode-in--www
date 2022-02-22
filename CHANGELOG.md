@@ -1,3 +1,18 @@
+## [3.2.7](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.6...v3.2.7) (2022-02-22)
+
+
+### Bug Fixes
+
+* **PlayerModule/ArtworkComponent:** Inject `speed` JSX prop as string ([719c7cf](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/719c7cf7d89e6930825b8e8ece2251d680ea9c03))
+* **State:** Make sure `speed` is a number ([646145d](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/646145d93b30012709fdc9f58b35bf9cba705626))
+
+
+### Performance Improvements
+
+* **AudioComponent:** Clean and merge after howler removal ([4931587](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/493158747611d94bcd7911f4ba7da2d47b06e423))
+* **AudioModule:** Remove howler as Chrome now supports `preservesPitch` audio directive ([8da1bae](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8da1baeaf2e47c8bc8bdafd69233b86d98477260))
+* **LoadingComponent:** Remove firefox suggestion ([8e6b075](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8e6b075b0cee03b2146cda76556638ee95e15e5c))
+
 ## [3.2.6](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.5...v3.2.6) (2022-02-21)
 
 
