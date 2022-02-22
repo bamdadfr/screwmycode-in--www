@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 declare global {
   interface HTMLAudioElement {
     mozPreservesPitch: boolean;
+    preservesPitch: boolean;
   }
 }
 
@@ -16,5 +17,6 @@ export function useNativePitch(audio: HTMLAudioElement): void {
     }
 
     audio.mozPreservesPitch = false;
+    audio.preservesPitch = false;
   }, [audio]);
 }
