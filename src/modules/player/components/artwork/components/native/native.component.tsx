@@ -13,7 +13,7 @@ export function NativeComponent(): ReactElement {
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
 
   return (
-    <Container ref={ref} speed={speed}>
+    <Container ref={ref} speed={speed.toString()}>
       <Image
         src={artwork || '/'}
         width={width}
