@@ -45,7 +45,7 @@ export function usePlayerLayout({
   usePlayerLoading();
 
   useEffect(() => {
-    setSpeed(speed);
+    setSpeed(speed.toString());
   }, [setSpeed, speed]);
 
   useEffect(() => {

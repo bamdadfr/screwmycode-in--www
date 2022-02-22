@@ -1,11 +1,11 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {isPlayingAtom} from '../../../../../atoms/play-pause.atoms';
+import {isPlayingAtom} from '../../../atoms/play-pause.atoms';
 
 /**
- * Hook to use native play/pause
+ * Hook to use audio play/pause
  */
-export function useNativePlayPause(audio: HTMLAudioElement): void {
+export function useAudioPlayPause(audio: HTMLAudioElement): void {
   const [isPlaying] = useAtom(isPlayingAtom);
 
   useEffect(() => {

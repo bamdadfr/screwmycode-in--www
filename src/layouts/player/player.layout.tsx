@@ -1,10 +1,10 @@
 import React, {ReactElement} from 'react';
-import {LoadingComponent} from '../../components/loading/loading.component';
 import {MetaComponent} from '../../components/meta/meta.component';
 import {DefaultLayout} from '../default/default.layout';
-import {AudioModule} from '../../modules/audio/audio.module';
+import {AudioComponent} from '../../components/audio/audio.component';
 import {PlayerModule} from '../../modules/player/player.module';
 import {usePlayerLayout} from './hooks/use-player-layout';
+import {LoadingComponent} from '../../components/loading/loading.component';
 
 export interface PlayerLayoutProps {
   title: string;
@@ -36,7 +36,7 @@ export function PlayerLayout({
         url={metaUrl}
       />
       <DefaultLayout customMeta>
-        <AudioModule url={audio} />
+        <AudioComponent url={audio} />
         {
           !isLoaded
             ? <LoadingComponent />

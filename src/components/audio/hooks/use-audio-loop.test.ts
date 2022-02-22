@@ -1,13 +1,13 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useNativeLoop} from './use-native-loop';
-import {MOCK_AUDIO} from './use-native-component.test.mock';
+import {useAudioLoop} from './use-audio-loop';
+import {MOCK_AUDIO} from './use-audio-component.test.mock';
 
 afterEach(() => jest.resetAllMocks());
 
-describe('useNativeLoop', () => {
+describe('useAudioLoop', () => {
   describe('loop', () => {
     it('should default to true', () => {
-      renderHook(() => useNativeLoop(MOCK_AUDIO));
+      renderHook(() => useAudioLoop(MOCK_AUDIO));
       expect(MOCK_AUDIO.loop).toBe(true);
     });
   });
