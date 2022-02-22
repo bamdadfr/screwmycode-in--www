@@ -6,7 +6,7 @@ import {shaders} from './screw-texture.shaders';
 interface ScrewTextureNodeProps {
   children: ReactElement;
   time: number;
-  dryWet: number;
+  dryWet: string;
 }
 
 export function ScrewTextureNode({
@@ -17,7 +17,7 @@ export function ScrewTextureNode({
   const time = propTime / 1000;
 
   const dryWet = 0.005 + mapRange(
-    propDryWet,
+    parseFloat(propDryWet),
     0.5,
     1.5,
     1.6,
