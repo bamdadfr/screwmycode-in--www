@@ -13,7 +13,6 @@ const render = () => {
     container,
     'image': screen.getByRole('img'),
     'heading': screen.getByRole('heading'),
-    'link': screen.getByRole('link'),
   };
 };
 
@@ -50,11 +49,6 @@ describe('LoadingComponent', () => {
         const {heading} = render();
         expect(heading).toHaveTextContent('loading');
       });
-    });
-
-    describe('link', () => {
-      const {link} = render();
-      expect(link).toHaveTextContent('Firefox');
     });
   });
 });
