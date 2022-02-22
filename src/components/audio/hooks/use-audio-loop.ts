@@ -1,11 +1,11 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {isRepeatingAtom} from '../../../../../atoms/repeat.atoms';
+import {isRepeatingAtom} from '../../../atoms/repeat.atoms';
 
 /**
- * Hook to set the native loop on the audio element
+ * Hook to set the loop on audio element
  */
-export function useNativeLoop(audio: HTMLAudioElement): void {
+export function useAudioLoop(audio: HTMLAudioElement): void {
   const [isRepeating] = useAtom(isRepeatingAtom);
 
   useEffect(() => {

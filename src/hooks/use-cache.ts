@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {useInterval} from '../../../hooks/use-interval';
+import {useInterval} from './use-interval';
 
 /**
  * Hook for caching a value and updating it every `interval` milliseconds.

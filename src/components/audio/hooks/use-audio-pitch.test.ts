@@ -1,6 +1,6 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useNativePitch} from './use-native-pitch';
-import {MOCK_AUDIO} from './use-native-component.test.mock';
+import {useAudioPitch} from './use-audio-pitch';
+import {MOCK_AUDIO} from './use-audio-component.test.mock';
 
 declare global {
   interface HTMLAudioElement {
@@ -10,10 +10,10 @@ declare global {
 
 afterEach(() => jest.resetAllMocks());
 
-describe('useNativePitch', () => {
+describe('useAudioPitch', () => {
   describe('mozPreservesPitch', () => {
     it('should default to false', () => {
-      renderHook(() => useNativePitch(MOCK_AUDIO));
+      renderHook(() => useAudioPitch(MOCK_AUDIO));
       expect(MOCK_AUDIO.mozPreservesPitch).toBe(false);
     });
   });

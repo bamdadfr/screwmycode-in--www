@@ -1,12 +1,12 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {setProgressAtom} from '../../../../../atoms/progress.atoms';
-import {isPlayingAtom} from '../../../../../atoms/play-pause.atoms';
+import {setProgressAtom} from '../../../atoms/progress.atoms';
+import {isPlayingAtom} from '../../../atoms/play-pause.atoms';
 
 /**
- * Hook to set the progress of the native audio element
+ * Hook to set the progress of audio element
  */
-export function useNativeProgress(audio: HTMLAudioElement): void {
+export function useAudioProgress(audio: HTMLAudioElement): void {
   const [isPlaying] = useAtom(isPlayingAtom);
   const [, setProgress] = useAtom(setProgressAtom);
   const fps = 10;
