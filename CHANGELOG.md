@@ -1,3 +1,17 @@
+# [3.3.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.8...v3.3.0) (2022-03-03)
+
+
+### Features
+
+* **About:** Add new *browser extension* section ([9248892](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/9248892e8a9e05becd6c58620352cacf2af13443))
+* **Player:** Add `useAudioBuffered` hook to handle buffer state ([cff4fad](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/cff4fadf158fdf30c44b71b774aeadddba19657c)), closes [#365](https://github.com/bamdadsabbagh/screwmycode-in--www/issues/365)
+* **Slider:** Add `buffer` prop to display buffer state ([8e2e8a8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8e2e8a87770abb225ec232541f1459b4040e9124))
+
+
+### Performance Improvements
+
+* **Dependencies:** Upgrade to latest ([8a8548b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/8a8548b7b0953d35249ad2adc09cd6e25a6ef5b1))
+
 ## [3.2.8](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.2.7...v3.2.8) (2022-02-28)
 
 
