@@ -35,8 +35,8 @@ const handle = css`
   0 0 1px ${(props) => props.theme.background.highlight};
 `;
 
-const range = (props) => props.max - props.min;
-const ratio = (props) => (props.value - props.min) / range(props);
+const getProgress = (props) => (props.value - props.min) / (props.max - props.min);
+const getBuffered = (props) => (props.buffered - props.min) / (props.max - props.min);
 
 /**
  * @param {object} props react component props
@@ -45,9 +45,10 @@ const ratio = (props) => (props.value - props.min) / range(props);
  */
 export const Input = styled.input.attrs((props) => ({
   'style': {
-    '--ratio': ratio(props),
+    '--progress': getProgress(props),
+    '--buffered': getBuffered(props),
   },
-}))`
+}))<{buffered?: number;}>`
   &, &::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
@@ -59,6 +60,9 @@ export const Input = styled.input.attrs((props) => ({
   background: transparent;
   font: 1em/1 arial, sans-serif;
 
+  --progress-width: calc(.5 * ${config.thumbD} + var(--progress) * (100% - ${config.thumbD}));
+  --buffered-width: calc(var(--buffered) * 100%);
+
   &:hover {
     cursor: pointer;
   }
@@ -66,13 +70,24 @@ export const Input = styled.input.attrs((props) => ({
   // track
   &::-webkit-slider-runnable-track {
     ${track};
-    --sx: calc(.5 * ${config.thumbD} + var(--ratio) * (100% - ${config.thumbD}));
-    background: linear-gradient(${(props) => props.theme.highlight}, ${(props) => props.theme.highlight})
-      0/ var(--sx) 100% no-repeat ${(props) => props.theme.background.highlight};
+
+    background: linear-gradient(to right,
+    ${(props) => props.theme.highlight} 0,
+    ${(props) => props.theme.highlight} var(--progress-width),
+    ${(props) => props.theme.buffered} var(--progress-width),
+    ${(props) => props.theme.buffered} var(--buffered-width),
+    ${(props) => props.theme.background.highlight} var(--buffered-width),
+    ${(props) => props.theme.background.highlight} 100%);
   }
 
   &::-moz-range-track {
     ${track};
+
+    background: linear-gradient(to right,
+    ${(props) => props.theme.buffered} 0,
+    ${(props) => props.theme.buffered} var(--buffered-width),
+    ${(props) => props.theme.background.highlight} var(--buffered-width),
+    ${(props) => props.theme.background.highlight} 100%);
   }
 
   &::-ms-track {
