@@ -85,18 +85,17 @@ export default function AboutPage(): ReactElement {
           <Spacer />
 
           <TitleH2>
-            Extension
+            Browser Extension
           </TitleH2>
 
           <Content>
             <p>
-              Use variable speed pitch control directly on YouTube through
-              this <TextLinkComponent
-              href="https://addons.mozilla.org/firefox/addon/screwmycode-in/"
+              Slow down and speed up videos directly on YouTube through
+              our <TextLinkComponent
+              href="https://github.com/bamdadsabbagh/screwmycode-in--extension#-download"
               target="_blank"
               underlineOnHover
-            >Firefox Web
-                Extension</TextLinkComponent>.
+            >Browser Extension</TextLinkComponent>.
             </p>
           </Content>
         </Container>

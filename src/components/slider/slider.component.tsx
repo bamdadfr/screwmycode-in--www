@@ -6,6 +6,7 @@ interface SliderComponentProps {
   max: number;
   step: number;
   value: number;
+  buffered?: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
 }
@@ -18,6 +19,7 @@ export function SliderComponent({
   max,
   step,
   value,
+  buffered,
   onChange,
   name,
 }: SliderComponentProps): ReactElement {
@@ -31,6 +33,7 @@ export function SliderComponent({
         max={max}
         step={step}
         value={value}
+        buffered={buffered ? buffered : 0}
         onChange={onChange}
       />
     </>
