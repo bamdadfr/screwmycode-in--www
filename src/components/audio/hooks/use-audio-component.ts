@@ -19,6 +19,7 @@ import {useAudioVolume} from './use-audio-volume';
 import {useAudioPlayPause} from './use-audio-play-pause';
 import {useAudioProgress} from './use-audio-progress';
 import {useAudioSeek} from './use-audio-seek';
+import {useAudioBuffered} from './use-audio-buffered';
 
 interface UseAudioComponent {
   ref: RefObject<HTMLAudioElement>;
@@ -56,6 +57,7 @@ export function useAudioModule(url: string): UseAudioComponent {
   useAudioPlayPause(ref.current);
   useAudioProgress(ref.current);
   useAudioSeek(ref.current);
+  useAudioBuffered(ref.current);
 
   return {ref};
 }

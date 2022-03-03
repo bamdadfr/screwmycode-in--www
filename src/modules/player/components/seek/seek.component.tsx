@@ -4,12 +4,14 @@ import {SliderComponent} from '../../../../components/slider/slider.component';
 import {progressAtom} from '../../../../atoms/progress.atoms';
 import {durationAtom} from '../../../../atoms/duration.atoms';
 import {setSeekAtom} from '../../../../atoms/seek.atoms';
+import {bufferedAtom} from '../../../../atoms/buffered.atoms';
 
 /**
  * Component to seek in the audio
  */
 export function SeekComponent(): ReactElement {
   const [progress] = useAtom(progressAtom);
+  const [buffered] = useAtom(bufferedAtom);
   const [duration] = useAtom(durationAtom);
   const [, setSeek] = useAtom(setSeekAtom);
 
@@ -21,6 +23,7 @@ export function SeekComponent(): ReactElement {
         max={duration}
         step={1}
         value={progress}
+        buffered={buffered}
         onChange={(e) => setSeek(Math.floor(parseFloat(e.target.value)))}
       />
     </>
