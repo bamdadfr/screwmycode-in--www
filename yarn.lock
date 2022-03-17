@@ -436,10 +436,10 @@
   dependencies:
     "@iconify/types" "^1.0.12"
 
-"@iconify/react@^3.1.3":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.1.4.tgz#579d050ddd6f9cfbc8d6990c84656b10c1bd598b"
-  integrity sha512-+QOrRkFLw7evkrcoClrDmALM/L8gAZVjnPBmShvGAFhh9EqVLX7bBwlEbSEyUFK1f/54f1HSJIJF8Xz+cbNvow==
+"@iconify/react@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.2.0.tgz#0b1015e56ce243effeb1ea79b5bffbea9f257a50"
+  integrity sha512-nHmPeBGn4KKS8DwDjGrZ9SLpoMmZ+dKZ53s2msBftg6srESMWBUOMW/XBMRjnUjzwQQchguVEhhh59LSSAia/g==
 
 "@iconify/types@^1.0.12":
   version "1.0.12"
