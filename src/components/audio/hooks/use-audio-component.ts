@@ -1,9 +1,7 @@
-import {RefObject, useEffect, useRef} from 'react';
+import {RefObject, useRef} from 'react';
 import {useRouter} from 'next/router';
 import {useAtom} from 'jotai';
-import {
-  replaceNextRoute,
-} from '../../../utils/replace-next-route/replace-next-route';
+import {useNextReplaceUrl} from 'next-replace-url';
 import {useCache} from '../../../hooks/use-cache';
 import {useKeyboardToggle} from './use-keyboard-toggle';
 import {speedAtom} from '../../../atoms/speed.atoms';
@@ -36,16 +34,11 @@ export function useAudioModule(url: string): UseAudioComponent {
 
   useKeyboardToggle('Space');
 
-  // replace route
-  useEffect(() => {
-    replaceNextRoute(
-      'speed',
-      cachedSpeed.toString(),
-      audioTitle
-        ? `${audioTitle} - ${cachedSpeed} - ${getProviderFromRouter(router)}`
-        : undefined,
-    );
-  }, [audioTitle, cachedSpeed, router]);
+  useNextReplaceUrl('speed', cachedSpeed.toString());
+
+  if (audioTitle) {
+    document.title = `${audioTitle} - ${cachedSpeed} - ${getProviderFromRouter(router)}`;
+  }
 
   const ref = useRef(null);
 
