@@ -24,7 +24,15 @@ export function SeekComponent(): ReactElement {
         step={1}
         value={progress}
         buffered={buffered}
-        onChange={(e) => setSeek(Math.floor(parseFloat(e.target.value)))}
+        onChange={(e) => {
+          const newProgress = Math.floor(parseFloat(e.target.value));
+
+          if (newProgress > buffered) {
+            return;
+          }
+
+          setSeek(newProgress);
+        }}
       />
     </>
   );
