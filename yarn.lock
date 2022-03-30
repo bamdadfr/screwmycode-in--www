@@ -4119,10 +4119,10 @@ ndarray@^1.0.19:
     iota-array "^1.0.0"
     is-buffer "^1.0.2"
 
-next-replace-url@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/next-replace-url/-/next-replace-url-1.0.1.tgz#3b79bf311aa014963e95804a3f8e81d3eb0a0466"
-  integrity sha512-ntmNS0kj3G2jSLJlpzfuxzXZS8d8Sn1sL65YQS9AEHnmHBLYR0dkaHlMR4iuX4t2WcynxYjLSJS8ilKRnLG1sw==
+next-replace-url@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/next-replace-url/-/next-replace-url-1.0.2.tgz#10027b7b4031b3e19755d862db70927e7d44650f"
+  integrity sha512-t3NevLbzJJ9maq6VUP6qFx6x3hVx3dQP9ziA7EKEPtVbrFN9910jBm/Na8JCBcglaU8N6DlzxthSAI6MheHO3w==
 
 next@^12.0.9:
   version "12.1.1"
