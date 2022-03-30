@@ -1,3 +1,16 @@
+## [3.3.5](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.4...v3.3.5) (2022-03-30)
+
+
+### Bug Fixes
+
+* **SeekComponent:** Prevent clicking outside the buffered audio ([315d243](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/315d243874e7fe17a8a2708cbbbc9d8d38999818))
+
+
+### Performance Improvements
+
+* **Next.js:** Use external module `next-replace-url` to handle URL changes bypassing Next.js routing system ([b3c2cff](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/b3c2cffa5b99ec8fa3da7c8883288d2c8568801a))
+* **Table/Cell:** Remove 3D canvas to improve table rendering performance ([ef87577](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/ef87577dc7506749615e208adf457ef1f71ec68e))
+
 ## [3.3.4](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.3...v3.3.4) (2022-03-28)
 
 
