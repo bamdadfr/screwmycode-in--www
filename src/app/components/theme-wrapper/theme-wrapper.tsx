@@ -4,7 +4,7 @@ import {Global} from '../../styles/global';
 import {theme} from '../../styles/theme';
 
 interface WithThemeProps {
-  children: ReactElement | ReactElement[];
+  children: ReactElement;
 }
 
 /**
