@@ -1,3 +1,10 @@
+## [3.3.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.8...v3.3.9) (2022-04-23)
+
+
+### Bug Fixes
+
+* Upgrade dependencies + Remove CI auto updates ([57fe258](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/57fe258d191b964dc9b97a1ccbee38102ec1676b))
+
 ## [3.3.8](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.7...v3.3.8) (2022-04-18)
 
 
