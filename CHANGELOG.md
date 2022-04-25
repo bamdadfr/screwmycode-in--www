@@ -1,3 +1,11 @@
+## [3.3.11](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.10...v3.3.11) (2022-04-25)
+
+
+### Bug Fixes
+
+* **Atoms:** Prefix unused parameters with `_` ([2593c3f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/2593c3f34f4761d814d2e6862f01a4c6081fc1e0))
+* **Cell:** Add `alt` attribute to images ([e2321d8](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e2321d817eb6477fc2333e6fe6b396ed720c0f99))
+
 ## [3.3.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.9...v3.3.10) (2022-04-25)
 
 
