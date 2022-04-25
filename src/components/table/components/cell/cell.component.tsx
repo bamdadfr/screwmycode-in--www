@@ -28,6 +28,7 @@ export function CellComponent({
         onClick={() => onClick(id)}
       >
         <Image
+          alt={title}
           src={image}
           width={88}
           height={88}
