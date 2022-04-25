@@ -4,7 +4,7 @@ export const speedAtom = atom(1);
 
 export const setSpeedAtom = atom(
   null,
-  (get, set, s: string) => set(speedAtom, () => {
+  (_get, set, s: string) => set(speedAtom, () => {
     let speed = parseFloat(s);
 
     if (speed < 0.5) {

@@ -4,5 +4,5 @@ export const artworkAtom = atom(undefined);
 
 export const setArtworkAtom = atom(
   null,
-  (get, set, artwork) => set(artworkAtom, artwork),
+  (_get, set, artwork) => set(artworkAtom, artwork),
 );

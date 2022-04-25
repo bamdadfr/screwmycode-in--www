@@ -4,5 +4,5 @@ export const isLoadedAtom = atom(false);
 
 export const setLoadedAtom = atom(
   null,
-  (get, set, arg) => set(isLoadedAtom, arg),
+  (_get, set, arg) => set(isLoadedAtom, arg),
 );
