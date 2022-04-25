@@ -1,24 +1,18 @@
 import React, {ReactElement} from 'react';
-import {GetServerSidePropsResult} from 'next';
+import {GetStaticPropsResult} from 'next';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {
   TableComponent,
   TableComponentItem,
 } from '../components/table/table.component';
 import {apiQuery} from '../utils/api-query/api-query';
-import {
-  invokeRedirection,
-} from '../utils/invoke-redirection/invoke-redirection';
 import {MetaComponent} from '../components/meta/meta.component';
+import {REVALIDATE} from '../constants';
 
 interface TopPageProps {
   top: TableComponentItem[];
 }
 
-/**
- * Top page
- * Path: /top
- */
 export default function TopPage({top}: TopPageProps): ReactElement {
   return (
     <>
@@ -30,16 +24,13 @@ export default function TopPage({top}: TopPageProps): ReactElement {
   );
 }
 
-export async function getServerSideProps(): Promise<GetServerSidePropsResult<unknown>> {
-  try {
-    const data = await apiQuery<TopPageProps['top']>('/top');
+export async function getStaticProps(): Promise<GetStaticPropsResult<TopPageProps>> {
+  const top = await apiQuery<TopPageProps['top']>('/top');
 
-    const props: TopPageProps = {
-      top: data,
-    };
-
-    return {props};
-  } catch {
-    return invokeRedirection();
-  }
+  return {
+    props: {
+      top,
+    },
+    revalidate: REVALIDATE,
+  };
 }
