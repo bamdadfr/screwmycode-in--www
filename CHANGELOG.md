@@ -1,3 +1,10 @@
+## [3.3.10](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.9...v3.3.10) (2022-04-25)
+
+
+### Performance Improvements
+
+* Make `/latest` and `/top` static pages ([dcae7ed](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/dcae7ed999292ce6e0e7451fbf813099cff7c2be))
+
 ## [3.3.9](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.8...v3.3.9) (2022-04-23)
 
 
