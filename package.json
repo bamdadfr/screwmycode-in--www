@@ -61,7 +61,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^14.1.1",
-    "@types/react": "^18.0.6",
+    "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.2",
     "@types/styled-components": "^5.1.24",
     "babel-jest": "^27.0.6",
