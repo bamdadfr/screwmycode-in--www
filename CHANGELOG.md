@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.11...v3.4.0) (2022-05-07)
+
+
+### Features
+
+* Add sitemap + Update dependencies + Add env config example ([af31eb9](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/af31eb97117b3c8a525969250395bcb533df6958))
+
 ## [3.3.11](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.10...v3.3.11) (2022-04-25)
 
 
