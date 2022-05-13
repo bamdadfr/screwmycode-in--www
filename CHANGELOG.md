@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.0...v3.4.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* **NPM:** Upgrade dependencies ([814ea6b](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/814ea6b081fed53ee92c9c5f1f33432cfde02a15))
+
 # [3.4.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.3.11...v3.4.0) (2022-05-07)
 
 
