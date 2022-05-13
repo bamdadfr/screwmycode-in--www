@@ -11,7 +11,7 @@
     "build": "next build && yarn build:post",
     "build:post": "yarn build:post:build-sitemap && yarn build:post:remove-source-maps",
     "build:post:build-sitemap": "next-sitemap",
-    "build:post:remove-source-maps": "find .next -type f -name \"*.map\" -exec rm {} \\;",
+    "build:post:remove-source-maps": "find .next/static -type f -name \"*.map\" -exec rm {} \\;",
     "coverage": "yarn test:coverage",
     "dev": "next dev",
     "export": "next export",
