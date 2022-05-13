@@ -38,3 +38,7 @@ TODO.md
 
 # sonarlint
 /.idea/sonarlint/
+
+# next-sitemap
+public/robots.txt
+public/sitemap*.xml
