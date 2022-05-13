@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "next build && yarn build:post",
-    "build:post": "yarn build:post:remove-source-maps && yarn build:post:build-sitemap",
+    "build:post": "yarn build:post:build-sitemap && yarn build:post:remove-source-maps",
     "build:post:build-sitemap": "next-sitemap",
     "build:post:remove-source-maps": "find .next -type f -name \"*.map\" -exec rm {} \\;",
     "coverage": "yarn test:coverage",
