@@ -1,3 +1,10 @@
+## [3.4.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.2...v3.4.3) (2022-05-13)
+
+
+### Bug Fixes
+
+* **NPM:** Scope source map removal in `.next/static` ([23a8867](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/23a886797c2e3ae0212b33718962fe9864f6be9d))
+
 ## [3.4.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.1...v3.4.2) (2022-05-13)
 
 
