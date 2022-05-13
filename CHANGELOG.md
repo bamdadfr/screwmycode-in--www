@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.1...v3.4.2) (2022-05-13)
+
+
+### Bug Fixes
+
+* **NPM:** Remove source maps after all post build actions ([792e47f](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/792e47ff1d7598c67f5a4cc6d31945f476804bfc))
+
 ## [3.4.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.0...v3.4.1) (2022-05-13)
 
 
