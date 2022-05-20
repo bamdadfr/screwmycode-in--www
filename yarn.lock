@@ -3894,10 +3894,10 @@ next-replace-url@^1.0.1:
   resolved "https://registry.yarnpkg.com/next-replace-url/-/next-replace-url-1.0.3.tgz#8f5aa7482fd6b48e435243a427fa2536d6b18856"
   integrity sha512-qGx8qG6CI+xNY32K5GtI7WRgjSDpTrR9RtJx9OulT9KrtYHsUdK4AqQ5pt207CswVp+1FeJnniPl2C6rgRlgkQ==
 
-next-sitemap@^2.5.20:
-  version "2.5.20"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-2.5.20.tgz#7124e138506c2f10e460c3dc77907baf4d134478"
-  integrity sha512-Qbm4N2WGA6VHemFN0C9PNWQav9RKwMEbVrNgVvDQhG0sDBmNBgKii54WklOjCvVJVHgQPgtXLBhlNaJGS+RVQA==
+next-sitemap@^2.5.21:
+  version "2.5.21"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-2.5.21.tgz#ab3be9c99a7ce4687c331cef9e207130cb3af04c"
+  integrity sha512-YlqoGd8Ej3EUgxWYOwvKr84uzstgGurFiLXyZgvi9mdSlRwJW++odwlCPco5qdthX806jzasJwcNPIW45AnXRg==
   dependencies:
     "@corex/deepmerge" "^2.6.148"
     minimist "^1.2.6"
