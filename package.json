@@ -72,7 +72,7 @@
     "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-testing-library": "^5.5.0",
     "jest": "^28.1.0",
-    "next-sitemap": "^2.5.20",
+    "next-sitemap": "^2.5.25",
     "rimraf": "^3.0.2",
     "sass": "^1.51.0",
     "sass-reset": "^1.0.2"
