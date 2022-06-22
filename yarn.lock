@@ -2745,10 +2745,10 @@ gl-format-compiler-error@^1.0.2:
     glsl-shader-name "^1.0.0"
     sprintf-js "^1.0.3"
 
-gl-react-dom@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/gl-react-dom/-/gl-react-dom-5.1.0.tgz#8298156bce3602ccb0d8265b5a9ef9c2c7bfef49"
-  integrity sha512-oJ4y6xlB2cP5bJmRN2+jXh7OXcH3e9d4Gwd3gSDmut752bE5X9P39x15zqJAEhH1nuwBj5YfNiB1rD1ILdJSiQ==
+gl-react-dom@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/gl-react-dom/-/gl-react-dom-5.2.1.tgz#a6dc93ea0ef747ecc0bebea90be38ab48d1ebcdf"
+  integrity sha512-RZxOovktk8czle/FiMbiEJJxHLICoHEzxU46GeQ9tqiWMYxj/wj01VbqGVlrn6wVZ+fx77bhRxzn5ptW2uuxbA==
   dependencies:
     invariant "^2.2.4"
     prop-types "^15.7.2"
