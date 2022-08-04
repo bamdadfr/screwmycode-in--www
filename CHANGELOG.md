@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.3...v3.5.0) (2022-08-04)
+
+
+### Features
+
+* Update all dependencies, Rename `next-sitemap` configuration file, Fix tests using userEvents ([166e53c](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/166e53c11cfa8ef444a00e0a98443b0f8bbe02b1))
+
 ## [3.4.3](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.2...v3.4.3) (2022-05-13)
 
 
