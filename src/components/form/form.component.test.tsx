@@ -70,14 +70,14 @@ describe('FormComponent', () => {
       });
 
       describe('onChange', () => {
-        it('should be called when user type in input', () => {
+        it('should be called when user type in input', async () => {
           // given
           const {input, state} = render();
           const string = 'this is my testing string';
           expect(state.link.onChange).toHaveBeenCalledTimes(0);
 
           // when
-          userEvent.type(input, string);
+          await userEvent.type(input, string);
 
           // then
           expect(state.link.onChange).toHaveBeenCalledTimes(string.length);
@@ -91,13 +91,13 @@ describe('FormComponent', () => {
         expect(typeof state.handleSubmit).toBe('function');
       });
 
-      it('should be called when user click submit', () => {
+      it('should be called when user click submit', async () => {
         // given
         const {state, submit} = render();
         expect(state.handleSubmit).toHaveBeenCalledTimes(0);
 
         // when
-        userEvent.click(submit);
+        await userEvent.click(submit);
 
         // then
         expect(state.handleSubmit).toHaveBeenCalledTimes(1);

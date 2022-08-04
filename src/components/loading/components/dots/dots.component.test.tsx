@@ -1,5 +1,5 @@
 import React from 'react';
-import {render as defaultRender} from '@testing-library/react';
+import {act, render as defaultRender, waitFor} from '@testing-library/react';
 import {DotsComponent} from './dots.component';
 
 const render = () => {
@@ -8,13 +8,27 @@ const render = () => {
     container,
   };
 };
+
+jest.useFakeTimers();
+
 describe('DotsComponent', () => {
   describe('container', () => {
-    it('should be in the document, visible and not empty', () => {
-      const {container} = render();
+    let container;
+
+    it('should initialize, print default value then increment dot', async () => {
+      act(() => {
+        container = render().container;
+      });
+
       expect(container).toBeInTheDocument();
       expect(container).toBeVisible();
-      expect(container).not.toBeEmptyDOMElement();
+      expect(container).toBeEmptyDOMElement();
+
+      expect(container).toHaveTextContent('');
+
+      await waitFor(() => {
+        expect(container).toHaveTextContent('.');
+      });
     });
   });
 });
