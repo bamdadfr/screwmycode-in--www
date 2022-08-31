@@ -412,10 +412,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/noto-sans@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans/-/noto-sans-4.5.10.tgz#6e85323823946a267351511132a421c97472c71b"
-  integrity sha512-sJ5WOE5zX9kFBZWsIRtGWTD2/DvashD1Q1L+Jhh5FccWLrug4REw2PVYItPnA8XBdQ09Vpxd8+I6UsKI/5QdFg==
+"@fontsource/noto-sans@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans/-/noto-sans-4.5.11.tgz#9074486d876577f3688f884c7ad6196d6dbea27e"
+  integrity sha512-lBX7FCjIjSrQ+iMuXUuO+mbjbnUsJyZANg/04PgkeeAYe+cwnX81ibbgrAk1F56M6/btIrWQoDjxsK6Sz8KoVQ==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"

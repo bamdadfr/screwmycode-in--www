@@ -28,7 +28,7 @@
     "test:watch:all": "jest --watchAll"
   },
   "dependencies": {
-    "@fontsource/noto-sans": "^4.5.10",
+    "@fontsource/noto-sans": "^4.5.11",
     "@iconify/icons-mdi": "^1.2.27",
     "@iconify/react": "^3.2.2",
     "@juggle/resize-observer": "^3.3.1",
