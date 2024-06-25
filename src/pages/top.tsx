@@ -24,9 +24,9 @@ export default function TopPage({top}: TopPageProps): ReactElement {
   );
 }
 
-export async function getStaticProps(): Promise<
-  GetStaticPropsResult<TopPageProps>
-> {
+type GetStaticProps = GetStaticPropsResult<TopPageProps>;
+
+export async function getStaticProps(): Promise<GetStaticProps> {
   const top = await apiQuery<TopPageProps['top']>('top');
 
   return {

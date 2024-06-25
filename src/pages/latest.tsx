@@ -24,9 +24,9 @@ export default function LatestPage({latest}: LatestPageProps): ReactElement {
   );
 }
 
-export async function getStaticProps(): Promise<
-  GetStaticPropsResult<LatestPageProps>
-> {
+type GetStaticProps = GetStaticPropsResult<LatestPageProps>;
+
+export async function getStaticProps(): Promise<GetStaticProps> {
   const latest = await apiQuery<LatestPageProps['latest']>('latest');
 
   return {
