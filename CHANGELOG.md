@@ -1,3 +1,17 @@
+# [3.6.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.5.0...v3.6.0) (2024-06-25)
+
+
+### Bug Fixes
+
+* ditch ky for fetch ([6606530](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/66065303a6738f36c914f35bcda1ab6f69e21f18))
+* update workflows ([3b8f818](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/3b8f81859a4d42ad8dc7f7ec4faf4699ff4f38dd))
+
+
+### Features
+
+* add recaptcha token verification ([e9427df](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/e9427df8db726f9eb1a7c9e26b8a32200108e345))
+* use pnpm and update code formatting ([37d24d5](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/37d24d56ff64808b76f1ea996ca837952f47e850))
+
 # [3.5.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.4.3...v3.5.0) (2022-08-04)
 
 
