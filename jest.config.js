@@ -1,8 +1,6 @@
-const transformModules = [
-  'speed-to-semitones',
-  'speed-to-percentage',
-  'ky',
-].join('|');
+const transformModules = ['speed-to-semitones', 'speed-to-percentage'].join(
+  '|',
+);
 
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.js'],
@@ -14,16 +12,9 @@ module.exports = {
     '@fontsource/noto-sans': '<rootDir>/__mocks__/fontsource-noto-sans.js',
   },
   testEnvironment: 'jsdom',
-  transformIgnorePatterns: [
-    `/node_modules/(?!${transformModules}/)`,
-  ],
-  modulePathIgnorePatterns: [
-    '<rootDir>/.next/',
-    '<rootDir>/src/.*/__mocks__',
-  ],
+  transformIgnorePatterns: [`/node_modules/(?!${transformModules}/)`],
+  modulePathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/src/.*/__mocks__'],
   // collectCoverage: true,
   coverageDirectory: './coverage/',
-  collectCoverageFrom: [
-    '<rootDir>/src/**/*.js',
-  ],
+  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
 };

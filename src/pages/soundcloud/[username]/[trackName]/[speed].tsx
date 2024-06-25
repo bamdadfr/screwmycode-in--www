@@ -3,12 +3,8 @@ import {
   PlayerLayout,
   PlayerLayoutProps,
 } from '../../../../layouts/player/player.layout';
-import {
-  validateSoundcloudId,
-} from '../../../../utils/validate-soundcloud-id/validate-soundcloud-id';
-import {
-  invokeRedirection,
-} from '../../../../utils/invoke-redirection/invoke-redirection';
+import {validateSoundcloudId} from '../../../../utils/validate-soundcloud-id/validate-soundcloud-id';
+import {invokeRedirection} from '../../../../utils/invoke-redirection/invoke-redirection';
 import {apiQuery} from '../../../../utils/api-query/api-query';
 
 /**
@@ -21,7 +17,9 @@ export default PlayerLayout;
  * Soundcloud page server side props
  * @param context
  */
-export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
+export async function getServerSideProps(
+  context: GetServerSidePropsContext,
+): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
   try {
     const {username, trackName} = context.query;
     const speed = context.query.speed as string;
@@ -30,7 +28,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
 
     validateSoundcloudId(id);
 
-    const data = await apiQuery<PlayerLayoutProps>(`/soundcloud/${id}`);
+    const data = await apiQuery<PlayerLayoutProps>(`soundcloud/${id}`);
 
     const props: PlayerLayoutProps = {
       title: data.title,

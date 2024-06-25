@@ -8,9 +8,9 @@ import {
   CellComponentProps,
 } from './components/cell/cell.component';
 
-export type TableComponentItem =
-  CellComponentProps
-  & {type: 'youtube' | 'soundcloud';}
+export type TableComponentItem = CellComponentProps & {
+  type: 'youtube' | 'soundcloud';
+};
 
 interface TableComponentProps {
   table: TableComponentItem[];

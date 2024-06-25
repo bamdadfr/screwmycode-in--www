@@ -50,9 +50,6 @@ importers:
       jotai:
         specifier: ^1.7.7
         version: 1.13.1(@babel/core@7.24.7)(@babel/template@7.24.7)(react@18.3.1)
-      ky:
-        specifier: ^0.31.1
-        version: 0.31.4
       next:
         specifier: ^12.2.3
         version: 12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -2498,10 +2495,6 @@ packages:
   kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
-
-  ky@0.31.4:
-    resolution: {integrity: sha512-OFuAD3riwhAfHK3J4FrhlujFRpm0ELBEfDHZfFpw89OTozQt3NLF39lNblUO5udj5vSkyaBKnLai/rFCzBfISQ==}
-    engines: {node: '>=14.16'}
 
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
@@ -6477,8 +6470,6 @@ snapshots:
       json-buffer: 3.0.1
 
   kleur@3.0.3: {}
-
-  ky@0.31.4: {}
 
   language-subtag-registry@0.3.23: {}
 

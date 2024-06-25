@@ -42,7 +42,6 @@
     "gl-react-image": "^3.2.0",
     "hoist-non-react-statics": "^3.3.2",
     "jotai": "^1.7.7",
-    "ky": "^0.31.1",
     "next": "^12.2.3",
     "next-replace-url": "^1.0.1",
     "raf": "^3.4.1",
