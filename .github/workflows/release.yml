@@ -1,4 +1,4 @@
-name: semantic-release-yarn--onPush
+name: release
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  semantic-release-yarn--onPush:
+  release:
     runs-on: ubuntu-latest
     steps:
 
@@ -14,9 +14,10 @@ jobs:
 
       - uses: actions/setup-node@master
         with:
-          node-version: '14'
+          node-version: '20'
 
-      - run: yarn
+      - run: npm install -g pnpm
+      - run: pnpm i
 
       - run: |
           npm install -g \
