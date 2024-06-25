@@ -1,6 +1,12 @@
 import React, {ReactElement} from 'react';
 import Image from 'next/image';
-import {Form, ImageContainer, Input, Submit} from './form.component.styles';
+import {
+  Form,
+  GoogleContainer,
+  ImageContainer,
+  Input,
+  Submit,
+} from './form.component.styles';
 import {useFormComponent} from './hooks/use-form-component';
 
 /**
@@ -18,9 +24,8 @@ export function FormComponent(): ReactElement {
         value={link.value}
         onChange={link.onChange}
       />
-      <Submit
-        type="submit"
-      >
+
+      <Submit type="submit">
         submit
         <ImageContainer>
           <Image
@@ -31,6 +36,14 @@ export function FormComponent(): ReactElement {
           />
         </ImageContainer>
       </Submit>
+
+      <GoogleContainer>
+        This site is protected by reCAPTCHA and the Google&nbsp;
+        <a href="https://policies.google.com/privacy">Privacy Policy</a>
+        &nbsp;and&nbsp;
+        <a href="https://policies.google.com/terms">Terms of Service</a>
+        &nbsp;apply.
+      </GoogleContainer>
     </Form>
   );
 }

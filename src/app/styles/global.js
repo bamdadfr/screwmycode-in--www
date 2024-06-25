@@ -1,6 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 import '@fontsource/noto-sans';
 
+// noinspection CssUnusedSymbol
 export const Global = createGlobalStyle`
   html {
     font-family: 'Noto Sans', sans-serif;
@@ -30,5 +31,9 @@ export const Global = createGlobalStyle`
 
   &::-webkit-scrollbar-track {
     background: ${({theme}) => theme.black};
+  }
+
+  .grecaptcha-badge {
+    visibility: hidden;
   }
 `;

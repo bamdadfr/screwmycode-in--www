@@ -6,6 +6,7 @@ export const Form = styled.form`
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  gap: 1em;
   font-size: 1.1em;
 `;
 
@@ -33,10 +34,11 @@ export const Input = styled.input`
 
 export const Submit = styled.button`
   ${formElement};
-  margin-top: 1em;
   font-weight: 600;
 
-  transition: color 100ms ease-in-out, background 200ms ease-in-out;
+  transition:
+    color 100ms ease-in-out,
+    background 200ms ease-in-out;
 
   &:hover {
     background: ${({theme}) => theme.highlight};
@@ -50,4 +52,11 @@ export const ImageContainer = styled.span`
   & > span {
     transform: translate3d(2px, 3px, 0);
   }
+`;
+
+export const GoogleContainer = styled.div`
+  font-size: 0.6em;
+
+  display: inline-block;
+  text-align: center;
 `;
