@@ -9,6 +9,7 @@ export interface UseInput {
 
 /**
  * Hook to handle input value
+ * @param defaultValue
  */
 export function useInput(defaultValue = ''): UseInput {
   const [value, setValue] = useState(defaultValue);

@@ -4,13 +4,5 @@ import {WebGlComponent} from './components/web-gl/web-gl.component';
 import {NativeComponent} from './components/native/native.component';
 
 export function ArtworkComponent(): ReactElement {
-  return (
-    <>
-      {
-        isDesktop
-          ? <WebGlComponent />
-          : <NativeComponent />
-      }
-    </>
-  );
+  return <div>{isDesktop ? <WebGlComponent /> : <NativeComponent />}</div>;
 }

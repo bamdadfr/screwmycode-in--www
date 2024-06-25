@@ -19,6 +19,7 @@ export default PlayerLayout;
 
 /**
  * Soundcloud page server side props
+ * @param context
  */
 export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
   try {

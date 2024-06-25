@@ -26,15 +26,13 @@ export function ScrewTextureNode({
   );
 
   return (
-    <>
-      <Node
-        shader={shaders.screw}
-        uniforms={{
-          image,
-          time,
-          dryWet,
-        }}
-      />
-    </>
+    <Node
+      shader={shaders.screw}
+      uniforms={{
+        image,
+        time,
+        dryWet,
+      }}
+    />
   );
 }

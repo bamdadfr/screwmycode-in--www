@@ -7,6 +7,7 @@ interface UseDotsComponent {
 
 /**
  * Animate the dots
+ * @param frequency
  */
 export function useDotsComponent(frequency = 500): UseDotsComponent {
   const [dots, setDots] = useState('');

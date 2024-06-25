@@ -15,13 +15,11 @@ export function TimeComponent(): ReactElement {
   const [progress] = useAtom(progressAtom);
 
   return (
-    <>
-      <Container>
-        <span>
-          {calculateMinutes(progress)}
-        </span>
+    <Container>
+      <span>
+        {calculateMinutes(progress)}
+      </span>
         &nbsp;/&nbsp;{calculateMinutes(duration)}
-      </Container>
-    </>
+    </Container>
   );
 }

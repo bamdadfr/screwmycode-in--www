@@ -15,7 +15,7 @@
     "coverage": "yarn test:coverage",
     "dev": "next dev",
     "export": "next export",
-    "lint": "eslint src --ext .js --fix",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "package:clean": "rimraf .next && rimraf node_modules",
     "package:reinstall": "yarn package:clean && yarn",
     "package:sort": "npx sort-package-json",

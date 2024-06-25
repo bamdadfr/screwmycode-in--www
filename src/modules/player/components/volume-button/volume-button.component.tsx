@@ -16,15 +16,13 @@ export function VolumeButtonComponent(): ReactElement {
 
   // todo bind click action
   return (
-    <>
-      <Button
-        aria-label="volume"
-      >
-        {volume === 0 || isMuted
-          ? <Icon icon={volumeOff} />
-          : <Icon icon={volumeHigh} />
-        }
-      </Button>
-    </>
+    <Button
+      aria-label="volume"
+    >
+      {volume === 0 || isMuted
+        ? <Icon icon={volumeOff} />
+        : <Icon icon={volumeHigh} />
+      }
+    </Button>
   );
 }

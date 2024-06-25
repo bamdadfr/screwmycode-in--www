@@ -17,16 +17,14 @@ export function PlayPauseButtonComponent(): ReactElement {
   const [, togglePlaying] = useAtom(togglePlayingAtom);
 
   return (
-    <>
-      <Button
-        onClick={togglePlaying}
-        aria-label={(isPlaying ? 'pause' : 'play')}
-      >
-        {isPlaying
-          ? <Icon icon={pause} />
-          : <Icon icon={play} />
-        }
-      </Button>
-    </>
+    <Button
+      onClick={togglePlaying}
+      aria-label={(isPlaying ? 'pause' : 'play')}
+    >
+      {isPlaying
+        ? <Icon icon={pause} />
+        : <Icon icon={play} />
+      }
+    </Button>
   );
 }

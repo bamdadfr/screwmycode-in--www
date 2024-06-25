@@ -17,16 +17,14 @@ export function RepeatButtonComponent(): ReactElement {
   const [, toggleRepeating] = useAtom(toggleRepeatingAtom);
 
   return (
-    <>
-      <Button
-        onClick={toggleRepeating}
-        aria-label={(isRepeating ? 'disable' : 'enable') + ' repeat'}
-      >
-        {isRepeating
-          ? <Icon icon={repeat} />
-          : <Icon icon={repeatOff} />
-        }
-      </Button>
-    </>
+    <Button
+      onClick={toggleRepeating}
+      aria-label={(isRepeating ? 'disable' : 'enable') + ' repeat'}
+    >
+      {isRepeating
+        ? <Icon icon={repeat} />
+        : <Icon icon={repeatOff} />
+      }
+    </Button>
   );
 }

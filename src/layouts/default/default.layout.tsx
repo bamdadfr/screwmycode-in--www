@@ -11,6 +11,9 @@ interface DefaultLayoutProps {
 
 /**
  * Layout for the default page
+ * @param root0
+ * @param root0.children
+ * @param root0.customMeta
  */
 export function DefaultLayout({
   children,

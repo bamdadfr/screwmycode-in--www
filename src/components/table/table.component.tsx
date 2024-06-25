@@ -20,19 +20,17 @@ export function TableComponent({table}: TableComponentProps): ReactElement {
   const {onClick} = useTableComponent();
 
   return (
-    <>
-      <Container>
-        {table.map((item) => (
-          <CellComponent
-            key={item.id}
-            image={item.image}
-            icon={item.type === 'youtube' ? youtube : soundcloud}
-            id={item.id}
-            title={item.title}
-            onClick={() => onClick(item.type, item.id)}
-          />
-        ))}
-      </Container>
-    </>
+    <Container>
+      {table.map((item) => (
+        <CellComponent
+          key={item.id}
+          image={item.image}
+          icon={item.type === 'youtube' ? youtube : soundcloud}
+          id={item.id}
+          title={item.title}
+          onClick={() => onClick(item.type, item.id)}
+        />
+      ))}
+    </Container>
   );
 }

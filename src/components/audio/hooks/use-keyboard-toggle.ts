@@ -8,6 +8,7 @@ import {
 
 /**
  * Hook to toggle play/pause state with keyboard
+ * @param keyCode
  */
 export function useKeyboardToggle(keyCode = 'Space'): void {
   const [isPlaying] = useAtom(isPlayingAtom);

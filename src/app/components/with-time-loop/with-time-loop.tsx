@@ -10,6 +10,9 @@ import raf from 'raf';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 /**
+ * @param C
+ * @param root0
+ * @param root0.refreshRate
  * @see https://github.com/gre/gl-react/blob/master/packages/cookbook/src/HOC/timeLoop.js
  */
 export function withTimeLoop(C: JSXElementConstructor<any>, {refreshRate = 60} = {}): JSXElementConstructor<any> {

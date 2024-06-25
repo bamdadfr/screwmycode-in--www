@@ -8,10 +8,8 @@ import {FormComponent} from '../components/form/form.component';
  */
 export default function IndexPage(): ReactElement {
   return (
-    <>
-      <DefaultLayout>
-        <FormComponent />
-      </DefaultLayout>
-    </>
+    <DefaultLayout>
+      <FormComponent />
+    </DefaultLayout>
   );
 }

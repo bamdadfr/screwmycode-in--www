@@ -13,6 +13,12 @@ export interface CellComponentProps {
 
 /**
  * Table Cell Component
+ * @param root0
+ * @param root0.id
+ * @param root0.image
+ * @param root0.title
+ * @param root0.icon
+ * @param root0.onClick
  */
 export function CellComponent({
   id,
@@ -22,26 +28,24 @@ export function CellComponent({
   onClick,
 }: CellComponentProps): ReactElement {
   return (
-    <>
-      <Item
-        key={id}
-        onClick={() => onClick(id)}
-      >
-        <Image
-          alt={title}
-          src={image}
-          width={88}
-          height={88}
-          layout="fixed"
-          objectFit="cover"
-        />
-        <span>{title}</span>
-        <span>
-          <Button type="button" aria-label="youtube">
-            <Icon icon={icon} />
-          </Button>
-        </span>
-      </Item>
-    </>
+    <Item
+      key={id}
+      onClick={() => onClick(id)}
+    >
+      <Image
+        alt={title}
+        src={image}
+        width={88}
+        height={88}
+        layout="fixed"
+        objectFit="cover"
+      />
+      <span>{title}</span>
+      <span>
+        <Button type="button" aria-label="youtube">
+          <Icon icon={icon} />
+        </Button>
+      </span>
+    </Item>
   );
 }

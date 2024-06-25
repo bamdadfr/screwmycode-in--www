@@ -2,7 +2,7 @@ import {RefObject, useEffect} from 'react';
 
 /**
  * Hook to focus an input element when it is mounted
- *
+ * @param inputRef
  * @see https://reactjs.org/blog/2020/08/10/react-v17-rc.html#potential-issues
  */
 export function useInputRefocus(inputRef: RefObject<HTMLInputElement>): void {

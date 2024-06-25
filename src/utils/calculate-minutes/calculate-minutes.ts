@@ -1,5 +1,6 @@
 /**
  * Calculates seconds to minutes + seconds
+ * @param secs
  */
 export function calculateMinutes(secs: number): string {
   if (typeof secs !== 'number') {

@@ -4,6 +4,8 @@ import {useInterval} from './use-interval';
 /**
  * Hook for caching a value and updating it every `interval` milliseconds.
  * Useful to control rendering of a value that is expensive to compute.
+ * @param value
+ * @param interval
  */
 export function useCache(value: unknown, interval: number): unknown {
   const [cachedValue, setCachedValue] = useState(value);

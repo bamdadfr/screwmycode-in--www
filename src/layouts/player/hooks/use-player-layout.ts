@@ -25,6 +25,10 @@ interface UsePlayerLayout {
 
 /**
  * Entry hook for the player layout
+ * @param root0
+ * @param root0.title
+ * @param root0.speed
+ * @param root0.image
  */
 export function usePlayerLayout({
   title,

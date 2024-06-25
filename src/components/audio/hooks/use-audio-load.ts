@@ -5,6 +5,8 @@ import {setLoadedAtom} from '../../../atoms/load.atoms';
 
 /**
  * Hook to load audio element
+ * @param audio
+ * @param url
  */
 export function useAudioLoad(audio: HTMLAudioElement, url: string): void {
   const [savedUrl, setSavedUrl] = useState<string>();

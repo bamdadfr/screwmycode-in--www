@@ -4,6 +4,7 @@ import {speedAtom} from '../../../atoms/speed.atoms';
 
 /**
  * Hook to set audio playback rate
+ * @param audio
  */
 export function useAudioPlaybackRate(audio: HTMLAudioElement): void {
   const [speed] = useAtom(speedAtom);

@@ -9,14 +9,14 @@ interface WithThemeProps {
 
 /**
  * Wrapper component for styled-components
+ * @param root0
+ * @param root0.children
  */
 export function ThemeWrapper({children}: WithThemeProps): ReactElement {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Global />
-        {children}
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <Global />
+      {children}
+    </ThemeProvider>
   );
 }

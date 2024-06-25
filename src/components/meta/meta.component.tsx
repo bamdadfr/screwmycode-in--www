@@ -17,6 +17,11 @@ export const defaultProps = {
 
 /**
  * Component for rendering meta tags
+ * @param root0
+ * @param root0.title
+ * @param root0.url
+ * @param root0.description
+ * @param root0.image
  */
 export function MetaComponent({
   title = defaultProps.title,

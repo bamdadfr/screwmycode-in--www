@@ -37,6 +37,11 @@ module.exports = {
     },
   },
   rules: {
+    // custom rules
+    'jsdoc/require-param-description': 'off',
+    'jsdoc/require-param-type': 'off',
+    'jsdoc/require-returns': 'off',
+    'react/require-default-props': 'off',
     // .jsx rules
     'react/jsx-filename-extension': [
       1,

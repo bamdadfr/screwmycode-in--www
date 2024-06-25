@@ -8,6 +8,9 @@ interface FadeAnimationProps {
 
 /**
  * Component that animates the opacity of a child component
+ * @param root0
+ * @param root0.children
+ * @param root0.delay
  */
 export function FadeAnimation({
   children,

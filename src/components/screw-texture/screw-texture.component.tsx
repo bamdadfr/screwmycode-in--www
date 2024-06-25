@@ -21,12 +21,10 @@ export function ScrewTextureComponent({
   width,
 }: ScrewTextureComponentProps): ReactElement {
   return (
-    <>
-      <Surface width={width} height={width}>
-        <AnimatedScrewTextureNode dryWet={dryWet}>
-          <GLImage source={image} resizeMode="cover" />
-        </AnimatedScrewTextureNode>
-      </Surface>
-    </>
+    <Surface width={width} height={width}>
+      <AnimatedScrewTextureNode dryWet={dryWet}>
+        <GLImage source={image} resizeMode="cover" />
+      </AnimatedScrewTextureNode>
+    </Surface>
   );
 }

@@ -11,15 +11,13 @@ export function VolumeSliderComponent(): ReactElement {
   const [, setVolume] = useAtom(setVolumeAtom);
 
   return (
-    <>
-      <SliderComponent
-        name="volume slider"
-        min={0}
-        max={1}
-        step={0.01}
-        value={volume}
-        onChange={(e) => setVolume(parseFloat(e.target.value))}
-      />
-    </>
+    <SliderComponent
+      name="volume slider"
+      min={0}
+      max={1}
+      step={0.01}
+      value={volume}
+      onChange={(e) => setVolume(parseFloat(e.target.value))}
+    />
   );
 }

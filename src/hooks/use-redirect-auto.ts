@@ -3,6 +3,8 @@ import {useRouter} from 'next/router';
 
 /**
  * Hook to redirect automatically to a given path
+ * @param target
+ * @param delay
  */
 export function useRedirectAuto(target = '/', delay = 2000): void {
   const router = useRouter();

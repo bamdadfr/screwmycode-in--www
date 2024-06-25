@@ -3,7 +3,6 @@ import {constrain} from '../constrain/constrain';
 /**
  * Transpose a value with its current scale to a new scale
  * Inspired from processing/p5.js source code.
- *
  * @see https://github.com/processing/p5.js/blob/master/src/math/calculation.js#L450
  * @param {number} n - The value to transpose
  * @param {number} start1 - The start of the current scale

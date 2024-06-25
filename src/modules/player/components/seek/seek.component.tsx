@@ -16,24 +16,22 @@ export function SeekComponent(): ReactElement {
   const [, setSeek] = useAtom(setSeekAtom);
 
   return (
-    <>
-      <SliderComponent
-        name="seek slider"
-        min={0}
-        max={duration}
-        step={1}
-        value={progress}
-        buffered={buffered}
-        onChange={(e) => {
-          const newProgress = Math.floor(parseFloat(e.target.value));
+    <SliderComponent
+      name="seek slider"
+      min={0}
+      max={duration}
+      step={1}
+      value={progress}
+      buffered={buffered}
+      onChange={(e) => {
+        const newProgress = Math.floor(parseFloat(e.target.value));
 
-          if (newProgress > buffered) {
-            return;
-          }
+        if (newProgress > buffered) {
+          return;
+        }
 
-          setSeek(newProgress);
-        }}
-      />
-    </>
+        setSeek(newProgress);
+      }}
+    />
   );
 }

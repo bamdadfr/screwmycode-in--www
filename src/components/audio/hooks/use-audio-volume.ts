@@ -4,6 +4,7 @@ import {setVolumeAtom, volumeAtom} from '../../../atoms/volume.atoms';
 
 /**
  * Hook to set audio volume
+ * @param audio
  */
 export function useAudioVolume(audio: HTMLAudioElement): void {
   const [volume] = useAtom(volumeAtom);

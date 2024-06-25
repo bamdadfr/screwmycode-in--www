@@ -2,7 +2,9 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import {FadeAnimation} from './fade.animation';
 
-const Children = () => <span>testing children</span>;
+function Children() {
+  return <span>testing children</span>;
+}
 
 describe('FadeAnimation', () => {
   describe('container', () => {

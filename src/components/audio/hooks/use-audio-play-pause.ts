@@ -4,6 +4,7 @@ import {isPlayingAtom} from '../../../atoms/play-pause.atoms';
 
 /**
  * Hook to use audio play/pause
+ * @param audio
  */
 export function useAudioPlayPause(audio: HTMLAudioElement): void {
   const [isPlaying] = useAtom(isPlayingAtom);

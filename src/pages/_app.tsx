@@ -13,11 +13,9 @@ export default function MyApp({
   useApp();
 
   return (
-    <>
-      <ThemeWrapper>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </ThemeWrapper>
-    </>
+    <ThemeWrapper>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Component {...pageProps} />
+    </ThemeWrapper>
   );
 }

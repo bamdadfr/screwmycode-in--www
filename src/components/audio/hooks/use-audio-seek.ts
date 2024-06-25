@@ -4,6 +4,7 @@ import {seekAtom} from '../../../atoms/seek.atoms';
 
 /**
  * Hook to set audio player's current time
+ * @param audio
  */
 export function useAudioSeek(audio: HTMLAudioElement): void {
   const [seek] = useAtom(seekAtom);

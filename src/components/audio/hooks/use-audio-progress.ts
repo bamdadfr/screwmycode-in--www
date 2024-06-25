@@ -5,6 +5,7 @@ import {isPlayingAtom} from '../../../atoms/play-pause.atoms';
 
 /**
  * Hook to set the progress of audio element
+ * @param audio
  */
 export function useAudioProgress(audio: HTMLAudioElement): void {
   const [isPlaying] = useAtom(isPlayingAtom);

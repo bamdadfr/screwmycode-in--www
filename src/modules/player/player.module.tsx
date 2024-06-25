@@ -36,37 +36,35 @@ import {SpeedComponent} from './components/speed/speed.component';
  */
 export function PlayerModule(): ReactElement {
   return (
-    <>
-      <Container>
-        <ArtworkComponent />
+    <Container>
+      <ArtworkComponent />
 
-        <PlayerWrapper>
-          <TitleWrapper>
-            <TitleComponent />
-          </TitleWrapper>
-          <RepeatButtonWrapper>
-            <RepeatButtonComponent />
-          </RepeatButtonWrapper>
-          <PlayPauseButtonWrapper>
-            <PlayPauseButtonComponent />
-          </PlayPauseButtonWrapper>
-          <SeekWrapper>
-            <SeekComponent />
-          </SeekWrapper>
-          <TimeWrapper>
-            <TimeComponent />
-          </TimeWrapper>
-          <VolumeButtonWrapper>
-            <VolumeButtonComponent />
-          </VolumeButtonWrapper>
-          <VolumeSliderWrapper>
-            <VolumeSliderComponent />
-          </VolumeSliderWrapper>
-        </PlayerWrapper>
+      <PlayerWrapper>
+        <TitleWrapper>
+          <TitleComponent />
+        </TitleWrapper>
+        <RepeatButtonWrapper>
+          <RepeatButtonComponent />
+        </RepeatButtonWrapper>
+        <PlayPauseButtonWrapper>
+          <PlayPauseButtonComponent />
+        </PlayPauseButtonWrapper>
+        <SeekWrapper>
+          <SeekComponent />
+        </SeekWrapper>
+        <TimeWrapper>
+          <TimeComponent />
+        </TimeWrapper>
+        <VolumeButtonWrapper>
+          <VolumeButtonComponent />
+        </VolumeButtonWrapper>
+        <VolumeSliderWrapper>
+          <VolumeSliderComponent />
+        </VolumeSliderWrapper>
+      </PlayerWrapper>
 
-        <IndicatorsComponent />
-        <SpeedComponent />
-      </Container>
-    </>
+      <IndicatorsComponent />
+      <SpeedComponent />
+    </Container>
   );
 }

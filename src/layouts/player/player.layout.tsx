@@ -15,6 +15,11 @@ export interface PlayerLayoutProps {
 
 /**
  * Layout for the player page
+ * @param root0
+ * @param root0.title
+ * @param root0.image
+ * @param root0.audio
+ * @param root0.speed
  */
 export function PlayerLayout({
   title,

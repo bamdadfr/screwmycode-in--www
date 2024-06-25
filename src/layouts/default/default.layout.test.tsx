@@ -4,7 +4,9 @@ import {DefaultLayout} from './default.layout';
 import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
-  const Children = () => <span>test</span>;
+  function Children() {
+    return <span>test</span>;
+  }
 
   const {container} = defaultRender(
     <ThemeWrapper>

@@ -7,9 +7,5 @@ import {useDotsComponent} from './hooks/use-dots-component';
 export function DotsComponent(): ReactElement {
   const {dots} = useDotsComponent();
 
-  return (
-    <>
-      {dots}
-    </>
-  );
+  return <div>{dots}</div>;
 }

@@ -7,15 +7,13 @@ import {Title} from './title.component.styles';
  */
 export function TitleComponent(): ReactElement {
   return (
-    <>
-      <Title>
-        <Link href="/">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a>
-            screwmycode.in
-          </a>
-        </Link>
-      </Title>
-    </>
+    <Title>
+      <Link href="/">
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a>
+          screwmycode.in
+        </a>
+      </Link>
+    </Title>
   );
 }

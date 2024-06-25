@@ -10,19 +10,17 @@ export function IndicatorsComponent(): ReactElement {
   const {percentage, semitones} = useIndicatorsComponent();
 
   return (
-    <>
-      <Container>
-        <IndicatorComponent
-          title="percent"
-          metaName="percentage"
-          value={`${percentage} %`}
-        />
-        <IndicatorComponent
-          title="semitone"
-          metaName="semitones"
-          value={`${semitones} st`}
-        />
-      </Container>
-    </>
+    <Container>
+      <IndicatorComponent
+        title="percent"
+        metaName="percentage"
+        value={`${percentage} %`}
+      />
+      <IndicatorComponent
+        title="semitone"
+        metaName="semitones"
+        value={`${semitones} st`}
+      />
+    </Container>
   );
 }

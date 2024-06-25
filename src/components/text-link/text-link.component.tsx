@@ -22,17 +22,15 @@ export function TextLinkComponent({
   underlineOnHover = false,
 }: TextLinkComponentProps & AnchorOptions): ReactElement {
   return (
-    <>
-      <TextLink
-        href={href}
-        target={target}
-        rel={target === '_blank' ? 'noopener noreferrer' : null}
-        bold={bold}
-        underline={underline}
-        underlineOnHover={underlineOnHover}
-      >
-        {children}
-      </TextLink>
-    </>
+    <TextLink
+      href={href}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : null}
+      bold={bold}
+      underline={underline}
+      underlineOnHover={underlineOnHover}
+    >
+      {children}
+    </TextLink>
   );
 }

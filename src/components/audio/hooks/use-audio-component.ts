@@ -25,6 +25,7 @@ interface UseAudioComponent {
 
 /**
  * Entry hook for the audio module
+ * @param url
  */
 export function useAudioModule(url: string): UseAudioComponent {
   const router = useRouter();

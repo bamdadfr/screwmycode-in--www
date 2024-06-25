@@ -4,7 +4,8 @@ type Callback = () => void;
 
 /**
  * Hook to use setInterval
- *
+ * @param callback
+ * @param delay
  * @see https://overreacted.io/making-setinterval-declarative-with-react-hooks/
  */
 export function useInterval(callback: Callback, delay: number): void {

@@ -10,10 +10,8 @@ export function TitleComponent(): ReactElement {
   const [audioTitle] = useAtom(audioTitleAtom);
 
   return (
-    <>
-      <H2>
-        {audioTitle}
-      </H2>
-    </>
+    <H2>
+      {audioTitle}
+    </H2>
   );
 }
