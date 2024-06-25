@@ -1,3 +1,10 @@
+## [3.6.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.6.0...v3.6.1) (2024-06-25)
+
+
+### Bug Fixes
+
+* props ([f9fbf67](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/f9fbf67022ec3edcec9eeb72d115815e2159dc90))
+
 # [3.6.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.5.0...v3.6.0) (2024-06-25)
 
 
