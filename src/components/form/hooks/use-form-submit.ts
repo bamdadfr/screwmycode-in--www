@@ -22,7 +22,7 @@ export function useFormSubmit({link}: UseFormSubmitOptions): UseFormSubmit {
   const router = useRouter();
 
   const handleSubmit = useCallback(
-    async (event) => {
+    async (event: FormEvent) => {
       event.preventDefault();
 
       const {isValid, path} = await validateForm(link.value);

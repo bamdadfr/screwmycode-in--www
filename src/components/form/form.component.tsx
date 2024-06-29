@@ -1,12 +1,6 @@
 import React, {ReactElement} from 'react';
 import Image from 'next/image';
-import {
-  Form,
-  GoogleContainer,
-  ImageContainer,
-  Input,
-  Submit,
-} from './form.component.styles';
+import {Form, GoogleContainer, ImageContainer, Input, Submit} from './form.component.styles';
 import {useFormComponent} from './hooks/use-form-component';
 
 /**
@@ -18,7 +12,7 @@ export function FormComponent(): ReactElement {
   return (
     <Form onSubmit={handleSubmit}>
       <Input
-        placeholder="Paste link here (YouTube, Soundcloud)"
+        placeholder="Paste link here (YouTube, Soundcloud, Bandcamp)"
         type="text"
         ref={link.ref}
         value={link.value}
