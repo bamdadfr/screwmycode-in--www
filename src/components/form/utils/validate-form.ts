@@ -13,10 +13,24 @@ export async function validateForm(value: string): Promise<ValidateForm> {
     // soundcloud
     const isSoundcloud = (await import('soundcloud-scraper')).Util.validateURL;
     if (isSoundcloud(value)) {
-      const userAndId = value.replace('https://soundcloud.com/', '');
+      const artistTrack = value.split('https://soundcloud.com/')[1];
 
       response.isValid = true;
-      response.path = `/soundcloud/${userAndId}/1`;
+      response.path = `/soundcloud/${artistTrack}/1`;
+
+      return response;
+    }
+
+    const isBandcamp =
+      value.includes('https://') && value.includes('bandcamp.com/track');
+
+    if (isBandcamp) {
+      const [artist, name] = value
+        .split('https://')[1]
+        .split('.bandcamp.com/track/');
+
+      response.isValid = true;
+      response.path = `/bandcamp/${artist}/${name}/1`;
 
       return response;
     }

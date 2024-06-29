@@ -42,7 +42,10 @@ export function CellComponent({
       />
       <span>{title}</span>
       <span>
-        <Button type="button" aria-label="youtube">
+        <Button
+          type="button"
+          aria-label="provider"
+        >
           <Icon icon={icon} />
         </Button>
       </span>
