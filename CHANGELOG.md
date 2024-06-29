@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.6.1...v3.7.0) (2024-06-29)
+
+
+### Features
+
+* add bandcamp ([4bae046](https://github.com/bamdadsabbagh/screwmycode-in--www/commit/4bae046830388ee7e58d305e8176f3b36ff35ad8))
+
 ## [3.6.1](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.6.0...v3.6.1) (2024-06-25)
 
 
