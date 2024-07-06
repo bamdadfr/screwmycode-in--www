@@ -199,8 +199,8 @@ importers:
         specifier: ^28.1.3
         version: 28.1.3
       next-sitemap:
-        specifier: ^3.1.16
-        version: 3.1.55(@next/env@14.2.4)(next@12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))
+        specifier: ^4.2.3
+        version: 4.2.3(next@12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
@@ -1071,8 +1071,8 @@ packages:
   '@next/env@12.3.4':
     resolution: {integrity: sha512-H/69Lc5Q02dq3o+dxxy5O/oNxFsZpdL6WREtOOtOM1B/weonIwDXkekr1KV5DPVPr12IHFPrMrcJQ6bgPMfn7A==}
 
-  '@next/env@14.2.4':
-    resolution: {integrity: sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==}
+  '@next/env@13.5.6':
+    resolution: {integrity: sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==}
 
   '@next/eslint-plugin-next@12.3.4':
     resolution: {integrity: sha512-BFwj8ykJY+zc1/jWANsDprDIu2MgwPOIKxNVnrKvPs+f5TPegrVnem8uScND+1veT4B7F6VeqgaNLFW1Hzl9Og==}
@@ -3290,12 +3290,11 @@ packages:
   next-replace-url@1.0.3:
     resolution: {integrity: sha512-qGx8qG6CI+xNY32K5GtI7WRgjSDpTrR9RtJx9OulT9KrtYHsUdK4AqQ5pt207CswVp+1FeJnniPl2C6rgRlgkQ==}
 
-  next-sitemap@3.1.55:
-    resolution: {integrity: sha512-ZjkRfkqoSLbU+e8W9TWWe0zfOGNA47lpvm35kNcUCmj73gpLX2PIn51gwHT/B6bgGVAFYY0OXixJDrxIIwcEHw==}
+  next-sitemap@4.2.3:
+    resolution: {integrity: sha512-vjdCxeDuWDzldhCnyFCQipw5bfpl4HmZA7uoo3GAaYGjGgfL4Cxb1CiztPuWGmS+auYs7/8OekRS8C2cjdAsjQ==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
-      '@next/env': '*'
       next: '*'
 
   next@12.3.4:
@@ -5444,7 +5443,7 @@ snapshots:
 
   '@next/env@12.3.4': {}
 
-  '@next/env@14.2.4': {}
+  '@next/env@13.5.6': {}
 
   '@next/eslint-plugin-next@12.3.4':
     dependencies:
@@ -8195,10 +8194,11 @@ snapshots:
 
   next-replace-url@1.0.3: {}
 
-  next-sitemap@3.1.55(@next/env@14.2.4)(next@12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)):
+  next-sitemap@4.2.3(next@12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)):
     dependencies:
       '@corex/deepmerge': 4.0.43
-      '@next/env': 14.2.4
+      '@next/env': 13.5.6
+      fast-glob: 3.3.2
       minimist: 1.2.8
       next: 12.3.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
 
