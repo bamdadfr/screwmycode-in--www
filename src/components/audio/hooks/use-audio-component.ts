@@ -2,13 +2,11 @@ import {RefObject, useRef} from 'react';
 import {useRouter} from 'next/router';
 import {useAtom} from 'jotai';
 import {useNextReplaceUrl} from 'next-replace-url';
-import {useCache} from '../../../hooks/use-cache';
+import {useCache} from 'src/hooks/use-cache';
+import {speedAtom} from 'src/atoms/speed.atoms';
+import {audioTitleAtom} from 'src/atoms/audio-title.atoms';
+import {getProviderFromRouter} from 'src/utils/get-provider/get-provider-from-router';
 import {useKeyboardToggle} from './use-keyboard-toggle';
-import {speedAtom} from '../../../atoms/speed.atoms';
-import {audioTitleAtom} from '../../../atoms/audio-title.atoms';
-import {
-  getProviderFromRouter,
-} from '../../../utils/get-provider/get-provider-from-router';
 import {useAudioLoad} from './use-audio-load';
 import {useAudioLoop} from './use-audio-loop';
 import {useAudioPitch} from './use-audio-pitch';
@@ -25,7 +23,6 @@ interface UseAudioComponent {
 
 /**
  * Entry hook for the audio module
- * @param url
  */
 export function useAudioModule(url: string): UseAudioComponent {
   const router = useRouter();
@@ -41,7 +38,7 @@ export function useAudioModule(url: string): UseAudioComponent {
     document.title = `${audioTitle} - ${cachedSpeed} - ${getProviderFromRouter(router)}`;
   }
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLAudioElement>(null);
 
   useAudioLoad(ref.current, url);
   useAudioLoop(ref.current);

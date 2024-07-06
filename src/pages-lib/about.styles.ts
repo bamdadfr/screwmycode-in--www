@@ -4,7 +4,7 @@ export const Container = styled.div`
   text-align: left;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 35vh;
+  height: 80%;
   width: 100%;
   padding: 0 0.5em;
 `;
@@ -42,7 +42,7 @@ export const Content = styled.div`
 
 export const Blue = styled.span<{spacing: number;}>`
   color: ${({theme}) => theme.highlight};
-  margin: ${({spacing}) => spacing ? '0 0.15em' : '0'};
+  margin: ${({spacing}) => (spacing ? '0 0.15em' : '0')};
 `;
 
 export const List = styled.ul`

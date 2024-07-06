@@ -12,13 +12,11 @@ export default function OldYoutubePage(): ReactElement {
 
 /**
  * Old YouTube page server side props
- * @param {object} context - Next.js context
- * @returns {object} - Next.js redirection object
  */
 export function getServerSideProps(
   context: GetServerSidePropsContext,
 ): GetServerSidePropsResult<unknown> {
-  const id = context.params.id as string;
+  const id = context.params?.id as string;
   const speed = context.query.speed as string;
 
   const props = {

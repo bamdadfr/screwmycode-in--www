@@ -8,34 +8,35 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    requireConfigFile: false,
+    requireConfigFile: true,
     sourceType: 'module',
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   extends: [
     'eslint:recommended',
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'prettier',
-    'plugin:jsdoc/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
   plugins: [
+    '@typescript-eslint',
+    'import',
     '@babel',
     'jsx-a11y',
     'prettier',
-    'jsdoc',
     'react-hooks',
     'testing-library',
     'jest-dom',
     'simple-import-sort',
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
   rules: {
     // custom rules
     'jsdoc/require-param-description': 'off',

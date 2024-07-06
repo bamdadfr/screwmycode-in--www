@@ -1,6 +1,6 @@
 import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {setBufferedAtom} from '../../../atoms/buffered.atoms';
+import {setBufferedAtom} from 'src/atoms/buffered.atoms';
 
 const getBufferedAmount = (audio: HTMLAudioElement) => {
   try {
@@ -10,7 +10,7 @@ const getBufferedAmount = (audio: HTMLAudioElement) => {
   }
 };
 
-export function useAudioBuffered(audio: HTMLAudioElement): void {
+export function useAudioBuffered(audio: HTMLAudioElement | null): void {
   const [, setBuffered] = useAtom(setBufferedAtom);
 
   useEffect(() => {

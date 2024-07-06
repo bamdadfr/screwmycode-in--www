@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 35vh;
-  width: 100%;
-
   display: grid;
-  grid-gap: 0.5em;
+  grid-gap: 7px;
+
+  height: 80%;
+  width: 100%;
 
   overflow-y: scroll;
 `;
@@ -16,7 +16,9 @@ export const Item = styled.div`
   justify-content: center;
   grid-template-columns: 6em 1fr 5em;
 
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition:
+    color 200ms ease-in-out,
+    background 200ms ease-in-out;
 
   &:hover {
     cursor: pointer;

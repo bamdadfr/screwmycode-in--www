@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import Link from 'next/link';
+import {LinkComponent} from 'src/components/link.component';
 import {Title} from './title.component.styles';
 
 /**
@@ -8,12 +8,7 @@ import {Title} from './title.component.styles';
 export function TitleComponent(): ReactElement {
   return (
     <Title>
-      <Link href="/">
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a>
-          screwmycode.in
-        </a>
-      </Link>
+      <LinkComponent href="/">screwmycode.in</LinkComponent>
     </Title>
   );
 }

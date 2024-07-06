@@ -1,12 +1,11 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {seekAtom} from '../../../atoms/seek.atoms';
+import {seekAtom} from 'src/atoms/seek.atoms';
 
 /**
  * Hook to set audio player's current time
- * @param audio
  */
-export function useAudioSeek(audio: HTMLAudioElement): void {
+export function useAudioSeek(audio: HTMLAudioElement | null): void {
   const [seek] = useAtom(seekAtom);
 
   useEffect(() => {

@@ -25,7 +25,7 @@ export function TextLinkComponent({
     <TextLink
       href={href}
       target={target}
-      rel={target === '_blank' ? 'noopener noreferrer' : null}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       bold={bold}
       underline={underline}
       underlineOnHover={underlineOnHover}
