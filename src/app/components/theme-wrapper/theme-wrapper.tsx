@@ -1,7 +1,7 @@
 import React, {ReactElement} from 'react';
 import {ThemeProvider} from 'styled-components';
-import {Global} from '../../styles/global';
-import {theme} from '../../styles/theme';
+import {theme} from 'src/app/styles/theme';
+import {Global} from 'src/app/styles/global';
 
 interface WithThemeProps {
   children: ReactElement;
@@ -9,8 +9,6 @@ interface WithThemeProps {
 
 /**
  * Wrapper component for styled-components
- * @param root0
- * @param root0.children
  */
 export function ThemeWrapper({children}: WithThemeProps): ReactElement {
   return (
