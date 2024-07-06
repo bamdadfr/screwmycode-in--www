@@ -1,3 +1,11 @@
+## [3.7.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.7.0...v3.7.1) (2024-07-06)
+
+
+### Bug Fixes
+
+* update deps ([325a88f](https://github.com/bamdadfr/screwmycode-in--www/commit/325a88f2c91ed4d107169d6e56e90998cd9833d2))
+* update layout ([d15953a](https://github.com/bamdadfr/screwmycode-in--www/commit/d15953aa215ae8c2a1e59136c758e39630b8214c))
+
 # [3.7.0](https://github.com/bamdadsabbagh/screwmycode-in--www/compare/v3.6.1...v3.7.0) (2024-06-29)
 
 
