@@ -9,9 +9,8 @@ declare global {
 
 /**
  * Hook to set the pitch of the audio element
- * @param audio
  */
-export function useAudioPitch(audio: HTMLAudioElement): void {
+export function useAudioPitch(audio: HTMLAudioElement | null): void {
   useEffect(() => {
     if (!(audio instanceof HTMLAudioElement)) {
       return;

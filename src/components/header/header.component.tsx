@@ -1,44 +1,52 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// noinspection HtmlUnknownTarget
-
 import React, {ReactElement} from 'react';
-import Link from 'next/link';
+import {TitleComponent} from 'src/components/title/title.component';
 import home from '@iconify/icons-mdi/home';
 import history from '@iconify/icons-mdi/history';
 import podium from '@iconify/icons-mdi/podium';
 import information from '@iconify/icons-mdi/information-variant';
 import {Icon} from '@iconify/react';
-import {
-  LeftContainer,
-  PodiumIcon,
-  RightContainer,
-} from './header.component.styles';
+import {LinkComponent} from 'src/components/link.component';
+import {Container, Left, Podium, Right} from './header.component.styles';
 
 /**
  * Component for the header of the application
  */
 export function HeaderComponent(): ReactElement {
   return (
-    <>
-      <LeftContainer>
-        <Link href="/">
-          <a aria-label="home"><Icon icon={home} /></a>
-        </Link>
+    <Container>
+      <Left>
+        <LinkComponent
+          href="/"
+          ariaLabel="home"
+        >
+          <Icon icon={home} />
+        </LinkComponent>
 
-        <Link href="/latest">
-          <a aria-label="latest"><Icon icon={history} /></a>
-        </Link>
+        <LinkComponent
+          href="/latest"
+          ariaLabel="latest"
+        >
+          <Icon icon={history} />
+        </LinkComponent>
 
-        <Link href="/top">
-          <a aria-label="top"><PodiumIcon icon={podium} /></a>
-        </Link>
-      </LeftContainer>
+        <LinkComponent
+          href="/top"
+          ariaLabel="top"
+        >
+          <Podium icon={podium} />
+        </LinkComponent>
+      </Left>
 
-      <RightContainer>
-        <Link href="/about">
-          <a aria-label="about"><Icon icon={information} /></a>
-        </Link>
-      </RightContainer>
-    </>
+      <TitleComponent />
+
+      <Right>
+        <LinkComponent
+          href="/about"
+          ariaLabel="about"
+        >
+          <Icon icon={information} />
+        </LinkComponent>
+      </Right>
+    </Container>
   );
 }

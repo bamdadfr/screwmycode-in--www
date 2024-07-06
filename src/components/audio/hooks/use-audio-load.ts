@@ -1,14 +1,15 @@
 import {useCallback, useEffect, useState} from 'react';
 import {useAtom} from 'jotai';
-import {setDurationAtom} from '../../../atoms/duration.atoms';
-import {setLoadedAtom} from '../../../atoms/load.atoms';
+import {setDurationAtom} from 'src/atoms/duration.atoms';
+import {setLoadedAtom} from 'src/atoms/load.atoms';
 
 /**
  * Hook to load audio element
- * @param audio
- * @param url
  */
-export function useAudioLoad(audio: HTMLAudioElement, url: string): void {
+export function useAudioLoad(
+  audio: HTMLAudioElement | null,
+  url: string,
+): void {
   const [savedUrl, setSavedUrl] = useState<string>();
   const [, setLoaded] = useAtom(setLoadedAtom);
   const [, setDuration] = useAtom(setDurationAtom);

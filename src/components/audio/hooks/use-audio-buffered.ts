@@ -10,7 +10,7 @@ const getBufferedAmount = (audio: HTMLAudioElement) => {
   }
 };
 
-export function useAudioBuffered(audio: HTMLAudioElement): void {
+export function useAudioBuffered(audio: HTMLAudioElement | null): void {
   const [, setBuffered] = useAtom(setBufferedAtom);
 
   useEffect(() => {

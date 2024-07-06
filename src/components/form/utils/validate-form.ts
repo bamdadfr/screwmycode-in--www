@@ -4,9 +4,9 @@ interface ValidateForm {
 }
 
 export async function validateForm(value: string): Promise<ValidateForm> {
-  const response = {
-    isValid: undefined,
-    path: undefined,
+  const response: ValidateForm = {
+    isValid: false,
+    path: '',
   };
 
   try {

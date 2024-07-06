@@ -1,11 +1,11 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {verifyRecaptchaToken} from '../../utils/verify-recaptcha-token';
+import {verifyRecaptchaToken} from 'src/utils/verify-recaptcha-token';
 
 export default async function Handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
-  const secret = process.env.RECAPTCHA_SECRET;
+  const secret = process.env.RECAPTCHA_SECRET as string;
   const token = req.body as string;
   const isValid = await verifyRecaptchaToken(token, secret);
   res.status(200).json({

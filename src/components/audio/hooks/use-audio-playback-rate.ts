@@ -1,12 +1,11 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {speedAtom} from '../../../atoms/speed.atoms';
+import {speedAtom} from 'src/atoms/speed.atoms';
 
 /**
  * Hook to set audio playback rate
- * @param audio
  */
-export function useAudioPlaybackRate(audio: HTMLAudioElement): void {
+export function useAudioPlaybackRate(audio: HTMLAudioElement | null): void {
   const [speed] = useAtom(speedAtom);
 
   useEffect(() => {

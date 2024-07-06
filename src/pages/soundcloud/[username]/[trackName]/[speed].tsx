@@ -1,11 +1,8 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
-import {
-  PlayerLayout,
-  PlayerLayoutProps,
-} from '../../../../layouts/player/player.layout';
-import {validateSoundcloudId} from '../../../../utils/validate-soundcloud-id/validate-soundcloud-id';
-import {invokeRedirection} from '../../../../utils/invoke-redirection/invoke-redirection';
-import {apiQuery} from '../../../../utils/api-query/api-query';
+import {PlayerLayout, PlayerLayoutProps} from 'src/layouts/player/player.layout';
+import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
+import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {apiQuery} from 'src/utils/api-query/api-query';
 
 /**
  * SoundCloud page
@@ -15,7 +12,6 @@ export default PlayerLayout;
 
 /**
  * Soundcloud page server side props
- * @param context
  */
 export async function getServerSideProps(
   context: GetServerSidePropsContext,

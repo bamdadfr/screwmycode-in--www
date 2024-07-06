@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import {widths} from '../../app/styles/widths';
-import {mediaQueries} from '../../app/styles/breakpoints';
+import {widths} from 'src/app/styles/widths';
+import {mediaQueries} from 'src/app/styles/breakpoints';
 
 export const Container = styled.div`
   position: fixed;
 
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  grid-template-rows: repeat(2, 1fr);
 
   width: 100vw;
   height: 100vh;
@@ -19,9 +18,8 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
 
   height: 100%;
 

@@ -4,8 +4,6 @@ type Callback = () => void;
 
 /**
  * Hook to use setInterval
- * @param callback
- * @param delay
  * @see https://overreacted.io/making-setinterval-declarative-with-react-hooks/
  */
 export function useInterval(callback: Callback, delay: number): void {
@@ -18,7 +16,7 @@ export function useInterval(callback: Callback, delay: number): void {
 
   // Set up the interval.
   useEffect(() => {
-    const tick = () => savedCallback.current();
+    const tick = () => savedCallback.current && savedCallback.current();
 
     if (delay !== null) {
       const id = setInterval(tick, delay);

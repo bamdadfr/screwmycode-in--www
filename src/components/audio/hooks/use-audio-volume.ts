@@ -1,12 +1,11 @@
 import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {setVolumeAtom, volumeAtom} from '../../../atoms/volume.atoms';
+import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
 
 /**
  * Hook to set audio volume
- * @param audio
  */
-export function useAudioVolume(audio: HTMLAudioElement): void {
+export function useAudioVolume(audio: HTMLAudioElement | null): void {
   const [volume] = useAtom(volumeAtom);
   const [, setVolume] = useAtom(setVolumeAtom);
 
