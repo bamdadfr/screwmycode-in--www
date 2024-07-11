@@ -1,13 +1,14 @@
-import React, {ReactElement} from 'react';
 import {GetStaticPropsResult} from 'next';
-import {DefaultLayout} from '../layouts/default/default.layout';
+import React, {ReactElement} from 'react';
+
+import {MetaComponent} from '../components/meta/meta.component';
 import {
   TableComponent,
   TableComponentItem,
 } from '../components/table/table.component';
-import {apiQuery} from '../utils/api-query/api-query';
-import {MetaComponent} from '../components/meta/meta.component';
 import {REVALIDATE} from '../constants';
+import {DefaultLayout} from '../layouts/default/default.layout';
+import {apiQuery} from '../utils/api-query/api-query';
 
 interface LatestPageProps {
   latest: TableComponentItem[];

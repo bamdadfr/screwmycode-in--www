@@ -10,6 +10,7 @@ module.exports = {
   parserOptions: {
     requireConfigFile: true,
     sourceType: 'module',
+    ecmaVersion: 'latest',
   },
   settings: {
     'import/resolver': {
@@ -28,6 +29,7 @@ module.exports = {
   ],
   plugins: [
     '@typescript-eslint',
+    'simple-import-sort',
     'import',
     '@babel',
     'jsx-a11y',
@@ -35,7 +37,6 @@ module.exports = {
     'react-hooks',
     'testing-library',
     'jest-dom',
-    'simple-import-sort',
   ],
   rules: {
     // custom rules
@@ -173,5 +174,8 @@ module.exports = {
       },
     ],
     '@typescript-eslint/object-curly-spacing': ['error', 'never'],
+    'react/jsx-no-useless-fragment': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 };

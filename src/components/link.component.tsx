@@ -16,7 +16,10 @@ const MyAnchor = styled.a`
 
 export function LinkComponent({href, children, ariaLabel}: Props) {
   return (
-    <Link href={href}>
+    <Link
+      legacyBehavior
+      href={href}
+    >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <MyAnchor aria-label={ariaLabel ?? ''}>{children}</MyAnchor>
     </Link>

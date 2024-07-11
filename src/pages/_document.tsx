@@ -1,18 +1,9 @@
 /* eslint-disable react/no-danger */
+import Document, {DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript} from 'next/document';
 import React, {ReactElement} from 'react';
-import Document, {
-  DocumentContext,
-  DocumentInitialProps,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
-import {
-  GA_TRACKING_ID,
-  RECAPTCHA_SITE_KEY,
-} from '../app/hooks/use-google-analytics/use-google-analytics.constants';
+
+import {GA_TRACKING_ID, RECAPTCHA_SITE_KEY} from '../app/hooks/use-google-analytics/use-google-analytics.constants';
 
 // noinspection JSUnusedGlobalSymbols
 export default class MyDocument extends Document {
@@ -31,17 +22,9 @@ export default class MyDocument extends Document {
         });
 
       const initialProps = await Document.getInitialProps(ctx);
-
       return {
         ...initialProps,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
+        styles: [initialProps.styles, sheet.getStyleElement()],
       };
     } finally {
       sheet.seal();
