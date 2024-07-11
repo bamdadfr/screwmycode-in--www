@@ -1,13 +1,11 @@
+import {addPadding, centerFlex} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Form = styled.form`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${centerFlex}
+  ${addPadding}
   flex-direction: column;
-  width: 100%;
   gap: 1em;
-  font-size: 1.1em;
 `;
 
 const formElement = css`

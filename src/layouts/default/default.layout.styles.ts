@@ -1,19 +1,19 @@
-import styled from 'styled-components';
-import {widths} from 'src/app/styles/widths';
+import {addColorsDefault, addFontSizes} from 'src/app/shared.styles';
 import {mediaQueries} from 'src/app/styles/breakpoints';
+import {widths} from 'src/app/styles/widths';
+import styled from 'styled-components';
 
-export const Container = styled.div`
-  position: fixed;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const DefaultLayoutContainer = styled.div`
   width: 100vw;
   height: 100vh;
 
-  color: ${(props) => props.theme.primary};
-  background: ${(props) => props.theme.background.primary};
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+
+  ${addColorsDefault}
+  ${addFontSizes}
+}
 `;
 
 export const Wrapper = styled.div`
