@@ -2,7 +2,7 @@ import React, {ReactElement} from 'react';
 import {HeaderComponent} from 'src/components/header/header.component';
 import {MetaComponent} from 'src/components/meta/meta.component';
 
-import {DefaultLayoutContainer} from './default.layout.styles';
+import {DefaultLayoutContainer, NewWrapper} from './default.layout.styles';
 
 interface DefaultLayoutProps {
   children: ReactElement | ReactElement[];
@@ -24,7 +24,7 @@ export function DefaultLayout({
       {/* </Container> */}
       <DefaultLayoutContainer>
         <HeaderComponent />
-        {children}
+        <NewWrapper>{children}</NewWrapper>
       </DefaultLayoutContainer>
     </>
   );

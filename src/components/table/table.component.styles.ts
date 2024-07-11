@@ -1,13 +1,8 @@
+import {addVerticalScroll} from 'src/app/shared.styles';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: grid;
-  grid-gap: 7px;
-
-  height: 80%;
-  width: 100%;
-
-  overflow-y: scroll;
+  ${addVerticalScroll};
 `;
 
 export const Item = styled.div`

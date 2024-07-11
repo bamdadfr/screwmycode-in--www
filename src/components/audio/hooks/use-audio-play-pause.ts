@@ -1,5 +1,5 @@
-import {useEffect} from 'react';
 import {useAtom} from 'jotai';
+import {useEffect} from 'react';
 import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
 
 /**

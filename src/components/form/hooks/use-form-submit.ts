@@ -1,9 +1,10 @@
-import {FormEvent, useCallback} from 'react';
 import {useRouter} from 'next/router';
+import {FormEvent, useCallback} from 'react';
+
 import {validateForm} from '../utils/validate-form';
-import {UseInput} from './use-input';
 import {getClientToken} from './get-client-token';
 import {queryTokenApi} from './query-token-api';
+import {UseInput} from './use-input';
 
 interface UseFormSubmitOptions {
   link: UseInput;

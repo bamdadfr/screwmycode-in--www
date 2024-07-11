@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react';
 import {useAtom} from 'jotai';
-import {SliderComponent} from '../../../../components/slider/slider.component';
-import {progressAtom} from '../../../../atoms/progress.atoms';
-import {durationAtom} from '../../../../atoms/duration.atoms';
-import {setSeekAtom} from '../../../../atoms/seek.atoms';
-import {bufferedAtom} from '../../../../atoms/buffered.atoms';
+import React, {ReactElement} from 'react';
+import {bufferedAtom} from 'src/atoms/buffered.atoms';
+import {durationAtom} from 'src/atoms/duration.atoms';
+import {progressAtom} from 'src/atoms/progress.atoms';
+import {setSeekAtom} from 'src/atoms/seek.atoms';
+import {SliderComponent} from 'src/components/slider/slider.component';
 
 /**
  * Component to seek in the audio

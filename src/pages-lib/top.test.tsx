@@ -1,7 +1,8 @@
-import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
-import TopPage from '../pages/top';
+import React from 'react';
+
 import {ThemeWrapper} from '../app/components/theme-wrapper/theme-wrapper';
+import TopPage from '../pages/top';
 
 const render = () => {
   const {container} = defaultRender(

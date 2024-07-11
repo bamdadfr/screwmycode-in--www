@@ -1,5 +1,5 @@
-import {useCallback, useEffect, useState} from 'react';
 import {useAtom} from 'jotai';
+import {useCallback, useEffect, useState} from 'react';
 import {setDurationAtom} from 'src/atoms/duration.atoms';
 import {setLoadedAtom} from 'src/atoms/load.atoms';
 

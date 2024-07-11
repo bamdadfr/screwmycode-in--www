@@ -1,15 +1,16 @@
-import {useEffect, useState} from 'react';
-import {useRouter} from 'next/router';
 import {useAtom} from 'jotai';
-import {isLoadedAtom} from '../../../atoms/load.atoms';
-import {setSpeedAtom} from '../../../atoms/speed.atoms';
-import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
-import {usePlayerLoading} from './use-player-loading';
+import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
+
 import {setArtworkAtom} from '../../../atoms/artwork.atoms';
+import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
+import {isLoadedAtom} from '../../../atoms/load.atoms';
 import {setPauseAtom} from '../../../atoms/play-pause.atoms';
+import {setSpeedAtom} from '../../../atoms/speed.atoms';
 import {
   getProviderFromRouter,
 } from '../../../utils/get-provider/get-provider-from-router';
+import {usePlayerLoading} from './use-player-loading';
 
 interface UsePlayerLayoutOptions {
   title: string;

@@ -1,13 +1,14 @@
-import React from 'react';
 import {
   fireEvent,
   render as defaultRender,
   screen,
 } from '@testing-library/react';
-import {SpeedComponent} from './speed.component';
+import React from 'react';
+
 import {
   ThemeWrapper,
 } from '../../../../app/components/theme-wrapper/theme-wrapper';
+import {SpeedComponent} from './speed.component';
 import {MOCK_STATE} from './speed.component.test.mock';
 
 const render = () => {

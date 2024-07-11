@@ -1,7 +1,8 @@
 import React, {ReactElement} from 'react';
-import {Container} from './indicators.component.styles';
-import {useIndicatorsComponent} from './hooks/use-indicators-component';
+
 import {IndicatorComponent} from './components/indicator/indicator.component';
+import {useIndicatorsComponent} from './hooks/use-indicators-component';
+import {Container} from './indicators.component.styles';
 
 /**
  * Component for the indicators

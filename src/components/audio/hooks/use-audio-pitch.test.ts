@@ -1,6 +1,7 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useAudioPitch} from './use-audio-pitch';
+
 import {MOCK_AUDIO} from './use-audio-component.test.mock';
+import {useAudioPitch} from './use-audio-pitch';
 
 declare global {
   interface HTMLAudioElement {

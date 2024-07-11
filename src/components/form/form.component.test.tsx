@@ -1,9 +1,10 @@
-import React from 'react';
 import {render as defaultRender, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
+
+import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
 import {FormComponent} from './form.component';
 import {MOCK_STATE} from './form.component.test.mock';
-import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
 
 const render = () => {
   const {link, handleSubmit} = MOCK_STATE();

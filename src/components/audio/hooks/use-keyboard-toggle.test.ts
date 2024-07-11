@@ -1,4 +1,5 @@
 import {renderHook} from '@testing-library/react-hooks';
+
 import {useKeyboardToggle} from './use-keyboard-toggle';
 import {MOCK_DOCUMENT} from './use-keyboard-toggle.mock';
 

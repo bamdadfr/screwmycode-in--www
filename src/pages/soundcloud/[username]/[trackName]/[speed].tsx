@@ -1,8 +1,8 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
 import {PlayerLayout, PlayerLayoutProps} from 'src/layouts/player/player.layout';
-import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
-import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
 import {apiQuery} from 'src/utils/api-query/api-query';
+import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
 
 /**
  * SoundCloud page

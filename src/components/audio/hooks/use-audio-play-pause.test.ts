@@ -1,6 +1,7 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useAudioPlayPause} from './use-audio-play-pause';
+
 import {MOCK_AUDIO, SPY_AUDIO} from './use-audio-component.test.mock';
+import {useAudioPlayPause} from './use-audio-play-pause';
 
 afterEach(() => jest.resetAllMocks());
 

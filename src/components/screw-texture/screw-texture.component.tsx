@@ -1,6 +1,7 @@
-import React, {ReactElement} from 'react';
 import {Surface} from 'gl-react-dom/lib';
 import GLImage from 'gl-react-image';
+import React, {ReactElement} from 'react';
+
 import {withTimeLoop} from '../../app/components/with-time-loop/with-time-loop';
 import {ScrewTextureNode} from './screw-texture.node';
 

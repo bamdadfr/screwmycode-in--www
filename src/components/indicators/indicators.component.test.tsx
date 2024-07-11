@@ -1,7 +1,8 @@
-import React from 'react';
 import {render as defaultRender, screen} from '@testing-library/react';
-import {IndicatorsComponent} from './indicators.component';
+import React from 'react';
+
 import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
+import {IndicatorsComponent} from './indicators.component';
 
 const render = () => {
   const {container} = defaultRender(

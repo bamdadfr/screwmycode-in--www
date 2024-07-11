@@ -1,11 +1,12 @@
-import React, {ReactElement} from 'react';
-import {Icon} from '@iconify/react';
-import volumeOff from '@iconify/icons-mdi/volume-off';
 import volumeHigh from '@iconify/icons-mdi/volume-high';
+import volumeOff from '@iconify/icons-mdi/volume-off';
+import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
-import {Button} from '../../player.module.styles';
+import React, {ReactElement} from 'react';
+
 import {isMutedAtom} from '../../../../atoms/mute.atoms';
 import {volumeAtom} from '../../../../atoms/volume.atoms';
+import {Button} from '../../player.module.styles';
 
 /**
  * Component to toggle the volume

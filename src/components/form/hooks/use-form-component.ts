@@ -1,5 +1,5 @@
-import {UseInput, useInput} from './use-input';
 import {UseFormSubmit, useFormSubmit} from './use-form-submit';
+import {UseInput, useInput} from './use-input';
 
 interface UseFormComponent {
   link: UseInput;

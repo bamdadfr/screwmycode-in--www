@@ -1,5 +1,6 @@
-import React from 'react';
 import {render as defaultRender, screen} from '@testing-library/react';
+import React from 'react';
+
 import {HeaderComponent} from './header.component';
 
 const render = () => {

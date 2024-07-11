@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import {AnchorOptions} from './text-link.component';
 
 const getBorder = (c) => `0.15em solid ${c}`;

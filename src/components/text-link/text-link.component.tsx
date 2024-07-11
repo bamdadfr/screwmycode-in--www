@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+
 import {TextLink} from './text-link.component.styles';
 
 interface TextLinkComponentProps {

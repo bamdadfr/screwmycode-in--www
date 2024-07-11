@@ -1,11 +1,11 @@
-import {addPadding, centerFlex} from 'src/app/shared.styles';
+import {addMargins, centerFlex} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Form = styled.form`
-  ${centerFlex}
-  ${addPadding}
+  ${centerFlex};
+  ${addMargins};
   flex-direction: column;
-  gap: 1em;
+  gap: 14px;
 `;
 
 const formElement = css`

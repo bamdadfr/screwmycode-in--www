@@ -1,6 +1,7 @@
 import React, {ReactElement} from 'react';
-import {useAudioModule} from './hooks/use-audio-component';
+
 import {Invisible} from './audio.component.styles';
+import {useAudioModule} from './hooks/use-audio-component';
 
 interface Props {
   url: string;

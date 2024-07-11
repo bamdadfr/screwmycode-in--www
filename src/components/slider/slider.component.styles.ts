@@ -1,11 +1,12 @@
+import {type SliderComponentProps} from 'src/components/slider/slider.component';
 import styled, {css} from 'styled-components';
 
 const config = {
-  'trackW': '100%',
+  trackW: '100%',
   // 'trackH': '7px',
-  'trackH': '0.5em',
-  'thumbD': '1.5em',
-  'thumbDV': 1.5,
+  trackH: '0.5em',
+  thumbD: '1.5em',
+  thumbDV: 1.5,
 };
 
 const track = css`
@@ -31,25 +32,27 @@ const handle = css`
   border-radius: 50%;
   border: 3px solid;
   background: ${(props) => props.theme.background.primary};
-  box-shadow: 1px 1px 1px ${(props) => props.theme.background.primary},
-  0 0 1px ${(props) => props.theme.background.highlight};
+  box-shadow:
+    1px 1px 1px ${(props) => props.theme.background.primary},
+    0 0 1px ${(props) => props.theme.background.highlight};
 `;
 
-const getProgress = (props) => (props.value - props.min) / (props.max - props.min);
-const getBuffered = (props) => (props.buffered - props.min) / (props.max - props.min);
+const getProgress = (props: SliderComponentProps) =>
+  (props.value - props.min) / (props.max - props.min);
+const getBuffered = (props: SliderComponentProps) =>
+  (props?.buffered ?? 0 - props.min) / (props.max - props.min);
 
-/**
- * @param {object} props react component props
- * @see https://codepen.io/thebabydino/pen/goYYrN
- * @returns {object} styled component
- */
+// @see https://codepen.io/thebabydino/pen/goYYrN
+// @ts-expect-error dumb
+// noinspection CssUnresolvedCustomProperty
 export const Input = styled.input.attrs((props) => ({
-  'style': {
-    '--progress': getProgress(props),
-    '--buffered': getBuffered(props),
+  style: {
+    '--progress': getProgress(props as SliderComponentProps),
+    '--buffered': getBuffered(props as SliderComponentProps),
   },
-}))<{buffered?: number;}>`
-  &, &::-webkit-slider-thumb {
+}))<SliderComponentProps>`
+  &,
+  &::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
 
@@ -58,9 +61,13 @@ export const Input = styled.input.attrs((props) => ({
   width: ${config.trackW};
   height: ${config.thumbD};
   background: transparent;
-  font: 1em/1 arial, sans-serif;
+  font:
+    1em/1 arial,
+    sans-serif;
 
-  --progress-width: calc(.5 * ${config.thumbD} + var(--progress) * (100% - ${config.thumbD}));
+  --progress-width: calc(
+    0.5 * ${config.thumbD} + var(--progress) * (100% - ${config.thumbD})
+  );
   --buffered-width: calc(var(--buffered) * 100%);
 
   &:hover {
@@ -68,26 +75,31 @@ export const Input = styled.input.attrs((props) => ({
   }
 
   // track
+
   &::-webkit-slider-runnable-track {
     ${track};
 
-    background: linear-gradient(to right,
-    ${(props) => props.theme.highlight} 0,
-    ${(props) => props.theme.highlight} var(--progress-width),
-    ${(props) => props.theme.buffered} var(--progress-width),
-    ${(props) => props.theme.buffered} var(--buffered-width),
-    ${(props) => props.theme.background.highlight} var(--buffered-width),
-    ${(props) => props.theme.background.highlight} 100%);
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.highlight} 0,
+      ${(props) => props.theme.highlight} var(--progress-width),
+      ${(props) => props.theme.buffered} var(--progress-width),
+      ${(props) => props.theme.buffered} var(--buffered-width),
+      ${(props) => props.theme.background.highlight} var(--buffered-width),
+      ${(props) => props.theme.background.highlight} 100%
+    );
   }
 
   &::-moz-range-track {
     ${track};
 
-    background: linear-gradient(to right,
-    ${(props) => props.theme.buffered} 0,
-    ${(props) => props.theme.buffered} var(--buffered-width),
-    ${(props) => props.theme.background.highlight} var(--buffered-width),
-    ${(props) => props.theme.background.highlight} 100%);
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.buffered} 0,
+      ${(props) => props.theme.buffered} var(--buffered-width),
+      ${(props) => props.theme.background.highlight} var(--buffered-width),
+      ${(props) => props.theme.background.highlight} 100%
+    );
   }
 
   &::-ms-track {
@@ -95,6 +107,7 @@ export const Input = styled.input.attrs((props) => ({
   }
 
   // progress
+
   &::-moz-range-progress {
     ${progress};
   }
@@ -104,8 +117,9 @@ export const Input = styled.input.attrs((props) => ({
   }
 
   // handle
+
   &::-webkit-slider-thumb {
-    margin-top: calc(.5 * (${config.trackH} - ${config.thumbD}));
+    margin-top: calc(0.5 * (${config.trackH} - ${config.thumbD}));
     ${handle};
   }
 

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+
 import {useInterval} from './use-interval';
 
 /**

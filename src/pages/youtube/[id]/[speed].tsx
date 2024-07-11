@@ -1,7 +1,7 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
 import {PlayerLayout, PlayerLayoutProps} from 'src/layouts/player/player.layout';
-import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
 import {apiQuery} from 'src/utils/api-query/api-query';
+import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
 import {validateYoutubeId} from 'src/utils/validate-youtube-id/validate-youtube-id';
 
 /**

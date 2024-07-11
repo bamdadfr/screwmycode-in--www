@@ -1,5 +1,6 @@
 import {act, renderHook} from '@testing-library/react-hooks';
 import {ChangeEvent} from 'react';
+
 import {useSpeedComponent} from './use-speed-component';
 
 describe('useSpeedComponent', () => {

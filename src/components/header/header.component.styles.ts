@@ -1,21 +1,21 @@
 import {Icon} from '@iconify/react';
-import {addPadding, centerFlex} from 'src/app/shared.styles';
-import {hoverLink} from 'src/app/styles/styles';
+import {addHoverLink, addMargins, centerFlex} from 'src/app/shared.styles';
 import styled from 'styled-components';
 
 const p = 14;
 
 export const Container = styled.div`
   ${centerFlex};
-  ${addPadding};
+  ${addMargins};
 `;
 
 const Side = styled.div`
-  ${centerFlex};
-  gap: 3px;
-
   position: fixed;
-  ${hoverLink};
+  ${centerFlex};
+  gap: 0.1em;
+
+  ${addHoverLink};
+  font-size: 120%;
 `;
 
 export const Left = styled(Side)`

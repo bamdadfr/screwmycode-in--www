@@ -1,16 +1,7 @@
 import styled, {css} from 'styled-components';
 
-export const Container = styled.div`
-  text-align: left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 80%;
-  width: 100%;
-  padding: 0 0.5em;
-`;
-
 export const Spacer = styled.div`
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 `;
 
 const Title = css`

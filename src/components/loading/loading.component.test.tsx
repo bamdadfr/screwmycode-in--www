@@ -1,9 +1,10 @@
-import React from 'react';
 import {
   cleanup,
   render as defaultRender,
   screen,
 } from '@testing-library/react';
+import React from 'react';
+
 import {LoadingComponent} from './loading.component';
 
 const render = () => {

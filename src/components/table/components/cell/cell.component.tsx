@@ -1,6 +1,8 @@
-import React, {ReactElement} from 'react';
 import {Icon, IconifyIcon} from '@iconify/react';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
+import React, {ReactElement} from 'react';
+import {CenteredDiv} from 'src/app/shared.styles';
+
 import {Button, Item} from '../../table.component.styles';
 
 export interface CellComponentProps {
@@ -13,12 +15,6 @@ export interface CellComponentProps {
 
 /**
  * Table Cell Component
- * @param root0
- * @param root0.id
- * @param root0.image
- * @param root0.title
- * @param root0.icon
- * @param root0.onClick
  */
 export function CellComponent({
   id,
@@ -40,15 +36,15 @@ export function CellComponent({
         layout="fixed"
         objectFit="cover"
       />
-      <span>{title}</span>
-      <span>
+      <CenteredDiv>{title}</CenteredDiv>
+      <CenteredDiv>
         <Button
           type="button"
           aria-label="provider"
         >
           <Icon icon={icon} />
         </Button>
-      </span>
+      </CenteredDiv>
     </Item>
   );
 }

@@ -1,5 +1,5 @@
+import {mediaQueries} from 'src/app/styles/breakpoints';
 import styled from 'styled-components';
-import {mediaQueries} from '../../app/styles/breakpoints';
 
 export const Container = styled.div`
   width: 100%;
@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const Button = styled.button`
   touch-action: manipulation;
-  transition: background .3s ease;
+  transition: background 0.3s ease;
 
   &:hover {
     background: ${({theme}) => theme.shadow.opacity};
@@ -47,7 +47,7 @@ export const TitleWrapper = styled.span`
   grid-column-start: 1;
   grid-row-start: 1;
   white-space: nowrap;
-  transform: translate3d(.3em, .45em, 0);
+  transform: translate3d(0.3em, 0.45em, 0);
 `;
 
 export const VolumeButtonWrapper = styled.span`

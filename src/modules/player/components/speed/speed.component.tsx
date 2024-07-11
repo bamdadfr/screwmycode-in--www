@@ -1,6 +1,7 @@
 import React, {ReactElement} from 'react';
+import {SliderComponent} from 'src/components/slider/slider.component';
+
 import {useSpeedComponent} from './hooks/use-speed-component';
-import {SliderComponent} from '../../../../components/slider/slider.component';
 
 /**
  * Component for the player speed

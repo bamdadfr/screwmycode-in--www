@@ -1,7 +1,7 @@
-import {useEffect} from 'react';
 import {useAtom} from 'jotai';
-import {setProgressAtom} from 'src/atoms/progress.atoms';
+import {useEffect} from 'react';
 import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
+import {setProgressAtom} from 'src/atoms/progress.atoms';
 
 /**
  * Hook to set the progress of audio element

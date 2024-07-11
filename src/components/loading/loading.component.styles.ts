@@ -7,8 +7,6 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
 
-  width: 100%;
-
   transform: translateX(0.5em);
 `;
 

@@ -1,5 +1,5 @@
-import {useEffect} from 'react';
 import {useRouter} from 'next/router';
+import {useEffect} from 'react';
 
 /**
  * Hook to redirect automatically to a given path

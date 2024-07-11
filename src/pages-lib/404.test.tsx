@@ -1,7 +1,8 @@
-import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
-import NotFoundPage from '../pages/404';
+import React from 'react';
+
 import {ThemeWrapper} from '../app/components/theme-wrapper/theme-wrapper';
+import NotFoundPage from '../pages/404';
 
 const render = () => {
   const {container} = defaultRender(
