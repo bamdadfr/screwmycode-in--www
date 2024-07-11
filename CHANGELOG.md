@@ -1,3 +1,17 @@
+# [3.8.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.7.1...v3.8.0) (2024-07-11)
+
+
+### Bug Fixes
+
+* apply next/image codemod ([089e3db](https://github.com/bamdadfr/screwmycode-in--www/commit/089e3dbea49adbfd0ab54f9bf7aa94b029f30fd5))
+
+
+### Features
+
+* update default layout ([1371ea1](https://github.com/bamdadfr/screwmycode-in--www/commit/1371ea1fd787eb1b79220384b2bd1efb7b2a17d1))
+* update styling + apply linting rules ([351f3f0](https://github.com/bamdadfr/screwmycode-in--www/commit/351f3f06d76d7a98fd9e376509b205ac05710757))
+* update to next 14 ([d862ddc](https://github.com/bamdadfr/screwmycode-in--www/commit/d862ddcaf4e38da00596255f66914cbb48a386ad))
+
 ## [3.7.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.7.0...v3.7.1) (2024-07-06)
 
 
