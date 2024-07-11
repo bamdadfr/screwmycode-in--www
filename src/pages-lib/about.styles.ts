@@ -1,5 +1,9 @@
 import styled, {css} from 'styled-components';
 
+export const Container = styled.div`
+  width: 100%;
+`;
+
 export const Spacer = styled.div`
   padding-bottom: 1em;
 `;

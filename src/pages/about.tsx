@@ -5,6 +5,7 @@ import {TextLinkComponent} from '../components/text-link/text-link.component';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {
   Blue,
+  Container,
   Content,
   List,
   Spacer,
@@ -26,7 +27,7 @@ export default function AboutPage(): ReactElement {
     <>
       <MetaComponent description="About" />
       <DefaultLayout customMeta>
-        <div>
+        <Container>
           <Content>Pitch control for YouTube and Soundcloud.</Content>
 
           <Spacer />
@@ -100,7 +101,7 @@ export default function AboutPage(): ReactElement {
               .
             </p>
           </Content>
-        </div>
+        </Container>
       </DefaultLayout>
     </>
   );
