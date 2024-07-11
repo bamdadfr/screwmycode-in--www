@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import {useAtom} from 'jotai';
 import useMeasure from 'react-use-measure';
 import {ResizeObserver} from '@juggle/resize-observer';

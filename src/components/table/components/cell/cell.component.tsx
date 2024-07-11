@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react';
 import {Icon, IconifyIcon} from '@iconify/react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import {Button, Item} from '../../table.component.styles';
 
 export interface CellComponentProps {
