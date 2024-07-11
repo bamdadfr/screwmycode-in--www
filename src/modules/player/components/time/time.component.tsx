@@ -1,11 +1,12 @@
-import React, {ReactElement} from 'react';
 import {useAtom} from 'jotai';
-import {Container} from './time.component.styles';
+import React, {ReactElement} from 'react';
+
+import {durationAtom} from '../../../../atoms/duration.atoms';
+import {progressAtom} from '../../../../atoms/progress.atoms';
 import {
   calculateMinutes,
 } from '../../../../utils/calculate-minutes/calculate-minutes';
-import {progressAtom} from '../../../../atoms/progress.atoms';
-import {durationAtom} from '../../../../atoms/duration.atoms';
+import {Container} from './time.component.styles';
 
 /**
  * Component to display the current time and the duration of the video

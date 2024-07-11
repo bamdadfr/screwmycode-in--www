@@ -1,6 +1,7 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useAudioPlaybackRate} from './use-audio-playback-rate';
+
 import {MOCK_AUDIO} from './use-audio-component.test.mock';
+import {useAudioPlaybackRate} from './use-audio-playback-rate';
 
 afterEach(() => jest.resetAllMocks());
 

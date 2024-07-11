@@ -1,10 +1,11 @@
 import React, {ReactElement} from 'react';
-import {MetaComponent} from '../../components/meta/meta.component';
-import {DefaultLayout} from '../default/default.layout';
-import {AudioComponent} from '../../components/audio/audio.component';
-import {PlayerModule} from '../../modules/player/player.module';
+import {AudioComponent} from 'src/components/audio/audio.component';
+import {LoadingComponent} from 'src/components/loading/loading.component';
+import {MetaComponent} from 'src/components/meta/meta.component';
+import {DefaultLayout} from 'src/layouts/default/default.layout';
+import {PlayerModule} from 'src/modules/player/player.module';
+
 import {usePlayerLayout} from './hooks/use-player-layout';
-import {LoadingComponent} from '../../components/loading/loading.component';
 
 export interface PlayerLayoutProps {
   title: string;
@@ -15,11 +16,6 @@ export interface PlayerLayoutProps {
 
 /**
  * Layout for the player page
- * @param root0
- * @param root0.title
- * @param root0.image
- * @param root0.audio
- * @param root0.speed
  */
 export function PlayerLayout({
   title,
@@ -27,11 +23,11 @@ export function PlayerLayout({
   audio,
   speed,
 }: PlayerLayoutProps): ReactElement {
-  const {
-    metaDescription,
-    metaUrl,
-    isLoaded,
-  } = usePlayerLayout({title, speed, image});
+  const {metaDescription, metaUrl, isLoaded} = usePlayerLayout({
+    title,
+    speed,
+    image,
+  });
 
   return (
     <>
@@ -42,11 +38,7 @@ export function PlayerLayout({
       />
       <DefaultLayout customMeta>
         <AudioComponent url={audio} />
-        {
-          !isLoaded
-            ? <LoadingComponent />
-            : <PlayerModule />
-        }
+        {!isLoaded ? <LoadingComponent /> : <PlayerModule />}
       </DefaultLayout>
     </>
   );

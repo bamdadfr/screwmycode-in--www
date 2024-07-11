@@ -1,5 +1,6 @@
-import {createGlobalStyle} from 'styled-components';
 import '@fontsource/noto-sans';
+
+import {createGlobalStyle} from 'styled-components';
 
 // noinspection CssUnusedSymbol
 export const Global = createGlobalStyle`

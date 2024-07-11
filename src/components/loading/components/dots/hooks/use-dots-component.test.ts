@@ -1,4 +1,5 @@
 import {act, renderHook} from '@testing-library/react-hooks';
+
 import {useDotsComponent} from './use-dots-component';
 
 beforeAll(() => {

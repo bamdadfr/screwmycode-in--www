@@ -1,4 +1,5 @@
 import {renderHook} from '@testing-library/react-hooks';
+
 import {useIndicatorsComponent} from './use-indicators-component';
 
 describe('useIndicatorsComponent', () => {

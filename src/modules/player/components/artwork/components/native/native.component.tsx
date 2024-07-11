@@ -1,8 +1,9 @@
-import React, {ReactElement} from 'react';
-import Image from 'next/image';
-import {useAtom} from 'jotai';
-import useMeasure from 'react-use-measure';
 import {ResizeObserver} from '@juggle/resize-observer';
+import {useAtom} from 'jotai';
+import Image from 'next/legacy/image';
+import React, {ReactElement} from 'react';
+import useMeasure from 'react-use-measure';
+
 import {artworkAtom} from '../../../../../../atoms/artwork.atoms';
 import {speedAtom} from '../../../../../../atoms/speed.atoms';
 import {Container} from '../../artwork.component.styles';

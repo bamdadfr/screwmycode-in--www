@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react';
 import {useAtom} from 'jotai';
-import {SliderComponent} from '../../../../components/slider/slider.component';
-import {setVolumeAtom, volumeAtom} from '../../../../atoms/volume.atoms';
+import React, {ReactElement} from 'react';
+import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
+import {SliderComponent} from 'src/components/slider/slider.component';
 
 /**
  * Component to control the volume of the player

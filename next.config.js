@@ -3,10 +3,11 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 
 const configuration = {
   poweredByHeader: false,
+  compiler: {
+    styledComponents: true,
+  },
   images: {
-    domains: [
-      'api.screwmycode.in',
-    ],
+    domains: ['api.screwmycode.in'],
   },
   webpack: (config) => {
     config = {
@@ -27,10 +28,7 @@ const configuration = {
 };
 
 if (!isEnvProduction) {
-  configuration.images.domains = [
-    ...configuration.images.domains,
-    'localhost',
-  ];
+  configuration.images.domains = [...configuration.images.domains, 'localhost'];
 }
 
 const SentryWebpackPluginOptions = {};

@@ -1,7 +1,8 @@
+import {useAtom} from 'jotai';
 import {useMemo} from 'react';
 import speedToPercentage from 'speed-to-percentage';
 import speedToSemitones from 'speed-to-semitones';
-import {useAtom} from 'jotai';
+
 import {speedAtom} from '../../../atoms/speed.atoms';
 
 interface UseIndicatorsComponent {

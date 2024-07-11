@@ -1,8 +1,9 @@
-import {useEffect} from 'react';
 import {useAtom} from 'jotai';
+import {useEffect} from 'react';
+
 import {setLoadedAtom} from '../../../atoms/load.atoms';
-import {setSeekAtom} from '../../../atoms/seek.atoms';
 import {setProgressAtom} from '../../../atoms/progress.atoms';
+import {setSeekAtom} from '../../../atoms/seek.atoms';
 
 /**
  * Hook to set the player loading state

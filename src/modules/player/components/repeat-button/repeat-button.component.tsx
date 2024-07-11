@@ -1,13 +1,14 @@
-import React, {ReactElement} from 'react';
-import {Icon} from '@iconify/react';
 import repeat from '@iconify/icons-mdi/repeat';
 import repeatOff from '@iconify/icons-mdi/repeat-off';
+import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
-import {Button} from '../../player.module.styles';
+import React, {ReactElement} from 'react';
+
 import {
   isRepeatingAtom,
   toggleRepeatingAtom,
 } from '../../../../atoms/repeat.atoms';
+import {Button} from '../../player.module.styles';
 
 /**
  * Component to toggle repeat mode

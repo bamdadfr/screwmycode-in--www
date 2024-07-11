@@ -1,5 +1,5 @@
-import React, {ReactElement} from 'react';
 import Link from 'next/link';
+import React, {ReactElement} from 'react';
 import styled from 'styled-components';
 
 interface Props {
@@ -16,7 +16,10 @@ const MyAnchor = styled.a`
 
 export function LinkComponent({href, children, ariaLabel}: Props) {
   return (
-    <Link href={href}>
+    <Link
+      legacyBehavior
+      href={href}
+    >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <MyAnchor aria-label={ariaLabel ?? ''}>{children}</MyAnchor>
     </Link>

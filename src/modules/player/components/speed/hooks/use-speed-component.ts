@@ -1,5 +1,6 @@
-import {ChangeEvent, useCallback} from 'react';
 import {useAtom} from 'jotai';
+import {ChangeEvent, useCallback} from 'react';
+
 import {setSpeedAtom, speedAtom} from '../../../../../atoms/speed.atoms';
 
 interface UseSpeedComponent {

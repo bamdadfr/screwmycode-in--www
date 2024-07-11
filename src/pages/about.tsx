@@ -1,9 +1,10 @@
 import React, {ReactElement} from 'react';
-import {DefaultLayout} from '../layouts/default/default.layout';
+
+import {MetaComponent} from '../components/meta/meta.component';
 import {TextLinkComponent} from '../components/text-link/text-link.component';
+import {DefaultLayout} from '../layouts/default/default.layout';
 import {
   Blue,
-  Container,
   Content,
   List,
   Spacer,
@@ -11,7 +12,6 @@ import {
   TitleH2,
   TitleH3,
 } from '../pages-lib/about.styles';
-import {MetaComponent} from '../components/meta/meta.component';
 
 function Prefix({spacing = false}) {
   return <Blue spacing={spacing ? 1 : 0}>iscrew</Blue>;
@@ -26,7 +26,7 @@ export default function AboutPage(): ReactElement {
     <>
       <MetaComponent description="About" />
       <DefaultLayout customMeta>
-        <Container>
+        <div>
           <Content>Pitch control for YouTube and Soundcloud.</Content>
 
           <Spacer />
@@ -103,7 +103,7 @@ export default function AboutPage(): ReactElement {
               .
             </p>
           </Content>
-        </Container>
+        </div>
       </DefaultLayout>
     </>
   );

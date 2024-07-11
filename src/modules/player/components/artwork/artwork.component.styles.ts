@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import {mapRange} from '../../../../utils/map-range/map-range';
-import {widths} from '../../../../app/styles/widths';
+
 import {mediaQueries} from '../../../../app/styles/breakpoints';
+import {widths} from '../../../../app/styles/widths';
+import {mapRange} from '../../../../utils/map-range/map-range';
 
 const getFilter = ({sepia, hueRotate, saturate, blur}) => `
       sepia(${sepia}%)

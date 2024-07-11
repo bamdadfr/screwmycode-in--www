@@ -1,10 +1,11 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
+
 import {
   PlayerLayout,
   PlayerLayoutProps,
 } from '../../../../layouts/player/player.layout';
-import {invokeRedirection} from '../../../../utils/invoke-redirection/invoke-redirection';
 import {apiQuery} from '../../../../utils/api-query/api-query';
+import {invokeRedirection} from '../../../../utils/invoke-redirection/invoke-redirection';
 import {validateBandcampId} from '../../../../utils/validate-bandcamp-id/validate-bandcamp-id';
 
 export default PlayerLayout;

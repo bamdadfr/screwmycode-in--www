@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+
 import {useDotsComponent} from './hooks/use-dots-component';
 
 /**

@@ -1,5 +1,5 @@
-import React, {ReactElement} from 'react';
 import {animated, useSpring} from '@react-spring/web';
+import React, {ReactElement} from 'react';
 
 interface FadeAnimationProps {
   children: string | ReactElement;

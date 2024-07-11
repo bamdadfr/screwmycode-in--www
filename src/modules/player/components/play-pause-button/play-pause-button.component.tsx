@@ -1,13 +1,14 @@
-import React, {ReactElement} from 'react';
-import {Icon} from '@iconify/react';
 import pause from '@iconify/icons-mdi/pause';
 import play from '@iconify/icons-mdi/play';
+import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
-import {Button} from '../../player.module.styles';
+import React, {ReactElement} from 'react';
+
 import {
   isPlayingAtom,
   togglePlayingAtom,
 } from '../../../../atoms/play-pause.atoms';
+import {Button} from '../../player.module.styles';
 
 /**
  * Component to render the play/pause button

@@ -1,5 +1,6 @@
-import {useEffect} from 'react';
 import {useRouter} from 'next/router';
+import {useEffect} from 'react';
+
 import {GA_TRACKING_ID} from './use-google-analytics.constants';
 
 declare global {

@@ -1,8 +1,9 @@
-import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
 import {GetServerSidePropsContext} from 'next';
-import OldYoutubePage, {getServerSideProps} from '../../pages/youtube/[id]';
+import React from 'react';
+
 import {ThemeWrapper} from '../../app/components/theme-wrapper/theme-wrapper';
+import OldYoutubePage, {getServerSideProps} from '../../pages/youtube/[id]';
 
 const render = () => {
   const {container} = defaultRender(

@@ -1,5 +1,6 @@
 import React, {ReactElement} from 'react';
 import {LinkComponent} from 'src/components/link.component';
+
 import {Title} from './title.component.styles';
 
 /**

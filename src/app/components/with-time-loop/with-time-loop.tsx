@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import hoistNonReactStatics from 'hoist-non-react-statics';
+import raf from 'raf';
 import React, {
   JSXElementConstructor,
   ReactElement,
@@ -6,8 +8,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import raf from 'raf';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 
 /**
  * @param C

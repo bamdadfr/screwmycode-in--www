@@ -1,8 +1,8 @@
+import {addHoverLink, centerFlex} from 'src/app/shared.styles';
 import styled from 'styled-components';
-import {flexCenter, hoverLink} from 'src/app/styles/styles';
 
 export const Title = styled.h1`
-  ${flexCenter};
-  ${hoverLink};
+  ${centerFlex};
+  ${addHoverLink};
   font-weight: 900;
 `;

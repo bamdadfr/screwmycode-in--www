@@ -1,7 +1,8 @@
 import React, {ReactElement} from 'react';
-import {DefaultLayout} from '../layouts/default/default.layout';
-import {useRedirectAuto} from '../hooks/use-redirect-auto';
+
 import {MetaComponent} from '../components/meta/meta.component';
+import {useRedirectAuto} from '../hooks/use-redirect-auto';
+import {DefaultLayout} from '../layouts/default/default.layout';
 
 /**
  * 404 page

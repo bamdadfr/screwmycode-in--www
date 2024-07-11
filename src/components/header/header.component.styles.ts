@@ -1,39 +1,32 @@
-import styled from 'styled-components';
 import {Icon} from '@iconify/react';
-import {flexCenter, hoverLink} from 'src/app/styles/styles';
+import {addHoverLink, addMargins, centerFlex} from 'src/app/shared.styles';
+import styled from 'styled-components';
 
-const paddingHorizontal = 7;
-const gap = 3;
+const p = 14;
 
 export const Container = styled.div`
-  ${flexCenter};
-  gap: ${gap}px;
-
-  padding: ${gap}px ${paddingHorizontal}px;
-
-  background: ${(props) => props.theme.background.primary};
-  color: ${(props) => props.theme.primary};
-
-  font-size: 2em;
+  ${centerFlex};
+  ${addMargins};
 `;
 
-export const Side = styled.div`
-  ${flexCenter};
-  gap: ${gap}px;
-
+const Side = styled.div`
   position: fixed;
-  ${hoverLink};
+  ${centerFlex};
+  gap: 0.1em;
+
+  ${addHoverLink};
+  font-size: 120%;
 `;
 
 export const Left = styled(Side)`
-  left: ${paddingHorizontal}px;
+  left: ${p}px;
 `;
 
 export const Right = styled(Side)`
-  right: ${paddingHorizontal}px;
+  right: ${p}px;
 `;
 
 export const Podium = styled(Icon)`
   font-size: 91%;
-  transform: translate(4px, -3px);
+  transform: translate(4px, -1px);
 `;

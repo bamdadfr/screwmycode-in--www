@@ -1,6 +1,7 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useInputRefocus} from './use-input-refocus';
+
 import {MOCK_LINK, SPY_LINK} from './use-form-component.test.mock';
+import {useInputRefocus} from './use-input-refocus';
 
 describe('useInputRefocus', () => {
   describe('events', () => {

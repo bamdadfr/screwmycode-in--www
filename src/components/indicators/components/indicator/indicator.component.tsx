@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {InputTitle, InputValue, Wrapper} from './indicator.component.styles';
 
 interface IndicatorComponentProps {

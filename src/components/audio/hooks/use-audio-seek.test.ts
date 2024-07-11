@@ -1,6 +1,7 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useAudioSeek} from './use-audio-seek';
+
 import {MOCK_AUDIO} from './use-audio-component.test.mock';
+import {useAudioSeek} from './use-audio-seek';
 
 afterEach(() => jest.resetAllMocks());
 
