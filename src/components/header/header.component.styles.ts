@@ -1,12 +1,22 @@
 import {Icon} from '@iconify/react';
-import {addHoverLink, addMargins, centerFlex} from 'src/app/shared.styles';
+import {
+  addColorsDefault,
+  addHoverLink,
+  addPaddingRight,
+  addPaddings,
+  centerFlex,
+  p,
+} from 'src/app/shared.styles';
 import styled from 'styled-components';
-
-const p = 14;
 
 export const Container = styled.div`
   ${centerFlex};
-  ${addMargins};
+  ${addPaddings};
+  width: calc(100% - ${p}px);
+  position: fixed;
+  z-index: 100;
+  ${addColorsDefault};
+  ${addPaddingRight};
 `;
 
 const Side = styled.div`
@@ -23,7 +33,7 @@ export const Left = styled(Side)`
 `;
 
 export const Right = styled(Side)`
-  right: ${p}px;
+  right: ${p + 4}px;
 `;
 
 export const Podium = styled(Icon)`

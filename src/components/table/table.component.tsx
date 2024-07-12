@@ -23,28 +23,26 @@ export function TableComponent({table}: TableComponentProps): ReactElement {
 
   return (
     <Container>
-      <div>
-        {table.map((item) => {
-          let icon = youtube;
+      {table.map((item) => {
+        let icon = youtube;
 
-          if (item.type === 'soundcloud') {
-            icon = soundcloud;
-          } else if (item.type === 'bandcamp') {
-            icon = bandcamp;
-          }
+        if (item.type === 'soundcloud') {
+          icon = soundcloud;
+        } else if (item.type === 'bandcamp') {
+          icon = bandcamp;
+        }
 
-          return (
-            <CellComponent
-              key={item.id}
-              image={item.image}
-              icon={icon}
-              id={item.id}
-              title={item.title}
-              onClick={() => onClick(item.type, item.id)}
-            />
-          );
-        })}
-      </div>
+        return (
+          <CellComponent
+            key={item.id}
+            image={item.image}
+            icon={icon}
+            id={item.id}
+            title={item.title}
+            onClick={() => onClick(item.type, item.id)}
+          />
+        );
+      })}
     </Container>
   );
 }

@@ -1,45 +1,31 @@
-import styled from 'styled-components';
+import {p} from 'src/app/shared.styles';
+import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+  height: 100%;
+`;
 
-  transform: translateX(0.5em);
+const width = css`
+  width: 4em;
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   justify-self: flex-end;
-  align-items: flex-start;
 
-  position: relative;
-
-  width: 4em;
+  ${width};
   height: 10em;
 
-  transform: translateX(-1.5em);
+  transform: translate3d(-${p}px, -${p * 6}px, 0);
 `;
 
-export const TextContainer = styled.div`
+export const Text = styled.span`
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-direction: column;
-
-  height: 100%;
-  width: 100%;
-
+  justify-content: flex-start;
+  align-items: center;
   text-align: left;
-
-  > h2 {
-    height: 3em;
-  }
-
-  > div {
-    height: 40px;
-    font-size: 0.8em;
-  }
+  ${width};
 `;

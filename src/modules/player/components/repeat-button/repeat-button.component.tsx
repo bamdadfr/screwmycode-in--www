@@ -4,11 +4,8 @@ import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
 import React, {ReactElement} from 'react';
 
-import {
-  isRepeatingAtom,
-  toggleRepeatingAtom,
-} from '../../../../atoms/repeat.atoms';
-import {Button} from '../../player.module.styles';
+import {isRepeatingAtom, toggleRepeatingAtom} from '../../../../atoms/repeat.atoms';
+import {PlayerButton} from '../../player.module.styles';
 
 /**
  * Component to toggle repeat mode
@@ -18,14 +15,11 @@ export function RepeatButtonComponent(): ReactElement {
   const [, toggleRepeating] = useAtom(toggleRepeatingAtom);
 
   return (
-    <Button
+    <PlayerButton
       onClick={toggleRepeating}
       aria-label={(isRepeating ? 'disable' : 'enable') + ' repeat'}
     >
-      {isRepeating
-        ? <Icon icon={repeat} />
-        : <Icon icon={repeatOff} />
-      }
-    </Button>
+      {isRepeating ? <Icon icon={repeat} /> : <Icon icon={repeatOff} />}
+    </PlayerButton>
   );
 }

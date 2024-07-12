@@ -1,4 +1,13 @@
+import {addPaddingRight} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
+
+export const Container = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  ${addPaddingRight};
+`;
 
 export const Spacer = styled.div`
   padding-bottom: 1em;

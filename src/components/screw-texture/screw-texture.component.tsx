@@ -1,8 +1,8 @@
 import {Surface} from 'gl-react-dom/lib';
 import GLImage from 'gl-react-image';
 import React, {ReactElement} from 'react';
+import {withTimeLoop} from 'src/app/components/with-time-loop/with-time-loop';
 
-import {withTimeLoop} from '../../app/components/with-time-loop/with-time-loop';
 import {ScrewTextureNode} from './screw-texture.node';
 
 const AnimatedScrewTextureNode = withTimeLoop(ScrewTextureNode);
@@ -22,9 +22,15 @@ export function ScrewTextureComponent({
   width,
 }: ScrewTextureComponentProps): ReactElement {
   return (
-    <Surface width={width} height={width}>
+    <Surface
+      width={width}
+      height={width}
+    >
       <AnimatedScrewTextureNode dryWet={dryWet}>
-        <GLImage source={image} resizeMode="cover" />
+        <GLImage
+          source={image}
+          resizeMode="cover"
+        />
       </AnimatedScrewTextureNode>
     </Surface>
   );

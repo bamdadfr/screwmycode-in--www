@@ -8,28 +8,16 @@ interface TextLinkComponentProps {
   children: ReactElement | string;
 }
 
-export interface AnchorOptions {
-  bold?: boolean;
-  underline?: boolean;
-  underlineOnHover?: boolean;
-}
-
 export function TextLinkComponent({
   href,
   target,
   children,
-  bold = false,
-  underline = false,
-  underlineOnHover = false,
-}: TextLinkComponentProps & AnchorOptions): ReactElement {
+}: TextLinkComponentProps): ReactElement {
   return (
     <TextLink
       href={href}
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-      bold={bold}
-      underline={underline}
-      underlineOnHover={underlineOnHover}
     >
       {children}
     </TextLink>

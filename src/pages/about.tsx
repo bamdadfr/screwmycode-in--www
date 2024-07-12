@@ -5,6 +5,7 @@ import {TextLinkComponent} from '../components/text-link/text-link.component';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {
   Blue,
+  Container,
   Content,
   List,
   Spacer,
@@ -26,7 +27,7 @@ export default function AboutPage(): ReactElement {
     <>
       <MetaComponent description="About" />
       <DefaultLayout customMeta>
-        <div>
+        <Container>
           <Content>Pitch control for YouTube and Soundcloud.</Content>
 
           <Spacer />
@@ -39,7 +40,6 @@ export default function AboutPage(): ReactElement {
               <TextLinkComponent
                 href="https://en.wikipedia.org/wiki/DJ_Screw"
                 target="_blank"
-                underlineOnHover
               >
                 DJ Screw
               </TextLinkComponent>
@@ -47,7 +47,6 @@ export default function AboutPage(): ReactElement {
               <TextLinkComponent
                 href="https://en.wikipedia.org/wiki/Chopped_and_screwed"
                 target="_blank"
-                underlineOnHover
               >
                 chopped and screwed
               </TextLinkComponent>{' '}
@@ -96,14 +95,13 @@ export default function AboutPage(): ReactElement {
               <TextLinkComponent
                 href="https://github.com/bamdadsabbagh/screwmycode-in--extension#-download"
                 target="_blank"
-                underlineOnHover
               >
                 Browser Extension
               </TextLinkComponent>
               .
             </p>
           </Content>
-        </div>
+        </Container>
       </DefaultLayout>
     </>
   );
