@@ -1,3 +1,14 @@
+## [3.8.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.0...v3.8.1) (2024-07-12)
+
+
+### Bug Fixes
+
+* about page ([6a5c9dd](https://github.com/bamdadfr/screwmycode-in--www/commit/6a5c9dd92d26ecdfc4abf3533cfe5c7c315e4645))
+* add api envs ([71ca7ff](https://github.com/bamdadfr/screwmycode-in--www/commit/71ca7ffbce1d78a875fcf0a4f94506a5ad75704f))
+* improve player ([c6e8bd5](https://github.com/bamdadfr/screwmycode-in--www/commit/c6e8bd5c6163ca559f504a06dbc662c2b4bcf107))
+* set native image for now ([ef0c38d](https://github.com/bamdadfr/screwmycode-in--www/commit/ef0c38d143bf8f0509e5c63319825f09505986c5))
+* simplify text link component ([c16dad7](https://github.com/bamdadfr/screwmycode-in--www/commit/c16dad77ff790ae1ae20904c12833048cbd2b74e))
+
 # [3.8.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.7.1...v3.8.0) (2024-07-11)
 
 
