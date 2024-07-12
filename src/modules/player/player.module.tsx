@@ -1,5 +1,4 @@
 import React, {ReactElement} from 'react';
-import {isDesktop} from 'react-device-detect';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
 import {NativeComponent} from 'src/modules/player/components/artwork/native.component';
 import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
@@ -32,7 +31,8 @@ export function PlayerModule(): ReactElement {
   return (
     <>
       <ImageContainer>
-        {isDesktop ? <WebGlComponent /> : <NativeComponent />}
+        {/* {isDesktop ? <WebGlComponent /> : <NativeComponent />} */}
+        {false ? <WebGlComponent /> : <NativeComponent />}
       </ImageContainer>
 
       <PlayerContainer>
