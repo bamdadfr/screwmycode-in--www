@@ -1,8 +1,7 @@
+import {mediaQueries} from 'src/app/styles/breakpoints';
+import {widths} from 'src/app/styles/widths';
+import {mapRange} from 'src/utils/map-range/map-range';
 import styled from 'styled-components';
-
-import {mediaQueries} from '../../../../app/styles/breakpoints';
-import {widths} from '../../../../app/styles/widths';
-import {mapRange} from '../../../../utils/map-range/map-range';
 
 const getFilter = ({sepia, hueRotate, saturate, blur}) => `
       sepia(${sepia}%)
@@ -13,17 +12,7 @@ const getFilter = ({sepia, hueRotate, saturate, blur}) => `
       brightness(0.618)
     `;
 
-export const Container = styled.span <{speed: string;}>`
-  // global
-  object-fit: cover;
-  position: fixed;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  // sizes
+export const Container = styled.span<{speed: string;}>`
   ${mediaQueries.below.tablet} {
     width: calc(${widths.mobile} + 3em);
   }

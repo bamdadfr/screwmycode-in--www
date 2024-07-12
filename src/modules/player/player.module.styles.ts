@@ -1,29 +1,37 @@
+import {
+  addGap,
+  addPaddings,
+  addSquareWidths,
+  centerFlex,
+  maximize,
+} from 'src/app/shared.styles';
 import {mediaQueries} from 'src/app/styles/breakpoints';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100%;
+export const ImageContainer = styled.div`
+  position: fixed;
+  z-index: -1;
+
+  ${centerFlex};
+  ${addPaddings};
+  ${maximize};
 `;
 
-export const Button = styled.button`
-  touch-action: manipulation;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: ${({theme}) => theme.shadow.opacity};
-  }
+export const PlayerContainer = styled.div`
+  ${addPaddings};
+  ${maximize};
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const PlayerWrapper = styled.div`
   display: grid;
-  grid-gap: 0.25em;
+  ${addGap};
   align-items: center;
-
-  width: 100%;
-
-  padding: 0.5em 0;
-
-  font-size: 0.75em;
+  ${addSquareWidths};
 
   svg {
     font-size: 2em;
@@ -39,7 +47,16 @@ export const PlayerWrapper = styled.div`
   ${mediaQueries.below.tablet} {
     font-size: 0.9em;
     grid-template-columns: 2em 2em 1fr 6em;
-    grid-gap: 0.25em;
+    gap: 0.25em;
+  }
+`;
+
+export const PlayerButton = styled.button`
+  touch-action: manipulation;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: ${({theme}) => theme.shadow.opacity};
   }
 `;
 

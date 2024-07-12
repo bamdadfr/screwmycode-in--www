@@ -6,7 +6,7 @@ import React, {ReactElement} from 'react';
 
 import {isMutedAtom} from '../../../../atoms/mute.atoms';
 import {volumeAtom} from '../../../../atoms/volume.atoms';
-import {Button} from '../../player.module.styles';
+import {PlayerButton} from '../../player.module.styles';
 
 /**
  * Component to toggle the volume
@@ -17,13 +17,12 @@ export function VolumeButtonComponent(): ReactElement {
 
   // todo bind click action
   return (
-    <Button
-      aria-label="volume"
-    >
-      {volume === 0 || isMuted
-        ? <Icon icon={volumeOff} />
-        : <Icon icon={volumeHigh} />
-      }
-    </Button>
+    <PlayerButton aria-label="volume">
+      {volume === 0 || isMuted ? (
+        <Icon icon={volumeOff} />
+      ) : (
+        <Icon icon={volumeHigh} />
+      )}
+    </PlayerButton>
   );
 }

@@ -1,11 +1,11 @@
-import {addMargins, centerFlex} from 'src/app/shared.styles';
+import {addGapDouble, centerFlex} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Form = styled.form`
   ${centerFlex};
-  ${addMargins};
+  height: 100%;
   flex-direction: column;
-  gap: 14px;
+  ${addGapDouble};
 `;
 
 const formElement = css`

@@ -1,7 +1,9 @@
 import React, {ReactElement} from 'react';
+import {isDesktop} from 'react-device-detect';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
+import {NativeComponent} from 'src/modules/player/components/artwork/native.component';
+import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 
-import {ArtworkComponent} from './components/artwork/artwork.component';
 import {PlayPauseButtonComponent} from './components/play-pause-button/play-pause-button.component';
 import {RepeatButtonComponent} from './components/repeat-button/repeat-button.component';
 import {SeekComponent} from './components/seek/seek.component';
@@ -11,7 +13,8 @@ import {TitleComponent} from './components/title/title.component';
 import {VolumeButtonComponent} from './components/volume-button/volume-button.component';
 import {VolumeSliderComponent} from './components/volume-slider/volume-slider.component';
 import {
-  Container,
+  ImageContainer,
+  PlayerContainer,
   PlayerWrapper,
   PlayPauseButtonWrapper,
   RepeatButtonWrapper,
@@ -27,35 +30,39 @@ import {
  */
 export function PlayerModule(): ReactElement {
   return (
-    <Container>
-      <ArtworkComponent />
+    <>
+      <ImageContainer>
+        {isDesktop ? <WebGlComponent /> : <NativeComponent />}
+      </ImageContainer>
 
-      <PlayerWrapper>
-        <TitleWrapper>
-          <TitleComponent />
-        </TitleWrapper>
-        <RepeatButtonWrapper>
-          <RepeatButtonComponent />
-        </RepeatButtonWrapper>
-        <PlayPauseButtonWrapper>
-          <PlayPauseButtonComponent />
-        </PlayPauseButtonWrapper>
-        <SeekWrapper>
-          <SeekComponent />
-        </SeekWrapper>
-        <TimeWrapper>
-          <TimeComponent />
-        </TimeWrapper>
-        <VolumeButtonWrapper>
-          <VolumeButtonComponent />
-        </VolumeButtonWrapper>
-        <VolumeSliderWrapper>
-          <VolumeSliderComponent />
-        </VolumeSliderWrapper>
-      </PlayerWrapper>
+      <PlayerContainer>
+        <PlayerWrapper>
+          <TitleWrapper>
+            <TitleComponent />
+          </TitleWrapper>
+          <RepeatButtonWrapper>
+            <RepeatButtonComponent />
+          </RepeatButtonWrapper>
+          <PlayPauseButtonWrapper>
+            <PlayPauseButtonComponent />
+          </PlayPauseButtonWrapper>
+          <SeekWrapper>
+            <SeekComponent />
+          </SeekWrapper>
+          <TimeWrapper>
+            <TimeComponent />
+          </TimeWrapper>
+          <VolumeButtonWrapper>
+            <VolumeButtonComponent />
+          </VolumeButtonWrapper>
+          <VolumeSliderWrapper>
+            <VolumeSliderComponent />
+          </VolumeSliderWrapper>
+        </PlayerWrapper>
 
-      <IndicatorsComponent />
-      <SpeedComponent />
-    </Container>
+        <IndicatorsComponent />
+        <SpeedComponent />
+      </PlayerContainer>
+    </>
   );
 }

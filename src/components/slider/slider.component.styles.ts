@@ -1,3 +1,4 @@
+import {addSquareWidths} from 'src/app/shared.styles';
 import {type SliderComponentProps} from 'src/components/slider/slider.component';
 import styled, {css} from 'styled-components';
 
@@ -58,6 +59,7 @@ export const Input = styled.input.attrs((props) => ({
 
   margin: 0;
   padding: 0;
+  ${addSquareWidths};
   width: ${config.trackW};
   height: ${config.thumbD};
   background: transparent;

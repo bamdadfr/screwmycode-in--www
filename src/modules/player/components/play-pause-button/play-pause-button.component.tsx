@@ -4,11 +4,8 @@ import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
 import React, {ReactElement} from 'react';
 
-import {
-  isPlayingAtom,
-  togglePlayingAtom,
-} from '../../../../atoms/play-pause.atoms';
-import {Button} from '../../player.module.styles';
+import {isPlayingAtom, togglePlayingAtom} from '../../../../atoms/play-pause.atoms';
+import {PlayerButton} from '../../player.module.styles';
 
 /**
  * Component to render the play/pause button
@@ -18,14 +15,11 @@ export function PlayPauseButtonComponent(): ReactElement {
   const [, togglePlaying] = useAtom(togglePlayingAtom);
 
   return (
-    <Button
+    <PlayerButton
       onClick={togglePlaying}
-      aria-label={(isPlaying ? 'pause' : 'play')}
+      aria-label={isPlaying ? 'pause' : 'play'}
     >
-      {isPlaying
-        ? <Icon icon={pause} />
-        : <Icon icon={play} />
-      }
-    </Button>
+      {isPlaying ? <Icon icon={pause} /> : <Icon icon={play} />}
+    </PlayerButton>
   );
 }
