@@ -95,22 +95,22 @@ export const maximize = css`
 
 export const addSquareWidths = css`
   ${mediaQueries.below.tablet} {
-    width: calc(${widths.mobile} + 3em);
+    width: calc(${widths.mobile});
   }
 
   ${mediaQueries.above.tablet} {
-    width: calc(${widths.tablet} + 2em);
+    width: calc(${widths.tablet});
   }
 
   ${mediaQueries.above.desktop} {
-    width: calc(${widths.desktop} + 2em);
+    width: calc(${widths.desktop});
   }
 
   ${mediaQueries.above.widescreen} {
-    width: calc(${widths.widescreen} + 2em);
+    width: calc(${widths.widescreen});
   }
 
   ${mediaQueries.above.fullhd} {
-    width: calc(${widths.fullhd} + 2em);
+    width: calc(${widths.fullhd});
   }
 `;

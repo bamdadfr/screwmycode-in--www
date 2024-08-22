@@ -10,6 +10,7 @@ export interface SliderComponentProps {
   buffered?: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
+  isTrim?: boolean;
 }
 
 /**
@@ -23,6 +24,7 @@ export function SliderComponent({
   buffered = 0,
   onChange,
   name,
+  isTrim = false,
 }: SliderComponentProps): ReactElement {
   return (
     <Input
@@ -36,6 +38,7 @@ export function SliderComponent({
       value={value}
       buffered={buffered}
       onChange={onChange}
+      isTrim={isTrim}
     />
   );
 }

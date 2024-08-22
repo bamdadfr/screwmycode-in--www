@@ -17,6 +17,7 @@ export function SpeedComponent(): ReactElement {
       step={0.005}
       value={value}
       onChange={onChange}
+      isTrim
     />
   );
 }

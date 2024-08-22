@@ -59,7 +59,7 @@ export const Input = styled.input.attrs((props) => ({
 
   margin: 0;
   padding: 0;
-  ${addSquareWidths};
+  ${(props) => props.isTrim && addSquareWidths};
   width: ${config.trackW};
   height: ${config.thumbD};
   background: transparent;
