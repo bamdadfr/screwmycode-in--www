@@ -1,3 +1,10 @@
+## [3.8.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.1...v3.8.2) (2024-08-22)
+
+
+### Bug Fixes
+
+* improve player layout ([851c9b5](https://github.com/bamdadfr/screwmycode-in--www/commit/851c9b58490bffad583ba04e90f7de645903bef5))
+
 ## [3.8.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.0...v3.8.1) (2024-07-12)
 
 
