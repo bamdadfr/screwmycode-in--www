@@ -36,9 +36,9 @@ export function SliderComponent({
       max={max}
       step={step}
       value={value}
-      buffered={buffered}
+      $buffered={buffered}
       onChange={onChange}
-      isTrim={isTrim}
+      $isTrim={isTrim}
     />
   );
 }

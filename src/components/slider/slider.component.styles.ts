@@ -38,18 +38,23 @@ const handle = css`
     0 0 1px ${(props) => props.theme.background.highlight};
 `;
 
-const getProgress = (props: SliderComponentProps) =>
+interface InputProps extends Omit<SliderComponentProps, 'buffered' | 'isTrim'> {
+  $buffered?: number;
+  $isTrim: boolean;
+}
+
+const getProgress = (props: InputProps) =>
   (props.value - props.min) / (props.max - props.min);
-const getBuffered = (props: SliderComponentProps) =>
-  (props?.buffered ?? 0 - props.min) / (props.max - props.min);
+const getBuffered = (props: InputProps) =>
+  (props?.$buffered ?? 0 - props.min) / (props.max - props.min);
 
 // @see https://codepen.io/thebabydino/pen/goYYrN
 // @ts-expect-error dumb
 // noinspection CssUnresolvedCustomProperty
 export const Input = styled.input.attrs((props) => ({
   style: {
-    '--progress': getProgress(props as SliderComponentProps),
-    '--buffered': getBuffered(props as SliderComponentProps),
+    '--progress': getProgress(props as unknown as InputProps),
+    '--buffered': getBuffered(props as unknown as InputProps),
   },
 }))<SliderComponentProps>`
   &,
@@ -59,7 +64,11 @@ export const Input = styled.input.attrs((props) => ({
 
   margin: 0;
   padding: 0;
-  ${(props) => props.isTrim && addSquareWidths};
+  ${(props) => 
+    // @ts-expect-error actually exists
+    props.$isTrim && addSquareWidths
+};
+
   width: ${config.trackW};
   height: ${config.thumbD};
   background: transparent;
