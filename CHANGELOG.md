@@ -1,3 +1,10 @@
+## [3.8.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.2...v3.8.3) (2024-08-22)
+
+
+### Bug Fixes
+
+* improve styled components typings ([a7d3554](https://github.com/bamdadfr/screwmycode-in--www/commit/a7d3554e531633e1244005bcfbf2c5d91b40a94b))
+
 ## [3.8.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.1...v3.8.2) (2024-08-22)
 
 
