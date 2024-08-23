@@ -1,3 +1,10 @@
+## [3.9.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.0...v3.9.1) (2024-08-23)
+
+
+### Bug Fixes
+
+* enable web gl for all devices ([4ea0757](https://github.com/bamdadfr/screwmycode-in--www/commit/4ea0757c9281a16bc7a64177c86ed1c7226875a7))
+
 # [3.9.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.3...v3.9.0) (2024-08-23)
 
 
