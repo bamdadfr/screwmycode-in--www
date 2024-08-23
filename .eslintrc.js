@@ -26,6 +26,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@react-three/recommended',
   ],
   plugins: [
     '@typescript-eslint',
@@ -37,6 +38,8 @@ module.exports = {
     'react-hooks',
     'testing-library',
     'jest-dom',
+    '@stylistic',
+    '@react-three',
   ],
   rules: {
     // custom rules
@@ -50,13 +53,13 @@ module.exports = {
       {extensions: ['.js', '.jsx', '.ts', '.tsx']},
     ],
     'import/extensions': 'off',
-    'react/jsx-indent': ['error', 2],
+    '@stylistic/jsx-indent': ['error', 2],
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': ['error'],
     'react-hooks/exhaustive-deps': ['warn'],
     // .js rules
     'strict': 'off',
-    'semi': ['error', 'always'],
+    '@stylistic/semi': ['error', 'always'],
     'indent': [
       'error',
       2,
@@ -147,7 +150,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
     'import/prefer-default-export': 'off',
     'jsdoc/require-jsdoc': 'off',
-    '@typescript-eslint/type-annotation-spacing': [
+    '@stylistic/type-annotation-spacing': [
       'error',
       {
         before: false,
@@ -159,7 +162,7 @@ module.exports = {
         },
       },
     ],
-    '@typescript-eslint/member-delimiter-style': [
+    '@stylistic/member-delimiter-style': [
       'error',
       {
         multiline: {
@@ -173,9 +176,21 @@ module.exports = {
         multilineDetection: 'brackets',
       },
     ],
-    '@typescript-eslint/object-curly-spacing': ['error', 'never'],
+    '@stylistic/object-curly-spacing': ['error', 'never'],
     'react/jsx-no-useless-fragment': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'react/no-unknown-property': [
+      'error',
+      {
+        ignore: [
+          'args',
+          'attach',
+          'fragmentShader',
+          'vertexShader',
+          'uniforms',
+        ],
+      },
+    ],
   },
 };

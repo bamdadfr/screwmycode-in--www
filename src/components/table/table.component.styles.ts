@@ -1,11 +1,16 @@
-import {addGap, addVerticalScroll} from 'src/app/shared.styles';
+import {
+  addGap,
+  addHorizontalPadding,
+  addVerticalScroll,
+} from 'src/app/shared.styles';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  ${addVerticalScroll};
   display: flex;
   flex-direction: column;
+  ${addVerticalScroll};
   ${addGap};
+  ${addHorizontalPadding};
 `;
 
 export const Item = styled.div`

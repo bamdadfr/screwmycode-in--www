@@ -9,9 +9,6 @@ import {TitleComponent} from 'src/components/title/title.component';
 
 import {Container, Left, Podium, Right} from './header.component.styles';
 
-/**
- * Component for the header of the application
- */
 export function HeaderComponent(): ReactElement {
   return (
     <Container>

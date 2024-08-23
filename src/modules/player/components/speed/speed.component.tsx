@@ -1,23 +1,31 @@
 import React, {ReactElement} from 'react';
 import {SliderComponent} from 'src/components/slider/slider.component';
+import styled from 'styled-components';
 
 import {useSpeedComponent} from './hooks/use-speed-component';
 
-/**
- * Component for the player speed
- */
-export function SpeedComponent(): ReactElement {
+interface Props {
+  width: number;
+}
+
+const Container = styled.div<Props>`
+  display: flex;
+  width: ${(props) => props.width}px;
+`;
+
+export function SpeedComponent({width}: Props): ReactElement {
   const {value, onChange} = useSpeedComponent();
 
   return (
-    <SliderComponent
-      name="speed slider"
-      min={0.5}
-      max={1.5}
-      step={0.005}
-      value={value}
-      onChange={onChange}
-      isTrim
-    />
+    <Container width={width}>
+      <SliderComponent
+        name="speed slider"
+        min={0.5}
+        max={1.5}
+        step={0.005}
+        value={value}
+        onChange={onChange}
+      />
+    </Container>
   );
 }

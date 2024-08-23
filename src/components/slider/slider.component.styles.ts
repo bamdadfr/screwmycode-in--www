@@ -1,4 +1,3 @@
-import {addSquareWidths} from 'src/app/shared.styles';
 import {type SliderComponentProps} from 'src/components/slider/slider.component';
 import styled, {css} from 'styled-components';
 
@@ -40,7 +39,6 @@ const handle = css`
 
 interface InputProps extends Omit<SliderComponentProps, 'buffered' | 'isTrim'> {
   $buffered?: number;
-  $isTrim: boolean;
 }
 
 const getProgress = (props: InputProps) =>
@@ -51,23 +49,16 @@ const getBuffered = (props: InputProps) =>
 // @see https://codepen.io/thebabydino/pen/goYYrN
 // @ts-expect-error dumb
 // noinspection CssUnresolvedCustomProperty
-export const Input = styled.input.attrs((props) => ({
+export const Input = styled.input.attrs((props: InputProps) => ({
   style: {
-    '--progress': getProgress(props as unknown as InputProps),
-    '--buffered': getBuffered(props as unknown as InputProps),
+    '--progress': getProgress(props),
+    '--buffered': getBuffered(props),
   },
 }))<SliderComponentProps>`
   &,
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
-
-  margin: 0;
-  padding: 0;
-  ${(props) => 
-    // @ts-expect-error actually exists
-    props.$isTrim && addSquareWidths
-};
 
   width: ${config.trackW};
   height: ${config.thumbD};

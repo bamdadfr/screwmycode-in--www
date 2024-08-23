@@ -10,12 +10,8 @@ export interface SliderComponentProps {
   buffered?: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
-  isTrim?: boolean;
 }
 
-/**
- * Component for a slider
- */
 export function SliderComponent({
   min,
   max,
@@ -24,7 +20,6 @@ export function SliderComponent({
   buffered = 0,
   onChange,
   name,
-  isTrim = false,
 }: SliderComponentProps): ReactElement {
   return (
     <Input
@@ -36,9 +31,8 @@ export function SliderComponent({
       max={max}
       step={step}
       value={value}
-      $buffered={buffered}
+      buffered={buffered}
       onChange={onChange}
-      $isTrim={isTrim}
     />
   );
 }
