@@ -1,11 +1,9 @@
-import {p} from 'src/app/shared.styles';
+import {centerFlex, maximize, p} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  ${centerFlex};
+  ${maximize};
 `;
 
 const width = css`
@@ -19,7 +17,7 @@ export const ImageContainer = styled.div`
   ${width};
   height: 10em;
 
-  transform: translate3d(-${p}px, -${p * 6}px, 0);
+  transform: translate3d(-${p}px, -${p * 4}px, 0);
 `;
 
 export const Text = styled.span`

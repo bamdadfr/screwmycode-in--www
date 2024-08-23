@@ -1,4 +1,3 @@
-import {addPaddingRight} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
@@ -6,7 +5,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  ${addPaddingRight};
 `;
 
 export const Spacer = styled.div`

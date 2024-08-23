@@ -1,6 +1,8 @@
 import {mediaQueries} from 'src/app/styles/breakpoints';
-import {widths} from 'src/app/styles/widths';
 import styled, {css} from 'styled-components';
+
+export const p = 14;
+export const headerHeight = `${p * 4}px`;
 
 export const centerFlex = css`
   display: flex;
@@ -12,25 +14,24 @@ export const CenteredDiv = styled.div`
   ${centerFlex};
 `;
 
-export const p = 14;
-export const addPaddings = css`
-  padding: ${p - 4}px ${p}px;
+export const addHorizontalPadding = css`
+  padding: 0 ${p}px;
 `;
 
 export const addFontSizeSmall = css`
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 export const addFontSizeMedium = css`
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 export const addFontSizeBig = css`
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 export const addFontSizeGiant = css`
-  font-size: 22px;
+  font-size: 20px;
 `;
 
 export const addFontSizes = css`
@@ -61,14 +62,6 @@ export const addVerticalScroll = css`
   overflow-y: auto;
 `;
 
-export const addPaddingTop = css`
-  padding-top: ${p * 4}px;
-`;
-
-export const addPaddingRight = css`
-  padding-right: ${p}px;
-`;
-
 export const addHoverLink = css`
   a {
     transition: color 200ms ease-in-out;
@@ -91,26 +84,4 @@ export const addGapDouble = css`
 export const maximize = css`
   width: 100%;
   height: 100%;
-`;
-
-export const addSquareWidths = css`
-  ${mediaQueries.below.tablet} {
-    width: calc(${widths.mobile});
-  }
-
-  ${mediaQueries.above.tablet} {
-    width: calc(${widths.tablet});
-  }
-
-  ${mediaQueries.above.desktop} {
-    width: calc(${widths.desktop});
-  }
-
-  ${mediaQueries.above.widescreen} {
-    width: calc(${widths.widescreen});
-  }
-
-  ${mediaQueries.above.fullhd} {
-    width: calc(${widths.fullhd});
-  }
 `;

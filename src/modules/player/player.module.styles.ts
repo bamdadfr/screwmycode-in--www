@@ -1,24 +1,15 @@
-import {
-  addGap,
-  addPaddings,
-  addSquareWidths,
-  centerFlex,
-  maximize,
-} from 'src/app/shared.styles';
+import {addGap, centerFlex, maximize} from 'src/app/shared.styles';
 import {mediaQueries} from 'src/app/styles/breakpoints';
 import styled from 'styled-components';
 
 export const ImageContainer = styled.div`
-  position: fixed;
   z-index: -1;
-
+  position: fixed;
   ${centerFlex};
-  ${addPaddings};
   ${maximize};
 `;
 
 export const PlayerContainer = styled.div`
-  ${addPaddings};
   ${maximize};
   position: fixed;
   display: flex;
@@ -27,11 +18,15 @@ export const PlayerContainer = styled.div`
   align-items: center;
 `;
 
-export const PlayerWrapper = styled.div`
+interface Props {
+  width: number;
+}
+
+export const PlayerWrapper = styled.div<Props>`
   display: grid;
-  ${addGap};
   align-items: center;
-  ${addSquareWidths};
+  ${addGap};
+  width: ${(props) => props.width}px;
 
   svg {
     font-size: 2em;

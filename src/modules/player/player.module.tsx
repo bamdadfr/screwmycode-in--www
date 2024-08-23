@@ -1,9 +1,12 @@
-import React, {ReactElement} from 'react';
-// import {isDesktop} from 'react-device-detect';
+import {ResizeObserver} from '@juggle/resize-observer';
+import React, {ReactElement, useMemo} from 'react';
+import useMeasure from 'react-use-measure';
+import {p} from 'src/app/shared.styles';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
 import {NativeComponent} from 'src/modules/player/components/artwork/native.component';
-import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 
+// import {isDesktop} from 'react-device-detect';
+// import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 import {PlayPauseButtonComponent} from './components/play-pause-button/play-pause-button.component';
 import {RepeatButtonComponent} from './components/repeat-button/repeat-button.component';
 import {SeekComponent} from './components/seek/seek.component';
@@ -25,19 +28,20 @@ import {
   VolumeSliderWrapper,
 } from './player.module.styles';
 
-/**
- * Component to render the player.
- */
 export function PlayerModule(): ReactElement {
+  const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
+  const imageWidth = useMemo(() => width - p * 4, [width]);
+  const playerWidth = useMemo(() => width - p * 6, [width]);
+
   return (
     <>
-      <ImageContainer>
+      <ImageContainer ref={ref}>
         {/* {isDesktop ? <WebGlComponent /> : <NativeComponent />} */}
-        {false ? <WebGlComponent /> : <NativeComponent />}
+        <NativeComponent width={imageWidth} />
       </ImageContainer>
 
       <PlayerContainer>
-        <PlayerWrapper>
+        <PlayerWrapper width={playerWidth}>
           <TitleWrapper>
             <TitleComponent />
           </TitleWrapper>
@@ -62,7 +66,8 @@ export function PlayerModule(): ReactElement {
         </PlayerWrapper>
 
         <IndicatorsComponent />
-        <SpeedComponent />
+
+        <SpeedComponent width={playerWidth} />
       </PlayerContainer>
     </>
   );

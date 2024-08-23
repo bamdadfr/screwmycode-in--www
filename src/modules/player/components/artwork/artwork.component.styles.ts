@@ -1,5 +1,4 @@
-import {mediaQueries} from 'src/app/styles/breakpoints';
-import {widths} from 'src/app/styles/widths';
+import {centerFlex} from 'src/app/shared.styles';
 import {mapRange} from 'src/utils/map-range/map-range';
 import styled from 'styled-components';
 
@@ -13,25 +12,7 @@ const getFilter = ({sepia, hueRotate, saturate, blur}) => `
     `;
 
 export const Container = styled.span<{speed: string;}>`
-  ${mediaQueries.below.tablet} {
-    width: calc(${widths.mobile} + 3em);
-  }
-
-  ${mediaQueries.above.tablet} {
-    width: calc(${widths.tablet} + 2em);
-  }
-
-  ${mediaQueries.above.desktop} {
-    width: calc(${widths.desktop} + 2em);
-  }
-
-  ${mediaQueries.above.widescreen} {
-    width: calc(${widths.widescreen} + 2em);
-  }
-
-  ${mediaQueries.above.fullhd} {
-    width: calc(${widths.fullhd} + 2em);
-  }
+  ${centerFlex};
 
   // filters
   filter: ${({speed}) => {

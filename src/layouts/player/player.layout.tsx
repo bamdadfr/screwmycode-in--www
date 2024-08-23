@@ -14,9 +14,6 @@ export interface PlayerLayoutProps {
   speed: number;
 }
 
-/**
- * Layout for the player page
- */
 export function PlayerLayout({
   title,
   image,

@@ -7,11 +7,6 @@ interface Props {
   url: string;
 }
 
-/**
- * Component to play audio files
- * @param root0
- * @param root0.url
- */
 export function AudioComponent({url}: Props): ReactElement {
   const {ref} = useAudioModule(url);
 
