@@ -36,6 +36,7 @@ export function SliderComponent({
       max={max}
       step={step}
       value={value}
+      // @ts-expect-error styled component shadow prop
       $buffered={buffered}
       onChange={onChange}
       $isTrim={isTrim}

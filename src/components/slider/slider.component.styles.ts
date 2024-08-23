@@ -51,10 +51,10 @@ const getBuffered = (props: InputProps) =>
 // @see https://codepen.io/thebabydino/pen/goYYrN
 // @ts-expect-error dumb
 // noinspection CssUnresolvedCustomProperty
-export const Input = styled.input.attrs((props) => ({
+export const Input = styled.input.attrs((props: InputProps) => ({
   style: {
-    '--progress': getProgress(props as unknown as InputProps),
-    '--buffered': getBuffered(props as unknown as InputProps),
+    '--progress': getProgress(props),
+    '--buffered': getBuffered(props),
   },
 }))<SliderComponentProps>`
   &,
@@ -64,10 +64,9 @@ export const Input = styled.input.attrs((props) => ({
 
   margin: 0;
   padding: 0;
-  ${(props) => 
+  ${(props) =>
     // @ts-expect-error actually exists
-    props.$isTrim && addSquareWidths
-};
+    props.$isTrim && addSquareWidths};
 
   width: ${config.trackW};
   height: ${config.thumbD};
