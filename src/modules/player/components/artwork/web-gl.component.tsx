@@ -5,7 +5,11 @@ import {speedAtom} from 'src/atoms/speed.atoms';
 import {TextureComponent} from 'src/components/texture/texture.component';
 import {Container} from 'src/modules/player/components/artwork/artwork.component.styles';
 
-export function WebGlComponent(): ReactElement {
+interface Props {
+  width: number;
+}
+
+export function WebGlComponent({width}: Props): ReactElement {
   const [artwork] = useAtom(artworkAtom);
   const [speed] = useAtom(speedAtom);
 
@@ -14,6 +18,7 @@ export function WebGlComponent(): ReactElement {
       <TextureComponent
         image={artwork || '/'}
         dryWet={speed}
+        width={width}
       />
     </Container>
   );

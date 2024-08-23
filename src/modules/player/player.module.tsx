@@ -37,7 +37,7 @@ export function PlayerModule(): ReactElement {
     <>
       <ImageContainer ref={ref}>
         {isDesktop ? (
-          <WebGlComponent />
+          <WebGlComponent width={imageWidth} />
         ) : (
           <NativeComponent width={imageWidth} />
         )}

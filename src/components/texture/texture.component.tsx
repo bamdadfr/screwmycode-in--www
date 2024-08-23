@@ -1,5 +1,6 @@
 import {Canvas, useFrame} from '@react-three/fiber';
 import React, {ReactElement, useMemo} from 'react';
+import {p} from 'src/app/shared.styles';
 import {mapRange} from 'src/utils/map-range/map-range';
 import {ShaderMaterial, TextureLoader} from 'three';
 
@@ -8,6 +9,7 @@ import fragmentShader from './texture.shaders.fragment.glsl';
 interface Props {
   image: string;
   dryWet: number;
+  width: number;
 }
 
 const vertexShader = `
@@ -53,9 +55,9 @@ function Plane({size, texture, ratio}) {
   );
 }
 
-export function TextureComponent({image, dryWet}: Props): ReactElement {
+export function TextureComponent({image, dryWet, width}: Props): ReactElement {
   const texture = new TextureLoader().load(image);
-  const size = useMemo(() => 8 * (window.innerWidth / window.innerHeight), []);
+  const size = useMemo(() => width / 100 - (p / 100) * 2, [width]);
   const ratio = 0.005 + mapRange(dryWet, 0.5, 1.5, 1.6, -1.6, true);
 
   return (
