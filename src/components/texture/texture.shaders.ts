@@ -1,6 +1,5 @@
 import {GLSL, Shaders} from 'gl-react';
-
-import fragmentShader from './screw-texture.shaders.fragment.glsl';
+import fragmentShader from 'src/components/texture/texture.shaders.fragment.glsl';
 
 export const shaders = Shaders.create({
   screw: {

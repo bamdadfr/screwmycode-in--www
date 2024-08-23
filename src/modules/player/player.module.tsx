@@ -1,12 +1,12 @@
 import {ResizeObserver} from '@juggle/resize-observer';
 import React, {ReactElement, useMemo} from 'react';
+import {isDesktop} from 'react-device-detect';
 import useMeasure from 'react-use-measure';
 import {p} from 'src/app/shared.styles';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
 import {NativeComponent} from 'src/modules/player/components/artwork/native.component';
+import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 
-// import {isDesktop} from 'react-device-detect';
-// import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 import {PlayPauseButtonComponent} from './components/play-pause-button/play-pause-button.component';
 import {RepeatButtonComponent} from './components/repeat-button/repeat-button.component';
 import {SeekComponent} from './components/seek/seek.component';
@@ -36,8 +36,11 @@ export function PlayerModule(): ReactElement {
   return (
     <>
       <ImageContainer ref={ref}>
-        {/* {isDesktop ? <WebGlComponent /> : <NativeComponent />} */}
-        <NativeComponent width={imageWidth} />
+        {isDesktop ? (
+          <WebGlComponent />
+        ) : (
+          <NativeComponent width={imageWidth} />
+        )}
       </ImageContainer>
 
       <PlayerContainer>

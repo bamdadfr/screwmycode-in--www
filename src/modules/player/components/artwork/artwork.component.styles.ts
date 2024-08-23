@@ -1,4 +1,4 @@
-import {centerFlex} from 'src/app/shared.styles';
+import {centerFlex, maximize} from 'src/app/shared.styles';
 import {mapRange} from 'src/utils/map-range/map-range';
 import styled from 'styled-components';
 
@@ -13,6 +13,7 @@ const getFilter = ({sepia, hueRotate, saturate, blur}) => `
 
 export const Container = styled.span<{speed: string;}>`
   ${centerFlex};
+  ${maximize};
 
   // filters
   filter: ${({speed}) => {

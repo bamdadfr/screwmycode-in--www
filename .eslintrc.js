@@ -26,6 +26,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@react-three/recommended',
   ],
   plugins: [
     '@typescript-eslint',
@@ -38,6 +39,7 @@ module.exports = {
     'testing-library',
     'jest-dom',
     '@stylistic',
+    '@react-three',
   ],
   rules: {
     // custom rules
@@ -178,5 +180,17 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'react/no-unknown-property': [
+      'error',
+      {
+        ignore: [
+          'args',
+          'attach',
+          'fragmentShader',
+          'vertexShader',
+          'uniforms',
+        ],
+      },
+    ],
   },
 };
