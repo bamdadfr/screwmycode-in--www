@@ -1,3 +1,20 @@
+# [3.9.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.3...v3.9.0) (2024-08-23)
+
+
+### Bug Fixes
+
+* improve slider typings ([81ea2cd](https://github.com/bamdadfr/screwmycode-in--www/commit/81ea2cd201f162715550778355db3d222ebdb9ad))
+* improve web gl texture size ([f768540](https://github.com/bamdadfr/screwmycode-in--www/commit/f7685401662f152d67737a1dbdca364916d3ce7b))
+* remove dead code ([5d123b7](https://github.com/bamdadfr/screwmycode-in--www/commit/5d123b7f7c5a0a4b7200c85ef81dc0694db4aac3))
+* rewrite web gl texture ([7edd69b](https://github.com/bamdadfr/screwmycode-in--www/commit/7edd69b2299d7863b32093d0dce30165641523cc))
+* sanitize player layout ([53db810](https://github.com/bamdadfr/screwmycode-in--www/commit/53db8106f9e13e23acba3f3d7a5318109c62cff7))
+* update eslint deprecated rules with stylistic plugin ([4a707a1](https://github.com/bamdadfr/screwmycode-in--www/commit/4a707a1ba7b7484415ebb29f47d262284615c0e6))
+
+
+### Features
+
+* update all dependencies ([371ffb6](https://github.com/bamdadfr/screwmycode-in--www/commit/371ffb69f08388097a0bad12b38e154d68a1bf58))
+
 ## [3.8.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.8.2...v3.8.3) (2024-08-22)
 
 
