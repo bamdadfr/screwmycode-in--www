@@ -33,7 +33,7 @@
     "@iconify/react": "^5.0.2",
     "@juggle/resize-observer": "^3.4.0",
     "@react-spring/web": "^9.7.4",
-    "@react-three/fiber": "^8.17.5",
+    "@react-three/fiber": "^8.17.7",
     "@sentry/nextjs": "^8.26.0",
     "@sentry/react": "^8.26.0",
     "@sentry/tracing": "^7.114.0",
