@@ -19,7 +19,7 @@ export default function LatestPage({latest}: LatestPageProps): ReactElement {
     <>
       <MetaComponent description="Latest" />
       <DefaultLayout customMeta>
-        <TableComponent table={latest} />
+        <TableComponent items={latest} />
       </DefaultLayout>
     </>
   );

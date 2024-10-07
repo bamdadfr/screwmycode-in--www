@@ -28,3 +28,15 @@ export const Podium = styled(Icon)`
   font-size: 91%;
   transform: translate(4px, -1px);
 `;
+
+export const IconContainer = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TitleContainer = styled.h1`
+  ${centerFlex};
+  ${addHoverLink};
+  font-weight: 900;
+`;
