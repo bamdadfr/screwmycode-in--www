@@ -1,3 +1,10 @@
+## [3.9.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.2...v3.9.3) (2024-10-07)
+
+
+### Bug Fixes
+
+* update deps ([031f64b](https://github.com/bamdadfr/screwmycode-in--www/commit/031f64b286b55bb636df7587b83a6f474e8822d8))
+
 ## [3.9.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.1...v3.9.2) (2024-10-07)
 
 
