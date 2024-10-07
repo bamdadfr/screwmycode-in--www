@@ -1,3 +1,11 @@
+## [3.9.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.1...v3.9.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* improve header links ([77b9bb6](https://github.com/bamdadfr/screwmycode-in--www/commit/77b9bb6ab507bfe9a3432647276dfac06ff34877))
+* improve props flow in table items + add actual anchor links to them ([daab2c4](https://github.com/bamdadfr/screwmycode-in--www/commit/daab2c45584382c91df9c26edee6fea677762350))
+
 ## [3.9.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.0...v3.9.1) (2024-08-23)
 
 
