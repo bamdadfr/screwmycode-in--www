@@ -3,47 +3,51 @@ import home from '@iconify/icons-mdi/home';
 import information from '@iconify/icons-mdi/information-variant';
 import podium from '@iconify/icons-mdi/podium';
 import {Icon} from '@iconify/react';
-import React, {ReactElement} from 'react';
-import {LinkComponent} from 'src/components/link.component';
-import {TitleComponent} from 'src/components/title/title.component';
+import Link from 'next/link';
+import React, {type ReactElement} from 'react';
 
-import {Container, Left, Podium, Right} from './header.component.styles';
+import {
+  Container,
+  IconContainer,
+  Left,
+  Podium,
+  Right,
+  TitleContainer,
+} from './header.component.styles';
 
 export function HeaderComponent(): ReactElement {
   return (
     <Container>
       <Left>
-        <LinkComponent
-          href="/"
-          ariaLabel="home"
-        >
-          <Icon icon={home} />
-        </LinkComponent>
+        <Link href="/">
+          <IconContainer>
+            <Icon icon={home} />
+          </IconContainer>
+        </Link>
 
-        <LinkComponent
-          href="/latest"
-          ariaLabel="latest"
-        >
-          <Icon icon={history} />
-        </LinkComponent>
+        <Link href="/latest">
+          <IconContainer>
+            <Icon icon={history} />
+          </IconContainer>
+        </Link>
 
-        <LinkComponent
-          href="/top"
-          ariaLabel="top"
-        >
-          <Podium icon={podium} />
-        </LinkComponent>
+        <Link href="/top">
+          <IconContainer>
+            <Podium icon={podium} />
+          </IconContainer>
+        </Link>
       </Left>
 
-      <TitleComponent />
+      <TitleContainer>
+        <Link href="/">screwmycode.in</Link>
+      </TitleContainer>
 
       <Right>
-        <LinkComponent
-          href="/about"
-          ariaLabel="about"
-        >
-          <Icon icon={information} />
-        </LinkComponent>
+        <Link href="/about">
+          <IconContainer>
+            <Icon icon={information} />
+          </IconContainer>
+        </Link>
       </Right>
     </Container>
   );
