@@ -19,7 +19,7 @@ export default function TopPage({top}: TopPageProps): ReactElement {
     <>
       <MetaComponent description="Top" />
       <DefaultLayout customMeta>
-        <TableComponent table={top} />
+        <TableComponent items={top} />
       </DefaultLayout>
     </>
   );

@@ -5,7 +5,7 @@ import {
 } from 'src/app/shared.styles';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const TableContainer = styled.div`
   display: flex;
   flex-direction: column;
   ${addVerticalScroll};
@@ -13,7 +13,7 @@ export const Container = styled.div`
   ${addHorizontalPadding};
 `;
 
-export const Item = styled.div`
+export const CellContainer = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
