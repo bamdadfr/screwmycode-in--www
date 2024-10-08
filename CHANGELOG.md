@@ -1,3 +1,10 @@
+# [3.10.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.3...v3.10.0) (2024-10-08)
+
+
+### Features
+
+* use new api ([85fd347](https://github.com/bamdadfr/screwmycode-in--www/commit/85fd3472890de6f1a09c17614d4d990a84821998))
+
 ## [3.9.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.2...v3.9.3) (2024-10-07)
 
 
