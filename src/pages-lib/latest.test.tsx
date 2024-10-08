@@ -10,7 +10,7 @@ const render = () => {
       <LatestPage
         latest={[
           {
-            id: '1',
+            slug: '1',
             title: 'title',
             description: 'description',
             url: '',

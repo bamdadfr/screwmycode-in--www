@@ -4,10 +4,10 @@ import {CellComponent} from './components/cell/cell.component';
 import {TableContainer} from './table.component.styles';
 
 export interface TableComponentItem {
-  id: string;
+  slug: string;
   image: string;
   title: string;
-  onClick: (id: this['id']) => void;
+  onClick: (slug: this['slug']) => void;
   type: 'youtube' | 'soundcloud' | 'bandcamp';
 }
 
@@ -20,7 +20,7 @@ export function TableComponent({items}: Props): ReactElement {
     <TableContainer>
       {items.map((item) => (
         <CellComponent
-          key={`${item.type}${item.id}`}
+          key={`${item.type}${item.slug}`}
           item={item}
         />
       ))}

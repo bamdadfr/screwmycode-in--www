@@ -10,7 +10,7 @@ const render = () => {
       <TopPage
         top={[
           {
-            id: '1',
+            slug: '1',
             title: 'title',
             image: 'https://i.imgur.com/5EOyTDQ.jpg',
             icon: 'string',
