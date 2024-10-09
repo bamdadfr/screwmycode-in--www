@@ -38,7 +38,7 @@ export const SEO: DefaultSeoProps = {
     {
       rel: 'apple-touch-icon',
       sizes: '180x180',
-      href: 'favicon/apple-touch-icon.png',
+      href: '/favicon/apple-touch-icon.png',
     },
     {
       rel: 'icon',
