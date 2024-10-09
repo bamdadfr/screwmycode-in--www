@@ -1,3 +1,10 @@
+# [3.14.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.13.0...v3.14.0) (2024-10-09)
+
+
+### Features
+
+* merge all player context together + improve title generation ([0f2f7b6](https://github.com/bamdadfr/screwmycode-in--www/commit/0f2f7b63947b9aa9275e1f969e8fe20dcd65ac1a))
+
 # [3.13.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.12.0...v3.13.0) (2024-10-09)
 
 
