@@ -1,7 +1,7 @@
 import {GetStaticPropsResult} from 'next';
-import React, {ReactElement} from 'react';
+import {NextSeo} from 'next-seo';
+import React, {type ReactElement} from 'react';
 
-import {MetaComponent} from '../components/meta/meta.component';
 import {
   TableComponent,
   TableComponentItem,
@@ -17,8 +17,9 @@ interface LatestPageProps {
 export default function LatestPage({latest}: LatestPageProps): ReactElement {
   return (
     <>
-      <MetaComponent description="Latest" />
-      <DefaultLayout customMeta>
+      <NextSeo title="Latest" />
+
+      <DefaultLayout>
         <TableComponent items={latest} />
       </DefaultLayout>
     </>

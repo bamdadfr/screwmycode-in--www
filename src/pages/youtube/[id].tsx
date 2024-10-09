@@ -1,5 +1,5 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 /**
  * Old YouTube page

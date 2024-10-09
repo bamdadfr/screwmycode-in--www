@@ -1,11 +1,9 @@
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {durationAtom} from '../../../../atoms/duration.atoms';
 import {progressAtom} from '../../../../atoms/progress.atoms';
-import {
-  calculateMinutes,
-} from '../../../../utils/calculate-minutes/calculate-minutes';
+import {calculateMinutes} from '../../../../utils/calculate-minutes/calculate-minutes';
 import {Container} from './time.component.styles';
 
 /**
@@ -17,10 +15,8 @@ export function TimeComponent(): ReactElement {
 
   return (
     <Container>
-      <span>
-        {calculateMinutes(progress)}
-      </span>
-        &nbsp;/&nbsp;{calculateMinutes(duration)}
+      <span>{calculateMinutes(progress)}</span>
+      &nbsp;/&nbsp;{calculateMinutes(duration)}
     </Container>
   );
 }

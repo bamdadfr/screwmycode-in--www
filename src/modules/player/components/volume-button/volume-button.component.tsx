@@ -2,7 +2,7 @@ import volumeHigh from '@iconify/icons-mdi/volume-high';
 import volumeOff from '@iconify/icons-mdi/volume-off';
 import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {isMutedAtom} from '../../../../atoms/mute.atoms';
 import {volumeAtom} from '../../../../atoms/volume.atoms';

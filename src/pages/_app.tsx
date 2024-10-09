@@ -1,24 +1,28 @@
-/* eslint-disable react/forbid-prop-types */
 import 'sass-reset';
 
 import {AppProps} from 'next/app';
-import React, {ReactElement} from 'react';
+import {DefaultSeo} from 'next-seo';
+import React from 'react';
 import {ThemeWrapper} from 'src/app/components/theme-wrapper/theme-wrapper';
 import {HeaderComponent} from 'src/components/header/header.component';
+import {SEO} from 'src/seo';
 
 import {useApp} from '../app/hooks/use-app/use-app';
 
-// noinspection JSUnusedGlobalSymbols
-export default function MyApp({Component, pageProps}: AppProps): ReactElement {
+export default function MyApp({Component, pageProps}: AppProps) {
   useApp();
 
   return (
-    <ThemeWrapper>
-      <>
-        <HeaderComponent />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </>
-    </ThemeWrapper>
+    <>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <DefaultSeo {...SEO} />
+      <ThemeWrapper>
+        <>
+          <HeaderComponent />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </>
+      </ThemeWrapper>
+    </>
   );
 }

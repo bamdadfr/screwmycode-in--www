@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {Global} from 'src/app/styles/global';
 import {theme} from 'src/app/styles/theme';
 import {ThemeProvider} from 'styled-components';

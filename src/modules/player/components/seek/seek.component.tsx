@@ -1,5 +1,5 @@
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {bufferedAtom} from 'src/atoms/buffered.atoms';
 import {durationAtom} from 'src/atoms/duration.atoms';
 import {progressAtom} from 'src/atoms/progress.atoms';

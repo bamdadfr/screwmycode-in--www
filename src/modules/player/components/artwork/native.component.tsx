@@ -1,6 +1,6 @@
 import {useAtom} from 'jotai';
 import Image from 'next/image';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {artworkAtom} from 'src/atoms/artwork.atoms';
 import {speedAtom} from 'src/atoms/speed.atoms';
 import {Container} from 'src/modules/player/components/artwork/artwork.component.styles';

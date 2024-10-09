@@ -1,7 +1,13 @@
 import Image from 'next/legacy/image';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
-import {Form, GoogleContainer, ImageContainer, Input, Submit} from './form.component.styles';
+import {
+  Form,
+  GoogleContainer,
+  ImageContainer,
+  Input,
+  Submit,
+} from './form.component.styles';
 import {useFormComponent} from './hooks/use-form-component';
 
 /**

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, ReactElement} from 'react';
+import React, {ChangeEvent, useMemo} from 'react';
 
 import {Input} from './slider.component.styles';
 
@@ -20,7 +20,17 @@ export function SliderComponent({
   buffered = 0,
   onChange,
   name,
-}: SliderComponentProps): ReactElement {
+}: SliderComponentProps) {
+  const progressPosition = useMemo(
+    () => (value - min) / (max - min),
+    [min, max, value],
+  );
+
+  const bufferedPosition = useMemo(
+    () => (buffered - min) / (max - min),
+    [min, max, buffered],
+  );
+
   return (
     <Input
       name={name}
@@ -31,8 +41,11 @@ export function SliderComponent({
       max={max}
       step={step}
       value={value}
-      buffered={buffered}
       onChange={onChange}
+      style={{
+        '--progress': progressPosition,
+        '--buffered': bufferedPosition,
+      }}
     />
   );
 }

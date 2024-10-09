@@ -1,5 +1,5 @@
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {artworkAtom} from 'src/atoms/artwork.atoms';
 import {speedAtom} from 'src/atoms/speed.atoms';
 import {TextureComponent} from 'src/components/texture/texture.component';

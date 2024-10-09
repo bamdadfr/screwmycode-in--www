@@ -1,5 +1,5 @@
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {audioTitleAtom} from '../../../../atoms/audio-title.atoms';
 import {H2} from './title.component.styles';
@@ -10,9 +10,5 @@ import {H2} from './title.component.styles';
 export function TitleComponent(): ReactElement {
   const [audioTitle] = useAtom(audioTitleAtom);
 
-  return (
-    <H2>
-      {audioTitle}
-    </H2>
-  );
+  return <H2>{audioTitle}</H2>;
 }

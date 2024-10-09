@@ -1,23 +1,19 @@
-import React, {ReactElement} from 'react';
-import {MetaComponent} from 'src/components/meta/meta.component';
+import {NextSeo} from 'next-seo';
+import React, {type ReactElement} from 'react';
 
 import {Wrapper} from './default.layout.styles';
 
-interface DefaultLayoutProps {
+interface Props {
   children: ReactElement | ReactElement[];
-  customMeta?: boolean;
 }
 
-/**
- * Layout for the default page
- */
-export function DefaultLayout({
-  children,
-  customMeta = false,
-}: DefaultLayoutProps): ReactElement {
+export function DefaultLayout({children}: Props): ReactElement {
   return (
     <>
-      {!customMeta && <MetaComponent />}
+      <NextSeo
+        noindex={false}
+        nofollow={false}
+      />
       <Wrapper>{children}</Wrapper>
     </>
   );

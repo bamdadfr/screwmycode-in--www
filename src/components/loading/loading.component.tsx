@@ -1,12 +1,9 @@
 import Image from 'next/legacy/image';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {DotsComponent} from './components/dots/dots.component';
 import {Container, ImageContainer, Text} from './loading.component.styles';
 
-/**
- * Component for the loading screen
- */
 export function LoadingComponent(): ReactElement {
   return (
     <Container>
@@ -16,6 +13,7 @@ export function LoadingComponent(): ReactElement {
           alt="filling glass"
           layout="fill"
           objectFit="contain"
+          priority
         />
       </ImageContainer>
 
