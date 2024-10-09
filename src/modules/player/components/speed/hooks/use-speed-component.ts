@@ -1,7 +1,6 @@
 import {useAtom} from 'jotai';
 import {ChangeEvent, useCallback} from 'react';
-
-import {setSpeedAtom, speedAtom} from '../../../../../atoms/speed.atoms';
+import {setSpeedAtom, speedAtom} from 'src/atoms/speed.atoms';
 
 interface UseSpeedComponent {
   value: number;
@@ -15,9 +14,12 @@ export function useSpeedComponent(): UseSpeedComponent {
   const [speed] = useAtom(speedAtom);
   const [, setSpeed] = useAtom(setSpeedAtom);
 
-  const onChange = useCallback((e) => {
-    setSpeed(e.target.value);
-  }, [setSpeed]);
+  const onChange = useCallback(
+    (e) => {
+      setSpeed(e.target.value);
+    },
+    [setSpeed],
+  );
 
   return {
     value: speed,
