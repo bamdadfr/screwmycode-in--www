@@ -32,6 +32,7 @@ export function useAudioLoad() {
     setSavedUrl(url);
 
     audio.oncanplay = handleCanPlay;
+    audio.oncanplaythrough = handleCanPlay;
     audio.onloadedmetadata = handleMetadata;
 
     // todo: fix me
