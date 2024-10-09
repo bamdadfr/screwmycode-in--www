@@ -1,3 +1,4 @@
+import {addHorizontalPadding} from 'src/app/shared.styles';
 import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
@@ -5,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  ${addHorizontalPadding};
 `;
 
 export const Spacer = styled.div`
