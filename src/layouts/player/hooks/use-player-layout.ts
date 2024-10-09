@@ -11,12 +11,6 @@ import {type PlayerLayoutProps} from 'src/layouts/player/player.layout';
 
 import {usePlayerLoading} from './use-player-loading';
 
-interface UsePlayerLayoutOptions {
-  title: string;
-  speed: number;
-  image: string;
-}
-
 interface UsePlayerLayout {
   metaUrl: string;
   isLoaded: boolean;

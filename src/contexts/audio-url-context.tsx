@@ -14,6 +14,7 @@ export function AudioUrlContextProvider({children}) {
   const memoizedUrl = useMemo(() => url, [url]);
 
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AudioUrlContext.Provider value={{url: memoizedUrl, setUrl}}>
       {children}
     </AudioUrlContext.Provider>
