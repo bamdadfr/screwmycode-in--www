@@ -1,3 +1,10 @@
+## [3.11.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.1...v3.11.2) (2024-10-09)
+
+
+### Bug Fixes
+
+* store audio ref inside context ([bcca581](https://github.com/bamdadfr/screwmycode-in--www/commit/bcca581372b06782c0edd2a4acf2b77993a68d11))
+
 ## [3.11.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.0...v3.11.1) (2024-10-09)
 
 
