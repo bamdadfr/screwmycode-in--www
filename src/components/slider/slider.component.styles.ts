@@ -1,5 +1,4 @@
-import {type SliderComponentProps} from 'src/components/slider/slider.component';
-import styled, {css} from 'styled-components';
+import styled, {css, type CSSProperties} from 'styled-components';
 
 const config = {
   trackW: '100%',
@@ -37,24 +36,13 @@ const handle = css`
     0 0 1px ${(props) => props.theme.background.highlight};
 `;
 
-interface InputProps extends Omit<SliderComponentProps, 'buffered' | 'isTrim'> {
-  $buffered?: number;
+interface ExtendedCSSProperties extends CSSProperties {
+  '--progress': number;
+  '--buffered': number;
 }
 
-const getProgress = (props: InputProps) =>
-  (props.value - props.min) / (props.max - props.min);
-const getBuffered = (props: InputProps) =>
-  (props?.$buffered ?? 0 - props.min) / (props.max - props.min);
-
-// @see https://codepen.io/thebabydino/pen/goYYrN
-// @ts-expect-error dumb
 // noinspection CssUnresolvedCustomProperty
-export const Input = styled.input.attrs((props: InputProps) => ({
-  style: {
-    '--progress': getProgress(props),
-    '--buffered': getBuffered(props),
-  },
-}))<SliderComponentProps>`
+export const Input = styled.input<{style: ExtendedCSSProperties;}>`
   &,
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
