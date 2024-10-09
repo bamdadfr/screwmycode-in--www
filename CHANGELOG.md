@@ -1,3 +1,10 @@
+## [3.11.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.0...v3.11.1) (2024-10-09)
+
+
+### Bug Fixes
+
+* use dynamic title at player level ([dd8024e](https://github.com/bamdadfr/screwmycode-in--www/commit/dd8024e54fc07c0f625c58a1f188318ab1f36c18))
+
 # [3.11.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.10.0...v3.11.0) (2024-10-09)
 
 
