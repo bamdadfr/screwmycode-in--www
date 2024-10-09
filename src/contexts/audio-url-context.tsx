@@ -2,20 +2,19 @@ import React, {createContext, useContext, useMemo, useState} from 'react';
 
 type AudioUrl = string | null;
 
-type IContext = {
+type Context = {
   url: AudioUrl;
   setUrl: React.Dispatch<React.SetStateAction<AudioUrl>>;
 };
 
-const AudioUrlContext = createContext<IContext>({} as IContext);
+const AudioUrlContext = createContext<Context>({} as Context);
 
 export function AudioUrlContextProvider({children}) {
   const [url, setUrl] = useState<string | null>(null);
-  const memoizedUrl = useMemo(() => url, [url]);
+  const context = useMemo(() => ({url, setUrl}), [url, setUrl]);
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AudioUrlContext.Provider value={{url: memoizedUrl, setUrl}}>
+    <AudioUrlContext.Provider value={context}>
       {children}
     </AudioUrlContext.Provider>
   );
