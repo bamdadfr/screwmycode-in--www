@@ -1,18 +1,17 @@
 import {useAtom} from 'jotai';
 import {useEffect} from 'react';
 import {speedAtom} from 'src/atoms/speed.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to set audio playback rate
- */
-export function useAudioPlaybackRate(audio: HTMLAudioElement | null): void {
+export function useAudioPlaybackRate() {
+  const ref = useAudioRefContext();
   const [speed] = useAtom(speedAtom);
 
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
 
-    audio.playbackRate = speed;
-  }, [audio, speed]);
+    ref.current.playbackRate = speed;
+  }, [ref, speed]);
 }

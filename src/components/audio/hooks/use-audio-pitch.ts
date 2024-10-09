@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 declare global {
   interface HTMLAudioElement {
@@ -7,16 +8,15 @@ declare global {
   }
 }
 
-/**
- * Hook to set the pitch of the audio element
- */
-export function useAudioPitch(audio: HTMLAudioElement | null): void {
+export function useAudioPitch() {
+  const ref = useAudioRefContext();
+
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
 
-    audio.mozPreservesPitch = false;
-    audio.preservesPitch = false;
-  }, [audio]);
+    ref.current.mozPreservesPitch = false;
+    ref.current.preservesPitch = false;
+  }, [ref]);
 }

@@ -2,14 +2,10 @@ import {useAtom} from 'jotai';
 import {useCallback, useEffect, useState} from 'react';
 import {setDurationAtom} from 'src/atoms/duration.atoms';
 import {setLoadedAtom} from 'src/atoms/load.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to load audio element
- */
-export function useAudioLoad(
-  audio: HTMLAudioElement | null,
-  url: string,
-): void {
+export function useAudioLoad(url: string) {
+  const ref = useAudioRefContext();
   const [savedUrl, setSavedUrl] = useState<string>();
   const [, setLoaded] = useAtom(setLoadedAtom);
   const [, setDuration] = useAtom(setDurationAtom);
@@ -19,17 +15,19 @@ export function useAudioLoad(
   }, [setLoaded]);
 
   const handleMetadata = useCallback(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
 
-    setDuration(audio.duration);
-  }, [audio, setDuration]);
+    setDuration(ref.current.duration);
+  }, [ref, setDuration]);
 
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
+
+    const audio = ref.current;
 
     if (url === savedUrl) {
       return;
@@ -45,5 +43,5 @@ export function useAudioLoad(
       audio.removeEventListener('canplay', () => handleCanPlay());
       audio.removeEventListener('loadedmetadata', () => handleMetadata());
     };
-  }, [audio, handleCanPlay, handleMetadata, savedUrl, setDuration, url]);
+  }, [ref, handleCanPlay, handleMetadata, savedUrl, setDuration, url]);
 }

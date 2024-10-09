@@ -1,18 +1,17 @@
 import {useAtom} from 'jotai';
 import {useEffect} from 'react';
 import {isRepeatingAtom} from 'src/atoms/repeat.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to set the loop on audio element
- */
-export function useAudioLoop(audio: HTMLAudioElement | null): void {
+export function useAudioLoop() {
+  const ref = useAudioRefContext();
   const [isRepeating] = useAtom(isRepeatingAtom);
 
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
 
-    audio.loop = isRepeating;
-  }, [audio, isRepeating]);
+    ref.current.loop = isRepeating;
+  }, [ref, isRepeating]);
 }

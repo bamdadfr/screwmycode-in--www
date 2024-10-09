@@ -1,18 +1,19 @@
 import {useAtom} from 'jotai';
 import {useEffect} from 'react';
 import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to set audio volume
- */
-export function useAudioVolume(audio: HTMLAudioElement | null): void {
+export function useAudioVolume() {
+  const ref = useAudioRefContext();
   const [volume] = useAtom(volumeAtom);
   const [, setVolume] = useAtom(setVolumeAtom);
 
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
+
+    const audio = ref.current;
 
     audio.volume = volume;
 
@@ -20,6 +21,8 @@ export function useAudioVolume(audio: HTMLAudioElement | null): void {
 
     audio.addEventListener('volumechange', handleVolumeChange);
 
-    return () => audio.removeEventListener('volumechange', handleVolumeChange);
-  }, [audio, setVolume, volume]);
+    return () => {
+      audio.removeEventListener('volumechange', handleVolumeChange);
+    };
+  }, [ref, setVolume, volume]);
 }

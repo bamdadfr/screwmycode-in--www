@@ -2,6 +2,7 @@ import {NextSeo} from 'next-seo';
 import React, {type ReactElement} from 'react';
 import {AudioComponent} from 'src/components/audio/audio.component';
 import {LoadingComponent} from 'src/components/loading/loading.component';
+import {AudioRefContextProvider} from 'src/contexts/audio-ref-context';
 import {DefaultLayout} from 'src/layouts/default/default.layout';
 import {PlayerModule} from 'src/modules/player/player.module';
 
@@ -34,8 +35,10 @@ export function PlayerLayout({
       />
 
       <DefaultLayout>
-        <AudioComponent url={audio} />
-        {!isLoaded ? <LoadingComponent /> : <PlayerModule />}
+        <AudioRefContextProvider>
+          <AudioComponent url={audio} />
+          {!isLoaded ? <LoadingComponent /> : <PlayerModule />}
+        </AudioRefContextProvider>
       </DefaultLayout>
     </>
   );

@@ -2,11 +2,10 @@ import {useAtom} from 'jotai';
 import {useEffect} from 'react';
 import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
 import {setProgressAtom} from 'src/atoms/progress.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to set the progress of audio element
- */
-export function useAudioProgress(audio: HTMLAudioElement | null): void {
+export function useAudioProgress() {
+  const ref = useAudioRefContext();
   const [isPlaying] = useAtom(isPlayingAtom);
   const [, setProgress] = useAtom(setProgressAtom);
   const fps = 10;
@@ -14,9 +13,11 @@ export function useAudioProgress(audio: HTMLAudioElement | null): void {
   useEffect(() => {
     let i1: NodeJS.Timeout | undefined = undefined;
 
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
+
+    const audio = ref.current;
 
     if (isPlaying) {
       i1 = setInterval(() => {
@@ -24,6 +25,8 @@ export function useAudioProgress(audio: HTMLAudioElement | null): void {
       }, 1000 / fps);
     }
 
-    return () => clearInterval(i1);
-  }, [audio, isPlaying, setProgress]);
+    return () => {
+      clearInterval(i1);
+    };
+  }, [ref, isPlaying, setProgress]);
 }

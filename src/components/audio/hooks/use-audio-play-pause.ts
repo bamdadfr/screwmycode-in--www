@@ -1,25 +1,28 @@
 import {useAtom} from 'jotai';
 import {useEffect} from 'react';
 import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
+import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
-/**
- * Hook to use audio play/pause
- */
-export function useAudioPlayPause(audio: HTMLAudioElement | null): void {
+export function useAudioPlayPause() {
+  const ref = useAudioRefContext();
   const [isPlaying] = useAtom(isPlayingAtom);
 
   useEffect(() => {
-    if (!(audio instanceof HTMLAudioElement)) {
+    if (ref.current === null) {
       return;
     }
 
-    (async () => {
+    const audio = ref.current;
+
+    const toggle = async () => {
       if (isPlaying) {
         await audio.play();
         return;
       }
 
       audio.pause();
-    })();
-  }, [isPlaying, audio]);
+    };
+
+    toggle().then();
+  }, [ref, isPlaying]);
 }
