@@ -9,12 +9,6 @@ const configuration = {
   },
   images: {
     remotePatterns: [
-      !isEnvProduction && {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '8000',
-        pathname: '/**',
-      },
       {
         protocol: 'https',
         hostname: 'api.screwmycode.in',
@@ -40,6 +34,15 @@ const configuration = {
     return config;
   },
 };
+
+if (!isEnvProduction) {
+  configuration.images.remotePatterns.push({
+    protocol: 'http',
+    hostname: 'localhost',
+    port: '8000',
+    pathname: '/**',
+  });
+}
 
 const SentryWebpackPluginOptions = {};
 export default withSentryConfig(configuration, SentryWebpackPluginOptions);
