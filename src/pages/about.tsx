@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {MetaComponent} from '../components/meta/meta.component';
 import {TextLinkComponent} from '../components/text-link/text-link.component';

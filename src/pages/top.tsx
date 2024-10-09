@@ -1,5 +1,5 @@
 import {GetStaticPropsResult} from 'next';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {MetaComponent} from '../components/meta/meta.component';
 import {

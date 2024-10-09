@@ -1,5 +1,5 @@
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
 import {SliderComponent} from 'src/components/slider/slider.component';
 

@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {AudioComponent} from 'src/components/audio/audio.component';
 import {LoadingComponent} from 'src/components/loading/loading.component';
 import {MetaComponent} from 'src/components/meta/meta.component';

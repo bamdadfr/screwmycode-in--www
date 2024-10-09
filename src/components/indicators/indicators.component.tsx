@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {IndicatorComponent} from './components/indicator/indicator.component';
 import {useIndicatorsComponent} from './hooks/use-indicators-component';

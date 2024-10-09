@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {MetaComponent} from 'src/components/meta/meta.component';
 
 import {Wrapper} from './default.layout.styles';
@@ -8,9 +8,6 @@ interface DefaultLayoutProps {
   customMeta?: boolean;
 }
 
-/**
- * Layout for the default page
- */
 export function DefaultLayout({
   children,
   customMeta = false,

@@ -2,7 +2,7 @@
 import 'sass-reset';
 
 import {AppProps} from 'next/app';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 import {ThemeWrapper} from 'src/app/components/theme-wrapper/theme-wrapper';
 import {HeaderComponent} from 'src/components/header/header.component';
 

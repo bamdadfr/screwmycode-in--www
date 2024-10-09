@@ -1,9 +1,19 @@
 /* eslint-disable react/no-danger */
-import Document, {DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript} from 'next/document';
-import React, {ReactElement} from 'react';
+import Document, {
+  type DocumentContext,
+  type DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
+import React, {type ReactElement} from 'react';
 import {ServerStyleSheet} from 'styled-components';
 
-import {GA_TRACKING_ID, RECAPTCHA_SITE_KEY} from '../app/hooks/use-google-analytics/use-google-analytics.constants';
+import {
+  GA_TRACKING_ID,
+  RECAPTCHA_SITE_KEY,
+} from '../app/hooks/use-google-analytics/use-google-analytics.constants';
 
 // noinspection JSUnusedGlobalSymbols
 export default class MyDocument extends Document {

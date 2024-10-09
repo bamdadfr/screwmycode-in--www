@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {DotsComponent} from './components/dots/dots.component';
 import {Container, ImageContainer, Text} from './loading.component.styles';

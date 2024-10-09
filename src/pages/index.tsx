@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {FormComponent} from '../components/form/form.component';
 import {DefaultLayout} from '../layouts/default/default.layout';

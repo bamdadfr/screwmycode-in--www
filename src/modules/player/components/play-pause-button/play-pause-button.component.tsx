@@ -2,9 +2,12 @@ import pause from '@iconify/icons-mdi/pause';
 import play from '@iconify/icons-mdi/play';
 import {Icon} from '@iconify/react';
 import {useAtom} from 'jotai';
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
-import {isPlayingAtom, togglePlayingAtom} from '../../../../atoms/play-pause.atoms';
+import {
+  isPlayingAtom,
+  togglePlayingAtom,
+} from '../../../../atoms/play-pause.atoms';
 import {PlayerButton} from '../../player.module.styles';
 
 /**

@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {type ReactElement} from 'react';
 
 import {MetaComponent} from '../components/meta/meta.component';
 import {useRedirectAuto} from '../hooks/use-redirect-auto';
@@ -15,9 +15,7 @@ export default function NotFoundPage(): ReactElement {
     <>
       <MetaComponent description="Page not found" />
       <DefaultLayout customMeta>
-        <h2>
-          Page not found, redirecting to home...
-        </h2>
+        <h2>Page not found, redirecting to home...</h2>
       </DefaultLayout>
     </>
   );
