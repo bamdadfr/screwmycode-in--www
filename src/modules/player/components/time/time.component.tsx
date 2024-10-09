@@ -1,11 +1,11 @@
 import React from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 import {calculateMinutes} from 'src/utils/calculate-minutes/calculate-minutes';
 
 import {Container} from './time.component.styles';
 
 export function TimeComponent() {
-  const {duration, progress} = useAudioPlayerContext();
+  const {duration, progress} = usePlayerContext();
 
   return (
     <Container>

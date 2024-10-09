@@ -1,11 +1,10 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
+
+const fps = 10;
 
 export function useAudioProgress() {
-  const ref = useAudioRefContext();
-  const {isPlaying, setProgress} = useAudioPlayerContext();
-  const fps = 10;
+  const {ref, isPlaying, setProgress} = usePlayerContext();
 
   useEffect(() => {
     let i1: NodeJS.Timeout | undefined = undefined;

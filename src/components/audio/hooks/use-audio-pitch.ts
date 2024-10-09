@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 declare global {
   interface HTMLAudioElement {
@@ -9,7 +9,7 @@ declare global {
 }
 
 export function useAudioPitch() {
-  const ref = useAudioRefContext();
+  const {ref} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

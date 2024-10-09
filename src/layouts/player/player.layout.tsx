@@ -1,8 +1,8 @@
 import {NextSeo} from 'next-seo';
 import React from 'react';
 import {AudioComponent} from 'src/components/audio/audio.component';
-import {AudioPlayerContextProvider} from 'src/contexts/audio-player-context';
-import {AudioRefContextProvider} from 'src/contexts/audio-ref-context';
+import {PlayerContextProvider} from 'src/contexts/player-context';
+import {usePlayerDocumentTitle} from 'src/hooks/use-player-document-title';
 import {DefaultLayout} from 'src/layouts/default/default.layout';
 import {PlayerModule} from 'src/modules/player/player.module';
 
@@ -16,25 +16,28 @@ export interface PlayerLayoutProps {
 }
 
 export function PlayerLayout({title, image, audio, speed}: PlayerLayoutProps) {
-  const {metaUrl} = usePlayerLayout({title, image, audio, speed});
+  const {canonical} = usePlayerLayout();
+  const dynamicTitle = usePlayerDocumentTitle(title);
 
   return (
     <>
       <NextSeo
+        title={dynamicTitle}
         openGraph={{images: [{url: image}]}}
-        canonical={metaUrl}
+        canonical={canonical}
       />
 
       <DefaultLayout>
-        <AudioRefContextProvider>
-          <AudioPlayerContextProvider>
-            <AudioComponent defaultSpeed={speed.toString()} />
-            <PlayerModule
-              title={title}
-              artwork={image}
-            />
-          </AudioPlayerContextProvider>
-        </AudioRefContextProvider>
+        <PlayerContextProvider>
+          <AudioComponent
+            url={audio}
+            defaultSpeed={speed.toString()}
+          />
+          <PlayerModule
+            title={title}
+            artwork={image}
+          />
+        </PlayerContextProvider>
       </DefaultLayout>
     </>
   );

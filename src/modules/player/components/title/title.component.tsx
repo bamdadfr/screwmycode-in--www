@@ -1,9 +1,9 @@
 import React from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 import {H2} from './title.component.styles';
 
 export function TitleComponent() {
-  const {title} = useAudioPlayerContext();
+  const {title} = usePlayerContext();
   return <H2>{title}</H2>;
 }

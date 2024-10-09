@@ -1,5 +1,5 @@
 import {ChangeEvent, useCallback} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 interface UseSpeedComponent {
   value: number;
@@ -7,7 +7,7 @@ interface UseSpeedComponent {
 }
 
 export function useSpeedComponent(): UseSpeedComponent {
-  const {speed, setSpeed} = useAudioPlayerContext();
+  const {speed, setSpeed} = usePlayerContext();
 
   const onChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {

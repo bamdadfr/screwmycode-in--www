@@ -1,12 +1,8 @@
 import {useCallback, useEffect, useState} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
-import {useAudioUrlContext} from 'src/contexts/audio-url-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioLoad() {
-  const ref = useAudioRefContext();
-  const {url} = useAudioUrlContext();
-  const {setDuration, setReady} = useAudioPlayerContext();
+  const {ref, setDuration, setReady, url} = usePlayerContext();
   const [savedUrl, setSavedUrl] = useState<string>();
 
   const handleCanPlay = useCallback(() => {

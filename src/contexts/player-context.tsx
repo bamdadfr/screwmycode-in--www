@@ -2,13 +2,16 @@ import React, {
   type ChangeEvent,
   createContext,
   type Dispatch,
+  type MutableRefObject,
   type SetStateAction,
   useCallback,
   useContext,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
+type Ref = HTMLAudioElement | null;
 type Speed = number;
 type Volume = number;
 type Buffered = number; // amount in time
@@ -20,8 +23,10 @@ type Seek = number; // amount in time (requested by the user)
 type Ready = boolean;
 type Title = string;
 type Artwork = string; // url
+type Url = string;
 
 type Context = {
+  ref: MutableRefObject<Ref>;
   speed: Speed;
   setSpeed: (speed: string) => void;
   volume: Volume;
@@ -45,11 +50,14 @@ type Context = {
   setTitle: Dispatch<SetStateAction<Title>>;
   artwork: Artwork;
   setArtwork: Dispatch<SetStateAction<Artwork>>;
+  url: Url;
+  setUrl: Dispatch<SetStateAction<Url>>;
 };
 
-const AudioPlayerContext = createContext<Context>({} as Context);
+const PlayerContext = createContext<Context>({} as Context);
 
-export function AudioPlayerContextProvider({children}) {
+export function PlayerContextProvider({children}) {
+  const ref = useRef<Ref>(null);
   const [speed, setSpeed] = useState<Speed>(1);
   const [volume, setVolume] = useState<Volume>(0.7);
   const [buffered, setBuffered] = useState<Buffered>(0);
@@ -61,6 +69,7 @@ export function AudioPlayerContextProvider({children}) {
   const [isReady, setReady] = useState<Ready>(false);
   const [title, setTitle] = useState<Title>('');
   const [artwork, setArtwork] = useState<Artwork>('');
+  const [url, setUrl] = useState<Url>('');
 
   const setSpeedSanitized = useCallback((newSpeed: string) => {
     let newSpeedFloat = parseFloat(newSpeed);
@@ -105,6 +114,7 @@ export function AudioPlayerContextProvider({children}) {
 
   const context = useMemo(
     () => ({
+      ref,
       speed,
       setSpeed: setSpeedSanitized,
       volume,
@@ -128,6 +138,8 @@ export function AudioPlayerContextProvider({children}) {
       setTitle,
       artwork,
       setArtwork,
+      url,
+      setUrl,
     }),
     [
       speed,
@@ -146,16 +158,15 @@ export function AudioPlayerContextProvider({children}) {
       isReady,
       title,
       artwork,
+      url,
     ],
   );
 
   return (
-    <AudioPlayerContext.Provider value={context}>
-      {children}
-    </AudioPlayerContext.Provider>
+    <PlayerContext.Provider value={context}>{children}</PlayerContext.Provider>
   );
 }
 
-export function useAudioPlayerContext() {
-  return useContext(AudioPlayerContext);
+export function usePlayerContext() {
+  return useContext(PlayerContext);
 }

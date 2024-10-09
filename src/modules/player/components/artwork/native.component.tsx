@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, {type ReactElement} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 import {Container} from 'src/modules/player/components/artwork/artwork.component.styles';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function NativeComponent({width}: Props): ReactElement {
-  const {speed, artwork} = useAudioPlayerContext();
+  const {speed, artwork} = usePlayerContext();
 
   return (
     <Container speed={speed.toString()}>

@@ -4,7 +4,7 @@ import useMeasure from 'react-use-measure';
 import {p} from 'src/app/shared.styles';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
 import {LoadingComponent} from 'src/components/loading/loading.component';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 
 import {PlayPauseButtonComponent} from './components/play-pause-button/play-pause-button.component';
@@ -37,7 +37,7 @@ export function PlayerModule({title, artwork}: Props) {
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
   const imageWidth = useMemo(() => width - p * 4, [width]);
   const playerWidth = useMemo(() => width - p * 6, [width]);
-  const {isReady, setTitle, setArtwork} = useAudioPlayerContext();
+  const {isReady, setTitle, setArtwork} = usePlayerContext();
 
   useEffect(() => {
     setTitle(title);

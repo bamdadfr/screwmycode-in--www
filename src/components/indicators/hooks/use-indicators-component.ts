@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import speedToPercentage from 'speed-to-percentage';
 import speedToSemitones from 'speed-to-semitones';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 interface UseIndicatorsComponent {
   percentage: string;
@@ -9,7 +9,7 @@ interface UseIndicatorsComponent {
 }
 
 export function useIndicatorsComponent(): UseIndicatorsComponent {
-  const {speed} = useAudioPlayerContext();
+  const {speed} = usePlayerContext();
 
   const percentage = useMemo(
     () => speedToPercentage(speed, 1).toString(),

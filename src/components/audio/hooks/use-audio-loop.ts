@@ -1,10 +1,8 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioLoop() {
-  const ref = useAudioRefContext();
-  const {isRepeating} = useAudioPlayerContext();
+  const {ref, isRepeating} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

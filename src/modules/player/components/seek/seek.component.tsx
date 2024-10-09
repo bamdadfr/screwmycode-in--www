@@ -1,9 +1,9 @@
 import React, {type ReactElement} from 'react';
 import {SliderComponent} from 'src/components/slider/slider.component';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function SeekComponent(): ReactElement {
-  const {buffered, duration, progress, handleSeek} = useAudioPlayerContext();
+  const {buffered, duration, progress, handleSeek} = usePlayerContext();
 
   return (
     <SliderComponent

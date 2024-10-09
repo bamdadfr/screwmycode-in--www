@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useKeyboardToggle(keyCode = 'Space'): void {
-  const {togglePlaying} = useAudioPlayerContext();
+  const {togglePlaying} = usePlayerContext();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

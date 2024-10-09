@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 const getBufferedAmount = (audio: HTMLAudioElement) => {
   try {
@@ -11,8 +10,7 @@ const getBufferedAmount = (audio: HTMLAudioElement) => {
 };
 
 export function useAudioBuffered() {
-  const ref = useAudioRefContext();
-  const {setBuffered} = useAudioPlayerContext();
+  const {ref, setBuffered} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

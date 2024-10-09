@@ -1,24 +1,24 @@
 import {NextSeo} from 'next-seo';
 import React, {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 import {useDynamicTitle} from 'src/hooks/use-dynamic-title';
 
 import {Invisible} from './audio.component.styles';
 import {useAudioModule} from './hooks/use-audio-component';
 
 interface Props {
+  url: string;
   defaultSpeed: string;
 }
 
-export function AudioComponent({defaultSpeed}: Props) {
-  const audioRef = useAudioRefContext();
+export function AudioComponent({url, defaultSpeed}: Props) {
+  const {ref, setUrl, setSpeed} = usePlayerContext();
   const {dynamicTitle} = useDynamicTitle();
-  const {setSpeed} = useAudioPlayerContext();
 
   useEffect(() => {
+    setUrl(url);
     setSpeed(defaultSpeed);
-  }, [defaultSpeed, setSpeed]);
+  }, [url, setUrl, defaultSpeed, setSpeed]);
 
   useAudioModule();
 
@@ -28,7 +28,7 @@ export function AudioComponent({defaultSpeed}: Props) {
 
       <Invisible>
         <audio
-          ref={audioRef}
+          ref={ref}
           aria-label="player"
           // controls
         >

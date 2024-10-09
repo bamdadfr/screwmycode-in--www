@@ -1,10 +1,8 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioVolume() {
-  const ref = useAudioRefContext();
-  const {volume, setVolume} = useAudioPlayerContext();
+  const {ref, volume, setVolume} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

@@ -1,10 +1,8 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioSeek() {
-  const ref = useAudioRefContext();
-  const {seek} = useAudioPlayerContext();
+  const {ref, seek} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

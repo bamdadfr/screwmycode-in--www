@@ -1,10 +1,8 @@
 import {useEffect} from 'react';
-import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
-import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioPlayPause() {
-  const ref = useAudioRefContext();
-  const {isPlaying} = useAudioPlayerContext();
+  const {ref, isPlaying} = usePlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {
