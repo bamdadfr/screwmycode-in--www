@@ -11,16 +11,14 @@ export function AudioComponent({url}: Props): ReactElement {
   const {ref} = useAudioModule(url);
 
   return (
-    <>
-      <Invisible>
-        <audio
-          ref={ref}
-          aria-label="player"
-          // controls
-        >
-          <track kind="captions" />
-        </audio>
-      </Invisible>
-    </>
+    <Invisible>
+      <audio
+        ref={ref}
+        aria-label="player"
+        // controls
+      >
+        <track kind="captions" />
+      </audio>
+    </Invisible>
   );
 }
