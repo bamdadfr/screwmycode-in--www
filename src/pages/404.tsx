@@ -1,10 +1,10 @@
 import {NextSeo} from 'next-seo';
-import React, {type ReactElement} from 'react';
+import React from 'react';
 
 import {useRedirectAuto} from '../hooks/use-redirect-auto';
 import {DefaultLayout} from '../layouts/default/default.layout';
 
-export default function NotFoundPage(): ReactElement {
+export default function NotFoundPage() {
   useRedirectAuto();
 
   return (
