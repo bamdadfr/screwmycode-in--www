@@ -1,3 +1,11 @@
+## [3.11.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.4...v3.11.5) (2024-10-09)
+
+
+### Bug Fixes
+
+* eslint ([2ddaf78](https://github.com/bamdadfr/screwmycode-in--www/commit/2ddaf78a1ecdf94e01e8413705f9ebe2bc281d03))
+* remove sentry ([fe8b592](https://github.com/bamdadfr/screwmycode-in--www/commit/fe8b592e11d3d5d9740954520259cc6d81e432de))
+
 ## [3.11.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.3...v3.11.4) (2024-10-09)
 
 
