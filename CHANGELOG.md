@@ -1,3 +1,10 @@
+# [3.13.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.12.0...v3.13.0) (2024-10-09)
+
+
+### Features
+
+* use context for artwork related info and remove jotai ([42445dc](https://github.com/bamdadfr/screwmycode-in--www/commit/42445dc62cc137125ef9b03cc5c6d80d8d02d5a7))
+
 # [3.12.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.5...v3.12.0) (2024-10-09)
 
 
