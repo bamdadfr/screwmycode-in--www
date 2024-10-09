@@ -1,15 +1,12 @@
 import {useAtom} from 'jotai';
 import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
+import {setArtworkAtom} from 'src/atoms/artwork.atoms';
+import {setAudioTitleAtom} from 'src/atoms/audio-title.atoms';
+import {isLoadedAtom} from 'src/atoms/load.atoms';
+import {setPauseAtom} from 'src/atoms/play-pause.atoms';
+import {setSpeedAtom} from 'src/atoms/speed.atoms';
 
-import {setArtworkAtom} from '../../../atoms/artwork.atoms';
-import {setAudioTitleAtom} from '../../../atoms/audio-title.atoms';
-import {isLoadedAtom} from '../../../atoms/load.atoms';
-import {setPauseAtom} from '../../../atoms/play-pause.atoms';
-import {setSpeedAtom} from '../../../atoms/speed.atoms';
-import {
-  getProviderFromRouter,
-} from '../../../utils/get-provider/get-provider-from-router';
 import {usePlayerLoading} from './use-player-loading';
 
 interface UsePlayerLayoutOptions {
@@ -19,18 +16,10 @@ interface UsePlayerLayoutOptions {
 }
 
 interface UsePlayerLayout {
-  metaDescription: string;
   metaUrl: string;
   isLoaded: boolean;
 }
 
-/**
- * Entry hook for the player layout
- * @param root0
- * @param root0.title
- * @param root0.speed
- * @param root0.image
- */
 export function usePlayerLayout({
   title,
   speed,
@@ -44,7 +33,6 @@ export function usePlayerLayout({
   const [, setArtwork] = useAtom(setArtworkAtom);
   const [, setPause] = useAtom(setPauseAtom);
 
-  const [metaDescription] = useState(`${title} - ${speed} - ${getProviderFromRouter(router)}`);
   const metaUrl = 'https://www.screwmycode.in/' + router.asPath;
 
   usePlayerLoading();
@@ -66,7 +54,6 @@ export function usePlayerLayout({
   });
 
   return {
-    metaDescription,
     metaUrl,
     isLoaded,
   };

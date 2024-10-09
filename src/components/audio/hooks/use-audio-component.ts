@@ -1,13 +1,4 @@
-import {useAtom} from 'jotai';
-import {useRouter} from 'next/router';
-import {useNextReplaceUrl} from 'next-replace-url';
-import {type RefObject, useMemo, useRef} from 'react';
-import speedToSemitones from 'speed-to-semitones';
-import {audioTitleAtom} from 'src/atoms/audio-title.atoms';
-import {speedAtom} from 'src/atoms/speed.atoms';
-import {TITLE_SEPARATOR} from 'src/constants';
-import {useCache} from 'src/hooks/use-cache';
-import {getProviderFromRouter} from 'src/utils/get-provider/get-provider-from-router';
+import {type RefObject, useRef} from 'react';
 
 import {useAudioBuffered} from './use-audio-buffered';
 import {useAudioLoad} from './use-audio-load';
@@ -22,18 +13,10 @@ import {useKeyboardToggle} from './use-keyboard-toggle';
 
 interface UseAudioComponent {
   ref: RefObject<HTMLAudioElement>;
-  dynamicTitle: string;
 }
 
 export function useAudioModule(url: string): UseAudioComponent {
-  const router = useRouter();
-  const [speed] = useAtom(speedAtom);
-  const [audioTitle] = useAtom(audioTitleAtom);
-  const cachedSpeed = useCache(speed, 350);
-
   useKeyboardToggle('Space');
-
-  useNextReplaceUrl('speed', cachedSpeed.toString());
 
   const ref = useRef<HTMLAudioElement>(null);
 
@@ -47,15 +30,5 @@ export function useAudioModule(url: string): UseAudioComponent {
   useAudioSeek(ref.current);
   useAudioBuffered(ref.current);
 
-  const dynamicTitle = useMemo(() => {
-    if (!audioTitle) {
-      return '';
-    }
-
-    const semitones = `${speedToSemitones(cachedSpeed, 1)} st`;
-    const provider = getProviderFromRouter(router);
-    return `${audioTitle} ${TITLE_SEPARATOR} ${provider} ${TITLE_SEPARATOR} ${semitones}`;
-  }, [audioTitle, cachedSpeed, router]);
-
-  return {ref, dynamicTitle};
+  return {ref};
 }
