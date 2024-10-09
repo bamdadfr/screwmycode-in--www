@@ -1,3 +1,10 @@
+## [3.11.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.3...v3.11.4) (2024-10-09)
+
+
+### Bug Fixes
+
+* remove console output ([907b1c9](https://github.com/bamdadfr/screwmycode-in--www/commit/907b1c9acbf9712f86f012ef4b8234dee47856ef))
+
 ## [3.11.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.2...v3.11.3) (2024-10-09)
 
 
