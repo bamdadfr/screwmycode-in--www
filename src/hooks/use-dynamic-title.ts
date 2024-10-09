@@ -1,9 +1,7 @@
-import {useAtom} from 'jotai/index';
 import {useRouter} from 'next/router';
 import {useNextReplaceUrl} from 'next-replace-url';
 import {useMemo} from 'react';
 import speedToSemitones from 'speed-to-semitones';
-import {audioTitleAtom} from 'src/atoms/audio-title.atoms';
 import {TITLE_SEPARATOR} from 'src/constants';
 import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useCache} from 'src/hooks/use-cache';
@@ -11,21 +9,20 @@ import {getProviderFromRouter} from 'src/utils/get-provider/get-provider-from-ro
 
 export function useDynamicTitle() {
   const router = useRouter();
-  const [audioTitle] = useAtom(audioTitleAtom);
-  const {speed} = useAudioPlayerContext();
+  const {speed, title} = useAudioPlayerContext();
   const cachedSpeed = useCache(speed, 350);
 
   useNextReplaceUrl('speed', cachedSpeed.toString());
 
   const dynamicTitle = useMemo(() => {
-    if (!audioTitle) {
+    if (!title) {
       return '';
     }
 
     const semitones = `${speedToSemitones(cachedSpeed, 1)} st`;
     const provider = getProviderFromRouter(router);
-    return `${audioTitle} ${TITLE_SEPARATOR} ${provider} ${TITLE_SEPARATOR} ${semitones}`;
-  }, [audioTitle, cachedSpeed, router]);
+    return `${title} ${TITLE_SEPARATOR} ${provider} ${TITLE_SEPARATOR} ${semitones}`;
+  }, [title, cachedSpeed, router]);
 
   return {
     dynamicTitle,

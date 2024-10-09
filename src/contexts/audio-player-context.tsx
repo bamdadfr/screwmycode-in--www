@@ -18,6 +18,8 @@ type Progress = number; // amount in time
 type Repeating = boolean;
 type Seek = number; // amount in time (requested by the user)
 type Ready = boolean;
+type Title = string;
+type Artwork = string; // url
 
 type Context = {
   speed: Speed;
@@ -39,6 +41,10 @@ type Context = {
   handleSeek: (e: ChangeEvent<HTMLInputElement>) => void;
   isReady: Ready;
   setReady: Dispatch<SetStateAction<Ready>>;
+  title: Title;
+  setTitle: Dispatch<SetStateAction<Title>>;
+  artwork: Artwork;
+  setArtwork: Dispatch<SetStateAction<Artwork>>;
 };
 
 const AudioPlayerContext = createContext<Context>({} as Context);
@@ -53,6 +59,8 @@ export function AudioPlayerContextProvider({children}) {
   const [isRepeating, setRepeating] = useState<Repeating>(true);
   const [seek, setSeek] = useState<Seek>(0);
   const [isReady, setReady] = useState<Ready>(false);
+  const [title, setTitle] = useState<Title>('');
+  const [artwork, setArtwork] = useState<Artwork>('');
 
   const setSpeedSanitized = useCallback((newSpeed: string) => {
     let newSpeedFloat = parseFloat(newSpeed);
@@ -116,6 +124,10 @@ export function AudioPlayerContextProvider({children}) {
       handleSeek,
       isReady,
       setReady,
+      title,
+      setTitle,
+      artwork,
+      setArtwork,
     }),
     [
       speed,
@@ -132,6 +144,8 @@ export function AudioPlayerContextProvider({children}) {
       seek,
       handleSeek,
       isReady,
+      title,
+      artwork,
     ],
   );
 

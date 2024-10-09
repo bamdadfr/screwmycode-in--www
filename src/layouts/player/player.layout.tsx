@@ -29,7 +29,10 @@ export function PlayerLayout({title, image, audio, speed}: PlayerLayoutProps) {
         <AudioRefContextProvider>
           <AudioPlayerContextProvider>
             <AudioComponent defaultSpeed={speed.toString()} />
-            <PlayerModule />
+            <PlayerModule
+              title={title}
+              artwork={image}
+            />
           </AudioPlayerContextProvider>
         </AudioRefContextProvider>
       </DefaultLayout>

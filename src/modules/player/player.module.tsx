@@ -1,5 +1,5 @@
 import {ResizeObserver} from '@juggle/resize-observer';
-import React, {ReactElement, useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import useMeasure from 'react-use-measure';
 import {p} from 'src/app/shared.styles';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
@@ -28,11 +28,21 @@ import {
   VolumeSliderWrapper,
 } from './player.module.styles';
 
-export function PlayerModule(): ReactElement {
+interface Props {
+  title: string;
+  artwork: string;
+}
+
+export function PlayerModule({title, artwork}: Props) {
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
   const imageWidth = useMemo(() => width - p * 4, [width]);
   const playerWidth = useMemo(() => width - p * 6, [width]);
-  const {isReady} = useAudioPlayerContext();
+  const {isReady, setTitle, setArtwork} = useAudioPlayerContext();
+
+  useEffect(() => {
+    setTitle(title);
+    setArtwork(artwork);
+  }, [title, setTitle, artwork, setArtwork]);
 
   if (!isReady) {
     return <LoadingComponent />;

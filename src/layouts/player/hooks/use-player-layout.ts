@@ -1,8 +1,5 @@
-import {useAtom} from 'jotai';
 import {useRouter} from 'next/router';
 import {useEffect} from 'react';
-import {setArtworkAtom} from 'src/atoms/artwork.atoms';
-import {setAudioTitleAtom} from 'src/atoms/audio-title.atoms';
 import {useAudioUrlContext} from 'src/contexts/audio-url-context';
 import {type PlayerLayoutProps} from 'src/layouts/player/player.layout';
 
@@ -10,16 +7,12 @@ interface UsePlayerLayout {
   metaUrl: string;
 }
 
-export function usePlayerLayout({
-  title,
-  audio,
-  image,
-}: PlayerLayoutProps): UsePlayerLayout {
+export function usePlayerLayout({audio}: PlayerLayoutProps): UsePlayerLayout {
   const router = useRouter();
 
   // const [isLoaded] = useAtom(isLoadedAtom);
-  const [, setAudioTitle] = useAtom(setAudioTitleAtom);
-  const [, setArtwork] = useAtom(setArtworkAtom);
+  // const [, setAudioTitle] = useAtom(setAudioTitleAtom);
+  // const [, setArtwork] = useAtom(setArtworkAtom);
 
   const metaUrl = 'https://www.screwmycode.in/' + router.asPath;
 
@@ -31,13 +24,13 @@ export function usePlayerLayout({
 
   // usePlayerLoading();
 
-  useEffect(() => {
-    setAudioTitle(title);
-  }, [setAudioTitle, title]);
+  // useEffect(() => {
+  //   setAudioTitle(title);
+  // }, [setAudioTitle, title]);
 
-  useEffect(() => {
-    setArtwork(image);
-  }, [setArtwork, image]);
+  // useEffect(() => {
+  //   setArtwork(image);
+  // }, [setArtwork, image]);
 
   // todo: pause on url change
   // useEffect(() => () => {
