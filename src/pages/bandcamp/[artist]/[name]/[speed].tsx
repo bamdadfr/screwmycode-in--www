@@ -1,14 +1,22 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
-
+import React from 'react';
+import {AudioUrlContextProvider} from 'src/contexts/audio-url-context';
 import {
   PlayerLayout,
   PlayerLayoutProps,
-} from '../../../../layouts/player/player.layout';
-import {apiQuery} from '../../../../utils/api-query/api-query';
-import {invokeRedirection} from '../../../../utils/invoke-redirection/invoke-redirection';
-import {validateBandcampId} from '../../../../utils/validate-bandcamp-id/validate-bandcamp-id';
+} from 'src/layouts/player/player.layout';
+import {apiQuery} from 'src/utils/api-query/api-query';
+import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {validateBandcampId} from 'src/utils/validate-bandcamp-id/validate-bandcamp-id';
 
-export default PlayerLayout;
+export default function BandcampPage(props: PlayerLayoutProps) {
+  return (
+    <AudioUrlContextProvider>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <PlayerLayout {...props} />
+    </AudioUrlContextProvider>
+  );
+}
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext,

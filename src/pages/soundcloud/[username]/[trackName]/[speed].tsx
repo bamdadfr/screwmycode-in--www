@@ -1,18 +1,23 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
-import {PlayerLayout, PlayerLayoutProps} from 'src/layouts/player/player.layout';
+import React from 'react';
+import {AudioUrlContextProvider} from 'src/contexts/audio-url-context';
+import {
+  PlayerLayout,
+  PlayerLayoutProps,
+} from 'src/layouts/player/player.layout';
 import {apiQuery} from 'src/utils/api-query/api-query';
 import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
 import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
 
-/**
- * SoundCloud page
- * Path: /soundcloud/[user]/[id]/[speed]
- */
-export default PlayerLayout;
+export default function SoundcloudPage(props: PlayerLayoutProps) {
+  return (
+    <AudioUrlContextProvider>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <PlayerLayout {...props} />
+    </AudioUrlContextProvider>
+  );
+}
 
-/**
- * Soundcloud page server side props
- */
 export async function getServerSideProps(
   context: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {

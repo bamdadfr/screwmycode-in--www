@@ -1,18 +1,23 @@
 import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
-import {PlayerLayout, PlayerLayoutProps} from 'src/layouts/player/player.layout';
+import React from 'react';
+import {AudioUrlContextProvider} from 'src/contexts/audio-url-context';
+import {
+  PlayerLayout,
+  PlayerLayoutProps,
+} from 'src/layouts/player/player.layout';
 import {apiQuery} from 'src/utils/api-query/api-query';
 import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
 import {validateYoutubeId} from 'src/utils/validate-youtube-id/validate-youtube-id';
 
-/**
- * YouTube page
- * Path: /youtube/[id]/[speed]
- */
-export default PlayerLayout;
+export default function YoutubePage(props: PlayerLayoutProps) {
+  return (
+    <AudioUrlContextProvider>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <PlayerLayout {...props} />
+    </AudioUrlContextProvider>
+  );
+}
 
-/**
- * YouTube page server side props
- */
 export async function getServerSideProps(
   context: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {

@@ -4,13 +4,9 @@ import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 import {Invisible} from './audio.component.styles';
 import {useAudioModule} from './hooks/use-audio-component';
 
-interface Props {
-  url: string;
-}
-
-export function AudioComponent({url}: Props) {
+export function AudioComponent() {
   const audioRef = useAudioRefContext();
-  useAudioModule(url);
+  useAudioModule();
 
   return (
     <Invisible>

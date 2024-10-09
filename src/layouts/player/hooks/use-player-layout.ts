@@ -6,6 +6,8 @@ import {setAudioTitleAtom} from 'src/atoms/audio-title.atoms';
 import {isLoadedAtom} from 'src/atoms/load.atoms';
 import {setPauseAtom} from 'src/atoms/play-pause.atoms';
 import {setSpeedAtom} from 'src/atoms/speed.atoms';
+import {useAudioUrlContext} from 'src/contexts/audio-url-context';
+import {type PlayerLayoutProps} from 'src/layouts/player/player.layout';
 
 import {usePlayerLoading} from './use-player-loading';
 
@@ -23,8 +25,9 @@ interface UsePlayerLayout {
 export function usePlayerLayout({
   title,
   speed,
+  audio,
   image,
-}: UsePlayerLayoutOptions): UsePlayerLayout {
+}: PlayerLayoutProps): UsePlayerLayout {
   const router = useRouter();
 
   const [isLoaded] = useAtom(isLoadedAtom);
@@ -34,6 +37,12 @@ export function usePlayerLayout({
   const [, setPause] = useAtom(setPauseAtom);
 
   const metaUrl = 'https://www.screwmycode.in/' + router.asPath;
+
+  const {setUrl} = useAudioUrlContext();
+
+  useEffect(() => {
+    setUrl(audio);
+  }, [audio, setUrl]);
 
   usePlayerLoading();
 

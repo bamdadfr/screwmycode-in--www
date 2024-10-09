@@ -3,9 +3,11 @@ import {useCallback, useEffect, useState} from 'react';
 import {setDurationAtom} from 'src/atoms/duration.atoms';
 import {setLoadedAtom} from 'src/atoms/load.atoms';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
+import {useAudioUrlContext} from 'src/contexts/audio-url-context';
 
-export function useAudioLoad(url: string) {
+export function useAudioLoad() {
   const ref = useAudioRefContext();
+  const {url} = useAudioUrlContext();
   const [savedUrl, setSavedUrl] = useState<string>();
   const [, setLoaded] = useAtom(setLoadedAtom);
   const [, setDuration] = useAtom(setDurationAtom);
@@ -23,7 +25,7 @@ export function useAudioLoad(url: string) {
   }, [ref, setDuration]);
 
   useEffect(() => {
-    if (ref.current === null) {
+    if (ref.current === null || url === null) {
       return;
     }
 

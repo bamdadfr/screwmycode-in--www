@@ -9,10 +9,10 @@ import {useAudioSeek} from './use-audio-seek';
 import {useAudioVolume} from './use-audio-volume';
 import {useKeyboardToggle} from './use-keyboard-toggle';
 
-export function useAudioModule(url: string) {
+export function useAudioModule() {
   useKeyboardToggle('Space');
 
-  useAudioLoad(url);
+  useAudioLoad();
   useAudioLoop();
   useAudioPitch();
   useAudioPlaybackRate();

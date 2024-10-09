@@ -1,5 +1,5 @@
 import {NextSeo} from 'next-seo';
-import React, {type ReactElement} from 'react';
+import React from 'react';
 import {AudioComponent} from 'src/components/audio/audio.component';
 import {LoadingComponent} from 'src/components/loading/loading.component';
 import {AudioRefContextProvider} from 'src/contexts/audio-ref-context';
@@ -15,17 +15,8 @@ export interface PlayerLayoutProps {
   speed: number;
 }
 
-export function PlayerLayout({
-  title,
-  image,
-  audio,
-  speed,
-}: PlayerLayoutProps): ReactElement {
-  const {metaUrl, isLoaded} = usePlayerLayout({
-    title,
-    speed,
-    image,
-  });
+export function PlayerLayout({title, image, audio, speed}: PlayerLayoutProps) {
+  const {metaUrl, isLoaded} = usePlayerLayout({title, image, audio, speed});
 
   return (
     <>
@@ -36,7 +27,7 @@ export function PlayerLayout({
 
       <DefaultLayout>
         <AudioRefContextProvider>
-          <AudioComponent url={audio} />
+          <AudioComponent />
           {!isLoaded ? <LoadingComponent /> : <PlayerModule />}
         </AudioRefContextProvider>
       </DefaultLayout>
