@@ -1,8 +1,7 @@
-import {withSentryConfig} from '@sentry/nextjs';
-
 const isEnvProduction = process.env.NODE_ENV === 'production';
 
-const configuration = {
+/** @type {import('next').NextConfig} */
+const config = {
   poweredByHeader: false,
   compiler: {
     styledComponents: true,
@@ -17,13 +16,13 @@ const configuration = {
       },
     ],
   },
-  webpack: (config) => {
-    config = {
-      ...config,
+  webpack: (c) => {
+    c = {
+      ...c,
       module: {
-        ...config.module,
+        ...c.module,
         rules: [
-          ...config.module.rules,
+          ...c.module.rules,
           {
             test: /\.glsl$/i,
             type: 'asset/source',
@@ -31,12 +30,12 @@ const configuration = {
         ],
       },
     };
-    return config;
+    return c;
   },
 };
 
 if (!isEnvProduction) {
-  configuration.images.remotePatterns.push({
+  config.images.remotePatterns.push({
     protocol: 'http',
     hostname: 'localhost',
     port: '8000',
@@ -44,5 +43,4 @@ if (!isEnvProduction) {
   });
 }
 
-const SentryWebpackPluginOptions = {};
-export default withSentryConfig(configuration, SentryWebpackPluginOptions);
+export default config;
