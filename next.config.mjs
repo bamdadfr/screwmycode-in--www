@@ -1,4 +1,5 @@
-const {withSentryConfig} = require('@sentry/nextjs');
+import {withSentryConfig} from '@sentry/nextjs';
+
 const isEnvProduction = process.env.NODE_ENV === 'production';
 
 const configuration = {
@@ -7,7 +8,20 @@ const configuration = {
     styledComponents: true,
   },
   images: {
-    domains: ['api.screwmycode.in'],
+    remotePatterns: [
+      !isEnvProduction && {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.screwmycode.in',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   webpack: (config) => {
     config = {
@@ -27,9 +41,5 @@ const configuration = {
   },
 };
 
-if (!isEnvProduction) {
-  configuration.images.domains = [...configuration.images.domains, 'localhost'];
-}
-
 const SentryWebpackPluginOptions = {};
-module.exports = withSentryConfig(configuration, SentryWebpackPluginOptions);
+export default withSentryConfig(configuration, SentryWebpackPluginOptions);
