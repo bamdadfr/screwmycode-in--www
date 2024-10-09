@@ -13,8 +13,6 @@ export function AudioUrlContextProvider({children}) {
   const [url, setUrl] = useState<string | null>(null);
   const memoizedUrl = useMemo(() => url, [url]);
 
-  console.log(memoizedUrl);
-
   return (
     <AudioUrlContext.Provider value={{url: memoizedUrl, setUrl}}>
       {children}
