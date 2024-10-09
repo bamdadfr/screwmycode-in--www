@@ -1,3 +1,15 @@
+# [3.12.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.5...v3.12.0) (2024-10-09)
+
+
+### Bug Fixes
+
+* correctly construct context object ([f81915a](https://github.com/bamdadfr/screwmycode-in--www/commit/f81915abe499b98987a0d827ef42eb0d117279da))
+
+
+### Features
+
+* use context for audio related info ([4015b61](https://github.com/bamdadfr/screwmycode-in--www/commit/4015b61bdcfb4981db23dafa1063b404b5be803f))
+
 ## [3.11.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.11.4...v3.11.5) (2024-10-09)
 
 
