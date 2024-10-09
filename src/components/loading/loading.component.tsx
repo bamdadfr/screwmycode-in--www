@@ -4,9 +4,6 @@ import React, {type ReactElement} from 'react';
 import {DotsComponent} from './components/dots/dots.component';
 import {Container, ImageContainer, Text} from './loading.component.styles';
 
-/**
- * Component for the loading screen
- */
 export function LoadingComponent(): ReactElement {
   return (
     <Container>

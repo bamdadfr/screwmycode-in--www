@@ -18,6 +18,7 @@ export const ImageContainer = styled.div`
   height: 10em;
 
   transform: translate3d(-${p}px, -${p * 4}px, 0);
+  position: relative;
 `;
 
 export const Text = styled.span`
