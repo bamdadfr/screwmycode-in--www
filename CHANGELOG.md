@@ -1,3 +1,24 @@
+# [3.11.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.10.0...v3.11.0) (2024-10-09)
+
+
+### Bug Fixes
+
+* **about:** add horizontal padding ([ef9dd5b](https://github.com/bamdadfr/screwmycode-in--www/commit/ef9dd5bd4ca3f69e23d18255244025a654d025ca))
+* improve dynamic title rendering ([556696e](https://github.com/bamdadfr/screwmycode-in--www/commit/556696ecb468090da57af9dd28aa356574b49c67))
+* improve props passing to styled slider ([988ec76](https://github.com/bamdadfr/screwmycode-in--www/commit/988ec76d32b7d0b9656a7d3ddbaf4eadfaa258c9))
+* **loading:** add priority to loading icon ([791715b](https://github.com/bamdadfr/screwmycode-in--www/commit/791715b9598f646c41bb380c9f434f72457fd531))
+* **loading:** use relative positioning for image container ([730b0f0](https://github.com/bamdadfr/screwmycode-in--www/commit/730b0f09a740cfb4e30220c48ae21b06c9eeb2da))
+* next config dev env ([7f2b608](https://github.com/bamdadfr/screwmycode-in--www/commit/7f2b608af9be7ee1a77e35ef29f0f6386b55ca54))
+* update next configuration ([d86ace2](https://github.com/bamdadfr/screwmycode-in--www/commit/d86ace23890fdf26d2ed81cebfe192111404b160))
+* use absolute apple touch favicon ([09ce0fa](https://github.com/bamdadfr/screwmycode-in--www/commit/09ce0fa3db07ea2ff5ff14d3979d25375e57cd8d))
+* use type import styling ([34cc355](https://github.com/bamdadfr/screwmycode-in--www/commit/34cc35545eceffc6d4c9fd195eec86667ce2f183))
+
+
+### Features
+
+* inject title update on speed change with next-seo ([c2b2580](https://github.com/bamdadfr/screwmycode-in--www/commit/c2b2580d1ad281186aa88a46cd8f3b511d0d6dce))
+* use next-seo in place of custom meta component ([a95cbbc](https://github.com/bamdadfr/screwmycode-in--www/commit/a95cbbcacea6b1587c995901aeddca7c5e2b46a0))
+
 # [3.10.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.9.3...v3.10.0) (2024-10-08)
 
 
