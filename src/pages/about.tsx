@@ -1,6 +1,6 @@
+import {NextSeo} from 'next-seo';
 import React, {type ReactElement} from 'react';
 
-import {MetaComponent} from '../components/meta/meta.component';
 import {TextLinkComponent} from '../components/text-link/text-link.component';
 import {DefaultLayout} from '../layouts/default/default.layout';
 import {
@@ -18,15 +18,12 @@ function Prefix({spacing = false}) {
   return <Blue spacing={spacing ? 1 : 0}>iscrew</Blue>;
 }
 
-/**
- * About page
- * Path: /about
- */
 export default function AboutPage(): ReactElement {
   return (
     <>
-      <MetaComponent description="About" />
-      <DefaultLayout customMeta>
+      <NextSeo title="About" />
+
+      <DefaultLayout>
         <Container>
           <Content>Pitch control for YouTube and Soundcloud.</Content>
 

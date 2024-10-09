@@ -1,7 +1,7 @@
 import {GetStaticPropsResult} from 'next';
+import {NextSeo} from 'next-seo';
 import React, {type ReactElement} from 'react';
 
-import {MetaComponent} from '../components/meta/meta.component';
 import {
   TableComponent,
   TableComponentItem,
@@ -17,8 +17,9 @@ interface TopPageProps {
 export default function TopPage({top}: TopPageProps): ReactElement {
   return (
     <>
-      <MetaComponent description="Top" />
-      <DefaultLayout customMeta>
+      <NextSeo title="Top" />
+
+      <DefaultLayout>
         <TableComponent items={top} />
       </DefaultLayout>
     </>

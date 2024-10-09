@@ -1,7 +1,7 @@
+import {NextSeo} from 'next-seo';
 import React, {type ReactElement} from 'react';
 import {AudioComponent} from 'src/components/audio/audio.component';
 import {LoadingComponent} from 'src/components/loading/loading.component';
-import {MetaComponent} from 'src/components/meta/meta.component';
 import {DefaultLayout} from 'src/layouts/default/default.layout';
 import {PlayerModule} from 'src/modules/player/player.module';
 
@@ -28,12 +28,13 @@ export function PlayerLayout({
 
   return (
     <>
-      <MetaComponent
-        description={metaDescription}
-        image={image}
-        url={metaUrl}
+      <NextSeo
+        title={metaDescription}
+        openGraph={{images: [{url: image}]}}
+        canonical={metaUrl}
       />
-      <DefaultLayout customMeta>
+
+      <DefaultLayout>
         <AudioComponent url={audio} />
         {!isLoaded ? <LoadingComponent /> : <PlayerModule />}
       </DefaultLayout>
