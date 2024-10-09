@@ -1,22 +1,24 @@
-import {useAtom} from 'jotai';
 import {useMemo} from 'react';
 import speedToPercentage from 'speed-to-percentage';
 import speedToSemitones from 'speed-to-semitones';
-
-import {speedAtom} from '../../../atoms/speed.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 
 interface UseIndicatorsComponent {
   percentage: string;
   semitones: string;
 }
 
-/**
- * Entry hook for the indicators component
- */
 export function useIndicatorsComponent(): UseIndicatorsComponent {
-  const [speed] = useAtom(speedAtom);
-  const percentage = useMemo(() => speedToPercentage(speed, 1).toString(), [speed]);
-  const semitones = useMemo(() => speedToSemitones(speed, 1).toString(), [speed]);
+  const {speed} = useAudioPlayerContext();
+
+  const percentage = useMemo(
+    () => speedToPercentage(speed, 1).toString(),
+    [speed],
+  );
+  const semitones = useMemo(
+    () => speedToSemitones(speed, 1).toString(),
+    [speed],
+  );
 
   return {
     percentage,

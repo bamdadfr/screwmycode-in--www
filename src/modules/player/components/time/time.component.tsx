@@ -1,17 +1,11 @@
-import {useAtom} from 'jotai';
-import React, {type ReactElement} from 'react';
+import React from 'react';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {calculateMinutes} from 'src/utils/calculate-minutes/calculate-minutes';
 
-import {durationAtom} from '../../../../atoms/duration.atoms';
-import {progressAtom} from '../../../../atoms/progress.atoms';
-import {calculateMinutes} from '../../../../utils/calculate-minutes/calculate-minutes';
 import {Container} from './time.component.styles';
 
-/**
- * Component to display the current time and the duration of the video
- */
-export function TimeComponent(): ReactElement {
-  const [duration] = useAtom(durationAtom);
-  const [progress] = useAtom(progressAtom);
+export function TimeComponent() {
+  const {duration, progress} = useAudioPlayerContext();
 
   return (
     <Container>

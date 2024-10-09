@@ -1,11 +1,10 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 export function useAudioPlayPause() {
   const ref = useAudioRefContext();
-  const [isPlaying] = useAtom(isPlayingAtom);
+  const {isPlaying} = useAudioPlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

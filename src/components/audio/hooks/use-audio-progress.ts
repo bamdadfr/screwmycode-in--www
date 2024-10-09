@@ -1,13 +1,10 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {isPlayingAtom} from 'src/atoms/play-pause.atoms';
-import {setProgressAtom} from 'src/atoms/progress.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 export function useAudioProgress() {
   const ref = useAudioRefContext();
-  const [isPlaying] = useAtom(isPlayingAtom);
-  const [, setProgress] = useAtom(setProgressAtom);
+  const {isPlaying, setProgress} = useAudioPlayerContext();
   const fps = 10;
 
   useEffect(() => {

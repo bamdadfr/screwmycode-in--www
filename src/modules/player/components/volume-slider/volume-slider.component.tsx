@@ -1,14 +1,9 @@
-import {useAtom} from 'jotai';
 import React, {type ReactElement} from 'react';
-import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
 import {SliderComponent} from 'src/components/slider/slider.component';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 
-/**
- * Component to control the volume of the player
- */
 export function VolumeSliderComponent(): ReactElement {
-  const [volume] = useAtom(volumeAtom);
-  const [, setVolume] = useAtom(setVolumeAtom);
+  const {volume, setVolume} = useAudioPlayerContext();
 
   return (
     <SliderComponent

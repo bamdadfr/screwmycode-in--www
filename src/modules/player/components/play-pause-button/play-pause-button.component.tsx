@@ -1,21 +1,12 @@
 import pause from '@iconify/icons-mdi/pause';
 import play from '@iconify/icons-mdi/play';
 import {Icon} from '@iconify/react';
-import {useAtom} from 'jotai';
 import React, {type ReactElement} from 'react';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
+import {PlayerButton} from 'src/modules/player/player.module.styles';
 
-import {
-  isPlayingAtom,
-  togglePlayingAtom,
-} from '../../../../atoms/play-pause.atoms';
-import {PlayerButton} from '../../player.module.styles';
-
-/**
- * Component to render the play/pause button
- */
 export function PlayPauseButtonComponent(): ReactElement {
-  const [isPlaying] = useAtom(isPlayingAtom);
-  const [, togglePlaying] = useAtom(togglePlayingAtom);
+  const {isPlaying, togglePlaying} = useAudioPlayerContext();
 
   return (
     <PlayerButton

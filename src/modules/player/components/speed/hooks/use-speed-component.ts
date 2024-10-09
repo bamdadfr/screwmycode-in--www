@@ -1,21 +1,16 @@
-import {useAtom} from 'jotai';
 import {ChangeEvent, useCallback} from 'react';
-import {setSpeedAtom, speedAtom} from 'src/atoms/speed.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 
 interface UseSpeedComponent {
   value: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-/**
- * Entry hook for the player speed component
- */
 export function useSpeedComponent(): UseSpeedComponent {
-  const [speed] = useAtom(speedAtom);
-  const [, setSpeed] = useAtom(setSpeedAtom);
+  const {speed, setSpeed} = useAudioPlayerContext();
 
   const onChange = useCallback(
-    (e) => {
+    (e: ChangeEvent<HTMLInputElement>) => {
       setSpeed(e.target.value);
     },
     [setSpeed],

@@ -1,11 +1,10 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {isRepeatingAtom} from 'src/atoms/repeat.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 export function useAudioLoop() {
   const ref = useAudioRefContext();
-  const [isRepeating] = useAtom(isRepeatingAtom);
+  const {isRepeating} = useAudioPlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

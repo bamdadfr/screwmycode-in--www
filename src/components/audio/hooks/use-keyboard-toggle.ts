@@ -1,33 +1,20 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 
-import {
-  isPlayingAtom,
-  setPauseAtom,
-  setPlayAtom,
-} from '../../../atoms/play-pause.atoms';
-
-/**
- * Hook to toggle play/pause state with keyboard
- * @param keyCode
- */
 export function useKeyboardToggle(keyCode = 'Space'): void {
-  const [isPlaying] = useAtom(isPlayingAtom);
-  const [, setPlay] = useAtom(setPlayAtom);
-  const [, setPause] = useAtom(setPauseAtom);
+  const {togglePlaying} = useAudioPlayerContext();
 
   useEffect(() => {
-    const handleKeyboard = (event) => {
-      if (event.code === keyCode) {
-        if (isPlaying) {
-          return setPause();
-        }
-
-        setPlay();
+    const handler = (e: KeyboardEvent) => {
+      if (e.code === keyCode) {
+        togglePlaying();
       }
     };
 
-    document.addEventListener('keypress', handleKeyboard);
-    return () => document.removeEventListener('keypress', handleKeyboard);
-  }, [isPlaying, keyCode, setPause, setPlay]);
+    document.addEventListener('keypress', handler);
+
+    return () => {
+      document.removeEventListener('keypress', handler);
+    };
+  }, [keyCode, togglePlaying]);
 }

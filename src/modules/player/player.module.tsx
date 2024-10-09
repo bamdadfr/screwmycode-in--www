@@ -1,10 +1,10 @@
 import {ResizeObserver} from '@juggle/resize-observer';
-import {NextSeo} from 'next-seo';
 import React, {ReactElement, useMemo} from 'react';
 import useMeasure from 'react-use-measure';
 import {p} from 'src/app/shared.styles';
 import {IndicatorsComponent} from 'src/components/indicators/indicators.component';
-import {useDynamicTitle} from 'src/hooks/use-dynamic-title';
+import {LoadingComponent} from 'src/components/loading/loading.component';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {WebGlComponent} from 'src/modules/player/components/artwork/web-gl.component';
 
 import {PlayPauseButtonComponent} from './components/play-pause-button/play-pause-button.component';
@@ -32,12 +32,14 @@ export function PlayerModule(): ReactElement {
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
   const imageWidth = useMemo(() => width - p * 4, [width]);
   const playerWidth = useMemo(() => width - p * 6, [width]);
-  const {dynamicTitle} = useDynamicTitle();
+  const {isReady} = useAudioPlayerContext();
+
+  if (!isReady) {
+    return <LoadingComponent />;
+  }
 
   return (
     <>
-      <NextSeo title={dynamicTitle} />
-
       <ImageContainer ref={ref}>
         <WebGlComponent width={imageWidth} />
       </ImageContainer>

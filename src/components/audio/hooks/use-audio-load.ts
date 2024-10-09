@@ -1,20 +1,17 @@
-import {useAtom} from 'jotai';
 import {useCallback, useEffect, useState} from 'react';
-import {setDurationAtom} from 'src/atoms/duration.atoms';
-import {setLoadedAtom} from 'src/atoms/load.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 import {useAudioUrlContext} from 'src/contexts/audio-url-context';
 
 export function useAudioLoad() {
   const ref = useAudioRefContext();
   const {url} = useAudioUrlContext();
+  const {setDuration, setReady} = useAudioPlayerContext();
   const [savedUrl, setSavedUrl] = useState<string>();
-  const [, setLoaded] = useAtom(setLoadedAtom);
-  const [, setDuration] = useAtom(setDurationAtom);
 
   const handleCanPlay = useCallback(() => {
-    setLoaded(true);
-  }, [setLoaded]);
+    setReady(true);
+  }, [setReady]);
 
   const handleMetadata = useCallback(() => {
     if (ref.current === null) {
@@ -38,12 +35,13 @@ export function useAudioLoad() {
     audio.src = url;
     setSavedUrl(url);
 
-    audio.addEventListener('canplay', () => handleCanPlay());
-    audio.addEventListener('loadedmetadata', () => handleMetadata());
+    audio.oncanplay = handleCanPlay;
+    audio.onloadedmetadata = handleMetadata;
 
-    return () => {
-      audio.removeEventListener('canplay', () => handleCanPlay());
-      audio.removeEventListener('loadedmetadata', () => handleMetadata());
-    };
+    // todo: fix me
+    // return () => {
+    //   audio.oncanplay = null;
+    //   audio.onloadedmetadata = null;
+    // };
   }, [ref, handleCanPlay, handleMetadata, savedUrl, setDuration, url]);
 }

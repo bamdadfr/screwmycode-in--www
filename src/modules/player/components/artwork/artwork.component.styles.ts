@@ -3,13 +3,13 @@ import {mapRange} from 'src/utils/map-range/map-range';
 import styled from 'styled-components';
 
 const getFilter = ({sepia, hueRotate, saturate, blur}) => `
-      sepia(${sepia}%)
-      hue-rotate(${hueRotate}deg)
-      saturate(${saturate}%)
-      // blur(${blur}px)
-      opacity(0.618)
-      brightness(0.618)
-    `;
+  sepia(${sepia}%)
+  hue-rotate(${hueRotate}deg)
+  saturate(${saturate}%)
+  // blur(${blur}px)
+  opacity(0.618)
+  brightness(0.618)
+`;
 
 export const Container = styled.span<{speed: string;}>`
   ${centerFlex};

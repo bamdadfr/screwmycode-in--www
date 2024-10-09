@@ -1,6 +1,5 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {setBufferedAtom} from 'src/atoms/buffered.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 const getBufferedAmount = (audio: HTMLAudioElement) => {
@@ -13,7 +12,7 @@ const getBufferedAmount = (audio: HTMLAudioElement) => {
 
 export function useAudioBuffered() {
   const ref = useAudioRefContext();
-  const [, setBuffered] = useAtom(setBufferedAtom);
+  const {setBuffered} = useAudioPlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

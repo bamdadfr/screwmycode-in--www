@@ -1,21 +1,13 @@
 import repeat from '@iconify/icons-mdi/repeat';
 import repeatOff from '@iconify/icons-mdi/repeat-off';
 import {Icon} from '@iconify/react';
-import {useAtom} from 'jotai';
 import React, {type ReactElement} from 'react';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 
-import {
-  isRepeatingAtom,
-  toggleRepeatingAtom,
-} from '../../../../atoms/repeat.atoms';
 import {PlayerButton} from '../../player.module.styles';
 
-/**
- * Component to toggle repeat mode
- */
 export function RepeatButtonComponent(): ReactElement {
-  const [isRepeating] = useAtom(isRepeatingAtom);
-  const [, toggleRepeating] = useAtom(toggleRepeatingAtom);
+  const {isRepeating, toggleRepeating} = useAudioPlayerContext();
 
   return (
     <PlayerButton

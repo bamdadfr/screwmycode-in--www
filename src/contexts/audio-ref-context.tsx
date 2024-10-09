@@ -5,14 +5,13 @@ import React, {
   useRef,
 } from 'react';
 
-type Audio = HTMLAudioElement | null;
+type AudioRef = HTMLAudioElement | null;
+type Context = MutableRefObject<AudioRef>;
 
-const AudioRefContext = createContext<MutableRefObject<Audio>>(
-  {} as MutableRefObject<Audio>,
-);
+const AudioRefContext = createContext<Context>({} as Context);
 
 export function AudioRefContextProvider({children}) {
-  const audioRef = useRef<Audio>(null);
+  const audioRef = useRef<AudioRef>(null);
 
   return (
     <AudioRefContext.Provider value={audioRef}>

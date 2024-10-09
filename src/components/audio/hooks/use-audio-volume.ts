@@ -1,12 +1,10 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {setVolumeAtom, volumeAtom} from 'src/atoms/volume.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 export function useAudioVolume() {
   const ref = useAudioRefContext();
-  const [volume] = useAtom(volumeAtom);
-  const [, setVolume] = useAtom(setVolumeAtom);
+  const {volume, setVolume} = useAudioPlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

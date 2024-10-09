@@ -1,11 +1,10 @@
-import {useAtom} from 'jotai';
 import {useEffect} from 'react';
-import {seekAtom} from 'src/atoms/seek.atoms';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useAudioRefContext} from 'src/contexts/audio-ref-context';
 
 export function useAudioSeek() {
   const ref = useAudioRefContext();
-  const [seek] = useAtom(seekAtom);
+  const {seek} = useAudioPlayerContext();
 
   useEffect(() => {
     if (ref.current === null) {

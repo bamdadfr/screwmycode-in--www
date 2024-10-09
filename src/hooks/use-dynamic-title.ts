@@ -4,15 +4,15 @@ import {useNextReplaceUrl} from 'next-replace-url';
 import {useMemo} from 'react';
 import speedToSemitones from 'speed-to-semitones';
 import {audioTitleAtom} from 'src/atoms/audio-title.atoms';
-import {speedAtom} from 'src/atoms/speed.atoms';
 import {TITLE_SEPARATOR} from 'src/constants';
+import {useAudioPlayerContext} from 'src/contexts/audio-player-context';
 import {useCache} from 'src/hooks/use-cache';
 import {getProviderFromRouter} from 'src/utils/get-provider/get-provider-from-router';
 
 export function useDynamicTitle() {
   const router = useRouter();
   const [audioTitle] = useAtom(audioTitleAtom);
-  const [speed] = useAtom(speedAtom);
+  const {speed} = useAudioPlayerContext();
   const cachedSpeed = useCache(speed, 350);
 
   useNextReplaceUrl('speed', cachedSpeed.toString());
