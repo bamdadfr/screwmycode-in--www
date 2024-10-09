@@ -1,3 +1,4 @@
+import {NextSeo} from 'next-seo';
 import React, {type ReactElement} from 'react';
 
 import {Invisible} from './audio.component.styles';
@@ -8,17 +9,21 @@ interface Props {
 }
 
 export function AudioComponent({url}: Props): ReactElement {
-  const {ref} = useAudioModule(url);
+  const {ref, dynamicTitle} = useAudioModule(url);
 
   return (
-    <Invisible>
-      <audio
-        ref={ref}
-        aria-label="player"
-        // controls
-      >
-        <track kind="captions" />
-      </audio>
-    </Invisible>
+    <>
+      <NextSeo title={dynamicTitle} />
+
+      <Invisible>
+        <audio
+          ref={ref}
+          aria-label="player"
+          // controls
+        >
+          <track kind="captions" />
+        </audio>
+      </Invisible>
+    </>
   );
 }

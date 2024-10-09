@@ -1,4 +1,5 @@
 import {type DefaultSeoProps} from 'next-seo';
+import {TITLE_SEPARATOR} from 'src/constants';
 
 const title = 'ScrewMyCode.in';
 const description =
@@ -8,7 +9,7 @@ const url = 'https://www.screwmycode.in/';
 export const SEO: DefaultSeoProps = {
   defaultTitle: title,
   description,
-  titleTemplate: `%s - ${title}`,
+  titleTemplate: `%s ${TITLE_SEPARATOR} ${title}`,
   canonical: url,
   norobots: false,
   openGraph: {
