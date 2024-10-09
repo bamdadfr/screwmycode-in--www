@@ -56,7 +56,7 @@ module.exports = {
     '@stylistic/jsx-indent': ['error', 2],
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': ['error'],
-    'react-hooks/exhaustive-deps': ['warn'],
+    'react-hooks/exhaustive-deps': ['error'],
     // .js rules
     'strict': 'off',
     '@stylistic/semi': ['error', 'always'],
