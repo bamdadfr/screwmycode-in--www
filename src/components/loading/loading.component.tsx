@@ -13,6 +13,7 @@ export function LoadingComponent(): ReactElement {
           alt="filling glass"
           layout="fill"
           objectFit="contain"
+          priority
         />
       </ImageContainer>
 
