@@ -1,3 +1,10 @@
+## [3.14.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.3...v3.14.4) (2024-10-10)
+
+
+### Bug Fixes
+
+* add fallback values for nullish values ([5159bcf](https://github.com/bamdadfr/screwmycode-in--www/commit/5159bcffeb8eef79b4c30dafdbe88995685b9791))
+
 ## [3.14.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.2...v3.14.3) (2024-10-10)
 
 
