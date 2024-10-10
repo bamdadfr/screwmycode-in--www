@@ -10,7 +10,7 @@ export function useDynamicTitle() {
 
   useNextReplaceUrl('speed', cachedSpeed.toString());
 
-  const dynamicTitle = usePlayerDocumentTitle(title, cachedSpeed);
+  const dynamicTitle = usePlayerDocumentTitle(title ?? '', cachedSpeed);
 
   return {
     dynamicTitle,

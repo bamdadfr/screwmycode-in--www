@@ -12,11 +12,13 @@ export function WebGlComponent({width}: Props): ReactElement {
 
   return (
     <Container speed={speed.toString()}>
-      <TextureComponent
-        image={artwork}
-        dryWet={speed}
-        width={width}
-      />
+      {artwork && (
+        <TextureComponent
+          image={artwork}
+          dryWet={speed}
+          width={width}
+        />
+      )}
     </Container>
   );
 }

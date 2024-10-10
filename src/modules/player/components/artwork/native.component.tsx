@@ -12,12 +12,14 @@ export function NativeComponent({width}: Props): ReactElement {
 
   return (
     <Container speed={speed.toString()}>
-      <Image
-        src={artwork}
-        width={width}
-        height={width}
-        alt="cover"
-      />
+      {artwork && (
+        <Image
+          src={artwork}
+          width={width}
+          height={width}
+          alt="cover"
+        />
+      )}
     </Container>
   );
 }
