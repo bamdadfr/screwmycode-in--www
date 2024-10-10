@@ -1,3 +1,11 @@
+## [3.14.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.2...v3.14.3) (2024-10-10)
+
+
+### Bug Fixes
+
+* bypass token on dev env ([1ae7324](https://github.com/bamdadfr/screwmycode-in--www/commit/1ae7324d42d3cfa21749111987aaf00ba3b8b65c))
+* use better player context default values ([01465ef](https://github.com/bamdadfr/screwmycode-in--www/commit/01465efb7e0b9ef4a121babbca987d033bb93779))
+
 ## [3.14.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.1...v3.14.2) (2024-10-10)
 
 
