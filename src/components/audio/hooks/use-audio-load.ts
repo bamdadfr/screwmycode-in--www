@@ -3,7 +3,7 @@ import {usePlayerContext} from 'src/contexts/player-context';
 
 export function useAudioLoad() {
   const {ref, setDuration, setReady, url} = usePlayerContext();
-  const [savedUrl, setSavedUrl] = useState<string>();
+  const [savedUrl, setSavedUrl] = useState<string | null>(null);
 
   const handleCanPlay = useCallback(() => {
     setReady(true);

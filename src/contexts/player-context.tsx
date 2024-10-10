@@ -21,9 +21,9 @@ type Progress = number; // amount in time
 type Repeating = boolean;
 type Seek = number; // amount in time (requested by the user)
 type Ready = boolean;
-type Title = string;
-type Artwork = string; // url
-type Url = string;
+type Title = string | null;
+type Artwork = string | null; // url
+type Url = string | null;
 
 type Context = {
   ref: MutableRefObject<Ref>;
@@ -67,9 +67,9 @@ export function PlayerContextProvider({children}) {
   const [isRepeating, setRepeating] = useState<Repeating>(true);
   const [seek, setSeek] = useState<Seek>(0);
   const [isReady, setReady] = useState<Ready>(false);
-  const [title, setTitle] = useState<Title>('');
-  const [artwork, setArtwork] = useState<Artwork>('');
-  const [url, setUrl] = useState<Url>('');
+  const [title, setTitle] = useState<Title>(null);
+  const [artwork, setArtwork] = useState<Artwork>(null);
+  const [url, setUrl] = useState<Url>(null);
 
   const setSpeedSanitized = useCallback((newSpeed: string) => {
     let newSpeedFloat = parseFloat(newSpeed);
