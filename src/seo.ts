@@ -4,7 +4,7 @@ import {TITLE_SEPARATOR} from 'src/constants';
 const title = 'ScrewMyCode.in';
 const description =
   'Variable speed pitch control for YouTube, Soundcloud & Bandcamp';
-const url = 'https://www.screwmycode.in/';
+const url = 'https://www.screwmycode.in';
 
 export const SEO: DefaultSeoProps = {
   defaultTitle: title,
