@@ -1,3 +1,10 @@
+## [3.14.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.1...v3.14.2) (2024-10-10)
+
+
+### Bug Fixes
+
+* use canonical without trailing slash ([a007c9b](https://github.com/bamdadfr/screwmycode-in--www/commit/a007c9b4f4ee3bda4175f774f4cdf0c440b89ca3))
+
 ## [3.14.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.0...v3.14.1) (2024-10-09)
 
 
