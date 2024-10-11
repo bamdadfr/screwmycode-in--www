@@ -1,3 +1,10 @@
+## [3.14.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.4...v3.14.5) (2024-10-11)
+
+
+### Bug Fixes
+
+* allow new remotes ([6320e0e](https://github.com/bamdadfr/screwmycode-in--www/commit/6320e0e12ccc296ba8dd2460b0e820ab92f455af))
+
 ## [3.14.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.3...v3.14.4) (2024-10-10)
 
 
