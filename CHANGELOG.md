@@ -1,3 +1,11 @@
+# [3.15.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.7...v3.15.0) (2024-10-11)
+
+
+### Features
+
+* add last pages + misc ([a89a37b](https://github.com/bamdadfr/screwmycode-in--www/commit/a89a37b44c24baf6da22b58214342a17637b9d18))
+* add new endpoints ([a151284](https://github.com/bamdadfr/screwmycode-in--www/commit/a15128457c558851f9fedec2952101c0ab84d247))
+
 ## [3.14.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.6...v3.14.7) (2024-10-11)
 
 
