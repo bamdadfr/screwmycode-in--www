@@ -1,20 +1,19 @@
-import {GetStaticPropsResult} from 'next';
+import {type GetStaticProps} from 'next';
 import {NextSeo} from 'next-seo';
-import React, {type ReactElement} from 'react';
+import React from 'react';
+import {type TopDto} from 'src/utils/dtos';
+import {ServerQuery} from 'src/utils/query';
+import {Redirect} from 'src/utils/redirect';
 
-import {
-  TableComponent,
-  TableComponentItem,
-} from '../components/table/table.component';
+import {TableComponent} from '../components/table/table.component';
 import {REVALIDATE} from '../constants';
 import {DefaultLayout} from '../layouts/default/default.layout';
-import {apiQuery} from '../utils/api-query/api-query';
 
-interface TopPageProps {
-  top: TableComponentItem[];
+interface Props {
+  top: TopDto[];
 }
 
-export default function TopPage({top}: TopPageProps): ReactElement {
+export default function TopPage({top}: Props) {
   return (
     <>
       <NextSeo title="Top" />
@@ -26,15 +25,17 @@ export default function TopPage({top}: TopPageProps): ReactElement {
   );
 }
 
-type GetStaticProps = GetStaticPropsResult<TopPageProps>;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const {data, err} = await ServerQuery.top();
 
-export async function getStaticProps(): Promise<GetStaticProps> {
-  const top = await apiQuery<TopPageProps['top']>('top');
+  if (err) {
+    return Redirect.home;
+  }
 
   return {
     props: {
-      top,
+      top: data,
     },
     revalidate: REVALIDATE,
   };
-}
+};

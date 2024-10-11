@@ -1,11 +1,11 @@
-import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
+import {type GetServerSideProps} from 'next';
 import React from 'react';
 import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
-import {apiQuery} from 'src/utils/api-query/api-query';
-import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {ServerQuery} from 'src/utils/query';
+import {Redirect} from 'src/utils/redirect';
 import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
 
 export default function SoundcloudPage(props: PlayerLayoutProps) {
@@ -13,28 +13,38 @@ export default function SoundcloudPage(props: PlayerLayoutProps) {
   return <PlayerLayout {...props} />;
 }
 
-export async function getServerSideProps(
-  context: GetServerSidePropsContext,
-): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
-  try {
-    const {username, trackName} = context.query;
-    const speed = context.query.speed as string;
+export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
+  context,
+) => {
+  const {username, trackName, speed} = context.query;
 
-    const id = `${username}/${trackName}`;
-
-    validateSoundcloudId(id);
-
-    const data = await apiQuery<PlayerLayoutProps>(`soundcloud/${id}`);
-
-    const props: PlayerLayoutProps = {
-      title: data.title,
-      image: data.image,
-      audio: data.audio,
-      speed: parseFloat(speed) || 1,
-    };
-
-    return {props};
-  } catch {
-    return invokeRedirection();
+  if (
+    typeof username !== 'string' ||
+    typeof trackName !== 'string' ||
+    typeof speed !== 'string'
+  ) {
+    return Redirect.home;
   }
-}
+
+  const slug = `${username}/${trackName}`;
+  const {isValid} = validateSoundcloudId(slug);
+
+  if (!isValid) {
+    return Redirect.home;
+  }
+
+  const {data, err} = await ServerQuery.audio('soundcloud', slug);
+
+  if (err) {
+    return Redirect.home;
+  }
+
+  const props: PlayerLayoutProps = {
+    ...data,
+    speed: Number(speed),
+  };
+
+  return {
+    props,
+  };
+};

@@ -1,18 +1,11 @@
 import React, {type ReactElement} from 'react';
+import {type TopDto} from 'src/utils/dtos';
 
 import {CellComponent} from './components/cell/cell.component';
 import {TableContainer} from './table.component.styles';
 
-export interface TableComponentItem {
-  slug: string;
-  image: string;
-  title: string;
-  onClick: (slug: this['slug']) => void;
-  type: 'youtube' | 'soundcloud' | 'bandcamp';
-}
-
 interface Props {
-  items: TableComponentItem[];
+  items: TopDto[];
 }
 
 export function TableComponent({items}: Props): ReactElement {

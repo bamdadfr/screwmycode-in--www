@@ -4,12 +4,12 @@ import Link from 'next/link';
 import React, {type ReactElement} from 'react';
 import {CenteredDiv} from 'src/app/shared.styles';
 import {useCellComponent} from 'src/components/table/components/cell/use-cell-component';
-import {type TableComponentItem} from 'src/components/table/table.component';
+import {type TopDto} from 'src/utils/dtos';
 
 import {Button, CellContainer} from '../../table.component.styles';
 
 export interface CellComponentProps {
-  item: TableComponentItem;
+  item: TopDto;
 }
 
 export function CellComponent({item}: CellComponentProps): ReactElement {

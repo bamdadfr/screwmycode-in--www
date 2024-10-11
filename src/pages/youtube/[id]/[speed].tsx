@@ -1,11 +1,11 @@
-import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
+import {type GetServerSideProps} from 'next';
 import React from 'react';
 import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
-import {apiQuery} from 'src/utils/api-query/api-query';
-import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {ServerQuery} from 'src/utils/query';
+import {Redirect} from 'src/utils/redirect';
 import {validateYoutubeId} from 'src/utils/validate-youtube-id/validate-youtube-id';
 
 export default function YoutubePage(props: PlayerLayoutProps) {
@@ -13,26 +13,33 @@ export default function YoutubePage(props: PlayerLayoutProps) {
   return <PlayerLayout {...props} />;
 }
 
-export async function getServerSideProps(
-  context: GetServerSidePropsContext,
-): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
-  try {
-    const id = context.params?.id as string;
-    const speed = context.params?.speed as string;
+export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
+  context,
+) => {
+  const {id, speed} = context.query;
 
-    validateYoutubeId(id);
-
-    const data = await apiQuery<PlayerLayoutProps>(`youtube/${id}`);
-
-    const props: PlayerLayoutProps = {
-      title: data.title,
-      image: data.image,
-      audio: data.audio,
-      speed: parseFloat(speed) || 1,
-    };
-
-    return {props};
-  } catch {
-    return invokeRedirection();
+  if (typeof id !== 'string' || typeof speed !== 'string') {
+    return Redirect.home;
   }
-}
+
+  const {isValid} = validateYoutubeId(id);
+
+  if (!isValid) {
+    return Redirect.home;
+  }
+
+  const {data, err} = await ServerQuery.audio('youtube', id);
+
+  if (err) {
+    return Redirect.home;
+  }
+
+  const props: PlayerLayoutProps = {
+    ...data,
+    speed: Number(speed),
+  };
+
+  return {
+    props,
+  };
+};

@@ -1,20 +1,19 @@
-import {GetStaticPropsResult} from 'next';
+import {type GetStaticProps} from 'next';
 import {NextSeo} from 'next-seo';
-import React, {type ReactElement} from 'react';
+import React from 'react';
+import {type LatestDto} from 'src/utils/dtos';
+import {ServerQuery} from 'src/utils/query';
+import {Redirect} from 'src/utils/redirect';
 
-import {
-  TableComponent,
-  TableComponentItem,
-} from '../components/table/table.component';
+import {TableComponent} from '../components/table/table.component';
 import {REVALIDATE} from '../constants';
 import {DefaultLayout} from '../layouts/default/default.layout';
-import {apiQuery} from '../utils/api-query/api-query';
 
-interface LatestPageProps {
-  latest: TableComponentItem[];
+interface Props {
+  latest: LatestDto[];
 }
 
-export default function LatestPage({latest}: LatestPageProps): ReactElement {
+export default function LatestPage({latest}: Props) {
   return (
     <>
       <NextSeo title="Latest" />
@@ -26,15 +25,17 @@ export default function LatestPage({latest}: LatestPageProps): ReactElement {
   );
 }
 
-type GetStaticProps = GetStaticPropsResult<LatestPageProps>;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const {data, err} = await ServerQuery.latest();
 
-export async function getStaticProps(): Promise<GetStaticProps> {
-  const latest = await apiQuery<LatestPageProps['latest']>('latest');
+  if (err) {
+    return Redirect.home;
+  }
 
   return {
     props: {
-      latest,
+      latest: data,
     },
     revalidate: REVALIDATE,
   };
-}
+};

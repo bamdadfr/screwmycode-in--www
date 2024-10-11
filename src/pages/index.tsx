@@ -1,13 +1,9 @@
-import React, {type ReactElement} from 'react';
+import React from 'react';
 
 import {FormComponent} from '../components/form/form.component';
 import {DefaultLayout} from '../layouts/default/default.layout';
 
-/**
- * Index page
- * Path: /
- */
-export default function IndexPage(): ReactElement {
+export default function IndexPage() {
   return (
     <DefaultLayout>
       <FormComponent />

@@ -1,9 +1,6 @@
 import ytdl from 'ytdl-core';
 
-export function validateYoutubeId(id: string): void {
+export function validateYoutubeId(id: string) {
   const isValid = ytdl.validateID(id);
-
-  if (!isValid) {
-    throw new Error('Invalid YouTube ID');
-  }
+  return {isValid};
 }

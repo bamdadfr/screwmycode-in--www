@@ -1,11 +1,11 @@
-import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
+import {type GetServerSideProps} from 'next';
 import React from 'react';
 import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
-import {apiQuery} from 'src/utils/api-query/api-query';
-import {invokeRedirection} from 'src/utils/invoke-redirection/invoke-redirection';
+import {ServerQuery} from 'src/utils/query';
+import {Redirect} from 'src/utils/redirect';
 import {validateBandcampId} from 'src/utils/validate-bandcamp-id/validate-bandcamp-id';
 
 export default function BandcampPage(props: PlayerLayoutProps) {
@@ -13,27 +13,38 @@ export default function BandcampPage(props: PlayerLayoutProps) {
   return <PlayerLayout {...props} />;
 }
 
-export async function getServerSideProps(
-  context: GetServerSidePropsContext,
-): Promise<GetServerSidePropsResult<PlayerLayoutProps>> {
-  try {
-    const artist = context.query.artist as string;
-    const name = context.query.name as string;
-    const speed = context.query.speed as string;
-    const route = `bandcamp/${artist}/${name}`;
-    const data = await apiQuery<PlayerLayoutProps>(route);
+export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
+  context,
+) => {
+  const {artist, name, speed} = context.query;
 
-    validateBandcampId(artist, name);
-
-    const props: PlayerLayoutProps = {
-      title: data.title,
-      image: data.image,
-      audio: data.audio,
-      speed: parseFloat(speed) || 1,
-    };
-
-    return {props};
-  } catch {
-    return invokeRedirection();
+  if (
+    typeof artist !== 'string' ||
+    typeof name !== 'string' ||
+    typeof speed !== 'string'
+  ) {
+    return Redirect.home;
   }
-}
+
+  const {isValid} = validateBandcampId(artist, name);
+
+  if (!isValid) {
+    return Redirect.home;
+  }
+
+  const slug = `${artist}/${name}`;
+  const {data, err} = await ServerQuery.audio('bandcamp', slug);
+
+  if (err) {
+    return Redirect.home;
+  }
+
+  const props: PlayerLayoutProps = {
+    ...data,
+    speed: Number(speed),
+  };
+
+  return {
+    props,
+  };
+};
