@@ -14,6 +14,18 @@ const config = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.bcbits.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   webpack: (c) => {
