@@ -1,3 +1,10 @@
+## [3.15.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.15.0...v3.15.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* remove /latest ([e117bb0](https://github.com/bamdadfr/screwmycode-in--www/commit/e117bb030984a5a0aaf2d9dd032aa3f627fadfb9))
+
 # [3.15.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.7...v3.15.0) (2024-10-11)
 
 
