@@ -4,6 +4,7 @@ import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
+import {Endpoint} from 'src/utils/endpoint';
 import {ServerQuery} from 'src/utils/query';
 import {Redirect} from 'src/utils/redirect';
 import {validateSoundcloudId} from 'src/utils/validate-soundcloud-id/validate-soundcloud-id';
@@ -33,7 +34,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
     return Redirect.home;
   }
 
-  const {data, err} = await ServerQuery.audio('soundcloud', slug);
+  const {data, err} = await ServerQuery.audio(Endpoint.soundcloud, slug);
 
   if (err) {
     return Redirect.home;

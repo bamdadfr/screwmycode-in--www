@@ -4,6 +4,7 @@ import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
+import {Endpoint} from 'src/utils/endpoint';
 import {ServerQuery} from 'src/utils/query';
 import {Redirect} from 'src/utils/redirect';
 import {validateBandcampId} from 'src/utils/validate-bandcamp-id/validate-bandcamp-id';
@@ -33,7 +34,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
   }
 
   const slug = `${artist}/${name}`;
-  const {data, err} = await ServerQuery.audio('bandcamp', slug);
+  const {data, err} = await ServerQuery.audio(Endpoint.bandcamp, slug);
 
   if (err) {
     return Redirect.home;

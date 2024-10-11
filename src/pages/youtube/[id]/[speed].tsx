@@ -4,6 +4,7 @@ import {
   PlayerLayout,
   PlayerLayoutProps,
 } from 'src/layouts/player/player.layout';
+import {Endpoint} from 'src/utils/endpoint';
 import {ServerQuery} from 'src/utils/query';
 import {Redirect} from 'src/utils/redirect';
 import {validateYoutubeId} from 'src/utils/validate-youtube-id/validate-youtube-id';
@@ -28,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
     return Redirect.home;
   }
 
-  const {data, err} = await ServerQuery.audio('youtube', id);
+  const {data, err} = await ServerQuery.audio(Endpoint.youtube, id);
 
   if (err) {
     return Redirect.home;

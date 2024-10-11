@@ -16,6 +16,10 @@ export interface LatestDto extends TopDto {
   updated_at: string;
 }
 
+export interface LastDto extends TopDto {
+  updated_at: string;
+}
+
 export interface AudioDto {
   slug: string;
   type: AudioType;
