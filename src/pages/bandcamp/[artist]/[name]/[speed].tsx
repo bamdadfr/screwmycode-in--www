@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
   const slug = `${artist}/${name}`;
   const {data, err} = await ServerQuery.audio(Endpoint.bandcamp, slug);
 
-  if (err) {
+  if (!data || err) {
     return Redirect.home;
   }
 

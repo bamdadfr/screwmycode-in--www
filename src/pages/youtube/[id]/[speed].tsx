@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
 
   const {data, err} = await ServerQuery.audio(Endpoint.youtube, id);
 
-  if (err) {
+  if (!data || err) {
     return Redirect.home;
   }
 

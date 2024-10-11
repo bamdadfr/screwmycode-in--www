@@ -23,7 +23,7 @@ export function useCellComponent({item}: CellComponentProps) {
     }
   }, [item]);
 
-  const href = useMemo(() => `${item.type}/${item.slug}/1`, [item]);
+  const href = useMemo(() => `/${item.type}/${item.slug}/1`, [item]);
 
   return {
     icon,

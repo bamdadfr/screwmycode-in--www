@@ -25,7 +25,7 @@ export function HeaderComponent(): ReactElement {
           </IconContainer>
         </Link>
 
-        <Link href="/latest">
+        <Link href="/last">
           <IconContainer>
             <Icon icon={history} />
           </IconContainer>

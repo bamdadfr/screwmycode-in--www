@@ -4,6 +4,4 @@ export const API_BASE_URL = isEnvProduction
   ? 'https://api.screwmycode.in'
   : 'http://localhost:8000';
 
-export const REVALIDATE = 60;
-
 export const TITLE_SEPARATOR = '|';

@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<PlayerLayoutProps> = async (
 
   const {data, err} = await ServerQuery.audio(Endpoint.soundcloud, slug);
 
-  if (err) {
+  if (!data || err) {
     return Redirect.home;
   }
 

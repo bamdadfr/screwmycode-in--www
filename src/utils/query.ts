@@ -10,7 +10,7 @@ import {Endpoint} from 'src/utils/endpoint';
 import {NotFoundError} from 'src/utils/errors';
 
 interface Q<T> {
-  data: T;
+  data: null | T;
   err: null | NotFoundError;
 }
 
@@ -43,8 +43,9 @@ export class ServerQuery {
     return await this.q<LatestDto[]>(Endpoint.latest);
   }
 
-  public static async last() {
-    return await this.q<LastDto[]>(Endpoint.last);
+  public static async last(variant?: string) {
+    const route = variant ? `${Endpoint.last}/${variant}` : Endpoint.last;
+    return await this.q<LastDto[]>(route);
   }
 
   public static async lastHour() {
@@ -76,11 +77,13 @@ export class ServerQuery {
   private static async q<T>(endpoint: Endpoint | string): Promise<Q<T>> {
     const url = `${API_BASE_URL}${endpoint}`;
     const response = await fetch(url);
-    const data = await response.json();
     let err: Q<T>['err'] = null;
+    let data: Q<T>['data'] = null;
 
     if (response.status !== 200) {
       err = new NotFoundError(url);
+    } else {
+      data = await response.json();
     }
 
     return {data, err};

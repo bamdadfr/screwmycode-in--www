@@ -14,11 +14,6 @@ export interface UseFormSubmit {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
-/**
- * Hook to handle form submission
- * @param root0
- * @param root0.link
- */
 export function useFormSubmit({link}: UseFormSubmitOptions): UseFormSubmit {
   const router = useRouter();
 
