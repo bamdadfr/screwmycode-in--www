@@ -28,7 +28,7 @@ export function PlayerLayout({title, image, audio, speed}: PlayerLayoutProps) {
       />
 
       <DefaultLayout>
-        <PlayerContextProvider>
+        <PlayerContextProvider initialData={{title, image, audio, speed}}>
           <AudioComponent
             url={audio}
             defaultSpeed={speed.toString()}

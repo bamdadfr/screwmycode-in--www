@@ -12,6 +12,9 @@ import React, {
 } from 'react';
 
 type Ref = HTMLAudioElement | null;
+type Title = string | null;
+type Artwork = string | null; // url
+type Url = string | null;
 type Speed = number;
 type Volume = number;
 type Buffered = number; // amount in time
@@ -21,12 +24,15 @@ type Progress = number; // amount in time
 type Repeating = boolean;
 type Seek = number; // amount in time (requested by the user)
 type Ready = boolean;
-type Title = string | null;
-type Artwork = string | null; // url
-type Url = string | null;
 
 type Context = {
   ref: MutableRefObject<Ref>;
+  title: Title;
+  setTitle: Dispatch<SetStateAction<Title>>;
+  artwork: Artwork;
+  setArtwork: Dispatch<SetStateAction<Artwork>>;
+  url: Url;
+  setUrl: Dispatch<SetStateAction<Url>>;
   speed: Speed;
   setSpeed: (speed: string) => void;
   volume: Volume;
@@ -46,19 +52,26 @@ type Context = {
   handleSeek: (e: ChangeEvent<HTMLInputElement>) => void;
   isReady: Ready;
   setReady: Dispatch<SetStateAction<Ready>>;
-  title: Title;
-  setTitle: Dispatch<SetStateAction<Title>>;
-  artwork: Artwork;
-  setArtwork: Dispatch<SetStateAction<Artwork>>;
-  url: Url;
-  setUrl: Dispatch<SetStateAction<Url>>;
 };
 
 const PlayerContext = createContext<Context>({} as Context);
 
-export function PlayerContextProvider({children}) {
+interface Props {
+  children: JSX.Element | JSX.Element[];
+  initialData: {
+    title: Title;
+    image: Artwork;
+    audio: Url;
+    speed: Speed;
+  };
+}
+
+export function PlayerContextProvider({children, initialData}: Props) {
   const ref = useRef<Ref>(null);
-  const [speed, setSpeed] = useState<Speed>(1);
+  const [title, setTitle] = useState<Title>(initialData.title);
+  const [artwork, setArtwork] = useState<Artwork>(initialData.image);
+  const [url, setUrl] = useState<Url>(initialData.audio);
+  const [speed, setSpeed] = useState<Speed>(initialData.speed);
   const [volume, setVolume] = useState<Volume>(0.7);
   const [buffered, setBuffered] = useState<Buffered>(0);
   const [duration, setDuration] = useState<Duration>(0);
@@ -67,9 +80,6 @@ export function PlayerContextProvider({children}) {
   const [isRepeating, setRepeating] = useState<Repeating>(true);
   const [seek, setSeek] = useState<Seek>(0);
   const [isReady, setReady] = useState<Ready>(false);
-  const [title, setTitle] = useState<Title>(null);
-  const [artwork, setArtwork] = useState<Artwork>(null);
-  const [url, setUrl] = useState<Url>(null);
 
   const setSpeedSanitized = useCallback((newSpeed: string) => {
     let newSpeedFloat = parseFloat(newSpeed);
@@ -115,6 +125,12 @@ export function PlayerContextProvider({children}) {
   const context = useMemo(
     () => ({
       ref,
+      title,
+      setTitle,
+      artwork,
+      setArtwork,
+      url,
+      setUrl,
       speed,
       setSpeed: setSpeedSanitized,
       volume,
@@ -134,14 +150,11 @@ export function PlayerContextProvider({children}) {
       handleSeek,
       isReady,
       setReady,
-      title,
-      setTitle,
-      artwork,
-      setArtwork,
-      url,
-      setUrl,
     }),
     [
+      title,
+      artwork,
+      url,
       speed,
       setSpeedSanitized,
       volume,
@@ -156,9 +169,6 @@ export function PlayerContextProvider({children}) {
       seek,
       handleSeek,
       isReady,
-      title,
-      artwork,
-      url,
     ],
   );
 
