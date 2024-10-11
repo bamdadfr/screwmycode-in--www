@@ -1,3 +1,15 @@
+## [3.14.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.5...v3.14.6) (2024-10-11)
+
+
+### Bug Fixes
+
+* remove new remotes (unuseful) ([7d19ed1](https://github.com/bamdadfr/screwmycode-in--www/commit/7d19ed11b8e82cd082640cdb4b4115d751de2ac1))
+
+
+### Performance Improvements
+
+* improve data flow ([2437300](https://github.com/bamdadfr/screwmycode-in--www/commit/24373004ca196d71585f537860fbf56aef377572))
+
 ## [3.14.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.4...v3.14.5) (2024-10-11)
 
 
