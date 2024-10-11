@@ -1,3 +1,10 @@
+## [3.14.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.6...v3.14.7) (2024-10-11)
+
+
+### Bug Fixes
+
+* provide correct initial props to player layout ([9e57a8b](https://github.com/bamdadfr/screwmycode-in--www/commit/9e57a8bd56e11be1ff52c93a973c7545dc61fee4))
+
 ## [3.14.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.14.5...v3.14.6) (2024-10-11)
 
 
