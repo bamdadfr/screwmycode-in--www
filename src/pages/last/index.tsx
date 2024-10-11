@@ -26,6 +26,7 @@ export default function LastPage({latest}: Props) {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const {data, err} = await ServerQuery.last();
+  console.log({data, err});
 
   if (!data || err) {
     return Redirect.notFound<Props>();
