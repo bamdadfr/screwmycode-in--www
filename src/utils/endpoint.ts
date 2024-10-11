@@ -1,6 +1,5 @@
 export enum Endpoint {
   home = '/',
-  latest = '/latest',
   last = '/last',
   lastHour = '/last/hour',
   lastDay = '/last/today',

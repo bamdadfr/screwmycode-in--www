@@ -3,7 +3,6 @@ import {
   type AudioDto,
   type HomeDto,
   type LastDto,
-  type LatestDto,
   type TopDto,
 } from 'src/utils/dtos';
 import {Endpoint} from 'src/utils/endpoint';
@@ -37,10 +36,6 @@ export class ServerQuery {
 
   public static async topWeek() {
     return await this.q<TopDto[]>(Endpoint.topWeek);
-  }
-
-  public static async latest() {
-    return await this.q<LatestDto[]>(Endpoint.latest);
   }
 
   public static async last(variant?: string) {
