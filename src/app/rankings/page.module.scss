@@ -1,0 +1,28 @@
+@use "styles/breakpoints";
+@use "styles/grid";
+@use "styles/paddings";
+@use "styles/gaps";
+@use "styles/browsers";
+
+.container {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: paddings.$p0;
+
+  @include browsers.noScroll;
+
+  height: 100%;
+  overflow: auto;
+  padding: paddings.$p0 gaps.$g1 paddings.$p0 paddings.$p0;
+  width: 100%;
+
+  @include breakpoints.above(mobile) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints.above(fullhd) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

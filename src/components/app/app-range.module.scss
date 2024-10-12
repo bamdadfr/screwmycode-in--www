@@ -1,0 +1,139 @@
+@use "styles/grid";
+@use "styles/gaps";
+@use "styles/theme";
+@use "styles/shadows";
+@use "styles/transitions";
+@use "styles/radiuses";
+
+$trackW: 100%;
+$trackH: 7px;
+$thumbD: 22px;
+
+.vertical {
+  // width     : calc($row3mobile - $g0 * 7) !important;
+  transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -90deg);
+}
+
+@mixin track {
+  box-sizing: border-box;
+  border: none;
+  width: $trackW;
+  height: $trackH;
+  background: theme.$themeBackgroundHighlight;
+
+  @include radiuses.rSlider;
+  @include shadows.s0;
+}
+
+@mixin progress {
+  height: $trackH;
+  background: theme.$themeHighlight;
+
+  @include radiuses.rSlider;
+}
+
+@mixin handle {
+  box-sizing: border-box;
+  width: $thumbD;
+  height: $thumbD;
+  border-radius: 50%;
+  border: 3px solid;
+  background: theme.$themeBackgroundPrimary;
+  box-shadow: 1px 1px 1px theme.$themeBackgroundPrimary, 0 0 1px theme.$themeBackgroundHighlight;
+
+  @include transitions.t0(background-color);
+
+  &:hover {
+    background: theme.$themeBackgroundHighlight;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  gap: gaps.$g0;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.input {
+  background: transparent;
+  font: 1em/1 arial,
+  sans-serif;
+  height: $thumbD;
+
+  --buffered-width: calc(var(--buffered) * 100%);
+  --progress-width: calc(0.5 * 22px + var(--progress) * (100% - 22px));
+
+  width: $trackW;
+
+  &, &::-webkit-slider-thumb {
+    appearance: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // track
+  &::-webkit-slider-runnable-track {
+    @include track;
+
+    background: linear-gradient(
+                    to right,
+                    theme.$themeHighlight 0,
+                    theme.$themeHighlight var(--progress-width),
+                    theme.$themeBuffered var(--progress-width),
+                    theme.$themeBuffered var(--buffered-width),
+                    theme.$themeBackgroundHighlight var(--buffered-width),
+                    theme.$themeBackgroundHighlight 100%
+    );
+  }
+
+  &::-moz-range-track {
+    @include track;
+
+    background: linear-gradient(
+                    to right,
+                    theme.$themeBuffered 0,
+                    theme.$themeBuffered var(--buffered-width),
+                    theme.$themeBackgroundHighlight var(--buffered-width),
+                    theme.$themeBackgroundHighlight 100%
+    );
+  }
+
+  &::-ms-track {
+    @include track;
+  }
+
+  // progress
+  &::-moz-range-progress {
+    @include progress;
+  }
+
+  &::-ms-fill-lower {
+    @include progress;
+  }
+
+  // handle
+  &::-webkit-slider-thumb {
+    margin-top: calc(0.5 * ($trackH - $thumbD));
+
+    @include handle;
+  }
+
+  &::-moz-range-thumb {
+    @include handle;
+  }
+
+  &::-ms-thumb {
+    margin-top: 0;
+
+    @include handle;
+  }
+
+  &::-ms-tooltip {
+    display: none;
+  }
+}

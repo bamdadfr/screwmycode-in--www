@@ -1,0 +1,146 @@
+@use "styles/theme";
+@use "styles/gaps";
+@use "styles/paddings";
+@use "styles/breakpoints";
+@use "styles/radiuses";
+@use "styles/transitions";
+@use "styles/shadows";
+@use "styles/animations";
+
+.container {
+  display: grid;
+  font-size: 0.9em;
+  gap: gaps.$g0;
+  grid-template-columns: 120px 1fr;
+  height: 120px;
+  width: 100%;
+
+  @include radiuses.r0;
+  @include transitions.tAll;
+
+  &:hover {
+    background: theme.$themeBackgroundPrimary;
+    cursor: pointer;
+    transform: translate3d(0, -3px, 0);
+
+    @include shadows.s0;
+  }
+}
+
+.loading {
+  filter: blur(2px);
+  position: relative;
+
+  &:hover {
+    cursor: wait;
+  }
+
+  &::before {
+    background: theme.$themeBackgroundPrimary;
+    content: "";
+    height: 120px;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+
+    @include radiuses.r0;
+  }
+}
+
+.imageWrapper {
+  height: 120px;
+  position: relative;
+
+  @include radiuses.r0;
+
+  width: 120px;
+
+  & > * {
+    @include radiuses.r0;
+    @include shadows.s1;
+    @include transitions.tCard;
+
+    position: absolute;
+  }
+}
+
+.imageHover {
+  @include animations.aFloat;
+}
+
+.content {
+  $g: calc(#{gaps.$g0} - 1px);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  padding: $g gaps.$g1 $g gaps.$g0;
+  width: 100%;
+
+  svg {
+    color: theme.$themePrimary;
+    display: inline-flex;
+    font-weight: bold;
+    transform: translate3d(0, 1px, 0);
+    width: paddings.$p1 + gaps.$g0;
+  }
+
+  // title
+  & > :nth-child(1) {
+    grid-column: 1 / span 2;
+    overflow: hidden;
+    text-wrap: pretty;
+    transform: translate3d(0, -1px, 0);
+  }
+
+  // hits
+  & > :nth-child(2) {
+    align-self: flex-end;
+    display: flex;
+    gap: gaps.$g0;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  // icon
+  & > :nth-child(3) {
+    align-self: flex-end;
+    height: 32px;
+    justify-self: flex-end;
+    width: 32px;
+  }
+}
+
+.rainbow {
+  @include animations.aRainbow;
+}
+
+.hits {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+$sLike: 24px;
+
+.like {
+  bottom: calc(28px + #{gaps.$g1});
+  height: 18px;
+  position: absolute;
+  right: 15px;
+  width: 18px;
+
+  svg {
+    height: 100%;
+    stroke: theme.$themeBlack;
+    width: 100%;
+  }
+}
+
+.liked {
+  svg {
+    fill: red;
+  }
+}

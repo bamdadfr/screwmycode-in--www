@@ -1,0 +1,71 @@
+@use "styles/z";
+@use "styles/theme";
+@use "styles/breakpoints";
+@use "styles/paddings";
+@use "styles/gaps";
+@use "styles/grid";
+@use "styles/shadows";
+@use "styles/browsers";
+@use "styles/radiuses";
+@use "styles/transitions";
+@use "styles/animations";
+
+// $h : calc($row2mobile - $p0);
+$h: 16em;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: paddings.$p0;
+  grid-area: sidebar;
+  padding-left: paddings.$p0;
+
+  // overflow       : auto;
+
+  @include transitions.tSidebar;
+  @include browsers.noScroll;
+
+  svg {
+    font-size: 0.9em;
+  }
+
+  @include breakpoints.below(tablet) {
+    background: theme.$themeBackgroundPrimary;
+    border: 1px solid theme.$themeShadowOpacity;
+    font-size: 1.1em;
+    gap: gaps.$g1;
+    height: $h;
+    left: paddings.$p0;
+    opacity: 1;
+    overflow: auto;
+    padding: paddings.$p0 0 paddings.$p0 calc(#{paddings.$p0} - 1px);
+    position: absolute;
+    top: grid.$row1mobile;
+    width: 180px;
+
+    @include radiuses.r0;
+    @include shadows.s1;
+    @include z.zMax;
+  }
+}
+
+.open {
+  @include animations.aEnter($h);
+}
+
+.close {
+  @include animations.aExit;
+}
+
+.label {
+  align-items: center;
+  color: theme.$themeGrayDark;
+  display: flex;
+  font-size: 0.9em;
+  font-weight: bold;
+  height: 3em;
+  justify-content: flex-start;
+  padding-left: paddings.$p0;
+  padding-top: gaps.$g1;
+  width: 100%;
+}

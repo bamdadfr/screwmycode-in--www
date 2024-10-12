@@ -1,0 +1,48 @@
+@use "styles/breakpoints";
+@use "styles/theme";
+@use "styles/gaps";
+@use "styles/paddings";
+@use "styles/shadows";
+@use "styles/radiuses";
+@use "styles/transitions";
+
+.link {
+  align-items: center;
+  display: flex;
+  gap: paddings.$p0;
+  justify-content: flex-start;
+  padding: gaps.$g1 paddings.$p0;
+  transform: translate3d(-1px, 0, 0);
+
+  @include radiuses.r1;
+  @include transitions.tSidebarButton;
+
+  width: calc(100% - #{paddings.$p1} + 1px);
+
+  &:hover {
+    background: theme.$themeBackgroundHighlight;
+    transform: translate3d(3px, 0, 0);
+
+    @include shadows.s0;
+  }
+
+  & > svg {
+    height: 1.4em;
+    transform: translate3d(0, 1px, 0);
+    width: 1.4em;
+  }
+
+  & > span {
+    text-wrap: nowrap;
+    transform: translate3d(-1px, 0, 0);
+  }
+}
+
+.active {
+  background: theme.$themeBackgroundHighlight;
+  color: theme.$themeHighlight;
+
+  @include shadows.s0;
+
+  transform: translate3d(3px, 0, 0);
+}

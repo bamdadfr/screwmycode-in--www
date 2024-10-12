@@ -1,0 +1,90 @@
+@use "styles/theme";
+@use "styles/breakpoints";
+@use "styles/transitions";
+
+$small: 14px;
+$medium: 16px;
+$big: 18px;
+$giant: 20px;
+
+html {
+  background: theme.$themeBackgroundPrimary;
+  color: theme.$themePrimary;
+  font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
+  user-select: none;
+
+  @include breakpoints.below(tablet) {
+    font-size: $small;
+  }
+
+  @include breakpoints.above(tablet) {
+    font-size: $medium;
+  }
+
+  @include breakpoints.above(desktop) {
+    font-size: $big;
+  }
+
+  @include breakpoints.above(fullhd) {
+    font-size: $giant;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme.$themeGray;
+  background-clip: padding-box;
+  border: 3px transparent solid;
+  border-radius: 10px;
+
+  &:hover {
+    background: theme.$themeGrayDark;
+    background-clip: padding-box;
+    border: 3px transparent solid;
+    border-radius: 10px;
+  }
+}
+
+// noinspection Stylelint
+::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-track {
+  background: theme.$themeBlack;
+}
+
+// noinspection Stylelint
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.expand {
+  height: 100%;
+  width: 100%;
+}
+
+.red {
+  background: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}

@@ -1,0 +1,18 @@
+@use "styles/breakpoints";
+@use "styles/grid";
+
+.app {
+  display: grid;
+  grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  grid-template-columns: grid.$col1 grid.$col2;
+  grid-template-rows: grid.$row1 grid.$row2 grid.$row3;
+  height: 100dvh;
+
+  @include breakpoints.below(tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}

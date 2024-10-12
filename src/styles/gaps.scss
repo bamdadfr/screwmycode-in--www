@@ -1,0 +1,4 @@
+@use "./paddings";
+
+$g0: 4px;
+$g1: paddings.$p0 - $g0;

@@ -1,0 +1,12 @@
+@mixin zMid {
+  z-index : 10;
+}
+
+@mixin zMax {
+  z-index : 100;
+}
+
+@mixin zGod {
+  z-index : 1000;
+}
+

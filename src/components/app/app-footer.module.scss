@@ -1,0 +1,131 @@
+@use "styles/theme";
+@use "styles/breakpoints";
+@use "styles/grid";
+@use "styles/gaps";
+@use "styles/paddings";
+@use "styles/radiuses";
+@use "styles/transitions";
+@use "styles/z";
+
+$w: 80px;
+
+.footer {
+  align-items: center;
+  background: theme.$themeBackgroundHighlight;
+  display: grid;
+  grid-area: footer;
+  grid-gap: gaps.$g0;
+  grid-template-columns: $w 1fr;
+  padding: 0 paddings.$p0;
+
+  @include z.zMid;
+
+  @include breakpoints.below(tablet) {
+    height: grid.$row3mobile;
+  }
+}
+
+.artwork {
+  align-items: center;
+  display: flex;
+  height: $w;
+  justify-content: center;
+  width: $w;
+
+  @include radiuses.r0;
+}
+
+.player {
+  display: grid;
+
+  // height                : calc(100% - $p0);
+  gap: gaps.$g0;
+  grid-template-columns: 1fr 41px;
+  grid-template-rows: 1fr;
+  height: 100%;
+  justify-items: center;
+  padding: 0 0 0 gaps.$g1;
+}
+
+$fromTop: calc(50% - #{paddings.$p0} * 2 - #{gaps.$g0} * 2);
+
+.transport {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: gaps.$g0;
+  margin-bottom: gaps.$g1;
+  position: relative;
+  width: 100%;
+
+  // time
+  & > :nth-child(1) {
+    display: flex;
+    font-size: 0.9em;
+    justify-content: space-between;
+    position: absolute;
+    top: $fromTop;
+    width: 100%;
+    z-index: -1;
+
+    & > :first-child > :first-child {
+      bottom: gaps.$g0 * 12 - 1px;
+      position: absolute;
+    }
+
+    & > :first-child > :last-child {
+      color: theme.$themeHighlight;
+    }
+
+    & > :last-child > :first-child {
+      color: theme.$themeBuffered;
+      padding-right: gaps.$g1;
+    }
+  }
+
+  // track
+  & > :nth-child(3) {
+    height: auto;
+  }
+
+}
+
+.buttons {
+  display: flex;
+  gap: gaps.$g1;
+  justify-content: center;
+  position: absolute;
+  top: calc($fromTop - #{gaps.$g0});
+  width: 80%;
+
+}
+
+.button {
+  svg {
+    background: theme.$themeBackgroundPrimary;
+    height: (gaps.$g1 + gaps.$g0) * 2;
+    padding: gaps.$g0;
+
+    @include radiuses.r0;
+
+    width: (gaps.$g1 + gaps.$g0) * 3;
+  }
+
+  :hover {
+    @include transitions.tColorBg;
+
+    color: theme.$themeHighlight;
+    cursor: pointer;
+  }
+
+  :active {
+    background: theme.$themeHighlight;
+    color: theme.$themeBackgroundHighlight;
+  }
+}
+
+.volume {
+  transform: translate3d(0, 50%, 0);
+  width: calc(#{grid.$row3mobile} - #{paddings.$p0} * 2);
+}

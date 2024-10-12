@@ -1,0 +1,189 @@
+@use "styles/breakpoints";
+@use "styles/grid";
+@use "styles/paddings";
+@use "styles/gaps";
+@use "styles/theme";
+@use "styles/z";
+@use "styles/shadows";
+@use "styles/browsers";
+@use "styles/radiuses";
+@use "styles/transitions";
+@use "styles/animations";
+
+// $w : min(58%, 12em);
+$w: max(58%, 20%);
+$h: calc(#{grid.$row2mobile} - #{paddings.$p0});
+
+.container {
+  display: flex;
+  grid-area: main;
+}
+
+.main {
+  background: theme.$themeBackgroundHighlight;
+  width: calc(100% - #{paddings.$p0});
+
+  @include radiuses.r0;
+  @include shadows.s1;
+  @include shadows.s0;
+
+  @include breakpoints.below(tablet) {
+    height: $h;
+    margin-bottom: paddings.$p0;
+    margin-left: paddings.$p0;
+    width: calc(100% - #{paddings.$p0} * 2);
+  }
+
+  @include breakpoints.above(tablet) {
+    height: $h;
+    margin-right: paddings.$p0 * 1;
+  }
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+
+  @include browsers.noScroll;
+}
+
+.divider {
+  background: theme.$themeBackgroundPrimary;
+  cursor: pointer;
+  height: 100%;
+  min-width: paddings.$p0;
+
+  @include z.zMax;
+  @include transitions.tDivider;
+
+  position: absolute;
+  right: calc(100% - #{paddings.$p0});
+  width: paddings.$p0;
+
+  &:hover {
+    background: theme.$themeGrayDark;
+  }
+}
+
+.dividerOpen {
+  background: theme.$themeGrayDark;
+  border-radius: 0 0 0 4px;
+}
+
+.dividerHover {
+  width: paddings.$p0 + gaps.$g0;
+}
+
+.drawer {
+  background: theme.$themeBlack;
+  display: flex;
+  height: $h;
+  max-width: $w;
+  position: fixed;
+  right: 0;
+  width: 0;
+
+  @include transitions.t1(width);
+}
+
+.close {
+  width: paddings.$p0;
+}
+
+.open {
+  width: $w;
+}
+
+@mixin optionHover {
+  background-color: theme.$themeBackgroundHighlight;
+  cursor: pointer;
+  transform: translate3d(0, -1px, 0);
+
+  @include shadows.s1;
+}
+
+.options {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include radiuses.r0;
+  @include z.zMid;
+
+  gap: paddings.$p0;
+  height: 100%;
+  overflow: auto;
+  padding: paddings.$p0 paddings.$p0 paddings.$p0 paddings.$p0 * 2;
+  width: 100%;
+
+  @include browsers.noScroll;
+}
+
+.option {
+  align-items: center;
+  background-color: theme.$themeBackgroundPrimary;
+  display: flex;
+  height: 9em;
+  justify-content: center;
+
+  @include radiuses.r0;
+
+  width: 9em;
+
+  @include transitions.tAll;
+  @include radiuses.r1;
+
+  &:hover {
+    @include optionHover;
+  }
+}
+
+.optionActive {
+  color: theme.$themeHighlight;
+
+  @include optionHover;
+}
+
+.tooltip {
+  align-items: center;
+  color: theme.$themeBlack;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  gap: gaps.$g0;
+  height: calc(1em + #{gaps.$g1} * 2);
+
+  // width           : calc($col1mobile - gaps.$g1 * 4);
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  text-wrap: nowrap;
+  width: 3em;
+
+  @include z.zGod;
+  @include transitions.t1(width);
+
+  &::before {
+    background: theme.$themeHighlight;
+    content: "";
+    height: 100%;
+    position: absolute;
+    transform: translate3d(-10px, 0, 0) skewX(-0.6rad);
+    width: 100dvw;
+    z-index: -1;
+  }
+
+  & > :nth-child(2) {
+    height: 14px;
+    transform: translate3d(- gaps.$g0, calc(#{gaps.$g1}), 0);
+    width: 14px;
+  }
+}
+
+.tooltipHidden {
+  width: 0;
+}
+
+.tooltipFloat {
+  @include animations.aFloat;
+}
