@@ -1,0 +1,113 @@
+@import "styles/grid";
+@import "styles/fonts";
+@import "styles/colors";
+@import "styles/paddings";
+@import "styles/gaps";
+@import "styles/breakpoints";
+@import "styles/shadows";
+@import "styles/radiuses";
+@import "styles/transitions";
+
+.header {
+  grid-area             : header;
+
+  display               : grid;
+  padding               : 0 $p0;
+
+  grid-template-columns : $col1mobile $col2;
+  height                : $row1mobile;
+
+  @include above(mobile) {
+    grid-template-columns : $col1mobile $col2 $col3;
+    height                : $row1mobile;
+  }
+
+  @include above(tablet) {
+    grid-template-columns : $col1 $col2 $col3;
+  }
+}
+
+.home {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  height          : 100%;
+
+  gap             : $g1;
+
+  @include t0(color);
+
+  @include above(tablet) {
+    margin-left : -$p0 * 4;
+  }
+
+  &:hover {
+    cursor : pointer;
+  }
+}
+
+.input {
+  display               : grid;
+  grid-template-columns : 1fr $col3;
+  gap                   : $p0;
+  align-items           : center;
+
+  @include fontBold;
+  @include above(tablet) {
+    margin-left : -$p0;
+  }
+
+  > input, > button {
+    color          : $cPrimary;
+    background     : $cBackgroundHighlight;
+    text-transform : none;
+    display        : inline-block;
+    height         : 36px;
+    @include s0;
+    @include r0;
+  }
+
+  > input {
+    font-size    : 0.9em;
+    padding-left : calc($p0 - 2px);
+
+    @include above(tablet) {
+      font-size : 0.7em;
+    }
+  }
+
+  > button {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    @include t1(background-color);
+
+    &:hover {
+      background : $cHighlight;
+      color      : $cBackgroundHighlight;
+    }
+  }
+}
+
+.active {
+  color : $cHighlight;
+}
+
+.disabled {
+  cursor         : default;
+  pointer-events : none;
+}
+
+.user, .theme {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  transform       : translate3d($g0, 0, 0);
+  cursor          : pointer;
+
+  @include t1(color);
+
+  &:hover {
+    color : $cHighlight;
+  }
+}

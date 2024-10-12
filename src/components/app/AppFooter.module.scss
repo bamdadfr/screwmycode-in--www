@@ -1,0 +1,128 @@
+@import "styles/colors";
+@import "styles/breakpoints";
+@import "styles/grid";
+@import "styles/gaps";
+@import "styles/paddings";
+@import "styles/radiuses";
+@import "styles/transitions";
+@import "styles/z";
+
+$w       : 80px;
+
+.footer {
+  grid-area             : footer;
+
+  display               : grid;
+  grid-template-columns : $w 1fr;
+  grid-gap              : $g0;
+  align-items           : center;
+  padding               : 0 $p0;
+  background            : $cBackgroundHighlight;
+
+  @include zMid;
+
+  @include below(tablet) {
+    height : $row3mobile;
+  }
+}
+
+.artwork {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  height          : $w;
+  width           : $w;
+  @include r0;
+}
+
+.player {
+  display               : grid;
+  //height                : calc(100% - $p0);
+  height                : 100%;
+  justify-items         : center;
+  padding               : 0 0 0 $g1;
+  gap                   : $g0;
+
+  grid-template-columns : 1fr 41px;
+  grid-template-rows    : 1fr;
+}
+
+$fromTop : calc(50% - $p0 * 2 - $g0 * 2);
+
+.transport {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  align-self     : flex-end;
+  margin-bottom  : $g1;
+  gap            : $g0;
+  width          : 100%;
+  position       : relative;
+
+  // time
+  & > :nth-child(1) {
+    display         : flex;
+    justify-content : space-between;
+    width           : 100%;
+    font-size       : 0.9em;
+    position        : absolute;
+    top             : $fromTop;
+    z-index         : -1;
+
+    & > :first-child > :first-child {
+      bottom   : $g0 * 12 - 1px;
+      position : absolute;
+    }
+
+    & > :first-child > :last-child {
+      color : $cHighlight;
+    }
+
+    & > :last-child > :first-child {
+      padding-right : $g1;
+      color         : $cBuffered;
+    }
+  }
+
+  // track
+  & > :nth-child(3) {
+    height : auto;
+  }
+
+}
+
+.buttons {
+  position        : absolute;
+  display         : flex;
+  justify-content : center;
+  width           : 80%;
+  top             : calc($fromTop - $g0);
+  gap             : $g1;
+
+}
+
+.button {
+  svg {
+    width      : ($g1 + $g0) * 3;
+    height     : ($g1 + $g0) * 2;
+    padding    : $g0;
+    @include r0;
+    background : $cBackgroundPrimary;
+  }
+
+  :hover {
+    @include tColorBg;
+    color  : $cHighlight;
+    cursor : pointer;
+  }
+
+  :active {
+    color      : $cBackgroundHighlight;
+    background : $cHighlight;
+  }
+}
+
+.volume {
+  width     : calc($row3mobile - $p0 * 2);
+  transform : translate3d(0, 50%, 0);
+}

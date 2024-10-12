@@ -1,0 +1,11 @@
+@import "styles/paddings";
+
+.player {
+  height          : 100%;
+  width           : 100%;
+
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 0 $p0;
+}

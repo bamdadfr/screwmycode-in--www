@@ -1,0 +1,28 @@
+@import "styles/breakpoints";
+@import "styles/grid";
+@import "styles/paddings";
+@import "styles/gaps";
+@import "styles/browsers";
+
+.container {
+  padding       : $p0 $g1 $p0 $p0;
+  gap           : $p0;
+  height        : 100%;
+  width         : 100%;
+
+  @include noScroll;
+
+  display       : flex;
+  overflow      : auto;
+  flex-wrap     : wrap;
+  align-content : flex-start;
+
+  @include above(mobile) {
+    display               : grid;
+    grid-template-columns : repeat(2, 1fr);
+  }
+
+  @include above(fullhd) {
+    grid-template-columns : repeat(3, 1fr);
+  }
+}

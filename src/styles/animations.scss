@@ -1,0 +1,99 @@
+@import "./_vars";
+@import "./paddings";
+@import "./gaps";
+
+@mixin aFloat($duration: calc($_t * 10), $height: 2px) {
+  @keyframes float {
+    0% {
+      transform : translateY(0);
+    }
+    50% {
+      transform : translateY(-$height);
+    }
+    100% {
+      transform : translateY(0);
+    }
+  }
+
+  animation : float $duration ease-in-out infinite;
+}
+
+@mixin aEnter($height: 20px) {
+  @keyframes enter {
+    0% {
+      opacity : 0;
+      height  : 0;
+    }
+    10% {
+      height : 0;
+    }
+    80% {
+      opacity : 1;
+    }
+    100% {
+      height : $height;
+    }
+  }
+
+  animation : enter $_t normal forwards ease-in-out;
+}
+
+@mixin aExit {
+  @keyframes exit {
+    0% {
+      opacity : 1;
+    }
+    10% {
+      opacity : 1;
+    }
+    80% {
+      height : 0;
+    }
+    100% {
+      opacity : 0;
+      height  : 0;
+    }
+  }
+
+  animation : exit $_t normal forwards ease-in-out;
+}
+
+@mixin aRainbow {
+  @keyframes rainbow {
+    0% {
+      color : orange;
+    }
+    10% {
+      color : purple;
+    }
+    20% {
+      color : red;
+    }
+    30% {
+      color : CadetBlue;
+    }
+    40% {
+      color : yellow;
+    }
+    50% {
+      color : coral;
+    }
+    60% {
+      color : green;
+    }
+    70% {
+      color : cyan;
+    }
+    80% {
+      color : DeepPink;
+    }
+    90% {
+      color : DodgerBlue;
+    }
+    100% {
+      color : orange;
+    }
+  }
+
+  animation : rainbow $_t * 32 infinite;
+}

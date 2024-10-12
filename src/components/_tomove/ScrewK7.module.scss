@@ -1,0 +1,12 @@
+@import "styles/breakpoints";
+@import "styles/paddings";
+
+.wrapper {
+  display         : flex;
+  justify-content : center;
+  transform       : translate3d(-3px, 0, 0);
+}
+
+.padding {
+  padding-left : calc($p0 * 2);
+}

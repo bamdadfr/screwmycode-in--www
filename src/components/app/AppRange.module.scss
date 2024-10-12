@@ -1,0 +1,137 @@
+@import "styles/grid";
+@import "styles/gaps";
+@import "styles/colors";
+@import "styles/shadows";
+@import "styles/transitions";
+
+$trackW : 100%;
+$trackH : 7px;
+$thumbD : 22px;
+
+.vertical {
+  //width     : calc($row3mobile - $g0 * 7) !important;
+  transform : translate3d(0, -50%, 0) rotate3d(0, 0, 1, -90deg);
+}
+
+@mixin r {
+  border-radius : 7px;
+}
+
+@mixin track {
+  box-sizing : border-box;
+  border     : none;
+  width      : $trackW;
+  height     : $trackH;
+  background : $cBackgroundHighlight;
+  @include r;
+  @include s0;
+}
+
+@mixin progress {
+  height     : $trackH;
+  background : $cHighlight;
+  @include r;
+}
+
+@mixin handle {
+  box-sizing    : border-box;
+  width         : $thumbD;
+  height        : $thumbD;
+  border-radius : 50%;
+  border        : 3px solid;
+  background    : $cBackgroundPrimary;
+  box-shadow    : 1px 1px 1px $cBackgroundPrimary, 0 0 1px $cBackgroundHighlight;
+
+  @include t0(background-color);
+
+  &:hover {
+    background : $cBackgroundHighlight;
+  }
+}
+
+.container {
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  gap             : $g0;
+  height          : 100%;
+  width           : 100%;
+}
+
+.input {
+  &, &::-webkit-slider-thumb {
+    -webkit-appearance : none;
+  }
+
+  width            : $trackW;
+  height           : $thumbD;
+  background       : transparent;
+  font             : 1em/1 arial,
+  sans-serif;
+
+  --progress-width : calc(0.5 * 22px + var(--progress) * (100% - 22px));
+  --buffered-width : calc(var(--buffered) * 100%);
+
+  &:hover {
+    cursor : pointer;
+  }
+
+  // track
+  &::-webkit-slider-runnable-track {
+    @include track;
+
+    background : linear-gradient(
+                    to right,
+                    $cHighlight 0,
+                    $cHighlight var(--progress-width),
+                    $cBuffered var(--progress-width),
+                    $cBuffered var(--buffered-width),
+                    $cBackgroundHighlight var(--buffered-width),
+                    $cBackgroundHighlight 100%
+    );
+  }
+
+  &::-moz-range-track {
+    @include track;
+
+    background : linear-gradient(
+                    to right,
+                    $cBuffered 0,
+                    $cBuffered var(--buffered-width),
+                    $cBackgroundHighlight var(--buffered-width),
+                    $cBackgroundHighlight 100%
+    );
+  }
+
+  &::-ms-track {
+    @include track;
+  }
+
+  // progress
+  &::-moz-range-progress {
+    @include progress;
+  }
+
+  &::-ms-fill-lower {
+    @include progress;
+  }
+
+  // handle
+  &::-webkit-slider-thumb {
+    margin-top : calc(0.5 * ($trackH - $thumbD));
+    @include handle;
+  }
+
+  &::-moz-range-thumb {
+    @include handle;
+  }
+
+  &::-ms-thumb {
+    margin-top : 0;
+    @include handle;
+  }
+
+  &::-ms-tooltip {
+    display : none;
+  }
+}

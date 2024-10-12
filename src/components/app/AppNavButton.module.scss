@@ -1,0 +1,47 @@
+@import "styles/breakpoints";
+@import "styles/colors";
+@import "styles/gaps";
+@import "styles/paddings";
+@import "styles/shadows";
+@import "styles/radiuses";
+@import "styles/transitions";
+
+.link {
+  display         : flex;
+  justify-content : flex-start;
+  align-items     : center;
+
+  gap             : $p0;
+  width           : calc(100% - $p1 + 1px);
+
+  padding         : $g1 $p0;
+
+  @include r1;
+  @include tSidebarButton;
+
+  transform       : translate3d(-1px, 0, 0);
+
+  &:hover {
+    background : $cBackgroundHighlight;
+    transform  : translate3d(3px, 0, 0);
+    @include s0;
+  }
+
+  & > svg {
+    width     : 1.4em;
+    height    : 1.4em;
+    transform : translate3d(0, 1px, 0);
+  }
+
+  & > span {
+    transform : translate3d(-1px, 0, 0);
+    text-wrap : nowrap;
+  }
+}
+
+.active {
+  color      : $cHighlight;
+  background : $cBackgroundHighlight;
+  @include s0;
+  transform  : translate3d(3px, 0, 0);
+}

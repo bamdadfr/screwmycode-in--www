@@ -1,0 +1,110 @@
+@import "styles/_vars";
+@import "styles/colors";
+@import "styles/radiuses";
+@import "styles/paddings";
+@import "styles/gaps";
+@import "styles/animations";
+@import "styles/transitions";
+
+$h : 2em;
+
+.container {
+  * {
+    @include r0;
+  }
+
+  position : relative;
+}
+
+.title {
+  position        : absolute;
+  width           : 100%;
+  height          : $h;
+  padding         : $g0 $g1;
+  top             : 0;
+  right           : 0;
+
+  display         : flex;
+  justify-content : flex-end;
+  align-items     : flex-start;
+  color           : $cBlack;
+  pointer-events  : none;
+  @include t1(color);
+}
+
+.controls {
+  position        : absolute;
+  width           : 50dvh;
+  height          : calc(50dvh + $p0 * 2);
+  padding         : $p0;
+  right           : $p0;
+  bottom          : $p0;
+
+  display         : flex;
+  flex-direction  : column;
+  justify-content : flex-end;
+  align-items     : flex-end;
+}
+
+.pitch {
+  position  : absolute;
+  width     : 100%;
+  bottom    : calc(50% - $p0 * 2);
+  right     : 0;
+  transform : translate3d(calc(50% - $g1), 0, 0);
+}
+
+.indicators {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : $g0;
+  width          : 6em;
+  margin-right   : $p1;
+  z-index        : 1;
+  @include t1(color);
+}
+
+$t : .8s;
+
+@mixin fx($x : -16px, $y: -32px, $scale : 0.6, $blur: 5px, $invert : 1) {
+  opacity    : 0.8;
+  filter     : blur($blur) invert($invert) grayscale(1);
+  transform  : scale3d($scale, $scale, $scale) translate3d($x, $y, 0);
+  transition : filter $t ease, opacity $t ease, transform $t ease, color $t ease;
+
+  &:hover {
+    cursor    : pointer;
+    filter    : none;
+    transform : scale3d(1, 1, 1) translate3d(0, 0, 0);
+    opacity   : 0.99;
+  }
+}
+
+.share {
+  position : absolute;
+  left     : 0;
+  top      : 0;
+  padding  : $g1 $p0;
+  @include fx;
+}
+
+.reset {
+  position : absolute;
+  bottom   : $g1;
+  right    : $p0 * 15;
+  color    : $cBlack;
+  @include fx(3px, 3px, 0.8, 3px, 0);
+}
+
+.toggleLight {
+  position : absolute;
+  bottom   : $g1;
+  left     : $p0;
+  color    : $cBlack;
+  @include fx(-3px, 3px, 0.8, 3px, 0);
+}
+
+.light {
+  color : $cBuffered;
+}

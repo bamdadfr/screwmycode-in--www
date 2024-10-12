@@ -1,0 +1,20 @@
+@import "styles/breakpoints";
+@import "styles/grid";
+
+.app {
+  display               : grid;
+  grid-template-areas   :
+      "header header"
+      "sidebar main"
+      "footer footer";
+
+  grid-template-rows    : $row1 $row2 $row3;
+  grid-template-columns : $col1 $col2;
+
+  height                : 100dvh;
+
+  @include below(tablet) {
+    display        : flex;
+    flex-direction : column;
+  }
+}

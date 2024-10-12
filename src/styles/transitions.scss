@@ -1,0 +1,48 @@
+@import "./_vars";
+@import "./colors";
+@import "./shadows";
+@import "./animations";
+
+@mixin t0($target) {
+  transition : $target $_t ease;
+}
+
+@mixin t1($target) {
+  transition : $target calc($_t * 2 * $root) ease;
+}
+
+@mixin t2($target) {
+  transition : $target calc($_t * 3 * $root) ease;
+}
+
+@mixin tLong($target) {
+  transition : $target 2s ease;
+}
+
+@mixin tSidebarButton {
+  $t         : calc($_t * $root);
+  transition : background-color $t ease, color $t ease, transform $t;
+}
+
+@mixin tSidebar {
+  $t         : calc($_t * $root);
+  transition : opacity $t ease, height $t ease;
+}
+
+@mixin tCard {
+  transition : opacity 1.8s ease, top 1.2s ease;
+}
+
+@mixin tColorBg {
+  $t         : calc($_t * 2 * $root);
+  transition : color $t ease, background-color $t ease;
+}
+
+@mixin tDivider {
+  transition : background-color $_t ease, width $_t ease;
+}
+
+@mixin tAll {
+  // TODO: Use pseudo to improve box-shadow performance via opacity
+  transition : color $_t ease, background-color $_t ease, box-shadow $_t ease, transform $_t ease;
+}

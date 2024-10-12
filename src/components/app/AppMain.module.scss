@@ -1,0 +1,181 @@
+@import "styles/breakpoints";
+@import "styles/grid";
+@import "styles/paddings";
+@import "styles/gaps";
+@import "styles/colors";
+@import "styles/z";
+@import "styles/shadows";
+@import "styles/browsers";
+@import "styles/radiuses";
+@import "styles/transitions";
+@import "styles/animations";
+@import "styles/shadows";
+
+//$w : min(58%, 12em);
+$w : max(58%, 20%);
+$h : calc($row2mobile - $p0);
+
+.container {
+  grid-area : main;
+  display   : flex;
+}
+
+.main {
+  background : $cBackgroundHighlight;
+  width      : calc(100% - $p0);
+  @include r0;
+  @include s1;
+  @include s0;
+
+  @include below(tablet) {
+    width         : calc(100% - $p0 * 2);
+    height        : $h;
+    margin-bottom : $p0;
+    margin-left   : $p0;
+  }
+
+  @include above(tablet) {
+    height       : $h;
+    margin-right : $p0 * 1;
+  }
+}
+
+.wrapper {
+  height : 100%;
+  width  : 100%;
+
+  @include noScroll;
+}
+
+.divider {
+  width      : $p0;
+  min-width  : $p0;
+  cursor     : pointer;
+  background : $cBackgroundPrimary;
+  @include zMax;
+  @include tDivider;
+  height     : 100%;
+
+  position   : absolute;
+  right      : calc(100% - $p0);
+
+  &:hover {
+    background : $cGrayDark;
+  }
+}
+
+.dividerOpen {
+  background    : $cGrayDark;
+  border-radius : 0 0 0 4px;
+}
+
+.dividerHover {
+  width : $p0 + $g0;
+}
+
+.drawer {
+  position   : fixed;
+  right      : 0;
+  width      : 0;
+  max-width  : $w;
+  background : $cBlack;
+  display    : flex;
+  height     : $h;
+  @include t1(width);
+}
+
+.close {
+  width : $p0;
+}
+
+.open {
+  width : $w;
+}
+
+@mixin optionHover {
+  background-color : $cBackgroundHighlight;
+  cursor           : pointer;
+  transform        : translate3d(0, -1px, 0);
+  @include s1;
+}
+
+.options {
+  height        : 100%;
+  width         : 100%;
+  padding       : $p0 $p0 $p0 $p0 * 2;
+
+  @include r0;
+  @include zMid;
+
+  display       : flex;
+  flex-wrap     : wrap;
+  align-content : flex-start;
+  gap           : $p0;
+  overflow      : auto;
+  @include noScroll;
+}
+
+.option {
+  width            : 9em;
+  height           : 9em;
+  display          : flex;
+  justify-content  : center;
+  align-items      : center;
+  @include r0;
+  background-color : $cBackgroundPrimary;
+
+  @include tAll;
+  @include r1;
+
+  &:hover {
+    @include optionHover;
+  }
+}
+
+.optionActive {
+  color : $cHighlight;
+  @include optionHover;
+}
+
+.tooltip {
+  display         : flex;
+  justify-content : flex-start;
+  align-items     : center;
+  gap             : $g0;
+  font-weight     : bold;
+  position        : absolute;
+  right           : 0;
+  //width           : calc($col1mobile - $g1 * 4);
+  width           : 3em;
+  height          : calc(1em + $g1 * 2);
+  text-wrap       : nowrap;
+  color           : $cBlack;
+  cursor          : pointer;
+
+  @include zGod;
+  @include t1(width);
+
+  &::before {
+    content    : "";
+    position   : absolute;
+    width      : 100dvw;
+    height     : 100%;
+    transform  : translate3d(-10px, 0, 0) skewx(-0.6rad);
+    z-index    : -1;
+    background : $cHighlight;
+  }
+
+  & > :nth-child(2) {
+    transform : translate3d(-$g0, calc($g1), 0);
+    width     : 14px;
+    height    : 14px;
+  }
+}
+
+.tooltipHidden {
+  width : 0;
+}
+
+.tooltipFloat {
+  @include aFloat;
+}
