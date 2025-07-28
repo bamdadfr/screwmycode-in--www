@@ -124,6 +124,7 @@ const FooterImage = () => {
       className={styles.artwork}
     >
       <Image
+        unoptimized
         alt="artwork"
         src={imageUrl}
         width={width}

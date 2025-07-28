@@ -76,6 +76,7 @@ export function Card({item}: Props) {
         {imageUrl && (
           <>
             <Image
+              unoptimized
               src={imageUrl}
               alt={item.title}
               width={120}
