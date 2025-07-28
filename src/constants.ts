@@ -8,6 +8,8 @@ export const API_BASE_URL = IS_DEV_ENV
 
 export const TITLE_SEPARATOR = '|';
 
+export const TEXTURE_SCALE = 0.064;
+
 export const LOCAL_STORAGE_KEY = z.enum([
   'JWT',
   'AUDIO_VOLUME',

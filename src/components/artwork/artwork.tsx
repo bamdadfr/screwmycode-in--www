@@ -1,6 +1,7 @@
 import {Canvas} from '@react-three/fiber';
 import {useEffect, useState} from 'react';
 import {ArtworkTexture} from 'src/components/artwork/artwork-texture';
+import {TEXTURE_SCALE} from 'src/constants';
 import {type Texture, TextureLoader} from 'three';
 
 interface Props {
@@ -11,12 +12,21 @@ interface Props {
   scale?: number;
 }
 
-export const Artwork = ({url, width, height, freeze0 = false}: Props) => {
+export const Artwork = ({
+  url,
+  width,
+  height,
+  freeze0 = false,
+  scale = TEXTURE_SCALE,
+}: Props) => {
   const [texture, setTexture] = useState<Texture | null>(null);
   const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const onLoad = () => setLoaded(true);
+    const onLoad = () => {
+      setLoaded(true);
+    };
+
     const t = new TextureLoader().load(url, onLoad);
     setTexture(t);
   }, [url]);
@@ -31,8 +41,8 @@ export const Artwork = ({url, width, height, freeze0 = false}: Props) => {
       {texture && (
         <ArtworkTexture
           key={JSON.stringify(url)}
-          width={width}
-          height={height}
+          width={width * scale}
+          height={height * scale}
           texture={texture}
           f0={freeze0}
         />

@@ -13,10 +13,9 @@ import {AppRange} from 'src/components/app/app-range';
 import {AppLabel, AppValue} from 'src/components/app/app-value';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
+import {TEXTURE_SCALE} from 'src/constants';
 import {useArtworkReset} from 'src/hooks/use-artwork-reset';
 import {useCurrentItem} from 'src/hooks/use-current-item';
-
-const s = 0.013;
 
 export default function IndexPage() {
   const [ref, {width, height}] = useMeasure({polyfill: ResizeObserver});
@@ -44,8 +43,9 @@ export default function IndexPage() {
       {imageUrl && (
         <Artwork
           url={imageUrl}
-          width={width * s}
-          height={height * s}
+          width={width}
+          height={height}
+          scale={(TEXTURE_SCALE / 4) * (width / height)}
         />
       )}
       <div className={clsx(styles.title)}>{currentItem.title}</div>

@@ -21,6 +21,7 @@ export function Card({item}: Props) {
   const [isHover, setHover] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
   const {currentItem, setCurrentItem} = useCurrentItem();
+  const notWip = false;
 
   const {
     url: imageUrl,
@@ -48,7 +49,12 @@ export function Card({item}: Props) {
       onMouseLeave={() => isHover && setHover(false)}
       onClick={handleClick}
     >
-      <div className={clsx(styles.imageWrapper, isHover && styles.imageHover)}>
+      <div
+        className={clsx(
+          styles.imageWrapper,
+          (isHover || isCurrent) && styles.imageHover,
+        )}
+      >
         {!imageLoading && !imageError && imageUrl && (
           <>
             <Image
@@ -63,12 +69,12 @@ export function Card({item}: Props) {
               }}
             />
 
-            {isHover && (
+            {(isHover || isCurrent) && (
               <Artwork
                 url={imageUrl}
-                freeze0={!isHover}
-                width={120 * 0.064}
-                height={120 * 0.064}
+                freeze0={!isHover && !isCurrent}
+                width={120}
+                height={120}
               />
             )}
           </>
@@ -89,9 +95,13 @@ export function Card({item}: Props) {
           icon={icon}
         />
 
-        <div className={clsx(styles.like)}>
-          <Heart />
-        </div>
+        {notWip ? (
+          <div className={clsx(styles.like)}>
+            <Heart />
+          </div>
+        ) : (
+          <span />
+        )}
       </div>
     </a>
   );
