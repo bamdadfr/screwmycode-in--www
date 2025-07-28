@@ -1,3 +1,22 @@
+# [4.0.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.15.1...v4.0.0) (2025-07-28)
+
+
+### Bug Fixes
+
+* handle submit button ([d96a4b6](https://github.com/bamdadfr/screwmycode-in--www/commit/d96a4b65014646752080fb786f7e0261887c578c))
+
+
+### Features
+
+* new major version ([4f19028](https://github.com/bamdadfr/screwmycode-in--www/commit/4f19028d6548ee76c05907358492c5da05fe6769))
+
+
+### BREAKING CHANGES
+
+* new major version
+
+rewrite simpler stuff, especially card
+
 ## [3.15.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v3.15.0...v3.15.1) (2024-10-11)
 
 
