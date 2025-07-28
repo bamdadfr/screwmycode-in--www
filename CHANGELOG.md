@@ -1,3 +1,10 @@
+## [4.0.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.4...v4.0.5) (2025-07-28)
+
+
+### Bug Fixes
+
+* extend media tokens to 24h ([c1681bc](https://github.com/bamdadfr/screwmycode-in--www/commit/c1681bc68d044b1d881256bd277a015ba1f3056f))
+
 ## [4.0.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.3...v4.0.4) (2025-07-28)
 
 
