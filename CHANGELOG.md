@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.3...v4.0.4) (2025-07-28)
+
+
+### Bug Fixes
+
+* use native image ([6800f95](https://github.com/bamdadfr/screwmycode-in--www/commit/6800f95c65ce5c70c1f5bfe662c364aba44bdb4f))
+
 ## [4.0.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.2...v4.0.3) (2025-07-28)
 
 
