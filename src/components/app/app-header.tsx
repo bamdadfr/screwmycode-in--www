@@ -24,7 +24,7 @@ export const AppHeader = () => {
     }
   }, [isMobileOrTablet, toggleIsOpen]);
 
-  const {ref: inputRef, handleKeyDown} = useInput();
+  const {ref: inputRef, handleKeyDown, handleSubmit} = useInput();
 
   return (
     <header className={styles.header}>
@@ -50,7 +50,10 @@ export const AppHeader = () => {
           ref={inputRef}
           onKeyDown={handleKeyDown}
         />
-        <button type="submit">
+        <button
+          type="submit"
+          onClick={handleSubmit}
+        >
           <SquareChevronRight />
         </button>
       </div>

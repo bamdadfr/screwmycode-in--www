@@ -1,7 +1,7 @@
 'use client';
 
 import {useRouter} from 'next/navigation';
-import {KeyboardEvent, useCallback, useRef, useState} from 'react';
+import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
 import {MediaResponse} from 'src/dtos';
 import {useAuth} from 'src/hooks/use-auth';
 import {useCurrentItem} from 'src/hooks/use-current-item';
@@ -23,17 +23,8 @@ export function useInput() {
     ref.current.value = '';
   }, [ref]);
 
-  const handleKeyDown = useCallback(
-    async (e: KeyboardEvent) => {
-      if (e.code !== 'Enter') {
-        return;
-      }
-
-      e.preventDefault();
-
-      const target = e.target as HTMLInputElement;
-      const value = target.value;
-
+  const handleRequest = useCallback(
+    async (value: string) => {
       if (value === '') {
         return;
       }
@@ -85,9 +76,40 @@ export function useInput() {
     [purge, setIsError, token, router, setCurrentItem],
   );
 
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.code !== 'Enter') {
+        return;
+      }
+
+      e.preventDefault();
+
+      const target = e.target as HTMLInputElement;
+      const value = target.value;
+
+      handleRequest(value).then();
+    },
+    [handleRequest],
+  );
+
+  const handleSubmit = useCallback(
+    (e: MouseEvent) => {
+      e.preventDefault();
+
+      if (!ref.current) {
+        return;
+      }
+
+      const value = ref.current.value;
+      handleRequest(value).then();
+    },
+    [ref, handleRequest],
+  );
+
   return {
     ref,
-    handleKeyDown,
     isError,
+    handleKeyDown,
+    handleSubmit,
   };
 }
