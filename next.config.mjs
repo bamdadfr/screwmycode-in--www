@@ -8,8 +8,6 @@ const config = {
     styledComponents: true,
   },
   images: {
-    unoptimized: true,
-    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: 'https',

@@ -3,7 +3,6 @@
 import {ResizeObserver} from '@juggle/resize-observer';
 import clsx from 'clsx';
 import {Pause, Play, RefreshCw, RefreshCwOff, SkipBack} from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, {useCallback, useMemo} from 'react';
 import useMeasure from 'react-use-measure';
@@ -123,8 +122,7 @@ const FooterImage = () => {
       ref={ref}
       className={styles.artwork}
     >
-      <Image
-        unoptimized
+      <img
         alt="artwork"
         src={imageUrl}
         width={width}

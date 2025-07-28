@@ -3,7 +3,6 @@
 import {Icon} from '@iconify/react';
 import clsx from 'clsx';
 import {Heart, TrendingUp} from 'lucide-react';
-import Image from 'next/image';
 import {
   MouseEvent,
   useCallback,
@@ -75,8 +74,7 @@ export function Card({item}: Props) {
       >
         {imageUrl && (
           <>
-            <Image
-              unoptimized
+            <img
               src={imageUrl}
               alt={item.title}
               width={120}
