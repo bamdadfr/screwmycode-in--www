@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.2...v4.0.3) (2025-07-28)
+
+
+### Bug Fixes
+
+* disable image optimization ([23a8fb6](https://github.com/bamdadfr/screwmycode-in--www/commit/23a8fb6092741a77b4c266bc7691ea357a6c8686))
+
 ## [4.0.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.1...v4.0.2) (2025-07-28)
 
 
