@@ -1,0 +1,9 @@
+@use "theme";
+
+@mixin s0 {
+  box-shadow: 0 1px 10px 1px theme.$themeShadowOpacity;
+}
+
+@mixin s1 {
+  box-shadow: -3px 2px 10px 1px theme.$themeShadowOpacityLight;
+}

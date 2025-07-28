@@ -1,0 +1,6 @@
+@use "./theme";
+
+@mixin blurry() {
+  backdrop-filter: blur(10px);
+  background-color: color-mix(in srgb, theme.$themeBackgroundHighlight 33%, transparent);
+}

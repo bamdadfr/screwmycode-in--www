@@ -29,6 +29,9 @@
       "src/*": [
         "src/*"
       ],
+      "styles/*": [
+        "src/styles/*"
+      ],
       "__mocks__/*": [
         "__mocks__/*"
       ]

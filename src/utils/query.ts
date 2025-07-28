@@ -13,6 +13,7 @@ interface Q<T> {
   err: null | NotFoundError;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class ServerQuery {
   public static async home() {
     return await this.q<HomeDto>(Endpoint.home);

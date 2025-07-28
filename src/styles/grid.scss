@@ -1,0 +1,13 @@
+$row1mobile: 60px;
+$row3mobile: 110px;
+$row2mobile: calc(100dvh - $row1mobile - $row3mobile);
+
+// $row1       : max($row1mobile, 8dvh);
+// $row3       : max($row3mobile, 12dvh);
+$row1: $row1mobile;
+$row3: $row3mobile;
+$row2: calc(100dvh - $row1 - $row3);
+$col1: 11em;
+$col2: 1fr;
+$col3: 4em;
+$col1mobile: max(7dvw, 46px);

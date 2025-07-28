@@ -1,0 +1,113 @@
+@use "styles/grid";
+@use "styles/fonts";
+@use "styles/theme";
+@use "styles/paddings";
+@use "styles/gaps";
+@use "styles/breakpoints";
+@use "styles/shadows";
+@use "styles/radiuses";
+@use "styles/transitions";
+
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: grid.$col1mobile grid.$col2;
+  height: grid.$row1mobile;
+  padding: 0 paddings.$p0;
+
+  @include breakpoints.above(mobile) {
+    grid-template-columns: grid.$col1mobile grid.$col2 grid.$col3;
+    height: grid.$row1mobile;
+  }
+
+  @include breakpoints.above(tablet) {
+    grid-template-columns: grid.$col1 grid.$col2 grid.$col3;
+  }
+}
+
+.home {
+  align-items: center;
+  display: flex;
+  gap: gaps.$g1;
+  height: 100%;
+  justify-content: center;
+
+  @include transitions.t0(color);
+
+  @include breakpoints.above(tablet) {
+    margin-left: - paddings.$p0 * 4;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.input {
+  align-items: center;
+  display: grid;
+  gap: paddings.$p0;
+  grid-template-columns: 1fr grid.$col3;
+
+  @include fonts.fontBold;
+
+  @include breakpoints.above(tablet) {
+    margin-left: - paddings.$p0;
+  }
+
+  > input, > button {
+    background: theme.$themeBackgroundHighlight;
+    color: theme.$themePrimary;
+    display: inline-block;
+    height: 36px;
+    text-transform: none;
+
+    @include shadows.s0;
+    @include radiuses.r0;
+  }
+
+  > input {
+    font-size: 0.9em;
+    padding-left: calc(#{paddings.$p0} - 2px);
+
+    @include breakpoints.above(tablet) {
+      font-size: 0.7em;
+    }
+  }
+
+  > button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    @include transitions.t1(background-color);
+
+    &:hover {
+      background: theme.$themeHighlight;
+      color: theme.$themeBackgroundHighlight;
+    }
+  }
+}
+
+.active {
+  color: theme.$themeHighlight;
+}
+
+.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.user, .theme {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transform: translate3d(#{gaps.$g0}, 0, 0);
+
+  @include transitions.t1(color);
+
+  &:hover {
+    color: theme.$themeHighlight;
+  }
+}

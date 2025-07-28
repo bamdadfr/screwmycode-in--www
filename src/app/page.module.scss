@@ -1,0 +1,100 @@
+@use "styles/vars";
+@use "styles/theme";
+@use "styles/radiuses";
+@use "styles/paddings";
+@use "styles/gaps";
+@use "styles/animations";
+@use "styles/transitions";
+@use "styles/background";
+
+$h: 2em;
+
+.container {
+  position: relative;
+
+  * {
+    @include radiuses.r0;
+  }
+}
+
+.title {
+  align-items: flex-start;
+  color: theme.$themePrimary;
+  display: flex;
+  height: $h;
+  justify-content: flex-end;
+  padding: gaps.$g0 paddings.$p0;
+  pointer-events: none;
+  position: absolute;
+  right: gaps.$g0;
+  top: gaps.$g0;
+
+  @include transitions.t1(color);
+  @include background.blurry;
+}
+
+.controls {
+  align-items: flex-end;
+  bottom: paddings.$p0;
+  display: flex;
+  flex-direction: column;
+  height: calc(50dvh + #{paddings.$p0} * 2);
+  justify-content: flex-end;
+  padding: paddings.$p0;
+  position: absolute;
+  right: paddings.$p0;
+  width: 50dvh;
+}
+
+.pitch {
+  bottom: calc(50% - #{paddings.$p0} * 2);
+  position: absolute;
+  right: 0;
+  transform: translate3d(calc(50% - #{gaps.$g1}), 0, 0);
+  width: 100%;
+}
+
+.indicators {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: gaps.$g0;
+  margin-right: paddings.$p1;
+  width: 6em;
+
+  @include transitions.t1(color);
+}
+
+$t: .8s;
+
+@mixin fx($x : -16px, $y: -32px, $scale : 0.6, $blur: 5px, $invert : 1) {
+  opacity: 0.8;
+  filter: blur($blur) invert($invert) grayscale(1);
+  transform: scale3d($scale, $scale, $scale) translate3d($x, $y, 0);
+  transition: filter $t ease, opacity $t ease, transform $t ease, color $t ease;
+
+  &:hover {
+    cursor: pointer;
+    filter: none;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    opacity: 0.99;
+  }
+}
+
+.share {
+  left: 0;
+  padding: gaps.$g1 paddings.$p0;
+  position: absolute;
+  top: 0;
+
+  @include fx;
+}
+
+.reset {
+  bottom: gaps.$g0 * 4 + 1px;
+  color: theme.$themePrimary;
+  position: absolute;
+  right: gaps.$g0 * 39;
+
+  @include fx(0, gaps.$g0, 0.8, 1px, 0);
+}

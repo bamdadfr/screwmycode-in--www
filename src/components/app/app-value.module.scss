@@ -1,0 +1,28 @@
+@use "styles/theme";
+@use "styles/gaps";
+@use "styles/background";
+
+.label {
+  align-self: center;
+  color: theme.$themePrimary;
+  font-size: 0.7em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include background.blurry;
+}
+
+.value {
+  background: theme.$themeBackgroundHighlight;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px 1px theme.$themeShadowOpacity;
+  color: theme.$themeHighlight;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 2em;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+}

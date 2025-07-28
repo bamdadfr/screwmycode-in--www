@@ -3,6 +3,7 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 /** @type {import('next').NextConfig} */
 const config = {
   poweredByHeader: false,
+  reactStrictMode: true,
   compiler: {
     styledComponents: true,
   },
