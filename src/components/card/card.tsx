@@ -4,13 +4,20 @@ import {Icon} from '@iconify/react';
 import clsx from 'clsx';
 import {Heart, TrendingUp} from 'lucide-react';
 import Image from 'next/image';
-import {MouseEvent, useCallback, useMemo, useState} from 'react';
+import {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
 import {type ListItem} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentItem} from 'src/hooks/use-current-item';
-import {useMediaToken} from 'src/hooks/use-media-token';
+import {useMediaFetch} from 'src/hooks/use-media-fetch';
 
 interface Props {
   item: ListItem;
@@ -20,14 +27,12 @@ export function Card({item}: Props) {
   const {icon} = useCardIcon(item);
   const [isHover, setHover] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
-  const {currentItem, setCurrentItem} = useCurrentItem();
-  const notWip = false;
+  const {currentItem, updateCurrentItem} = useCurrentItem();
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const {fetchMedia} = useMediaFetch();
+  const hasFetched = useRef(false);
 
-  const {
-    url: imageUrl,
-    loading: imageLoading,
-    error: imageError,
-  } = useMediaToken(item.url, 'image');
+  const notWip = false;
 
   const isCurrent = useMemo(
     () => item.url === currentItem?.url,
@@ -37,10 +42,23 @@ export function Card({item}: Props) {
   const handleClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
-      setCurrentItem(item);
+      updateCurrentItem(item).then();
     },
-    [item, setCurrentItem],
+    [item, updateCurrentItem],
   );
+
+  useEffect(() => {
+    if (hasFetched.current) {
+      return;
+    }
+
+    hasFetched.current = true;
+
+    (async () => {
+      const image = await fetchMedia(item.url, 'image');
+      setImageUrl(image);
+    })();
+  }, [fetchMedia, item.url, hasFetched]);
 
   return (
     <a
@@ -55,7 +73,7 @@ export function Card({item}: Props) {
           (isHover || isCurrent) && styles.imageHover,
         )}
       >
-        {!imageLoading && !imageError && imageUrl && (
+        {imageUrl && (
           <>
             <Image
               src={imageUrl}

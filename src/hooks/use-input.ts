@@ -11,7 +11,7 @@ export function useInput() {
   const ref = useRef<HTMLInputElement | null>(null);
   const {token} = useAuth();
   const router = useRouter();
-  const {setCurrentItem} = useCurrentItem();
+  const {updateCurrentItem} = useCurrentItem();
 
   const [isError, setIsError] = useState<boolean>(false);
 
@@ -69,11 +69,11 @@ export function useInput() {
 
       const json = await response.json();
       const result = MediaResponse.parse(json);
-      setCurrentItem(result.item);
+      await updateCurrentItem(result.item);
       purge();
       router.push('/');
     },
-    [purge, setIsError, token, router, setCurrentItem],
+    [purge, setIsError, token, router, updateCurrentItem],
   );
 
   const handleKeyDown = useCallback(

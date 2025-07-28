@@ -1,12 +1,10 @@
 import {useCallback, useEffect, useRef} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {useCurrentItem} from 'src/hooks/use-current-item';
-import {useMediaToken} from 'src/hooks/use-media-token';
 
 export function useAudioLoad() {
   const {domReference: ref, setDuration, setIsPlaying} = useAudioState();
-  const {currentItem} = useCurrentItem();
-  const {url: audioUrl} = useMediaToken(currentItem?.url, 'audio');
+  const {audioUrl} = useCurrentItem();
 
   const saved = useRef<string | null>(audioUrl);
 
