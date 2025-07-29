@@ -1,5 +1,5 @@
 import {Canvas} from '@react-three/fiber';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 import {ArtworkTexture} from 'src/components/artwork/artwork-texture';
 import {TEXTURE_SCALE} from 'src/constants';
 import {type Texture, TextureLoader, WebGLRenderer} from 'three';
@@ -24,13 +24,13 @@ export const Artwork = ({
   const textureRef = useRef<Texture | null>(null);
 
   // loader
-  useEffect(() => {
+  const texture = useMemo(() => {
     const onLoad = (texture: Texture) => {
       textureRef.current = texture;
       setIsLoaded(true);
     };
 
-    new TextureLoader().load(url, onLoad);
+    return new TextureLoader().load(url, onLoad);
   }, [url, textureRef]);
 
   // cleanup
@@ -59,12 +59,12 @@ export const Artwork = ({
         rendererRef.current = gl;
       }}
     >
-      {textureRef.current && (
+      {texture && (
         <ArtworkTexture
           key={url}
           width={width * scale}
           height={height * scale}
-          texture={textureRef.current}
+          texture={texture}
           f0={freeze0}
         />
       )}
