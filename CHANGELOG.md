@@ -1,3 +1,10 @@
+## [4.0.11](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.10...v4.0.11) (2025-07-29)
+
+
+### Bug Fixes
+
+* use blob for current item as well ([af38e5f](https://github.com/bamdadfr/screwmycode-in--www/commit/af38e5faf9590e865f8f3b244d4b48299f3dffec))
+
 ## [4.0.10](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.9...v4.0.10) (2025-07-29)
 
 
