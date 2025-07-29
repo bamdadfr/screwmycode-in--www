@@ -21,9 +21,6 @@ export default async function handler(
     return res.status(400).json({error: 'Missing audioUrl or mediaType'});
   }
 
-  const isYoutubeAudio =
-    audioUrl.includes('youtube.com') && mediaType === 'audio';
-
   try {
     // Verify the main JWT token first (optional but recommended)
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
@@ -60,9 +57,7 @@ export default async function handler(
 
     res.json({
       expires_in: 600, // 10 minutes in seconds
-      media_url: isYoutubeAudio
-        ? media_url
-        : `${API_BASE_URL}/v2/media/${tempToken}`,
+      media_url: `${API_BASE_URL}/v2/media/${tempToken}`,
       item,
     });
   } catch (error) {
