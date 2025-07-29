@@ -1,8 +1,8 @@
 import {Canvas} from '@react-three/fiber';
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {ArtworkTexture} from 'src/components/artwork/artwork-texture';
 import {TEXTURE_SCALE} from 'src/constants';
-import {type Texture, TextureLoader} from 'three';
+import {type Texture, TextureLoader, WebGLRenderer} from 'three';
 
 interface Props {
   url: string;
@@ -19,17 +19,32 @@ export const Artwork = ({
   freeze0 = false,
   scale = TEXTURE_SCALE,
 }: Props) => {
-  const [texture, setTexture] = useState<Texture | null>(null);
-  const [isLoaded, setLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const rendererRef = useRef<WebGLRenderer | null>(null);
+  const textureRef = useRef<Texture | null>(null);
 
+  // loader
   useEffect(() => {
-    const onLoad = () => {
-      setLoaded(true);
+    const onLoad = (texture: Texture) => {
+      textureRef.current = texture;
+      setIsLoaded(true);
     };
 
-    const t = new TextureLoader().load(url, onLoad);
-    setTexture(t);
-  }, [url]);
+    new TextureLoader().load(url, onLoad);
+  }, [url, textureRef]);
+
+  // cleanup
+  useEffect(() => {
+    return () => {
+      if (textureRef.current) {
+        textureRef.current.dispose();
+      }
+
+      if (rendererRef.current) {
+        rendererRef.current.dispose();
+      }
+    };
+  }, [rendererRef]);
 
   return (
     <Canvas
@@ -37,13 +52,19 @@ export const Artwork = ({
         opacity: isLoaded ? 1 : 0,
         top: isLoaded ? 0 : '1px',
       }}
+      gl={{
+        powerPreference: 'low-power',
+      }}
+      onCreated={({gl}) => {
+        rendererRef.current = gl;
+      }}
     >
-      {texture && (
+      {textureRef.current && (
         <ArtworkTexture
-          key={JSON.stringify(url)}
+          key={url}
           width={width * scale}
           height={height * scale}
-          texture={texture}
+          texture={textureRef.current}
           f0={freeze0}
         />
       )}
