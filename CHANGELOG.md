@@ -1,3 +1,10 @@
+## [4.0.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.6...v4.0.7) (2025-07-29)
+
+
+### Bug Fixes
+
+* cleanup webgl resources properly ([d0543b5](https://github.com/bamdadfr/screwmycode-in--www/commit/d0543b5bc9898b53b16cbf594e8130676c51f6b2))
+
 ## [4.0.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.5...v4.0.6) (2025-07-29)
 
 
