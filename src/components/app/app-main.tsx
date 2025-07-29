@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import {MoveDownRight, Settings} from 'lucide-react';
+import {Construction, MoveDownRight, Settings} from 'lucide-react';
 import {JSX, useState} from 'react';
 import styles from 'src/components/app/app-main.module.scss';
 import {useDrawer} from 'src/hooks/use-drawer';
@@ -75,7 +75,9 @@ const Options = () => {
 
   return (
     <div className={clsx(styles.options)}>
-      <div style={{color: 'white'}}>WIP</div>
+      <div style={{color: 'white'}}>
+        <Construction />
+      </div>
       {!underConstruction &&
         options.map((o) => {
           return (
