@@ -1,3 +1,10 @@
+## [4.0.12](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.11...v4.0.12) (2025-07-29)
+
+
+### Bug Fixes
+
+* add card loading state ([59323ea](https://github.com/bamdadfr/screwmycode-in--www/commit/59323ea0ce63c9f99857e0a2c123f9f0c289d249))
+
 ## [4.0.11](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.10...v4.0.11) (2025-07-29)
 
 
