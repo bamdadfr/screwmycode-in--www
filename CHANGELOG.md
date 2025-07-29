@@ -1,3 +1,10 @@
+## [4.0.15](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.14...v4.0.15) (2025-07-29)
+
+
+### Bug Fixes
+
+* set current item after fetching ([e4f3881](https://github.com/bamdadfr/screwmycode-in--www/commit/e4f38814f41c3eab6dd8ca894580233021e97bcf))
+
 ## [4.0.14](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.13...v4.0.14) (2025-07-29)
 
 
