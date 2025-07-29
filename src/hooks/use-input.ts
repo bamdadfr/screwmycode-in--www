@@ -3,14 +3,14 @@
 import {useRouter} from 'next/navigation';
 import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
 import {MediaResponse} from 'src/dtos';
-import {useAuth} from 'src/hooks/use-auth';
+import {useAuthToken} from 'src/hooks/use-auth-token';
 import {useCurrentItem} from 'src/hooks/use-current-item';
 
 // examples:
 //   - https://www.youtube.com/watch?v=V2OMsWQWLE4
 export function useInput() {
   const ref = useRef<HTMLInputElement | null>(null);
-  const {token} = useAuth();
+  const {token} = useAuthToken();
   const router = useRouter();
   const {updateCurrentItem} = useCurrentItem();
 

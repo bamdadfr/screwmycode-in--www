@@ -5,15 +5,12 @@ import {Moon, SquareChevronRight, Sun} from 'lucide-react';
 import {useCallback} from 'react';
 import {ScrewK7} from 'src/components/_tomove/screw-k7';
 import styles from 'src/components/app/app-header.module.scss';
-import {useAuth} from 'src/hooks/use-auth';
 import {useInput} from 'src/hooks/use-input';
 import {useMobile} from 'src/hooks/use-mobile';
 import {useNav} from 'src/hooks/use-nav';
 import {useTheme} from 'src/hooks/use-theme';
 
 export const AppHeader = () => {
-  useAuth();
-
   const {isOpen, toggleIsOpen} = useNav();
   const {isLightTheme, toggle: toggleTheme} = useTheme();
   const {isMobile, isMobileOrTablet} = useMobile();

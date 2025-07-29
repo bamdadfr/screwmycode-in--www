@@ -1,9 +1,9 @@
 import {useCallback, useState} from 'react';
 import {type StreamType} from 'src/dtos';
-import {useAuth} from 'src/hooks/use-auth';
+import {useAuthToken} from 'src/hooks/use-auth-token';
 
 export function useMediaFetch() {
-  const {token} = useAuth();
+  const {token} = useAuthToken();
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchMedia = useCallback(

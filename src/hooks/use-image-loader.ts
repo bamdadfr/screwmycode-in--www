@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import {useAuth} from 'src/hooks/use-auth';
+import {useAuthToken} from 'src/hooks/use-auth-token';
 import {useMediaFetch} from 'src/hooks/use-media-fetch';
 
 // Global cache to persist across component instances
@@ -27,7 +27,7 @@ export function useImageLoader(itemUrl: string | null) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const {fetchMedia} = useMediaFetch();
-  const {token} = useAuth();
+  const {token} = useAuthToken();
 
   const loadImage = useCallback(
     async (url: string) => {

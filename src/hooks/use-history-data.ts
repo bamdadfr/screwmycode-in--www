@@ -1,9 +1,9 @@
 import {API_BASE_URL} from 'src/constants';
 import {type ListBody, ListResponse} from 'src/dtos';
-import {useAuth} from 'src/hooks/use-auth';
+import {useAuthToken} from 'src/hooks/use-auth-token';
 
 export function useHistoryData() {
-  const {token} = useAuth();
+  const {token} = useAuthToken();
 
   const fetchData = async () => {
     const route = `${API_BASE_URL}/v2/list/`;
