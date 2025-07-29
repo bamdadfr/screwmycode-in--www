@@ -10,7 +10,7 @@ export function useHistoryData() {
     const body: ListBody = {
       range: 'all',
       sort_by: 'date',
-      limit: 10,
+      limit: 50,
     };
 
     const response = await fetch(route, {

@@ -10,7 +10,7 @@ export function useRankingsData() {
     const body: ListBody = {
       range: 'all',
       sort_by: 'hits',
-      limit: 10,
+      limit: 50,
     };
 
     const response = await fetch(route, {
