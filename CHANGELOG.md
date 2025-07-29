@@ -1,3 +1,10 @@
+## [4.0.14](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.13...v4.0.14) (2025-07-29)
+
+
+### Bug Fixes
+
+* proxy youtube to avoid geo block ([cda6692](https://github.com/bamdadfr/screwmycode-in--www/commit/cda6692b424239af73683912348a260ca4155392))
+
 ## [4.0.13](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.12...v4.0.13) (2025-07-29)
 
 
