@@ -1,3 +1,10 @@
+## [4.0.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.5...v4.0.6) (2025-07-29)
+
+
+### Bug Fixes
+
+* cache images to serve all consumers from internal blobs ([6eba4c2](https://github.com/bamdadfr/screwmycode-in--www/commit/6eba4c2a0f0e892738376022123e5543e19c5c1e))
+
 ## [4.0.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.4...v4.0.5) (2025-07-28)
 
 
