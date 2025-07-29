@@ -1,3 +1,10 @@
+## [4.0.8](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.7...v4.0.8) (2025-07-29)
+
+
+### Bug Fixes
+
+* ensure texture is reactive ([e4a3c9c](https://github.com/bamdadfr/screwmycode-in--www/commit/e4a3c9c624c934b7672d91ee3d8145f430ee434f))
+
 ## [4.0.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.6...v4.0.7) (2025-07-29)
 
 
