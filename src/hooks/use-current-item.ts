@@ -19,9 +19,9 @@ export function useCurrentItem() {
         return;
       }
 
-      setCurrentItem(newItem);
       const audio = await fetchMedia(newItem.url, 'audio');
       setAudioUrl(audio);
+      setCurrentItem(newItem);
     },
     [currentItem, setAudioUrl, fetchMedia, setCurrentItem, isLoading],
   );
