@@ -3,20 +3,13 @@
 import {Icon} from '@iconify/react';
 import clsx from 'clsx';
 import {Heart, TrendingUp} from 'lucide-react';
-import {
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import {MouseEvent, useCallback, useMemo, useState} from 'react';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
 import {type ListItem} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentItem} from 'src/hooks/use-current-item';
-import {useMediaFetch} from 'src/hooks/use-media-fetch';
+import {useImageLoader} from 'src/hooks/use-image-loader';
 
 interface Props {
   item: ListItem;
@@ -27,9 +20,7 @@ export function Card({item}: Props) {
   const [isHover, setHover] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
   const {currentItem, updateCurrentItem} = useCurrentItem();
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const {fetchMedia} = useMediaFetch();
-  const hasFetched = useRef(false);
+  const {blobUrl} = useImageLoader(item.url);
 
   const notWip = false;
 
@@ -46,19 +37,6 @@ export function Card({item}: Props) {
     [item, updateCurrentItem],
   );
 
-  useEffect(() => {
-    if (hasFetched.current) {
-      return;
-    }
-
-    hasFetched.current = true;
-
-    (async () => {
-      const image = await fetchMedia(item.url, 'image');
-      setImageUrl(image);
-    })();
-  }, [fetchMedia, item.url, hasFetched]);
-
   return (
     <a
       className={clsx(styles.container)}
@@ -72,10 +50,10 @@ export function Card({item}: Props) {
           (isHover || isCurrent) && styles.imageHover,
         )}
       >
-        {imageUrl && (
+        {blobUrl && (
           <>
             <img
-              src={imageUrl}
+              src={blobUrl}
               alt={item.title}
               width={120}
               height={120}
@@ -88,7 +66,7 @@ export function Card({item}: Props) {
 
             {(isHover || isCurrent) && (
               <Artwork
-                url={imageUrl}
+                url={blobUrl}
                 freeze0={!isHover && !isCurrent}
                 width={120}
                 height={120}
