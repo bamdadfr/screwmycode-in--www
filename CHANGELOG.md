@@ -1,3 +1,10 @@
+## [4.0.13](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.12...v4.0.13) (2025-07-29)
+
+
+### Bug Fixes
+
+* add token validation and regeneration ([65f7198](https://github.com/bamdadfr/screwmycode-in--www/commit/65f7198bc48066e337a0aa037ba93fded63d6ed7))
+
 ## [4.0.12](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.11...v4.0.12) (2025-07-29)
 
 
