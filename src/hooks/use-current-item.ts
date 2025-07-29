@@ -11,12 +11,11 @@ export function useCurrentItem() {
   const [currentItem, setCurrentItem] = useAtom(currentItemAtom);
   const [audioUrl, setAudioUrl] = useAtom(currentAudioUrlAtom);
   const {blobUrl} = useImageLoader(currentItem?.url ?? null);
-
-  const {fetchMedia} = useMediaFetch();
+  const {fetchMedia, isLoading} = useMediaFetch();
 
   const updateCurrentItem = useCallback(
     async (newItem: ListItem) => {
-      if (newItem === currentItem) {
+      if (newItem === currentItem || isLoading) {
         return;
       }
 
@@ -24,7 +23,7 @@ export function useCurrentItem() {
       const audio = await fetchMedia(newItem.url, 'audio');
       setAudioUrl(audio);
     },
-    [currentItem, setAudioUrl, fetchMedia, setCurrentItem],
+    [currentItem, setAudioUrl, fetchMedia, setCurrentItem, isLoading],
   );
 
   return {
@@ -32,5 +31,6 @@ export function useCurrentItem() {
     updateCurrentItem,
     imageUrl: blobUrl,
     audioUrl,
+    isLoading,
   };
 }

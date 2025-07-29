@@ -17,9 +17,9 @@ interface Props {
 
 export function Card({item}: Props) {
   const {icon} = useCardIcon(item);
-  const [isHover, setHover] = useState(false);
-  const [isLoaded, setLoaded] = useState(false);
-  const {currentItem, updateCurrentItem} = useCurrentItem();
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const {currentItem, updateCurrentItem, isLoading} = useCurrentItem();
   const {blobUrl} = useImageLoader(item.url);
 
   const notWip = false;
@@ -39,15 +39,15 @@ export function Card({item}: Props) {
 
   return (
     <a
-      className={clsx(styles.container)}
-      onMouseEnter={() => !isHover && setHover(true)}
-      onMouseLeave={() => isHover && setHover(false)}
+      className={clsx(styles.container, isLoading && styles.loading)}
+      onMouseEnter={() => !isImageHovered && setIsImageHovered(true)}
+      onMouseLeave={() => isImageHovered && setIsImageHovered(false)}
       onClick={handleClick}
     >
       <div
         className={clsx(
           styles.imageWrapper,
-          (isHover || isCurrent) && styles.imageHover,
+          (isImageHovered || isCurrent) && styles.imageHover,
         )}
       >
         {blobUrl && (
@@ -57,17 +57,17 @@ export function Card({item}: Props) {
               alt={item.title}
               width={120}
               height={120}
-              onLoad={() => setLoaded(true)}
+              onLoad={() => setIsImageLoaded(true)}
               style={{
-                opacity: isLoaded ? 1 : 0,
-                top: isLoaded ? 0 : '3px',
+                opacity: isImageLoaded ? 1 : 0,
+                top: isImageLoaded ? 0 : '3px',
               }}
             />
 
-            {(isHover || isCurrent) && (
+            {(isImageHovered || isCurrent) && (
               <Artwork
                 url={blobUrl}
-                freeze0={!isHover && !isCurrent}
+                freeze0={!isImageHovered && !isCurrent}
                 width={120}
                 height={120}
               />

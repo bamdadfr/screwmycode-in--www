@@ -6,7 +6,8 @@ import {MediaResponse} from 'src/dtos';
 import {useAuth} from 'src/hooks/use-auth';
 import {useCurrentItem} from 'src/hooks/use-current-item';
 
-// https://www.youtube.com/watch?v=V2OMsWQWLE4
+// examples:
+//   - https://www.youtube.com/watch?v=V2OMsWQWLE4
 export function useInput() {
   const ref = useRef<HTMLInputElement | null>(null);
   const {token} = useAuth();
