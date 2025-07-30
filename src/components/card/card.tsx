@@ -4,6 +4,7 @@ import {Icon} from '@iconify/react';
 import clsx from 'clsx';
 import {Heart, TrendingUp} from 'lucide-react';
 import {MouseEvent, useCallback, useMemo, useState} from 'react';
+import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
 import {type ListItem} from 'src/dtos';
@@ -19,10 +20,29 @@ export function Card({item}: Props) {
   const {icon} = useCardIcon(item);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const {currentItem, updateCurrentItem, isLoading} = useCurrentItem();
+  const {isLoading: isAudioLoading} = useAudioState();
+  const {
+    currentItem,
+    updateCurrentItem,
+    isLoading: isItemLoading,
+  } = useCurrentItem();
   const {blobUrl} = useImageLoader(item.url);
 
   const notWip = false;
+
+  const isLoading = useMemo(() => {
+    const isSame = item.url === currentItem?.url;
+
+    if (!isSame) {
+      return false;
+    }
+
+    if (isItemLoading || isAudioLoading) {
+      return true;
+    }
+
+    return false;
+  }, [isItemLoading, isAudioLoading, item, currentItem]);
 
   const isCurrent = useMemo(
     () => item.url === currentItem?.url,

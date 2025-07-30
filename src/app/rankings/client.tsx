@@ -2,6 +2,7 @@
 
 import {useEffect, useState} from 'react';
 import styles from 'src/app/rankings/page.module.scss';
+import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Card} from 'src/components/card/card';
 import {ListResponse} from 'src/dtos';
 import {useRankingsData} from 'src/hooks/use-rankings-data';
@@ -10,6 +11,7 @@ export default function RankingsClient() {
   const [data, setData] = useState<ListResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const {fetchData} = useRankingsData();
+  const {isLoading} = useAudioState();
 
   useEffect(() => {
     fetchData().then((result) => {
@@ -25,6 +27,7 @@ export default function RankingsClient() {
 
   return (
     <div className={styles.container}>
+      {isLoading && <div className={styles.overlay} />}
       {data?.items.map((item) => {
         return (
           <Card

@@ -19,6 +19,7 @@ const volumeAtom = atomWithStorage<number>(
   0.7,
 );
 const sourceAtom = atom<string | null>(null);
+const isLoadingAtom = atom<boolean>(false);
 
 export function useAudioState() {
   const [domReference, setDomReference] = useAtom(domReferenceAtom);
@@ -31,6 +32,7 @@ export function useAudioState() {
   const [speed, setSpeed] = useAtom(speedAtom);
   const [volume, setVolume] = useAtom(volumeAtom);
   const [source, setSource] = useAtom(sourceAtom);
+  const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
 
   const toggleIsPlaying = useCallback(
     () => setIsPlaying((p) => !p),
@@ -40,8 +42,9 @@ export function useAudioState() {
   const updateSource = useCallback(
     (newSource: string) => {
       setSource(newSource);
+      setIsLoading(true);
     },
-    [setSource],
+    [setSource, setIsLoading],
   );
 
   return {
@@ -66,5 +69,7 @@ export function useAudioState() {
     setVolume,
     source,
     updateSource,
+    isLoading,
+    setIsLoading,
   };
 }

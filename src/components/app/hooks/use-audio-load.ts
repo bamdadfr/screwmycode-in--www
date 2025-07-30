@@ -7,13 +7,15 @@ export function useAudioLoad() {
     setDuration,
     setIsPlaying,
     source,
+    setIsLoading,
   } = useAudioState();
 
   const saved = useRef<string | null>(source);
 
   const handleCanPlay = useCallback(() => {
     setIsPlaying(true);
-  }, [setIsPlaying]);
+    setIsLoading(false);
+  }, [setIsPlaying, setIsLoading]);
 
   const handleMetadata = useCallback(() => {
     if (ref === null) {
@@ -45,10 +47,19 @@ export function useAudioLoad() {
 
     return () => {
       setIsPlaying(false);
+      setIsLoading(true);
       saved.current = null;
       ref.oncanplay = null;
       ref.oncanplaythrough = null;
       ref.onloadedmetadata = null;
     };
-  }, [ref, source, handleCanPlay, handleMetadata, setDuration, setIsPlaying]);
+  }, [
+    ref,
+    source,
+    handleCanPlay,
+    handleMetadata,
+    setDuration,
+    setIsPlaying,
+    setIsLoading,
+  ]);
 }
