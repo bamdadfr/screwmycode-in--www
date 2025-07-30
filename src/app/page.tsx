@@ -15,12 +15,12 @@ import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import {TEXTURE_SCALE} from 'src/constants';
 import {useArtworkReset} from 'src/hooks/use-artwork-reset';
-import {useCurrentItem} from 'src/hooks/use-current-item';
+import {useCurrentMedia} from 'src/hooks/use-current-media';
 
 export default function IndexPage() {
   const [ref, {width, height}] = useMeasure({polyfill: ResizeObserver});
   const {speed, setSpeed} = useAudioState();
-  const {currentItem, imageUrl} = useCurrentItem();
+  const {currentMedia, imageUrl} = useCurrentMedia();
   const {reset} = useArtworkReset();
 
   const percentages = useMemo<string>(() => {
@@ -31,7 +31,7 @@ export default function IndexPage() {
     return speedToSemitones(speed, 1);
   }, [speed]);
 
-  if (!currentItem) {
+  if (!currentMedia) {
     return <></>;
   }
 
@@ -48,7 +48,7 @@ export default function IndexPage() {
           scale={(TEXTURE_SCALE / 4) * (width / height)}
         />
       )}
-      <div className={clsx(styles.title)}>{currentItem.title}</div>
+      <div className={clsx(styles.title)}>{currentMedia.title}</div>
       <div className={styles.controls}>
         <div className={clsx(styles.indicators)}>
           <AppLabel>percentages</AppLabel>

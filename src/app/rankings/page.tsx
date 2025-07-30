@@ -2,19 +2,23 @@ import {type Metadata} from 'next';
 import {metadata as baseMetadata} from 'src/app/layout';
 import styles from 'src/app/list.module.scss';
 import {CardContainer} from 'src/components/card-container/card-container';
-import {fetchListData} from 'src/utils';
+import {fetchMedias, generateToken} from 'src/utils';
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: `History | ${baseMetadata.title}`,
+  title: `Rankings | ${baseMetadata.title}`,
 };
 
-export default async function HistoryPage() {
-  const data = await fetchListData('hits');
+export default async function RankingsPage() {
+  const token = await generateToken();
+  const medias = await fetchMedias(token);
 
   return (
     <div className={styles.container}>
-      <CardContainer items={data.items} />
+      <CardContainer
+        medias={medias.sort((a, b) => b.hits - a.hits)}
+        token={token}
+      />
     </div>
   );
 }

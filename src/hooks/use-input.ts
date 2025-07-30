@@ -1,18 +1,20 @@
 'use client';
 
 import {useRouter} from 'next/navigation';
-import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
-import {type MediaItem} from 'src/dtos';
-import {useCurrentItem} from 'src/hooks/use-current-item';
+import {KeyboardEvent, MouseEvent, useCallback, useRef} from 'react';
+import {useCurrentMedia} from 'src/hooks/use-current-media';
+import {useToken} from 'src/hooks/use-token';
+import {createMedia} from 'src/utils';
 
 // examples:
 //   - https://www.youtube.com/watch?v=V2OMsWQWLE4
+//   - https://wearesanto.bandcamp.com/track/santo-cuff-it-miami-bass-edit
+//   - https://soundcloud.com/ilyacesavage/scheming-prod-cormill
 export function useInput() {
   const ref = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
-  const {updateCurrentItem} = useCurrentItem();
-
-  const [isError, setIsError] = useState<boolean>(false);
+  const {update} = useCurrentMedia();
+  const {token} = useToken();
 
   const purge = useCallback(() => {
     if (!ref.current) {
@@ -23,53 +25,33 @@ export function useInput() {
   }, [ref]);
 
   const handleRequest = useCallback(
-    async (value: string) => {
-      if (value === '') {
+    async (url: string) => {
+      if (url === '' || token === null) {
         return;
       }
 
-      const isHttps = value.startsWith('https://');
+      const isHttps = url.startsWith('https://');
 
       if (!isHttps) {
         purge();
-        setIsError(true);
         return;
       }
 
-      const isYoutube = value.includes('youtube.com');
-      const isSoundcloud = value.includes('soundcloud.com');
-      const isBandcamp = value.includes('bandcamp.com');
+      const isYoutube = url.includes('youtube.com');
+      const isSoundcloud = url.includes('soundcloud.com');
+      const isBandcamp = url.includes('bandcamp.com');
 
       if (!isYoutube && !isSoundcloud && !isBandcamp) {
         purge();
-        setIsError(true);
         return;
       }
 
-      const response = await fetch('/api/input', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          mediaUrl: value,
-        }),
-      });
-
-      if (!response.ok) {
-        purge();
-        setIsError(true);
-        return;
-      }
-
-      setIsError(false);
-
-      const {item}: {item: MediaItem} = await response.json();
-      await updateCurrentItem(item);
+      const item = await createMedia(token, url);
+      await update(item);
       purge();
       router.push('/');
     },
-    [purge, setIsError, router, updateCurrentItem],
+    [purge, router, update, token],
   );
 
   const handleKeyDown = useCallback(
@@ -104,7 +86,6 @@ export function useInput() {
 
   return {
     ref,
-    isError,
     handleKeyDown,
     handleSubmit,
   };

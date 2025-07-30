@@ -15,7 +15,7 @@ export default function LikesPage() {
         return (
           <Card
             key={item.url}
-            item={item}
+            media={item}
           />
         );
       })}

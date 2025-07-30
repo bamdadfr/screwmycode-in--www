@@ -9,7 +9,9 @@ import {AppFooter} from 'src/components/app/app-footer';
 import {AppHeader} from 'src/components/app/app-header';
 import {AppMain} from 'src/components/app/app-main';
 import {AppNav} from 'src/components/app/app-nav';
+import {AppToken} from 'src/components/app/app-token';
 import {SEO} from 'src/seo';
+import {generateToken} from 'src/utils';
 
 import styles from './layout.module.scss';
 import {ReactQuery} from './providers';
@@ -63,7 +65,9 @@ interface Props {
   children: JSX.Element;
 }
 
-const RootLayout = ({children}: Props) => {
+export default async function RootLayout({children}: Props) {
+  const token = await generateToken();
+
   return (
     <html
       lang="en"
@@ -72,6 +76,7 @@ const RootLayout = ({children}: Props) => {
       <body>
         <ReactQuery>
           <Jotai>
+            <AppToken token={token} />
             <AppAudio />
 
             <div className={styles.app}>
@@ -85,6 +90,4 @@ const RootLayout = ({children}: Props) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

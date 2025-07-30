@@ -9,7 +9,7 @@ import useMeasure from 'react-use-measure';
 import styles from 'src/components/app/app-footer.module.scss';
 import {AppRange} from 'src/components/app/app-range';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
-import {useCurrentItem} from 'src/hooks/use-current-item';
+import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {calculateMinutes} from 'src/utils/time';
 
 export const AppFooter = () => {
@@ -34,7 +34,7 @@ const FooterTransport = () => {
     isPlaying,
     setIsPlaying,
   } = useAudioState();
-  const {currentItem} = useCurrentItem();
+  const {currentMedia} = useCurrentMedia();
 
   const progressMinutes = useMemo(() => calculateMinutes(progress), [progress]);
   const bufferedMinutes = useMemo(() => calculateMinutes(buffer), [buffer]);
@@ -46,7 +46,7 @@ const FooterTransport = () => {
     <div className={clsx(styles.transport)}>
       <div>
         <div>
-          <span>{currentItem?.title}</span>
+          <span>{currentMedia?.title}</span>
           <span>{progressMinutes}</span>
         </div>
         <div>
@@ -109,7 +109,7 @@ const FooterTrack = () => {
 };
 
 const FooterImage = () => {
-  const {imageUrl} = useCurrentItem();
+  const {imageUrl} = useCurrentMedia();
   const [ref, {width}] = useMeasure({polyfill: ResizeObserver});
 
   if (!imageUrl) {

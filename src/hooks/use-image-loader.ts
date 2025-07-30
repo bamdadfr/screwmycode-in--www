@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import {useMediaFetch} from 'src/hooks/use-media-fetch';
+import {type MediaDto} from 'src/dtos';
 
 const imageCache = new Map<
   string,
@@ -9,49 +9,44 @@ const imageCache = new Map<
   }
 >();
 
-export function useImageLoader(itemUrl: string | null) {
+export function useImageLoader(media: MediaDto | null) {
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const {fetchMedia} = useMediaFetch();
 
-  const loadImage = useCallback(
-    async (url: string) => {
-      // Check cache first
-      const cached = imageCache.get(url);
-      if (cached) {
-        // If already loading, wait for it
-        if (cached.loading) {
-          const result = await cached.loading;
-          return result;
-        }
-        return cached.blobUrl;
+  const loadImage = useCallback(async (url: string) => {
+    // Check cache first
+    const cached = imageCache.get(url);
+    if (cached) {
+      // If already loading, wait for it
+      if (cached.loading) {
+        const result = await cached.loading;
+        return result;
       }
+      return cached.blobUrl;
+    }
 
-      // Create loading promise
-      const loadingPromise = (async () => {
-        const signedUrl = await fetchMedia(url, 'image');
-        const response = await fetch(signedUrl);
-        const blob = await response.blob();
-        const blobUrl = URL.createObjectURL(blob);
+    // Create loading promise
+    const loadingPromise = (async () => {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
 
-        imageCache.set(url, {
-          blobUrl,
-          loading: null as unknown as Promise<string>,
-        });
+      imageCache.set(url, {
+        blobUrl,
+        loading: null as unknown as Promise<string>,
+      });
 
-        return blobUrl;
-      })();
+      return blobUrl;
+    })();
 
-      imageCache.set(url, {blobUrl: '', loading: loadingPromise});
+    imageCache.set(url, {blobUrl: '', loading: loadingPromise});
 
-      return await loadingPromise;
-    },
-    [fetchMedia],
-  );
+    return await loadingPromise;
+  }, []);
 
   useEffect(() => {
-    if (!itemUrl) {
+    if (!media) {
       setBlobUrl(null);
       setIsLoading(false);
       return;
@@ -64,7 +59,7 @@ export function useImageLoader(itemUrl: string | null) {
       setError(null);
 
       try {
-        const url = await loadImage(itemUrl);
+        const url = await loadImage(media.image);
         if (!cancelled) {
           setBlobUrl(url);
         }
@@ -83,7 +78,7 @@ export function useImageLoader(itemUrl: string | null) {
     return () => {
       cancelled = true;
     };
-  }, [itemUrl, loadImage]);
+  }, [media, loadImage]);
 
   return {blobUrl, isLoading, error};
 }

@@ -12,7 +12,7 @@ interface Props {
   children: JSX.Element;
 }
 
-export const AppMain = ({children}: Props) => {
+export function AppMain({children}: Props) {
   const {isOpen, setIsHover} = useDrawer();
 
   return (
@@ -32,7 +32,7 @@ export const AppMain = ({children}: Props) => {
       </aside>
     </div>
   );
-};
+}
 
 const Divider = () => {
   const {isOpen, toggleIsOpen} = useDrawer();

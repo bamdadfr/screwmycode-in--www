@@ -3,9 +3,9 @@ import help from '@iconify/icons-mdi/help';
 import soundcloud from '@iconify/icons-mdi/soundcloud';
 import youtube from '@iconify/icons-mdi/youtube';
 import {useMemo} from 'react';
-import {type MediaItem} from 'src/dtos';
+import {type MediaDto} from 'src/dtos';
 
-export function useCardIcon(item: MediaItem) {
+export function useCardIcon(item: MediaDto) {
   const icon = useMemo(() => {
     if (item.url.includes('youtube.com')) {
       return youtube;

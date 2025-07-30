@@ -7,54 +7,50 @@ import {MouseEvent, useCallback, useMemo, useState} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
-import {type MediaItem} from 'src/dtos';
+import {type MediaDto} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
-import {useCurrentItem} from 'src/hooks/use-current-item';
+import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useImageLoader} from 'src/hooks/use-image-loader';
 
 interface Props {
-  item: MediaItem;
+  media: MediaDto;
 }
 
-export function Card({item}: Props) {
-  const {icon} = useCardIcon(item);
+export function Card({media}: Props) {
+  const {icon} = useCardIcon(media);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const {isLoading: isAudioLoading} = useAudioState();
-  const {
-    currentItem,
-    updateCurrentItem,
-    isLoading: isItemLoading,
-  } = useCurrentItem();
-  const {blobUrl} = useImageLoader(item.url);
+  const {currentMedia, update, isLoading: isMediaLoading} = useCurrentMedia();
+  const {blobUrl} = useImageLoader(media);
 
   const notWip = false;
 
   const isLoading = useMemo(() => {
-    const isSame = item.url === currentItem?.url;
+    const isSame = media.url === currentMedia?.url;
 
     if (!isSame) {
       return false;
     }
 
-    if (isItemLoading || isAudioLoading) {
+    if (isMediaLoading || isAudioLoading) {
       return true;
     }
 
     return false;
-  }, [isItemLoading, isAudioLoading, item, currentItem]);
+  }, [isMediaLoading, isAudioLoading, media, currentMedia]);
 
   const isCurrent = useMemo(
-    () => item.url === currentItem?.url,
-    [item, currentItem],
+    () => media.url === currentMedia?.url,
+    [media, currentMedia],
   );
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
-      updateCurrentItem(item).then();
+      update(media).then();
     },
-    [item, updateCurrentItem],
+    [media, update],
   );
 
   return (
@@ -74,7 +70,7 @@ export function Card({item}: Props) {
           <>
             <img
               src={blobUrl}
-              alt={item.title}
+              alt={media.title}
               width={120}
               height={120}
               onLoad={() => setIsImageLoaded(true)}
@@ -96,11 +92,11 @@ export function Card({item}: Props) {
         )}
       </div>
       <div className={clsx('relative', styles.content)}>
-        <h3>{item.title}</h3>
+        <h3>{media.title}</h3>
 
         <div className={styles.hits}>
           <TrendingUp />
-          {item.hits.toString()}
+          {media.hits.toString()}
           {/*{item.hits % 2 === 0 ? <Snail /> : <Rabbit />}*/}
           {/*{item.hits.toString()}*/}
         </div>
