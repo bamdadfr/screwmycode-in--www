@@ -1,3 +1,10 @@
+## [4.0.19](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.18...v4.0.19) (2025-07-30)
+
+
+### Bug Fixes
+
+* remove reference time in token generation ([78ded4f](https://github.com/bamdadfr/screwmycode-in--www/commit/78ded4f592892c5337057fc5ea451287c13e670d))
+
 ## [4.0.18](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.17...v4.0.18) (2025-07-30)
 
 
