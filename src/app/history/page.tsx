@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HistoryPage() {
-  const data = await fetchListData('hits');
+  const data = await fetchListData('date');
 
   return (
     <div className={styles.container}>
