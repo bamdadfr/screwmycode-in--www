@@ -1,7 +1,7 @@
 'use client';
 
 import {useRouter} from 'next/navigation';
-import {KeyboardEvent, MouseEvent, useCallback, useRef} from 'react';
+import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useToken} from 'src/hooks/use-token';
 import {createMedia} from 'src/utils';
@@ -15,6 +15,15 @@ export function useInput() {
   const router = useRouter();
   const {update} = useCurrentMedia();
   const {token} = useToken();
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [needsRedirect, setNeedsRedirect] = useState(false);
+
+  const error = useCallback(() => {
+    setIsLoading(false);
+    setIsError(true);
+    setTimeout(() => setIsError(false), 600);
+  }, [setIsError, setIsLoading]);
 
   const purge = useCallback(() => {
     if (!ref.current) {
@@ -22,17 +31,21 @@ export function useInput() {
     }
 
     ref.current.value = '';
+    ref.current.focus();
   }, [ref]);
 
   const handleRequest = useCallback(
     async (url: string) => {
-      if (url === '' || token === null) {
+      if (url === '' || token === null || isLoading || isError) {
         return;
       }
+
+      setIsLoading(false);
 
       const isHttps = url.startsWith('https://');
 
       if (!isHttps) {
+        error();
         purge();
         return;
       }
@@ -42,16 +55,30 @@ export function useInput() {
       const isBandcamp = url.includes('bandcamp.com');
 
       if (!isYoutube && !isSoundcloud && !isBandcamp) {
+        error();
         purge();
         return;
       }
 
-      const item = await createMedia(token, url);
-      await update(item);
-      purge();
-      router.push('/');
+      try {
+        const item = await createMedia(token, url);
+        await update(item);
+        setNeedsRedirect(true);
+        setIsLoading(false);
+      } catch {
+        error();
+      }
     },
-    [purge, router, update, token],
+    [
+      purge,
+      update,
+      token,
+      error,
+      setIsLoading,
+      isError,
+      isLoading,
+      setNeedsRedirect,
+    ],
   );
 
   const handleKeyDown = useCallback(
@@ -84,9 +111,19 @@ export function useInput() {
     [ref, handleRequest],
   );
 
+  const redirect = useCallback(() => {
+    router.push('/');
+    purge();
+    setNeedsRedirect(false);
+  }, [router, purge, setNeedsRedirect]);
+
   return {
     ref,
     handleKeyDown,
     handleSubmit,
+    isError,
+    isLoading,
+    needsRedirect,
+    redirect,
   };
 }

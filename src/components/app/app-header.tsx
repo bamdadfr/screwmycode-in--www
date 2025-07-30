@@ -1,11 +1,11 @@
 'use client';
 
 import clsx from 'clsx';
-import {Moon, SquareChevronRight, Sun} from 'lucide-react';
+import {Moon, Sun} from 'lucide-react';
 import {useCallback} from 'react';
 import {ScrewK7} from 'src/components/_tomove/screw-k7';
 import styles from 'src/components/app/app-header.module.scss';
-import {useInput} from 'src/hooks/use-input';
+import {AppHeaderInput} from 'src/components/app/app-header-input';
 import {useMobile} from 'src/hooks/use-mobile';
 import {useNav} from 'src/hooks/use-nav';
 import {useTheme} from 'src/hooks/use-theme';
@@ -20,8 +20,6 @@ export const AppHeader = () => {
       toggleIsOpen();
     }
   }, [isMobileOrTablet, toggleIsOpen]);
-
-  const {ref: inputRef, handleKeyDown, handleSubmit} = useInput();
 
   return (
     <header className={styles.header}>
@@ -42,18 +40,7 @@ export const AppHeader = () => {
         )}
       </div>
 
-      <div className={styles.input}>
-        <input
-          ref={inputRef}
-          onKeyDown={handleKeyDown}
-        />
-        <button
-          type="submit"
-          onClick={handleSubmit}
-        >
-          <SquareChevronRight />
-        </button>
-      </div>
+      <AppHeaderInput />
 
       {!isMobile && (
         <div

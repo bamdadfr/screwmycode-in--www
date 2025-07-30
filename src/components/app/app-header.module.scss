@@ -43,52 +43,6 @@
   }
 }
 
-.input {
-  align-items: center;
-  display: grid;
-  gap: paddings.$p0;
-  grid-template-columns: 1fr grid.$col3;
-
-  @include fonts.fontBold;
-
-  @include breakpoints.above(tablet) {
-    margin-left: - paddings.$p0;
-  }
-
-  > input, > button {
-    background: theme.$themeBackgroundHighlight;
-    color: theme.$themePrimary;
-    display: inline-block;
-    height: 36px;
-    text-transform: none;
-
-    @include shadows.s0;
-    @include radiuses.r0;
-  }
-
-  > input {
-    font-size: 0.9em;
-    padding-left: calc(#{paddings.$p0} - 2px);
-
-    @include breakpoints.above(tablet) {
-      font-size: 0.7em;
-    }
-  }
-
-  > button {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-
-    @include transitions.t1(background-color);
-
-    &:hover {
-      background: theme.$themeHighlight;
-      color: theme.$themeBackgroundHighlight;
-    }
-  }
-}
-
 .active {
   color: theme.$themeHighlight;
 }
