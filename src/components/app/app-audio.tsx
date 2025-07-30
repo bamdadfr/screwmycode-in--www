@@ -30,7 +30,11 @@ export const AppAudio = () => {
   useAudioPlayPause();
   useAudioProgress();
   useAudioSeek();
-  useAudioBuffer();
+  const {init: initBuffer} = useAudioBuffer();
+
+  useEffect(() => {
+    initBuffer();
+  }, [initBuffer]);
 
   return (
     <div className="hidden">

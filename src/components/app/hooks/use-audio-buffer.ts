@@ -1,10 +1,10 @@
-import {useCallback, useEffect} from 'react';
+import {useCallback} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 
 let t: null | NodeJS.Timeout = null;
 
 export function useAudioBuffer() {
-  const {domReference: ref, progress, buffer, setBuffer} = useAudioState();
+  const {domReference: ref, buffer, setBuffer} = useAudioState();
 
   const update = useCallback(() => {
     if (ref === null) {
@@ -22,14 +22,7 @@ export function useAudioBuffer() {
     setBuffer(amount);
   }, [ref, setBuffer]);
 
-  useEffect(() => {
-    if (progress > buffer) {
-      setBuffer(progress);
-    }
-  }, [progress, buffer, setBuffer]);
-
-  // todo: maybe move this to a callback?
-  useEffect(() => {
+  const init = useCallback(() => {
     if (ref === null) {
       return;
     }
@@ -51,4 +44,10 @@ export function useAudioBuffer() {
       ref.removeEventListener('progress', handle);
     };
   }, [ref, update]);
+
+  return {
+    buffer,
+    init,
+    update,
+  };
 }
