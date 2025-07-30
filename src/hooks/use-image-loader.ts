@@ -1,8 +1,6 @@
 import {useCallback, useEffect, useState} from 'react';
-import {useAuthToken} from 'src/hooks/use-auth-token';
 import {useMediaFetch} from 'src/hooks/use-media-fetch';
 
-// Global cache to persist across component instances
 const imageCache = new Map<
   string,
   {
@@ -11,23 +9,11 @@ const imageCache = new Map<
   }
 >();
 
-// Cleanup blob URLs when no longer needed
-// const cleanupBlobUrl = (url: string) => {
-//   const cached = Array.from(imageCache.entries()).find(
-//     ([_, value]) => value.blobUrl === url,
-//   );
-//   if (cached) {
-//     URL.revokeObjectURL(url);
-//     imageCache.delete(cached[0]);
-//   }
-// };
-
 export function useImageLoader(itemUrl: string | null) {
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const {fetchMedia} = useMediaFetch();
-  const {token} = useAuthToken();
 
   const loadImage = useCallback(
     async (url: string) => {
@@ -44,45 +30,24 @@ export function useImageLoader(itemUrl: string | null) {
 
       // Create loading promise
       const loadingPromise = (async () => {
-        try {
-          // Get authenticated URL from your backend
-          const authenticatedUrl = await fetchMedia(url, 'image');
+        const signedUrl = await fetchMedia(url, 'image');
+        const response = await fetch(signedUrl);
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
 
-          // Fetch with authentication headers
-          const response = await fetch(authenticatedUrl, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+        imageCache.set(url, {
+          blobUrl,
+          loading: null as unknown as Promise<string>,
+        });
 
-          if (!response.ok) {
-            throw new Error(`Failed to load image: ${response.status}`);
-          }
-
-          // Convert to blob
-          const blob = await response.blob();
-          const blobUrl = URL.createObjectURL(blob);
-
-          // Update cache with final result
-          imageCache.set(url, {
-            blobUrl,
-            loading: null as unknown as Promise<string>,
-          });
-
-          return blobUrl;
-        } catch (err) {
-          // Remove from cache on error
-          imageCache.delete(url);
-          throw err;
-        }
+        return blobUrl;
       })();
 
-      // Store loading promise in cache
       imageCache.set(url, {blobUrl: '', loading: loadingPromise});
 
       return await loadingPromise;
     },
-    [fetchMedia, token],
+    [fetchMedia],
   );
 
   useEffect(() => {
@@ -122,35 +87,3 @@ export function useImageLoader(itemUrl: string | null) {
 
   return {blobUrl, isLoading, error};
 }
-
-// Optional: Export cache utilities
-// export const preloadImage = async (
-//   url: string,
-//   fetchMedia: any,
-//   token: string,
-// ) => {
-//   if (imageCache.has(url)) {
-//     return;
-//   }
-//
-//   const loadingPromise = (async () => {
-//     const authenticatedUrl = await fetchMedia(url, 'image');
-//     const response = await fetch(authenticatedUrl, {
-//       headers: {Authorization: `Bearer ${token}`},
-//     });
-//     const blob = await response.blob();
-//     return URL.createObjectURL(blob);
-//   })();
-//
-//   imageCache.set(url, {blobUrl: '', loading: loadingPromise});
-//   return loadingPromise;
-// };
-
-// export const clearImageCache = () => {
-//   imageCache.forEach(({blobUrl}) => {
-//     if (blobUrl) {
-//       URL.revokeObjectURL(blobUrl);
-//     }
-//   });
-//   imageCache.clear();
-// };
