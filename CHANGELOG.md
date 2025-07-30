@@ -1,3 +1,10 @@
+## [4.2.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.6...v4.2.7) (2025-07-30)
+
+
+### Bug Fixes
+
+* improve buffer behaviour ([bc524c6](https://github.com/bamdadfr/screwmycode-in--www/commit/bc524c671e43f1b4b982828e590a3a0a49d4b7ff))
+
 ## [4.2.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.5...v4.2.6) (2025-07-30)
 
 
