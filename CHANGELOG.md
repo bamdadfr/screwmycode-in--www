@@ -1,3 +1,10 @@
+## [4.2.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.4...v4.2.5) (2025-07-30)
+
+
+### Bug Fixes
+
+* remove buffer reset on timeout clear ([0cf36a7](https://github.com/bamdadfr/screwmycode-in--www/commit/0cf36a79793683f3a4a8e8903e2cf62c5b9499cd))
+
 ## [4.2.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.3...v4.2.4) (2025-07-30)
 
 
