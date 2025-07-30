@@ -1,3 +1,10 @@
+## [4.2.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.2...v4.2.3) (2025-07-30)
+
+
+### Bug Fixes
+
+* reset buffer on audio change ([08cdeba](https://github.com/bamdadfr/screwmycode-in--www/commit/08cdeba4a2d349ea3c353e022e9c06dc727a296f))
+
 ## [4.2.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.1...v4.2.2) (2025-07-30)
 
 
