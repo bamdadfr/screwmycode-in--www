@@ -25,6 +25,13 @@ export function useAudioLoad() {
       return;
     }
 
+    // cleanup and close current
+    if (saved.current !== null) {
+      ref.pause();
+      ref.src = '';
+      ref.load();
+    }
+
     ref.src = audioUrl;
     saved.current = audioUrl;
 
