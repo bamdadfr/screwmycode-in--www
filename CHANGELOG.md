@@ -1,3 +1,16 @@
+# [4.1.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.19...v4.1.0) (2025-07-30)
+
+
+### Bug Fixes
+
+* move source to audio state ([29351b3](https://github.com/bamdadfr/screwmycode-in--www/commit/29351b376fda835e957806ce84f68f09262927ab))
+* prevent empty buffer computations ([9bfc306](https://github.com/bamdadfr/screwmycode-in--www/commit/9bfc30632ad06146d976048178dca8b530d5e8b2))
+
+
+### Features
+
+* prevent user clicks whenn audio loading ([dafafd4](https://github.com/bamdadfr/screwmycode-in--www/commit/dafafd4f687904dd9cf0d342f823a56b3654e595))
+
 ## [4.0.19](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.18...v4.0.19) (2025-07-30)
 
 
