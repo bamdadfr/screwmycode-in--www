@@ -28,6 +28,7 @@ export function useAudioBuffer() {
     }
   }, [progress, buffer, setBuffer]);
 
+  // todo: maybe move this to a callback?
   useEffect(() => {
     if (ref === null) {
       return;
@@ -49,5 +50,5 @@ export function useAudioBuffer() {
       ref.removeEventListener('canplaythrough', handle);
       ref.removeEventListener('progress', handle);
     };
-  }, [ref, update, setBuffer]);
+  }, [ref, update]);
 }
