@@ -1,3 +1,10 @@
+## [4.2.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.0...v4.2.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* blur player on load ([28bb0d7](https://github.com/bamdadfr/screwmycode-in--www/commit/28bb0d77441cb853c073fb0bafbbf8df807dde48))
+
 # [4.2.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.2...v4.2.0) (2025-07-30)
 
 
