@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.2...v4.2.0) (2025-07-30)
+
+
+### Features
+
+* new routes ([13b5c4f](https://github.com/bamdadfr/screwmycode-in--www/commit/13b5c4f3aca09787d15c1305308af57d80bad9a2))
+
 ## [4.1.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.1...v4.1.2) (2025-07-30)
 
 
