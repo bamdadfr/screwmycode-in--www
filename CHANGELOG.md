@@ -1,3 +1,10 @@
+## [4.1.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.1...v4.1.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* use date for history ([2d14ab9](https://github.com/bamdadfr/screwmycode-in--www/commit/2d14ab9876a914696eb74db7e7faad9a50d16a02))
+
 ## [4.1.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.0...v4.1.1) (2025-07-30)
 
 
