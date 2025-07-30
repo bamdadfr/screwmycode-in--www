@@ -1,3 +1,10 @@
+## [4.0.18](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.17...v4.0.18) (2025-07-30)
+
+
+### Bug Fixes
+
+* eliminate roundtrip ([2d6d36a](https://github.com/bamdadfr/screwmycode-in--www/commit/2d6d36aa20e8641d2182d97036600592f537fe65))
+
 ## [4.0.17](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.16...v4.0.17) (2025-07-30)
 
 
