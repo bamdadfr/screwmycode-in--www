@@ -1,3 +1,10 @@
+## [4.0.16](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.15...v4.0.16) (2025-07-30)
+
+
+### Bug Fixes
+
+* trying to close connection client side ([17f9ba9](https://github.com/bamdadfr/screwmycode-in--www/commit/17f9ba912e7f6bbaa1ece689e79c45cc8d2bde63))
+
 ## [4.0.15](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.14...v4.0.15) (2025-07-29)
 
 
