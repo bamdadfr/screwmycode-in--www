@@ -13,8 +13,10 @@ import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {calculateMinutes} from 'src/utils/time';
 
 export const AppFooter = () => {
+  const {isLoading} = useAudioState();
+
   return (
-    <footer className={clsx(styles.footer)}>
+    <footer className={clsx(styles.footer, isLoading && styles.loading)}>
       <FooterImage />
       <div className={styles.player}>
         <FooterTransport />
