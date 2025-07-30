@@ -1,3 +1,11 @@
+## [4.1.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.1.0...v4.1.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* allow input and remove auth token from client side ([738783c](https://github.com/bamdadfr/screwmycode-in--www/commit/738783c881f99273dc0b6f4df0c1b7006ee91278))
+* move some to server components ([a90e67e](https://github.com/bamdadfr/screwmycode-in--www/commit/a90e67ef4b9dba64d3a147ae257c0ec512885dc2))
+
 # [4.1.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.0.19...v4.1.0) (2025-07-30)
 
 
