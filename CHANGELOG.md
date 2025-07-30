@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.7...v4.3.0) (2025-07-30)
+
+
+### Features
+
+* improve input behaviour ([adeb31f](https://github.com/bamdadfr/screwmycode-in--www/commit/adeb31f890d18957b6de55dc5642f92a28cfb053))
+
 ## [4.2.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.6...v4.2.7) (2025-07-30)
 
 
