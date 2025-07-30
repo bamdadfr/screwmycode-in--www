@@ -37,7 +37,6 @@ export function useAudioBuffer() {
       if (t) {
         clearTimeout(t);
         t = null;
-        setBuffer(0);
       }
 
       t = setTimeout(update, 1000);
