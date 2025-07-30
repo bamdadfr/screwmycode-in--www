@@ -1,3 +1,10 @@
+## [4.2.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.3...v4.2.4) (2025-07-30)
+
+
+### Bug Fixes
+
+* avoid overwriting event listeners ([8142bca](https://github.com/bamdadfr/screwmycode-in--www/commit/8142bcafb4ee353251621dff3720e44e70aebf1d))
+
 ## [4.2.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.2...v4.2.3) (2025-07-30)
 
 
