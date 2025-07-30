@@ -11,7 +11,6 @@ export default async function handler(
   const token = await new SignJWT({
     mediaUrl,
     mediaType,
-    iat: Math.floor(Date.now() / 1000),
     exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // 24h
   })
     .setProtectedHeader({alg: 'HS256'})
