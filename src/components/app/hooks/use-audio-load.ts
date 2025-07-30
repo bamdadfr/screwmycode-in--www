@@ -1,12 +1,15 @@
 import {useCallback, useEffect, useRef} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
-import {useCurrentItem} from 'src/hooks/use-current-item';
 
 export function useAudioLoad() {
-  const {domReference: ref, setDuration, setIsPlaying} = useAudioState();
-  const {audioUrl} = useCurrentItem();
+  const {
+    domReference: ref,
+    setDuration,
+    setIsPlaying,
+    source,
+  } = useAudioState();
 
-  const saved = useRef<string | null>(audioUrl);
+  const saved = useRef<string | null>(source);
 
   const handleCanPlay = useCallback(() => {
     setIsPlaying(true);
@@ -21,7 +24,7 @@ export function useAudioLoad() {
   }, [ref, setDuration]);
 
   useEffect(() => {
-    if (ref === null || audioUrl === null || audioUrl === saved.current) {
+    if (ref === null || source === null || source === saved.current) {
       return;
     }
 
@@ -29,11 +32,12 @@ export function useAudioLoad() {
     if (saved.current !== null) {
       ref.pause();
       ref.src = '';
+      ref.currentTime = 0;
       ref.load();
     }
 
-    ref.src = audioUrl;
-    saved.current = audioUrl;
+    ref.src = source;
+    saved.current = source;
 
     ref.oncanplay = handleCanPlay;
     ref.oncanplaythrough = handleCanPlay;
@@ -46,5 +50,5 @@ export function useAudioLoad() {
       ref.oncanplaythrough = null;
       ref.onloadedmetadata = null;
     };
-  }, [ref, audioUrl, handleCanPlay, handleMetadata, setDuration, setIsPlaying]);
+  }, [ref, source, handleCanPlay, handleMetadata, setDuration, setIsPlaying]);
 }

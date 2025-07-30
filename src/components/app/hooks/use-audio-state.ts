@@ -18,6 +18,7 @@ const volumeAtom = atomWithStorage<number>(
   LOCAL_STORAGE_KEY.enum.AUDIO_VOLUME,
   0.7,
 );
+const sourceAtom = atom<string | null>(null);
 
 export function useAudioState() {
   const [domReference, setDomReference] = useAtom(domReferenceAtom);
@@ -29,10 +30,18 @@ export function useAudioState() {
   const [seek, setSeek] = useAtom(seekAtom);
   const [speed, setSpeed] = useAtom(speedAtom);
   const [volume, setVolume] = useAtom(volumeAtom);
+  const [source, setSource] = useAtom(sourceAtom);
 
   const toggleIsPlaying = useCallback(
     () => setIsPlaying((p) => !p),
     [setIsPlaying],
+  );
+
+  const updateSource = useCallback(
+    (newSource: string) => {
+      setSource(newSource);
+    },
+    [setSource],
   );
 
   return {
@@ -55,5 +64,7 @@ export function useAudioState() {
     setSpeed,
     volume,
     setVolume,
+    source,
+    updateSource,
   };
 }
