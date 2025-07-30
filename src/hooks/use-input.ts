@@ -6,6 +6,7 @@ import {MediaResponse} from 'src/dtos';
 import {useAuthToken} from 'src/hooks/use-auth-token';
 import {useCurrentItem} from 'src/hooks/use-current-item';
 
+// TODO: update me
 // examples:
 //   - https://www.youtube.com/watch?v=V2OMsWQWLE4
 export function useInput() {
@@ -69,6 +70,7 @@ export function useInput() {
       setIsError(false);
 
       const json = await response.json();
+      console.log(json);
       const result = MediaResponse.parse(json);
       await updateCurrentItem(result.item);
       purge();

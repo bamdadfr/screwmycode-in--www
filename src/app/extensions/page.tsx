@@ -1,5 +1,5 @@
 import {Construction} from 'lucide-react';
-import styles from 'src/app/rankings/page.module.scss';
+import styles from 'src/app/list.module.scss';
 
 export default function ExtensionsPage() {
   return (
