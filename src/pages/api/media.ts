@@ -24,7 +24,6 @@ export default async function handler(
   try {
     // Verify the main JWT token first (optional but recommended)
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-
     // Get media URL from Django using the main auth token
     const djangoResponse = await fetch(`${API_BASE_URL}/v2/media/get`, {
       method: 'POST',
@@ -54,6 +53,13 @@ export default async function handler(
     })
       .setProtectedHeader({alg: 'HS256'})
       .sign(secret);
+
+    console.log(
+      'JWT Secret (first 10):',
+      process.env.JWT_SECRET?.substring(0, 10),
+    );
+    console.log('JWT Secret (last 10):', process.env.JWT_SECRET?.slice(-10));
+    console.log('Created token:', tempToken);
 
     res.json({
       expires_in: 600, // 10 minutes in seconds
