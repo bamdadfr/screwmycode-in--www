@@ -19,7 +19,7 @@ export const generateToken = cache(async () => {
   return token;
 });
 
-export async function fetchMedias(token: string): Promise<MediaDto[]> {
+export const fetchMedias = cache(async (token: string): Promise<MediaDto[]> => {
   const route = prefixApiRoute('/v2/list/');
 
   const response = await fetch(route, {
@@ -38,7 +38,7 @@ export async function fetchMedias(token: string): Promise<MediaDto[]> {
     audio: prefixApiRoute(item.audio),
     image: prefixApiRoute(item.image),
   }));
-}
+});
 
 export async function createMedia(
   token: string,
