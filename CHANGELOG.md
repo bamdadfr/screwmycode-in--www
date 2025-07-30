@@ -1,3 +1,10 @@
+## [4.2.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.1...v4.2.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* cache first medias ([c7fad87](https://github.com/bamdadfr/screwmycode-in--www/commit/c7fad87c552a700631c4189f0e03d9131e8accb4))
+
 ## [4.2.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.0...v4.2.1) (2025-07-30)
 
 
