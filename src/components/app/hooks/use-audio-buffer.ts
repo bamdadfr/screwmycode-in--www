@@ -37,6 +37,7 @@ export function useAudioBuffer() {
       if (t) {
         clearTimeout(t);
         t = null;
+        setBuffer(0);
       }
 
       t = setTimeout(update, 1000);
@@ -49,5 +50,5 @@ export function useAudioBuffer() {
       ref.removeEventListener('canplaythrough', handle);
       ref.removeEventListener('progress', handle);
     };
-  }, [ref, update]);
+  }, [ref, update, setBuffer]);
 }
