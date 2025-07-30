@@ -41,17 +41,18 @@ export function useAudioLoad() {
     ref.src = source;
     saved.current = source;
 
-    ref.oncanplay = handleCanPlay;
-    ref.oncanplaythrough = handleCanPlay;
-    ref.onloadedmetadata = handleMetadata;
+    ref.addEventListener('canplay', handleCanPlay);
+    ref.addEventListener('canplaythrough', handleCanPlay);
+    ref.addEventListener('loadedmetadata', handleMetadata);
 
     return () => {
       setIsPlaying(false);
       setIsLoading(true);
       saved.current = null;
-      ref.oncanplay = null;
-      ref.oncanplaythrough = null;
-      ref.onloadedmetadata = null;
+
+      ref.removeEventListener('canplay', handleCanPlay);
+      ref.removeEventListener('canplaythrough', handleCanPlay);
+      ref.removeEventListener('loadedmetadata', handleMetadata);
     };
   }, [
     ref,
