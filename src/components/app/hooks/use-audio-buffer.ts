@@ -1,14 +1,26 @@
-import {useEffect} from 'react';
+import {useCallback, useEffect} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
-
-const getBufferedAmount = (audio: HTMLAudioElement) => {
-  return audio.buffered.end(audio.buffered.length - 1);
-};
 
 let t: null | NodeJS.Timeout = null;
 
 export function useAudioBuffer() {
   const {domReference: ref, progress, buffer, setBuffer} = useAudioState();
+
+  const update = useCallback(() => {
+    if (ref === null) {
+      return;
+    }
+
+    const length = ref.buffered.length;
+
+    if (length === 0) {
+      setBuffer(0);
+      return;
+    }
+
+    const amount = ref.buffered.end(length - 1);
+    setBuffer(amount);
+  }, [ref, setBuffer]);
 
   useEffect(() => {
     if (progress > buffer) {
@@ -27,10 +39,7 @@ export function useAudioBuffer() {
         t = null;
       }
 
-      t = setTimeout(() => {
-        const amount = getBufferedAmount(ref);
-        setBuffer(amount);
-      }, 1000);
+      t = setTimeout(update, 1000);
     };
 
     ref.addEventListener('canplaythrough', handle);
@@ -40,5 +49,5 @@ export function useAudioBuffer() {
       ref.removeEventListener('canplaythrough', handle);
       ref.removeEventListener('progress', handle);
     };
-  }, [ref, setBuffer]);
+  }, [ref, update]);
 }
