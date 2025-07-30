@@ -2,16 +2,13 @@
 
 import {useRouter} from 'next/navigation';
 import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
-import {MediaResponse} from 'src/dtos';
-import {useAuthToken} from 'src/hooks/use-auth-token';
+import {type MediaItem} from 'src/dtos';
 import {useCurrentItem} from 'src/hooks/use-current-item';
 
-// TODO: update me
 // examples:
 //   - https://www.youtube.com/watch?v=V2OMsWQWLE4
 export function useInput() {
   const ref = useRef<HTMLInputElement | null>(null);
-  const {token} = useAuthToken();
   const router = useRouter();
   const {updateCurrentItem} = useCurrentItem();
 
@@ -49,15 +46,13 @@ export function useInput() {
         return;
       }
 
-      const response = await fetch('/api/media', {
+      const response = await fetch('/api/input', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          audioUrl: value,
-          mediaType: 'audio',
+          mediaUrl: value,
         }),
       });
 
@@ -69,14 +64,12 @@ export function useInput() {
 
       setIsError(false);
 
-      const json = await response.json();
-      console.log(json);
-      const result = MediaResponse.parse(json);
-      await updateCurrentItem(result.item);
+      const {item}: {item: MediaItem} = await response.json();
+      await updateCurrentItem(item);
       purge();
       router.push('/');
     },
-    [purge, setIsError, token, router, updateCurrentItem],
+    [purge, setIsError, router, updateCurrentItem],
   );
 
   const handleKeyDown = useCallback(

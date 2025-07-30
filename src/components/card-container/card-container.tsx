@@ -3,10 +3,10 @@
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Card} from 'src/components/card/card';
 import styles from 'src/components/card-container/card-container.module.scss';
-import {type ListItem} from 'src/dtos';
+import {type MediaItem} from 'src/dtos';
 
 interface Props {
-  items: ListItem[];
+  items: MediaItem[];
 }
 
 export function CardContainer({items}: Props) {

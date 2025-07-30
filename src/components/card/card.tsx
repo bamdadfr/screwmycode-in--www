@@ -7,13 +7,13 @@ import {MouseEvent, useCallback, useMemo, useState} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
-import {type ListItem} from 'src/dtos';
+import {type MediaItem} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentItem} from 'src/hooks/use-current-item';
 import {useImageLoader} from 'src/hooks/use-image-loader';
 
 interface Props {
-  item: ListItem;
+  item: MediaItem;
 }
 
 export function Card({item}: Props) {

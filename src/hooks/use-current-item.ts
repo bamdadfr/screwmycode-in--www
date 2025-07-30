@@ -1,11 +1,11 @@
 import {atom, useAtom} from 'jotai';
 import {useCallback} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
-import {type ListItem} from 'src/dtos';
+import {type MediaItem} from 'src/dtos';
 import {useImageLoader} from 'src/hooks/use-image-loader';
 import {useMediaFetch} from 'src/hooks/use-media-fetch';
 
-const currentItemAtom = atom<ListItem | null>(null);
+const currentItemAtom = atom<MediaItem | null>(null);
 
 export function useCurrentItem() {
   const [currentItem, setCurrentItem] = useAtom(currentItemAtom);
@@ -14,7 +14,7 @@ export function useCurrentItem() {
   const {fetchMedia, isLoading} = useMediaFetch();
 
   const updateCurrentItem = useCallback(
-    async (newItem: ListItem) => {
+    async (newItem: MediaItem) => {
       if (newItem === currentItem || isLoading) {
         return;
       }

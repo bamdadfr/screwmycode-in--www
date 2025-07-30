@@ -32,20 +32,20 @@ export const StreamBody = z.object({
 
 export type StreamBody = z.infer<typeof StreamBody>;
 
-export const ListItem = z.object({
+export const MediaItem = z.object({
   hits: z.int(),
   title: z.string(),
   url: z.string(),
 });
 
-export type ListItem = z.infer<typeof ListItem>;
+export type MediaItem = z.infer<typeof MediaItem>;
 
 export const ListResponse = z.object({
   sort_by: ListSortBy,
   range: ListRange,
   limit: z.int(),
   length: z.int(),
-  items: z.array(ListItem),
+  items: z.array(MediaItem),
 });
 
 export type ListResponse = z.infer<typeof ListResponse>;
@@ -53,7 +53,7 @@ export type ListResponse = z.infer<typeof ListResponse>;
 export const MediaResponse = z.object({
   media_url: z.string(),
   expires_in: z.int(),
-  item: ListItem,
+  item: MediaItem,
   error: z.string().optional(),
 });
 

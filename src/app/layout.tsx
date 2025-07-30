@@ -11,7 +11,6 @@ import {AppMain} from 'src/components/app/app-main';
 import {AppNav} from 'src/components/app/app-nav';
 import {SEO} from 'src/seo';
 
-import {AppAuth} from './app-auth';
 import styles from './layout.module.scss';
 import {ReactQuery} from './providers';
 
@@ -76,7 +75,6 @@ const RootLayout = ({children}: Props) => {
             <AppAudio />
 
             <div className={styles.app}>
-              <AppAuth />
               <AppHeader />
               <AppNav />
               <AppMain>{children}</AppMain>

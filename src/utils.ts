@@ -18,6 +18,7 @@ export async function fetchListData(sortBy: ListSortBy) {
   const token = await generateToken();
 
   const route = `${API_BASE_URL}/v2/list/`;
+
   const body: ListBody = {
     range: 'all',
     sort_by: sortBy,
