@@ -14,7 +14,7 @@ export function useCurrentMedia() {
 
   const update = useCallback(
     async (newMedia: MediaDto) => {
-      if (newMedia === currentMedia) {
+      if (newMedia.url === currentMedia?.url) {
         return;
       }
 
