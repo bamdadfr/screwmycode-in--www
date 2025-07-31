@@ -124,23 +124,3 @@
 }
 
 $sLike: 24px;
-
-.like {
-  bottom: calc(28px + #{gaps.$g1});
-  height: 18px;
-  position: absolute;
-  right: 15px;
-  width: 18px;
-
-  svg {
-    height: 100%;
-    stroke: theme.$themeBlack;
-    width: 100%;
-  }
-}
-
-.liked {
-  svg {
-    fill: red;
-  }
-}

@@ -1,6 +1,5 @@
 'use client';
 
-import {Construction} from 'lucide-react';
 import styles from 'src/app/list.module.scss';
 import {Card} from 'src/components/card/card';
 import {useLikes} from 'src/hooks/use-likes';
@@ -10,7 +9,6 @@ export default function LikesPage() {
 
   return (
     <div className={styles.container}>
-      <Construction />
       {likes.map((item) => {
         return (
           <Card

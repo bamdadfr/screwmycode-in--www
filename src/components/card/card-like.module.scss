@@ -1,0 +1,31 @@
+@use "src/styles/theme";
+@use "src/styles/gaps";
+
+.container {
+  bottom: calc(28px + #{gaps.$g1});
+  height: 18px;
+  position: absolute;
+  right: 15px;
+  width: 18px;
+  z-index: 100;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  stroke: theme.$themeBlack;
+  transform: scale(1.0);
+  transition: transform .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.iconIsLiked {
+  fill: red;
+}

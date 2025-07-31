@@ -2,11 +2,12 @@
 
 import {Icon} from '@iconify/react';
 import clsx from 'clsx';
-import {Heart, TrendingUp} from 'lucide-react';
+import {TrendingUp} from 'lucide-react';
 import {MouseEvent, useCallback, useMemo, useState} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
+import {CardLike} from 'src/components/card/card-like';
 import {type MediaDto} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
@@ -23,8 +24,6 @@ export function Card({media}: Props) {
   const {isLoading: isAudioLoading} = useAudioState();
   const {currentMedia, update, isLoading: isMediaLoading} = useCurrentMedia();
   const {blobUrl} = useImageLoader(media);
-
-  const notWip = false;
 
   const isLoading = useMemo(() => {
     const isSame = media.url === currentMedia?.url;
@@ -106,13 +105,7 @@ export function Card({media}: Props) {
           icon={icon}
         />
 
-        {notWip ? (
-          <div className={clsx(styles.like)}>
-            <Heart />
-          </div>
-        ) : (
-          <span />
-        )}
+        <CardLike media={media} />
       </div>
     </a>
   );
