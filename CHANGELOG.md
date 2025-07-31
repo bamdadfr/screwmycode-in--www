@@ -1,3 +1,10 @@
+## [4.7.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.0...v4.7.1) (2025-07-31)
+
+
+### Bug Fixes
+
+* move like nav button up ([7da7152](https://github.com/bamdadfr/screwmycode-in--www/commit/7da71522329b99ae8ca6816678221a02a060724f))
+
 # [4.7.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.6.2...v4.7.0) (2025-07-31)
 
 
