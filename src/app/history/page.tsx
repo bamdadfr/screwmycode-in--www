@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: `History | ${baseMetadata.title}`,
 };
 
+export const revalidate = 300;
+
 export default async function HistoryPage() {
   const token = await generateToken();
   const medias = await fetchMedias(token);
