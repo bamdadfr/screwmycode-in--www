@@ -10,12 +10,19 @@ export function prefixApiRoute(route: string) {
 export const generateToken = cache(async () => {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+
+  const leewaySeconds = 300; // 5 minutes
+  const exp = Math.floor(tomorrow.getTime() / 1000) + leewaySeconds;
+
   const token = await new SignJWT({
-    exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // 24h
+    exp,
   })
     .setProtectedHeader({alg: 'HS256'})
     .sign(secret);
-
   return token;
 });
 
