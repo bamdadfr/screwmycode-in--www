@@ -1,3 +1,10 @@
+## [4.4.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.4.1...v4.4.2) (2025-07-31)
+
+
+### Bug Fixes
+
+* normalize token generation ([20793dc](https://github.com/bamdadfr/screwmycode-in--www/commit/20793dcf2c886973b3db05ceb3430c7a9eb35479))
+
 ## [4.4.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.4.0...v4.4.1) (2025-07-31)
 
 
