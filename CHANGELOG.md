@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.3.0...v4.4.0) (2025-07-31)
+
+
+### Features
+
+* add analytics ([387198c](https://github.com/bamdadfr/screwmycode-in--www/commit/387198c1e47d08f770be365b7b25bf7c5234cfec))
+
 # [4.3.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.2.7...v4.3.0) (2025-07-30)
 
 
