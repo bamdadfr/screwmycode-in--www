@@ -1,3 +1,10 @@
+# [4.7.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.6.2...v4.7.0) (2025-07-31)
+
+
+### Features
+
+* add footer like button ([270319a](https://github.com/bamdadfr/screwmycode-in--www/commit/270319a9e750b8722ada9f6f08e13dd391418775))
+
 ## [4.6.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.6.1...v4.6.2) (2025-07-31)
 
 
