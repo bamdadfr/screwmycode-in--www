@@ -1,3 +1,10 @@
+## [4.7.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.1...v4.7.2) (2025-07-31)
+
+
+### Bug Fixes
+
+* use reversed like array ([1642548](https://github.com/bamdadfr/screwmycode-in--www/commit/16425486bbc64c612945ef736aa1ae592a80cdf6))
+
 ## [4.7.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.0...v4.7.1) (2025-07-31)
 
 
