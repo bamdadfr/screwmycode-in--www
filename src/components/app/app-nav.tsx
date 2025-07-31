@@ -39,6 +39,7 @@ export const AppNav = () => {
       >
         <AudioLines />
       </AppNavButton>
+
       <AppNavButton
         href="/queue"
         title="Queue"
@@ -47,23 +48,26 @@ export const AppNav = () => {
       </AppNavButton>
 
       <AppNavButton
+        href="/likes"
+        title="Likes"
+      >
+        <Heart />
+      </AppNavButton>
+
+      <AppNavButton
         title="Rankings"
         href="/rankings"
       >
         <TrendingUp />
       </AppNavButton>
+
       <AppNavButton
         href="/history"
         title="History"
       >
         <ListRestart />
       </AppNavButton>
-      <AppNavButton
-        href="/likes"
-        title="Likes"
-      >
-        <Heart />
-      </AppNavButton>
+
       <AppNavButton
         title="Extensions"
         href="/extensions"
