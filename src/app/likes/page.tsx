@@ -16,7 +16,7 @@ export default function LikesPage() {
   return (
     <div className={styles.container}>
       <CardContainer
-        medias={likes}
+        medias={likes.toReversed()}
         token={token}
       />
     </div>
