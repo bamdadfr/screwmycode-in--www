@@ -1,6 +1,7 @@
 import 'sass-reset';
 import 'styles/global.scss';
 
+import {GoogleAnalytics} from '@next/third-parties/google';
 import {Provider as Jotai} from 'jotai';
 import {type Metadata} from 'next';
 import React, {type CSSProperties, JSX} from 'react';
@@ -10,6 +11,7 @@ import {AppHeader} from 'src/components/app/app-header';
 import {AppMain} from 'src/components/app/app-main';
 import {AppNav} from 'src/components/app/app-nav';
 import {AppToken} from 'src/components/app/app-token';
+import {GA_TRACKING_ID} from 'src/constants';
 import {SEO} from 'src/seo';
 import {generateToken} from 'src/utils';
 
@@ -74,6 +76,7 @@ export default async function RootLayout({children}: Props) {
       style={obj}
     >
       <body>
+        <GoogleAnalytics gaId={GA_TRACKING_ID} />
         <ReactQuery>
           <Jotai>
             <AppToken token={token} />
