@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.2...v4.8.0) (2025-07-31)
+
+
+### Features
+
+* add lazy loading for cards ([cb4fb58](https://github.com/bamdadfr/screwmycode-in--www/commit/cb4fb58558f3c1dda1441a41a3886100e2d8a026))
+
 ## [4.7.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.1...v4.7.2) (2025-07-31)
 
 
