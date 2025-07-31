@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.5.0...v4.6.0) (2025-07-31)
+
+
+### Features
+
+* add likes ([8f05f58](https://github.com/bamdadfr/screwmycode-in--www/commit/8f05f581dbf117b130882f6b7ba31d1c6e40cdeb))
+
 # [4.5.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.4.2...v4.5.0) (2025-07-31)
 
 
