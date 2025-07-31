@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.4.2...v4.5.0) (2025-07-31)
+
+
+### Features
+
+* revalidate history and ranking pages every 5 minutes ([786d3d4](https://github.com/bamdadfr/screwmycode-in--www/commit/786d3d4167747ab31f7904dc7bc7255777ea9fb7))
+
 ## [4.4.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.4.1...v4.4.2) (2025-07-31)
 
 
