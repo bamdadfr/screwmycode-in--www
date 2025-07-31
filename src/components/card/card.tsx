@@ -7,7 +7,7 @@ import {MouseEvent, useCallback, useMemo, useState} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
-import {CardLike} from 'src/components/card/card-like';
+import {LikeButton} from 'src/components/like-button/like-button';
 import {type MediaDto} from 'src/dtos';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
@@ -105,7 +105,9 @@ export function Card({media}: Props) {
           icon={icon}
         />
 
-        <CardLike media={media} />
+        <div className={styles.iconContainer}>
+          <LikeButton media={media} />
+        </div>
       </div>
     </a>
   );

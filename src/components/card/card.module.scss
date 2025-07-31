@@ -6,6 +6,7 @@
 @use "styles/transitions";
 @use "styles/shadows";
 @use "styles/animations";
+@use "styles/z";
 
 .container {
   display: grid;
@@ -124,3 +125,17 @@
 }
 
 $sLike: 24px;
+
+.iconContainer {
+  bottom: calc(28px + #{gaps.$g1});
+  height: 18px;
+  position: absolute;
+  right: 15px;
+  width: 18px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+

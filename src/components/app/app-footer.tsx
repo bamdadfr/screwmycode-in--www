@@ -9,6 +9,7 @@ import useMeasure from 'react-use-measure';
 import styles from 'src/components/app/app-footer.module.scss';
 import {AppRange} from 'src/components/app/app-range';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {LikeButton} from 'src/components/like-button/like-button';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {calculateMinutes} from 'src/utils/time';
 
@@ -49,6 +50,9 @@ const FooterTransport = () => {
       <div>
         <div>
           <span>{currentMedia?.title}</span>
+          <span className={styles.likeContainer}>
+            {currentMedia && <LikeButton media={currentMedia} />}
+          </span>
           <span>{progressMinutes}</span>
         </div>
         <div>
