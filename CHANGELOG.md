@@ -1,3 +1,10 @@
+## [4.6.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.6.0...v4.6.1) (2025-07-31)
+
+
+### Bug Fixes
+
+* properly check before updating current media ([2e2efe6](https://github.com/bamdadfr/screwmycode-in--www/commit/2e2efe6b9c02ff4268148defaef7198f2bca19a7))
+
 # [4.6.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.5.0...v4.6.0) (2025-07-31)
 
 
