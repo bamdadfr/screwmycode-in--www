@@ -51,7 +51,7 @@ const FooterTransport = () => {
     <div className={clsx(styles.transport)}>
       <div>
         <div>
-          <span>{currentMedia?.title}</span>
+          <span className={styles.singleLine}>{currentMedia?.title}</span>
           <span className={styles.likeContainer}>
             {currentMedia && <LikeButton media={currentMedia} />}
           </span>

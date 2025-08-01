@@ -141,3 +141,11 @@ $fromTop: calc(50% - #{paddings.$p0} * 2 - #{gaps.$g0} * 2);
   transform: translate3d(0, 50%, 0);
   width: calc(#{grid.$row3mobile} - #{paddings.$p0} * 2);
 }
+
+.singleLine {
+  display: block; // Required for text-overflow to work
+  max-width: 100%; // Ensures it respects container width}
+  overflow: hidden; // Hides the overflowing text
+  text-overflow: ellipsis; // Adds the dots (...) at the end
+  white-space: nowrap; // Prevents text from wrapping to new lines
+}
