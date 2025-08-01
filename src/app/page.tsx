@@ -68,6 +68,7 @@ export default function IndexPage() {
           />
         </div>
       </div>
+
       <div className={styles.share}>
         <ScrewShare scale={0.4} />
       </div>

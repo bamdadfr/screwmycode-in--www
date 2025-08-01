@@ -26,8 +26,8 @@ $h: 2em;
   padding: gaps.$g0 paddings.$p0;
   pointer-events: none;
   position: absolute;
-  right: gaps.$g0;
-  top: gaps.$g0;
+  right: paddings.$p1;
+  top: paddings.$p1;
 
   @include transitions.t1(color);
   @include background.blurry;
@@ -82,19 +82,20 @@ $t: .8s;
 }
 
 .share {
-  left: 0;
-  padding: gaps.$g1 paddings.$p0;
+  left: paddings.$p1;
   position: absolute;
-  top: 0;
+  top: paddings.$p1 - gaps.$g0;
 
   @include fx;
 }
 
 .reset {
-  bottom: gaps.$g0 * 4 + 1px;
-  color: theme.$themePrimary;
+  align-items: flex-end;
+  bottom: paddings.$p1;
+  display: flex;
+  justify-content: flex-end;
   position: absolute;
-  right: gaps.$g0 * 39;
+  right: calc(#{paddings.$p1 * 3} + 6em);
 
   @include fx(0, gaps.$g0, 0.8, 1px, 0);
 }
