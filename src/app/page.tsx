@@ -45,7 +45,7 @@ export default function IndexPage() {
           url={imageUrl}
           width={width}
           height={height}
-          scale={(TEXTURE_SCALE / 4) * (width / height)}
+          scale={(TEXTURE_SCALE / (1.414 * 2)) * (width / height)}
         />
       )}
       <div className={clsx(styles.title)}>{currentMedia.title}</div>
