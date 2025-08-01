@@ -40,7 +40,7 @@ export function useInput() {
         return;
       }
 
-      setIsLoading(false);
+      setIsLoading(true);
 
       const isHttps = url.startsWith('https://');
 
