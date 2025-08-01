@@ -1,3 +1,10 @@
+## [4.9.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.2...v4.9.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* enforce single line for footer track ([29297a3](https://github.com/bamdadfr/screwmycode-in--www/commit/29297a3e2d216cb8c05761d6878e9622ed23178e))
+
 ## [4.9.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.1...v4.9.2) (2025-08-01)
 
 
