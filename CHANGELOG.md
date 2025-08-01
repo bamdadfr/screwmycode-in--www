@@ -1,3 +1,10 @@
+# [4.9.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.2...v4.9.0) (2025-08-01)
+
+
+### Features
+
+* add card image skeleton ([e444265](https://github.com/bamdadfr/screwmycode-in--www/commit/e44426550b2cab6881eac3d58baf1c6bee072e06))
+
 ## [4.8.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.1...v4.8.2) (2025-08-01)
 
 
