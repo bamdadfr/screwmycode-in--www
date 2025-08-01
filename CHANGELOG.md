@@ -1,3 +1,10 @@
+## [4.9.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.0...v4.9.1) (2025-08-01)
+
+
+### Bug Fixes
+
+* update like hits on app load ([8616918](https://github.com/bamdadfr/screwmycode-in--www/commit/86169182a82a8ab0bea523880cb81c1b6fe98dac))
+
 # [4.9.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.2...v4.9.0) (2025-08-01)
 
 
