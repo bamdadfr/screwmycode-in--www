@@ -8,12 +8,13 @@ import React, {type CSSProperties, JSX} from 'react';
 import {AppAudio} from 'src/components/app/app-audio';
 import {AppFooter} from 'src/components/app/app-footer';
 import {AppHeader} from 'src/components/app/app-header';
+import {AppLikes} from 'src/components/app/app-likes';
 import {AppMain} from 'src/components/app/app-main';
 import {AppNav} from 'src/components/app/app-nav';
 import {AppToken} from 'src/components/app/app-token';
 import {GA_TRACKING_ID} from 'src/constants';
 import {SEO} from 'src/seo';
-import {generateToken} from 'src/utils';
+import {fetchMedias, generateToken} from 'src/utils';
 
 import styles from './layout.module.scss';
 import {ReactQuery} from './providers';
@@ -69,6 +70,7 @@ interface Props {
 
 export default async function RootLayout({children}: Props) {
   const token = await generateToken();
+  const medias = await fetchMedias(token);
 
   return (
     <html
@@ -81,6 +83,7 @@ export default async function RootLayout({children}: Props) {
           <Jotai>
             <AppToken token={token} />
             <AppAudio />
+            <AppLikes medias={medias} />
 
             <div className={styles.app}>
               <AppHeader />

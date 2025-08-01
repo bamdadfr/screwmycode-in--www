@@ -43,10 +43,30 @@ export function useLikes() {
     [likes, add, remove],
   );
 
+  const update = useCallback(
+    (newMedias: MediaDto[]) => {
+      setLikes((prev) => {
+        for (const media of prev) {
+          const result = newMedias.find((m) => m.url === media.url);
+
+          if (!result) {
+            continue;
+          }
+
+          media.hits = result.hits;
+        }
+
+        return prev;
+      });
+    },
+    [setLikes],
+  );
+
   return {
     likes,
     add,
     remove,
     toggle,
+    update,
   };
 }
