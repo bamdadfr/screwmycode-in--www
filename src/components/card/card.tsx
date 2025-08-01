@@ -83,7 +83,7 @@ export function Card({media}: Props) {
           (isImageHovered || isCurrent) && styles.imageHover,
         )}
       >
-        {blobUrl && (
+        {blobUrl ? (
           <>
             <img
               src={blobUrl}
@@ -106,6 +106,8 @@ export function Card({media}: Props) {
               />
             )}
           </>
+        ) : (
+          <div className={styles.imageSkeleton} />
         )}
       </div>
       <div className={clsx('relative', styles.content)}>

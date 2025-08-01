@@ -159,3 +159,22 @@ $sLike: 24px;
   border: 2px solid red;
   box-shadow: 0 0 8px rgb(255 0 0 / 30%);
 }
+
+.imageSkeleton {
+  animation: pulse 2s ease-in-out infinite;
+  background: theme.$themeBlack;
+  height: 120px;
+  width: 120px;
+
+  @include radiuses.r0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+}
