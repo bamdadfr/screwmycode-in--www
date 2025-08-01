@@ -1,7 +1,6 @@
 'use client';
 
 import {useEffect, useRef} from 'react';
-import {useAudioBuffer} from 'src/components/app/hooks/use-audio-buffer';
 import {useAudioKeyboard} from 'src/components/app/hooks/use-audio-keyboard';
 import {useAudioLoad} from 'src/components/app/hooks/use-audio-load';
 import {useAudioLoop} from 'src/components/app/hooks/use-audio-loop';
@@ -30,11 +29,6 @@ export const AppAudio = () => {
   useAudioPlayPause();
   useAudioProgress();
   useAudioSeek();
-  const {init: initBuffer} = useAudioBuffer();
-
-  useEffect(() => {
-    initBuffer();
-  }, [initBuffer]);
 
   return (
     <div className="hidden">

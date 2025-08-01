@@ -10,6 +10,6 @@ export function useAudioSeek() {
     }
 
     ref.currentTime = seek;
-    setSeek(null);
+    setSeek(seek);
   }, [ref, seek, setSeek]);
 }

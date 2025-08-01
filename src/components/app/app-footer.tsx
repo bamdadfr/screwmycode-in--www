@@ -11,6 +11,7 @@ import {AppRange} from 'src/components/app/app-range';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 import {LikeButton} from 'src/components/like-button/like-button';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
+import {useMobile} from 'src/hooks/use-mobile';
 import {calculateMinutes} from 'src/utils/time';
 
 export const AppFooter = () => {
@@ -38,6 +39,7 @@ const FooterTransport = () => {
     setIsPlaying,
   } = useAudioState();
   const {currentMedia} = useCurrentMedia();
+  const {isMobileOrTablet} = useMobile();
 
   const progressMinutes = useMemo(() => calculateMinutes(progress), [progress]);
   const bufferedMinutes = useMemo(() => calculateMinutes(buffer), [buffer]);
@@ -56,7 +58,7 @@ const FooterTransport = () => {
           <span>{progressMinutes}</span>
         </div>
         <div>
-          <span>{bufferedMinutes}</span>
+          <span>{!isMobileOrTablet && bufferedMinutes}</span>
           <span>{totalMinutes}</span>
         </div>
       </div>
@@ -89,18 +91,7 @@ const FooterTransport = () => {
 };
 
 const FooterTrack = () => {
-  const {duration, progress, buffer, setSeek} = useAudioState();
-
-  const handleSeek = useCallback(
-    (position: number) => {
-      if (position > buffer) {
-        return;
-      }
-
-      setSeek(position);
-    },
-    [buffer, setSeek],
-  );
+  const {duration, progress, buffer, updateSeek} = useAudioState();
 
   return (
     <AppRange
@@ -109,7 +100,7 @@ const FooterTrack = () => {
       step={1}
       value={progress}
       buffered={buffer}
-      onChange={handleSeek}
+      onChange={updateSeek}
     />
   );
 };

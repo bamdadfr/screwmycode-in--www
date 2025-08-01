@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {useAudioBuffer} from 'src/components/app/hooks/use-audio-buffer';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 
-const fps = 10;
+const fps = 4;
 
 export function useAudioProgress() {
   const {domReference: ref, setProgress, isPlaying} = useAudioState();

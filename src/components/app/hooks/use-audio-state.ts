@@ -54,6 +54,17 @@ export function useAudioState() {
     setIsLoading(false);
   }, [setSource, setIsLoading]);
 
+  const updateSeek = useCallback(
+    (position: number) => {
+      if (position > buffer - 1) {
+        return;
+      }
+
+      setSeek(position);
+    },
+    [buffer, setSeek],
+  );
+
   return {
     domReference,
     setDomReference,
@@ -70,6 +81,7 @@ export function useAudioState() {
     setBuffer,
     seek,
     setSeek,
+    updateSeek,
     speed,
     setSpeed,
     volume,

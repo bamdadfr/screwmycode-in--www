@@ -1,8 +1,6 @@
 import {useCallback} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 
-let t: null | NodeJS.Timeout = null;
-
 export function useAudioBuffer() {
   const {domReference: ref, buffer, setBuffer} = useAudioState();
 
@@ -11,43 +9,17 @@ export function useAudioBuffer() {
       return;
     }
 
-    const length = ref.buffered.length;
+    const buffered = ref.buffered.end(0);
 
-    if (length === 0) {
-      setBuffer(0);
+    if (buffered === buffer) {
       return;
     }
 
-    const amount = ref.buffered.end(length - 1);
-    setBuffer(amount);
-  }, [ref, setBuffer]);
-
-  const init = useCallback(() => {
-    if (ref === null) {
-      return;
-    }
-
-    const handle = () => {
-      if (t) {
-        clearTimeout(t);
-        t = null;
-      }
-
-      t = setTimeout(update, 1000);
-    };
-
-    ref.addEventListener('canplaythrough', handle);
-    ref.addEventListener('progress', handle);
-
-    return () => {
-      ref.removeEventListener('canplaythrough', handle);
-      ref.removeEventListener('progress', handle);
-    };
-  }, [ref, update]);
+    setBuffer(buffered);
+  }, [ref, buffer, setBuffer]);
 
   return {
     buffer,
-    init,
     update,
   };
 }
