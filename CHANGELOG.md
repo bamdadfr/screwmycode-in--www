@@ -1,3 +1,10 @@
+## [4.8.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.0...v4.8.1) (2025-08-01)
+
+
+### Bug Fixes
+
+* correctly set load on input ([79b7a0f](https://github.com/bamdadfr/screwmycode-in--www/commit/79b7a0fb20be151b85bbff295a7610c6a273bf81))
+
 # [4.8.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.7.2...v4.8.0) (2025-07-31)
 
 
