@@ -1,3 +1,12 @@
+## [4.9.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.1...v4.9.2) (2025-08-01)
+
+
+### Bug Fixes
+
+* improve buffer and seek ([b42c2e7](https://github.com/bamdadfr/screwmycode-in--www/commit/b42c2e7afb5cb20a642d51b7709ca50c16ccce5d))
+* improve now playing artwork size ([c9ce1e9](https://github.com/bamdadfr/screwmycode-in--www/commit/c9ce1e984c2c7f46c60b9dfd5883afde029aa510))
+* improve now playing layout ([3b3b40c](https://github.com/bamdadfr/screwmycode-in--www/commit/3b3b40c41fad19f59315680737378f2ea718846d))
+
 ## [4.9.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.0...v4.9.1) (2025-08-01)
 
 
