@@ -1,3 +1,10 @@
+## [4.8.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.1...v4.8.2) (2025-08-01)
+
+
+### Bug Fixes
+
+* handle card click error ([9ac66d5](https://github.com/bamdadfr/screwmycode-in--www/commit/9ac66d544e15d059e8f190bcc34958603d33e11c))
+
 ## [4.8.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.8.0...v4.8.1) (2025-08-01)
 
 
