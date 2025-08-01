@@ -2,6 +2,7 @@
 
 import {useRouter} from 'next/navigation';
 import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
+import {ERROR_TIMEOUT} from 'src/constants';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useToken} from 'src/hooks/use-token';
 import {createMedia} from 'src/utils';
@@ -22,7 +23,7 @@ export function useInput() {
   const error = useCallback(() => {
     setIsLoading(false);
     setIsError(true);
-    setTimeout(() => setIsError(false), 600);
+    setTimeout(() => setIsError(false), ERROR_TIMEOUT);
   }, [setIsError, setIsLoading]);
 
   const purge = useCallback(() => {

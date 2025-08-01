@@ -2,6 +2,7 @@ import {z} from 'zod';
 
 export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 export const GA_TRACKING_ID = 'G-SSGL1QBMBJ';
+export const ERROR_TIMEOUT = 600;
 
 export const API_BASE_URL = IS_DEV_ENV
   ? 'http://localhost:8000'

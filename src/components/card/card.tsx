@@ -21,8 +21,8 @@ export function Card({media}: Props) {
   const {icon} = useCardIcon(media);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const {isLoading: isAudioLoading} = useAudioState();
-  const {currentMedia, update, isLoading: isMediaLoading} = useCurrentMedia();
+  const {isLoading: isAudioLoading, isError: isAudioError} = useAudioState();
+  const {currentMedia, update} = useCurrentMedia();
   const {blobUrl} = useImageLoader(media);
 
   const isLoading = useMemo(() => {
@@ -32,12 +32,26 @@ export function Card({media}: Props) {
       return false;
     }
 
-    if (isMediaLoading || isAudioLoading) {
+    if (isAudioLoading) {
       return true;
     }
 
     return false;
-  }, [isMediaLoading, isAudioLoading, media, currentMedia]);
+  }, [isAudioLoading, media, currentMedia]);
+
+  const isError = useMemo(() => {
+    const isSame = media.url === currentMedia?.url;
+
+    if (!isSame) {
+      return false;
+    }
+
+    if (isAudioError) {
+      return true;
+    }
+
+    return false;
+  }, [isAudioError, media, currentMedia]);
 
   const isCurrent = useMemo(
     () => media.url === currentMedia?.url,
@@ -54,7 +68,11 @@ export function Card({media}: Props) {
 
   return (
     <a
-      className={clsx(styles.container, isLoading && styles.loading)}
+      className={clsx(
+        styles.container,
+        isLoading && styles.loading,
+        isError && styles.error,
+      )}
       onMouseEnter={() => !isImageHovered && setIsImageHovered(true)}
       onMouseLeave={() => isImageHovered && setIsImageHovered(false)}
       onClick={handleClick}

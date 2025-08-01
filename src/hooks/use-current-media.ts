@@ -8,9 +8,8 @@ const currentMediaAtom = atom<MediaDto | null>(null);
 
 export function useCurrentMedia() {
   const [currentMedia, setCurrentMedia] = useAtom(currentMediaAtom);
-  const {updateSource} = useAudioState();
+  const {updateSource, purgeSource} = useAudioState();
   const {blobUrl} = useImageLoader(currentMedia ?? null);
-  const isLoading = false;
 
   const update = useCallback(
     async (newMedia: MediaDto) => {
@@ -24,10 +23,15 @@ export function useCurrentMedia() {
     [currentMedia, updateSource, setCurrentMedia],
   );
 
+  const reset = useCallback(() => {
+    setCurrentMedia(null);
+    purgeSource();
+  }, [setCurrentMedia, purgeSource]);
+
   return {
     currentMedia,
-    update,
     imageUrl: blobUrl,
-    isLoading,
+    reset,
+    update,
   };
 }

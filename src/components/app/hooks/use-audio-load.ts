@@ -1,5 +1,7 @@
 import {useCallback, useEffect, useRef} from 'react';
 import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {ERROR_TIMEOUT} from 'src/constants';
+import {useCurrentMedia} from 'src/hooks/use-current-media';
 
 export function useAudioLoad() {
   const {
@@ -8,7 +10,10 @@ export function useAudioLoad() {
     setIsPlaying,
     source,
     setIsLoading,
+    setIsError,
   } = useAudioState();
+
+  const {reset: resetCurrentMedia} = useCurrentMedia();
 
   const saved = useRef<string | null>(source);
 
@@ -24,6 +29,15 @@ export function useAudioLoad() {
 
     setDuration(ref.duration);
   }, [ref, setDuration]);
+
+  const handleError = useCallback(() => {
+    setIsError(true);
+
+    setTimeout(() => {
+      setIsError(false);
+      resetCurrentMedia();
+    }, ERROR_TIMEOUT);
+  }, [setIsError, resetCurrentMedia]);
 
   useEffect(() => {
     if (ref === null || source === null || source === saved.current) {
@@ -44,6 +58,7 @@ export function useAudioLoad() {
     ref.addEventListener('canplay', handleCanPlay);
     ref.addEventListener('canplaythrough', handleCanPlay);
     ref.addEventListener('loadedmetadata', handleMetadata);
+    ref.addEventListener('error', handleError);
 
     return () => {
       setIsPlaying(false);
@@ -53,12 +68,14 @@ export function useAudioLoad() {
       ref.removeEventListener('canplay', handleCanPlay);
       ref.removeEventListener('canplaythrough', handleCanPlay);
       ref.removeEventListener('loadedmetadata', handleMetadata);
+      ref.removeEventListener('error', handleError);
     };
   }, [
     ref,
     source,
     handleCanPlay,
     handleMetadata,
+    handleError,
     setDuration,
     setIsPlaying,
     setIsLoading,
