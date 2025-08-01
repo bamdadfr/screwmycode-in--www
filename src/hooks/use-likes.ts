@@ -46,8 +46,10 @@ export function useLikes() {
   const refresh = useCallback(
     (newMedias: MediaDto[]) => {
       setLikes((prev) => {
-        const urlSet = new Set(prev.map((m) => m.url));
-        return newMedias.filter((m) => urlSet.has(m.url));
+        const mediaMap = new Map(newMedias.map((m) => [m.url, m]));
+        return prev
+          .map((media) => mediaMap.get(media.url))
+          .filter((media) => media !== undefined);
       });
     },
     [setLikes],
