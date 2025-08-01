@@ -9,11 +9,11 @@ interface Props {
 }
 
 export function AppLikes({medias}: Props) {
-  const {update} = useLikes();
+  const {refresh} = useLikes();
 
   useEffect(() => {
-    update(medias);
-  }, [medias, update]);
+    refresh(medias);
+  }, [medias, refresh]);
 
   return null;
 }

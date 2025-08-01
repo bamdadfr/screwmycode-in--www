@@ -43,20 +43,11 @@ export function useLikes() {
     [likes, add, remove],
   );
 
-  const update = useCallback(
+  const refresh = useCallback(
     (newMedias: MediaDto[]) => {
       setLikes((prev) => {
-        for (const media of prev) {
-          const result = newMedias.find((m) => m.url === media.url);
-
-          if (!result) {
-            continue;
-          }
-
-          media.hits = result.hits;
-        }
-
-        return prev;
+        const urlSet = new Set(prev.map((m) => m.url));
+        return newMedias.filter((m) => urlSet.has(m.url));
       });
     },
     [setLikes],
@@ -67,6 +58,6 @@ export function useLikes() {
     add,
     remove,
     toggle,
-    update,
+    refresh,
   };
 }
