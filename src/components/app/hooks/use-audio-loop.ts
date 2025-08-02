@@ -1,8 +1,13 @@
+import {useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioIsRepeatAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioLoop() {
-  const {domReference: ref, isRepeat} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const isRepeat = useAtomValue(audioIsRepeatAtom);
 
   useEffect(() => {
     if (ref === null) {

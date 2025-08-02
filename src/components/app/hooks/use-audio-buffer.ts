@@ -1,8 +1,13 @@
+import {useAtom, useAtomValue} from 'jotai';
 import {useCallback} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioBufferAtom,
+  audioDomReferenceAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioBuffer() {
-  const {domReference: ref, buffer, setBuffer} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const [buffer, setBuffer] = useAtom(audioBufferAtom);
 
   const update = useCallback(() => {
     if (ref === null) {

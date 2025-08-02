@@ -1,8 +1,9 @@
 import clsx from 'clsx';
+import {useAtomValue} from 'jotai';
 import {LoaderCircle, ShieldAlert, SquareChevronRight} from 'lucide-react';
 import {useEffect} from 'react';
 import styles from 'src/components/app/app-header-input.module.scss';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {audioIsLoadingAtom} from 'src/components/app/hooks/audio-atoms';
 import {useInput} from 'src/hooks/use-input';
 
 export const AppHeaderInput = () => {
@@ -16,8 +17,7 @@ export const AppHeaderInput = () => {
     redirect,
   } = useInput();
 
-  const {isLoading: isAudioLoading} = useAudioState();
-
+  const isAudioLoading = useAtomValue(audioIsLoadingAtom);
   const isLoading = isInputLoading || isAudioLoading;
 
   const Icon = () => {

@@ -2,9 +2,13 @@
 
 import {Icon} from '@iconify/react';
 import clsx from 'clsx';
+import {useAtomValue} from 'jotai';
 import {TrendingUp} from 'lucide-react';
 import {MouseEvent, useCallback, useMemo, useState} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioIsErrorAtom,
+  audioIsLoadingAtom,
+} from 'src/components/app/hooks/audio-atoms';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
 import {LikeButton} from 'src/components/like-button/like-button';
@@ -21,7 +25,8 @@ export function Card({media}: Props) {
   const {icon} = useCardIcon(media);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const {isLoading: isAudioLoading, isError: isAudioError} = useAudioState();
+  const isAudioLoading = useAtomValue(audioIsLoadingAtom);
+  const isAudioError = useAtomValue(audioIsErrorAtom);
   const {currentMedia, update} = useCurrentMedia();
   const {blobUrl} = useImageLoader(media);
 

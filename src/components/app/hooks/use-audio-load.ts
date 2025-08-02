@@ -1,17 +1,23 @@
+import {useAtomValue, useSetAtom} from 'jotai';
 import {useCallback, useEffect, useRef} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioDurationAtom,
+  audioIsErrorAtom,
+  audioIsLoadingAtom,
+  audioIsPlayingAtom,
+  audioSourceAtom,
+} from 'src/components/app/hooks/audio-atoms';
 import {ERROR_TIMEOUT} from 'src/constants';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 
 export function useAudioLoad() {
-  const {
-    domReference: ref,
-    setDuration,
-    setIsPlaying,
-    source,
-    setIsLoading,
-    setIsError,
-  } = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const setIsPlaying = useSetAtom(audioIsPlayingAtom);
+  const setDuration = useSetAtom(audioDurationAtom);
+  const setIsLoading = useSetAtom(audioIsLoadingAtom);
+  const setIsError = useSetAtom(audioIsErrorAtom);
+  const source = useAtomValue(audioSourceAtom);
 
   const {reset: resetCurrentMedia} = useCurrentMedia();
 

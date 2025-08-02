@@ -2,6 +2,7 @@
 
 import {ResizeObserver} from '@juggle/resize-observer';
 import clsx from 'clsx';
+import {useAtom} from 'jotai';
 import {RotateCcw} from 'lucide-react';
 import React, {useMemo} from 'react';
 import useMeasure from 'react-use-measure';
@@ -11,7 +12,7 @@ import styles from 'src/app/page.module.scss';
 import {ScrewShare} from 'src/components/_tomove/screw-share';
 import {AppRange} from 'src/components/app/app-range';
 import {AppLabel, AppValue} from 'src/components/app/app-value';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {audioSpeedAtom} from 'src/components/app/hooks/audio-atoms';
 import {Artwork} from 'src/components/artwork/artwork';
 import {TEXTURE_SCALE} from 'src/constants';
 import {useArtworkReset} from 'src/hooks/use-artwork-reset';
@@ -19,7 +20,7 @@ import {useCurrentMedia} from 'src/hooks/use-current-media';
 
 export default function IndexPage() {
   const [ref, {width, height}] = useMeasure({polyfill: ResizeObserver});
-  const {speed, setSpeed} = useAudioState();
+  const [speed, setSpeed] = useAtom(audioSpeedAtom);
   const {currentMedia, imageUrl} = useCurrentMedia();
   const {reset} = useArtworkReset();
 

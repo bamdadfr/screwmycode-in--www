@@ -1,8 +1,13 @@
+import {useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioSpeedAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioPlaybackRate() {
-  const {domReference: ref, speed} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const speed = useAtomValue(audioSpeedAtom);
 
   useEffect(() => {
     if (ref === null) {

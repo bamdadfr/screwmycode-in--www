@@ -1,8 +1,13 @@
+import {useAtom, useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioSeekAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioSeek() {
-  const {domReference: ref, seek, setSeek} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const [seek, setSeek] = useAtom(audioSeekAtom);
 
   useEffect(() => {
     if (ref === null || seek === null) {

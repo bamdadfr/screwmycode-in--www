@@ -2,13 +2,16 @@ import {useAtomValue} from 'jotai';
 import mean from 'just-mean';
 import {useCallback} from 'react';
 import {audioAtom} from 'src/atoms';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioIsPlayingAtom,
+  audioSpeedAtom,
+} from 'src/components/app/hooks/audio-atoms';
 import {useInterval} from 'src/hooks/use-interval';
 
 // TODO: later
 export const useAudioSpeedRegister = () => {
-  const {isPlaying, speed} = useAudioState();
-
+  const speed = useAtomValue(audioSpeedAtom);
+  const isPlaying = useAtomValue(audioIsPlayingAtom);
   const audio = useAtomValue(audioAtom);
 
   const registerSpeed = useCallback(() => {

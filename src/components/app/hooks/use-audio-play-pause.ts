@@ -1,8 +1,15 @@
+import {useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioIsPlayingAtom,
+  audioSpeedAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioPlayPause() {
-  const {domReference: ref, isPlaying, speed} = useAudioState();
+  const isPlaying = useAtomValue(audioIsPlayingAtom);
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const speed = useAtomValue(audioSpeedAtom);
 
   useEffect(() => {
     if (ref === null) {

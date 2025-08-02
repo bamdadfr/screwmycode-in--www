@@ -1,11 +1,18 @@
+import {useAtomValue, useSetAtom} from 'jotai';
 import {useEffect} from 'react';
+import {
+  audioDomReferenceAtom,
+  audioIsPlayingAtom,
+  audioProgressAtom,
+} from 'src/components/app/hooks/audio-atoms';
 import {useAudioBuffer} from 'src/components/app/hooks/use-audio-buffer';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
 
 const fps = 4;
 
 export function useAudioProgress() {
-  const {domReference: ref, setProgress, isPlaying} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
+  const isPlaying = useAtomValue(audioIsPlayingAtom);
+  const setProgress = useSetAtom(audioProgressAtom);
   const {update: updateBuffer} = useAudioBuffer();
 
   useEffect(() => {

@@ -1,8 +1,13 @@
+import {useAtom, useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioDomReferenceAtom,
+  audioVolumeAtom,
+} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioVolume() {
-  const {domReference: ref, volume, setVolume} = useAudioState();
+  const [volume, setVolume] = useAtom(audioVolumeAtom);
+  const ref = useAtomValue(audioDomReferenceAtom);
 
   useEffect(() => {
     if (ref === null) {

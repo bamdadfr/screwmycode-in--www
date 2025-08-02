@@ -2,20 +2,30 @@
 
 import {ResizeObserver} from '@juggle/resize-observer';
 import clsx from 'clsx';
+import {useAtom, useAtomValue, useSetAtom} from 'jotai';
 import {Pause, Play, RefreshCw, RefreshCwOff, SkipBack} from 'lucide-react';
 import Link from 'next/link';
 import React, {useCallback, useMemo} from 'react';
 import useMeasure from 'react-use-measure';
 import styles from 'src/components/app/app-footer.module.scss';
 import {AppRange} from 'src/components/app/app-range';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {
+  audioBufferAtom,
+  audioDurationAtom,
+  audioIsLoadingAtom,
+  audioIsPlayingAtom,
+  audioIsRepeatAtom,
+  audioProgressAtom,
+  audioSeekAtom,
+  audioVolumeAtom,
+} from 'src/components/app/hooks/audio-atoms';
 import {LikeButton} from 'src/components/like-button/like-button';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useMobile} from 'src/hooks/use-mobile';
 import {calculateMinutes} from 'src/utils/time';
 
 export const AppFooter = () => {
-  const {isLoading} = useAudioState();
+  const isLoading = useAtomValue(audioIsLoadingAtom);
 
   return (
     <footer className={clsx(styles.footer, isLoading && styles.loading)}>
@@ -29,15 +39,11 @@ export const AppFooter = () => {
 };
 
 const FooterTransport = () => {
-  const {
-    isRepeat,
-    setIsRepeat,
-    progress,
-    buffer,
-    setSeek,
-    isPlaying,
-    setIsPlaying,
-  } = useAudioState();
+  const [isPlaying, setIsPlaying] = useAtom(audioIsPlayingAtom);
+  const [isRepeat, setIsRepeat] = useAtom(audioIsRepeatAtom);
+  const progress = useAtomValue(audioProgressAtom);
+  const buffer = useAtomValue(audioBufferAtom);
+  const setSeek = useSetAtom(audioSeekAtom);
   const {currentMedia} = useCurrentMedia();
   const {isMobileOrTablet} = useMobile();
 
@@ -91,7 +97,21 @@ const FooterTransport = () => {
 };
 
 const FooterTrack = () => {
-  const {duration, progress, buffer, updateSeek} = useAudioState();
+  const progress = useAtomValue(audioProgressAtom);
+  const buffer = useAtomValue(audioBufferAtom);
+  const setSeek = useSetAtom(audioSeekAtom);
+  const duration = useAtomValue(audioDurationAtom);
+
+  const updateSeek = useCallback(
+    (position: number) => {
+      if (position > buffer - 1) {
+        return;
+      }
+
+      setSeek(position);
+    },
+    [buffer, setSeek],
+  );
 
   return (
     <AppRange
@@ -130,7 +150,7 @@ const FooterImage = () => {
 };
 
 const FooterVolume = () => {
-  const {volume, setVolume} = useAudioState();
+  const [volume, setVolume] = useAtom(audioVolumeAtom);
 
   return (
     <div className={styles.volume}>

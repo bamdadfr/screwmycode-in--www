@@ -1,5 +1,6 @@
+import {useAtomValue} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {audioDomReferenceAtom} from 'src/components/app/hooks/audio-atoms';
 
 declare global {
   interface HTMLAudioElement {
@@ -9,7 +10,7 @@ declare global {
 }
 
 export function useAudioPitch() {
-  const {domReference: ref} = useAudioState();
+  const ref = useAtomValue(audioDomReferenceAtom);
 
   useEffect(() => {
     if (ref === null) {

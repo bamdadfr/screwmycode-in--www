@@ -1,13 +1,14 @@
+import {useSetAtom} from 'jotai';
 import {useEffect} from 'react';
-import {useAudioState} from 'src/components/app/hooks/use-audio-state';
+import {audioIsPlayingAtom} from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioKeyboard(keyCode = 'Space'): void {
-  const {toggleIsPlaying} = useAudioState();
+  const setIsPlaying = useSetAtom(audioIsPlayingAtom);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.code === keyCode) {
-        toggleIsPlaying();
+        setIsPlaying((p) => !p);
       }
     };
 
@@ -16,5 +17,5 @@ export function useAudioKeyboard(keyCode = 'Space'): void {
     return () => {
       document.removeEventListener('keypress', handler);
     };
-  }, [keyCode, toggleIsPlaying]);
+  }, [keyCode, setIsPlaying]);
 }
