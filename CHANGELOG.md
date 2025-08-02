@@ -1,3 +1,10 @@
+## [4.9.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.6...v4.9.7) (2025-08-02)
+
+
+### Performance Improvements
+
+* fine grain atom reactivity ([8b9abff](https://github.com/bamdadfr/screwmycode-in--www/commit/8b9abff18d048fa4cdf2f84d113c1342218bad62))
+
 ## [4.9.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.5...v4.9.6) (2025-08-02)
 
 
