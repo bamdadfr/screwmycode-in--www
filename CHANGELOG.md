@@ -1,3 +1,11 @@
+## [4.9.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.5...v4.9.6) (2025-08-02)
+
+
+### Bug Fixes
+
+* refresh current media sources on request ([dc8f305](https://github.com/bamdadfr/screwmycode-in--www/commit/dc8f305ee416b982a8858251888fdc35e457362a))
+* refresh likes and prevent overwrites ([a663d9a](https://github.com/bamdadfr/screwmycode-in--www/commit/a663d9aa6139c8322b0053746378c10becb5a753))
+
 ## [4.9.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.4...v4.9.5) (2025-08-01)
 
 
