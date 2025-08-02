@@ -1,3 +1,10 @@
+# [4.10.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.7...v4.10.0) (2025-08-02)
+
+
+### Features
+
+* experiment with fuzzy search ([e9c881c](https://github.com/bamdadfr/screwmycode-in--www/commit/e9c881c031ec2df0ef3eded3e6b573f26e8c9771))
+
 ## [4.9.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.6...v4.9.7) (2025-08-02)
 
 
