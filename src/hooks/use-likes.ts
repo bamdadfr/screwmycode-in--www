@@ -46,10 +46,25 @@ export function useLikes() {
   const refresh = useCallback(
     (newMedias: MediaDto[]) => {
       setLikes((prev) => {
-        const mediaMap = new Map(newMedias.map((m) => [m.url, m]));
-        return prev
-          .map((media) => mediaMap.get(media.url))
-          .filter((media) => media !== undefined);
+        const newLikes: MediaDto[] = [];
+
+        for (const like of prev) {
+          const newMedia = newMedias.find((m) => m.url === like.url);
+
+          if (!newMedia) {
+            newLikes.push(like);
+            continue;
+          }
+
+          newLikes.push({
+            ...like,
+            hits: newMedia.hits,
+            audio: newMedia.audio,
+            image: newMedia.image,
+          });
+        }
+
+        return newLikes;
       });
     },
     [setLikes],
