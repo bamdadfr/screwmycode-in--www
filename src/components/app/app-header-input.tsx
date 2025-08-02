@@ -1,10 +1,18 @@
+import {useFuzzySearchList} from '@nozbe/microfuzz/react';
 import clsx from 'clsx';
 import {useAtomValue} from 'jotai';
 import {LoaderCircle, ShieldAlert, SquareChevronRight} from 'lucide-react';
-import {useEffect} from 'react';
+import {
+  type ChangeEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import styles from 'src/components/app/app-header-input.module.scss';
 import {audioIsLoadingAtom} from 'src/components/app/hooks/audio-atoms';
 import {useInput} from 'src/hooks/use-input';
+import {useMedias} from 'src/hooks/use-medias';
 
 export const AppHeaderInput = () => {
   const {
@@ -17,6 +25,7 @@ export const AppHeaderInput = () => {
     redirect,
   } = useInput();
 
+  const {medias} = useMedias();
   const isAudioLoading = useAtomValue(audioIsLoadingAtom);
   const isLoading = isInputLoading || isAudioLoading;
 
@@ -38,6 +47,28 @@ export const AppHeaderInput = () => {
     redirect();
   }, [needsRedirect, redirect, isLoading]);
 
+  // --------------------
+  // - fuzzy experiment -
+  // --------------------
+  const titles = useMemo(() => medias.map((m) => m.title), [medias]);
+  const [queryValue, setQueryValue] = useState('');
+
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.currentTarget.value;
+    setQueryValue(value);
+  }, []);
+
+  const filteredTitles = useFuzzySearchList({
+    list: titles,
+    queryText: queryValue,
+    mapResultItem: ({item}) => item,
+  });
+
+  console.log(filteredTitles);
+  // --------------------
+  // - fuzzy experiment -
+  // --------------------
+
   return (
     <div className={styles.input}>
       <input
@@ -45,6 +76,7 @@ export const AppHeaderInput = () => {
         onKeyDown={handleKeyDown}
         disabled={isLoading}
         className={clsx(isLoading && styles.inputLoading)}
+        onChange={handleChange}
       />
       <button
         type="submit"

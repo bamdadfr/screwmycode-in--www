@@ -10,6 +10,7 @@ import {AppFooter} from 'src/components/app/app-footer';
 import {AppHeader} from 'src/components/app/app-header';
 import {AppLikes} from 'src/components/app/app-likes';
 import {AppMain} from 'src/components/app/app-main';
+import {AppMedias} from 'src/components/app/app-medias';
 import {AppNav} from 'src/components/app/app-nav';
 import {AppToken} from 'src/components/app/app-token';
 import {GA_TRACKING_ID} from 'src/constants';
@@ -82,8 +83,9 @@ export default async function RootLayout({children}: Props) {
         <ReactQuery>
           <Jotai>
             <AppToken token={token} />
+            <AppMedias medias={medias} />
             <AppAudio />
-            <AppLikes medias={medias} />
+            <AppLikes />
 
             <div className={styles.app}>
               <AppHeader />

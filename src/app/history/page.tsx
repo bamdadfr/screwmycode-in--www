@@ -18,8 +18,8 @@ export default async function HistoryPage() {
   return (
     <div className={styles.container}>
       <CardContainer
-        medias={medias}
         token={token}
+        medias={medias}
       />
     </div>
   );
