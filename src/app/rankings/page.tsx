@@ -2,11 +2,12 @@ import {type Metadata} from 'next';
 import {metadata as baseMetadata} from 'src/app/layout';
 import styles from 'src/app/list.module.scss';
 import {CardContainer} from 'src/components/card-container/card-container';
+import {TITLE_SEPARATOR} from 'src/constants';
 import {fetchMedias, generateToken} from 'src/utils';
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: `Rankings | ${baseMetadata.title}`,
+  title: `${baseMetadata.title} ${TITLE_SEPARATOR} Rankings`,
 };
 
 export const revalidate = 300;

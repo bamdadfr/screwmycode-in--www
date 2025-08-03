@@ -1,24 +1,15 @@
-'use client';
+import {type Metadata} from 'next';
+import {metadata as baseMetadata} from 'src/app/layout';
+import {LikesClient} from 'src/app/likes/client';
+import {TITLE_SEPARATOR} from 'src/constants';
 
-import styles from 'src/app/list.module.scss';
-import {CardContainer} from 'src/components/card-container/card-container';
-import {useLikes} from 'src/hooks/use-likes';
-import {useToken} from 'src/hooks/use-token';
+export const metadata: Metadata = {
+  ...baseMetadata,
+  title: `${baseMetadata.title} ${TITLE_SEPARATOR} Likes`,
+};
+
+export const revalidate = 300;
 
 export default function LikesPage() {
-  const {token} = useToken();
-  const {likes} = useLikes();
-
-  if (!token) {
-    return <></>;
-  }
-
-  return (
-    <div className={styles.container}>
-      <CardContainer
-        medias={likes.toReversed()}
-        token={token}
-      />
-    </div>
-  );
+  return <LikesClient />;
 }
