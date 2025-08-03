@@ -1,3 +1,10 @@
+## [4.13.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.0...v4.13.1) (2025-08-03)
+
+
+### Bug Fixes
+
+* update titles for other pages ([15920bc](https://github.com/bamdadfr/screwmycode-in--www/commit/15920bc470bd0556308d0ce08e1c6557b2751ba4))
+
 # [4.13.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.12.1...v4.13.0) (2025-08-03)
 
 
