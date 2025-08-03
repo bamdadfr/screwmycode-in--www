@@ -123,6 +123,7 @@ const defaultRules = {
       multilineDetection: 'brackets',
     },
   ],
+  '@typescript-eslint/no-unused-vars': 'warn',
 };
 
 const reactThreeFiberRules = {

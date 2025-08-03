@@ -5,14 +5,12 @@ import clsx from 'clsx';
 import {useAtomValue} from 'jotai';
 import {TrendingUp} from 'lucide-react';
 import {MouseEvent, useCallback, useMemo, useState} from 'react';
-import {
-  audioIsErrorAtom,
-  audioIsLoadingAtom,
-} from 'src/components/app/hooks/audio-atoms';
+import {audioIsErrorAtom} from 'src/components/app/hooks/audio-atoms';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
 import {LikeButton} from 'src/components/like-button/like-button';
 import {type MediaDto} from 'src/dtos';
+import {useAppLoading} from 'src/hooks/use-app-loading';
 import {useCardIcon} from 'src/hooks/use-card-icon';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useImageLoader} from 'src/hooks/use-image-loader';
@@ -25,10 +23,10 @@ export function Card({media}: Props) {
   const {icon} = useCardIcon(media);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const isAudioLoading = useAtomValue(audioIsLoadingAtom);
   const isAudioError = useAtomValue(audioIsErrorAtom);
   const {currentMedia, update} = useCurrentMedia();
   const {blobUrl} = useImageLoader(media);
+  const isAppLoading = useAppLoading();
 
   const isLoading = useMemo(() => {
     const isSame = media.url === currentMedia?.url;
@@ -37,12 +35,8 @@ export function Card({media}: Props) {
       return false;
     }
 
-    if (isAudioLoading) {
-      return true;
-    }
-
-    return false;
-  }, [isAudioLoading, media, currentMedia]);
+    return isAppLoading;
+  }, [media, currentMedia, isAppLoading]);
 
   const isError = useMemo(() => {
     const isSame = media.url === currentMedia?.url;
@@ -51,11 +45,7 @@ export function Card({media}: Props) {
       return false;
     }
 
-    if (isAudioError) {
-      return true;
-    }
-
-    return false;
+    return isAudioError;
   }, [isAudioError, media, currentMedia]);
 
   const isCurrent = useMemo(
