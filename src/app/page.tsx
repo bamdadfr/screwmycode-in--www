@@ -14,10 +14,11 @@ import {AppRange} from 'src/components/app/app-range';
 import {AppLabel, AppValue} from 'src/components/app/app-value';
 import {audioSpeedAtom} from 'src/components/app/hooks/audio-atoms';
 import {Artwork} from 'src/components/artwork/artwork';
-import {TEXTURE_SCALE} from 'src/constants';
+import {TEXTURE_SCALE, TITLE_SEPARATOR} from 'src/constants';
 import {useArtworkReset} from 'src/hooks/use-artwork-reset';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useToken} from 'src/hooks/use-token';
+import {SEO} from 'src/seo';
 import {createMedia} from 'src/utils';
 
 const isFirstLoadAtom = atom<boolean>(true);
@@ -81,6 +82,7 @@ export default function IndexPage() {
     const queryString = params.toString();
     const newUrl = window.location.pathname + '?' + queryString;
     window.history.pushState({}, '', newUrl);
+    document.title = `${SEO.title} ${TITLE_SEPARATOR} ${currentMedia.title} ${TITLE_SEPARATOR} ${speed.toString()}`;
   }, [currentMedia, speed]);
 
   const handleShare = useCallback(() => {

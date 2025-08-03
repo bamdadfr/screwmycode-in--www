@@ -8,6 +8,7 @@ const url = 'https://www.screwmycode.in';
 
 export const SEO: DefaultSeoProps = {
   defaultTitle: title,
+  title,
   description,
   titleTemplate: `%s ${TITLE_SEPARATOR} ${title}`,
   canonical: url,
