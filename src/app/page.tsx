@@ -2,9 +2,9 @@
 
 import {ResizeObserver} from '@juggle/resize-observer';
 import clsx from 'clsx';
-import {useAtom} from 'jotai';
+import {atom, useAtom} from 'jotai';
 import {RotateCcw} from 'lucide-react';
-import React, {useMemo} from 'react';
+import React, {useCallback, useEffect, useMemo} from 'react';
 import useMeasure from 'react-use-measure';
 import speedToPercentage from 'speed-to-percentage';
 import speedToSemitones from 'speed-to-semitones';
@@ -17,12 +17,18 @@ import {Artwork} from 'src/components/artwork/artwork';
 import {TEXTURE_SCALE} from 'src/constants';
 import {useArtworkReset} from 'src/hooks/use-artwork-reset';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
+import {useToken} from 'src/hooks/use-token';
+import {createMedia} from 'src/utils';
+
+const isFirstLoadAtom = atom<boolean>(true);
 
 export default function IndexPage() {
   const [ref, {width, height}] = useMeasure({polyfill: ResizeObserver});
   const [speed, setSpeed] = useAtom(audioSpeedAtom);
-  const {currentMedia, imageUrl} = useCurrentMedia();
+  const {currentMedia, imageUrl, update} = useCurrentMedia();
   const {reset} = useArtworkReset();
+  const [isFirstLoad, setIsFirstLoad] = useAtom(isFirstLoadAtom);
+  const {token} = useToken();
 
   const percentages = useMemo<string>(() => {
     return speedToPercentage(speed, 1);
@@ -31,6 +37,52 @@ export default function IndexPage() {
   const semitones = useMemo<string>(() => {
     return speedToSemitones(speed, 1);
   }, [speed]);
+
+  useEffect(() => {
+    if (!isFirstLoad || !token) {
+      return;
+    }
+
+    setIsFirstLoad(false);
+
+    const currentParams = new URLSearchParams(window.location.search);
+    const mediaString = currentParams.get('media');
+    const speedString = currentParams.get('speed');
+
+    if (!mediaString) {
+      return;
+    }
+
+    createMedia(token, mediaString).then((media) => {
+      update(media).then(() => {
+        if (!speedString) {
+          return;
+        }
+
+        const s = Number(speedString);
+        setSpeed(s);
+      });
+    });
+  }, [isFirstLoad, setIsFirstLoad, setSpeed, token, update]);
+
+  useEffect(() => {
+    if (!currentMedia) {
+      return;
+    }
+
+    const params = new URLSearchParams();
+    params.append('media', currentMedia.url);
+    params.append('speed', speed.toString());
+    const queryString = params.toString();
+    const newUrl = window.location.pathname + '?' + queryString;
+    window.history.pushState({}, '', newUrl);
+  }, [currentMedia, speed]);
+
+  const handleShare = useCallback(() => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      console.log('copied');
+    });
+  }, []);
 
   if (!currentMedia) {
     return <></>;
@@ -70,7 +122,10 @@ export default function IndexPage() {
         </div>
       </div>
 
-      <div className={styles.share}>
+      <div
+        className={styles.share}
+        onClick={handleShare}
+      >
         <ScrewShare scale={0.4} />
       </div>
 
