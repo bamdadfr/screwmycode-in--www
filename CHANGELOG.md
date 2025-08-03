@@ -1,3 +1,10 @@
+## [4.12.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.12.0...v4.12.1) (2025-08-03)
+
+
+### Bug Fixes
+
+* set current media early for ui reactivity ([5fea275](https://github.com/bamdadfr/screwmycode-in--www/commit/5fea2757561f78aef00507f3012b4fe4eb91e9bf))
+
 # [4.12.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.11.0...v4.12.0) (2025-08-03)
 
 
