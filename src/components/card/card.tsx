@@ -1,10 +1,18 @@
 'use client';
 
 import {Icon} from '@iconify/react';
+import {useQueryClient} from '@tanstack/react-query';
 import clsx from 'clsx';
 import {useAtomValue} from 'jotai';
 import {TrendingUp} from 'lucide-react';
-import {MouseEvent, useCallback, useMemo, useState} from 'react';
+import {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {audioIsErrorAtom} from 'src/components/app/hooks/audio-atoms';
 import {Artwork} from 'src/components/artwork/artwork';
 import styles from 'src/components/card/card.module.scss';
@@ -61,8 +69,40 @@ export function Card({media}: Props) {
     [media, update],
   );
 
+  const queryClient = useQueryClient();
+  const ref = useRef<HTMLAnchorElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          // Prefetch the image
+          queryClient
+            .prefetchQuery({
+              queryKey: ['image', media.image],
+              queryFn: async () => {
+                const response = await fetch(media.image);
+                const blob = await response.blob();
+                return URL.createObjectURL(blob);
+              },
+              staleTime: Infinity,
+            })
+            .then();
+        }
+      },
+      {rootMargin: '100px'}, // Start loading 100px before visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [media.image, queryClient]);
+
   return (
     <a
+      ref={ref}
       className={clsx(
         styles.container,
         isLoading && styles.loading,

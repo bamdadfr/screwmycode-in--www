@@ -1,3 +1,4 @@
+import {useQueryClient} from '@tanstack/react-query';
 import {atom, useAtom, useSetAtom} from 'jotai';
 import {useCallback} from 'react';
 import {
@@ -16,9 +17,10 @@ export function useCurrentMedia() {
   const [currentMedia, setCurrentMedia] = useAtom(currentMediaAtom);
   const setSource = useSetAtom(audioSourceAtom);
   const setAudioIsLoading = useSetAtom(audioIsLoadingAtom);
-  const {blobUrl} = useImageLoader(currentMedia ?? null);
+  const {blobUrl} = useImageLoader(currentMedia);
   const {token} = useToken();
   const setCurrentIsLoading = useSetAtom(currentIsLoadingAtom);
+  const queryClient = useQueryClient();
 
   const updateSource = useCallback(
     (newSource: string) => {
@@ -33,37 +35,78 @@ export function useCurrentMedia() {
     setAudioIsLoading(false);
   }, [setSource, setAudioIsLoading]);
 
-  const update = useCallback(
-    async (newMedia: MediaDto) => {
-      if (newMedia.url === currentMedia?.url || token === null) {
+  // Check media availability with caching
+  const checkMediaAvailability = useCallback(
+    async (media: MediaDto) => {
+      if (!token) {
         return;
       }
 
-      setCurrentMedia(newMedia);
-      setCurrentIsLoading(true);
+      // Try to get from cache first
+      const cached = queryClient.getQueryData<MediaDto>([
+        'media',
+        media.url,
+        token,
+      ]);
+      if (cached) {
+        return cached;
+      }
 
-      // check availability
-      const response = await fetch(newMedia.audio, {
+      // Check availability
+      const response = await fetch(media.audio, {
         method: 'HEAD',
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      // refresh if necessary
+      // If not available, refresh
       if (!response.ok) {
-        const refreshedMedia = await createMedia(token, newMedia.url);
-        newMedia.hits = refreshedMedia.hits;
-        newMedia.audio = refreshedMedia.audio;
-        newMedia.image = refreshedMedia.image;
+        const refreshedMedia = await createMedia(token, media.url);
+        // Cache the refreshed media
+        queryClient.setQueryData(['media', media.url, token], refreshedMedia);
+        return refreshedMedia;
       }
 
-      // update UI
-      updateSource(newMedia.audio);
-      setCurrentMedia(newMedia);
-      setCurrentIsLoading(false);
+      // Cache the validated media
+      queryClient.setQueryData(['media', media.url, token], media);
+      return media;
     },
-    [currentMedia, updateSource, setCurrentMedia, token, setCurrentIsLoading],
+    [token, queryClient],
+  );
+
+  const update = useCallback(
+    async (newMedia: MediaDto) => {
+      if (newMedia.url === currentMedia?.url || token === null) {
+        return;
+      }
+
+      setCurrentIsLoading(true);
+
+      try {
+        // This will use cache if available, otherwise fetch
+        const validatedMedia = await checkMediaAvailability(newMedia);
+        if (!validatedMedia) {
+          throw new Error('Invalid media URL');
+        }
+
+        // Update UI
+        updateSource(validatedMedia.audio);
+        setCurrentMedia(validatedMedia);
+      } catch (error) {
+        console.error('Failed to update media:', error);
+      } finally {
+        setCurrentIsLoading(false);
+      }
+    },
+    [
+      currentMedia,
+      updateSource,
+      setCurrentMedia,
+      token,
+      setCurrentIsLoading,
+      checkMediaAvailability,
+    ],
   );
 
   const reset = useCallback(() => {
