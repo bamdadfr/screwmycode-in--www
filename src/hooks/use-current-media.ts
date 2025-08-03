@@ -10,32 +10,37 @@ import {useToken} from 'src/hooks/use-token';
 import {createMedia} from 'src/utils';
 
 const currentMediaAtom = atom<MediaDto | null>(null);
+export const currentIsLoadingAtom = atom<boolean>(false);
 
 export function useCurrentMedia() {
   const [currentMedia, setCurrentMedia] = useAtom(currentMediaAtom);
   const setSource = useSetAtom(audioSourceAtom);
-  const setIsLoading = useSetAtom(audioIsLoadingAtom);
+  const setAudioIsLoading = useSetAtom(audioIsLoadingAtom);
   const {blobUrl} = useImageLoader(currentMedia ?? null);
   const {token} = useToken();
+  const setCurrentIsLoading = useSetAtom(currentIsLoadingAtom);
 
   const updateSource = useCallback(
     (newSource: string) => {
       setSource(newSource);
-      setIsLoading(true);
+      setAudioIsLoading(true);
     },
-    [setSource, setIsLoading],
+    [setSource, setAudioIsLoading],
   );
 
   const purgeSource = useCallback(() => {
     setSource('');
-    setIsLoading(false);
-  }, [setSource, setIsLoading]);
+    setAudioIsLoading(false);
+  }, [setSource, setAudioIsLoading]);
 
   const update = useCallback(
     async (newMedia: MediaDto) => {
       if (newMedia.url === currentMedia?.url || token === null) {
         return;
       }
+
+      setCurrentMedia(newMedia);
+      setCurrentIsLoading(true);
 
       // check availability
       const response = await fetch(newMedia.audio, {
@@ -56,8 +61,9 @@ export function useCurrentMedia() {
       // update UI
       updateSource(newMedia.audio);
       setCurrentMedia(newMedia);
+      setCurrentIsLoading(false);
     },
-    [currentMedia, updateSource, setCurrentMedia, token],
+    [currentMedia, updateSource, setCurrentMedia, token, setCurrentIsLoading],
   );
 
   const reset = useCallback(() => {

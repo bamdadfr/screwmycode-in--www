@@ -64,7 +64,6 @@ export const AppHeaderInput = () => {
     mapResultItem: ({item}) => item,
   });
 
-  console.log(filteredTitles);
   // --------------------
   // - fuzzy experiment -
   // --------------------

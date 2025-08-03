@@ -1,11 +1,10 @@
 'use client';
 
-import {useAtomValue} from 'jotai';
 import {useEffect, useState} from 'react';
-import {audioIsLoadingAtom} from 'src/components/app/hooks/audio-atoms';
 import {Card} from 'src/components/card/card';
 import styles from 'src/components/card-container/card-container.module.scss';
 import {type MediaDto} from 'src/dtos';
+import {useAppLoading} from 'src/hooks/use-app-loading';
 
 interface Props {
   medias: MediaDto[];
@@ -16,7 +15,7 @@ const ID = '#load-more-sentinel';
 const L = 10;
 
 export function CardContainer({medias}: Props) {
-  const isLoading = useAtomValue(audioIsLoadingAtom);
+  const isLoading = useAppLoading();
   const [visibleCards, setVisibleCards] = useState(L);
 
   useEffect(() => {
