@@ -1,3 +1,10 @@
+# [4.11.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.10.0...v4.11.0) (2025-08-03)
+
+
+### Features
+
+* use better app loading state ([bbac4cf](https://github.com/bamdadfr/screwmycode-in--www/commit/bbac4cf0996ecdaa40e77bd792f4fe1ad7aefb71))
+
 # [4.10.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.9.7...v4.10.0) (2025-08-02)
 
 
