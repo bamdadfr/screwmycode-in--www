@@ -81,6 +81,7 @@ export function useCurrentMedia() {
         return;
       }
 
+      setCurrentMedia(newMedia);
       setCurrentIsLoading(true);
 
       try {
