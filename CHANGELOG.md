@@ -1,3 +1,17 @@
+# [4.13.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.12.1...v4.13.0) (2025-08-03)
+
+
+### Bug Fixes
+
+* improve share feature + add share button feedback ([2c2040b](https://github.com/bamdadfr/screwmycode-in--www/commit/2c2040b7cd3f696fa10f654ca092fa81d44c4170))
+* prevent play first draw ([8ae8f9a](https://github.com/bamdadfr/screwmycode-in--www/commit/8ae8f9a3dd1ff98e75d696b53feac41de44260cb))
+
+
+### Features
+
+* add share feature ([b0f4a44](https://github.com/bamdadfr/screwmycode-in--www/commit/b0f4a44c80860fe0dc892ee6e8ffdb743e7846da))
+* update document title ([9963a3f](https://github.com/bamdadfr/screwmycode-in--www/commit/9963a3fc2e15f90ea2126c58c1b6b37975325c0e))
+
 ## [4.12.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.12.0...v4.12.1) (2025-08-03)
 
 
