@@ -1,3 +1,10 @@
+# [4.12.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.11.0...v4.12.0) (2025-08-03)
+
+
+### Features
+
+* try tanstack query ([786d028](https://github.com/bamdadfr/screwmycode-in--www/commit/786d02863d14b326d8c3f9ed864a8d46e64f59c6))
+
 # [4.11.0](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.10.0...v4.11.0) (2025-08-03)
 
 
