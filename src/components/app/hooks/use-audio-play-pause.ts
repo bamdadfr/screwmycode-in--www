@@ -1,5 +1,5 @@
-import {useAtomValue} from 'jotai';
-import {useEffect} from 'react';
+import {useAtom, useAtomValue} from 'jotai';
+import {useCallback, useEffect} from 'react';
 import {
   audioDomReferenceAtom,
   audioIsPlayingAtom,
@@ -7,12 +7,21 @@ import {
 } from 'src/components/app/hooks/audio-atoms';
 
 export function useAudioPlayPause() {
-  const isPlaying = useAtomValue(audioIsPlayingAtom);
+  const [isPlaying, setIsPlaying] = useAtom(audioIsPlayingAtom);
   const ref = useAtomValue(audioDomReferenceAtom);
   const speed = useAtomValue(audioSpeedAtom);
 
+  const pause = useCallback(() => {
+    setIsPlaying(false);
+  }, [setIsPlaying]);
+
   useEffect(() => {
     if (ref === null) {
+      return;
+    }
+
+    if (!navigator.userActivation.hasBeenActive) {
+      pause();
       return;
     }
 
@@ -27,5 +36,5 @@ export function useAudioPlayPause() {
     };
 
     toggle().then();
-  }, [ref, isPlaying, speed]);
+  }, [ref, isPlaying, speed, pause]);
 }
