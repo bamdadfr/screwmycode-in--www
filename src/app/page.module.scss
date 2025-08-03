@@ -81,14 +81,6 @@ $t: .8s;
   }
 }
 
-.share {
-  left: paddings.$p1;
-  position: absolute;
-  top: paddings.$p1 - gaps.$g0;
-
-  @include fx;
-}
-
 .reset {
   align-items: flex-end;
   bottom: paddings.$p1;
@@ -98,4 +90,20 @@ $t: .8s;
   right: calc(#{paddings.$p1 * 3} + 6em);
 
   @include fx(0, gaps.$g0, 0.8, 1px, 0);
+}
+
+.share {
+  left: paddings.$p1;
+  position: absolute;
+  top: paddings.$p1 - gaps.$g0;
+
+  @include fx;
+}
+
+$clickT: 5ms;
+
+.shareClicked {
+  opacity: 1 !important;
+  transform: scale3d(0.4, 0.4, 0.4) translate3d(0, 0, 0) !important;
+  transition: filter $clickT ease-out, opacity $clickT ease-out, transform $clickT cubic-bezier(0.34, 1.56, 0.64, 1), color $clickT ease-out !important;
 }

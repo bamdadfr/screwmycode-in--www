@@ -4,7 +4,7 @@ import {ResizeObserver} from '@juggle/resize-observer';
 import clsx from 'clsx';
 import {atom, useAtom} from 'jotai';
 import {RotateCcw} from 'lucide-react';
-import React, {useCallback, useEffect, useMemo} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import useMeasure from 'react-use-measure';
 import speedToPercentage from 'speed-to-percentage';
 import speedToSemitones from 'speed-to-semitones';
@@ -29,6 +29,7 @@ export default function IndexPage() {
   const {reset} = useArtworkReset();
   const [isFirstLoad, setIsFirstLoad] = useAtom(isFirstLoadAtom);
   const {token} = useToken();
+  const [shareClicked, setShareClicked] = useState(false);
 
   const percentages = useMemo<string>(() => {
     return speedToPercentage(speed, 1);
@@ -38,6 +39,7 @@ export default function IndexPage() {
     return speedToSemitones(speed, 1);
   }, [speed]);
 
+  // on load
   useEffect(() => {
     if (!isFirstLoad || !token) {
       return;
@@ -53,7 +55,9 @@ export default function IndexPage() {
       return;
     }
 
-    createMedia(token, mediaString).then((media) => {
+    const mediaUrl = new URL(mediaString);
+
+    createMedia(token, mediaUrl.href).then((media) => {
       update(media).then(() => {
         if (!speedString) {
           return;
@@ -65,6 +69,7 @@ export default function IndexPage() {
     });
   }, [isFirstLoad, setIsFirstLoad, setSpeed, token, update]);
 
+  // update query parameters
   useEffect(() => {
     if (!currentMedia) {
       return;
@@ -80,7 +85,8 @@ export default function IndexPage() {
 
   const handleShare = useCallback(() => {
     navigator.clipboard.writeText(window.location.href).then(() => {
-      console.log('copied');
+      setShareClicked(true);
+      setTimeout(() => setShareClicked(false), 50);
     });
   }, []);
 
@@ -123,7 +129,7 @@ export default function IndexPage() {
       </div>
 
       <div
-        className={styles.share}
+        className={clsx(styles.share, shareClicked && styles.shareClicked)}
         onClick={handleShare}
       >
         <ScrewShare scale={0.4} />
