@@ -20,6 +20,7 @@ import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useToken} from 'src/hooks/use-token';
 import {SEO} from 'src/seo';
 import {createMedia} from 'src/utils';
+import {useDebounce} from 'use-debounce';
 
 const isFirstLoadAtom = atom<boolean>(true);
 
@@ -39,6 +40,8 @@ export default function IndexPage() {
   const semitones = useMemo<string>(() => {
     return speedToSemitones(speed, 1);
   }, [speed]);
+
+  const [speedDebounced] = useDebounce(speed, 250);
 
   // on load
   useEffect(() => {
@@ -78,12 +81,13 @@ export default function IndexPage() {
 
     const params = new URLSearchParams();
     params.append('media', currentMedia.url);
-    params.append('speed', speed.toString());
+    const s = speedDebounced.toString();
+    params.append('speed', s);
     const queryString = params.toString();
     const newUrl = window.location.pathname + '?' + queryString;
     window.history.pushState({}, '', newUrl);
-    document.title = `${SEO.title} ${TITLE_SEPARATOR} ${currentMedia.title} ${TITLE_SEPARATOR} ${speed.toString()}`;
-  }, [currentMedia, speed]);
+    document.title = `${SEO.title} ${TITLE_SEPARATOR} ${currentMedia.title} ${TITLE_SEPARATOR} ${s}`;
+  }, [currentMedia, speedDebounced]);
 
   const handleShare = useCallback(() => {
     navigator.clipboard.writeText(window.location.href).then(() => {
