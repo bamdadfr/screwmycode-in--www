@@ -1,3 +1,10 @@
+## [4.13.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.1...v4.13.2) (2025-08-04)
+
+
+### Bug Fixes
+
+* debounce query parameter speed ([dac32e0](https://github.com/bamdadfr/screwmycode-in--www/commit/dac32e040208380b95f386cd48be3217a5139dd7))
+
 ## [4.13.1](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.0...v4.13.1) (2025-08-03)
 
 
