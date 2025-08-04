@@ -1,5 +1,4 @@
 'use client';
-
 import {useEffect, useState} from 'react';
 import {Card} from 'src/components/card/card';
 import styles from 'src/components/card-container/card-container.module.scss';
@@ -11,28 +10,34 @@ interface Props {
   token: string;
 }
 
-const ID = '#load-more-sentinel';
-const L = 10;
+const ID = 'load-more-sentinel';
+const L = 1;
 
 export function CardContainer({medias}: Props) {
   const isLoading = useAppLoading();
   const [visibleCards, setVisibleCards] = useState(L);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setVisibleCards((prev) => prev + L);
-      }
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && visibleCards < medias.length) {
+          setVisibleCards((prev) => prev + L);
+        }
+      },
+      {
+        // Add some threshold and rootMargin for better triggering
+        threshold: 0.1,
+        rootMargin: '100px', // Trigger when sentinel is 100px from viewport
+      },
+    );
 
-    const sentinel = document.querySelector(ID);
-
+    const sentinel = document.getElementById(ID);
     if (sentinel) {
       observer.observe(sentinel);
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [visibleCards, medias.length]); // Re-run when visibleCards changes
 
   return (
     <>
@@ -43,8 +48,15 @@ export function CardContainer({medias}: Props) {
           media={item}
         />
       ))}
-
-      {visibleCards < medias.length && <div id="load-more-sentinel" />}
+      {visibleCards < medias.length && (
+        <div
+          id={ID}
+          style={{
+            height: '20px',
+            margin: '20px 0',
+          }} // Ensure it has some height
+        />
+      )}
     </>
   );
 }
