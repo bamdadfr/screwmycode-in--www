@@ -1,3 +1,10 @@
+## [4.13.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.2...v4.13.3) (2025-08-04)
+
+
+### Bug Fixes
+
+* improve card container observer ([f90b6e5](https://github.com/bamdadfr/screwmycode-in--www/commit/f90b6e5d2e5a2c54f5f6f28a9c80530fa0e2c38c))
+
 ## [4.13.2](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.1...v4.13.2) (2025-08-04)
 
 
