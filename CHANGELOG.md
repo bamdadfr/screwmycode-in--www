@@ -1,3 +1,10 @@
+## [4.13.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.5...v4.13.6) (2025-08-11)
+
+
+### Bug Fixes
+
+* add fuzzy list ([238808e](https://github.com/bamdadfr/screwmycode-in--www/commit/238808e3c25f543f14589f2fd20aedb5e0af7b78))
+
 ## [4.13.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.4...v4.13.5) (2025-08-11)
 
 
