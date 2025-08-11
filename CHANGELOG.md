@@ -1,3 +1,10 @@
+## [4.13.7](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.6...v4.13.7) (2025-08-11)
+
+
+### Bug Fixes
+
+* clear input query for fuzzy early ([bec02c4](https://github.com/bamdadfr/screwmycode-in--www/commit/bec02c48b9e1723ed5a4ec393db0c1cb3ecf963b))
+
 ## [4.13.6](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.5...v4.13.6) (2025-08-11)
 
 
