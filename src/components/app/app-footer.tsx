@@ -12,7 +12,6 @@ import {AppRange} from 'src/components/app/app-range';
 import {
   audioBufferAtom,
   audioDurationAtom,
-  audioIsLoadingAtom,
   audioIsPlayingAtom,
   audioIsRepeatAtom,
   audioProgressAtom,
@@ -20,12 +19,13 @@ import {
   audioVolumeAtom,
 } from 'src/components/app/hooks/audio-atoms';
 import {LikeButton} from 'src/components/like-button/like-button';
+import {useAppLoading} from 'src/hooks/use-app-loading';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useMobile} from 'src/hooks/use-mobile';
 import {calculateMinutes} from 'src/utils/time';
 
 export const AppFooter = () => {
-  const isLoading = useAtomValue(audioIsLoadingAtom);
+  const isLoading = useAppLoading();
 
   return (
     <footer className={clsx(styles.footer, isLoading && styles.loading)}>
