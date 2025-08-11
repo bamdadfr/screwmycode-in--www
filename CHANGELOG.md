@@ -1,3 +1,11 @@
+## [4.13.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.3...v4.13.4) (2025-08-11)
+
+
+### Bug Fixes
+
+* card container observer ([63ab76b](https://github.com/bamdadfr/screwmycode-in--www/commit/63ab76bbcbae054abf5ff45a940e202cc76e3098))
+* improve loading lock on footer ([25db02f](https://github.com/bamdadfr/screwmycode-in--www/commit/25db02f7fba6cc20725c56c98dc5d41e0b0603ce))
+
 ## [4.13.3](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.2...v4.13.3) (2025-08-04)
 
 
