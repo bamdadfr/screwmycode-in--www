@@ -77,13 +77,16 @@ export const AppHeaderInput = () => {
         return;
       }
 
+      setQueryValue('');
+
       const title = e.currentTarget.textContent;
       const media = medias.find((m) => m.title === title);
+
       if (!media) {
         return;
       }
+
       update(media).then();
-      setQueryValue('');
       inputRef.current.value = '';
     },
     [medias, update, inputRef],
