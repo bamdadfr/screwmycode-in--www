@@ -5,18 +5,20 @@ import {
   audioIsPlayingAtom,
   audioSpeedAtom,
 } from 'src/components/app/hooks/audio-atoms';
+import {isActiveAtom} from 'src/hooks/use-input';
 
 export function useAudioPlayPause() {
   const [isPlaying, setIsPlaying] = useAtom(audioIsPlayingAtom);
   const ref = useAtomValue(audioDomReferenceAtom);
   const speed = useAtomValue(audioSpeedAtom);
+  const isInputActive = useAtomValue(isActiveAtom);
 
   const pause = useCallback(() => {
     setIsPlaying(false);
   }, [setIsPlaying]);
 
   useEffect(() => {
-    if (ref === null) {
+    if (ref === null || isInputActive) {
       return;
     }
 
@@ -36,5 +38,5 @@ export function useAudioPlayPause() {
     };
 
     toggle().then();
-  }, [ref, isPlaying, speed, pause]);
+  }, [ref, isPlaying, speed, pause, isInputActive]);
 }

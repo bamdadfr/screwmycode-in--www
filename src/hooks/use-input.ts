@@ -1,11 +1,14 @@
 'use client';
 
+import {atom} from 'jotai';
 import {useRouter} from 'next/navigation';
 import {KeyboardEvent, MouseEvent, useCallback, useRef, useState} from 'react';
 import {ERROR_TIMEOUT} from 'src/constants';
 import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {useToken} from 'src/hooks/use-token';
 import {createMedia} from 'src/utils';
+
+export const isActiveAtom = atom<boolean>(false);
 
 // examples:
 //   - https://www.youtube.com/watch?v=V2OMsWQWLE4

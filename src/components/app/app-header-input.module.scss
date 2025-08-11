@@ -8,6 +8,11 @@
 @use "src/styles/radiuses";
 @use "src/styles/transitions";
 
+.container {
+  position: relative;
+  top: paddings.$p0;
+}
+
 .input {
   align-items: center;
   display: grid;
@@ -97,5 +102,42 @@
 
   20%, 40%, 60%, 80% {
     transform: translateX(5px);
+  }
+}
+
+.fuzzyContainer {
+  align-items: flex-start;
+  background-color: theme.$themeBackgroundPrimary;
+  display: flex;
+  flex-direction: column;
+  gap: gaps.$g0;
+  justify-content: center;
+
+  // left: 0;
+  // padding: 0 paddings.$p0;
+  left: calc(-#{paddings.$p0});
+  position: absolute;
+  top: paddings.$p0 * 4;
+  width: 100%;
+
+  // width: calc(100% + #{paddings.$p0});
+  z-index: 1000;
+
+  @include fonts.singleLine;
+  @include shadows.s0;
+  @include radiuses.r0;
+}
+
+.fuzzyElement {
+  align-items: center;
+  display: flex;
+  height: paddings.$p0 * 4;
+  justify-content: flex-start;
+  padding: 0 paddings.$p0;
+  width: 100%;
+
+  &:hover {
+    background-color: theme.$themeBackgroundHighlight;
+    cursor: pointer;
   }
 }
