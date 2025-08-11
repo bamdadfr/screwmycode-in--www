@@ -1,3 +1,10 @@
+## [4.13.5](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.4...v4.13.5) (2025-08-11)
+
+
+### Bug Fixes
+
+* improve header input lock ([15039b2](https://github.com/bamdadfr/screwmycode-in--www/commit/15039b2877206da63b6506eef27698e9e45dd3ec))
+
 ## [4.13.4](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.3...v4.13.4) (2025-08-11)
 
 
