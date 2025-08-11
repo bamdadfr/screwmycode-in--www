@@ -1,5 +1,5 @@
 'use client';
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Card} from 'src/components/card/card';
 import styles from 'src/components/card-container/card-container.module.scss';
 import {type MediaDto} from 'src/dtos';
@@ -16,28 +16,46 @@ const L = 1;
 export function CardContainer({medias}: Props) {
   const isLoading = useAppLoading();
   const [visibleCards, setVisibleCards] = useState(L);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    // Clean up previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && visibleCards < medias.length) {
-          setVisibleCards((prev) => prev + L);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && visibleCards < medias.length) {
+            setVisibleCards((prev) => Math.min(prev + L, medias.length));
+          }
+        });
       },
       {
-        // Add some threshold and rootMargin for better triggering
-        threshold: 0.1,
-        rootMargin: '100px', // Trigger when sentinel is 100px from viewport
+        threshold: [0, 0.1],
+        rootMargin: '50px 0px',
+        root: null,
       },
     );
 
-    const sentinel = document.getElementById(ID);
-    if (sentinel) {
-      observer.observe(sentinel);
-    }
+    observerRef.current = observer;
 
-    return () => observer.disconnect();
-  }, [visibleCards, medias.length]); // Re-run when visibleCards changes
+    // Small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      const sentinel = document.getElementById(ID);
+      if (sentinel && observer) {
+        observer.observe(sentinel);
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [visibleCards, medias.length]);
 
   return (
     <>
@@ -52,9 +70,11 @@ export function CardContainer({medias}: Props) {
         <div
           id={ID}
           style={{
-            height: '20px',
-            margin: '20px 0',
-          }} // Ensure it has some height
+            height: '1px',
+            width: '100%',
+            minHeight: '1px',
+            display: 'block',
+          }}
         />
       )}
     </>
