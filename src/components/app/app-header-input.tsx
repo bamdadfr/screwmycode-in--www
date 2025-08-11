@@ -1,6 +1,5 @@
 import {useFuzzySearchList} from '@nozbe/microfuzz/react';
 import clsx from 'clsx';
-import {useAtomValue} from 'jotai';
 import {LoaderCircle, ShieldAlert, SquareChevronRight} from 'lucide-react';
 import {
   type ChangeEvent,
@@ -10,7 +9,7 @@ import {
   useState,
 } from 'react';
 import styles from 'src/components/app/app-header-input.module.scss';
-import {audioIsLoadingAtom} from 'src/components/app/hooks/audio-atoms';
+import {useAppLoading} from 'src/hooks/use-app-loading';
 import {useInput} from 'src/hooks/use-input';
 import {useMedias} from 'src/hooks/use-medias';
 
@@ -26,8 +25,8 @@ export const AppHeaderInput = () => {
   } = useInput();
 
   const {medias} = useMedias();
-  const isAudioLoading = useAtomValue(audioIsLoadingAtom);
-  const isLoading = isInputLoading || isAudioLoading;
+  const isAppLoading = useAppLoading();
+  const isLoading = isInputLoading || isAppLoading;
 
   const Icon = () => {
     if (isError) {
