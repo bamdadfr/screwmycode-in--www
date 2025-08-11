@@ -1,3 +1,10 @@
+## [4.13.9](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.8...v4.13.9) (2025-08-11)
+
+
+### Bug Fixes
+
+* disable fuzzy for now ([14880e5](https://github.com/bamdadfr/screwmycode-in--www/commit/14880e59c803267968b117a71399ee7c6141d86f))
+
 ## [4.13.8](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.7...v4.13.8) (2025-08-11)
 
 
