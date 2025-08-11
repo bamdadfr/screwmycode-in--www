@@ -16,6 +16,8 @@ import {useCurrentMedia} from 'src/hooks/use-current-media';
 import {isActiveAtom, useInput} from 'src/hooks/use-input';
 import {useMedias} from 'src/hooks/use-medias';
 
+const fuzzyEnabled = false;
+
 export const AppHeaderInput = () => {
   const {
     ref: inputRef,
@@ -122,20 +124,22 @@ export const AppHeaderInput = () => {
         </button>
       </div>
 
-      <div className={styles.fuzzyContainer}>
-        {queryValue !== '' &&
-          filteredTitles.map((title) => {
-            return (
-              <span
-                className={styles.fuzzyElement}
-                onClick={handleFuzzyClick}
-                key={title}
-              >
-                {title}
-              </span>
-            );
-          })}
-      </div>
+      {fuzzyEnabled && (
+        <div className={styles.fuzzyContainer}>
+          {queryValue !== '' &&
+            filteredTitles.map((title) => {
+              return (
+                <span
+                  className={styles.fuzzyElement}
+                  onClick={handleFuzzyClick}
+                  key={title}
+                >
+                  {title}
+                </span>
+              );
+            })}
+        </div>
+      )}
     </div>
   );
 };
