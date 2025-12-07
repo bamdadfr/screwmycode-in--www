@@ -1,3 +1,10 @@
+## [4.13.10](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.9...v4.13.10) (2025-12-07)
+
+
+### Bug Fixes
+
+* nextjs CVE ([b108457](https://github.com/bamdadfr/screwmycode-in--www/commit/b108457491a7091888d890fc23c51f062d1496ab))
+
 ## [4.13.9](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.8...v4.13.9) (2025-08-11)
 
 
