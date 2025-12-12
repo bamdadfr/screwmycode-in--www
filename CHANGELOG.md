@@ -1,3 +1,10 @@
+## [4.13.11](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.10...v4.13.11) (2025-12-12)
+
+
+### Bug Fixes
+
+* react CVE ([2de790b](https://github.com/bamdadfr/screwmycode-in--www/commit/2de790b5912b5b92b03fa05fcdf05389e04f576e))
+
 ## [4.13.10](https://github.com/bamdadfr/screwmycode-in--www/compare/v4.13.9...v4.13.10) (2025-12-07)
 
 
